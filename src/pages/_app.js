@@ -10,7 +10,7 @@ import { Router } from '../main/router';
 import { langServerDetection, langBrowserDetection } from '../lib/common/lang';
 import { authSetData, authGetCookieToken } from '../lib/common/auth';
 
-import { HandlerRoute } from '../lib/common/navigation';
+import { NavigationObserver } from '../lib/common/navigation';
 
 class MyApp extends App {
   componentDidMount() {
@@ -40,7 +40,7 @@ class MyApp extends App {
 
     return (
       <ReduxProvider store={store}>
-        <HandlerRoute />
+        <NavigationObserver />
         <Component {...pageProps} />
       </ReduxProvider>
     );

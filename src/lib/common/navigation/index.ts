@@ -1,4 +1,4 @@
-export { HandlerRoute } from './handleRoute.component.js';
+export { NavigationObserver } from './navigation.observer';
 export {
   NAVIGATION_ACTION_TYPE,
   NAVIGATION_STORE_NAME,
