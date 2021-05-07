@@ -2,6 +2,7 @@ import React from 'react';
 import Document, { Html, Main, NextScript, Head } from 'next/document';
 
 import { getInitialStyleProps } from '../main/css';
+
 class MyDocument extends Document {
   static async getInitialProps(ctx) {
     const initialProps = await Document.getInitialProps(ctx);
