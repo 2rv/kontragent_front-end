@@ -1,5 +1,5 @@
 export const THEME_SIZE = {
-  TRANSACTION = {
+  TRANSACTION: {
     DEFAULT: '0.5s',
   },
   OPACITY: {
@@ -16,4 +16,3 @@ export const THEME_SIZE = {
     DEFAULT: '16px',
   },
 };
-
