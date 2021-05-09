@@ -1,13 +1,15 @@
-import meta from './meta.json';
-import validation from './validation.json';
-import error from './error.json';
-import staticData from './static.json';
+import META from './meta.json';
+import VALIDATION from './validation.json';
+import ERROR from './error.json';
+import STATIC from './static.json';
+import SIGNUP from './signup.json';
 
 export const RU = {
   translation: {
-    META: meta,
-    VALIDATION: validation,
-    ERROR: error,
-    STATIC: staticData,
+    META,
+    VALIDATION,
+    ERROR,
+    STATIC,
+    SIGNUP,
   },
 };

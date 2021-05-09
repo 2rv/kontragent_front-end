@@ -1,10 +1,6 @@
-import Router from 'next/router';
+import NextjsRouter from 'next/router';
 
-const scrollToTop = (isScrollToTop) => {
-  if (isScrollToTop) {
-    window.scrollTo(0, 0);
-  }
-};
+export const router = NextjsRouter;
 
 export const redirect = (pathname, config = {}) => {
   const {
@@ -17,19 +13,27 @@ export const redirect = (pathname, config = {}) => {
   } = config;
 
   if (params) {
-    return Router.push(pathname(), pathname(params), {
-      shallow,
-      query,
-    }).then(() => scrollToTop(scrollTop));
+    return router
+      .push(pathname(), pathname(params), {
+        shallow,
+        query,
+      })
+      .then(() => scrollToTop(scrollTop));
   }
 
   if (local) {
-    return Router.push({ pathname, as, query, shallow }).then(() =>
-      scrollToTop(scrollTop),
-    );
+    return router
+      .push({ pathname, as, query, shallow })
+      .then(() => scrollToTop(scrollTop));
   }
 
   window.location.href = pathname;
+};
+
+export const scrollToTop = (isScrollToTop) => {
+  if (isScrollToTop) {
+    window.scrollTo(0, 0);
+  }
 };
 
 export const setLinkRedirect = (path, confirg) => (e) => {
@@ -42,7 +46,7 @@ export const getQuery = (id) => {
     return null;
   }
 
-  const data = Router.query[id];
+  const data = router.query[id];
 
   if (!data) return null;
   if (data === 'true') return true;
@@ -63,21 +67,3 @@ export const scrollTo = (elementId, offset = 0) => {
   }
   return null;
 };
-
-// export const getActiveNavigationLink = (items, activePath) => {
-//   if (!activePath) {
-//     return [];
-//   }
-
-//   const activeLinks = items.filter(({ path }) => {
-//     path = typeof path === 'function' ? path() : path;
-//     const isActivePathMatching = path === activePath;
-//     const isActivePathIncludes = activePath.includes(path);
-//     const isActivePathLast =
-//       activePath.split('/')[activePath.split('/').length - 1] === path.slice(1);
-
-//     return isActivePathMatching || (isActivePathIncludes && !isActivePathLast);
-//   });
-
-//   return activeLinks[activeLinks.length - 1];
-// };

@@ -1,7 +1,7 @@
 import { Dispatch } from 'redux';
 import { NAVIGATION_ACTION_TYPE } from './navigation.constant';
 
-export const setActivePath = (path: string | Function, query: object) => {
+export const setActivePath = (path: string | Function, query?: object) => {
   if (typeof path === 'function') {
     path = path();
   }

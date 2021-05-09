@@ -1,5 +1,3 @@
-import { AUTH_ACTION_TYPE } from './auth.constant';
-
 export enum AUTH_USER_DATA {
   ID = 'id',
 }
@@ -16,4 +14,8 @@ export interface AuthStoreState {
 
 export interface AuthStoreAction extends AuthStoreState {
   type: AUTH_ACTION_TYPE;
+}
+
+export enum AUTH_ACTION_TYPE {
+  SET_DATA = 'AUTH.SET_DATA',
 }
