@@ -7,13 +7,11 @@ export const THEME_SIZE = {
   },
   INDENT: {
     DEFAULT: '24px',
-    CONTENT: '12px',
   },
   LAYOUT: {
     DEFAULT: '1200px',
   },
   FONT: {
     DEFAULT: '16px',
-    SMALL: '14px',
   },
 };
