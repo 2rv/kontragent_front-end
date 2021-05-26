@@ -71,6 +71,7 @@ export function SignupFormComponent(props) {
             onBlur={handleBlur}
             value={values[fieldPassword]}
             error={isFieldError(fieldPassword)}
+            type='password'
           />
 
           <PrimaryField
@@ -81,6 +82,7 @@ export function SignupFormComponent(props) {
             onBlur={handleBlur}
             value={values[fieldPasswordRepeat]}
             error={isFieldError(fieldPasswordRepeat)}
+            type='password'
           />
         </FieldLayout>
         <PrimaryButton

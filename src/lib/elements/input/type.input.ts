@@ -5,4 +5,5 @@ export interface InputCommonPropsType {
   name: string,
   placeholder: string,
   isError: boolean,
+  type: string,
 }

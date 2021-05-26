@@ -6,4 +6,5 @@ export interface FieldPrimaryPropsType {
   onBlur: any,
   value: any,
   error: string,
+  type: string,
 }

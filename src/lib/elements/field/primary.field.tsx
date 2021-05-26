@@ -11,7 +11,7 @@ import { FieldPrimaryPropsType } from './type.field';
 import { text } from '../../common/text';
 
 export function PrimaryField(props: FieldPrimaryPropsType) {
-  const { titleTid, placeholderTid, name, onChange, onBlur, value, error } =
+  const { titleTid, placeholderTid, name, onChange, onBlur, value, error, type } =
     props;
   
   return (
@@ -24,6 +24,7 @@ export function PrimaryField(props: FieldPrimaryPropsType) {
         name={name}
         placeholder={text(placeholderTid)}
         isError={!!error}
+        type={type}
       />
       {error && <InputError error={error} />}
     </Container>

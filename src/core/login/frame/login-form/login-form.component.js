@@ -56,6 +56,7 @@ export function LoginFormComponent(props) {
             onBlur={handleBlur}
             value={values[fieldPassword]}
             error={isFieldError(fieldPassword)}
+            type='password'
           />  
         </FieldLayout>
         <PrimaryButton

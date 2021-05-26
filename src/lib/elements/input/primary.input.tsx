@@ -5,7 +5,7 @@ import { THEME_SIZE } from '../../theme/theme.size';
 import { spacing } from '../../theme';
 
 export function PrimaryInput(props: InputCommonPropsType) {
-  const { onChange, onBlur, value, name, placeholder, isError } = props;
+  const { onChange, onBlur, value, name, placeholder, isError, type } = props;
   return (
     <Input
       onChange={onChange}
@@ -13,6 +13,7 @@ export function PrimaryInput(props: InputCommonPropsType) {
       value={value}
       name={name}
       placeholder={placeholder}
+      type={type ? type : 'text'}
       isError={isError}
     />
   );

@@ -1,4 +1,3 @@
-
 /* eslint-disable no-useless-escape */
 import { i18n } from '../lang';
 
@@ -14,13 +13,15 @@ export const minLength = (min) => (value) => {
   return null;
 };
 
-export const maxLength = (max) => (value = '') => {
-  if (String(value).length > max) {
-    return getError('VALIDATION.MAX_LENGTH', { max });
-  }
+export const maxLength =
+  (max) =>
+  (value = '') => {
+    if (String(value).length > max) {
+      return getError('VALIDATION.MAX_LENGTH', { max });
+    }
 
-  return null;
-};
+    return null;
+  };
 
 export const hasLetter = (value) => /[A-Za-z]/.test(value);
 export const hasUpperCaseLetter = (value) => /[A-Z]/.test(value);
@@ -29,22 +30,30 @@ export const hasLowerCaseLetter = (value) => /[a-z]/.test(value);
 export const hasSymbol = (value) => /[!@#$%^&*()_+?\-=]/.test(value);
 
 // eslint-disable-next-line max-len
-const EMAIL_EXP = /^(("[\w-\s]+")|([\w-]+(?:\.[\w-]+)*)|("[\w-\s]+")([\w-]+(?:\.[\w-]+)*))(@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$)|(@\[?((25[0-5]\.|2[0-4][0-9]\.|1[0-9]{2}\.|[0-9]{1,2}\.))((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){2}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\]?$)/;
-export const email = (value) => (!EMAIL_EXP.test(value) ? getError('VALIDATION.SIGNUP_FORM.EMAIL') : null);
+const EMAIL_EXP =
+  /^(("[\w-\s]+")|([\w-]+(?:\.[\w-]+)*)|("[\w-\s]+")([\w-]+(?:\.[\w-]+)*))(@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$)|(@\[?((25[0-5]\.|2[0-4][0-9]\.|1[0-9]{2}\.|[0-9]{1,2}\.))((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){2}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\]?$)/;
+export const email = (value) =>
+  !EMAIL_EXP.test(value) ? getError('VALIDATION.SIGNUP_FORM.EMAIL') : null;
 
 // eslint-disable-next-line max-len
 const PASSWORD_EXP = /^\w{6,999}$/;
-export const password = (value) => (!PASSWORD_EXP.test(value) ? getError('VALIDATION.SIGNUP_FORM.PASSWORD') : null);
+export const password = (value) =>
+  !PASSWORD_EXP.test(value)
+    ? getError('VALIDATION.SIGNUP_FORM.PASSWORD')
+    : null;
 
 // eslint-disable-next-line max-len
 const LOGIN_EXP = /^[A-z0-9_]{3,16}$/;
-export const login = (value) => (!LOGIN_EXP.test(value) ? getError('VALIDATION.SIGNUP_FORM.LOGIN') : null);
+export const login = (value) =>
+  !LOGIN_EXP.test(value) ? getError('VALIDATION.SIGNUP_FORM.LOGIN') : null;
 
-export const boolean = (value) => (!!value === false ? getError('VALIDATION.BOOLEAN') : null);
+export const boolean = (value) =>
+  !!value === false ? getError('VALIDATION.BOOLEAN') : null;
 
 // eslint-disable-next-line max-len
 const NAME_EXP = /^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$/;
-export const name = (value) => (!NAME_EXP.test(value) ? getError('VALIDATION.NAME') : null);
+export const name = (value) =>
+  !NAME_EXP.test(value) ? getError('VALIDATION.NAME') : null;
 
 export const number = (value) => {
   // eslint-disable-next-line no-restricted-globals
@@ -91,10 +100,11 @@ export const requiredArray = (value = []) => {
   return null;
 };
 
-
 // eslint-disable-next-line max-len
-const URL_EXP = /^(http:\/\/www\.|https:\/\/www\.|http:\/\/|https:\/\/)?[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$/;
-export const url = (value) => (!URL_EXP.test(value) ? getError('VALIDATION.NOT_URL') : null);
+const URL_EXP =
+  /^(http:\/\/www\.|https:\/\/www\.|http:\/\/|https:\/\/)?[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$/;
+export const url = (value) =>
+  !URL_EXP.test(value) ? getError('VALIDATION.NOT_URL') : null;
 
 export const passwordRepeat = (field) => (value, values) => {
   if (value !== values[field]) {
