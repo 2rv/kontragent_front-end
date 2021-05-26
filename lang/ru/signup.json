@@ -2,13 +2,29 @@
     "SIGNUP_FORM": {
         "FIELD": {
             "LOGIN": {
-                "TITLE": "Login",
-                "PLACEHOLDER": "Your login"
+                "TITLE": "Логин",
+                "PLACEHOLDER": "Укажите свой логин"
             },
             "PASSWORD": {
-                "TITLE": "Password",
-                "PLACEHOLDER": "Your password"
+                "TITLE": "Пароль",
+                "PLACEHOLDER": "Password"
+            },
+            "PASSWORD_REPEAT": {
+                "TITLE": "Повторите пароль",
+                "PLACEHOLDER": "Password"
+            },
+            "EMAIL": {
+                "TITLE": "Email",
+                "PLACEHOLDER": "Contragent@gmail.com"
+            },
+            "CAPTCHA": {
+                "TITLE": "CAPTCHA",
+                "PLACEHOLDER": "CAPTCHA"
             }
-        }
+        },
+        "HEADER": "Создать аккаунт",
+        "BUTTON": "Войти",
+        "SIGNIN_PROPOSAL": "Уже есть аккаунт?",
+        "LINK_TO_SIGN_IN": "Войти"
     }
 }

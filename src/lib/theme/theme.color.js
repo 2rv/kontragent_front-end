@@ -1,1 +1,29 @@
-export const THEME_COLOR = {};
+export const THEME_COLOR = {
+  TEXT_PRIMARY: '#252525',
+  TEXT_SECONDARY: '#707070',
+  LINK_PRIMATY: '#252525',
+
+  BUTTON: {
+    PRIMARY: {
+      BACKGROUND_COLOR: '#3AB8FF',
+      COLOR: '#F3F3F3'
+    }
+  },
+
+  FORM: {
+    FORM_ERROR_BACKGROUNG_COLOR: '#FFE6E6',
+    FORM_ERROR_COLOR: '#590000',
+  },
+  
+  INPUT: {
+    BACKGROUND_COLOR: '#f3f3f3',
+    ERROR_BACKGROUND_COLOR: '#FFFFFF',
+    ERROR_VALIDATION_MESSAGE: '#EB5757',
+  },
+
+  BOX: {
+    PRIMARY: {
+      BACKGROUND_COLOR: '#FFFFFF',
+    }
+  }
+};
