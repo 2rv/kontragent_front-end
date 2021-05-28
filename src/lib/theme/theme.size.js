@@ -18,8 +18,8 @@ export const THEME_SIZE = {
   },
   RADIUS: {
     FIELD: '5px',
-    FORM_ERROR: '10px',
-    PRIMARY_BUTTON: '10px',
-    PRIMARY_BOX: '10px',
+    CARD: '10px',
+    BUTTON: '10px',
+    BOX: '10px',
   },
 };

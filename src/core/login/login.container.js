@@ -1,5 +1,7 @@
 import React from 'react';
 
+import styled from 'styled-components';
+
 import { LoginFormContainer } from '../login/frame/login-form';
 import { LoginHeaderComponent } from './frame/login-header';
 import { LoginFooterComponent } from './frame/login-footer';
@@ -24,6 +26,7 @@ import {
   isRequestPending,
   isRequestSuccess,
 } from '../../main/store/store.service';
+import { spacing } from '../../lib/theme';
 
 export function LoginContainer() {
   const dispatch = useDispatch();
@@ -44,7 +47,7 @@ export function LoginContainer() {
   };
 
   return (
-    <>
+    <LoginContainerLayout>
       <LoginHeaderComponent />
       <LoginFormContainer
         isPending={isRequestPending(state.loginForm)}
@@ -58,6 +61,11 @@ export function LoginContainer() {
         errorMessage={getRequestErrorMessage(state.loginForm)}
       />
       <LoginFooterComponent />
-    </>
+    </LoginContainerLayout>
   );
 }
+
+const LoginContainerLayout = styled.div`
+  display: grid;
+  gap: ${spacing(4)};
+`;

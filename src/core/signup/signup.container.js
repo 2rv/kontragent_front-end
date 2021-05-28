@@ -1,8 +1,10 @@
 import React from 'react';
 
+import styled from 'styled-components';
+
 import { SignupFormContainer } from '../signup/frame/signup-form';
 import { SignupHeaderComponent } from './frame/signup-header';
-import { SignupFooterComponent } from './frame/signup-footer'
+import { SignupFooterComponent } from './frame/signup-footer';
 
 import { useDispatch, useSelector } from 'react-redux';
 
@@ -25,6 +27,8 @@ import {
   isRequestSuccess,
 } from '../../main/store/store.service';
 
+import { spacing } from '../../lib/theme';
+
 export function SignupContainer() {
   const dispatch = useDispatch();
   const { state, pageLoading } = useSelector((state) => ({
@@ -46,7 +50,7 @@ export function SignupContainer() {
   };
 
   return (
-    <>
+    <SignupContainerLayout>
       <SignupHeaderComponent />
       <SignupFormContainer
         isPending={isRequestPending(state.signupForm)}
@@ -60,6 +64,11 @@ export function SignupContainer() {
         errorMessage={getRequestErrorMessage(state.signupForm)}
       />
       <SignupFooterComponent />
-    </>
+    </SignupContainerLayout>
   );
 }
+
+const SignupContainerLayout = styled.div`
+  display: grid;
+  gap: ${spacing(4)};
+`;

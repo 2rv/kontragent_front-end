@@ -1,4 +1,6 @@
 export interface ButtonPrimaryPropsType {
-  valueTid: string,
-  disabled : any,
+  valueTid: string;
+  disabled: any;
+  type: string;
+  className: string;
 }

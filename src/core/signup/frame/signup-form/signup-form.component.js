@@ -30,7 +30,7 @@ export function SignupFormComponent(props) {
     errorMessage,
     pageLoading,
   } = props;
-  
+
   const isFieldError = (name) => {
     return errors[name] && touched[name] && errors[name];
   };
@@ -71,7 +71,7 @@ export function SignupFormComponent(props) {
             onBlur={handleBlur}
             value={values[fieldPassword]}
             error={isFieldError(fieldPassword)}
-            type='password'
+            type="password"
           />
 
           <PrimaryField
@@ -82,7 +82,7 @@ export function SignupFormComponent(props) {
             onBlur={handleBlur}
             value={values[fieldPasswordRepeat]}
             error={isFieldError(fieldPasswordRepeat)}
-            type='password'
+            type="password"
           />
         </FieldLayout>
         <PrimaryButton
@@ -90,7 +90,7 @@ export function SignupFormComponent(props) {
           disabled={isSubmitDisabled()}
         />
 
-        {errorMessage && <CommonError tid={'ERROR.' + errorMessage} />}
+        {errorMessage && <CommonError tid={`ERROR.${errorMessage}`} />}
         {isPending && (
           <LoaderLayout>
             <CommonLoader width={17} height={17} />

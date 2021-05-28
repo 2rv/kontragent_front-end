@@ -21,13 +21,12 @@ export function PrimaryInput(props: InputCommonPropsType) {
 
 const Input = styled.input`
   background: ${(props) =>
-    !props.isError
-      ? THEME_COLOR.INPUT.BACKGROUND_COLOR
-      : THEME_COLOR.INPUT.ERROR_BACKGROUND_COLOR};
+    !props.isError ? THEME_COLOR.COLOR.SECONDARY : THEME_COLOR.COLOR.BASE};
   border-radius: ${THEME_SIZE.RADIUS.FIELD};
   padding: ${spacing(3)};
   font-size: ${THEME_SIZE.FONT.SMALL};
-  border: ${(props) => (props.isError ? '1px solid #EB5757' : 'none')};
+  border: ${(props) =>
+    props.isError ? `1px solid ${THEME_COLOR.COLOR.VALIDATION}` : 'none'};
   &:focus {
     border: 1px solid #b5b5b5;
     transition: border 0s;

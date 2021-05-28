@@ -13,9 +13,4 @@ export const LOGIN_FORM_REDIRECT_ON_UPLOAD_PATH = '/home';
 
 export const SIGNUP_REDIRECT_ON_LOGGED_PATH = '/logout';
 
-export const LOGIN_REDIRECT = {
-  RESTORE: {
-    PATH: '/restore',
-    CONFIG: { shallow: true },
-  },
-};
+export const LOGIN_PAGE_RESTORE_PATH = '/restore';

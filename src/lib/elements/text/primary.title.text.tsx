@@ -14,6 +14,6 @@ export function PrimaryTitleText(props: TextPropsType) {
 
 const Title = styled.h2`
   font-size: ${THEME_SIZE.FONT.MEDIUM};
-  color: ${THEME_COLOR.TEXT_PRIMARY};
+  color: ${THEME_COLOR.TEXT.PRIMARY};
   font-weight: ${THEME_VALUE.FONT_WEIGHT.BOLD};
 `;

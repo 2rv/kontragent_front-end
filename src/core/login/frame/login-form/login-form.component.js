@@ -25,7 +25,7 @@ export function LoginFormComponent(props) {
     isSuccess,
     errorMessage,
   } = props;
-  
+
   const isFieldError = (name) => {
     return errors[name] && touched[name] && errors[name];
   };
@@ -56,15 +56,15 @@ export function LoginFormComponent(props) {
             onBlur={handleBlur}
             value={values[fieldPassword]}
             error={isFieldError(fieldPassword)}
-            type='password'
-          />  
+            type="password"
+          />
         </FieldLayout>
         <PrimaryButton
           valueTid="LOGIN.LOGIN_FORM.BUTTON"
           disabled={isSubmitDisabled()}
         />
 
-        {errorMessage && <CommonError tid={'ERROR.' + errorMessage} />}
+        {errorMessage && <CommonError tid={`ERROR.${errorMessage}`} />}
         {isPending && (
           <LoaderLayout>
             <CommonLoader width={17} height={17} />

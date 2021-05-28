@@ -33,19 +33,17 @@ export const hasSymbol = (value) => /[!@#$%^&*()_+?\-=]/.test(value);
 const EMAIL_EXP =
   /^(("[\w-\s]+")|([\w-]+(?:\.[\w-]+)*)|("[\w-\s]+")([\w-]+(?:\.[\w-]+)*))(@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$)|(@\[?((25[0-5]\.|2[0-4][0-9]\.|1[0-9]{2}\.|[0-9]{1,2}\.))((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){2}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\]?$)/;
 export const email = (value) =>
-  !EMAIL_EXP.test(value) ? getError('VALIDATION.SIGNUP_FORM.EMAIL') : null;
+  !EMAIL_EXP.test(value) ? getError('VALIDATION.EMAIL') : null;
 
 // eslint-disable-next-line max-len
 const PASSWORD_EXP = /^\w{6,999}$/;
 export const password = (value) =>
-  !PASSWORD_EXP.test(value)
-    ? getError('VALIDATION.SIGNUP_FORM.PASSWORD')
-    : null;
+  !PASSWORD_EXP.test(value) ? getError('VALIDATION.PASSWORD') : null;
 
 // eslint-disable-next-line max-len
 const LOGIN_EXP = /^[A-z0-9_]{3,16}$/;
 export const login = (value) =>
-  !LOGIN_EXP.test(value) ? getError('VALIDATION.SIGNUP_FORM.LOGIN') : null;
+  !LOGIN_EXP.test(value) ? getError('VALIDATION.LOGIN') : null;
 
 export const boolean = (value) =>
   !!value === false ? getError('VALIDATION.BOOLEAN') : null;
@@ -108,7 +106,7 @@ export const url = (value) =>
 
 export const passwordRepeat = (field) => (value, values) => {
   if (value !== values[field]) {
-    return getError('VALIDATION.SIGNUP_FORM.PASSWORD_REPEAT');
+    return getError('VALIDATION.PASSWORD_REPEAT');
   }
 
   return null;

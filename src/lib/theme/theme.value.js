@@ -9,5 +9,8 @@ export const THEME_VALUE = {
     BOLD: 700,
     EXTRA_BOLD: 800,
     BLACK: 900,
-  }
-}
+  },
+  LINE_HEIGHT: {
+    NORMAL: '17px',
+  },
+};

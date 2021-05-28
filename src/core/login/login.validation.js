@@ -1,21 +1,12 @@
 import { LOGIN_FIELD_NAME } from './login.type';
-import {
-  login,
-  password,
-  required,
-} from '../../main/validate/validate.service';
 
-export function loginFormValidation(values) {
-  const errors = {};
+import { validate } from '../../main/validate';
 
-  errors[LOGIN_FIELD_NAME.LOGIN] = required(values[LOGIN_FIELD_NAME.LOGIN]);
-  // || login(values[LOGIN_FIELD_NAME.LOGIN]);
+import { required } from '../../main/validate/validate.service';
 
-  errors[LOGIN_FIELD_NAME.PASSWORD] = required(
-    values[LOGIN_FIELD_NAME.PASSWORD],
-  );
-  // || password(values[LOGIN_FIELD_NAME.PASSWORD]);
+const config = {
+  [LOGIN_FIELD_NAME.LOGIN]: [required],
+  [LOGIN_FIELD_NAME.PASSWORD]: [required],
+};
 
-  if (Object.values(errors).filter((error) => error !== null).length)
-    return errors;
-}
+export const loginFormValidation = (values) => validate(values, config);
