@@ -1,4 +1,5 @@
 export interface TextPropsType {
   tid: string;
-  className: any,
+  tvalue: string;
+  className: any;
 }
