@@ -9,9 +9,7 @@ export function SignupPage() {
   return (
     <ContentLayout>
       <PageLayout>
-        <AuthLayout>
-          <SignupContainer />
-        </AuthLayout>
+        <SignupContainer />
       </PageLayout>
     </ContentLayout>
   );

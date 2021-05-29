@@ -1,5 +1,7 @@
 import styled from 'styled-components';
+import { THEME_SIZE } from '../../theme';
 
 export const ContentLayout = styled.div`
-  padding: 20px;
+  width: ${(p) => THEME_SIZE.LAYOUT[p.type] || THEME_SIZE.LAYOUT.DEFAULT};
+  margin: 0 auto;
 `;

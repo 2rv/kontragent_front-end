@@ -10,6 +10,7 @@ export const THEME_SIZE = {
   },
   LAYOUT: {
     DEFAULT: '1200px',
+    SMALL: '424px',
   },
   FONT: {
     DEFAULT: '16px',

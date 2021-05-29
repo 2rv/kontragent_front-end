@@ -1,8 +1,8 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 export const PageLayout = styled.div`
   width: 100vw;
   min-height: 100vh;
   display: flex;
-  align-items: center;
+  align-items: ${(p) => p.align || 'TOP'};
 `;
