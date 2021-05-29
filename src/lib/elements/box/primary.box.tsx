@@ -14,5 +14,4 @@ const Box = styled.div`
   border-radius: ${THEME_SIZE.RADIUS.BOX};
   background-color: ${THEME_COLOR.COLOR.BASE};
   padding: ${spacing(8)};
-  margin: 0 auto;
 `;
