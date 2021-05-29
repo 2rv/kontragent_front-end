@@ -10,6 +10,4 @@ export function SignupHeaderComponent() {
   return <SignupFormHeader tid="SIGNUP.SIGNUP_FORM.HEADER" />;
 }
 
-const SignupFormHeader = styled(PrimaryTitleText)`
-  padding-bottom: ${spacing(4)};
-`;
+const SignupFormHeader = styled(PrimaryTitleText)``;

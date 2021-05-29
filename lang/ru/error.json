@@ -1,6 +1,5 @@
 {
-  "SIGN_UP_USERNAME_ALREADY_EXISTS": "ЛОГИН ЗАНЯТ",
-  "SIGN_UP_EMAIL_ALREADY_EXISTS": "АДРЕС ПОЧТЫ ЗАНЯТ",
+  "SIGN_UP_USER_ALREADY_EXISTS": "ПОЛЬЗОВАТЕЛЬ С ТАКИМ ЛОГИНОМ ИЛИ ПОЧТОЙ УЖЕ СУЩЕСТВУЕТ",
   "LOGIN_UNCORRECT_PASSWORD_OR_LOGIN": "НЕПРАВИЛЬНЫЙ ЛОГИН ИЛИ ПАРОЛЬ",
   "LOGIN_COULDNT_FOUND_USER": "ТАКОГО ПОЛЬЗОВАТЕЛЯ НЕ СУЩЕСТВУЕТ"
 }

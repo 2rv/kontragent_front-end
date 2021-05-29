@@ -1,6 +1,5 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 export const AuthLayout = styled.div`
   width: 360px;
-  font-family: 'Inter';
-`
+`;

@@ -2,27 +2,32 @@ import React from 'react';
 
 import styled from 'styled-components';
 
-import { FormProposalText } from '../../../../lib/elements/proposal';
+import { SecondaryText } from '../../../../lib/elements/text';
+import { PrimaryLink } from '../../../../lib/elements/link';
 
-import { LOGIN_REDIRECT } from '../../login.constant'
+import { LOGIN_PAGE_RESTORE_PATH } from '../../login.constant';
 
 import { spacing } from '../../../../lib/theme';
 
 export function LoginFooterComponent() {
   return (
-    <LoginFormFooterContainer>
-      <FormProposalText
-        text_tid="LOGIN.LOGIN_FORM.RESTORE_PROPOSAL"
-        link_tid="LOGIN.LOGIN_FORM.LINK_TO_RESTORE_PASSWORD"
-        link_pathname={LOGIN_REDIRECT.RESTORE.PATH}
-        link_config={LOGIN_REDIRECT.RESTORE.CONFIG}
-      />
-    </LoginFormFooterContainer>
+    <LoginFooterContainer>
+      <div>
+        <FormProposalMessage tid="LOGIN.LOGIN_FORM.RESTORE_PROPOSAL" />
+        <PrimaryLink
+          tid="LOGIN.LOGIN_FORM.LINK_TO_RESTORE_PASSWORD"
+          pathname={LOGIN_PAGE_RESTORE_PATH}
+        />
+      </div>
+    </LoginFooterContainer>
   );
 }
 
-const LoginFormFooterContainer = styled.div`
+const LoginFooterContainer = styled.div`
   display: grid;
   gap: ${spacing(1)};
-  padding-top: ${spacing(4)};
+`;
+
+const FormProposalMessage = styled(SecondaryText)`
+  padding-right: ${spacing(1)};
 `;

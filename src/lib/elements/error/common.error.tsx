@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import styled from 'styled-components';
 import { FormErrorPropsType } from './type.error';
-import { THEME_COLOR } from '../../theme';
+import { THEME_COLOR, THEME_VALUE } from '../../theme';
 import { THEME_SIZE } from '../../theme/theme.size';
 import { spacing } from '../../theme';
 import { text } from '../../common/text';
@@ -22,9 +22,10 @@ const ErrorText = styled.span`
 const Error = styled.div`
   display: flex;
   align-items: center;
-  color: ${THEME_COLOR.FORM.FORM_ERROR_COLOR};
-  background-color: ${THEME_COLOR.FORM.FORM_ERROR_BACKGROUNG_COLOR};
-  border-radius: ${THEME_SIZE.RADIUS.FORM_ERROR};
+  color: ${THEME_COLOR.TEXT.ERROR};
+  background-color: ${THEME_COLOR.COLOR.ERROR};
+  border-radius: ${THEME_SIZE.RADIUS.CARD};
   padding: ${spacing(3)};
   font-size: ${THEME_SIZE.FONT.SMALL};
+  line-height: ${THEME_VALUE.LINE_HEIGHT.NORMAL};
 `;
