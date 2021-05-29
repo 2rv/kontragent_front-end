@@ -31,7 +31,6 @@ export function AccountVerificationStatusComponent() {
 const Container = styled.div`
   display: grid;
   gap: ${spacing(3)};
-  width: 424px;
 `;
 
 const Header = styled(PrimaryTitleText)`
