@@ -86,7 +86,7 @@ export function SignupFormComponent(props) {
           />
         </FieldLayout>
         <PrimaryButton
-          valueTid="SIGNUP.SIGNUP_FORM.BUTTON"
+          tid="SIGNUP.SIGNUP_FORM.BUTTON"
           disabled={isSubmitDisabled()}
         />
 

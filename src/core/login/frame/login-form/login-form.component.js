@@ -60,7 +60,7 @@ export function LoginFormComponent(props) {
           />
         </FieldLayout>
         <PrimaryButton
-          valueTid="LOGIN.LOGIN_FORM.BUTTON"
+          tid="LOGIN.LOGIN_FORM.BUTTON"
           disabled={isSubmitDisabled()}
         />
 
