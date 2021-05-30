@@ -24,5 +24,10 @@ const Button = styled.button`
   font-size: ${THEME_SIZE.FONT.DEFAULT};
   padding: ${spacing(4)};
   font-weight: ${THEME_VALUE.FONT_WEIGHT.SEMY_BOLD};
-  ${(props) => props.disabled && `opacity:${THEME_VALUE.OPACITY.DISABLE}`};
+  ${(props) =>
+    props.disabled
+      ? `opacity:${THEME_VALUE.OPACITY.DISABLE}`
+      : `&:hover {
+          opacity: ${THEME_VALUE.OPACITY.HOVER};
+        }`};
 `;
