@@ -17,5 +17,6 @@ export const THEME_VALUE = {
 
   OPACITY: {
     DISABLE: 0.6,
+    HOVER: 0.8,
   },
 };

@@ -3,7 +3,7 @@ import { setLinkRedirect } from '../../../main/navigation';
 
 import { PrimaryLinkPropsType } from './type.link';
 
-import { THEME_SIZE, THEME_COLOR } from '../../theme';
+import { THEME_SIZE, THEME_COLOR, THEME_VALUE } from '../../theme';
 
 import { text } from '../../common/text';
 
@@ -19,4 +19,7 @@ const Link = styled.a`
   color: ${THEME_COLOR.COLOR.PRIMARY};
   cursor: pointer;
   font-weight: 600;
+  &:hover {
+    opacity: ${THEME_VALUE.OPACITY.HOVER};
+  }
 `;
