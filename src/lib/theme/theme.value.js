@@ -10,7 +10,12 @@ export const THEME_VALUE = {
     EXTRA_BOLD: 800,
     BLACK: 900,
   },
+
   LINE_HEIGHT: {
     NORMAL: '17px',
+  },
+
+  OPACITY: {
+    DISABLE: 0.6,
   },
 };

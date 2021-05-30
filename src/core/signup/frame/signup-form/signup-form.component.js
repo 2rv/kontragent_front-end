@@ -23,7 +23,9 @@ export function SignupFormComponent(props) {
     handleChange,
     handleBlur,
     handleSubmit,
+    isValid,
     isSubmitting,
+
     isPending,
     isError,
     isSuccess,
@@ -36,7 +38,7 @@ export function SignupFormComponent(props) {
   };
 
   const isSubmitDisabled = () => {
-    return isPending || isSuccess;
+    return JSON.stringify(touched) === '{}' ? true : !isValid;
   };
 
   return (

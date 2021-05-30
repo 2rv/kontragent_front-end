@@ -9,6 +9,7 @@ import { text } from '../../common/text';
 
 export function PrimaryButton(props: ButtonPrimaryPropsType) {
   const { tid, disabled, type = 'submit', className } = props;
+
   return (
     <Button type={type} className={className} disabled={disabled}>
       {text(tid)}
@@ -23,4 +24,5 @@ const Button = styled.button`
   font-size: ${THEME_SIZE.FONT.DEFAULT};
   padding: ${spacing(4)};
   font-weight: ${THEME_VALUE.FONT_WEIGHT.SEMY_BOLD};
+  ${(props) => props.disabled && `opacity:${THEME_VALUE.OPACITY.DISABLE}`};
 `;
