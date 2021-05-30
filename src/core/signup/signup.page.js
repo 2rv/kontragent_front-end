@@ -8,11 +8,11 @@ import { SignupContainer } from './signup.container';
 export function SignupPage() {
   return (
     <PageLayout align="center">
-      <ContentLayout type="SMALL">
-        <IndentLayout>
+      <IndentLayout>
+        <ContentLayout type="SMALL">
           <SignupContainer />
-        </IndentLayout>
-      </ContentLayout>
+        </ContentLayout>
+      </IndentLayout>
     </PageLayout>
   );
 }
