@@ -1,16 +1,18 @@
 import {
   ContentLayout,
+  IndentLayout,
   PageLayout,
-  AuthLayout,
 } from '../../lib/elements/layout/index';
 import { SignupContainer } from './signup.container';
 
 export function SignupPage() {
   return (
-    <ContentLayout>
-      <PageLayout>
-        <SignupContainer />
-      </PageLayout>
-    </ContentLayout>
+    <PageLayout align="center">
+      <ContentLayout type="SMALL">
+        <IndentLayout>
+          <SignupContainer />
+        </IndentLayout>
+      </ContentLayout>
+    </PageLayout>
   );
 }
