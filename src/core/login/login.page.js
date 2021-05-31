@@ -8,11 +8,11 @@ import { LoginContainer } from './login.container';
 export function LoginPage() {
   return (
     <PageLayout align="center">
-      <ContentLayout type="SMALL">
-        <IndentLayout>
+      <IndentLayout>
+        <ContentLayout type="SMALL">
           <LoginContainer />
-        </IndentLayout>
-      </ContentLayout>
+        </ContentLayout>
+      </IndentLayout>
     </PageLayout>
   );
 }
