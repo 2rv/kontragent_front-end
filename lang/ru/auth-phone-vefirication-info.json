@@ -1,0 +1,11 @@
+{
+  "HEADER": "Код отправлен",
+  "MESSAGE": "На ваш мобильный телефон <phoneComponent>{{ phoneNumber }}</phoneComponent> было отправлено сообщение с кодом подтверждения.",
+  "PHONE_NUMBER_FILED": {
+    "TITLE": "Код из сообщения",
+    "PLACEHOLDER": "000000"
+  },
+  "BUTTON": "Подтвердить",
+  "PROPOSAL": "Не пришёл код? ",
+  "PROPOSAL_ACTION": "Отправить повторно"
+}
