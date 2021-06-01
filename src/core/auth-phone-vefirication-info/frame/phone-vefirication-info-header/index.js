@@ -1,1 +1,1 @@
-export { AuthPhoneVerificationInfoHeaderComponent } from './phone-vefirication-info-header.component';
+export { PhoneVerificationInfoHeaderContainer } from './phone-vefirication-info-header.container';

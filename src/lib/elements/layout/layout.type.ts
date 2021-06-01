@@ -12,3 +12,8 @@ export interface IndentLayoutPropsType {
   type: string;
   children: React.ReactElement<any> | null;
 }
+
+export interface SectionLayoutPropsType {
+  type: string;
+  children: React.ReactElement<any> | null;
+}

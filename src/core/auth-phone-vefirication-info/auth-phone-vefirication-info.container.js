@@ -1,10 +1,10 @@
 import React from 'react';
 
-import { PhoneVerificationInfoContainer } from './frame/phone-vefirication-info-form';
+import { AuthPhoneVerificationInfoComponent } from './auth-phone-vefirication-info.component';
 
 export function AuthPhoneVerificationInfoContainer() {
   return (
-    <PhoneVerificationInfoContainer
+    <AuthPhoneVerificationInfoComponent
       phoneNumber="+704123112323"
       initialValue={{ verificationCode: '' }}
     />

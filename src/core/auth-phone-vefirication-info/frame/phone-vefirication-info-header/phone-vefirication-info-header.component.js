@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 import { PrimaryTitleText } from '../../../../lib/elements/text';
 
-export function AuthPhoneVerificationInfoHeaderComponent() {
+export function PhoneVerificationInfoHeaderComponent() {
   return <SignupFormHeader tid="AUTH_PHONE_VERIFICATION_INFO.HEADER" />;
 }
 
