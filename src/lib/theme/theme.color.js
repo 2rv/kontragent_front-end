@@ -2,6 +2,7 @@ export const THEME_COLOR = {
   TEXT: {
     PRIMARY: '#252525',
     SECONDARY: '#707070',
+    DARK_SECONDARY: '#5F5B5D',
     BASE: '#FFFFFF',
     ERROR: '#590000',
     WARNING: '#F2994A',

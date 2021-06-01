@@ -21,9 +21,14 @@ export function LoginFormComponent(props) {
     handleChange,
     handleBlur,
     handleSubmit,
+    isValid,
+    isSubmitting,
+
     isPending,
+    isError,
     isSuccess,
     errorMessage,
+    pageLoading,
   } = props;
 
   const isFieldError = (name) => {
@@ -31,7 +36,7 @@ export function LoginFormComponent(props) {
   };
 
   const isSubmitDisabled = () => {
-    return isPending || isSuccess;
+    return JSON.stringify(touched) === '{}' ? true : !isValid;
   };
 
   return (

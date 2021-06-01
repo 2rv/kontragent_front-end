@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 import { InputCommonPropsType } from './type.input';
-import { THEME_COLOR } from '../../theme';
-import { THEME_SIZE } from '../../theme/theme.size';
+import { THEME_COLOR, THEME_VALUE, THEME_SIZE } from '../../theme';
 import { spacing } from '../../theme';
 
 export function PrimaryInput(props: InputCommonPropsType) {
@@ -25,10 +24,29 @@ const Input = styled.input`
   border-radius: ${THEME_SIZE.RADIUS.FIELD};
   padding: ${spacing(3)};
   font-size: ${THEME_SIZE.FONT.SMALL};
+
   border: ${(props) =>
-    props.isError ? `1px solid ${THEME_COLOR.COLOR.VALIDATION}` : 'none'};
+    props.isError
+      ? `1px solid ${THEME_COLOR.COLOR.VALIDATION}`
+      : '1px solid transparent'};
+
   &:focus {
     border: 1px solid #b5b5b5;
-    transition: border 0s;
+    opacity: 1;
+  }
+  &:hover {
+    opacity: ${THEME_VALUE.OPACITY.HOVER};
+  }
+
+  &:-webkit-autofill {
+    border: 1px solid transparent;
+  }
+  &:-webkit-autofill:hover {
+    border: 1px solid transparent;
+    opacity: ${THEME_VALUE.OPACITY.HOVER};
+  }
+  &:-webkit-autofill:focus {
+    border: 1px solid #b5b5b5;
+    opacity: 1;
   }
 `;

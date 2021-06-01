@@ -1,1 +1,2 @@
-export { PrimaryButton } from './primary.button'
+export { PrimaryButton } from './primary.button';
+export { TextButton } from './text.button';

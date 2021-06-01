@@ -1,21 +1,18 @@
 import {
   ContentLayout,
+  IndentLayout,
   PageLayout,
-  AuthLayout,
 } from '../../lib/elements/layout/index';
-import { PrimaryBox } from '../../lib/elements/box';
 import { LoginContainer } from './login.container';
 
 export function LoginPage() {
   return (
-    <ContentLayout>
-      <PageLayout>
-        <PrimaryBox>
-          <AuthLayout>
-            <LoginContainer />
-          </AuthLayout>
-        </PrimaryBox>
-      </PageLayout>
-    </ContentLayout>
+    <PageLayout align="center">
+      <IndentLayout>
+        <ContentLayout type="SMALL">
+          <LoginContainer />
+        </ContentLayout>
+      </IndentLayout>
+    </PageLayout>
   );
 }
