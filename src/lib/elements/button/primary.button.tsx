@@ -1,13 +1,13 @@
 import styled from 'styled-components';
 
-import { ButtonPrimaryPropsType } from './type.button';
+import { ButtonPropsType } from './type.button';
 
 import { THEME_COLOR, THEME_SIZE, THEME_VALUE } from '../../theme';
 
 import { spacing } from '../../theme';
 import { text } from '../../common/text';
 
-export function PrimaryButton(props: ButtonPrimaryPropsType) {
+export function PrimaryButton(props: ButtonPropsType) {
   const { tid, disabled, type = 'submit', className } = props;
 
   return (

@@ -14,6 +14,6 @@ export function PrimaryText(props: TextPropsType) {
 
 const Text = styled.span`
   font-size: ${THEME_SIZE.FONT.DEFAULT};
-  color: ${THEME_COLOR.TEXT_PRIMARY};
+  color: ${THEME_COLOR.TEXT.PRIMARY};
   font-weight: ${THEME_VALUE.FONT_WEIGHT.REGULAR};
 `;

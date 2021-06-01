@@ -1,16 +1,16 @@
 export interface PageLayoutPropsType {
-  align: string;
-  children: React.ReactElement<any> | null;
+  align?: 'CENTER' | 'TOP' | undefined;
+  children?: React.ReactElement<any> | null;
 }
 
 export interface ContentLayoutPropsType {
-  type: string;
-  children: React.ReactElement<any> | null;
+  type?: 'DEFAULT' | 'SMALL' | undefined;
+  children?: React.ReactElement<any> | null;
 }
 
 export interface IndentLayoutPropsType {
-  type: string;
-  children: React.ReactElement<any> | null;
+  type?: 'DEFAULT' | undefined;
+  children?: React.ReactElement<any> | null;
 }
 
 export interface SectionLayoutPropsType {
