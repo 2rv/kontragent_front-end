@@ -5,11 +5,12 @@ import { SectionLayoutPropsType } from './layout.type';
 import { THEME_SIZE } from '../../theme';
 
 export function SectionLayout(props: SectionLayoutPropsType) {
-  const type = props.type?.toUpperCase();
-  return <Layout type={type}>{props.children}</Layout>;
+  return <Layout type={props.type}>{props.children}</Layout>;
 }
 
 const Layout = styled.div`
   display: grid;
-  gap: ${(p) => THEME_SIZE.SECTION[p.type] || THEME_SIZE.SECTION.DEFAULT};
+  gap: ${(p: SectionLayoutPropsType) =>
+    p.type ? THEME_SIZE.SECTION[p.type] : THEME_SIZE.SECTION.DEFAULT};
+  width: 100%;
 `;
