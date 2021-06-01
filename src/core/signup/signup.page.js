@@ -7,7 +7,7 @@ import { SignupContainer } from './signup.container';
 
 export function SignupPage() {
   return (
-    <PageLayout align="center">
+    <PageLayout align="CENTER">
       <IndentLayout>
         <ContentLayout type="SMALL">
           <SignupContainer />

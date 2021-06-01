@@ -11,9 +11,17 @@ import { FieldPrimaryPropsType } from './type.field';
 import { text } from '../../common/text';
 
 export function PrimaryField(props: FieldPrimaryPropsType) {
-  const { titleTid, placeholderTid, name, onChange, onBlur, value, error, type } =
-    props;
-  
+  const {
+    titleTid,
+    placeholderTid,
+    name,
+    onChange,
+    onBlur,
+    value,
+    error,
+    type,
+  } = props;
+
   return (
     <Container>
       <Title tid={titleTid} />
@@ -31,7 +39,7 @@ export function PrimaryField(props: FieldPrimaryPropsType) {
   );
 }
 
-const Title = styled(SecondaryText)`
+const Title: typeof SecondaryText = styled(SecondaryText)`
   margin-bottom: ${spacing(2)};
 `;
 
@@ -40,6 +48,6 @@ const Container = styled.div`
   flex-direction: column;
 `;
 
-const InputError = styled(ErrorMessage)`
+const InputError: typeof ErrorMessage = styled(ErrorMessage)`
   margin-top: ${spacing(1)};
 `;

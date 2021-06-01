@@ -7,7 +7,7 @@ import { AuthAccountVerificationStatusContainer } from './auth-account-verificat
 
 export function AccountVerificationStatusPage() {
   return (
-    <PageLayout align="center">
+    <PageLayout align="CENTER">
       <IndentLayout>
         <ContentLayout type="SMALL">
           <AuthAccountVerificationStatusContainer />

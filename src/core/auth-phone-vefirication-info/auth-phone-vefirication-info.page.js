@@ -7,7 +7,7 @@ import { AuthPhoneVerificationInfoContainer } from './auth-phone-vefirication-in
 
 export function AuthPhoneVerificationInfoPage() {
   return (
-    <PageLayout align="center">
+    <PageLayout align="CENTER">
       <IndentLayout>
         <ContentLayout type="SMALL">
           <AuthPhoneVerificationInfoContainer />

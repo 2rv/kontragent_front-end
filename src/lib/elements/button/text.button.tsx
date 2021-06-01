@@ -1,12 +1,12 @@
 import styled from 'styled-components';
 
-import { TextButtonPropType } from './type.button';
+import { ButtonPropsType } from './type.button';
 
 import { THEME_COLOR, THEME_SIZE, THEME_VALUE } from '../../theme';
 
 import { text } from '../../common/text';
 
-export function TextButton(props: TextButtonPropType) {
+export function TextButton(props: ButtonPropsType) {
   const { tid, disabled, className } = props;
 
   return (

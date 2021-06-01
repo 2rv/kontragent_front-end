@@ -7,7 +7,7 @@ import { LoginContainer } from './login.container';
 
 export function LoginPage() {
   return (
-    <PageLayout align="center">
+    <PageLayout align="CENTER">
       <IndentLayout>
         <ContentLayout type="SMALL">
           <LoginContainer />
