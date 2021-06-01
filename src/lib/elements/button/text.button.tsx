@@ -4,25 +4,22 @@ import { ButtonPropsType } from './type.button';
 
 import { THEME_COLOR, THEME_SIZE, THEME_VALUE } from '../../theme';
 
-import { spacing } from '../../theme';
 import { text } from '../../common/text';
 
-export function PrimaryButton(props: ButtonPropsType) {
-  const { tid, disabled, type = 'submit', className } = props;
+export function TextButton(props: ButtonPropsType) {
+  const { tid, disabled, className } = props;
 
   return (
-    <Button type={type} className={className} disabled={disabled}>
+    <Button className={className} disabled={disabled}>
       {text(tid)}
     </Button>
   );
 }
 
 const Button = styled.button`
-  background-color: ${THEME_COLOR.COLOR.ACCENT};
-  color: ${THEME_COLOR.TEXT.BASE};
-  border-radius: ${THEME_SIZE.RADIUS.BUTTON};
-  font-size: ${THEME_SIZE.FONT.DEFAULT};
-  padding: ${spacing(4)};
+  background-color: none;
+  color: ${THEME_COLOR.TEXT.PRIMARY};
+  font-size: ${THEME_SIZE.FONT.SMALL};
   font-weight: ${THEME_VALUE.FONT_WEIGHT.SEMY_BOLD};
   ${(props) =>
     props.disabled

@@ -1,9 +1,9 @@
 export interface InputErrorPropsType {
-  error: any,
-  className: any,
+  error: any;
+  className?: any;
 }
 
 export interface FormErrorPropsType {
-  tid: string,
-  className: any,
+  tid: string;
+  className?: any;
 }

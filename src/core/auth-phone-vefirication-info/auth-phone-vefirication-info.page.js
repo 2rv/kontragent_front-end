@@ -3,14 +3,14 @@ import {
   IndentLayout,
   PageLayout,
 } from '../../lib/elements/layout/index';
-import { LoginContainer } from './login.container';
+import { AuthPhoneVerificationInfoContainer } from './auth-phone-vefirication-info.container';
 
-export function LoginPage() {
+export function AuthPhoneVerificationInfoPage() {
   return (
     <PageLayout align="CENTER">
       <IndentLayout>
         <ContentLayout type="SMALL">
-          <LoginContainer />
+          <AuthPhoneVerificationInfoContainer />
         </ContentLayout>
       </IndentLayout>
     </PageLayout>

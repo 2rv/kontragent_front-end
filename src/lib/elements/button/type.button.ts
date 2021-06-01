@@ -1,6 +1,6 @@
-export interface ButtonPrimaryPropsType {
+export interface ButtonPropsType {
   tid: string;
   disabled: any;
-  type: string;
+  type: 'button' | 'submit' | 'reset' | undefined;
   className: string;
 }

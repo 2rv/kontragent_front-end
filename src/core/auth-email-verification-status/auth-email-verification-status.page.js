@@ -7,7 +7,7 @@ import { AuthEmailVerificationStatusContainer } from './auth-email-verification-
 
 export function AuthEmailVerificationStatusPage() {
   return (
-    <PageLayout align="center">
+    <PageLayout align="CENTER">
       <IndentLayout>
         <ContentLayout type="SMALL">
           <AuthEmailVerificationStatusContainer />
