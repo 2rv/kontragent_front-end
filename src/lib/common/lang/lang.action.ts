@@ -27,7 +27,7 @@ export const langBrowserDetection = () => {
 };
 
 export const langServerDetection = (ctx: any) => {
-  if (typeof window === 'undefined') {
+  if (typeof window === 'undefined' && ctx && ctx.res && ctx.res.writeHead) {
     const cookieLanguage = getCookie(COOKIE_LANG, ctx);
     if (!cookieLanguage) {
       const language = langDetermineLanguage(ctx.req);

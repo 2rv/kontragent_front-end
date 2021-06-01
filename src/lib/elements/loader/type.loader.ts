@@ -1,4 +1,4 @@
-export interface FormLoaderPropsType {
+export interface LoaderPropsType {
   width: number,
   height: number,
 }
