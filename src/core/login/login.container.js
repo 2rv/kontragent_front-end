@@ -3,9 +3,6 @@ import React from 'react';
 import styled from 'styled-components';
 
 import { LoginFormContainer } from '../login/frame/login-form';
-import { LoginHeaderComponent } from './frame/login-header';
-import { LoginFooterComponent } from './frame/login-footer';
-import { PrimaryBox } from '../../lib/elements/box';
 
 import { useDispatch, useSelector } from 'react-redux';
 
@@ -48,27 +45,16 @@ export function LoginContainer() {
   };
 
   return (
-    <PrimaryBox>
-      <LoginContainerLayout>
-        <LoginHeaderComponent />
-        <LoginFormContainer
-          isPending={isRequestPending(state.loginForm)}
-          isError={isRequestError(state.loginForm)}
-          isSuccess={isRequestSuccess(state.loginForm)}
-          initialValue={loginFormGetInitialValue()}
-          validation={loginFormValidation}
-          onSubmitForm={loginFormSendData}
-          fieldName={LOGIN_FORM_FIELD_NAME}
-          pageLoading={pageLoading}
-          errorMessage={getRequestErrorMessage(state.loginForm)}
-        />
-        <LoginFooterComponent />
-      </LoginContainerLayout>
-    </PrimaryBox>
+    <LoginFormContainer
+      isPending={isRequestPending(state.loginForm)}
+      isError={isRequestError(state.loginForm)}
+      isSuccess={isRequestSuccess(state.loginForm)}
+      initialValue={loginFormGetInitialValue()}
+      validation={loginFormValidation}
+      onSubmitForm={loginFormSendData}
+      fieldName={LOGIN_FORM_FIELD_NAME}
+      pageLoading={pageLoading}
+      errorMessage={getRequestErrorMessage(state.loginForm)}
+    />
   );
 }
-
-const LoginContainerLayout = styled.div`
-  display: grid;
-  gap: ${spacing(4)};
-`;
