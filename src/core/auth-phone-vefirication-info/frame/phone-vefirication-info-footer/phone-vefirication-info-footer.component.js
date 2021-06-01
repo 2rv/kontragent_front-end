@@ -1,7 +1,5 @@
 import React from 'react';
 
-import styled from 'styled-components';
-
 import { SecondaryText } from '../../../../lib/elements/text';
 import { TextButton } from '../../../../lib/elements/button';
 

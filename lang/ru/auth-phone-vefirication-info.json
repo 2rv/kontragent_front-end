@@ -1,6 +1,7 @@
 {
   "HEADER": "Код отправлен",
-  "MESSAGE": "На ваш мобильный телефон <phoneComponent>{{ phoneNumber }}</phoneComponent> было отправлено сообщение с кодом подтверждения.",
+  "MESSAGE_START": "На ваш мобильный телефон ",
+  "MESSAGE_END": " было отправлено сообщение с кодом подтверждения.",
   "PHONE_NUMBER_FILED": {
     "TITLE": "Код из сообщения",
     "PLACEHOLDER": "000000"
