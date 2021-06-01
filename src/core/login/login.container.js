@@ -1,7 +1,5 @@
 import React from 'react';
 
-import styled from 'styled-components';
-
 import { LoginFormContainer } from '../login/frame/login-form';
 
 import { useDispatch, useSelector } from 'react-redux';
