@@ -7,6 +7,11 @@ export function AuthPhoneVerificationInfoContainer() {
     <AuthPhoneVerificationInfoComponent
       phoneNumber="+704123112323"
       initialValue={{ verificationCode: '' }}
+      pageLoading={true}
+      isPending={true}
+      isError={true}
+      isSuccess={false}
+      errorMessage={null}
     />
   );
 }

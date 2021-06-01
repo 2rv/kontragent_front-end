@@ -5,14 +5,28 @@ import { PhoneVerificationInfoContainer } from './frame/phone-vefirication-info-
 import { PhoneVerificationInfoFooterContainer } from './frame/phone-vefirication-info-footer';
 
 export function AuthPhoneVerificationInfoComponent(props) {
+  const {
+    phoneNumber,
+    initialValue,
+    pageLoading,
+    isPending,
+    isError,
+    isSuccess,
+    errorMessage,
+  } = props;
   return (
     <PrimaryBox>
       <IndentLayout>
         <SectionLayout>
           <PhoneVerificationInfoHeaderContainer />
           <PhoneVerificationInfoContainer
-            phoneNumber={props.phoneNumber}
-            initialValue={props.initialValue}
+            phoneNumber={phoneNumber}
+            initialValue={initialValue}
+            pageLoading={pageLoading}
+            isPending={isPending}
+            isError={isError}
+            isSuccess={isSuccess}
+            errorMessage={errorMessage}
           />
           <PhoneVerificationInfoFooterContainer />
         </SectionLayout>

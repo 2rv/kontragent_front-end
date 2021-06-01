@@ -5,6 +5,8 @@ import styled from 'styled-components';
 import { SecondaryText } from '../../../../lib/elements/text';
 import { PrimaryField } from '../../../../lib/elements/field';
 import { PrimaryButton } from '../../../../lib/elements/button';
+import { CommonLoader } from '../../../../lib/elements/loader';
+import { CommonError } from '../../../../lib/elements/error';
 
 import { THEME_COLOR, THEME_SIZE, THEME_VALUE } from '../../../../lib/theme';
 
@@ -19,15 +21,23 @@ export function PhoneVerificationInfoComponent(props) {
     errors,
     touched,
     isValid,
+    isSubmitting,
 
+    pageLoading,
     fieldVerificationCode,
+    isSuccess,
+    isPending,
+    isError,
+    errorMessage,
   } = props;
 
   const isFieldError = (name) => {
     return errors[name] && touched[name] && errors[name];
   };
   const isSubmitDisabled = () => {
-    return JSON.stringify(touched) === '{}' ? true : !isValid;
+    return JSON.stringify(touched) === '{}'
+      ? true
+      : !isValid || isSubmitting || isSuccess || pageLoading;
   };
 
   return (
@@ -53,6 +63,15 @@ export function PhoneVerificationInfoComponent(props) {
           tid="AUTH_PHONE_VERIFICATION_INFO.BUTTON"
           disabled={isSubmitDisabled()}
         />
+
+        {(isError || errorMessage) && (
+          <CommonError tid={`ERROR.${errorMessage}`} />
+        )}
+        {isPending && (
+          <LoaderLayout>
+            <CommonLoader width={17} height={17} />
+          </LoaderLayout>
+        )}
       </Container>
     </form>
   );
@@ -76,4 +95,9 @@ const Button = styled(PrimaryButton)`
   background-color: ${THEME_COLOR.COLOR.PRIMARY};
   color: ${THEME_COLOR.TEXT.BASE};
   width: 100%;
+`;
+
+const LoaderLayout = styled.div`
+  display: flex;
+  justify-content: center;
 `;
