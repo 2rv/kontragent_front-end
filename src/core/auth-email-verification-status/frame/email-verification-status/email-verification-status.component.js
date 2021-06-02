@@ -2,10 +2,12 @@ import React from 'react';
 
 import styled from 'styled-components';
 
-import { PrimaryTitleText } from '../../../../lib/elements/text';
-import { PrimaryButton } from '../../../../lib/elements/button';
-import { PrimaryText } from '../../../../lib/elements/text';
 import { PrimaryBox } from '../../../../lib/elements/box';
+import { IndentLayout } from '../../../../lib/elements/layout';
+
+import { PrimaryTitleText } from '../../../../lib/elements/text';
+import { PrimaryText } from '../../../../lib/elements/text';
+import { PrimaryButton } from '../../../../lib/elements/button';
 
 import { THEME_COLOR } from '../../../../lib/theme';
 
@@ -14,11 +16,13 @@ import { spacing } from '../../../../lib/theme';
 export function EmailVerificationStatusComponent() {
   return (
     <PrimaryBox>
-      <Header tid="AUTH_EMAIL_VERIFICATION_STATUS.HEADER" />
-      <MessageLayout>
-        <PrimaryText tid="AUTH_EMAIL_VERIFICATION_STATUS.MESSAGE" />
-      </MessageLayout>
-      <Button tid="AUTH_EMAIL_VERIFICATION_STATUS.BUTTON" />
+      <IndentLayout>
+        <Header tid="AUTH_EMAIL_VERIFICATION_STATUS.HEADER" />
+        <MessageLayout>
+          <PrimaryText tid="AUTH_EMAIL_VERIFICATION_STATUS.MESSAGE" />
+        </MessageLayout>
+        <Button tid="AUTH_EMAIL_VERIFICATION_STATUS.BUTTON" />
+      </IndentLayout>
     </PrimaryBox>
   );
 }
