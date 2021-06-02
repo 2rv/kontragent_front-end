@@ -39,10 +39,16 @@ const Input = styled.input`
   }
 
   &:-webkit-autofill {
-    border: 1px solid transparent;
+    border: ${(props: InputCommonPropsType) =>
+      props.isError
+        ? `1px solid ${THEME_COLOR.COLOR.VALIDATION}`
+        : '1px solid transparent'};
   }
   &:-webkit-autofill:hover {
-    border: 1px solid transparent;
+    border: ${(props: InputCommonPropsType) =>
+      props.isError
+        ? `1px solid ${THEME_COLOR.COLOR.VALIDATION}`
+        : '1px solid transparent'};
     opacity: ${THEME_VALUE.OPACITY.HOVER};
   }
   &:-webkit-autofill:focus {
