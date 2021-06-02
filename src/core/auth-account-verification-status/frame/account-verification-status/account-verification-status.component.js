@@ -54,5 +54,7 @@ const VerificationErrorReason = styled(PrimaryText)`
 `;
 
 const ErrorShorhand = styled(CommonError)`
+  display: flex;
+  justify-content: center;
   padding: ${spacing(4)};
 `;
