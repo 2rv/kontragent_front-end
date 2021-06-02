@@ -4,8 +4,6 @@ import { PrimaryBoxPropsType } from './type.box';
 
 import { THEME_SIZE, THEME_COLOR } from '../../theme';
 
-import { spacing } from '../../theme';
-
 export function PrimaryBox(props: PrimaryBoxPropsType) {
   return <Box>{props.children}</Box>;
 }
@@ -13,5 +11,4 @@ export function PrimaryBox(props: PrimaryBoxPropsType) {
 const Box = styled.div`
   border-radius: ${THEME_SIZE.RADIUS.BOX};
   background-color: ${THEME_COLOR.COLOR.BASE};
-  padding: ${spacing(8)};
 `;
