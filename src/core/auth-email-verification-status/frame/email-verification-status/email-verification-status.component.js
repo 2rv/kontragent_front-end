@@ -28,7 +28,7 @@ const Header = styled(PrimaryTitleText)`
 `;
 
 const MessageLayout = styled.div`
-  line-height: ${spacing(6)};
+  line-height: 1.5;
   margin-bottom: ${spacing(3)};
 `;
 
