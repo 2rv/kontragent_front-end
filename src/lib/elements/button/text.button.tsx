@@ -7,10 +7,10 @@ import { THEME_COLOR, THEME_SIZE, THEME_VALUE } from '../../theme';
 import { text } from '../../common/text';
 
 export function TextButton(props: ButtonPropsType) {
-  const { tid, disabled, className } = props;
+  const { tid, disabled, className, type = 'button' } = props;
 
   return (
-    <Button className={className} disabled={disabled}>
+    <Button type={type} className={className} disabled={disabled}>
       {text(tid)}
     </Button>
   );

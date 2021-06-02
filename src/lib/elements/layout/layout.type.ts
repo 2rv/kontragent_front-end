@@ -14,6 +14,6 @@ export interface IndentLayoutPropsType {
 }
 
 export interface SectionLayoutPropsType {
-  type?: 'DEFAULT' | undefined;
+  type?: 'DEFAULT' | 'MEDIUM' | 'SMALL' | undefined;
   children: React.ReactElement<any> | null;
 }

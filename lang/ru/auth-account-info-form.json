@@ -1,0 +1,32 @@
+{
+  "HEADER": "Заполнение данных",
+  "BUTTON": "Зарегистрироваться",
+  "PROPOSAL": "Не смогли зарегистрироваться?",
+  "PROPOSAL_ACTION": "Помощь",
+  "ACCOUNT_INFO_FORM": {
+    "FIELD": {
+      "FULLNAME": {
+        "TITLE": "Ваше ФИО",
+        "PLACEHOLDER": "Илья Зинченко Андреевич"
+      }
+    }
+  },
+  "COMPANY_INFO_FORM": {
+    "FIELD": {
+      "COMPANY_NAME": {
+        "TITLE": "Название компании",
+        "PLACEHOLDER": "ООО Contragent"
+      },
+      "INN": {
+        "TITLE": "ИНН",
+        "PLACEHOLDER": "123 123 123"
+      },
+      "POSITION": {
+        "TITLE": "Должность в компании",
+        "PLACEHOLDER": "Менеджер"
+      }
+    },
+    "BUTTON": "Добавить компанию",
+    "FORM_ACTION": "Удалить компанию"
+  }
+}

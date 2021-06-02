@@ -6,10 +6,12 @@ export const THEME_SIZE = {
     DEFAULT: '0.7',
   },
   INDENT: {
-    DEFAULT: '24px',
+    DEFAULT: '32px',
   },
   SECTION: {
     DEFAULT: '16px',
+    MEDIUM: '12px',
+    SMALL: '8px',
   },
   LAYOUT: {
     DEFAULT: '1200px',
