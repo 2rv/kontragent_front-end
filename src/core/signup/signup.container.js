@@ -1,11 +1,6 @@
 import React from 'react';
 
-import styled from 'styled-components';
-
-import { SignupFormContainer } from '../signup/frame/signup-form';
-import { SignupHeaderComponent } from './frame/signup-header';
-import { SignupFooterComponent } from './frame/signup-footer';
-import { PrimaryBox } from '../../lib/elements/box';
+import { SignupComponent } from './signup.component';
 
 import { useDispatch, useSelector } from 'react-redux';
 
@@ -28,8 +23,6 @@ import {
   isRequestSuccess,
 } from '../../main/store/store.service';
 
-import { spacing } from '../../lib/theme';
-
 export function SignupContainer() {
   const dispatch = useDispatch();
   const { state, pageLoading } = useSelector((state) => ({
@@ -51,27 +44,16 @@ export function SignupContainer() {
   };
 
   return (
-    <PrimaryBox>
-      <SignupContainerLayout>
-        <SignupHeaderComponent />
-        <SignupFormContainer
-          isPending={isRequestPending(state.signupForm)}
-          isError={isRequestError(state.signupForm)}
-          isSuccess={isRequestSuccess(state.signupForm)}
-          initialValue={signupFormGetInitialValue()}
-          validation={signupFormValidation}
-          onSubmitForm={signupFormSendData}
-          fieldName={SIGNUP_FORM_FIELD_NAME}
-          pageLoading={pageLoading}
-          errorMessage={getRequestErrorMessage(state.signupForm)}
-        />
-        <SignupFooterComponent />
-      </SignupContainerLayout>
-    </PrimaryBox>
+    <SignupComponent
+      isPending={isRequestPending(state.signupForm)}
+      isError={isRequestError(state.signupForm)}
+      isSuccess={isRequestSuccess(state.signupForm)}
+      initialValue={signupFormGetInitialValue()}
+      validation={signupFormValidation}
+      onSubmitForm={signupFormSendData}
+      fieldName={SIGNUP_FORM_FIELD_NAME}
+      pageLoading={pageLoading}
+      errorMessage={getRequestErrorMessage(state.signupForm)}
+    />
   );
 }
-
-const SignupContainerLayout = styled.div`
-  display: grid;
-  gap: ${spacing(4)};
-`;

@@ -1,1 +1,1 @@
-export { LoginFooterComponent } from './login-footer.component'
+export { LoginFooterContainer } from './login-footer.container';
