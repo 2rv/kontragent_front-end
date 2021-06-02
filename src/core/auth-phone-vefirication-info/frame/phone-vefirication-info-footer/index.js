@@ -1,1 +1,1 @@
-export { AuthPhoneVerificationInfoFooterComponent } from './phone-vefirication-info-footer.component';
+export { PhoneVerificationInfoFooterContainer } from './phone-vefirication-info-footer.container';

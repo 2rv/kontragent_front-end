@@ -12,3 +12,8 @@ export interface IndentLayoutPropsType {
   type?: 'DEFAULT' | undefined;
   children?: React.ReactElement<any> | null;
 }
+
+export interface SectionLayoutPropsType {
+  type?: 'DEFAULT' | undefined;
+  children: React.ReactElement<any> | null;
+}

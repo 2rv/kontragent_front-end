@@ -8,6 +8,9 @@ export const THEME_SIZE = {
   INDENT: {
     DEFAULT: '24px',
   },
+  SECTION: {
+    DEFAULT: '16px',
+  },
   LAYOUT: {
     DEFAULT: '1200px',
     SMALL: '424px',
