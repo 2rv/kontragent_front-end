@@ -8,7 +8,8 @@ import { SIGNUP_FORM_FIELD_KEY } from './signup-form.type';
 export function SignupFormContainer(props) {
   const LOGIN_NAME = props.fieldName[SIGNUP_FORM_FIELD_KEY.LOGIN];
   const PASSOWORD_NAME = props.fieldName[SIGNUP_FORM_FIELD_KEY.PASSWORD];
-  const PASSWORD_REPEAT_NAME = props.fieldName[SIGNUP_FORM_FIELD_KEY.PASSWORD_REPEAT];
+  const PASSWORD_REPEAT_NAME =
+    props.fieldName[SIGNUP_FORM_FIELD_KEY.PASSWORD_REPEAT];
   const EMAIL_NAME = props.fieldName[SIGNUP_FORM_FIELD_KEY.EMAIL];
   const { isPending, isError, isSuccess, errorMessage, pageLoading } = props;
   return (

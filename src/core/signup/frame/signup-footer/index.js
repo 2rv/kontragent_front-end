@@ -1,1 +1,1 @@
-export { SignupFooterComponent } from './signup-footer.component'
+export { SignupFooterContainer } from './signup-footer.container';

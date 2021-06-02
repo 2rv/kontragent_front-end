@@ -2,8 +2,9 @@ import React from 'react';
 
 import styled from 'styled-components';
 
-import { PrimaryField } from '../../../../lib/elements/field';
+import { SectionLayout } from '../../../../lib/elements/layout';
 import { FieldLayout } from '../../../../lib/elements/layout';
+import { PrimaryField } from '../../../../lib/elements/field';
 import { PrimaryButton } from '../../../../lib/elements/button';
 import { CommonLoader } from '../../../../lib/elements/loader';
 import { CommonError } from '../../../../lib/elements/error';
@@ -12,23 +13,22 @@ import { spacing } from '../../../../lib/theme';
 
 export function LoginFormComponent(props) {
   const {
-    fieldLogin,
-    fieldPassword,
-
-    values,
-    errors,
-    touched,
     handleChange,
     handleBlur,
     handleSubmit,
+    values,
+    errors,
+    touched,
     isValid,
     isSubmitting,
 
+    fieldLogin,
+    fieldPassword,
+    pageLoading,
+    isSuccess,
     isPending,
     isError,
-    isSuccess,
     errorMessage,
-    pageLoading,
   } = props;
 
   const isFieldError = (name) => {
@@ -36,12 +36,14 @@ export function LoginFormComponent(props) {
   };
 
   const isSubmitDisabled = () => {
-    return JSON.stringify(touched) === '{}' ? true : !isValid;
+    return JSON.stringify(touched) === '{}'
+      ? true
+      : !isValid || isSubmitting || isSuccess || pageLoading;
   };
 
   return (
     <form onSubmit={handleSubmit}>
-      <Container>
+      <SectionLayout>
         <FieldLayout>
           <PrimaryField
             titleTid="LOGIN.LOGIN_FORM.FIELD.LOGIN.TITLE"
@@ -69,13 +71,15 @@ export function LoginFormComponent(props) {
           disabled={isSubmitDisabled()}
         />
 
-        {errorMessage && <CommonError tid={`ERROR.${errorMessage}`} />}
+        {(isError || errorMessage) && (
+          <CommonError tid={`ERROR.${errorMessage}`} />
+        )}
         {isPending && (
           <LoaderLayout>
             <CommonLoader width={17} height={17} />
           </LoaderLayout>
         )}
-      </Container>
+      </SectionLayout>
     </form>
   );
 }
@@ -83,9 +87,4 @@ export function LoginFormComponent(props) {
 const LoaderLayout = styled.div`
   display: flex;
   justify-content: center;
-`;
-
-const Container = styled.div`
-  display: grid;
-  gap: ${spacing(4)};
 `;
