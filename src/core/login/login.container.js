@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { LoginFormContainer } from '../login/frame/login-form';
+import { LoginComponent } from './login.component';
 
 import { useDispatch, useSelector } from 'react-redux';
 
@@ -22,7 +22,6 @@ import {
   isRequestPending,
   isRequestSuccess,
 } from '../../main/store/store.service';
-import { spacing } from '../../lib/theme';
 
 export function LoginContainer() {
   const dispatch = useDispatch();
@@ -43,7 +42,7 @@ export function LoginContainer() {
   };
 
   return (
-    <LoginFormContainer
+    <LoginComponent
       isPending={isRequestPending(state.loginForm)}
       isError={isRequestError(state.loginForm)}
       isSuccess={isRequestSuccess(state.loginForm)}

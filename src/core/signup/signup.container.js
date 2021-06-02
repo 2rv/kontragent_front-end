@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { SignupFormContainer } from '../signup/frame/signup-form';
+import { SignupComponent } from './signup.component';
 
 import { useDispatch, useSelector } from 'react-redux';
 
@@ -44,7 +44,7 @@ export function SignupContainer() {
   };
 
   return (
-    <SignupFormContainer
+    <SignupComponent
       isPending={isRequestPending(state.signupForm)}
       isError={isRequestError(state.signupForm)}
       isSuccess={isRequestSuccess(state.signupForm)}
