@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import styled from 'styled-components';
 import { FormErrorPropsType } from './type.error';
-import { THEME_COLOR, THEME_VALUE } from '../../theme';
+import { THEME_COLOR } from '../../theme';
 import { THEME_SIZE } from '../../theme/theme.size';
 import { spacing } from '../../theme';
 import { text } from '../../common/text';
@@ -27,5 +27,5 @@ const Error = styled.div`
   border-radius: ${THEME_SIZE.RADIUS.CARD};
   padding: ${spacing(3)};
   font-size: ${THEME_SIZE.FONT.SMALL};
-  line-height: ${THEME_VALUE.LINE_HEIGHT.NORMAL};
+  line-height: 1.5;
 `;

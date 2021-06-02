@@ -11,10 +11,6 @@ export const THEME_VALUE = {
     BLACK: 900,
   },
 
-  LINE_HEIGHT: {
-    NORMAL: '17px',
-  },
-
   OPACITY: {
     DISABLE: 0.6,
     HOVER: 0.8,

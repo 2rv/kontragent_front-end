@@ -3,7 +3,7 @@ import React from 'react';
 import { SecondaryText } from '../../../../lib/elements/text';
 import { TextButton } from '../../../../lib/elements/button';
 
-export function AuthPhoneVerificationInfoFooterComponent() {
+export function PhoneVerificationInfoFooterComponent() {
   return (
     <div>
       <SecondaryText tid="AUTH_PHONE_VERIFICATION_INFO.PROPOSAL" />
