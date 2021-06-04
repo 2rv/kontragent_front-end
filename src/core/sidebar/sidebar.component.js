@@ -12,7 +12,7 @@ import { spacing } from '../../lib/theme';
 
 export function SidebarComponent() {
   return (
-    <PrimaryBox>
+    <SidebarBox>
       <SideBarIndent>
         <LogotypeContainer />
 
@@ -28,9 +28,14 @@ export function SidebarComponent() {
 
         <SidebarAdvertContainer />
       </SideBarIndent>
-    </PrimaryBox>
+    </SidebarBox>
   );
 }
+
+const SidebarBox = styled(PrimaryBox)`
+  min-height: 100vh;
+  border-radius: 0;
+`;
 
 const SideBarIndent = styled(IndentLayout)`
   padding-right: ${spacing(9)};
