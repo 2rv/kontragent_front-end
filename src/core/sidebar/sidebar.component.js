@@ -5,6 +5,7 @@ import { NavMenuContainer } from './frame/nav-menu';
 import { LogotypeContainer } from './frame/logotype';
 import { AccountInfoContainer } from './frame/account-info';
 import { SidebarAdvertContainer } from './frame/sidebar-advert';
+import { PrimaryDivider } from '../../lib/elements/divider';
 
 import styled from 'styled-components';
 import { spacing } from '../../lib/theme';
@@ -12,18 +13,32 @@ import { spacing } from '../../lib/theme';
 export function SidebarComponent() {
   return (
     <PrimaryBox>
-      <SideBarIndentLayout>
-        <SectionLayout>
-          <LogotypeContainer />
+      <SideBarIndent>
+        <LogotypeContainer />
+
+        <Container>
+          <PrimaryDivider />
+
           <AccountInfoContainer />
+
+          <PrimaryDivider />
+
           <NavMenuContainer />
-          <SidebarAdvertContainer />
-        </SectionLayout>
-      </SideBarIndentLayout>
+        </Container>
+
+        <SidebarAdvertContainer />
+      </SideBarIndent>
     </PrimaryBox>
   );
 }
 
-const SideBarIndentLayout = styled(IndentLayout)`
+const SideBarIndent = styled(IndentLayout)`
   padding-right: ${spacing(9)};
+`;
+
+const Container = styled.div`
+  display: grid;
+  gap: ${spacing(6)};
+  padding-top: ${spacing(8)};
+  padding-bottom: ${spacing(20)};
 `;
