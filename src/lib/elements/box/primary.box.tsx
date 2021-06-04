@@ -10,6 +10,6 @@ export function PrimaryBox(props: PrimaryBoxPropsType) {
 }
 
 const Box = styled.div`
-  border-radius: ${THEME_SIZE.RADIUS.BOX};
+  border-radius: ${THEME_SIZE.RADIUS.DEFAULT};
   background-color: ${THEME_COLOR.COLOR.BASE};
 `;
