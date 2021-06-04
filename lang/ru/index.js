@@ -7,6 +7,7 @@ import LOGIN from './login.json';
 import AUTH_ACCOUNT_VERIFICATION_STATUS from './auth-account-verifiction-status.json';
 import AUTH_EMAIL_VERIFICATION_STATUS from './auth-email-verifiction-status.json';
 import AUTH_PHONE_VERIFICATION_INFO from './auth-phone-vefirication-info.json';
+import SIDEBAR from './sideabar.json';
 
 export const RU = {
   translation: {
@@ -19,5 +20,6 @@ export const RU = {
     AUTH_ACCOUNT_VERIFICATION_STATUS,
     AUTH_EMAIL_VERIFICATION_STATUS,
     AUTH_PHONE_VERIFICATION_INFO,
+    SIDEBAR,
   },
 };

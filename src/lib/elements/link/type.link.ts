@@ -9,4 +9,5 @@ export interface PrimaryLinkPropsType {
     scrollTop: boolean;
     shallow: boolean;
   };
+  className?: any;
 }

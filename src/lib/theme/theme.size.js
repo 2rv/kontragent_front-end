@@ -10,6 +10,7 @@ export const THEME_SIZE = {
   },
   SECTION: {
     DEFAULT: '16px',
+    MEDIUM: '18px',
   },
   LAYOUT: {
     DEFAULT: '1200px',
@@ -19,6 +20,7 @@ export const THEME_SIZE = {
     DEFAULT: '16px',
     SMALL: '14px',
     MEDIUM: '22px',
+    LARGE: '26px',
   },
   RADIUS: {
     FIELD: '5px',
