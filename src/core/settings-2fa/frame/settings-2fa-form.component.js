@@ -1,17 +1,12 @@
-import React from 'react';
-
 import styled from 'styled-components';
+import { SectionLayout, FormLayout } from '../../../lib/elements/layout';
+import { PrimaryField } from '../../../lib/elements/field';
+import { PrimaryButton } from '../../../lib/elements/button';
+import { CommonError } from '../../../lib/elements/error';
+import { CommonLoader } from '../../../lib/elements/loader';
+import { THEME_COLOR } from '../../../lib/theme';
 
-import { SectionLayout } from '../../../../lib/elements/layout';
-import { FormLayout } from '../../../../lib/elements/layout';
-import { PrimaryField } from '../../../../lib/elements/field';
-import { PrimaryButton } from '../../../../lib/elements/button';
-import { CommonLoader } from '../../../../lib/elements/loader';
-import { CommonError } from '../../../../lib/elements/error';
-
-import { spacing } from '../../../../lib/theme';
-
-export function LoginFormComponent(props) {
+export function Settings2FAFormComponent(props) {
   const {
     handleChange,
     handleBlur,
@@ -22,15 +17,13 @@ export function LoginFormComponent(props) {
     isValid,
     isSubmitting,
 
-    fieldLogin,
-    fieldPassword,
     pageLoading,
+    fieldPhoneNumber,
     isSuccess,
     isPending,
     isError,
     errorMessage,
   } = props;
-
   const isFieldError = (name) => {
     return errors[name] && touched[name] && errors[name];
   };
@@ -44,36 +37,29 @@ export function LoginFormComponent(props) {
   return (
     <form onSubmit={handleSubmit}>
       <SectionLayout>
-        <FormLayout>
+        <FormLayout type="double">
           <PrimaryField
             titleTid="LOGIN.LOGIN_FORM.FIELD.LOGIN.TITLE"
             placeholderTid="LOGIN.LOGIN_FORM.FIELD.LOGIN.PLACEHOLDER"
-            name={fieldLogin}
+            name={fieldPhoneNumber}
             onChange={handleChange}
             onBlur={handleBlur}
-            value={values[fieldLogin]}
-            error={isFieldError(fieldLogin)}
+            value={values[fieldPhoneNumber]}
+            error={isFieldError(fieldPhoneNumber)}
           />
 
-          <PrimaryField
-            titleTid="LOGIN.LOGIN_FORM.FIELD.PASSWORD.TITLE"
-            placeholderTid="LOGIN.LOGIN_FORM.FIELD.PASSWORD.PLACEHOLDER"
-            name={fieldPassword}
-            onChange={handleChange}
-            onBlur={handleBlur}
-            value={values[fieldPassword]}
-            error={isFieldError(fieldPassword)}
-            type="password"
-          />
+          <ButtonLayout>
+            <Button
+              tid="LOGIN.LOGIN_FORM.BUTTON"
+              disabled={isSubmitDisabled()}
+            />
+          </ButtonLayout>
         </FormLayout>
-        <PrimaryButton
-          tid="LOGIN.LOGIN_FORM.BUTTON"
-          disabled={isSubmitDisabled()}
-        />
 
         {(isError || errorMessage) && (
           <CommonError tid={`ERROR.${errorMessage}`} />
         )}
+
         {isPending && (
           <LoaderLayout>
             <CommonLoader width={17} height={17} />
@@ -83,6 +69,15 @@ export function LoginFormComponent(props) {
     </form>
   );
 }
+
+const ButtonLayout = styled.div`
+  align-self: end;
+`;
+
+const Button = styled(PrimaryButton)`
+  color: ${THEME_COLOR.TEXT.BASE};
+  background-color: ${THEME_COLOR.COLOR.PRIMARY};
+`;
 
 const LoaderLayout = styled.div`
   display: flex;

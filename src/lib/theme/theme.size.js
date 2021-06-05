@@ -21,7 +21,7 @@ export const THEME_SIZE = {
     MEDIUM: '22px',
   },
   RADIUS: {
-    FIELD: '5px',
+    FIELD: '10px',
     CARD: '10px',
     BUTTON: '10px',
     BOX: '10px',
