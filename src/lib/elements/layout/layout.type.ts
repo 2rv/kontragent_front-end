@@ -17,3 +17,8 @@ export interface SectionLayoutPropsType {
   type?: 'DEFAULT' | undefined;
   children: React.ReactElement<any> | null;
 }
+
+export interface FieldLayoutPropsType {
+  type?: 'double' | undefined;
+  children: React.ReactElement<any> | null;
+}
