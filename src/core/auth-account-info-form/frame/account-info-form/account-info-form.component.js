@@ -3,10 +3,10 @@ import React from 'react';
 import { CompanyInfoFormContainer } from '../company-info-form';
 
 import styled from 'styled-components';
-import { spacing, THEME_COLOR } from '../../../../lib/theme';
+import { THEME_COLOR } from '../../../../lib/theme';
 
 import { SectionLayout } from '../../../../lib/elements/layout';
-import { FieldLayout } from '../../../../lib/elements/layout';
+import { FormLayout } from '../../../../lib/elements/layout';
 import { PrimaryField } from '../../../../lib/elements/field';
 import { PrimaryButton } from '../../../../lib/elements/button';
 import { CommonLoader } from '../../../../lib/elements/loader';
@@ -45,7 +45,7 @@ export function AccountInfoFormComponent(props) {
     <form onSubmit={handleSubmit}>
       <SectionLayout>
         <SectionLayout type="MEDIUM">
-          <FieldLayout>
+          <FormLayout>
             <PrimaryField
               titleTid="AUTH_ACCOUNT_INFO_FORM.ACCOUNT_INFO_FORM.FIELD.FULLNAME.TITLE"
               placeholderTid="AUTH_ACCOUNT_INFO_FORM.ACCOUNT_INFO_FORM.FIELD.FULLNAME.PLACEHOLDER"
@@ -55,13 +55,11 @@ export function AccountInfoFormComponent(props) {
               value={values[fieldFullName]}
               error={isFieldError(fieldFullName)}
             />
-          </FieldLayout>
+          </FormLayout>
 
           <Line />
 
-          <SectionLayout type="MEDIUM">
-            <CompanyInfoFormContainer />
-          </SectionLayout>
+          <CompanyInfoFormContainer />
         </SectionLayout>
 
         <SectionLayout type="SMALL">

@@ -11,6 +11,7 @@ export function AuthAccoutInfoFormConmponent(props) {
     errorMessage,
     pageLoading,
     initialValue,
+    accountInfoFormFieldName,
   } = props;
 
   return (
@@ -25,6 +26,7 @@ export function AuthAccoutInfoFormConmponent(props) {
             isSuccess={isSuccess}
             errorMessage={errorMessage}
             pageLoading={pageLoading}
+            accountInfoFormFieldName={accountInfoFormFieldName}
           />
           <AccountInfoFooterContainer />
         </SectionLayout>
