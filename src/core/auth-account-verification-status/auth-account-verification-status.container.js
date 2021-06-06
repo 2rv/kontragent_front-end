@@ -1,7 +1,7 @@
 import React from 'react';
 
-import { AccountVerificationStatusContainer } from './frame/account-verification-status';
+import { AuthAccountVerificationStatusComponent } from './auth-account-verification-status.component';
 
 export function AuthAccountVerificationStatusContainer() {
-  return <AccountVerificationStatusContainer />;
+  return <AuthAccountVerificationStatusComponent />;
 }

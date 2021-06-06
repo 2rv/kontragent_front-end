@@ -8,7 +8,7 @@ import { text } from '../../common/text';
 
 export function CommonError(props: FormErrorPropsType) {
   return (
-    <Error>
+    <Error className={props.className}>
       <Image src="/static/img/error.svg" width={16} height={16} />
       <ErrorText>{text(props.tid, 'Неизвестная ошибка.')}</ErrorText>
     </Error>
