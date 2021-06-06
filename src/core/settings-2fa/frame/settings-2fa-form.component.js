@@ -1,10 +1,10 @@
 import styled from 'styled-components';
-import { SectionLayout, FormLayout } from '../../../lib/elements/layout';
+import { SectionLayout } from '../../../lib/elements/layout';
+import { SecondaryTitleText } from '../../../lib/elements/text';
 import { PrimaryField } from '../../../lib/elements/field';
-import { PrimaryButton } from '../../../lib/elements/button';
+import { SecondaryButton } from '../../../lib/elements/button';
 import { CommonError } from '../../../lib/elements/error';
-import { CommonLoader } from '../../../lib/elements/loader';
-import { THEME_COLOR } from '../../../lib/theme';
+import { spacing } from '../../../lib/theme';
 
 export function Settings2FAFormComponent(props) {
   const {
@@ -35,51 +35,43 @@ export function Settings2FAFormComponent(props) {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <SectionLayout>
-        <FormLayout type="double">
-          <PrimaryField
-            titleTid="LOGIN.LOGIN_FORM.FIELD.LOGIN.TITLE"
-            placeholderTid="LOGIN.LOGIN_FORM.FIELD.LOGIN.PLACEHOLDER"
-            name={fieldPhoneNumber}
-            onChange={handleChange}
-            onBlur={handleBlur}
-            value={values[fieldPhoneNumber]}
-            error={isFieldError(fieldPhoneNumber)}
-          />
+    <SectionLayout>
+      <SecondaryTitleText tid="LOGIN.LOGIN_FORM.HEADER" />
+      <form onSubmit={handleSubmit}>
+        <SectionLayout>
+          <Settings2FALayout>
+            <PrimaryField
+              titleTid="LOGIN.LOGIN_FORM.FIELD.LOGIN.TITLE"
+              placeholderTid="LOGIN.LOGIN_FORM.FIELD.LOGIN.PLACEHOLDER"
+              name={fieldPhoneNumber}
+              onChange={handleChange}
+              onBlur={handleBlur}
+              value={values[fieldPhoneNumber]}
+              error={isFieldError(fieldPhoneNumber)}
+            />
 
-          <ButtonLayout>
             <Button
               tid="LOGIN.LOGIN_FORM.BUTTON"
               disabled={isSubmitDisabled()}
             />
-          </ButtonLayout>
-        </FormLayout>
+          </Settings2FALayout>
 
-        {(isError || errorMessage) && (
-          <CommonError tid={`ERROR.${errorMessage}`} />
-        )}
-
-        {isPending && (
-          <LoaderLayout>
-            <CommonLoader width={17} height={17} />
-          </LoaderLayout>
-        )}
-      </SectionLayout>
-    </form>
+          {(isError || errorMessage) && (
+            <CommonError tid={`ERROR.${errorMessage}`} />
+          )}
+        </SectionLayout>
+      </form>
+    </SectionLayout>
   );
 }
 
-const ButtonLayout = styled.div`
-  align-self: end;
+const Settings2FALayout = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-row-gap: ${spacing(3)};
+  grid-column-gap: ${spacing(3)};
 `;
 
-const Button = styled(PrimaryButton)`
-  color: ${THEME_COLOR.TEXT.BASE};
-  background-color: ${THEME_COLOR.COLOR.PRIMARY};
-`;
-
-const LoaderLayout = styled.div`
-  display: flex;
-  justify-content: center;
+const Button = styled(SecondaryButton)`
+  align-self: flex-end;
 `;

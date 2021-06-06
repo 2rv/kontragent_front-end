@@ -16,9 +16,12 @@ export const THEME_SIZE = {
     SMALL: '424px',
   },
   FONT: {
-    DEFAULT: '16px',
+    TINY: '12px',
     SMALL: '14px',
-    MEDIUM: '22px',
+    DEFAULT: '16px',
+    MEDIUM: '20px',
+    LARGE: '22px',
+    HUGE: '26px',
   },
   RADIUS: {
     FIELD: '10px',

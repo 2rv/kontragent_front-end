@@ -18,7 +18,7 @@ export interface SectionLayoutPropsType {
   children: React.ReactElement<any> | null;
 }
 
-export interface FormLayoutPropsType {
+export interface GridLayoutPropsType {
   type?: 'double' | undefined;
   children: React.ReactElement<any> | null;
 }
