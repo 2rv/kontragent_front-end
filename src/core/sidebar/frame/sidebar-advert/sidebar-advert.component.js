@@ -4,9 +4,10 @@ import { THEME_COLOR, THEME_SIZE, THEME_VALUE } from '../../../../lib/theme';
 import { PrimaryBox } from '../../../../lib/elements/box';
 import { SecondaryText } from '../../../../lib/elements/text';
 
-export function SidebarAdvertComponent() {
+export function SidebarAdvertComponent(props) {
+  const { backgroungImageURL = 'https://via.placeholder.com/350' } = props;
   return (
-    <SidebaerAdvertLayout>
+    <SidebaerAdvertLayout backgroungImageURL={backgroungImageURL}>
       <AdvertInfoCardLayout>
         <AdvertInfoCardText tid="ADVERT.ADVERT_INFO" />
       </AdvertInfoCardLayout>
@@ -22,7 +23,7 @@ const SidebaerAdvertLayout = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background: no-repeat center url('https://via.placeholder.com/400');
+  background: ${(props) => `no-repeat center url(${props.backgroungImageURL})`};
   border-radius: ${THEME_SIZE.RADIUS.DEFAULT};
 `;
 
