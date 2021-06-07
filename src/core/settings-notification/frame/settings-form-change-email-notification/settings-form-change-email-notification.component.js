@@ -1,3 +1,4 @@
+import styled from 'styled-components';
 import { SectionLayout } from '../../../../lib/elements/layout';
 import { SecondaryTitleText } from '../../../../lib/elements/text';
 import { TertiaryText } from '../../../../lib/elements/text';
@@ -37,16 +38,16 @@ export function SettingsFormChangeNotificationComponent(props) {
   return (
     <SectionLayout>
       <SectionLayout type="SMALL">
-        <SecondaryTitleText tid="LOGIN.LOGIN_FORM.HEADER" />
-        <TertiaryText tid="LOGIN.LOGIN_FORM.HEADER" />
+        <SecondaryTitleText tid="SETTINGS.NOTIFICATION.TITLE" />
+        <Subtitle tid="SETTINGS.NOTIFICATION.SUBTITLE" />
       </SectionLayout>
 
       <form onSubmit={handleSubmit}>
         <SectionLayout>
           <SectionLayout type="MEDIUM">
             <PrimaryField
-              titleTid="LOGIN.LOGIN_FORM.FIELD.LOGIN.TITLE"
-              placeholderTid="LOGIN.LOGIN_FORM.FIELD.LOGIN.PLACEHOLDER"
+              titleTid="SETTINGS.NOTIFICATION.FIELD.EMAIL.TITLE"
+              placeholderTid="SETTINGS.NOTIFICATION.FIELD.EMAIL.PLACEHOLDER"
               name={fieldEmail}
               onChange={handleChange}
               onBlur={handleBlur}
@@ -54,7 +55,7 @@ export function SettingsFormChangeNotificationComponent(props) {
               error={isFieldError(fieldEmail)}
             />
             <SecondaryButton
-              tid="LOGIN.LOGIN_FORM.BUTTON"
+              tid="SETTINGS.NOTIFICATION.BUTTON"
               disabled={isSubmitDisabled()}
             />
           </SectionLayout>
@@ -67,3 +68,7 @@ export function SettingsFormChangeNotificationComponent(props) {
     </SectionLayout>
   );
 }
+
+const Subtitle = styled(TertiaryText)`
+  line-height: 1.5;
+`;
