@@ -21,8 +21,8 @@ export function PrimaryInput(props: InputCommonPropsType) {
 const Input = styled.input`
   background: ${(props: InputCommonPropsType) =>
     !props.isError ? THEME_COLOR.COLOR.SECONDARY : THEME_COLOR.COLOR.BASE};
-  border-radius: ${THEME_SIZE.RADIUS.FIELD};
-  padding: ${spacing(3)};
+  border-radius: ${THEME_SIZE.RADIUS.DEFAULT};
+  padding: ${spacing(4)};
   font-size: ${THEME_SIZE.FONT.SMALL};
 
   border: ${(props: InputCommonPropsType) =>

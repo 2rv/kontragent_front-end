@@ -19,6 +19,7 @@ export function PrimaryButton(props: ButtonPropsType) {
 
 const Button = styled.button`
   background-color: ${THEME_COLOR.COLOR.ACCENT};
+  width: 100%;
   color: ${THEME_COLOR.TEXT.BASE};
   border-radius: ${THEME_SIZE.RADIUS.DEFAULT};
   font-size: ${THEME_SIZE.FONT.DEFAULT};

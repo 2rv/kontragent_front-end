@@ -13,7 +13,7 @@ export function PrimaryTitleText(props: TextPropsType) {
 }
 
 const Title = styled.h2`
-  font-size: ${THEME_SIZE.FONT.MEDIUM};
+  font-size: ${THEME_SIZE.FONT.LARGE};
   color: ${THEME_COLOR.TEXT.PRIMARY};
   font-weight: ${THEME_VALUE.FONT_WEIGHT.BOLD};
 `;

@@ -18,3 +18,8 @@ export interface SectionLayoutPropsType {
   type?: 'DEFAULT' | 'MEDIUM' | 'SMALL' | undefined;
   children: React.ReactElement<any> | null;
 }
+
+export interface GridLayoutPropsType {
+  type?: 'double' | undefined;
+  children: React.ReactElement<any> | null;
+}

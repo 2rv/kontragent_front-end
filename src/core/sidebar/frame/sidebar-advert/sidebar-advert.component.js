@@ -45,7 +45,7 @@ const AdvertInfoCardText = styled(SecondaryText)`
 `;
 
 const AdvertText = styled.div`
-  font-size: ${THEME_SIZE.FONT.PRIMARY};
+  font-size: ${THEME_SIZE.FONT.MEDIUM};
   font-weight: ${THEME_VALUE.FONT_WEIGHT.BOLD};
   color: ${THEME_COLOR.TEXT.BASE};
   line-height: 1.5;

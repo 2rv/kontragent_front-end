@@ -13,20 +13,20 @@ export const THEME_SIZE = {
     DEFAULT: '16px',
     MEDIUM: '12px',
     SMALL: '8px',
+  },
   LAYOUT: {
     DEFAULT: '1200px',
     SMALL: '424px',
   },
   FONT: {
-    DEFAULT: '16px',
-    SMALL: '14px',
     TINY: '12px',
-    PRIMARY: '20px',
-    MEDIUM: '22px',
-    LARGE: '26px',
+    SMALL: '14px',
+    DEFAULT: '16px',
+    MEDIUM: '20px',
+    LARGE: '22px',
+    HUGE: '26px',
   },
   RADIUS: {
-    FIELD: '5px',
     DEFAULT: '10px',
   },
 };
