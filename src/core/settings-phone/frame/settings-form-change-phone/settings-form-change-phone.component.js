@@ -67,7 +67,7 @@ export function SettingsFormChangePhoneComponent(props) {
           </FieldLayout>
 
           <ButtonLayout type="double">
-            <Button
+            <SecondaryButton
               tid="LOGIN.LOGIN_FORM.BUTTON"
               disabled={isSubmitDisabled()}
             />
@@ -81,7 +81,3 @@ export function SettingsFormChangePhoneComponent(props) {
     </SectionLayout>
   );
 }
-
-const Button = styled(SecondaryButton)`
-  align-self: flex-end;
-`;
