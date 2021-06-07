@@ -11,8 +11,8 @@ export const THEME_SIZE = {
   },
   SECTION: {
     DEFAULT: '16px',
-    MEDIUM: '18px',
-  },
+    MEDIUM: '12px',
+    SMALL: '8px',
   LAYOUT: {
     DEFAULT: '1200px',
     SMALL: '424px',
