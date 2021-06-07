@@ -1,7 +1,7 @@
 import { Formik } from 'formik';
 import { SettingsFormChangeEmailComponent } from './settings-form-change-email.component';
 
-import { FIELD_FORM_CHANGE_EMAIL_FIELD_KEY } from './settings-form-change-email.type';
+import { SETTINGS_FORM_CHANGE_EMAIL_FIELD_KEY } from './settings-form-change-email.type';
 
 export function SettingsFormChangeEmailContainer(props) {
   const {
@@ -15,9 +15,9 @@ export function SettingsFormChangeEmailContainer(props) {
   } = props;
 
   const EMAIL_NAME =
-      settingsEmailFieldName[FIELD_FORM_CHANGE_EMAIL_FIELD_KEY.EMAIL],
+      settingsEmailFieldName[SETTINGS_FORM_CHANGE_EMAIL_FIELD_KEY.EMAIL],
     PASSWORD_NAME =
-      settingsEmailFieldName[FIELD_FORM_CHANGE_EMAIL_FIELD_KEY.PASSWORD];
+      settingsEmailFieldName[SETTINGS_FORM_CHANGE_EMAIL_FIELD_KEY.PASSWORD];
 
   return (
     <div>
