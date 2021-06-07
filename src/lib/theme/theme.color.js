@@ -2,6 +2,7 @@ export const THEME_COLOR = {
   TEXT: {
     PRIMARY: '#252525',
     SECONDARY: '#707070',
+    TERTIARY: '#B5B5B5',
     ACCENT: '#3AB8FF',
     DARK_SECONDARY: '#5F5B5D',
     BASE: '#FFFFFF',
