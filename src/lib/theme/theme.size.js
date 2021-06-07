@@ -6,10 +6,12 @@ export const THEME_SIZE = {
     DEFAULT: '0.7',
   },
   INDENT: {
-    DEFAULT: '24px',
+    DEFAULT: '32px',
+    SMALL: '12px',
   },
   SECTION: {
     DEFAULT: '16px',
+    MEDIUM: '18px',
   },
   LAYOUT: {
     DEFAULT: '1200px',
@@ -18,12 +20,13 @@ export const THEME_SIZE = {
   FONT: {
     DEFAULT: '16px',
     SMALL: '14px',
+    TINY: '12px',
+    PRIMARY: '20px',
     MEDIUM: '22px',
+    LARGE: '26px',
   },
   RADIUS: {
     FIELD: '5px',
-    CARD: '10px',
-    BUTTON: '10px',
-    BOX: '10px',
+    DEFAULT: '10px',
   },
 };

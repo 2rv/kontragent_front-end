@@ -3,4 +3,5 @@ export interface ButtonPropsType {
   disabled: any;
   type: 'button' | 'submit' | 'reset' | undefined;
   className: string;
+  children?: React.ReactElement<any> | null;
 }

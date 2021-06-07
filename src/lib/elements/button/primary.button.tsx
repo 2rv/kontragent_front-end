@@ -20,7 +20,7 @@ export function PrimaryButton(props: ButtonPropsType) {
 const Button = styled.button`
   background-color: ${THEME_COLOR.COLOR.ACCENT};
   color: ${THEME_COLOR.TEXT.BASE};
-  border-radius: ${THEME_SIZE.RADIUS.BUTTON};
+  border-radius: ${THEME_SIZE.RADIUS.DEFAULT};
   font-size: ${THEME_SIZE.FONT.DEFAULT};
   padding: ${spacing(4)};
   font-weight: ${THEME_VALUE.FONT_WEIGHT.SEMY_BOLD};

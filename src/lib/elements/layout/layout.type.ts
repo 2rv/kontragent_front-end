@@ -9,11 +9,12 @@ export interface ContentLayoutPropsType {
 }
 
 export interface IndentLayoutPropsType {
-  type?: 'DEFAULT' | undefined;
+  type?: 'DEFAULT' | 'SMALL' | undefined;
   children?: React.ReactElement<any> | null;
+  className?: string;
 }
 
 export interface SectionLayoutPropsType {
-  type?: 'DEFAULT' | undefined;
+  type?: 'DEFAULT' | 'MEDIUM' | undefined;
   children: React.ReactElement<any> | null;
 }
