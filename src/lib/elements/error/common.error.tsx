@@ -24,7 +24,7 @@ const Error = styled.div`
   align-items: center;
   color: ${THEME_COLOR.TEXT.ERROR};
   background-color: ${THEME_COLOR.COLOR.ERROR};
-  border-radius: ${THEME_SIZE.RADIUS.CARD};
+  border-radius: ${THEME_SIZE.RADIUS.DEFAULT};
   padding: ${spacing(3)};
   font-size: ${THEME_SIZE.FONT.SMALL};
   line-height: 1.5;
