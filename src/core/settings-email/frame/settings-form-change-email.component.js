@@ -1,4 +1,3 @@
-import styled from 'styled-components';
 import {
   SectionLayout,
   FieldLayout,
@@ -67,7 +66,7 @@ export function SettingsFormChangeEmailComponent(props) {
           </FieldLayout>
 
           <ButtonLayout type="double">
-            <Button
+            <SecondaryButton
               tid="LOGIN.LOGIN_FORM.BUTTON"
               disabled={isSubmitDisabled()}
             />
@@ -81,7 +80,3 @@ export function SettingsFormChangeEmailComponent(props) {
     </SectionLayout>
   );
 }
-
-const Button = styled(SecondaryButton)`
-  align-self: flex-end;
-`;
