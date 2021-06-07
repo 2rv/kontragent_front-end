@@ -5,14 +5,14 @@ import {
 } from './settings-notification.type';
 
 export function SettingsNotificationContainer() {
-  const SettingsNotificationContainerGetInitialValue = () => {
+  const getInitialValue = () => {
     return {
       [SETTINGS_NOTIFICATION_FIELD_NAME.EMAIL]: '',
     };
   };
   return (
     <SettingsNotificationComponent
-      initialValue={SettingsNotificationContainerGetInitialValue()}
+      initialValue={getInitialValue()}
       settingsNotificationFieldName={
         SETTINGS_FORM_CHANGE_EMAIL_NOTIFICATION_FIELD_NAME
       }
