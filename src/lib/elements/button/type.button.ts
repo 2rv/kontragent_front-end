@@ -2,6 +2,6 @@ export interface ButtonPropsType {
   tid: string;
   disabled: any;
   type: 'button' | 'submit' | 'reset' | undefined;
-  className: string;
+  className?: string;
   children?: React.ReactElement<any> | null;
 }
