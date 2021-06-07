@@ -3,7 +3,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import { SectionLayout } from '../../../../lib/elements/layout';
-import { FormLayout } from '../../../../lib/elements/layout';
+import { FieldLayout } from '../../../../lib/elements/layout';
 import { PrimaryField } from '../../../../lib/elements/field';
 import { PrimaryButton } from '../../../../lib/elements/button';
 import { CommonError } from '../../../../lib/elements/error';
@@ -44,7 +44,7 @@ export function SignupFormComponent(props) {
   return (
     <form onSubmit={handleSubmit}>
       <SectionLayout>
-        <FormLayout>
+        <FieldLayout>
           <PrimaryField
             titleTid="SIGNUP.SIGNUP_FORM.FIELD.LOGIN.TITLE"
             placeholderTid="SIGNUP.SIGNUP_FORM.FIELD.LOGIN.PLACEHOLDER"
@@ -86,7 +86,7 @@ export function SignupFormComponent(props) {
             error={isFieldError(fieldPasswordRepeat)}
             type="password"
           />
-        </FormLayout>
+        </FieldLayout>
         <PrimaryButton
           tid="SIGNUP.SIGNUP_FORM.BUTTON"
           disabled={isSubmitDisabled()}

@@ -6,7 +6,6 @@ import styled from 'styled-components';
 import { THEME_COLOR } from '../../../../lib/theme';
 
 import { SectionLayout } from '../../../../lib/elements/layout';
-import { FormLayout } from '../../../../lib/elements/layout';
 import { PrimaryField } from '../../../../lib/elements/field';
 import { PrimaryButton } from '../../../../lib/elements/button';
 import { CommonLoader } from '../../../../lib/elements/loader';
@@ -45,17 +44,15 @@ export function AccountInfoFormComponent(props) {
     <form onSubmit={handleSubmit}>
       <SectionLayout>
         <SectionLayout type="MEDIUM">
-          <FormLayout>
-            <PrimaryField
-              titleTid="AUTH_ACCOUNT_INFO_FORM.ACCOUNT_INFO_FORM.FIELD.FULLNAME.TITLE"
-              placeholderTid="AUTH_ACCOUNT_INFO_FORM.ACCOUNT_INFO_FORM.FIELD.FULLNAME.PLACEHOLDER"
-              name={fieldFullName}
-              onChange={handleChange}
-              onBlur={handleBlur}
-              value={values[fieldFullName]}
-              error={isFieldError(fieldFullName)}
-            />
-          </FormLayout>
+          <PrimaryField
+            titleTid="AUTH_ACCOUNT_INFO_FORM.ACCOUNT_INFO_FORM.FIELD.FULLNAME.TITLE"
+            placeholderTid="AUTH_ACCOUNT_INFO_FORM.ACCOUNT_INFO_FORM.FIELD.FULLNAME.PLACEHOLDER"
+            name={fieldFullName}
+            onChange={handleChange}
+            onBlur={handleBlur}
+            value={values[fieldFullName]}
+            error={isFieldError(fieldFullName)}
+          />
 
           <Line />
 

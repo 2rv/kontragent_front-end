@@ -3,7 +3,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import { SectionLayout } from '../../../../lib/elements/layout';
-import { FormLayout } from '../../../../lib/elements/layout';
+import { FieldLayout } from '../../../../lib/elements/layout';
 import { PrimaryField } from '../../../../lib/elements/field';
 import { PrimaryButton } from '../../../../lib/elements/button';
 import { CommonLoader } from '../../../../lib/elements/loader';
@@ -44,7 +44,7 @@ export function LoginFormComponent(props) {
   return (
     <form onSubmit={handleSubmit}>
       <SectionLayout>
-        <FormLayout>
+        <FieldLayout>
           <PrimaryField
             titleTid="LOGIN.LOGIN_FORM.FIELD.LOGIN.TITLE"
             placeholderTid="LOGIN.LOGIN_FORM.FIELD.LOGIN.PLACEHOLDER"
@@ -65,7 +65,7 @@ export function LoginFormComponent(props) {
             error={isFieldError(fieldPassword)}
             type="password"
           />
-        </FormLayout>
+        </FieldLayout>
         <PrimaryButton
           tid="LOGIN.LOGIN_FORM.BUTTON"
           disabled={isSubmitDisabled()}

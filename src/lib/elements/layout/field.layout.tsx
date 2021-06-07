@@ -3,7 +3,7 @@ import { spacing } from '../../theme';
 
 import { GridLayoutPropsType } from './layout.type';
 
-export function FormLayout(props: GridLayoutPropsType) {
+export function FieldLayout(props: GridLayoutPropsType) {
   const { type, children } = props;
   return <Layout type={type}>{children}</Layout>;
 }
