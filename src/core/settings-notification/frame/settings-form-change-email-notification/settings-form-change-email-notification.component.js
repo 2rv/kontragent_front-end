@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { SectionLayout } from '../../../../lib/elements/layout';
 import { SecondaryTitleText } from '../../../../lib/elements/text';
-import { TertiaryText } from '../../../../lib/elements/text';
+import { SecondaryText } from '../../../../lib/elements/text';
 import { PrimaryField } from '../../../../lib/elements/field';
 import { SecondaryButton } from '../../../../lib/elements/button';
 import { CommonError } from '../../../../lib/elements/error';
@@ -69,6 +69,6 @@ export function SettingsFormChangeNotificationComponent(props) {
   );
 }
 
-const Subtitle = styled(TertiaryText)`
+const Subtitle = styled(SecondaryText)`
   line-height: 1.5;
 `;
