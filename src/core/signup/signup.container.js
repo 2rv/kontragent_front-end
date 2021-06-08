@@ -34,7 +34,7 @@ export function SignupContainer() {
     dispatch(signupFormUploadData(data));
   };
 
-  const signupFormGetInitialValue = () => {
+  const getInitialValue = () => {
     return {
       [SIGNUP_FIELD_NAME.LOGIN]: '',
       [SIGNUP_FIELD_NAME.PASSWORD]: '',
@@ -48,7 +48,7 @@ export function SignupContainer() {
       isPending={isRequestPending(state.signupForm)}
       isError={isRequestError(state.signupForm)}
       isSuccess={isRequestSuccess(state.signupForm)}
-      initialValue={signupFormGetInitialValue()}
+      initialValue={getInitialValue()}
       validation={signupFormValidation}
       onSubmitForm={signupFormSendData}
       fieldName={SIGNUP_FORM_FIELD_NAME}

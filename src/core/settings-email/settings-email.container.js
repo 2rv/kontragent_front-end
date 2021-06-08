@@ -5,7 +5,7 @@ import {
 } from './settings-email.type';
 
 export function SettingEmailContainer() {
-  const SettingEmailContainerGetInitialValue = () => {
+  const getInitialValue = () => {
     return {
       [SETTINGS_EMAIL_FIELD_NAME.EMAIL]: '',
       [SETTINGS_EMAIL_FIELD_NAME.PASSWORD]: '',
@@ -13,7 +13,7 @@ export function SettingEmailContainer() {
   };
   return (
     <SettingEmailComponent
-      initialValue={SettingEmailContainerGetInitialValue()}
+      initialValue={getInitialValue()}
       settingsEmailFieldName={SETTINGS_FORM_CHANGE_EMAIL_FIELD_NAME}
       pageLoading={true}
       isPending={true}
