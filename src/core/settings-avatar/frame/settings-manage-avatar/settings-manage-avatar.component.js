@@ -1,3 +1,4 @@
+import React from 'react';
 import styled from 'styled-components';
 
 import Image from 'next/image';
@@ -13,7 +14,7 @@ export function SettingsManageAvatarComponent(props) {
   const { imageURL = '/static/img/tempSettingsAvatarImage.svg' } = props;
 
   return (
-    <>
+    <React.Fragment>
       <Title tid="SETTINGS.AVATAR.TITLE" />
       <Container>
         <Image src={imageURL} width={115} height={115} />
@@ -22,7 +23,7 @@ export function SettingsManageAvatarComponent(props) {
           <SecondaryButton tid="SETTINGS.AVATAR.BUTTON.SECOND" />
         </SectionLayout>
       </Container>
-    </>
+    </React.Fragment>
   );
 }
 
