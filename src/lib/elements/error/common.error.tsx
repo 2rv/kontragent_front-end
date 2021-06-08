@@ -1,31 +1,52 @@
 import Image from 'next/image';
-import styled from 'styled-components';
+
 import { FormErrorPropsType } from './type.error';
-import { THEME_COLOR } from '../../theme';
-import { THEME_SIZE } from '../../theme/theme.size';
+
+import styled from 'styled-components';
+import { THEME_COLOR, THEME_VALUE, THEME_SIZE } from '../../theme';
 import { spacing } from '../../theme';
+
 import { text } from '../../common/text';
 
 export function CommonError(props: FormErrorPropsType) {
+  const { tid, className, compoundTid } = props;
   return (
-    <Error className={props.className}>
+    <Error className={className}>
       <Image src="/static/img/error.svg" width={16} height={16} />
-      <ErrorText>{text(props.tid, 'Неизвестная ошибка.')}</ErrorText>
+
+      <ErrorMessageLayout>
+        {compoundTid && (
+          <ErrorFirstPart>
+            {text(compoundTid, 'Неизвестная ошибка.')}
+          </ErrorFirstPart>
+        )}
+
+        <ErrorSecondPart>{text(tid, 'Неизвестная ошибка.')}</ErrorSecondPart>
+      </ErrorMessageLayout>
     </Error>
   );
 }
 
-const ErrorText = styled.span`
+const ErrorMessageLayout = styled.div`
   margin-left: ${spacing(2)};
+`;
+
+const ErrorFirstPart = styled.span`
+  color: ${THEME_COLOR.TEXT.ERROR};
+  font-weight: ${THEME_VALUE.FONT_WEIGHT.SEMY_BOLD};
+  font-size: ${THEME_SIZE.FONT.SMALL};
+`;
+
+const ErrorSecondPart = styled.span`
+  color: ${THEME_COLOR.TEXT.ERROR};
+  font-size: ${THEME_SIZE.FONT.SMALL};
 `;
 
 const Error = styled.div`
   display: flex;
   align-items: center;
-  color: ${THEME_COLOR.TEXT.ERROR};
   background-color: ${THEME_COLOR.COLOR.ERROR};
   border-radius: ${THEME_SIZE.RADIUS.DEFAULT};
   padding: ${spacing(3)};
-  font-size: ${THEME_SIZE.FONT.SMALL};
   line-height: 1.5;
 `;

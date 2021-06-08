@@ -6,4 +6,5 @@ export interface InputErrorPropsType {
 export interface FormErrorPropsType {
   tid: string;
   className?: any;
+  compoundTid?: string;
 }
