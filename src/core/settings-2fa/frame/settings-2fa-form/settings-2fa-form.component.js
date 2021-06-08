@@ -1,10 +1,10 @@
 import styled from 'styled-components';
-import { SectionLayout } from '../../../lib/elements/layout';
-import { SecondaryTitleText } from '../../../lib/elements/text';
-import { PrimaryField } from '../../../lib/elements/field';
-import { SecondaryButton } from '../../../lib/elements/button';
-import { CommonError } from '../../../lib/elements/error';
-import { spacing } from '../../../lib/theme';
+import { SectionLayout } from '../../../../lib/elements/layout';
+import { SecondaryTitleText } from '../../../../lib/elements/text';
+import { PrimaryField } from '../../../../lib/elements/field';
+import { SecondaryButton } from '../../../../lib/elements/button';
+import { CommonError } from '../../../../lib/elements/error';
+import { spacing } from '../../../../lib/theme';
 
 export function Settings2FAFormComponent(props) {
   const {

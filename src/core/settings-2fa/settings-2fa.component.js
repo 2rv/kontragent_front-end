@@ -1,13 +1,19 @@
-import styled from 'styled-components';
-
-import { Settings2FAFormContainer } from './frame/settings-2fa-form.container';
-import { PrimaryText } from '../../lib/elements/text';
-import { THEME_SIZE, THEME_VALUE } from '../../lib/theme';
+import { Settings2FAFormContainer } from './frame/settings-2fa-form';
 
 export function Settings2FAComponent(props) {
-  const { pageLoading, isPending, isError, isSuccess, errorMessage } = props;
+  const {
+    pageLoading,
+    isPending,
+    isError,
+    isSuccess,
+    errorMessage,
+    initialValue,
+    settings2faFormFieldName,
+  } = props;
   return (
     <Settings2FAFormContainer
+      initialValue={initialValue}
+      settings2faFormFieldName={settings2faFormFieldName}
       pageLoading={pageLoading}
       isPending={isPending}
       isError={isError}
