@@ -40,13 +40,13 @@ export function SettingsFormChangePhoneComponent(props) {
 
   return (
     <SectionLayout>
-      <SecondaryTitleText tid="LOGIN.LOGIN_FORM.HEADER" />
+      <SecondaryTitleText tid="SETTINGS.PHONE.TITLE" />
       <form onSubmit={handleSubmit}>
         <SectionLayout>
           <FieldLayout type="double">
             <PrimaryField
-              titleTid="LOGIN.LOGIN_FORM.FIELD.LOGIN.TITLE"
-              placeholderTid="LOGIN.LOGIN_FORM.FIELD.LOGIN.PLACEHOLDER"
+              titleTid="SETTINGS.PHONE.FIELD.PHONE_NUMBER.TITLE"
+              placeholderTid="SETTINGS.PHONE.FIELD.PHONE_NUMBER.PLACEHOLDER"
               name={fieldPhoneNumber}
               onChange={handleChange}
               onBlur={handleBlur}
@@ -55,8 +55,8 @@ export function SettingsFormChangePhoneComponent(props) {
             />
 
             <PrimaryField
-              titleTid="LOGIN.LOGIN_FORM.FIELD.LOGIN.TITLE"
-              placeholderTid="LOGIN.LOGIN_FORM.FIELD.LOGIN.PLACEHOLDER"
+              titleTid="SETTINGS.PHONE.FIELD.PASSWORD.TITLE"
+              placeholderTid="SETTINGS.PHONE.FIELD.PASSWORD.PLACEHOLDER"
               name={fieldPassword}
               onChange={handleChange}
               onBlur={handleBlur}
@@ -67,7 +67,7 @@ export function SettingsFormChangePhoneComponent(props) {
 
           <ButtonLayout type="double">
             <SecondaryButton
-              tid="LOGIN.LOGIN_FORM.BUTTON"
+              tid="SETTINGS.PHONE.BUTTON"
               disabled={isSubmitDisabled()}
             />
           </ButtonLayout>

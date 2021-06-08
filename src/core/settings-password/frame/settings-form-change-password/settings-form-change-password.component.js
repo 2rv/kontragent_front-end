@@ -40,13 +40,13 @@ export function SettingsFormChangePasswordComponent(props) {
 
   return (
     <SectionLayout>
-      <SecondaryTitleText tid="LOGIN.LOGIN_FORM.HEADER" />
+      <SecondaryTitleText tid="SETTINGS.PASSWORD.TITLE" />
       <form onSubmit={handleSubmit}>
         <SectionLayout>
           <FieldLayout type="double">
             <PrimaryField
-              titleTid="LOGIN.LOGIN_FORM.FIELD.LOGIN.TITLE"
-              placeholderTid="LOGIN.LOGIN_FORM.FIELD.LOGIN.PLACEHOLDER"
+              titleTid="SETTINGS.PASSWORD.FIELD.NEW_PASSWORD.TITLE"
+              placeholderTid="SETTINGS.PASSWORD.FIELD.NEW_PASSWORD.PLACEHOLDER"
               name={fieldPhoneNumber}
               onChange={handleChange}
               onBlur={handleBlur}
@@ -55,8 +55,8 @@ export function SettingsFormChangePasswordComponent(props) {
             />
 
             <PrimaryField
-              titleTid="LOGIN.LOGIN_FORM.FIELD.LOGIN.TITLE"
-              placeholderTid="LOGIN.LOGIN_FORM.FIELD.LOGIN.PLACEHOLDER"
+              titleTid="SETTINGS.PASSWORD.FIELD.REPEAT_NEW_PASSWORD.TITLE"
+              placeholderTid="SETTINGS.PASSWORD.FIELD.REPEAT_NEW_PASSWORD.PLACEHOLDER"
               name={fieldPassword}
               onChange={handleChange}
               onBlur={handleBlur}
@@ -65,8 +65,8 @@ export function SettingsFormChangePasswordComponent(props) {
             />
 
             <PrimaryField
-              titleTid="LOGIN.LOGIN_FORM.FIELD.LOGIN.TITLE"
-              placeholderTid="LOGIN.LOGIN_FORM.FIELD.LOGIN.PLACEHOLDER"
+              titleTid="SETTINGS.PASSWORD.FIELD.OLD_PASSWORD.TITLE"
+              placeholderTid="SETTINGS.PASSWORD.FIELD.OLD_PASSWORD.PLACEHOLDER"
               name={fieldPhoneNumber}
               onChange={handleChange}
               onBlur={handleBlur}
@@ -77,7 +77,7 @@ export function SettingsFormChangePasswordComponent(props) {
 
           <ButtonLayout type="double">
             <SecondaryButton
-              tid="LOGIN.LOGIN_FORM.BUTTON"
+              tid="SETTINGS.PASSWORD.BUTTON"
               disabled={isSubmitDisabled()}
             />
           </ButtonLayout>
