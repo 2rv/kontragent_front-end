@@ -1,0 +1,13 @@
+{
+  "NOTIFICATION": {
+    "FIELD": {
+      "EMAIL": {
+        "TITLE": "Email",
+        "PLACEHOLDER": "Contragent@mail.com"
+      }
+    },
+    "SUBTITLE": "Вы можете подписаться на рассылку важных уведомленийи неовостей от компании",
+    "TITLE": "Важные уведомления",
+    "BUTTON": "Подписаться"
+  }
+}
