@@ -9,7 +9,7 @@ import { SecondaryText } from '../text';
 import { SelectFieldPropsType } from './type.field';
 
 export function SelectField(props: SelectFieldPropsType) {
-  const { onChange, onBlur, option, titleTid, name = 'select' } = props;
+  const { onChange, onBlur, option, titleTid, name } = props;
   return (
     <Container>
       <Title tid={titleTid} />

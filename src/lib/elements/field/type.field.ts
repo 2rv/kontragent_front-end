@@ -23,7 +23,6 @@ export interface TextAreaPropsType {
   placeholderTid: string;
   onChange: any;
   onBlur: any;
-  isError: boolean;
   name: string;
   row?: number;
   error: string;
