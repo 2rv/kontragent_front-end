@@ -17,3 +17,14 @@ export interface SelectFieldPropsType {
   onBlur: any;
   name: string;
 }
+
+export interface TextAreaPropsType {
+  titleTid: string;
+  placeholderTid: string;
+  onChange: any;
+  onBlur: any;
+  isError: boolean;
+  name: string;
+  row?: number;
+  error: string;
+}
