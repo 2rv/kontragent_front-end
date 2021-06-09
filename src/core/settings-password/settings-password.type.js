@@ -1,9 +1,9 @@
 import { SETTINGS_FORM_CHANGE_PASSWORD_FIELD_KEY } from './frame/settings-form-change-password';
 
 export const SETTINGS_PASSWORD_FIELD_NAME = {
-  NEW_PASSWORD: 'new-password',
-  REPEAT_NEW_PASSWORD: 'repeat-new-password',
-  OLD_PASSWORD: 'old-password',
+  NEW_PASSWORD: 'newPassword',
+  REPEAT_NEW_PASSWORD: 'repeatNewPassword',
+  OLD_PASSWORD: 'oldPassword',
 };
 
 export const SETTINGS_FORM_CHANGE_PASSWORD_FIELD_NAME = {
