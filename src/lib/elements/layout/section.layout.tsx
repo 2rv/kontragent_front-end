@@ -12,5 +12,4 @@ const Layout = styled.div`
   display: grid;
   gap: ${(p: SectionLayoutPropsType) =>
     p.type ? THEME_SIZE.SECTION[p.type] : THEME_SIZE.SECTION.DEFAULT};
-  width: 100%;
 `;
