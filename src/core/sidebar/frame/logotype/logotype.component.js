@@ -1,18 +1,17 @@
 import styled from 'styled-components';
 import Image from 'next/image';
 
+import { ReactComponent as SidebarLogo } from '../../../../asset/svg/sidebarLogo.svg';
+
 export function LogotypeComponent() {
   return (
     <LogotypeComponentImageContainer>
-      <Image src="/static/img/testSidebarLogo.svg" layout="fill" />
+      <SidebarLogo />
     </LogotypeComponentImageContainer>
   );
 }
 
 const LogotypeComponentImageContainer = styled.div`
-  position: relative;
-  width: 137px;
-  height: 31px;
   display: flex;
   justify-content: flex-start;
 `;

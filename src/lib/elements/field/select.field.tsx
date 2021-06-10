@@ -6,6 +6,8 @@ import { text } from '../../common/text';
 
 import { SecondaryText } from '../text';
 
+import { ReactComponent as ArrowIcon } from '../../../asset/svg/selectArrow.svg';
+
 import { SelectFieldPropsType } from './type.field';
 
 export function SelectField(props: SelectFieldPropsType) {
@@ -13,16 +15,32 @@ export function SelectField(props: SelectFieldPropsType) {
   return (
     <Container>
       <Title tid={titleTid} />
-      <Select onBlur={onBlur} onChange={onChange} name={name}>
-        {option.map((e, index) => (
-          <option key={e.tid + index} value={e.id}>
-            {text(e.tid, e.tvalue)}
-          </option>
-        ))}
-      </Select>
+      <SelectWrapper>
+        <Select onBlur={onBlur} onChange={onChange} name={name}>
+          {option.map((e, index) => (
+            <option key={e.tid + index} value={e.id}>
+              {text(e.tid, e.tvalue)}
+            </option>
+          ))}
+        </Select>
+        <SelectArrowIcon />
+      </SelectWrapper>
     </Container>
   );
 }
+
+const SelectWrapper = styled.div`
+  position: relative;
+`;
+
+const SelectArrowIcon = styled(ArrowIcon)`
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  right: ${spacing(4)};
+  pointer-events: none;
+`;
 
 const Container = styled.div`
   display: flex;
@@ -34,6 +52,7 @@ const Title: typeof SecondaryText = styled(SecondaryText)`
 `;
 
 const Select = styled.select`
+  width: 100%;
   appearance: none;
   padding: ${spacing(4)};
   border-radius: ${THEME_SIZE.RADIUS.DEFAULT};
@@ -42,10 +61,7 @@ const Select = styled.select`
   color: ${THEME_COLOR.TEXT.PRIMARY};
   font-weight: ${THEME_VALUE.FONT_WEIGHT.MEDIUM};
   cursor: pointer;
-  background: url('/static/img/selectArrow.svg') no-repeat;
   background-color: ${THEME_COLOR.COLOR.SECONDARY};
-  background-size: 10px;
-  background-position: calc(100% - 12px) center;
   &:hover {
     opacity: ${THEME_VALUE.OPACITY.HOVER};
   }
