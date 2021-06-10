@@ -1,0 +1,15 @@
+{
+  "BALANCE_DEPOSIT": {
+    "HEADER": "Пополнение баланса",
+    "BUTTON": "Пополнить",
+    "FIELD": {
+      "PAYMENT_METHOD": {
+        "TITLE": "Способ оплаты"
+      },
+      "DEPOSIT_AMOUNT": {
+        "TITLE": "Сумма пополнения",
+        "PLACEHOLDER": "1 000"
+      }
+    }
+  }
+}
