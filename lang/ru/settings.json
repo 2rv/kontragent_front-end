@@ -24,5 +24,61 @@
       "FIRST": "Сменить аватар",
       "SECOND": "Удалить аватар"
     }
+  },
+  "2FA": {
+    "FIELD": {
+      "PHONE_NUMBER": {
+        "TITLE": "Номер телефона",
+        "PLACEHOLDER": "+7 000 000 00 00"
+      }
+    },
+    "TITLE": "Двухэтапная аутентификация",
+    "BUTTON": "Включить аутентефикацию"
+  },
+  "PASSWORD": {
+    "FIELD": {
+      "NEW_PASSWORD": {
+        "TITLE": "Новый пароль",
+        "PLACEHOLDER": "Password"
+      },
+      "REPEAT_NEW_PASSWORD": {
+        "TITLE": "Повторите новый пароль",
+        "PLACEHOLDER": "Password"
+      },
+      "OLD_PASSWORD": {
+        "TITLE": "Старый пароль",
+        "PLACEHOLDER": "Password"
+      }
+    },
+    "TITLE": "Смена пароля",
+    "BUTTON": "Сменить пароль"
+  },
+  "EMAIL": {
+    "FIELD": {
+      "EMAIL": {
+        "TITLE": "Email",
+        "PLACEHOLDER": "contragent@mail.com"
+      },
+      "PASSWORD": {
+        "TITLE": "Пароль",
+        "PLACEHOLDER": "Password"
+      }
+    },
+    "TITLE": "Сменить Email",
+    "BUTTON": "Сменить Email"
+  },
+  "PHONE": {
+    "FIELD": {
+      "PHONE_NUMBER": {
+        "TITLE": "Номер телефона",
+        "PLACEHOLDER": "+380 63 792 17 30"
+      },
+      "PASSWORD": {
+        "TITLE": "Пароль",
+        "PLACEHOLDER": "Password"
+      }
+    },
+    "TITLE": "Смена номера телефона",
+    "BUTTON": "Сменить номер телефона"
   }
 }

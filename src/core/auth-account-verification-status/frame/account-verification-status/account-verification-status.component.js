@@ -28,7 +28,10 @@ export function AccountVerificationStatusComponent() {
           <Button tid="AUTH_ACCOUNT_VERIFICATION_STATUS.BUTTON" />
         </IndentLayout>
       </PrimaryBox>
-      <ErrorShorhand tid="AUTH_ACCOUNT_VERIFICATION_STATUS.ERROR_SHORTHAND" />
+      <CommonError
+        compoundTid="AUTH_ACCOUNT_VERIFICATION_STATUS.ERROR_TYPE"
+        tid="AUTH_ACCOUNT_VERIFICATION_STATUS.ERROR_SHORTHAND"
+      />
     </SectionLayout>
   );
 }
@@ -49,12 +52,5 @@ const Button = styled(PrimaryButton)`
 `;
 
 const VerificationErrorReason = styled(PrimaryText)`
-  color: ${THEME_COLOR.TEXT.ERROR};
   font-weight: ${THEME_VALUE.FONT_WEIGHT.SEMY_BOLD};
-`;
-
-const ErrorShorhand = styled(CommonError)`
-  display: flex;
-  justify-content: center;
-  padding: ${spacing(4)};
 `;

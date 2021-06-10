@@ -8,7 +8,7 @@ import {
 } from './auth-account-info-form.type';
 
 export function AuthAccountInfoForm() {
-  const AuthAccountInfoFormGetInitialValue = () => {
+  const getInitialValue = () => {
     return {
       [AUTH_ACCOUNT_INFO_FORM_FIELD_NAME.FULLNAME_NAME]: '',
     };
@@ -16,7 +16,7 @@ export function AuthAccountInfoForm() {
 
   return (
     <AuthAccoutInfoFormConmponent
-      initialValue={AuthAccountInfoFormGetInitialValue()}
+      initialValue={getInitialValue()}
       pageLoading={true}
       isPending={true}
       isError={true}

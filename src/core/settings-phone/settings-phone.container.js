@@ -5,7 +5,7 @@ import {
 } from './settings-phone.type';
 
 export function SettingsPhoneContainer() {
-  const SettingsPhoneContainerGetInitialValue = () => {
+  const getInitialValue = () => {
     return {
       [SETTINGS_PHONE_FIELD_NAME.PHONE_NUMBER]: '',
       [SETTINGS_PHONE_FIELD_NAME.PASSWORD]: '',
@@ -13,7 +13,7 @@ export function SettingsPhoneContainer() {
   };
   return (
     <SettingsPhoneComponent
-      initialValue={SettingsPhoneContainerGetInitialValue()}
+      initialValue={getInitialValue()}
       settingsEmailFieldName={SETTINGS_FORM_CHANGE_PHONE_FIELD_NAME}
       pageLoading={true}
       isPending={true}

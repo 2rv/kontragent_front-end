@@ -5,5 +5,6 @@ export interface InputErrorPropsType {
 
 export interface FormErrorPropsType {
   tid: string;
+  tvalue?: object;
   className?: any;
 }

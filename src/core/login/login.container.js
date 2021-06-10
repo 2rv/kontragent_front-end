@@ -34,7 +34,7 @@ export function LoginContainer() {
     dispatch(loginFormUploadData(data));
   };
 
-  const loginFormGetInitialValue = () => {
+  const getInitialValue = () => {
     return {
       [LOGIN_FIELD_NAME.LOGIN]: '',
       [LOGIN_FIELD_NAME.PASSWORD]: '',
@@ -46,7 +46,7 @@ export function LoginContainer() {
       isPending={isRequestPending(state.loginForm)}
       isError={isRequestError(state.loginForm)}
       isSuccess={isRequestSuccess(state.loginForm)}
-      initialValue={loginFormGetInitialValue()}
+      initialValue={getInitialValue()}
       validation={loginFormValidation}
       onSubmitForm={loginFormSendData}
       fieldName={LOGIN_FORM_FIELD_NAME}

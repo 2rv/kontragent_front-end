@@ -1,10 +1,10 @@
 import styled from 'styled-components';
-import { SectionLayout } from '../../../lib/elements/layout';
-import { SecondaryTitleText } from '../../../lib/elements/text';
-import { PrimaryField } from '../../../lib/elements/field';
-import { SecondaryButton } from '../../../lib/elements/button';
-import { CommonError } from '../../../lib/elements/error';
-import { spacing } from '../../../lib/theme';
+import { SectionLayout } from '../../../../lib/elements/layout';
+import { SecondaryTitleText } from '../../../../lib/elements/text';
+import { PrimaryField } from '../../../../lib/elements/field';
+import { SecondaryButton } from '../../../../lib/elements/button';
+import { CommonError } from '../../../../lib/elements/error';
+import { spacing } from '../../../../lib/theme';
 
 export function Settings2FAFormComponent(props) {
   const {
@@ -36,13 +36,13 @@ export function Settings2FAFormComponent(props) {
 
   return (
     <SectionLayout>
-      <SecondaryTitleText tid="LOGIN.LOGIN_FORM.HEADER" />
+      <SecondaryTitleText tid="SETTINGS.2FA.TITLE" />
       <form onSubmit={handleSubmit}>
         <SectionLayout>
           <Settings2FALayout>
             <PrimaryField
-              titleTid="LOGIN.LOGIN_FORM.FIELD.LOGIN.TITLE"
-              placeholderTid="LOGIN.LOGIN_FORM.FIELD.LOGIN.PLACEHOLDER"
+              titleTid="SETTINGS.2FA.FIELD.PHONE_NUMBER.TITLE"
+              placeholderTid="SETTINGS.2FA.FIELD.PHONE_NUMBER.PLACEHOLDER"
               name={fieldPhoneNumber}
               onChange={handleChange}
               onBlur={handleBlur}
@@ -50,10 +50,7 @@ export function Settings2FAFormComponent(props) {
               error={isFieldError(fieldPhoneNumber)}
             />
 
-            <Button
-              tid="LOGIN.LOGIN_FORM.BUTTON"
-              disabled={isSubmitDisabled()}
-            />
+            <Button tid="SETTINGS.2FA.BUTTON" disabled={isSubmitDisabled()} />
           </Settings2FALayout>
 
           {(isError || errorMessage) && (

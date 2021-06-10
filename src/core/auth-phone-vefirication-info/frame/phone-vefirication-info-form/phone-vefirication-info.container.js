@@ -3,7 +3,9 @@ import { Formik } from 'formik';
 
 import { PhoneVerificationInfoComponent } from './phone-vefirication-info.component';
 
-export function PhoneVerificationInfoContainer(props) {
+import { PHONE_VERIFICATION_INFO_FORM_FIELD_KEY } from './phone-vefirication-info.type';
+
+export function PhoneVerificationInfoFormContainer(props) {
   const {
     phoneNumber,
     pageLoading,
@@ -11,11 +13,18 @@ export function PhoneVerificationInfoContainer(props) {
     isError,
     isSuccess,
     errorMessage,
+    initialValue,
+    phoneVerificationInfoFormFieldName,
   } = props;
-  const VERIFICATION_CODE_NAME = 'verificationCode';
+
+  const VERIFICATION_CODE_NAME =
+    phoneVerificationInfoFormFieldName[
+      PHONE_VERIFICATION_INFO_FORM_FIELD_KEY.VERIFICATION_CODE
+    ];
+
   return (
     <div>
-      <Formik initialValues={props.initialValue}>
+      <Formik initialValues={initialValue}>
         {(props) => (
           <PhoneVerificationInfoComponent
             fieldVerificationCode={VERIFICATION_CODE_NAME}

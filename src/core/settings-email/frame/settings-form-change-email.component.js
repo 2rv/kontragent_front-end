@@ -40,13 +40,13 @@ export function SettingsFormChangeEmailComponent(props) {
 
   return (
     <SectionLayout>
-      <SecondaryTitleText tid="LOGIN.LOGIN_FORM.HEADER" />
+      <SecondaryTitleText tid="SETTINGS.EMAIL.TITLE" />
       <form onSubmit={handleSubmit}>
         <SectionLayout>
           <FieldLayout type="double">
             <PrimaryField
-              titleTid="LOGIN.LOGIN_FORM.FIELD.LOGIN.TITLE"
-              placeholderTid="LOGIN.LOGIN_FORM.FIELD.LOGIN.PLACEHOLDER"
+              titleTid="SETTINGS.EMAIL.FIELD.EMAIL.TITLE"
+              placeholderTid="SETTINGS.EMAIL.FIELD.EMAIL.PLACEHOLDER"
               name={fieldEmail}
               onChange={handleChange}
               onBlur={handleBlur}
@@ -55,8 +55,8 @@ export function SettingsFormChangeEmailComponent(props) {
             />
 
             <PrimaryField
-              titleTid="LOGIN.LOGIN_FORM.FIELD.LOGIN.TITLE"
-              placeholderTid="LOGIN.LOGIN_FORM.FIELD.LOGIN.PLACEHOLDER"
+              titleTid="SETTINGS.EMAIL.FIELD.PASSWORD.TITLE"
+              placeholderTid="SETTINGS.EMAIL.FIELD.PASSWORD.PLACEHOLDER"
               name={fieldPassword}
               onChange={handleChange}
               onBlur={handleBlur}
@@ -67,7 +67,7 @@ export function SettingsFormChangeEmailComponent(props) {
 
           <ButtonLayout type="double">
             <SecondaryButton
-              tid="LOGIN.LOGIN_FORM.BUTTON"
+              tid="SETTINGS.EMAIL.BUTTON"
               disabled={isSubmitDisabled()}
             />
           </ButtonLayout>
