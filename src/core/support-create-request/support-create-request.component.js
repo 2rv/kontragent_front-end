@@ -9,6 +9,7 @@ export function SupportCreateRequestComponent(props) {
     isError,
     isSuccess,
     errorMessage,
+    problemCategory,
   } = props;
 
   return (
@@ -20,6 +21,7 @@ export function SupportCreateRequestComponent(props) {
       isSuccess={isSuccess}
       errorMessage={errorMessage}
       fieldName={fieldName}
+      problemCategory={problemCategory}
     />
   );
 }

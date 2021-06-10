@@ -26,6 +26,7 @@ export function SupportFormCreateRequestComponent(props) {
     fieldProblemCategory,
     fieldProblemOutline,
     fieldProblemDescription,
+    problemCategory,
     pageLoading,
     isSuccess,
     isPending,
@@ -56,11 +57,7 @@ export function SupportFormCreateRequestComponent(props) {
               name={fieldProblemCategory}
               onChange={handleChange}
               onBlur={handleBlur}
-              option={[
-                { id: 0, tid: 'DATA.PROBLEM_CATEGORY.1' },
-                { id: 1, tid: 'DATA.PROBLEM_CATEGORY.2' },
-                { id: 2, tid: 'DATA.PROBLEM_CATEGORY.3' },
-              ]}
+              option={problemCategory}
             />
 
             <TextareaField

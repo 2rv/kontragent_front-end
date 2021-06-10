@@ -13,7 +13,14 @@ export function SupportFormCreateRequestContainer(props) {
   const PROBLEM_DESCRIPTION =
     props.fieldName[SUPPORT_FORM_CREATE_REQUEST_FIELD_KEY.PROBLEM_DESCRIPTION];
 
-  const { isPending, isError, isSuccess, errorMessage, pageLoading } = props;
+  const {
+    isPending,
+    isError,
+    isSuccess,
+    errorMessage,
+    pageLoading,
+    problemCategory,
+  } = props;
   return (
     <div>
       <Formik initialValues={props.initialValue}>
@@ -22,6 +29,7 @@ export function SupportFormCreateRequestContainer(props) {
             fieldProblemCategory={PROBLEM_CATEGORY}
             fieldProblemOutline={PROBLEM_OUTLINE}
             fieldProblemDescription={PROBLEM_DESCRIPTION}
+            problemCategory={problemCategory}
             {...props}
             isPending={isPending}
             isError={isError}

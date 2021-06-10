@@ -2,6 +2,8 @@ import React from 'react';
 
 import { SupportCreateRequestComponent } from './support-create-request.component';
 
+import { SUPPORT_CREATE_REQUEST_PROBLEM_CATEGORY } from './support-create-request.constant';
+
 import {
   SUPPORT_CREATE_REQUEST_FIELD_NAME,
   SUPPORT_FORM_CREATE_REQUEST_FIELD_NAME,
@@ -25,6 +27,7 @@ export function SupportCreateRequestContainer() {
       fieldName={SUPPORT_FORM_CREATE_REQUEST_FIELD_NAME}
       pageLoading={true}
       errorMessage={'error'}
+      problemCategory={SUPPORT_CREATE_REQUEST_PROBLEM_CATEGORY}
     />
   );
 }
