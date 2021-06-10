@@ -9,11 +9,11 @@ import { spacing } from '../../theme';
 import { text } from '../../common/text';
 
 export function CommonError(props: FormErrorPropsType) {
-  const { tid, className } = props;
+  const { tid, className, tvalue } = props;
   return (
     <Error className={className}>
       <Image src="/static/img/error.svg" width={16} height={16} />
-      <ErrorMessage>{text(tid, 'Неизвестная ошибка.')}</ErrorMessage>
+      <ErrorMessage>{text(tid, tvalue)}</ErrorMessage>
     </Error>
   );
 }
