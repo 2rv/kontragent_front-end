@@ -11,7 +11,14 @@ export function BalanceFormDepositContainer(props) {
   const DEPOSIT_AMOUNT =
     props.fieldName[BALANCE_FORM_DEPOSIT_FIELD_KEY.DEPOSIT_AMOUNT];
 
-  const { isPending, isError, isSuccess, errorMessage, pageLoading } = props;
+  const {
+    isPending,
+    isError,
+    isSuccess,
+    errorMessage,
+    pageLoading,
+    paymentMethod,
+  } = props;
   return (
     <div>
       <Formik initialValues={props.initialValue}>
@@ -25,6 +32,7 @@ export function BalanceFormDepositContainer(props) {
             isSuccess={isSuccess}
             errorMessage={errorMessage}
             pageLoading={pageLoading}
+            paymentMethod={paymentMethod}
           />
         )}
       </Formik>
