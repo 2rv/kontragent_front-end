@@ -51,7 +51,7 @@ export function SupportFormCreateRequestComponent(props) {
       <SectionLayout>
         <SectionLayout type="LARGE">
           <SecondaryTitleText tid="SUPPORT.CREATE_REQUEST.HEADER" />
-          <SupportFieldLayout>
+          <FieldLayout>
             <SelectField
               titleTid="SUPPORT.CREATE_REQUEST.FIELD.PROBLEM_CATEGORY.TITLE"
               name={fieldProblemCategory}
@@ -79,7 +79,7 @@ export function SupportFormCreateRequestComponent(props) {
               error={isFieldError(fieldProblemDescription)}
               row={6}
             />
-          </SupportFieldLayout>
+          </FieldLayout>
         </SectionLayout>
 
         <SecondaryButton
@@ -99,10 +99,6 @@ export function SupportFormCreateRequestComponent(props) {
     </form>
   );
 }
-
-const SupportFieldLayout = styled(FieldLayout)`
-  grid-row-gap: ${spacing(2)};
-`;
 
 const LoaderLayout = styled.div`
   display: flex;
