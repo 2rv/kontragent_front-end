@@ -11,6 +11,7 @@ import AUTH_EMAIL_VERIFICATION_STATUS from './auth-email-verifiction-status.json
 import AUTH_PHONE_VERIFICATION_INFO from './auth-phone-vefirication-info.json';
 import AUTH_ACCOUNT_INFO_FORM from './auth-account-info-form.json';
 import SETTINGS from './settings.json';
+import SUPPORT from './support.json';
 import DATA from './data.json';
 import BALANCE from './balance.json';
 
@@ -29,6 +30,7 @@ export const RU = {
     SIDEBAR,
     ADVERT,
     SETTINGS,
+    SUPPORT,
     DATA,
     BALANCE,
   },
