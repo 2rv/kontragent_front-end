@@ -9,6 +9,7 @@ export function BalanceDepositComponent(props) {
     isError,
     isSuccess,
     errorMessage,
+    paymentMethod,
   } = props;
 
   return (
@@ -20,6 +21,7 @@ export function BalanceDepositComponent(props) {
       isSuccess={isSuccess}
       errorMessage={errorMessage}
       fieldName={fieldName}
+      paymentMethod={paymentMethod}
     />
   );
 }
