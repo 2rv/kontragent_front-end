@@ -10,7 +10,7 @@ export function FieldLayout(props: GridLayoutPropsType) {
 
 const Layout = styled.div`
   display: grid;
-  grid-row-gap: ${spacing(3)};
+  grid-row-gap: ${spacing(2)};
   ${(props: GridLayoutPropsType) =>
     props.type === 'double'
       ? ` grid-column-gap: ${spacing(3)};

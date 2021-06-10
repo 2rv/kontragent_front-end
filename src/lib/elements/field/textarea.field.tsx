@@ -70,4 +70,5 @@ const Textarea = styled.textarea`
   &:hover {
     opacity: ${THEME_VALUE.OPACITY.HOVER};
   }
+  overflow: hidden;
 `;

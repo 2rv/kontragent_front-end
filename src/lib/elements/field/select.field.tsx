@@ -14,8 +14,10 @@ export function SelectField(props: SelectFieldPropsType) {
     <Container>
       <Title tid={titleTid} />
       <Select onBlur={onBlur} onChange={onChange} name={name}>
-        {option.map((e) => (
-          <option value={e.id}>{text(e.tid, e.tvalue)}</option>
+        {option.map((e, index) => (
+          <option key={e.tid + index} value={e.id}>
+            {text(e.tid, e.tvalue)}
+          </option>
         ))}
       </Select>
     </Container>
@@ -44,4 +46,7 @@ const Select = styled.select`
   background-color: ${THEME_COLOR.COLOR.SECONDARY};
   background-size: 10px;
   background-position: calc(100% - 12px) center;
+  &:hover {
+    opacity: ${THEME_VALUE.OPACITY.HOVER};
+  }
 `;

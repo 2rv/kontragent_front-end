@@ -1,6 +1,7 @@
 {
   "CREATE_REQUEST": {
     "HEADER": "Новый запрос",
+    "BUTTON": "Отправить",
     "FIELD": {
       "PROBLEM_CATEGORY": {
         "TITLE": "Выберете категорию проблемы"
