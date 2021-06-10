@@ -6,7 +6,7 @@ export interface FieldPrimaryPropsType {
   onBlur: any;
   value: any;
   error: string;
-  type: string;
+  type: 'password' | 'number';
 }
 
 type optionObject = { id: number; tid: string; tvalue?: object };

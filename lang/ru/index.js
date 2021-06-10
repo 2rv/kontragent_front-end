@@ -13,6 +13,7 @@ import AUTH_ACCOUNT_INFO_FORM from './auth-account-info-form.json';
 import SETTINGS from './settings.json';
 import SUPPORT from './support.json';
 import DATA from './data.json';
+import BALANCE from './balance.json';
 
 export const RU = {
   translation: {
@@ -31,5 +32,6 @@ export const RU = {
     SETTINGS,
     SUPPORT,
     DATA,
+    BALANCE,
   },
 };
