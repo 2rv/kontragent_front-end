@@ -1,10 +1,10 @@
-import Image from 'next/image';
-
 import { FormErrorPropsType } from './type.error';
 
 import styled from 'styled-components';
 import { THEME_COLOR, THEME_SIZE } from '../../theme';
 import { spacing } from '../../theme';
+
+import { ReactComponent as ErrorIcon } from '../../../asset/svg/error.svg';
 
 import { text } from '../../common/text';
 
@@ -12,7 +12,7 @@ export function CommonError(props: FormErrorPropsType) {
   const { tid, className, tvalue } = props;
   return (
     <Error className={className}>
-      <Image src="/static/img/error.svg" width={16} height={16} />
+      <ErrorIcon />
       <ErrorMessage>{text(tid, tvalue)}</ErrorMessage>
     </Error>
   );
