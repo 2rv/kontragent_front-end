@@ -12,17 +12,16 @@ import { SecondaryText } from '../../../../lib/elements/text';
 export function AdvertBarComponent(props) {
   const { advertImageURL } = props;
   return (
-    <div>
-      <AdvertBarLayout advertImageURL={advertImageURL}>
-        <AdvertInfoCardLayout>
-          <AdvertInfoCardText tid="ADVERT.ADVERT_INFO" />
-        </AdvertInfoCardLayout>
-      </AdvertBarLayout>
-    </div>
+    <AdvertBarLayout advertImageURL={advertImageURL}>
+      <AdvertInfoCardLayout>
+        <AdvertInfoCardText tid="ADVERT.ADVERT_INFO" />
+      </AdvertInfoCardLayout>
+    </AdvertBarLayout>
   );
 }
 
 const AdvertBarLayout = styled.div`
+  width: 100%;
   height: 64px;
   padding: ${spacing(4)};
   background: ${(props) =>
