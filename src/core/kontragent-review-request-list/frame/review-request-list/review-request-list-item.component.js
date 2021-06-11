@@ -7,7 +7,7 @@ import { PrimaryBox } from '../../../../lib/elements/box';
 import { PrimaryButton } from '../../../../lib/elements/button';
 import { PrimaryText, SecondaryText } from '../../../../lib/elements/text';
 
-import { ReactComponent as Bullet } from '../../../../asset/svg/oneLineListBullet.svg';
+import { CicleDivider } from '../../../../lib/elements/divider';
 
 export function ReviewRequestListItemComponent(props) {
   const { id, name, price, date, status } = props.data;
@@ -19,13 +19,13 @@ export function ReviewRequestListItemComponent(props) {
             <CompanyNameText>{name}</CompanyNameText>
             <RequestListItemDataContainer>
               <PriceText>{price}</PriceText>
-              <Bullet />
+              <CicleDivider />
               <SecondaryText>{date}</SecondaryText>
-              <Bullet />
+              <CicleDivider />
               <StatusText statusId={id}>{status}</StatusText>
             </RequestListItemDataContainer>
           </SectionLayout>
-          <Button tid="KONTRAGENT_REVIEW_REQUEST_LIST.REVIEW_REQUEST_LIST.BUTTON" />
+          <Button tid="KONTRAGENT_REVIEW.REQUEST_LIST.BUTTON" />
         </Container>
       </IndentLayout>
     </PrimaryBox>
@@ -35,7 +35,7 @@ export function ReviewRequestListItemComponent(props) {
 const Container = styled.div`
   display: flex;
   justify-content: space-between;
-  min-width: 500px;
+  width: 100%;
 `;
 
 const CompanyNameText = styled(PrimaryText)`

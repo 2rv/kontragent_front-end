@@ -15,6 +15,7 @@ export const THEME_COLOR = {
   COLOR: {
     PRIMARY: '#252525',
     SECONDARY: '#F3F3F3',
+    LIGHT_GREY: '#B5B5B5',
     ACCENT: '#3AB8FF',
     ERROR: '#FFE6E6',
     BASE: '#FFFFFF',

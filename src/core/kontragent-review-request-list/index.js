@@ -1,1 +1,1 @@
-export { KontragentReviewRequestListPage } from './kontragent-review-request-list.page';
+export { KontragentReviewRequestListContainer } from './kontragent-review-request-list.container';
