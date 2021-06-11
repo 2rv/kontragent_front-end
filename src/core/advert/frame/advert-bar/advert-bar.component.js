@@ -23,7 +23,6 @@ export function AdvertBarComponent(props) {
 }
 
 const AdvertBarLayout = styled.div`
-  max-width: 1026px;
   height: 64px;
   padding: ${spacing(4)};
   background: ${(props) =>

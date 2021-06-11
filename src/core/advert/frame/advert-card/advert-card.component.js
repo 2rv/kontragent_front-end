@@ -21,7 +21,6 @@ export function AdvertCardComponent(props) {
 }
 
 const AdvertCardLayout = styled.div`
-  max-width: 497px;
   height: 222px;
   padding: ${spacing(4)};
   background: ${(props) => `no-repeat center url(${props.advertImageURL})`};

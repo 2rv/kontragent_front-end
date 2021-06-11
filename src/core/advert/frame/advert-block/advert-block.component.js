@@ -21,7 +21,6 @@ export function AdvertBlockComponent(props) {
 }
 
 const AdvertBlockLayout = styled.div`
-  max-width: 286px;
   height: 286px;
   padding: ${spacing(4)};
   background: ${(props) => `no-repeat center url(${props.advertImageURL})`};
