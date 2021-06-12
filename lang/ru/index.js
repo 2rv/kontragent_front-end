@@ -14,6 +14,7 @@ import SETTINGS from './settings.json';
 import SUPPORT from './support.json';
 import DATA from './data.json';
 import BALANCE from './balance.json';
+import KONTRAGENT_REVIEW from './kontragent-review.json';
 
 export const RU = {
   translation: {
@@ -33,5 +34,6 @@ export const RU = {
     SUPPORT,
     DATA,
     BALANCE,
+    KONTRAGENT_REVIEW,
   },
 };
