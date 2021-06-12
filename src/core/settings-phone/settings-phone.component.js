@@ -1,3 +1,5 @@
+import React from 'react';
+import { PrimaryLoader } from '../../lib/elements/loader';
 import { SettingsFormChangePhoneContainer } from './frame/settings-form-change-phone';
 
 export function SettingsPhoneComponent(props) {
@@ -11,14 +13,17 @@ export function SettingsPhoneComponent(props) {
     settingsEmailFieldName,
   } = props;
   return (
-    <SettingsFormChangePhoneContainer
-      initialValue={initialValue}
-      settingsEmailFieldName={settingsEmailFieldName}
-      pageLoading={pageLoading}
-      isPending={isPending}
-      isError={isError}
-      isSuccess={isSuccess}
-      errorMessage={errorMessage}
-    />
+    <React.Fragment>
+      {(isPending || pageLoading) && <PrimaryLoader />}
+      <SettingsFormChangePhoneContainer
+        initialValue={initialValue}
+        settingsEmailFieldName={settingsEmailFieldName}
+        pageLoading={pageLoading}
+        isPending={isPending}
+        isError={isError}
+        isSuccess={isSuccess}
+        errorMessage={errorMessage}
+      />
+    </React.Fragment>
   );
 }

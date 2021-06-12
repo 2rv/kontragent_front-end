@@ -1,1 +1,1 @@
-export { SettingEmailPage } from './settings-email.page';
+export { SettingEmailContainer } from './settings-email.container';

@@ -1,1 +1,1 @@
-export { SettingsPasswordPage } from './settings-password.page';
+export { SettingsPasswordContainer } from './settings-password.container';

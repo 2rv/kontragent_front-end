@@ -1,1 +1,1 @@
-export { SupportCreateRequestPage } from './support-create-request.page';
+export { SupportCreateRequestContainer } from './support-create-request.container';
