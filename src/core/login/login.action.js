@@ -3,11 +3,11 @@ import { httpRequest } from '../../main/http';
 import { LOGIN_ACTION_TYPE } from './login.type';
 import { LOGIN_API } from './login.constant';
 
-import { authSetData } from '../../lib/common/auth/auth.action'
-import { LOGIN_FORM_REDIRECT_ON_UPLOAD_PATH } from './login.constant'
-import { redirect } from '../../main/navigation/navigation.core'
+import { authSetData } from '../../lib/common/auth/auth.action';
+import { LOGIN_FORM_REDIRECT_ON_UPLOAD_PATH } from './login.constant';
+import { redirect } from '../../main/navigation/navigation.core';
 
-export function loginFormUploadData(data) {
+export function loginFormUploadData(data, setSubmitting) {
   return async (dispatch) => {
     dispatch({
       type: LOGIN_ACTION_TYPE.LOGIN_FORM_UPLOAD_PENDING,
@@ -33,6 +33,7 @@ export function loginFormUploadData(data) {
           type: LOGIN_ACTION_TYPE.LOGIN_FORM_UPLOAD_ERROR,
           errorMessage: error.response.data.message,
         });
+        setSubmitting(false);
       }
     }
   };

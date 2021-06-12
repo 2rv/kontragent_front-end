@@ -29,9 +29,9 @@ export function SignupContainer() {
     state: state[SIGNUP_STORE_NAME],
     pageLoading: state[NAVIGATION_STORE_NAME].pageLoading,
   }));
-  const signupFormSendData = (values) => {
+  const signupFormSendData = (values, { setSubmitting }) => {
     const data = convertSignupFormData(values);
-    dispatch(signupFormUploadData(data));
+    dispatch(signupFormUploadData(data, setSubmitting));
   };
 
   const getInitialValue = () => {
