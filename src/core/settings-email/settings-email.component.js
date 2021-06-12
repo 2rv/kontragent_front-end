@@ -1,3 +1,5 @@
+import React from 'react';
+import { PrimaryLoader } from '../../lib/elements/loader';
 import { SettingsFormChangeEmailContainer } from './frame/settings-form-change-email.container';
 
 export function SettingEmailComponent(props) {
@@ -11,14 +13,17 @@ export function SettingEmailComponent(props) {
     settingsEmailFieldName,
   } = props;
   return (
-    <SettingsFormChangeEmailContainer
-      initialValue={initialValue}
-      settingsEmailFieldName={settingsEmailFieldName}
-      pageLoading={pageLoading}
-      isPending={isPending}
-      isError={isError}
-      isSuccess={isSuccess}
-      errorMessage={errorMessage}
-    />
+    <React.Fragment>
+      {(isPending || pageLoading) && <PrimaryLoader />}
+      <SettingsFormChangeEmailContainer
+        initialValue={initialValue}
+        settingsEmailFieldName={settingsEmailFieldName}
+        pageLoading={pageLoading}
+        isPending={isPending}
+        isError={isError}
+        isSuccess={isSuccess}
+        errorMessage={errorMessage}
+      />
+    </React.Fragment>
   );
 }
