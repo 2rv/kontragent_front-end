@@ -1,0 +1,12 @@
+{
+  "HEADER": "Восстановление пароля",
+  "BUTTON": "Восстановить",
+  "FORM_FIELD": {
+    "EMAIL": {
+      "TITLE": "Почта",
+      "PLACEHOLDER": "Contragent@mail.com"
+    }
+  },
+  "PROPOSAL": "Вспомнили пароль?",
+  "PROPOSAL_LINK": "Войти"
+}
