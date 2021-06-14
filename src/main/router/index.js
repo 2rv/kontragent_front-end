@@ -4,11 +4,16 @@ import { AuthRecoveryAccountRouter } from '../../core/auth-recovery-account';
 import { LoginRouter } from '../../core/login';
 import { SignupRouter } from '../../core/signup';
 
+import { LOGIN_ROUTE_PATH } from '../../core/login';
+import { SIGNUP_ROUTE_PATH } from '../../core/signup';
+import { AUTH_RECOVERY_ACCOUNT_ROUTE_PATH } from '../../core/auth-recovery-account';
+import { AUTH_CHANGE_PASSWORD_ROUTE_PATH } from '../../core/auth-change-password';
+
 export const routes = {
-  '/login': LoginRouter,
-  '/signup': SignupRouter,
-  '/auth-recovery-account': AuthRecoveryAccountRouter,
-  '/auth-change-password': AuthChangePasswordRouter,
+  [LOGIN_ROUTE_PATH]: LoginRouter,
+  [SIGNUP_ROUTE_PATH]: SignupRouter,
+  [AUTH_RECOVERY_ACCOUNT_ROUTE_PATH]: AuthRecoveryAccountRouter,
+  [AUTH_CHANGE_PASSWORD_ROUTE_PATH]: AuthChangePasswordRouter,
 };
 
 export const Router = routesInit(routes);
