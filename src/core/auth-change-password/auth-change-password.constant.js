@@ -12,5 +12,3 @@ export const AUTH_CHANGE_PASSWORD_API = {
 };
 
 export const AUTH_CHANGE_PASSWORD_REDIRECT_ON_UPLOAD_PATH = '/';
-
-export const REQUERED_QUERY_PARAMETR = 'code';

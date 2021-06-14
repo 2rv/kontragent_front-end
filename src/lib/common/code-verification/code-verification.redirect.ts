@@ -1,6 +1,6 @@
 import { redirect } from '../../../main/navigation/navigation.core';
 
-import { REQUERED_QUERY_PARAMETR } from '../../../core/auth-change-password';
+import { CODE_QUERY_NAME } from './code-verification.constant';
 
 import { getQuery } from '../../../main/navigation';
 
@@ -11,13 +11,13 @@ export const codeVerificationRedirectNoCode = (
   const { res, query } = ctx;
 
   if (res) {
-    if (!query[REQUERED_QUERY_PARAMETR]) {
+    if (!query[CODE_QUERY_NAME]) {
       res.writeHead(302, {
         Location: pathToRedirect,
       });
       res.end();
     }
   } else {
-    if (!getQuery(REQUERED_QUERY_PARAMETR)) redirect(pathToRedirect);
+    if (!getQuery(CODE_QUERY_NAME)) redirect(pathToRedirect);
   }
 };

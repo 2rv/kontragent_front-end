@@ -27,7 +27,7 @@ import {
 } from '../../main/store/store.service';
 
 import { getQuery } from '../../main/navigation';
-import { REQUERED_QUERY_PARAMETR } from './auth-change-password.constant';
+import { CODE_QUERY_NAME } from '../../lib/common/code-verification';
 
 export function AuthChangePasswordContainer() {
   const dispatch = useDispatch();
@@ -37,7 +37,7 @@ export function AuthChangePasswordContainer() {
   }));
 
   const authChangePasswordFormSendData = (values) => {
-    const recoveryCode = getQuery(REQUERED_QUERY_PARAMETR);
+    const recoveryCode = getQuery(CODE_QUERY_NAME);
     const data = convertAuthChangePasswordFormData(values, recoveryCode);
     dispatch(authChangePasswordFormUploadData(data));
   };
