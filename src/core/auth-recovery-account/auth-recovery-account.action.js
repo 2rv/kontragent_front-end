@@ -26,8 +26,6 @@ export function authFormRecoveryAccountUploadData(data) {
       dispatch({
         type: AUTH_RECOVERY_ACCOUNT_ACTION_TYPE.AUTH_FORM_RECOVERY_ACCOUNT_UPLOAD_SUCCESS,
       });
-
-      redirect(AUTH_RECOVERY_ACCOUNT_REDIRECT_ON_UPLOAD_PATH);
     } catch (error) {
       if (error) {
         dispatch({
