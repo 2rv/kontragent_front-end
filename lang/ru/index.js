@@ -15,6 +15,7 @@ import SUPPORT from './support.json';
 import DATA from './data.json';
 import BALANCE from './balance.json';
 import KONTRAGENT_REVIEW from './kontragent-review.json';
+import AUTH_RECOVERY_ACCOUNT from './auth-recovery-account.json';
 
 export const RU = {
   translation: {
@@ -35,5 +36,6 @@ export const RU = {
     DATA,
     BALANCE,
     KONTRAGENT_REVIEW,
+    AUTH_RECOVERY_ACCOUNT,
   },
 };
