@@ -1,5 +1,3 @@
-import React from 'react';
-import { PrimaryLoader } from '../../lib/elements/loader';
 import { PrimaryBox } from '../../lib/elements/box';
 import { IndentLayout, SectionLayout } from '../../lib/elements/layout';
 import { PhoneVerificationInfoHeaderContainer } from './frame/phone-vefirication-info-header';
@@ -18,28 +16,25 @@ export function AuthPhoneVerificationInfoComponent(props) {
     phoneVerificationInfoFormFieldName,
   } = props;
   return (
-    <React.Fragment>
-      {(isPending || pageLoading) && <PrimaryLoader />}
-      <PrimaryBox>
-        <IndentLayout>
-          <SectionLayout>
-            <PhoneVerificationInfoHeaderContainer />
-            <PhoneVerificationInfoFormContainer
-              phoneNumber={phoneNumber}
-              phoneVerificationInfoFormFieldName={
-                phoneVerificationInfoFormFieldName
-              }
-              initialValue={initialValue}
-              pageLoading={pageLoading}
-              isPending={isPending}
-              isError={isError}
-              isSuccess={isSuccess}
-              errorMessage={errorMessage}
-            />
-            <PhoneVerificationInfoFooterContainer />
-          </SectionLayout>
-        </IndentLayout>
-      </PrimaryBox>
-    </React.Fragment>
+    <PrimaryBox>
+      <IndentLayout>
+        <SectionLayout>
+          <PhoneVerificationInfoHeaderContainer />
+          <PhoneVerificationInfoFormContainer
+            phoneNumber={phoneNumber}
+            phoneVerificationInfoFormFieldName={
+              phoneVerificationInfoFormFieldName
+            }
+            initialValue={initialValue}
+            pageLoading={pageLoading}
+            isPending={isPending}
+            isError={isError}
+            isSuccess={isSuccess}
+            errorMessage={errorMessage}
+          />
+          <PhoneVerificationInfoFooterContainer />
+        </SectionLayout>
+      </IndentLayout>
+    </PrimaryBox>
   );
 }

@@ -1,16 +1,14 @@
 import React from 'react';
 
-import styled from 'styled-components';
-
 import { SectionLayout } from '../../../../lib/elements/layout';
 import { FieldLayout } from '../../../../lib/elements/layout';
 import { SecondaryTitleText } from '../../../../lib/elements/text';
 import { SelectField } from '../../../../lib/elements/field';
 import { TextareaField } from '../../../../lib/elements/field';
 import { SecondaryButton } from '../../../../lib/elements/button';
-import { CommonLoader } from '../../../../lib/elements/loader';
-import { CommonError } from '../../../../lib/elements/error';
-import { spacing } from '../../../../lib/theme';
+import { ErrorAlert } from '../../../../lib/elements/alert';
+import { PrimaryLoader } from '../../../../lib/elements/loader';
+import { SuccessAlert } from '../../../../lib/elements/alert';
 
 export function SupportFormCreateRequestComponent(props) {
   const {
@@ -47,60 +45,57 @@ export function SupportFormCreateRequestComponent(props) {
   console.log(`formik values: ${JSON.stringify(values)}`);
 
   return (
-    <form onSubmit={handleSubmit}>
-      <SectionLayout>
-        <SectionLayout type="LARGE">
-          <SecondaryTitleText tid="SUPPORT.CREATE_REQUEST.HEADER" />
-          <FieldLayout>
-            <SelectField
-              titleTid="SUPPORT.CREATE_REQUEST.FIELD.PROBLEM_CATEGORY.TITLE"
-              name={fieldProblemCategory}
-              onChange={handleChange}
-              onBlur={handleBlur}
-              option={problemCategory}
-            />
+    <React.Fragment>
+      {(isPending || pageLoading) && <PrimaryLoader />}
+      <form onSubmit={handleSubmit}>
+        <SectionLayout>
+          <SectionLayout type="LARGE">
+            <SecondaryTitleText tid="SUPPORT.CREATE_REQUEST.HEADER" />
+            <FieldLayout>
+              <SelectField
+                titleTid="SUPPORT.CREATE_REQUEST.FIELD.PROBLEM_CATEGORY.TITLE"
+                name={fieldProblemCategory}
+                onChange={handleChange}
+                onBlur={handleBlur}
+                option={problemCategory}
+              />
 
-            <TextareaField
-              titleTid="SUPPORT.CREATE_REQUEST.FIELD.PROBLEM_OUTLINE.TITLE"
-              placeholderTid="SUPPORT.CREATE_REQUEST.FIELD.PROBLEM_OUTLINE.PLACEHOLDER"
-              name={fieldProblemOutline}
-              onChange={handleChange}
-              onBlur={handleBlur}
-              error={isFieldError(fieldProblemOutline)}
-              row={1}
-            />
+              <TextareaField
+                titleTid="SUPPORT.CREATE_REQUEST.FIELD.PROBLEM_OUTLINE.TITLE"
+                placeholderTid="SUPPORT.CREATE_REQUEST.FIELD.PROBLEM_OUTLINE.PLACEHOLDER"
+                name={fieldProblemOutline}
+                onChange={handleChange}
+                onBlur={handleBlur}
+                error={isFieldError(fieldProblemOutline)}
+                row={1}
+              />
 
-            <TextareaField
-              titleTid="SUPPORT.CREATE_REQUEST.FIELD.PROBLEM_DESCRIPTION.PLACEHOLDER"
-              placeholderTid="SUPPORT.CREATE_REQUEST.FIELD.PROBLEM_DESCRIPTION.PLACEHOLDER"
-              name={fieldProblemDescription}
-              onChange={handleChange}
-              onBlur={handleBlur}
-              error={isFieldError(fieldProblemDescription)}
-              row={6}
-            />
-          </FieldLayout>
+              <TextareaField
+                titleTid="SUPPORT.CREATE_REQUEST.FIELD.PROBLEM_DESCRIPTION.PLACEHOLDER"
+                placeholderTid="SUPPORT.CREATE_REQUEST.FIELD.PROBLEM_DESCRIPTION.PLACEHOLDER"
+                name={fieldProblemDescription}
+                onChange={handleChange}
+                onBlur={handleBlur}
+                error={isFieldError(fieldProblemDescription)}
+                row={6}
+              />
+            </FieldLayout>
+          </SectionLayout>
+
+          <SecondaryButton
+            tid="SUPPORT.CREATE_REQUEST.BUTTON"
+            disabled={isSubmitDisabled()}
+          />
+
+          {(isError || errorMessage) && (
+            <ErrorAlert tid={`ERROR.${errorMessage}`} />
+          )}
+
+          {isSuccess && (
+            <SuccessAlert tid={'SUPPORT.CREATE_REQUEST.SUCCESS_MESSAGE'} />
+          )}
         </SectionLayout>
-
-        <SecondaryButton
-          tid="SUPPORT.CREATE_REQUEST.BUTTON"
-          disabled={isSubmitDisabled()}
-        />
-
-        {(isError || errorMessage) && (
-          <CommonError tid={`ERROR.${errorMessage}`} />
-        )}
-        {isPending && (
-          <LoaderLayout>
-            <CommonLoader width={17} height={17} />
-          </LoaderLayout>
-        )}
-      </SectionLayout>
-    </form>
+      </form>
+    </React.Fragment>
   );
 }
-
-const LoaderLayout = styled.div`
-  display: flex;
-  justify-content: center;
-`;

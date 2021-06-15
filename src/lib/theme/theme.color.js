@@ -6,7 +6,7 @@ export const THEME_COLOR = {
     DARK_SECONDARY: '#5F5B5D',
     BASE: '#FFFFFF',
     SUCCESS: '#219653',
-    ERROR: '#590000',
+    ERROR: '#EB5757',
     WARNING: '#F2994A',
     INFO: '#2F80ED',
     VALIDATION: '#EB5757',
@@ -19,8 +19,8 @@ export const THEME_COLOR = {
     ACCENT: '#3AB8FF',
     ERROR: '#FFE6E6',
     BASE: '#FFFFFF',
-    WARNING: '#FFEBD9',
     INFO: '#E6EBFF',
     VALIDATION: '#EB5757',
+    SUCCESS: '#E0FFDD',
   },
 };

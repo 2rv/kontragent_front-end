@@ -17,7 +17,7 @@ export function Settings2FAContainer() {
       pageLoading={true}
       isPending={true}
       isError={true}
-      isSuccess={false}
+      isSuccess={true}
       errorMessage={null}
     />
   );

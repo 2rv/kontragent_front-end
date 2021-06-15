@@ -1,10 +1,15 @@
+import React from 'react';
+
 import styled from 'styled-components';
+import { spacing } from '../../../../lib/theme';
+
 import { SectionLayout } from '../../../../lib/elements/layout';
 import { SecondaryTitleText } from '../../../../lib/elements/text';
 import { PrimaryField } from '../../../../lib/elements/field';
 import { SecondaryButton } from '../../../../lib/elements/button';
-import { CommonError } from '../../../../lib/elements/error';
-import { spacing } from '../../../../lib/theme';
+import { ErrorAlert } from '../../../../lib/elements/alert';
+import { SuccessAlert } from '../../../../lib/elements/alert';
+import { PrimaryLoader } from '../../../../lib/elements/loader';
 
 export function Settings2FAFormComponent(props) {
   const {
@@ -35,30 +40,35 @@ export function Settings2FAFormComponent(props) {
   };
 
   return (
-    <SectionLayout>
-      <SecondaryTitleText tid="SETTINGS.2FA.TITLE" />
-      <form onSubmit={handleSubmit}>
-        <SectionLayout>
-          <Settings2FALayout>
-            <PrimaryField
-              titleTid="SETTINGS.2FA.FIELD.PHONE_NUMBER.TITLE"
-              placeholderTid="SETTINGS.2FA.FIELD.PHONE_NUMBER.PLACEHOLDER"
-              name={fieldPhoneNumber}
-              onChange={handleChange}
-              onBlur={handleBlur}
-              value={values[fieldPhoneNumber]}
-              error={isFieldError(fieldPhoneNumber)}
-            />
+    <React.Fragment>
+      {(isPending || pageLoading) && <PrimaryLoader />}
+      <SectionLayout>
+        <SecondaryTitleText tid="SETTINGS.2FA.TITLE" />
+        <form onSubmit={handleSubmit}>
+          <SectionLayout>
+            <Settings2FALayout>
+              <PrimaryField
+                titleTid="SETTINGS.2FA.FIELD.PHONE_NUMBER.TITLE"
+                placeholderTid="SETTINGS.2FA.FIELD.PHONE_NUMBER.PLACEHOLDER"
+                name={fieldPhoneNumber}
+                onChange={handleChange}
+                onBlur={handleBlur}
+                value={values[fieldPhoneNumber]}
+                error={isFieldError(fieldPhoneNumber)}
+              />
 
-            <Button tid="SETTINGS.2FA.BUTTON" disabled={isSubmitDisabled()} />
-          </Settings2FALayout>
+              <Button tid="SETTINGS.2FA.BUTTON" disabled={isSubmitDisabled()} />
+            </Settings2FALayout>
 
-          {(isError || errorMessage) && (
-            <CommonError tid={`ERROR.${errorMessage}`} />
-          )}
-        </SectionLayout>
-      </form>
-    </SectionLayout>
+            {(isError || errorMessage) && (
+              <ErrorAlert tid={`ERROR.${errorMessage}`} />
+            )}
+
+            {isSuccess && <SuccessAlert tid={'SETTINGS.2FA.SUCCESS_MESSAGE'} />}
+          </SectionLayout>
+        </form>
+      </SectionLayout>
+    </React.Fragment>
   );
 }
 

@@ -1,15 +1,14 @@
 import React from 'react';
 
-import styled from 'styled-components';
-
 import { SectionLayout } from '../../../../lib/elements/layout';
 import { FieldLayout } from '../../../../lib/elements/layout';
 import { SecondaryTitleText } from '../../../../lib/elements/text';
 import { SelectField } from '../../../../lib/elements/field';
 import { PrimaryField } from '../../../../lib/elements/field';
 import { PrimaryButton } from '../../../../lib/elements/button';
-import { CommonLoader } from '../../../../lib/elements/loader';
-import { CommonError } from '../../../../lib/elements/error';
+import { ErrorAlert } from '../../../../lib/elements/alert';
+import { SuccessAlert } from '../../../../lib/elements/alert';
+import { PrimaryLoader } from '../../../../lib/elements/loader';
 
 export function BalanceFormDepositComponent(props) {
   const {
@@ -45,51 +44,48 @@ export function BalanceFormDepositComponent(props) {
   console.log(`formik values: ${JSON.stringify(values)}`);
 
   return (
-    <form onSubmit={handleSubmit}>
-      <SectionLayout>
-        <SectionLayout type="LARGE">
-          <SecondaryTitleText tid="BALANCE.BALANCE_DEPOSIT.HEADER" />
-          <FieldLayout type="double">
-            <SelectField
-              titleTid="BALANCE.BALANCE_DEPOSIT.FIELD.PAYMENT_METHOD.TITLE"
-              name={fieldPaymentMethod}
-              onChange={handleChange}
-              onBlur={handleBlur}
-              option={paymentMethod}
-            />
+    <React.Fragment>
+      {(isPending || pageLoading) && <PrimaryLoader />}
+      <form onSubmit={handleSubmit}>
+        <SectionLayout>
+          <SectionLayout type="LARGE">
+            <SecondaryTitleText tid="BALANCE.BALANCE_DEPOSIT.HEADER" />
+            <FieldLayout type="double">
+              <SelectField
+                titleTid="BALANCE.BALANCE_DEPOSIT.FIELD.PAYMENT_METHOD.TITLE"
+                name={fieldPaymentMethod}
+                onChange={handleChange}
+                onBlur={handleBlur}
+                option={paymentMethod}
+              />
 
-            <PrimaryField
-              titleTid="BALANCE.BALANCE_DEPOSIT.FIELD.DEPOSIT_AMOUNT.TITLE"
-              placeholderTid="BALANCE.BALANCE_DEPOSIT.FIELD.DEPOSIT_AMOUNT.PLACEHOLDER"
-              name={fieldDepositAmount}
-              onChange={handleChange}
-              onBlur={handleBlur}
-              value={values[fieldDepositAmount]}
-              error={isFieldError(fieldDepositAmount)}
-              type="number"
-            />
-          </FieldLayout>
+              <PrimaryField
+                titleTid="BALANCE.BALANCE_DEPOSIT.FIELD.DEPOSIT_AMOUNT.TITLE"
+                placeholderTid="BALANCE.BALANCE_DEPOSIT.FIELD.DEPOSIT_AMOUNT.PLACEHOLDER"
+                name={fieldDepositAmount}
+                onChange={handleChange}
+                onBlur={handleBlur}
+                value={values[fieldDepositAmount]}
+                error={isFieldError(fieldDepositAmount)}
+                type="number"
+              />
+            </FieldLayout>
+          </SectionLayout>
+
+          <PrimaryButton
+            tid="BALANCE.BALANCE_DEPOSIT.BUTTON"
+            disabled={isSubmitDisabled()}
+          />
+
+          {(isError || errorMessage) && (
+            <ErrorAlert tid={`ERROR.${errorMessage}`} />
+          )}
+
+          {isSuccess && (
+            <SuccessAlert tid={'BALANCE.BALANCE_DEPOSIT.SUCCESS_MESSAGE'} />
+          )}
         </SectionLayout>
-
-        <PrimaryButton
-          tid="BALANCE.BALANCE_DEPOSIT.BUTTON"
-          disabled={isSubmitDisabled()}
-        />
-
-        {(isError || errorMessage) && (
-          <CommonError tid={`ERROR.${errorMessage}`} />
-        )}
-        {isPending && (
-          <LoaderLayout>
-            <CommonLoader width={17} height={17} />
-          </LoaderLayout>
-        )}
-      </SectionLayout>
-    </form>
+      </form>
+    </React.Fragment>
   );
 }
-
-const LoaderLayout = styled.div`
-  display: flex;
-  justify-content: center;
-`;

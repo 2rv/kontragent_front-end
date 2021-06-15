@@ -3,6 +3,7 @@
   "BUTTON": "Зарегистрироваться",
   "PROPOSAL": "Не смогли зарегистрироваться?",
   "PROPOSAL_ACTION": "Помощь",
+  "SUCCESS_MESSAGE": "SUCCESS_MESSAGE",
   "ACCOUNT_INFO_FORM": {
     "FIELD": {
       "FULLNAME": {

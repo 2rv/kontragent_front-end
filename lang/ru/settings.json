@@ -8,7 +8,8 @@
     },
     "SUBTITLE": "Вы можете подписаться на рассылку важных уведомленийи неовостей от компании",
     "TITLE": "Важные уведомления",
-    "BUTTON": "Подписаться"
+    "BUTTON": "Подписаться",
+    "SUCCESS_MESSAGE": "SUCCESS_MESSAGE"
   },
   "ADVERT": {
     "SUBTITLE": "Рекламу по желанию можно отключить преобретая подписку за деньги с вашего счёта",
@@ -33,7 +34,8 @@
       }
     },
     "TITLE": "Двухэтапная аутентификация",
-    "BUTTON": "Включить аутентефикацию"
+    "BUTTON": "Включить аутентефикацию",
+    "SUCCESS_MESSAGE": "SUCCESS_MESSAGE"
   },
   "PASSWORD": {
     "FIELD": {
@@ -51,7 +53,8 @@
       }
     },
     "TITLE": "Смена пароля",
-    "BUTTON": "Сменить пароль"
+    "BUTTON": "Сменить пароль",
+    "SUCCESS_MESSAGE": "SUCCESS_MESSAGE"
   },
   "EMAIL": {
     "FIELD": {
@@ -65,7 +68,8 @@
       }
     },
     "TITLE": "Сменить Email",
-    "BUTTON": "Сменить Email"
+    "BUTTON": "Сменить Email",
+    "SUCCESS_MESSAGE": "SUCCESS_MESSAGE"
   },
   "PHONE": {
     "FIELD": {
@@ -79,6 +83,7 @@
       }
     },
     "TITLE": "Смена номера телефона",
-    "BUTTON": "Сменить номер телефона"
+    "BUTTON": "Сменить номер телефона",
+    "SUCCESS_MESSAGE": "SUCCESS_MESSAGE"
   }
 }

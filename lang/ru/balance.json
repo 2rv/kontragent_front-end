@@ -2,6 +2,7 @@
   "BALANCE_DEPOSIT": {
     "HEADER": "Пополнение баланса",
     "BUTTON": "Пополнить",
+    "SUCCESS_MESSAGE": "SUCCESS_MESSAGE",
     "FIELD": {
       "PAYMENT_METHOD": {
         "TITLE": "Способ оплаты"

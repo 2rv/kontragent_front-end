@@ -24,7 +24,7 @@ export function AuthPhoneVerificationInfoContainer() {
       pageLoading={true}
       isPending={true}
       isError={true}
-      isSuccess={false}
+      isSuccess={true}
       errorMessage={null}
     />
   );
