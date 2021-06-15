@@ -5,10 +5,10 @@ import styled from 'styled-components';
 import { SecondaryText } from '../../../../lib/elements/text';
 import { PrimaryField } from '../../../../lib/elements/field';
 import { PrimaryButton } from '../../../../lib/elements/button';
-import { CommonLoader } from '../../../../lib/elements/loader';
 import { CommonError } from '../../../../lib/elements/error';
 
 import { THEME_COLOR, THEME_SIZE, THEME_VALUE } from '../../../../lib/theme';
+import { PrimaryLoader } from '../../../../lib/elements/loader';
 
 import { spacing } from '../../../../lib/theme';
 
@@ -41,39 +41,37 @@ export function PhoneVerificationInfoComponent(props) {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <Container>
-        <div>
-          <Message tid="AUTH_PHONE_VERIFICATION_INFO.MESSAGE_START" />
-          <PhoneNumber>{props.phoneNumber}</PhoneNumber>
-          <Message tid="AUTH_PHONE_VERIFICATION_INFO.MESSAGE_END" />
-        </div>
+    <React.Fragment>
+      {(isPending || pageLoading) && <PrimaryLoader />}
+      <form onSubmit={handleSubmit}>
+        <Container>
+          <div>
+            <Message tid="AUTH_PHONE_VERIFICATION_INFO.MESSAGE_START" />
+            <PhoneNumber>{props.phoneNumber}</PhoneNumber>
+            <Message tid="AUTH_PHONE_VERIFICATION_INFO.MESSAGE_END" />
+          </div>
 
-        <PrimaryField
-          titleTid="AUTH_PHONE_VERIFICATION_INFO.PHONE_NUMBER_FILED.TITLE"
-          placeholderTid="AUTH_PHONE_VERIFICATION_INFO.PHONE_NUMBER_FILED.PLACEHOLDER"
-          name={fieldVerificationCode}
-          onChange={handleChange}
-          onBlur={handleBlur}
-          value={values[fieldVerificationCode]}
-          error={isFieldError(fieldVerificationCode)}
-        />
+          <PrimaryField
+            titleTid="AUTH_PHONE_VERIFICATION_INFO.PHONE_NUMBER_FILED.TITLE"
+            placeholderTid="AUTH_PHONE_VERIFICATION_INFO.PHONE_NUMBER_FILED.PLACEHOLDER"
+            name={fieldVerificationCode}
+            onChange={handleChange}
+            onBlur={handleBlur}
+            value={values[fieldVerificationCode]}
+            error={isFieldError(fieldVerificationCode)}
+          />
 
-        <Button
-          tid="AUTH_PHONE_VERIFICATION_INFO.BUTTON"
-          disabled={isSubmitDisabled()}
-        />
+          <Button
+            tid="AUTH_PHONE_VERIFICATION_INFO.BUTTON"
+            disabled={isSubmitDisabled()}
+          />
 
-        {(isError || errorMessage) && (
-          <CommonError tid={`ERROR.${errorMessage}`} />
-        )}
-        {isPending && (
-          <LoaderLayout>
-            <CommonLoader width={17} height={17} />
-          </LoaderLayout>
-        )}
-      </Container>
-    </form>
+          {(isError || errorMessage) && (
+            <CommonError tid={`ERROR.${errorMessage}`} />
+          )}
+        </Container>
+      </form>
+    </React.Fragment>
   );
 }
 
@@ -95,9 +93,4 @@ const Button = styled(PrimaryButton)`
   background-color: ${THEME_COLOR.COLOR.PRIMARY};
   color: ${THEME_COLOR.TEXT.BASE};
   width: 100%;
-`;
-
-const LoaderLayout = styled.div`
-  display: flex;
-  justify-content: center;
 `;

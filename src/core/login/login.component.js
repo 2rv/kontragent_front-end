@@ -1,5 +1,3 @@
-import React from 'react';
-import { PrimaryLoader } from '../../lib/elements/loader';
 import { PrimaryBox } from '../../lib/elements/box';
 import { IndentLayout, SectionLayout } from '../../lib/elements/layout';
 import { LoginHeaderContainer } from './frame/login-header';
@@ -19,27 +17,24 @@ export function LoginComponent(props) {
     errorMessage,
   } = props;
   return (
-    <React.Fragment>
-      {(isPending || pageLoading) && <PrimaryLoader />}
-      <PrimaryBox>
-        <IndentLayout>
-          <SectionLayout>
-            <LoginHeaderContainer />
-            <LoginFormContainer
-              initialValue={initialValue}
-              pageLoading={pageLoading}
-              isPending={isPending}
-              isError={isError}
-              isSuccess={isSuccess}
-              errorMessage={errorMessage}
-              validation={validation}
-              onSubmitForm={onSubmitForm}
-              fieldName={fieldName}
-            />
-            <LoginFooterContainer />
-          </SectionLayout>
-        </IndentLayout>
-      </PrimaryBox>
-    </React.Fragment>
+    <PrimaryBox>
+      <IndentLayout>
+        <SectionLayout>
+          <LoginHeaderContainer />
+          <LoginFormContainer
+            initialValue={initialValue}
+            pageLoading={pageLoading}
+            isPending={isPending}
+            isError={isError}
+            isSuccess={isSuccess}
+            errorMessage={errorMessage}
+            validation={validation}
+            onSubmitForm={onSubmitForm}
+            fieldName={fieldName}
+          />
+          <LoginFooterContainer />
+        </SectionLayout>
+      </IndentLayout>
+    </PrimaryBox>
   );
 }
