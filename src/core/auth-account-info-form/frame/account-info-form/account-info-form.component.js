@@ -11,6 +11,7 @@ import { PrimaryButton } from '../../../../lib/elements/button';
 import { ErrorAlert } from '../../../../lib/elements/alert';
 import { PrimaryLoader } from '../../../../lib/elements/loader';
 import { SuccessAlert } from '../../../../lib/elements/alert';
+import { PrimaryDivider } from '../../../../lib/elements/divider';
 
 export function AccountInfoFormComponent(props) {
   const {
@@ -57,7 +58,7 @@ export function AccountInfoFormComponent(props) {
               error={isFieldError(fieldFullName)}
             />
 
-            <Line />
+            <PrimaryDivider />
 
             <CompanyInfoFormContainer />
           </SectionLayout>
@@ -89,10 +90,4 @@ export function AccountInfoFormComponent(props) {
 const AddCompanyFormButton = styled(PrimaryButton)`
   background-color: ${THEME_COLOR.COLOR.PRIMARY};
   color: ${THEME_COLOR.TEXT.BASE};
-`;
-
-const Line = styled.div`
-  height: 2px;
-  background-color: ${THEME_COLOR.COLOR.SECONDARY};
-  border-radius: 30px;
 `;
