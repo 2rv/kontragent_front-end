@@ -29,9 +29,9 @@ export function LoginContainer() {
     state: state[LOGIN_STORE_NAME],
     pageLoading: state[NAVIGATION_STORE_NAME].pageLoading,
   }));
-  const loginFormSendData = (values, { setSubmitting }) => {
+  const loginFormSendData = (values) => {
     const data = convertLoginFormData(values);
-    dispatch(loginFormUploadData(data, setSubmitting));
+    dispatch(loginFormUploadData(data));
   };
 
   const getInitialValue = () => {
