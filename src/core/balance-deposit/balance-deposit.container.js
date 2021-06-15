@@ -1,5 +1,7 @@
 import { BalanceDepositComponent } from './balance-deposit.component';
 
+import { BALANCE_DEPOSIT_PAYMENT_METHOD } from './balance-deposit.constant';
+
 import {
   BALANCE_DEPOSIT_FIELD_NAME,
   BALANCE_FORM_DEPOSIT_FIELD_NAME,
@@ -22,6 +24,7 @@ export function BalanceDepositContainer() {
       fieldName={BALANCE_FORM_DEPOSIT_FIELD_NAME}
       pageLoading={true}
       errorMessage={'error'}
+      paymentMethod={BALANCE_DEPOSIT_PAYMENT_METHOD}
     />
   );
 }

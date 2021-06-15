@@ -10,7 +10,6 @@ import { PrimaryField } from '../../../../lib/elements/field';
 import { PrimaryButton } from '../../../../lib/elements/button';
 import { CommonLoader } from '../../../../lib/elements/loader';
 import { CommonError } from '../../../../lib/elements/error';
-import { spacing } from '../../../../lib/theme';
 
 export function BalanceFormDepositComponent(props) {
   const {
@@ -25,6 +24,7 @@ export function BalanceFormDepositComponent(props) {
 
     fieldPaymentMethod,
     fieldDepositAmount,
+    paymentMethod,
     pageLoading,
     isSuccess,
     isPending,
@@ -55,10 +55,7 @@ export function BalanceFormDepositComponent(props) {
               name={fieldPaymentMethod}
               onChange={handleChange}
               onBlur={handleBlur}
-              option={[
-                { id: 0, tid: 'DATA.PROBLEM_CATEGORY.1' },
-                { id: 1, tid: 'DATA.PROBLEM_CATEGORY.2' },
-              ]}
+              option={paymentMethod}
             />
 
             <PrimaryField

@@ -1,5 +1,6 @@
 {
   "SIGN_UP_USER_ALREADY_EXISTS": "ПОЛЬЗОВАТЕЛЬ С ТАКИМ ЛОГИНОМ ИЛИ ПОЧТОЙ УЖЕ СУЩЕСТВУЕТ",
   "LOGIN_UNCORRECT_PASSWORD_OR_LOGIN": "НЕПРАВИЛЬНЫЙ ЛОГИН ИЛИ ПАРОЛЬ",
-  "LOGIN_COULDNT_FOUND_USER": "ТАКОГО ПОЛЬЗОВАТЕЛЯ НЕ СУЩЕСТВУЕТ"
+  "LOGIN_COULDNT_FOUND_USER": "ТАКОГО ПОЛЬЗОВАТЕЛЯ НЕ СУЩЕСТВУЕТ",
+  "USER_RECOVERY_PASSWORD_INCORRECT_CODE": "Сессия восстановления аккаунта устарела или не найдена"
 }

@@ -1,1 +1,1 @@
-export { SettingsPhonePage } from './settings-phone.page';
+export { SettingsPhoneContainer } from './settings-phone.container';

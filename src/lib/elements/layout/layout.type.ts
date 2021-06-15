@@ -9,7 +9,7 @@ export interface ContentLayoutPropsType {
 }
 
 export interface IndentLayoutPropsType {
-  type?: 'DEFAULT' | 'SMALL' | undefined;
+  type?: 'DEFAULT' | 'SMALL' | 'MEDIUM' | undefined;
   children?: React.ReactElement<any> | null;
   className?: string;
 }

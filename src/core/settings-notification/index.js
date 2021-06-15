@@ -1,1 +1,1 @@
-export { SettingsNotificationPage } from './settings-notification.page';
+export { SettingsNotificationContainer } from './settings-notification.container';

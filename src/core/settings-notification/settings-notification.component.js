@@ -1,3 +1,5 @@
+import React from 'react';
+import { PrimaryLoader } from '../../lib/elements/loader';
 import { SettingsFormChangeNotificationContainer } from './frame/settings-form-change-email-notification';
 
 export function SettingsNotificationComponent(props) {
@@ -11,14 +13,17 @@ export function SettingsNotificationComponent(props) {
     settingsNotificationFieldName,
   } = props;
   return (
-    <SettingsFormChangeNotificationContainer
-      initialValue={initialValue}
-      settingsNotificationFieldName={settingsNotificationFieldName}
-      pageLoading={pageLoading}
-      isPending={isPending}
-      isError={isError}
-      isSuccess={isSuccess}
-      errorMessage={errorMessage}
-    />
+    <React.Fragment>
+      {(isPending || pageLoading) && <PrimaryLoader />}
+      <SettingsFormChangeNotificationContainer
+        initialValue={initialValue}
+        settingsNotificationFieldName={settingsNotificationFieldName}
+        pageLoading={pageLoading}
+        isPending={isPending}
+        isError={isError}
+        isSuccess={isSuccess}
+        errorMessage={errorMessage}
+      />
+    </React.Fragment>
   );
 }

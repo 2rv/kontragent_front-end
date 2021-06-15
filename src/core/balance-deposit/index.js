@@ -1,1 +1,1 @@
-export { BalanceDepositPage } from './balance-deposit.page';
+export { BalanceDepositContainer } from './balance-deposit.container';

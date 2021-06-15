@@ -11,8 +11,12 @@ import AUTH_EMAIL_VERIFICATION_STATUS from './auth-email-verifiction-status.json
 import AUTH_PHONE_VERIFICATION_INFO from './auth-phone-vefirication-info.json';
 import AUTH_ACCOUNT_INFO_FORM from './auth-account-info-form.json';
 import SETTINGS from './settings.json';
+import SUPPORT from './support.json';
 import DATA from './data.json';
 import BALANCE from './balance.json';
+import KONTRAGENT_REVIEW from './kontragent-review.json';
+import AUTH_CHANGE_PASSWORD from './auth-change-password.json';
+import AUTH_RECOVERY_ACCOUNT from './auth-recovery-account.json';
 
 export const RU = {
   translation: {
@@ -29,7 +33,11 @@ export const RU = {
     SIDEBAR,
     ADVERT,
     SETTINGS,
+    SUPPORT,
     DATA,
     BALANCE,
+    KONTRAGENT_REVIEW,
+    AUTH_CHANGE_PASSWORD,
+    AUTH_RECOVERY_ACCOUNT,
   },
 };
