@@ -4,4 +4,5 @@ export interface ButtonPropsType {
   type: 'button' | 'submit' | 'reset' | undefined;
   className?: string;
   children?: React.ReactElement<any> | null;
+  onClick?: () => void;
 }
