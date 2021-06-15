@@ -2,6 +2,7 @@
   "CREATE_REQUEST": {
     "HEADER": "Новый запрос",
     "BUTTON": "Отправить",
+    "SUCCESS_MESSAGE": "SUCCESS_MESSAGE",
     "FIELD": {
       "PROBLEM_CATEGORY": {
         "TITLE": "Выберете категорию проблемы"

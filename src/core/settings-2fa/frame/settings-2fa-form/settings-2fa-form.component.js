@@ -3,7 +3,8 @@ import { SectionLayout } from '../../../../lib/elements/layout';
 import { SecondaryTitleText } from '../../../../lib/elements/text';
 import { PrimaryField } from '../../../../lib/elements/field';
 import { SecondaryButton } from '../../../../lib/elements/button';
-import { CommonError } from '../../../../lib/elements/error';
+import { ErrorAlert } from '../../../../lib/elements/alert';
+import { SuccessAlert } from '../../../../lib/elements/alert';
 import { spacing } from '../../../../lib/theme';
 
 export function Settings2FAFormComponent(props) {
@@ -54,8 +55,10 @@ export function Settings2FAFormComponent(props) {
           </Settings2FALayout>
 
           {(isError || errorMessage) && (
-            <CommonError tid={`ERROR.${errorMessage}`} />
+            <ErrorAlert tid={`ERROR.${errorMessage}`} />
           )}
+
+          {isSuccess && <SuccessAlert tid={'SETTINGS.2FA.SUCCESS_MESSAGE'} />}
         </SectionLayout>
       </form>
     </SectionLayout>

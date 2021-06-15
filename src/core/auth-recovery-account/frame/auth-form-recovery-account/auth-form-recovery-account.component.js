@@ -5,7 +5,8 @@ import { spacing } from '../../../../lib/theme';
 import { SectionLayout } from '../../../../lib/elements/layout';
 import { PrimaryField } from '../../../../lib/elements/field';
 import { PrimaryButton } from '../../../../lib/elements/button';
-import { CommonError } from '../../../../lib/elements/error';
+import { ErrorAlert } from '../../../../lib/elements/alert';
+import { SuccessAlert } from '../../../../lib/elements/alert';
 import { PrimaryTitleText, SecondaryText } from '../../../../lib/elements/text';
 import { PrimaryLink } from '../../../../lib/elements/link';
 import { PrimaryLoader } from '../../../../lib/elements/loader';
@@ -63,7 +64,11 @@ export function AuthFormRecoveryAccountComponent(props) {
             />
 
             {(isError || errorMessage) && (
-              <CommonError tid={`ERROR.${errorMessage}`} />
+              <ErrorAlert tid={`ERROR.${errorMessage}`} />
+            )}
+
+            {isSuccess && (
+              <SuccessAlert tid={'AUTH_RECOVERY_ACCOUNT.SUCCESS_MESSAGE'} />
             )}
           </SectionLayout>
         </form>

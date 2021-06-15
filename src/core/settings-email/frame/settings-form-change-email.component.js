@@ -6,7 +6,8 @@ import {
 import { SecondaryTitleText } from '../../../lib/elements/text';
 import { PrimaryField } from '../../../lib/elements/field';
 import { SecondaryButton } from '../../../lib/elements/button';
-import { CommonError } from '../../../lib/elements/error';
+import { ErrorAlert } from '../../../lib/elements/error';
+import { SuccessAlert } from '../../../../lib/elements/alert';
 
 export function SettingsFormChangeEmailComponent(props) {
   const {
@@ -73,8 +74,10 @@ export function SettingsFormChangeEmailComponent(props) {
           </ButtonLayout>
 
           {(isError || errorMessage) && (
-            <CommonError tid={`ERROR.${errorMessage}`} />
+            <ErrorAlert tid={`ERROR.${errorMessage}`} />
           )}
+
+          {isSuccess && <SuccessAlert tid={'SETTINGS.EMAIL.SUCCESS_MESSAGE'} />}
         </SectionLayout>
       </form>
     </SectionLayout>

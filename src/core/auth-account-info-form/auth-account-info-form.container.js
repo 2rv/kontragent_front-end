@@ -20,7 +20,7 @@ export function AuthAccountInfoForm() {
       pageLoading={true}
       isPending={true}
       isError={true}
-      isSuccess={false}
+      isSuccess={true}
       errorMessage={null}
       accountInfoFormFieldName={ACCOUNT_INFO_FORM_FIELD_NAME}
     />

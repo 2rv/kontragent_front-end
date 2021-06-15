@@ -8,8 +8,9 @@ import { THEME_COLOR } from '../../../../lib/theme';
 import { SectionLayout } from '../../../../lib/elements/layout';
 import { PrimaryField } from '../../../../lib/elements/field';
 import { PrimaryButton } from '../../../../lib/elements/button';
-import { CommonError } from '../../../../lib/elements/error';
+import { ErrorAlert } from '../../../../lib/elements/alert';
 import { PrimaryLoader } from '../../../../lib/elements/loader';
+import { SuccessAlert } from '../../../../lib/elements/alert';
 
 export function AccountInfoFormComponent(props) {
   const {
@@ -73,7 +74,11 @@ export function AccountInfoFormComponent(props) {
           </SectionLayout>
 
           {(isError || errorMessage) && (
-            <CommonError tid={`ERROR.${errorMessage}`} />
+            <ErrorAlert tid={`ERROR.${errorMessage}`} />
+          )}
+
+          {isSuccess && (
+            <SuccessAlert tid={'AUTH_ACCOUNT_INFO_FORM.SUCCESS_MESSAGE'} />
           )}
         </SectionLayout>
       </form>

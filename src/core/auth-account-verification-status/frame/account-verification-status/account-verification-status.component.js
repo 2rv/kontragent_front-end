@@ -9,7 +9,7 @@ import { IndentLayout } from '../../../../lib/elements/layout';
 import { PrimaryTitleText } from '../../../../lib/elements/text';
 import { PrimaryText } from '../../../../lib/elements/text';
 import { PrimaryButton } from '../../../../lib/elements/button';
-import { CommonError } from '../../../../lib/elements/error';
+import { ErrorAlert } from '../../../../lib/elements/alert';
 
 import { THEME_COLOR, THEME_VALUE } from '../../../../lib/theme';
 
@@ -28,10 +28,7 @@ export function AccountVerificationStatusComponent() {
           <Button tid="AUTH_ACCOUNT_VERIFICATION_STATUS.BUTTON" />
         </IndentLayout>
       </PrimaryBox>
-      <CommonError
-        compoundTid="AUTH_ACCOUNT_VERIFICATION_STATUS.ERROR_TYPE"
-        tid="AUTH_ACCOUNT_VERIFICATION_STATUS.ERROR_SHORTHAND"
-      />
+      <ErrorAlert />
     </SectionLayout>
   );
 }

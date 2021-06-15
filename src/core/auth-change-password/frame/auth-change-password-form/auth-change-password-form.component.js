@@ -4,8 +4,9 @@ import { SectionLayout } from '../../../../lib/elements/layout';
 import { FieldLayout } from '../../../../lib/elements/layout';
 import { PrimaryField } from '../../../../lib/elements/field';
 import { PrimaryButton } from '../../../../lib/elements/button';
-import { CommonError } from '../../../../lib/elements/error';
+import { ErrorAlert } from '../../../../lib/elements/alert';
 import { PrimaryLoader } from '../../../../lib/elements/loader';
+import { SuccessAlert } from '../../../../lib/elements/alert';
 
 export function AuthChangePasswordFormComponent(props) {
   const {
@@ -71,7 +72,11 @@ export function AuthChangePasswordFormComponent(props) {
           />
 
           {(isError || errorMessage) && (
-            <CommonError tid={`ERROR.${errorMessage}`} />
+            <ErrorAlert tid={`ERROR.${errorMessage}`} />
+          )}
+
+          {isSuccess && (
+            <SuccessAlert tid={'AUTH_CHANGE_PASSWORD.SUCCESS_MESSAGE'} />
           )}
         </SectionLayout>
       </form>

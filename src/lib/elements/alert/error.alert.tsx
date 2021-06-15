@@ -1,30 +1,35 @@
-import { FormErrorPropsType } from './type.error';
+import { AlertPropsType } from './type.alert';
 
 import styled from 'styled-components';
 import { THEME_COLOR, THEME_SIZE } from '../../theme';
 import { spacing } from '../../theme';
 
-import { ReactComponent as ErrorIcon } from '../../../asset/svg/error.svg';
+import { ReactComponent as AlertIcon } from '../../../asset/svg/alert.svg';
 
 import { text } from '../../common/text';
 
-export function CommonError(props: FormErrorPropsType) {
+export function ErrorAlert(props: AlertPropsType) {
   const { tid, className, tvalue } = props;
   return (
-    <Error className={className}>
-      <ErrorIcon />
-      <ErrorMessage>{text(tid, tvalue)}</ErrorMessage>
-    </Error>
+    <Alert className={className}>
+      <Icon />
+      <Message>{text(tid, tvalue)}</Message>
+    </Alert>
   );
 }
 
-const ErrorMessage = styled.span`
+const Icon = styled(AlertIcon)`
+  fill: ${THEME_COLOR.TEXT.ERROR};
+  flex-shrink: 0;
+`;
+
+const Message = styled.span`
   color: ${THEME_COLOR.TEXT.ERROR};
   font-size: ${THEME_SIZE.FONT.SMALL};
   margin-left: ${spacing(2)};
 `;
 
-const Error = styled.div`
+const Alert = styled.div`
   display: flex;
   align-items: center;
   justify-content: flex-start;

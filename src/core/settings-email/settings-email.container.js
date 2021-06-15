@@ -18,7 +18,7 @@ export function SettingEmailContainer() {
       pageLoading={true}
       isPending={true}
       isError={true}
-      isSuccess={false}
+      isSuccess={true}
       errorMessage={null}
     />
   );

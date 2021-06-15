@@ -6,8 +6,9 @@ import { SecondaryTitleText } from '../../../../lib/elements/text';
 import { SelectField } from '../../../../lib/elements/field';
 import { TextareaField } from '../../../../lib/elements/field';
 import { SecondaryButton } from '../../../../lib/elements/button';
-import { CommonError } from '../../../../lib/elements/error';
+import { ErrorAlert } from '../../../../lib/elements/alert';
 import { PrimaryLoader } from '../../../../lib/elements/loader';
+import { SuccessAlert } from '../../../../lib/elements/alert';
 
 export function SupportFormCreateRequestComponent(props) {
   const {
@@ -87,7 +88,11 @@ export function SupportFormCreateRequestComponent(props) {
           />
 
           {(isError || errorMessage) && (
-            <CommonError tid={`ERROR.${errorMessage}`} />
+            <ErrorAlert tid={`ERROR.${errorMessage}`} />
+          )}
+
+          {isSuccess && (
+            <SuccessAlert tid={'SUPPORT.CREATE_REQUEST.SUCCESS_MESSAGE'} />
           )}
         </SectionLayout>
       </form>

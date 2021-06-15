@@ -6,7 +6,8 @@ import { SecondaryTitleText } from '../../../../lib/elements/text';
 import { SelectField } from '../../../../lib/elements/field';
 import { PrimaryField } from '../../../../lib/elements/field';
 import { PrimaryButton } from '../../../../lib/elements/button';
-import { CommonError } from '../../../../lib/elements/error';
+import { ErrorAlert } from '../../../../lib/elements/alert';
+import { SuccessAlert } from '../../../../lib/elements/alert';
 import { PrimaryLoader } from '../../../../lib/elements/loader';
 
 export function BalanceFormDepositComponent(props) {
@@ -77,7 +78,11 @@ export function BalanceFormDepositComponent(props) {
           />
 
           {(isError || errorMessage) && (
-            <CommonError tid={`ERROR.${errorMessage}`} />
+            <ErrorAlert tid={`ERROR.${errorMessage}`} />
+          )}
+
+          {isSuccess && (
+            <SuccessAlert tid={'BALANCE.BALANCE_DEPOSIT.SUCCESS_MESSAGE'} />
           )}
         </SectionLayout>
       </form>

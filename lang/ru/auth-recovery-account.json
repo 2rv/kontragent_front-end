@@ -1,6 +1,7 @@
 {
   "HEADER": "Восстановление пароля",
   "BUTTON": "Восстановить",
+  "SUCCESS_MESSAGE": "SUCCESS_MESSAGE",
   "FORM_FIELD": {
     "EMAIL": {
       "TITLE": "Почта",

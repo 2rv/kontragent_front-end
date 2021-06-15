@@ -4,7 +4,8 @@ import { SecondaryTitleText } from '../../../../lib/elements/text';
 import { SecondaryText } from '../../../../lib/elements/text';
 import { PrimaryField } from '../../../../lib/elements/field';
 import { SecondaryButton } from '../../../../lib/elements/button';
-import { CommonError } from '../../../../lib/elements/error';
+import { ErrorAlert } from '../../../../lib/elements/alert';
+import { SuccessAlert } from '../../../../lib/elements/alert';
 
 export function SettingsFormChangeNotificationComponent(props) {
   const {
@@ -61,7 +62,11 @@ export function SettingsFormChangeNotificationComponent(props) {
           </SectionLayout>
 
           {(isError || errorMessage) && (
-            <CommonError tid={`ERROR.${errorMessage}`} />
+            <ErrorAlert tid={`ERROR.${errorMessage}`} />
+          )}
+
+          {isSuccess && (
+            <SuccessAlert tid={'SETTINGS.NOTIFICATION.SUCCESS_MESSAGE'} />
           )}
         </SectionLayout>
       </form>

@@ -5,7 +5,8 @@ import styled from 'styled-components';
 import { SecondaryText } from '../../../../lib/elements/text';
 import { PrimaryField } from '../../../../lib/elements/field';
 import { PrimaryButton } from '../../../../lib/elements/button';
-import { CommonError } from '../../../../lib/elements/error';
+import { ErrorAlert } from '../../../../lib/elements/alert';
+import { SuccessAlert } from '../../../../lib/elements/alert';
 
 import { THEME_COLOR, THEME_SIZE, THEME_VALUE } from '../../../../lib/theme';
 import { PrimaryLoader } from '../../../../lib/elements/loader';
@@ -67,7 +68,13 @@ export function PhoneVerificationInfoComponent(props) {
           />
 
           {(isError || errorMessage) && (
-            <CommonError tid={`ERROR.${errorMessage}`} />
+            <ErrorAlert tid={`ERROR.${errorMessage}`} />
+          )}
+
+          {isSuccess && (
+            <SuccessAlert
+              tid={'AUTH_PHONE_VERIFICATION_INFO.SUCCESS_MESSAGE'}
+            />
           )}
         </Container>
       </form>
