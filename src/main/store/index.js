@@ -16,6 +16,10 @@ import {
   authRecoveryAccountStore,
   AUTH_RECOVERY_ACCOUNT_STORE_NAME,
 } from '../../core/auth-recovery-account';
+import {
+  settingsEmailStore,
+  SETTINGS_EMAIL_STORE_NAME,
+} from '../../core/settings-email';
 
 export const reducers = combineReducers({
   [AUTH_STORE_NAME]: authStore,
@@ -25,6 +29,7 @@ export const reducers = combineReducers({
   [LOGIN_STORE_NAME]: loginStore,
   [AUTH_CHANGE_PASSWORD_STORE_NAME]: authChangePasswordStore,
   [AUTH_RECOVERY_ACCOUNT_STORE_NAME]: authRecoveryAccountStore,
+  [SETTINGS_EMAIL_STORE_NAME]: settingsEmailStore,
 });
 
 export { initStore } from './store.core';

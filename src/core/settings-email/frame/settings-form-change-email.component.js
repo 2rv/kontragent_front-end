@@ -8,8 +8,8 @@ import {
 import { SecondaryTitleText } from '../../../lib/elements/text';
 import { PrimaryField } from '../../../lib/elements/field';
 import { SecondaryButton } from '../../../lib/elements/button';
-import { ErrorAlert } from '../../../lib/elements/error';
-import { SuccessAlert } from '../../../../lib/elements/alert';
+import { ErrorAlert } from '../../../lib/elements/alert';
+import { SuccessAlert } from '../../../lib/elements/alert';
 import { PrimaryLoader } from '../../../lib/elements/loader';
 
 export function SettingsFormChangeEmailComponent(props) {
@@ -26,10 +26,14 @@ export function SettingsFormChangeEmailComponent(props) {
     pageLoading,
     fieldPassword,
     fieldEmail,
-    isSuccess,
-    isPending,
-    isError,
-    errorMessage,
+
+    FormPending,
+    FormError,
+    FormSuccess,
+    FormErrorMessage,
+    dataPending,
+    dataError,
+    dataErrorMessage,
   } = props;
 
   const isFieldError = (name) => {
@@ -39,12 +43,12 @@ export function SettingsFormChangeEmailComponent(props) {
   const isSubmitDisabled = () => {
     return JSON.stringify(touched) === '{}'
       ? true
-      : !isValid || isSubmitting || isSuccess || pageLoading;
+      : !isValid || isSubmitting || FormSuccess || pageLoading || dataPending;
   };
 
   return (
     <React.Fragment>
-      {(isPending || pageLoading) && <PrimaryLoader />}
+      {(FormPending || pageLoading) && <PrimaryLoader />}
       <SectionLayout>
         <SecondaryTitleText tid="SETTINGS.EMAIL.TITLE" />
         <form onSubmit={handleSubmit}>
@@ -68,6 +72,7 @@ export function SettingsFormChangeEmailComponent(props) {
                 onBlur={handleBlur}
                 value={values[fieldPassword]}
                 error={isFieldError(fieldPassword)}
+                type="password"
               />
             </FieldLayout>
 
@@ -78,11 +83,15 @@ export function SettingsFormChangeEmailComponent(props) {
               />
             </ButtonLayout>
 
-            {(isError || errorMessage) && (
-              <ErrorAlert tid={`ERROR.${errorMessage}`} />
+            {(FormError || FormErrorMessage) && (
+              <ErrorAlert tid={`ERROR.${FormErrorMessage}`} />
             )}
 
-            {isSuccess && (
+            {(dataError || dataErrorMessage) && (
+              <ErrorAlert tid={`ERROR.${dataErrorMessage}`} />
+            )}
+
+            {FormSuccess && (
               <SuccessAlert tid={'SETTINGS.EMAIL.SUCCESS_MESSAGE'} />
             )}
           </SectionLayout>
