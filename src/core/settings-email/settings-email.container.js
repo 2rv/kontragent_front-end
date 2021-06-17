@@ -20,6 +20,7 @@ import {
 } from '../../main/store/store.service';
 import { settingsFormChangeEmailValidation } from './settings-email.validation';
 import { convertSettingsFormChangeEmailData } from './settings-email.convert';
+import { SETTINGS_EMAIL_DATA_NAME } from './settings-email.type';
 
 export function SettingEmailContainer() {
   const dispatch = useDispatch();
@@ -33,7 +34,9 @@ export function SettingEmailContainer() {
 
   const getInitialValue = () => {
     return {
-      [SETTINGS_EMAIL_FIELD_NAME.EMAIL]: getRequestData(settingsEmailState, ''),
+      [SETTINGS_EMAIL_FIELD_NAME.EMAIL]: getRequestData(settingsEmailState, '')[
+        SETTINGS_EMAIL_DATA_NAME.EMAIL
+      ],
       [SETTINGS_EMAIL_FIELD_NAME.PASSWORD]: '',
     };
   };

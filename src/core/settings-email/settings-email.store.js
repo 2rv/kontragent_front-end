@@ -17,7 +17,7 @@ export function settingsEmailStore(state = initialState, action) {
     case SETTINGS_EMAIL_ACTION_TYPE.SETTINGS_EMAIL_GET_EMAIL_SUCCESS:
       return {
         ...state,
-        settingsEmail: setRequestSuccess(state.settingsEmail, action.email),
+        settingsEmail: setRequestSuccess(state.settingsEmail, action.data),
       };
 
     case SETTINGS_EMAIL_ACTION_TYPE.SETTINGS_EMAIL_GET_EMAIL_PENDING:

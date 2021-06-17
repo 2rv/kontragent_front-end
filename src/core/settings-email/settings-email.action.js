@@ -5,7 +5,7 @@ import {
   SETTINGS_EMAIL_API,
   SETTINGS_FORM_CHANGE_EMAIL_API,
 } from './settings-email.constant';
-import { SETTINGS_EMAIL_DATA_NAME } from './settings-email.constant';
+import { performSettingsEmail } from './settings-email.convert';
 
 export function settingsEmailGetEmail() {
   return async (dispatch) => {
@@ -19,10 +19,10 @@ export function settingsEmailGetEmail() {
         url: SETTINGS_EMAIL_API.ENDPOINT,
       });
 
-      const email = res.data[SETTINGS_EMAIL_DATA_NAME.EMAIL];
+      const data = performSettingsEmail(res.data);
       dispatch({
         type: SETTINGS_EMAIL_ACTION_TYPE.SETTINGS_EMAIL_GET_EMAIL_SUCCESS,
-        email: email,
+        data: data,
       });
     } catch (error) {
       if (error) {

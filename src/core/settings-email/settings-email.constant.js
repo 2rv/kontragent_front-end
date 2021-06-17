@@ -10,6 +10,6 @@ export const SETTINGS_FORM_CHANGE_EMAIL_API = {
   TYPE: 'PATCH',
 };
 
-export const SETTINGS_EMAIL_DATA_NAME = {
+export const SETTINGS_EMAIL_DATA_KEY = {
   EMAIL: 'email',
 };
