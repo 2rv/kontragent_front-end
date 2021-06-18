@@ -23,6 +23,7 @@ export function SignupFormComponent(props) {
     fieldPassword,
     fieldPasswordRepeat,
     fieldEmail,
+    fieldPhone,
     pageLoading,
     isSuccess,
     isPending,
@@ -64,6 +65,16 @@ export function SignupFormComponent(props) {
               onBlur={handleBlur}
               value={values[fieldEmail]}
               error={isFieldError(fieldEmail)}
+            />
+
+            <PrimaryField
+              titleTid="SIGNUP.SIGNUP_FORM.FIELD.PHONE.TITLE"
+              placeholderTid="SIGNUP.SIGNUP_FORM.FIELD.PHONE.PLACEHOLDER"
+              name={fieldPhone}
+              onChange={handleChange}
+              onBlur={handleBlur}
+              value={values[fieldPhone]}
+              error={isFieldError(fieldPhone)}
             />
 
             <PrimaryField

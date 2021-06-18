@@ -4,7 +4,8 @@ export const SIGNUP_FIELD_NAME = {
   LOGIN: 'login',
   PASSWORD: 'password',
   EMAIL: 'email',
-  PASSWORD_REPEAT: 'passwordrepeat'
+  PHONE: 'phone',
+  PASSWORD_REPEAT: 'passwordrepeat',
 };
 
 export const SIGNUP_FORM_FIELD_NAME = {
@@ -12,6 +13,7 @@ export const SIGNUP_FORM_FIELD_NAME = {
   [SIGNUP_FORM_FIELD_KEY.PASSWORD]: SIGNUP_FIELD_NAME.PASSWORD,
   [SIGNUP_FORM_FIELD_KEY.EMAIL]: SIGNUP_FIELD_NAME.EMAIL,
   [SIGNUP_FORM_FIELD_KEY.PASSWORD_REPEAT]: SIGNUP_FIELD_NAME.PASSWORD_REPEAT,
+  [SIGNUP_FORM_FIELD_KEY.PHONE]: SIGNUP_FIELD_NAME.PHONE,
 };
 
 export const SIGNUP_ACTION_TYPE = {
@@ -25,4 +27,5 @@ export const SIGNUP_DATA_NAME = {
   LOGIN: 'login',
   PASSWORD: 'password',
   EMAIL: 'email',
+  PHONE: 'phone',
 };

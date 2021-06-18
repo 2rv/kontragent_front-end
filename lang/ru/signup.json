@@ -17,6 +17,10 @@
         "TITLE": "Email",
         "PLACEHOLDER": "Contragent@gmail.com"
       },
+      "PHONE": {
+        "TITLE": "Номер телефона",
+        "PLACEHOLDER": "Укажите номер телефона"
+      },
       "CAPTCHA": {
         "TITLE": "CAPTCHA",
         "PLACEHOLDER": "CAPTCHA"
