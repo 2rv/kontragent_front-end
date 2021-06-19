@@ -1,0 +1,11 @@
+import {
+  SETTINGS_PASSWORD_DATA_NAME,
+  SETTINGS_PASSWORD_FIELD_NAME,
+} from './settings-password.type';
+
+export const convertSettingsFormChangePasswordData = (values) => ({
+  [SETTINGS_PASSWORD_DATA_NAME.NEW_PASSWORD]:
+    values[SETTINGS_PASSWORD_FIELD_NAME.NEW_PASSWORD],
+  [SETTINGS_PASSWORD_DATA_NAME.PASSWORD]:
+    values[SETTINGS_PASSWORD_FIELD_NAME.OLD_PASSWORD],
+});

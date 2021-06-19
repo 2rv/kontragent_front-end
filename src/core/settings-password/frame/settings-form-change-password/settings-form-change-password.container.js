@@ -12,6 +12,8 @@ export function SettingsFormChangePasswordContainer(props) {
     errorMessage,
     initialValue,
     settingsPasswordFieldName,
+    validation,
+    onSubmitForm,
   } = props;
 
   const NEW_PASSWORD =
@@ -29,7 +31,11 @@ export function SettingsFormChangePasswordContainer(props) {
 
   return (
     <div>
-      <Formik initialValues={initialValue}>
+      <Formik
+        initialValues={initialValue}
+        validate={validation}
+        onSubmit={onSubmitForm}
+      >
         {(props) => (
           <SettingsFormChangePasswordComponent
             fieldNewPassword={NEW_PASSWORD}
