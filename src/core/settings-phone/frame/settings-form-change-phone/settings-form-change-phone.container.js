@@ -5,33 +5,51 @@ import { SETTINGS_FORM_CHANGE_PHONE_FIELD_KEY } from './settings-form-change-pho
 
 export function SettingsFormChangePhoneContainer(props) {
   const {
-    pageLoading,
-    isPending,
-    isError,
-    isSuccess,
-    errorMessage,
+    enableReinitialize,
+    validation,
+    onSubmitForm,
     initialValue,
-    settingsEmailFieldName,
+    settingsPhoneFieldName,
+    pageLoading,
+
+    FormPending,
+    FormError,
+    FormSuccess,
+    FormErrorMessage,
+
+    dataPending,
+    dataError,
+    dataErrorMessage,
   } = props;
 
   const PHONE_NUMBER_NAME =
-      settingsEmailFieldName[SETTINGS_FORM_CHANGE_PHONE_FIELD_KEY.EMAIL],
+      settingsPhoneFieldName[SETTINGS_FORM_CHANGE_PHONE_FIELD_KEY.PHONE_NUMBER],
     PASSWORD_NAME =
-      settingsEmailFieldName[SETTINGS_FORM_CHANGE_PHONE_FIELD_KEY.PASSWORD];
+      settingsPhoneFieldName[SETTINGS_FORM_CHANGE_PHONE_FIELD_KEY.PASSWORD];
 
   return (
     <div>
-      <Formik initialValues={initialValue}>
+      <Formik
+        enableReinitialize={enableReinitialize}
+        initialValues={initialValue}
+        validate={validation}
+        onSubmit={(values, { resetForm }) => {
+          onSubmitForm(values, resetForm);
+        }}
+      >
         {(props) => (
           <SettingsFormChangePhoneComponent
             fieldPhoneNumber={PHONE_NUMBER_NAME}
             fieldPassword={PASSWORD_NAME}
             pageLoading={pageLoading}
-            isPending={isPending}
-            isError={isError}
-            isSuccess={isSuccess}
-            errorMessage={errorMessage}
+            FormPending={FormPending}
+            FormError={FormError}
+            FormSuccess={FormSuccess}
+            FormErrorMessage={FormErrorMessage}
             {...props}
+            dataPending={dataPending}
+            dataError={dataError}
+            dataErrorMessage={dataErrorMessage}
           />
         )}
       </Formik>

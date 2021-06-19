@@ -45,6 +45,10 @@ const LOGIN_EXP = /^[A-z0-9_]{3,16}$/;
 export const login = (value) =>
   !LOGIN_EXP.test(value) ? getError('VALIDATION.LOGIN') : null;
 
+const PHONE_EXP = /^(\s*)?(\+)?([- _():=+]?\d[- _():=+]?){10,14}(\s*)?$/;
+export const phone = (value) =>
+  !PHONE_EXP.test(value) ? getError('VALIDATION.PHONE') : null;
+
 export const boolean = (value) =>
   !!value === false ? getError('VALIDATION.BOOLEAN') : null;
 

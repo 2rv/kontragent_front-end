@@ -26,10 +26,15 @@ export function SettingsFormChangePhoneComponent(props) {
     pageLoading,
     fieldPassword,
     fieldPhoneNumber,
-    isSuccess,
-    isPending,
-    isError,
-    errorMessage,
+
+    FormSuccess,
+    FormPending,
+    FormError,
+    FormErrorMessage,
+
+    dataPending,
+    dataError,
+    dataErrorMessage,
   } = props;
 
   const isFieldError = (name) => {
@@ -39,12 +44,12 @@ export function SettingsFormChangePhoneComponent(props) {
   const isSubmitDisabled = () => {
     return JSON.stringify(touched) === '{}'
       ? true
-      : !isValid || isSubmitting || isSuccess || pageLoading;
+      : !isValid || isSubmitting || FormSuccess || pageLoading || dataPending;
   };
 
   return (
     <React.Fragment>
-      {(isPending || pageLoading) && <PrimaryLoader />}
+      {(FormPending || pageLoading) && <PrimaryLoader />}
       <SectionLayout>
         <SecondaryTitleText tid="SETTINGS.PHONE.TITLE" />
         <form onSubmit={handleSubmit}>
@@ -68,6 +73,7 @@ export function SettingsFormChangePhoneComponent(props) {
                 onBlur={handleBlur}
                 value={values[fieldPassword]}
                 error={isFieldError(fieldPassword)}
+                type="password"
               />
             </FieldLayout>
 
@@ -78,11 +84,15 @@ export function SettingsFormChangePhoneComponent(props) {
               />
             </ButtonLayout>
 
-            {(isError || errorMessage) && (
-              <ErrorAlert tid={`ERROR.${errorMessage}`} />
+            {(FormError || FormErrorMessage) && (
+              <ErrorAlert tid={`ERROR.${FormErrorMessage}`} />
             )}
 
-            {isSuccess && (
+            {(dataError || dataErrorMessage) && (
+              <ErrorAlert tid={`ERROR.${dataErrorMessage}`} />
+            )}
+
+            {FormSuccess && (
               <SuccessAlert tid={'SETTINGS.PHONE.SUCCESS_MESSAGE'} />
             )}
           </SectionLayout>

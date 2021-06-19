@@ -1,29 +1,38 @@
-import React from 'react';
-import { PrimaryLoader } from '../../lib/elements/loader';
 import { SettingsFormChangePhoneContainer } from './frame/settings-form-change-phone';
 
 export function SettingsPhoneComponent(props) {
   const {
-    pageLoading,
-    isPending,
-    isError,
-    isSuccess,
-    errorMessage,
+    enableReinitialize,
+    validation,
+    onSubmitForm,
     initialValue,
-    settingsEmailFieldName,
+    settingsPhoneFieldName,
+    pageLoading,
+
+    FormPending,
+    FormError,
+    FormSuccess,
+    FormErrorMessage,
+
+    dataPending,
+    dataError,
+    dataErrorMessage,
   } = props;
   return (
-    <React.Fragment>
-      {(isPending || pageLoading) && <PrimaryLoader />}
-      <SettingsFormChangePhoneContainer
-        initialValue={initialValue}
-        settingsEmailFieldName={settingsEmailFieldName}
-        pageLoading={pageLoading}
-        isPending={isPending}
-        isError={isError}
-        isSuccess={isSuccess}
-        errorMessage={errorMessage}
-      />
-    </React.Fragment>
+    <SettingsFormChangePhoneContainer
+      enableReinitialize={enableReinitialize}
+      validation={validation}
+      onSubmitForm={onSubmitForm}
+      initialValue={initialValue}
+      settingsPhoneFieldName={settingsPhoneFieldName}
+      pageLoading={pageLoading}
+      FormPending={FormPending}
+      FormError={FormError}
+      FormSuccess={FormSuccess}
+      FormErrorMessage={FormErrorMessage}
+      dataPending={dataPending}
+      dataError={dataError}
+      dataErrorMessage={dataErrorMessage}
+    />
   );
 }
