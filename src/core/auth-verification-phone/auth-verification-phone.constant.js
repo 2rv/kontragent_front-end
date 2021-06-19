@@ -15,6 +15,6 @@ export const AUTH_VERIFICATION_PHONE_API = {
 };
 
 export const AUTH_VERIFICATION_PHONE_CONFIRM_API = {
-  ENDPOINT: `user/verification/phoneCode`,
+  ENDPOINT: `user/verification/phone/`,
   TYPE: 'POST',
 };

@@ -26,7 +26,6 @@ import {
   isRequestSuccess,
 } from '../../main/store/store.service';
 
-import { convertAuthFormVerificationPhoneData } from './auth-verification-phone.convert';
 import { authFormVerificationPhoneValidation } from './auth-verification-phone.validation';
 
 export function AuthVerificationPhoneContainer() {
@@ -43,8 +42,8 @@ export function AuthVerificationPhoneContainer() {
   useEffect(authVerificationPhoneSendCode, []);
 
   const authFormVerificationPhoneSendData = (values) => {
-    const data = convertAuthFormVerificationPhoneData(values);
-    dispatch(authFormVerificationPhoneConfirmCode(data));
+    const code = values[AUTH_VERIFICATION_PHONE_FIELD_NAME.CODE];
+    dispatch(authFormVerificationPhoneConfirmCode(code));
   };
 
   const getInitialValue = () => {

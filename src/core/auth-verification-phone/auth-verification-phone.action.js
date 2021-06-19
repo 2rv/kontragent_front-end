@@ -36,7 +36,7 @@ export function authFormVerificationPhoneSendCode() {
   };
 }
 
-export function authFormVerificationPhoneConfirmCode(data) {
+export function authFormVerificationPhoneConfirmCode(code) {
   return async (dispatch) => {
     dispatch({
       type: AUTH_VERIFICATION_PHONE_ACTION_TYPE.AUTH_FORM_VERIFICATION_PHONE_CONFIRM_UPLOAD_PENDING,
@@ -45,8 +45,7 @@ export function authFormVerificationPhoneConfirmCode(data) {
     try {
       await httpRequest({
         method: AUTH_VERIFICATION_PHONE_CONFIRM_API.TYPE,
-        url: AUTH_VERIFICATION_PHONE_CONFIRM_API.ENDPOINT,
-        data,
+        url: AUTH_VERIFICATION_PHONE_CONFIRM_API.ENDPOINT.concat(code),
       });
 
       dispatch({
