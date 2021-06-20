@@ -13,6 +13,7 @@ import {
 const config = {
   [SIGNUP_FIELD_NAME.LOGIN]: [required, login],
   [SIGNUP_FIELD_NAME.EMAIL]: [required, email],
+  [SIGNUP_FIELD_NAME.CAPTCHA]: [required],
   [SIGNUP_FIELD_NAME.PASSWORD]: [required, password],
   [SIGNUP_FIELD_NAME.PASSWORD_REPEAT]: [
     required,

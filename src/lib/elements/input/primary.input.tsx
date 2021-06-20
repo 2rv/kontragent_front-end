@@ -19,6 +19,7 @@ export function PrimaryInput(props: InputCommonPropsType) {
 }
 
 const Input = styled.input`
+  height: 46px;
   background: ${(props: InputCommonPropsType) =>
     !props.isError ? THEME_COLOR.COLOR.SECONDARY : THEME_COLOR.COLOR.BASE};
   border-radius: ${THEME_SIZE.RADIUS.DEFAULT};
