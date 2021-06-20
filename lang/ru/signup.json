@@ -20,6 +20,10 @@
       "CAPTCHA": {
         "TITLE": "CAPTCHA",
         "PLACEHOLDER": "CAPTCHA"
+      },
+      "FULLNAME": {
+        "TITLE": "FULLNAME",
+        "PLACEHOLDER": "FULLNAME"
       }
     },
     "HEADER": "Создать аккаунт",

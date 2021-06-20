@@ -23,6 +23,7 @@ export function SignupFormComponent(props) {
     fieldPassword,
     fieldPasswordRepeat,
     fieldEmail,
+    fieldFullname,
     pageLoading,
     isSuccess,
     isPending,
@@ -46,6 +47,16 @@ export function SignupFormComponent(props) {
       <form onSubmit={handleSubmit}>
         <SectionLayout>
           <FieldLayout>
+            <PrimaryField
+              titleTid="SIGNUP.SIGNUP_FORM.FIELD.FULLNAME.TITLE"
+              placeholderTid="SIGNUP.SIGNUP_FORM.FIELD.FULLNAME.PLACEHOLDER"
+              name={fieldFullname}
+              onChange={handleChange}
+              onBlur={handleBlur}
+              value={values[fieldFullname]}
+              error={isFieldError(fieldFullname)}
+            />
+
             <PrimaryField
               titleTid="SIGNUP.SIGNUP_FORM.FIELD.LOGIN.TITLE"
               placeholderTid="SIGNUP.SIGNUP_FORM.FIELD.LOGIN.PLACEHOLDER"
