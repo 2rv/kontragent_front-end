@@ -1,6 +1,10 @@
 require('dotenv').config();
 
 const config = {
+  //NEED TO BE REMOVED AFTER TEST
+  images: {
+    domains: ['via.placeholder.com'],
+  },
   env: {
     API: process.env.API,
     STATIC: process.env.STATIC,

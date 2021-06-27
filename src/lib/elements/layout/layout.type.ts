@@ -16,7 +16,8 @@ export interface IndentLayoutPropsType {
 
 export interface SectionLayoutPropsType {
   type?: 'DEFAULT' | 'MEDIUM' | 'SMALL' | 'LARGE' | undefined;
-  children: React.ReactElement<any> | null;
+  children: React.ReactElement<any> | React.ReactElement<any>[] | null;
+  className?: string;
 }
 
 export interface GridLayoutPropsType {

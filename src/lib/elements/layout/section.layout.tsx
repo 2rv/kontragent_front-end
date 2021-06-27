@@ -5,7 +5,11 @@ import { SectionLayoutPropsType } from './layout.type';
 import { THEME_SIZE } from '../../theme';
 
 export function SectionLayout(props: SectionLayoutPropsType) {
-  return <Layout type={props.type}>{props.children}</Layout>;
+  return (
+    <Layout className={props.className} type={props.type}>
+      {props.children}
+    </Layout>
+  );
 }
 
 const Layout = styled.div`
