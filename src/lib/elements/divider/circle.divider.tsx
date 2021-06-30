@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { THEME_COLOR } from 'src/lib/theme';
 
-export function CicleDivider() {
+export function CircleDivider() {
   return <Divider />;
 }
 

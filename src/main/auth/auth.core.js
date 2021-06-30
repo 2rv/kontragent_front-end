@@ -5,6 +5,8 @@ import { setCookie } from '../cookie/cookie.core';
 
 import { httpRequest } from '../http/index';
 
+import { getBrowserCookie } from '../cookie';
+
 export function authDecode(raw) {
   return jwtDecode(raw);
 }

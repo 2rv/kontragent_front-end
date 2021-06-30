@@ -6,7 +6,7 @@ import { PrimaryBox } from '../../../../lib/elements/box';
 
 import { PrimaryText, SecondaryText } from '../../../../lib/elements/text';
 
-import { CicleDivider } from '../../../../lib/elements/divider';
+import { CircleDivider } from '../../../../lib/elements/divider';
 import { ReactComponent as MessageIcon } from '../../../../asset/svg/message-icon.svg';
 
 import Image from 'next/image';
@@ -30,9 +30,9 @@ export function ArbitrageRequestListItemComponent(props) {
               <TopicNameText>{topic}</TopicNameText>
               <RequestListItemDataContainer>
                 <SecondaryText>{recipient}</SecondaryText>
-                <CicleDivider />
+                <CircleDivider />
                 <SecondaryText>{date}</SecondaryText>
-                <CicleDivider />
+                <CircleDivider />
                 <StatusText statusId={id}>{status}</StatusText>
               </RequestListItemDataContainer>
             </SectionLayout>
