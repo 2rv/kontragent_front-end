@@ -8,16 +8,18 @@ import { setAutorization } from '../main/auth';
 import { Router } from '../main/router';
 
 import { langServerDetection, langBrowserDetection } from '../lib/common/lang';
-import { authSetData, authGetCookieToken, setCurrentAuthCookie } from '../lib/common/auth';
+import { authSetData, authGetCookieToken } from '../lib/common/auth';
 
 import { NavigationObserver } from '../lib/common/navigation';
 
 import '../asset/css/main.css';
 
+import { setCurrentAuthCookie } from '../main/auth';
+
 class MyApp extends App {
   componentDidMount() {
     langBrowserDetection();
-    setCurrentAuthCookie()
+    setCurrentAuthCookie();
   }
 
   static async getInitialProps({ Component, ctx }) {
