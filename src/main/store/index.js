@@ -16,6 +16,10 @@ import {
   authRecoveryAccountStore,
   AUTH_RECOVERY_ACCOUNT_STORE_NAME,
 } from '../../core/auth-recovery-account';
+import {
+  myCompaniesAddCompanyStore,
+  MY_COMPANIES_ADD_COMPANY_STORE_NAME,
+} from '../../core/my-companies-add-company';
 
 export const reducers = combineReducers({
   [AUTH_STORE_NAME]: authStore,
@@ -25,6 +29,7 @@ export const reducers = combineReducers({
   [LOGIN_STORE_NAME]: loginStore,
   [AUTH_CHANGE_PASSWORD_STORE_NAME]: authChangePasswordStore,
   [AUTH_RECOVERY_ACCOUNT_STORE_NAME]: authRecoveryAccountStore,
+  [MY_COMPANIES_ADD_COMPANY_STORE_NAME]: myCompaniesAddCompanyStore,
 });
 
 export { initStore } from './store.core';

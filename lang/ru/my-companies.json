@@ -1,0 +1,27 @@
+{
+  "MY_COMPANIES_REVIEW_COMPANY_LIST": {
+    "REVIEW_COMPANY_LIST_FOOTER": {
+      "TITLE": "Добавить компанию",
+      "DESCRIPTION": "Создать компанию на основе существующего юрлица"
+    }
+  },
+  "MY_COMPANIES_ADD_COMPANY": {
+    "HEADER": "Добавить компанию",
+    "SUBHEADER": "Создать компанию на основе существующего юрлица",
+    "ADD_COMPANY_FORM": {
+      "HEADER": "Информация о компании",
+      "BUTTON": "Создать компанию",
+      "SUCCESS_MESSAGE": "Компания успешно создана",
+      "FIELD": {
+        "NAME": {
+          "TITLE": "Название ",
+          "PLACEHOLDER": "FLYONE"
+        },
+        "INN": {
+          "TITLE": "ИНН",
+          "PLACEHOLDER": "000 000 000"
+        }
+      }
+    }
+  }
+}

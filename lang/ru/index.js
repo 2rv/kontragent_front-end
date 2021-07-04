@@ -17,6 +17,7 @@ import BALANCE from './balance.json';
 import KONTRAGENT_REVIEW from './kontragent-review.json';
 import AUTH_CHANGE_PASSWORD from './auth-change-password.json';
 import AUTH_RECOVERY_ACCOUNT from './auth-recovery-account.json';
+import MY_COMPANIES from './my-companies.json';
 
 export const RU = {
   translation: {
@@ -39,5 +40,6 @@ export const RU = {
     KONTRAGENT_REVIEW,
     AUTH_CHANGE_PASSWORD,
     AUTH_RECOVERY_ACCOUNT,
+    MY_COMPANIES,
   },
 };
