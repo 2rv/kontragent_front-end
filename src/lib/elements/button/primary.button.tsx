@@ -31,4 +31,5 @@ const Button = styled.button`
       : `&:hover {
           opacity: ${THEME_VALUE.OPACITY.HOVER};
         }`};
+  transition: opacity ${THEME_SIZE.TRANSACTION.DEFAULT};
 `;

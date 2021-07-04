@@ -1,0 +1,49 @@
+{
+  "HEADER": "Контрагент",
+  "TAB_NAME": {
+    "INFORMATION": "Детальная информация",
+    "RATING_RISK": "Рейтинг и оценка рисков",
+    "REVIEW": "Отзывы",
+    "INSPECTION": "Проверки",
+    "ARBITRATION_CASE": "Арбитражные дела"
+  },
+  "TAB": {
+    "INFORMATION": {
+      "WARNINGS": { "HEADER": "Уведомления об опасности" },
+      "HEADER": {
+        "TITLE": "Детальная информация",
+        "DOWNLOAD_INFO_PDF": "Скачать информацию в PDF",
+        "CONSULTATION": "Консультация по юр. лицу"
+      },
+      "FOUNDATION_DATE": "Дата образования",
+      "PHONE_NUMBERS": "Телефон",
+      "CAPITAL": "Уставный капитал",
+      "ENFORCEMENT_PROCEEDINGS": "Исполнительные производства",
+      "EXTRACT": "Выписка из ЕГРЮЛ",
+      "EXTRACT_BUTTON": "Сформировать",
+      "EXTRACT_TEXT": " по состоянию на сегодня",
+      "REGISTRATIONS": {
+        "INN": "ИНН ",
+        "KPP": "КПП ",
+        "OGRN": "ОГРН ",
+        "OKPO": "ОКПО "
+      },
+      "CEO": "Генеральный директор",
+      "INDIVIDUAL_FOUNDERS": "Учредители - физические лица:",
+      "FINANCE": {
+        "START": "Финансы на конец ",
+        "END": " года",
+        "ACCOUNT_BALANCE": "Баланс: ",
+        "REVENUE": "Выручка: ",
+        "NET_PROFIT": "Чистая прибыль: "
+      }
+    },
+    "RATING_RISK": {
+      "HEADER": "Рейтинг и оценка рисков",
+      "USER_RATING": "Ваша оценка",
+      "GENERAL_RATING": "Народный рейтинг",
+      "FINANCES": "Оборот",
+      "RISK": "Риск доначисления"
+    }
+  }
+}
