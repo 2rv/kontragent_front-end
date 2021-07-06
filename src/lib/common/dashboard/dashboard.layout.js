@@ -10,38 +10,33 @@ import { THEME_COLOR } from 'src/lib/theme';
 
 export function DashboardLayout(props) {
   return (
-    <React.Fragment>
-      <SidebarLayout>
-        <SidebarContainer />
-      </SidebarLayout>
-      <HeaderLayout>
+    <Container>
+      <SidebarContainer />
+      <Content>
         <HeaderContainer />
-      </HeaderLayout>
-      <ContentLayout>
-        <IndentLayout>{props.children}</IndentLayout>
-      </ContentLayout>
-    </React.Fragment>
+        <ContentLayout>
+          <IndentLayout>{props.children}</IndentLayout>
+        </ContentLayout>
+      </Content>
+    </Container>
   );
 }
-
-const SidebarLayout = styled.div`
-  position: fixed;
-  width: 350px;
-  z-index: 9999;
+const Container = styled.div`
+  display: grid;
+  width: 100%;
+  height: 100vh;
+  grid-template-columns: 350px 1fr;
 `;
-
-const HeaderLayout = styled.div`
-  position: fixed;
-  top: 0;
-  width: 100vw;
-  padding-left: 350px;
-  z-index: 9999;
+const Content = styled.div`
+  display: grid;
+  overflow: auto;
+  grid-template-rows: 95px auto;
+  height: 100%;
 `;
-
 const ContentLayout = styled.div`
+  display: flex;
+  height: 100%;
+  overflow: auto;
   background-color: ${THEME_COLOR.COLOR.SECONDARY};
   position: relative;
-  padding-top: 95px;
-  padding-left: 350px;
-  min-height: 100vh;
 `;
