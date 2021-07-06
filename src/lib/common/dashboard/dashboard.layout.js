@@ -14,29 +14,28 @@ export function DashboardLayout(props) {
       <SidebarContainer />
       <Content>
         <HeaderContainer />
-        <ContentLayout>
+        <MainContent>
           <IndentLayout>{props.children}</IndentLayout>
-        </ContentLayout>
+        </MainContent>
       </Content>
     </Container>
   );
 }
 const Container = styled.div`
-  display: grid;
+  display: flex;
   width: 100%;
-  height: 100vh;
-  grid-template-columns: 350px 1fr;
 `;
 const Content = styled.div`
-  display: grid;
-  overflow: auto;
-  grid-template-rows: 95px auto;
-  height: 100%;
-`;
-const ContentLayout = styled.div`
   display: flex;
-  height: 100%;
-  overflow: auto;
+  flex-direction: column;
+  width: calc(100vw - 350px);
+  min-width: 500px;
+  height: ${window.innerHeight}px;
+`;
+const MainContent = styled.div`
   background-color: ${THEME_COLOR.COLOR.SECONDARY};
   position: relative;
+  overflow: auto;
+  width: 100%;
+  height: 100%;
 `;
