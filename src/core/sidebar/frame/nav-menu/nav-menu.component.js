@@ -9,9 +9,8 @@ export function NavMenuComponent(props) {
   return (
     <SectionLayout type="MEDIUM">
       {navMenuLinkList.map((link, index) => (
-        <span>
+        <span key={link.tid + index}>
           <NavMenuLink
-            key={link.tid + index}
             tid={link.tid}
             isActive={index === activeLinkIndex ? true : false}
             pathname={link.pathname}

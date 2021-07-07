@@ -18,9 +18,7 @@ export function DashboardLayout(props) {
       <SidebarContainer />
       <Content>
         <HeaderContainer />
-        <MainContent>
-          <IndentLayout>{props.children}</IndentLayout>
-        </MainContent>
+        <MainContent>{props.children}</MainContent>
       </Content>
     </Container>
   );
@@ -38,7 +36,6 @@ const Content = styled.div`
 `;
 const MainContent = styled.div`
   background-color: ${THEME_COLOR.COLOR.SECONDARY};
-  position: relative;
   overflow: auto;
   width: 100%;
   height: 100%;

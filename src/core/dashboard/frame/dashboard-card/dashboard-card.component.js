@@ -2,19 +2,12 @@ import styled from 'styled-components';
 import { TotalStatsCardItemComponent } from './total-stats-card-item.component';
 import { MyStatsCardItemComponent } from './my-stats-card-item.component';
 import { ReferalCardItemComponent } from './referal-card-item.component';
-
-export function StatisticsCardComponent({ type, param }) {
+import { DialogsCardItemComponent } from './dialogs-card-item.component';
+import { MyCounterpartiesCardItemComponent } from './my-counterparties-card-item.component';
+export function DashboardCardComponent({ type, param }) {
   const Card = cardType(type);
-  return (
-    <Container>
-      <Card {...param} />
-    </Container>
-  );
+  return <Card {...param} />;
 }
-const Container = styled.div`
-  display: grid;
-  height: 141px;
-`;
 
 const cardType = (type) => {
   switch (type) {
@@ -24,5 +17,9 @@ const cardType = (type) => {
       return MyStatsCardItemComponent;
     case 'referal':
       return ReferalCardItemComponent;
+    case 'dialogs':
+      return DialogsCardItemComponent;
+    case 'counterparties':
+      return MyCounterpartiesCardItemComponent;
   }
 };

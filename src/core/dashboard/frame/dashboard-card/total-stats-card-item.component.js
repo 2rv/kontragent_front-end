@@ -1,39 +1,42 @@
 import styled from 'styled-components';
-import { spacing, THEME_COLOR, THEME_SIZE, THEME_VALUE } from '../../lib/theme';
-import { PrimaryDivider } from '../../lib/elements/divider';
-import { PrimaryText } from '../../lib/elements/text';
-import { PrimaryBox } from '../../lib/elements/box';
-import { IconButton } from '../../lib/elements/button';
-import { ReactComponent as OptionIcon } from '../../asset/svg/option-icon.svg';
-import { PrimaryLink } from '../../lib/elements/link';
+import {
+  spacing,
+  THEME_COLOR,
+  THEME_SIZE,
+  THEME_VALUE,
+} from '../../../../lib/theme';
+import { PrimaryDivider } from '../../../../lib/elements/divider';
+import { PrimaryText } from '../../../../lib/elements/text';
+import { PrimaryBox } from '../../../../lib/elements/box';
+import { IconButton } from '../../../../lib/elements/button';
+import { ReactComponent as OptionIcon } from '../../../../asset/svg/option-icon.svg';
+import { PrimaryLink } from '../../../../lib/elements/link';
 
 export function TotalStatsCardItemComponent() {
   return (
-    <PrimaryBox>
-      <Сontent>
-        <Header>
-          <TitleCase>
-            <TitlePrimary tid="STATISTICS_CARD.TOTAL_STATS" />
-            <TitleSecondary tid="STATISTICS_CARD.PERIOD.DAY" />
-          </TitleCase>
-          <IconButton icon={OptionIcon} />
-        </Header>
-        <PrimaryDivider />
-        <ContentCase>
-          <DiagramCase>
-            <Diagram />
-          </DiagramCase>
-          <Column>
-            <TextCase>
-              <TinyTextPrimary tid="250" />
-              &nbsp;
-              <TinyTextSecondary tid="STATISTICS_CARD.VIEWS_YOUR_CONTERPARTIES" />
-            </TextCase>
-            <Link tid="STATISTICS_CARD.LEARN_MORE" />
-          </Column>
-        </ContentCase>
-      </Сontent>
-    </PrimaryBox>
+    <Сontent>
+      <Header>
+        <TitleCase>
+          <TitlePrimary tid="DASHBOARD_CARD.TOTAL_STATS" />
+          <TitleSecondary tid="DASHBOARD_CARD.PERIOD.DAY" />
+        </TitleCase>
+        <IconButton icon={OptionIcon} />
+      </Header>
+      <PrimaryDivider />
+      <ContentCase>
+        <DiagramCase>
+          <Diagram />
+        </DiagramCase>
+        <Column>
+          <TextCase>
+            <TinyTextPrimary tid="250" />
+            &nbsp;
+            <TinyTextSecondary tid="DASHBOARD_CARD.VIEWS_YOUR_CONTERPARTIES" />
+          </TextCase>
+          <Link tid="DASHBOARD_CARD.LEARN_MORE" />
+        </Column>
+      </ContentCase>
+    </Сontent>
   );
 }
 const Link = styled(PrimaryLink)`
@@ -86,8 +89,7 @@ const TitleCase = styled.div`
   gap: ${spacing(1)};
   align-items: baseline;
 `;
-const Сontent = styled.div`
-  width: 100%;
+const Сontent = styled(PrimaryBox)`
   height: 100%;
   display: flex;
   flex-direction: column;

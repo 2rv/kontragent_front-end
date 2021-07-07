@@ -2,28 +2,32 @@ import styled from 'styled-components';
 import { spacing, THEME_COLOR, THEME_SIZE } from '../../lib/theme';
 import { AdvertContainer } from '../advert';
 import { NewsAndBlogComponent, ControlBlockComponent } from './frame';
+import { IndentLayout } from '../../lib/elements/layout';
 export function DashboardComponent() {
   return (
-    <>
+    <Container>
       <Background />
-      <Container>
+      <Content>
         <AdvertContainer type="BAR" />
         <NewsAndBlogComponent />
         <ControlBlockComponent />
-      </Container>
-    </>
+      </Content>
+    </Container>
   );
 }
 const Container = styled.div`
   position: relative;
-  display: grid;
+`;
+const Content = styled(IndentLayout)`
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
   gap: ${spacing(8)};
 `;
 const Background = styled.div`
-  top: 0;
-  left: 0;
   position: absolute;
-  height: 886px;
   width: 100%;
+  height: 830px;
   background-color: ${THEME_COLOR.COLOR.ACCENT};
 `;
