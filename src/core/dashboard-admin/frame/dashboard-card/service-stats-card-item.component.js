@@ -11,12 +11,12 @@ import { PrimaryBox } from '../../../../lib/elements/box';
 import { IconButton } from '../../../../lib/elements/button';
 import { ReactComponent as FindIcon } from '../../../../asset/svg/find-icon.svg';
 
-export function MyStatsCardItemComponent() {
+export function ServiceStatsCardItemComponent() {
   return (
     <Сontent>
       <Header>
         <TitleCase>
-          <TitlePrimary tid="DASHBOARD_CARD.YOUR_STATS" />
+          <TitlePrimary tid="DASHBOARD_CARD.SERVICE_STATS" />
           <TitlePrimary tid="DASHBOARD_CARD.PERIOD.24H" />
         </TitleCase>
         <IconButton icon={FindIcon} />
@@ -25,29 +25,36 @@ export function MyStatsCardItemComponent() {
       <ContentCase>
         <Column>
           <TextCase>
-            <ColoredText color={THEME_COLOR.TEXT.SUCCESS} tid="250" />
-            &nbsp;
-            <TinyPrimaryText tid="DASHBOARD_CARD.VIEWS_YOUR_CONTERPARTIES" />
-          </TextCase>
-          <TextCase>
-            <ColoredText color={THEME_COLOR.TEXT.ERROR} tid="1250" />
+            <ColoredText color={THEME_COLOR.TEXT.SUCCESS} tid="+32500" />
             &nbsp;
             <ValuteText
               color={THEME_COLOR.COLOR.LIGHT_GREY}
               tid="DASHBOARD_CARD.VALUTE"
             />
             &nbsp;
-            <TinyPrimaryText tid="DASHBOARD_CARD.ADD_ACCRUALS" />
+            <TinyPrimaryText tid="DASHBOARD_CARD.DONATES_PER_DAY" />
           </TextCase>
           <TextCase>
-            <ColoredText color={THEME_COLOR.TEXT.ACCENT} tid="250 000" />
+            <ColoredText color={THEME_COLOR.TEXT.ERROR} tid="-1250" />
             &nbsp;
             <ValuteText
               color={THEME_COLOR.COLOR.LIGHT_GREY}
               tid="DASHBOARD_CARD.VALUTE"
             />
             &nbsp;
-            <TinyPrimaryText tid="DASHBOARD_CARD.TURNOVER" />
+            <TinyPrimaryText tid="DASHBOARD_CARD.SPENT_BALANCES_DAY" />
+          </TextCase>
+          <TextCase>
+            <ColoredText color={THEME_COLOR.TEXT.ACCENT} tid="+250" />
+            &nbsp;
+            <ColoredText tid="(25%)" />
+            &nbsp;
+            <ValuteText
+              color={THEME_COLOR.COLOR.LIGHT_GREY}
+              tid="DASHBOARD_CARD.VALUTE"
+            />
+            &nbsp;
+            <TinyPrimaryText tid="DASHBOARD_CARD.REFERRAL_ACCRUALS" />
           </TextCase>
         </Column>
       </ContentCase>
@@ -85,6 +92,7 @@ const TinyPrimaryText = styled(PrimaryText)`
 const Header = styled.div`
   display: flex;
   justify-content: space-between;
+  align-items: center;
 `;
 const TitleCase = styled.div`
   display: flex;
@@ -97,4 +105,5 @@ const Сontent = styled(PrimaryBox)`
   flex-direction: column;
   gap: ${spacing(2)};
   padding: ${spacing(4)};
+  box-shadow: 0px 15px 75px rgba(0, 0, 0, 0.1);
 `;

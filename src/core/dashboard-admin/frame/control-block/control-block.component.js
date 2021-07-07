@@ -13,21 +13,20 @@ import { ReactComponent as PlusIcon } from '../../../../asset/svg/plus-icon.svg'
 export function ControlBlockComponent() {
   return (
     <Container>
-      <Title tid="DASHBOARD.CONTROL_BLOCK_TITLE" />
       <Content>
         <PrimaryCase>
-          <DashboardCardContainer type="total" />
-          <DashboardCardContainer type="my" />
-          <DashboardCardContainer type="referal" />
+          <DashboardCardContainer type="quantitative" />
+          <DashboardCardContainer type="service" />
+          <DashboardCardContainer type="attendance" />
         </PrimaryCase>
         <SecondaryCase>
-          <DashboardCardContainer type="dialogs" />
-          <DashboardCardContainer type="counterparties" />
+          <DashboardCardContainer type="Application" />
+          <DashboardCardContainer type="Arbitration" />
         </SecondaryCase>
       </Content>
       <Footer>
         <Button icon={PlusIcon} />
-        <TextButton tid="DASHBOARD.ADD_BLOCK" />
+        <TextButton tid="DASHBOARD.ADD_ADMINISTRATIVE_BLOCK" />
       </Footer>
     </Container>
   );
@@ -44,11 +43,6 @@ const Footer = styled.div`
   display: flex;
   align-items: center;
   gap: ${spacing(3)};
-`;
-
-const Title = styled(PrimaryTitleText)`
-  font-size: ${THEME_SIZE.FONT.HUGE};
-  color: ${THEME_COLOR.TEXT.BASE};
 `;
 const PrimaryCase = styled.div`
   display: grid;

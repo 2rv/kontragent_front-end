@@ -9,56 +9,48 @@ import { PrimaryDivider } from '../../../../lib/elements/divider';
 import { PrimaryText } from '../../../../lib/elements/text';
 import { PrimaryBox } from '../../../../lib/elements/box';
 import { IconButton } from '../../../../lib/elements/button';
-import { ReactComponent as OptionIcon } from '../../../../asset/svg/option-icon.svg';
+import { ReactComponent as FindIcon } from '../../../../asset/svg/find-icon.svg';
 import { PrimaryLink } from '../../../../lib/elements/link';
 
-export function TotalStatsCardItemComponent() {
+export function AttendanceStatsCardItemComponent() {
   return (
     <Сontent>
       <Header>
         <TitleCase>
-          <TitlePrimary tid="DASHBOARD_CARD.TOTAL_STATS" />
-          <TitleSecondary tid="DASHBOARD_CARD.PERIOD.DAY" />
+          <TitlePrimary tid="DASHBOARD_CARD.STATS_ATTENDANCE" />
         </TitleCase>
-        <IconButton icon={OptionIcon} />
+        <IconButton icon={FindIcon} />
       </Header>
       <PrimaryDivider />
       <ContentCase>
-        <DiagramCase>
-          <Diagram />
-        </DiagramCase>
         <Column>
           <TextCase>
-            <TinyTextPrimary tid="250" />
+            <ColoredText color={THEME_COLOR.TEXT.SUCCESS} tid="3250" />
             &nbsp;
-            <TinyTextSecondary tid="DASHBOARD_CARD.VIEWS_YOUR_CONTERPARTIES" />
+            <TinyPrimaryText tid="DASHBOARD_CARD.UNIQUE_USERS" />
           </TextCase>
-          <Link tid="DASHBOARD_CARD.LEARN_MORE" />
+          <TextCase>
+            <ColoredText color={THEME_COLOR.TEXT.ACCENT} tid="250" />
+            &nbsp;
+            <TinyPrimaryText tid="DASHBOARD_CARD.ONLINE_USERS" />
+          </TextCase>
+          <Link tid="DASHBOARD_CARD.SHOW_MORE" />
         </Column>
       </ContentCase>
     </Сontent>
   );
 }
 const Link = styled(PrimaryLink)`
-  color: ${THEME_COLOR.TEXT.ACCENT};
-`;
-const Diagram = styled.div`
-  width: 100%;
-  height: 100%;
-  border: 5px solid blueviolet;
-  border-radius: 100%;
-`;
-const DiagramCase = styled.div`
-  height: 72px;
-  width: 72px;
+  font-size: ${THEME_SIZE.FONT.TINY};
+  color: ${THEME_COLOR.TEXT.SECONDARY};
 `;
 const TextCase = styled.span`
-  text-align: left;
-  gap: ${spacing(1)};
+  display: flex;
 `;
 const Column = styled.div`
   display: flex;
   flex-direction: column;
+  justify-content: space-around;
   gap: ${spacing(2)};
 `;
 const ContentCase = styled.div`
@@ -68,21 +60,22 @@ const ContentCase = styled.div`
 `;
 const TitlePrimary = styled(PrimaryText)`
   font-weight: ${THEME_VALUE.FONT_WEIGHT.SEMY_BOLD};
-  color: ${THEME_COLOR.TEXT.PRIMARY};
 `;
-const TitleSecondary = styled(TitlePrimary)`
-  color: ${THEME_COLOR.TEXT.SECONDARY};
-`;
-const TinyTextPrimary = styled(TitlePrimary)`
+const TinyPrimaryText = styled(PrimaryText)`
   font-size: ${THEME_SIZE.FONT.TINY};
 `;
-const TinyTextSecondary = styled(PrimaryText)`
+const ColoredText = styled(TitlePrimary)`
   font-size: ${THEME_SIZE.FONT.TINY};
-  color: ${THEME_COLOR.TEXT.SECONDARY};
+  color: ${({ color }) => color};
+`;
+const ValuteText = styled(PrimaryText)`
+  font-size: ${THEME_SIZE.FONT.TINY};
+  color: ${THEME_COLOR.COLOR.LIGHT_GREY};
 `;
 const Header = styled.div`
   display: flex;
   justify-content: space-between;
+  align-items: center;
 `;
 const TitleCase = styled.div`
   display: flex;
@@ -95,4 +88,5 @@ const Сontent = styled(PrimaryBox)`
   flex-direction: column;
   gap: ${spacing(2)};
   padding: ${spacing(4)};
+  box-shadow: 0px 15px 75px rgba(0, 0, 0, 0.1);
 `;

@@ -1,9 +1,10 @@
 import styled from 'styled-components';
-import { TotalStatsCardItemComponent } from './total-stats-card-item.component';
-import { MyStatsCardItemComponent } from './my-stats-card-item.component';
-import { ReferalCardItemComponent } from './referal-card-item.component';
-import { DialogsCardItemComponent } from './dialogs-card-item.component';
-import { MyCounterpartiesCardItemComponent } from './my-counterparties-card-item.component';
+import { QuantitativeStatsCardItemComponent } from './quantitative-stats-card-item.component';
+import { ServiceStatsCardItemComponent } from './service-stats-card-item.component';
+import { AttendanceStatsCardItemComponent } from './attendance-stats-card-item.component';
+import { ApplicationCardItemComponent } from './application-card-item.component';
+import { ArbitrationCardItemComponent } from './arbitration-card-item.component';
+
 export function DashboardCardComponent({ type, param }) {
   const Card = cardType(type);
   return <Card {...param} />;
@@ -11,15 +12,17 @@ export function DashboardCardComponent({ type, param }) {
 
 const cardType = (type) => {
   switch (type) {
-    case 'total':
-      return TotalStatsCardItemComponent;
-    case 'my':
-      return MyStatsCardItemComponent;
-    case 'referal':
-      return ReferalCardItemComponent;
-    case 'dialogs':
-      return DialogsCardItemComponent;
-    case 'counterparties':
-      return MyCounterpartiesCardItemComponent;
+    case 'quantitative':
+      return QuantitativeStatsCardItemComponent;
+    case 'service':
+      return ServiceStatsCardItemComponent;
+    case 'attendance':
+      return AttendanceStatsCardItemComponent;
+    case 'Application':
+      return ApplicationCardItemComponent;
+    case 'Arbitration':
+      return ArbitrationCardItemComponent;
+    default:
+      return () => null;
   }
 };

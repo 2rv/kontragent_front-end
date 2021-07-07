@@ -26,6 +26,6 @@ const Content = styled(IndentLayout)`
 const Background = styled.div`
   position: absolute;
   width: 100%;
-  height: 830px;
+  height: 400px;
   background-color: ${THEME_COLOR.COLOR.ACCENT};
 `;

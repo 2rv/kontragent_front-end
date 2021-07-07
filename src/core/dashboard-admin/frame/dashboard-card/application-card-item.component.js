@@ -11,28 +11,25 @@ import { PrimaryBox } from '../../../../lib/elements/box';
 import { IconButton } from '../../../../lib/elements/button';
 import { ReactComponent as FindIcon } from '../../../../asset/svg/find-icon.svg';
 
-export function DialogsCardItemComponent() {
+export function ApplicationCardItemComponent() {
   return (
     <Сontent>
       <Header>
-        <TitlePrimary tid="DASHBOARD_CARD.ARBITRATION_DIALOGUES" />
+        <TitlePrimary tid="DASHBOARD_CARD.IMPORTANT_DIALOGUES" />
         <IconButton icon={FindIcon} />
       </Header>
       <PrimaryDivider />
       <ContentCase>
-        <DialogList>
-          Список арбитражных диалогов когда будет готова страница с диалогами
-          взять список от туда
-        </DialogList>
+        <DialogList>Заглушка сюда нужен список диалогов</DialogList>
       </ContentCase>
     </Сontent>
   );
 }
 
 const DialogList = styled.div`
-  height: 264px;
+  height: 266px;
   width: 100%;
-  background-color: purple;
+  background-color: bisque;
 `;
 const ContentCase = styled.div`
   display: flex;
@@ -46,6 +43,7 @@ const TitlePrimary = styled(PrimaryText)`
 const Header = styled.div`
   display: flex;
   justify-content: space-between;
+  align-items: center;
 `;
 const Сontent = styled(PrimaryBox)`
   height: 100%;
@@ -53,4 +51,5 @@ const Сontent = styled(PrimaryBox)`
   flex-direction: column;
   gap: ${spacing(2)};
   padding: ${spacing(4)};
+  box-shadow: 0px 15px 75px rgba(0, 0, 0, 0.1);
 `;
