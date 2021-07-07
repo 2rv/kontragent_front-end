@@ -22,5 +22,6 @@ export const THEME_COLOR = {
     INFO: '#E6EBFF',
     VALIDATION: '#EB5757',
     SUCCESS: '#E0FFDD',
+    BACKGROUND: '#E5E5E5',
   },
 };

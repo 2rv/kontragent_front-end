@@ -1,16 +1,21 @@
 {
-  "BALANCE_DEPOSIT": {
-    "HEADER": "Пополнение баланса",
-    "BUTTON": "Пополнить",
-    "SUCCESS_MESSAGE": "SUCCESS_MESSAGE",
-    "FIELD": {
-      "PAYMENT_METHOD": {
-        "TITLE": "Способ оплаты"
-      },
-      "DEPOSIT_AMOUNT": {
-        "TITLE": "Сумма пополнения",
-        "PLACEHOLDER": "1 000"
-      }
-    }
-  }
+	"BALANCE_DEPOSIT": {
+		"HEADER": "Пополнение баланса",
+		"BUTTON": "Пополнить",
+		"SUCCESS_MESSAGE": "SUCCESS_MESSAGE",
+		"FIELD": {
+			"PAYMENT_METHOD": {
+				"TITLE": "Способ оплаты"
+			},
+			"DEPOSIT_AMOUNT": {
+				"TITLE": "Сумма пополнения",
+				"PLACEHOLDER": "1 000"
+			}
+		}
+	},
+	"BALANCE_ACTIVITY": {
+		"TITLE": "Баланс",
+		"BUTTON": "Пополнить баланс",
+		"VALUTE": "руб."
+	}
 }
