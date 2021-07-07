@@ -1,4 +1,4 @@
-import React from 'react';
+import { useEffect, useState } from 'react';
 
 import { SidebarContainer } from '../../../core/sidebar';
 import { HeaderContainer } from '../../../core/header';
@@ -9,39 +9,34 @@ import styled from 'styled-components';
 import { THEME_COLOR } from 'src/lib/theme';
 
 export function DashboardLayout(props) {
+  const [height, setHeight] = useState(1000);
+  useEffect(() => {
+    setHeight(window.innerHeight);
+  }, []);
   return (
-    <React.Fragment>
-      <SidebarLayout>
-        <SidebarContainer />
-      </SidebarLayout>
-      <HeaderLayout>
+    <Container style={{ height: height }}>
+      <SidebarContainer />
+      <Content>
         <HeaderContainer />
-      </HeaderLayout>
-      <ContentLayout>
-        <IndentLayout>{props.children}</IndentLayout>
-      </ContentLayout>
-    </React.Fragment>
+        <MainContent>{props.children}</MainContent>
+      </Content>
+    </Container>
   );
 }
-
-const SidebarLayout = styled.div`
-  position: fixed;
-  width: 350px;
-  z-index: 9999;
+const Container = styled.div`
+  display: flex;
+  width: 100%;
 `;
-
-const HeaderLayout = styled.div`
-  position: fixed;
-  top: 0;
-  width: 100vw;
-  padding-left: 350px;
-  z-index: 9999;
+const Content = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: calc(100vw - 350px);
+  min-width: 500px;
+  height: 100%;
 `;
-
-const ContentLayout = styled.div`
+const MainContent = styled.div`
   background-color: ${THEME_COLOR.COLOR.SECONDARY};
-  position: relative;
-  padding-top: 95px;
-  padding-left: 350px;
-  min-height: 100vh;
+  overflow: auto;
+  width: 100%;
+  height: 100%;
 `;
