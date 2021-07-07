@@ -523,7 +523,7 @@ html {
 }
 
 html {
-  overflow-y: scroll;
+  overflow: auto;
 }
 html,
 body {

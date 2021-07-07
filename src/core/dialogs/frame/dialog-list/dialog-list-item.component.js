@@ -21,23 +21,27 @@ export function DialogListItemComponent(props) {
         {content.unreadedMessages && <Unread>{content.unreadedMessages}</Unread>}
         <IndentLayout type="SMALL">
           <Container>
-            <ImageContainer>
-              <img src={img} />
-            </ImageContainer>
-            <ContentLayout type="SMALL">
+            <UserImage src={img} />
+            <SectionLayout type="SMALL">
               <Content>
-                <Name>{name}</Name>
+                <FullName>{name}</FullName>
                 <Status statusId={statusId}>{status}</Status>
               </Content>
               <Content>
-                <MessageFragment>
-                  <YouText>{content.you ? content.you : null} </YouText>
-                  {content.message}
-                </MessageFragment>
-                <CicleDivider />
-                <Date>{content.date}</Date>
+                <ContentMessage>
+                  <div>
+                    <YouText>{content.you ? <>{content.you}&nbsp;</> : null}</YouText>
+                    <MessageText>{content.message}</MessageText>
+                  </div>
+                </ContentMessage>
+                {!content.you && (
+                  <>
+                    <Date>{content.date}</Date>
+                    <CicleDivider />
+                  </>
+                )}
               </Content>
-            </ContentLayout>
+            </SectionLayout>
           </Container>
         </IndentLayout>
       </Box>
@@ -48,6 +52,7 @@ export function DialogListItemComponent(props) {
 
 const Box = styled(PrimaryBox)`
   position: relative;
+  width: 100%;
   margin: ${spacing(4)} 0;
 `;
 
@@ -72,32 +77,33 @@ const Container = styled.div`
   align-items: center;
 `;
 
-const ImageContainer = styled.div`
-  position: relative;
-  overflow: hidden;
-  border-radius: 50%;
+const UserImage = styled.img`
   width: 56px;
   height: 56px;
+  border-radius: 50%;
   margin-right: ${spacing(4)};
-
-  img {
-    width: 56px;
-    height: 56px;
-  }
-`;
-
-const ContentLayout = styled(SectionLayout)`
-  margin-left: ${spacing(4)};
 `;
 
 const Content = styled.div`
-  display: inline-flex;
-  grid-template-columns: repeat(3, auto);
-  grid-column-gap: ${spacing(2)};
+  display: flex;
   align-items: center;
+  grid-column-gap: ${spacing(2)};
 `;
 
-const Name = styled(PrimaryText)`
+const ContentMessage = styled.div`
+  width: 100%;
+  display: table;
+  table-layout: fixed;
+
+  div {
+    display: table-cell;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+`;
+
+const FullName = styled(PrimaryText)`
   font-weight: ${THEME_VALUE.FONT_WEIGHT.MEDIUM};
 `;
 
@@ -118,16 +124,14 @@ const Status = styled.span`
   }};
 `;
 
-const MessageFragment = styled.div`
-  font-weight: ${THEME_VALUE.FONT_WEIGHT.REGULAR};
-  font-size: ${THEME_SIZE.FONT.SMALL};
-  color: ${THEME_COLOR.TEXT.DARK_SECONDARY};
+const YouText = styled(SecondaryText)`
+  font-weight: ${THEME_VALUE.FONT_WEIGHT.MEDIUM};
+  color: ${THEME_COLOR.TEXT.PRIMARY};
 `;
 
-const YouText = styled.span`
-  font-weight: ${THEME_VALUE.FONT_WEIGHT.REGULAR};
-  font-size: ${THEME_SIZE.FONT.SMALL};
-  color: ${THEME_COLOR.TEXT.PRIMARY};
+const MessageText = styled(SecondaryText)`
+  color: ${THEME_COLOR.TEXT.DARK_SECONDARY};
+  display: inline;
 `;
 
 const Date = styled(SecondaryText)`
