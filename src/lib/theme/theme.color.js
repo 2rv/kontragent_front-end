@@ -10,6 +10,7 @@ export const THEME_COLOR = {
     WARNING: '#F2994A',
     INFO: '#2F80ED',
     VALIDATION: '#EB5757',
+    PURPLE: '#9B51E0',
   },
 
   COLOR: {
@@ -22,5 +23,6 @@ export const THEME_COLOR = {
     INFO: '#E6EBFF',
     VALIDATION: '#EB5757',
     SUCCESS: '#E0FFDD',
+    BACKGROUND: '#e5e5e5',
   },
 };
