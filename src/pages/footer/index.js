@@ -1,2 +1,2 @@
-import { Footer } from '../../core/footer';
-export default Footer;
+import { FooterContainer } from '../../core/footer';
+export default FooterContainer;

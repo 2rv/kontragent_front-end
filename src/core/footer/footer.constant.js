@@ -1,6 +1,6 @@
 export const FOOTER_ITEMS = [
-  { text: 'FOOTER.PEOPLES_RATING', path: false },
-  { text: 'FOOTER.CONDITIONS', path: true },
-  { text: 'FOOTER.PROCESSING_POLICY', path: false },
-  { text: 'FOOTER.OFFER_AGREEMENT', path: false },
+  { tid: 'FOOTER.PEOPLES_RATING', pathname: '/', isActive: null },
+  { tid: 'FOOTER.CONDITIONS', pathname: '/', isActive: null },
+  { tid: 'FOOTER.PROCESSING_POLICY', pathname: '/', isActive: null },
+  { tid: 'FOOTER.OFFER_AGREEMENT', pathname: '/', isActive: null },
 ];
