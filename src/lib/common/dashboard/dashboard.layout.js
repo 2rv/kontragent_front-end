@@ -8,6 +8,7 @@ import { IndentLayout } from '../../elements/layout';
 import styled from 'styled-components';
 import { THEME_COLOR } from 'src/lib/theme';
 
+import { FooterContainer } from '../../../core/footer';
 export function DashboardLayout(props) {
   const [height, setHeight] = useState(1000);
   useEffect(() => {
@@ -19,6 +20,7 @@ export function DashboardLayout(props) {
       <Content>
         <HeaderContainer />
         <MainContent>{props.children}</MainContent>
+        <FooterContainer />
       </Content>
     </Container>
   );

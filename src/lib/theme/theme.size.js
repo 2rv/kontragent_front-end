@@ -30,5 +30,6 @@ export const THEME_SIZE = {
   },
   RADIUS: {
     DEFAULT: '10px',
+    CIRCLE: '100%',
   },
 };
