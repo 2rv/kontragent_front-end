@@ -14,7 +14,7 @@ export function DashboardLayout(props) {
     setHeight(window.innerHeight);
   }, []);
   return (
-    <Container style={{ height: height }}>
+    <Container height={height}>
       <SidebarContainer />
       <Content>
         <HeaderContainer />
@@ -26,6 +26,7 @@ export function DashboardLayout(props) {
 const Container = styled.div`
   display: flex;
   width: 100%;
+  height: ${(props) => `${props.height}px`};
 `;
 const Content = styled.div`
   display: flex;
