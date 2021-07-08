@@ -8,6 +8,8 @@ import {
 } from '../../../../lib/theme';
 import { PrimaryDivider } from '../../../../lib/elements/divider';
 import { PrimaryField } from '../../../../lib/elements/field';
+import { ReactComponent as SendIcon } from '../../../../asset/svg/send-icon.svg';
+import { ReactComponent as FileIcon } from '../../../../asset/svg/file-icon.svg';
 export function NewsCommentComponent(props) {
   const { newsComment, myAvatar } = props;
   return (
@@ -26,26 +28,40 @@ export function NewsCommentComponent(props) {
           </CommentItem>
         ))}
       </CommentList>
-      <FieldCase>
+      <FooterCase>
         <Avatar src={myAvatar} />
-        <Field />
-        мне в лом делать иконки для филда ...Паша
-      </FieldCase>
+        <FieldCase>
+          <Field placeholderTid="Написать комментарий" />
+          <ActionsCase>
+            <FileIcon />
+            <SendIcon />
+          </ActionsCase>
+        </FieldCase>
+      </FooterCase>
     </Container>
   );
 }
-const Field = styled(PrimaryField)`
+const ActionsCase = styled.div`
+  position: absolute;
+  right: ${spacing(4)};
+  gap: ${spacing(3)};
   display: flex;
+  align-items: center;
+`;
+const FieldCase = styled.div`
+  position: relative;
+  display: grid;
   height: 56px;
   width: 100%;
-  background-color: khaki;
+  align-items: center;
 `;
+const Field = styled(PrimaryField)``;
 const CommentItem = styled.div`
   display: flex;
   gap: ${spacing(4)};
   align-items: flex-start;
 `;
-const FieldCase = styled(CommentItem)`
+const FooterCase = styled(CommentItem)`
   align-items: center;
 `;
 const Author = styled(PrimaryText)`
