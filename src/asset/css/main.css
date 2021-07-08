@@ -509,7 +509,6 @@ textarea::placeholder {
   opacity: 1;
 }
 a:hover {
-  color: inherit !important;
   text-decoration: inherit !important;
 }
 input:-webkit-autofill {
