@@ -1,3 +1,4 @@
 export { PrimaryField } from './primary.field';
-export { SelectField } from './select.field';
+export { PrimarySelect } from './primary.select';
 export { TextareaField } from './textarea.field';
+export { SecodarySelect } from './secondary.select';

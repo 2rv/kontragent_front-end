@@ -77,9 +77,8 @@ const TopicNameText = styled(PrimaryText)`
 `;
 
 const RequestListItemDataContainer = styled.div`
-  display: grid;
-  grid-template-columns: repeat(5, auto);
-  grid-column-gap: ${spacing(2)};
+  display: flex;
+  gap: ${spacing(2)};
   align-items: center;
 `;
 
