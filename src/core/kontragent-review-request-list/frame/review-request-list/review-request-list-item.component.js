@@ -7,7 +7,7 @@ import { PrimaryBox } from '../../../../lib/elements/box';
 import { PrimaryButton } from '../../../../lib/elements/button';
 import { PrimaryText, SecondaryText } from '../../../../lib/elements/text';
 
-import { CicleDivider } from '../../../../lib/elements/divider';
+import { CircleDivider } from '../../../../lib/elements/divider';
 
 export function ReviewRequestListItemComponent(props) {
   const { id, name, price, date, status } = props.data;
@@ -19,9 +19,9 @@ export function ReviewRequestListItemComponent(props) {
             <CompanyNameText>{name}</CompanyNameText>
             <RequestListItemDataContainer>
               <PriceText>{price}</PriceText>
-              <CicleDivider />
+              <CircleDivider />
               <SecondaryText>{date}</SecondaryText>
-              <CicleDivider />
+              <CircleDivider />
               <StatusText statusId={id}>{status}</StatusText>
             </RequestListItemDataContainer>
           </SectionLayout>
