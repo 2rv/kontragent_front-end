@@ -2,13 +2,11 @@ import styled from 'styled-components';
 import { spacing, THEME_COLOR, THEME_SIZE } from '../../theme';
 import { SecodarySelect } from '../field';
 import { SecondaryInput } from '../input';
-import { ReactComponent as FindIcon } from '../../../asset/svg/find-icon-15x15.svg';
 import { PrimaryTitleText } from '../text';
 
 export function FilterComponent(props) {
   const { titleTid, children, selectOption, placeholderTid, icon } = props;
 
-  const Icon = icon || FindIcon;
   return (
     <Container>
       <HeaderCase>
@@ -17,7 +15,7 @@ export function FilterComponent(props) {
       </HeaderCase>
       <InputCase>
         <Field placeholder={placeholderTid} />
-        <SecodarySelect option={selectOption} />
+        {selectOption && <SecodarySelect option={selectOption} />}
       </InputCase>
     </Container>
   );
