@@ -9,11 +9,6 @@ import { Router } from '../main/router';
 
 import { langServerDetection, langBrowserDetection } from '../lib/common/lang';
 import { authSetData, authGetCookieToken } from '../lib/common/auth';
-<<<<<<< HEAD
-=======
-
-import { setCurrentAuthCookie } from '../main/auth';
->>>>>>> origin/support-review-request-list
 
 import { NavigationObserver } from '../lib/common/navigation';
 
