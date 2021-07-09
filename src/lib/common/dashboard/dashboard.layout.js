@@ -1,20 +1,12 @@
-import { useEffect, useState } from 'react';
-
 import { SidebarContainer } from '../../../core/sidebar';
 import { HeaderContainer } from '../../../core/header';
-
-import { IndentLayout } from '../../elements/layout';
 
 import styled from 'styled-components';
 import { THEME_COLOR } from 'src/lib/theme';
 
 export function DashboardLayout(props) {
-  const [height, setHeight] = useState(1000);
-  useEffect(() => {
-    setHeight(window.innerHeight);
-  }, []);
   return (
-    <Container height={height}>
+    <Container>
       <SidebarContainer />
       <Content>
         <HeaderContainer />
@@ -23,11 +15,13 @@ export function DashboardLayout(props) {
     </Container>
   );
 }
+
 const Container = styled.div`
   display: flex;
   width: 100%;
-  height: ${(props) => `${props.height}px`};
+  height: 100vh;
 `;
+
 const Content = styled.div`
   display: flex;
   flex-direction: column;
@@ -35,6 +29,7 @@ const Content = styled.div`
   min-width: 500px;
   height: 100%;
 `;
+
 const MainContent = styled.div`
   background-color: ${THEME_COLOR.COLOR.SECONDARY};
   overflow: auto;
