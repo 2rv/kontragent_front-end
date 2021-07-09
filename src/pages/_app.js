@@ -16,8 +16,6 @@ import { setCurrentAuthCookie } from '../main/auth';
 
 import '../asset/css/main.css';
 
-import { setCurrentAuthCookie } from '../main/auth';
-
 class MyApp extends App {
   componentDidMount() {
     langBrowserDetection();
