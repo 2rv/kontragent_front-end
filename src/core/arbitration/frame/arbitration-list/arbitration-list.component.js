@@ -1,12 +1,12 @@
 import styled from 'styled-components';
-import { ArbitrageRequestListItemComponent } from './arbitrage-request-list-item.component';
+import { ArbitrationListItemComponent } from './arbitration-list-item.component';
 import { spacing } from '../../../../lib/theme';
 
-export function ArbitrageRequestListComponent(props) {
+export function ArbitrationListComponent(props) {
   return (
     <Container>
       {props.listData.map((data, index) => (
-        <ArbitrageRequestListItemComponent data={data} key={index} />
+        <ArbitrationListItemComponent data={data} key={index} />
       ))}
     </Container>
   );

@@ -1,10 +1,13 @@
-import { SectionLayout } from '../../../../lib/elements/layout';
-import { InspectionRequestListItem } from './inspection-request-list.item';
-export function InspectionRequestListComponent(props) {
+import styled from 'styled-components';
+import { spacing } from '../../../../lib/theme';
+import { MyChecksListItemComponent } from './my-checks-list-item.component';
+
+export function MyChecksListComponent(props) {
+  const { itemsData } = props;
   return (
-    <SectionLayout>
-      {props.inspectionRequestListData.map((inspectionRequest, index) => (
-        <InspectionRequestListItem
+    <Container>
+      {itemsData.map((inspectionRequest, index) => (
+        <MyChecksListItemComponent
           key={index}
           company={inspectionRequest.company}
           inspectionTypeId={inspectionRequest.inspectionTypeId}
@@ -16,6 +19,12 @@ export function InspectionRequestListComponent(props) {
           payed={inspectionRequest.payed}
         />
       ))}
-    </SectionLayout>
+    </Container>
   );
 }
+
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: ${spacing(4.5)};
+`;

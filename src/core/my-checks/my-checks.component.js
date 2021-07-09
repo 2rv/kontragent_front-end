@@ -1,17 +1,17 @@
 import styled from 'styled-components';
-import { SupportRequestListContainer } from './frame';
+import { MyChecksListContainer } from './frame';
 import { spacing, THEME_COLOR } from '../../lib/theme';
 import { FilterComponent } from '../../lib/elements/filter-component';
 import { SecondaryButton } from '../../lib/elements/button';
 
-export function SupportReviewRequestListComponent(props) {
-  const { supportRequestListData, selectOption } = props;
+export function MyChecksComponent(props) {
+  const { itemsData, selectOption } = props;
   return (
     <Container>
       <FilterComponent
-        titleTid="SUPPORT.SUPPORT_REQUEST"
+        titleTid="MY_CHECKS.TITLE"
         selectOption={selectOption}
-        placeholderTid="SUPPORT.FIND_DIALOGS_OR_MESSAGE"
+        placeholderTid="MY_CHECKS.FIND_CHECKS"
       >
         <PaginationCase>
           <Button tid="1" pageActived={true} />
@@ -20,9 +20,7 @@ export function SupportReviewRequestListComponent(props) {
           <Button tid="4" />
         </PaginationCase>
       </FilterComponent>
-      <SupportRequestListContainer
-        supportRequestListData={supportRequestListData}
-      />
+      <MyChecksListContainer itemsData={itemsData} />
     </Container>
   );
 }

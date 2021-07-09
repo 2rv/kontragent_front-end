@@ -1,9 +1,10 @@
 import styled from 'styled-components';
 import { spacing, THEME_COLOR } from '../../lib/theme';
-import { ArbitrageRequestListContainer } from './frame';
+import { ArbitrationListContainer } from './frame';
 import { FilterComponent } from '../../lib/elements/filter-component';
 import { SecondaryButton } from '../../lib/elements/button';
-export function ArbitrageUserRequestListComponent(props) {
+
+export function ArbitrationComponent(props) {
   const { listData, selectOption } = props;
   return (
     <Container>
@@ -19,7 +20,7 @@ export function ArbitrageUserRequestListComponent(props) {
           <Button tid="4" />
         </PaginationCase>
       </FilterComponent>
-      <ArbitrageRequestListContainer listData={listData} />
+      <ArbitrationListContainer listData={listData} />
     </Container>
   );
 }

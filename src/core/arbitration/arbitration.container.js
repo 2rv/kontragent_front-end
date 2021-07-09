@@ -1,11 +1,8 @@
-import { ArbitrageUserRequestListComponent } from './arbitrage-user-request-list.component';
+import { ArbitrationComponent } from './arbitration.component';
 
-export function ArbitrageUserRequestListContainer() {
+export function ArbitrationContainer() {
   return (
-    <ArbitrageUserRequestListComponent
-      selectOption={selectOption}
-      listData={listData}
-    />
+    <ArbitrationComponent selectOption={selectOption} listData={listData} />
   );
 }
 const selectOption = [
@@ -21,6 +18,7 @@ const listData = [
     recipient: 'Татьяна Лавелина',
     date: '40 минут назад',
     messageNumber: 25,
+    avatar: '/static/img/tempArbitrageRecipientAvatar.svg',
   },
   {
     id: 0,
@@ -29,6 +27,7 @@ const listData = [
     recipient: 'Татьяна Лавелина',
     date: '40 минут назад',
     messageNumber: 25,
+    avatar: '/static/img/tempArbitrageRecipientAvatar.svg',
   },
   {
     id: 1,
@@ -37,5 +36,6 @@ const listData = [
     recipient: 'Татьяна Лавелина',
     date: '40 минут назад',
     messageNumber: 25,
+    avatar: '/static/img/tempArbitrageRecipientAvatar.svg',
   },
 ];

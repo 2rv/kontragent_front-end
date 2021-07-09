@@ -1,16 +1,17 @@
 import styled from 'styled-components';
 import { PrimaryInput } from './primary.input';
 import { SecondaryInputPropsType } from './type.input';
-import { ReactComponent as SearchIcon } from '../../../asset/svg/searchIcon.svg';
+import { ReactComponent as FindIcon } from '../../../asset/svg/find-icon-15x15.svg';
 import { spacing, THEME_COLOR, THEME_SIZE } from '../../theme';
+import { text } from '../../common/text';
 
 export function SecondaryInput(props: SecondaryInputPropsType) {
   const { onChange, placeholder } = props;
   return (
     <Container>
-      <Input onChange={onChange} placeholder={placeholder} />
+      <Input onChange={onChange} placeholder={text(placeholder)} />
       <IconContainer>
-        <SearchIcon />
+        <FindIcon />
       </IconContainer>
     </Container>
   );

@@ -11,8 +11,9 @@ import { ReactComponent as MessageIcon } from '../../../../asset/svg/message-ico
 
 import Image from 'next/image';
 
-export function ArbitrageRequestListItemComponent(props) {
-  const { id, status, topic, recipient, date, messageNumber } = props.data;
+export function ArbitrationListItemComponent(props) {
+  const { id, status, topic, recipient, date, messageNumber, avatar } =
+    props.data;
 
   return (
     <PrimaryBox>
@@ -20,12 +21,8 @@ export function ArbitrageRequestListItemComponent(props) {
         <ArbitrageListItemLayout>
           <ArbitrageListItemInfoLayout>
             <RecipientAvatarWrapper>
-              <Image
-                src="/static/img/tempArbitrageRecipientAvatar.svg"
-                layout="fill"
-              />
+              <Image src={avatar} layout="fill" />
             </RecipientAvatarWrapper>
-
             <SectionLayout type="SMALL">
               <TopicNameText>{topic}</TopicNameText>
               <RequestListItemDataContainer>

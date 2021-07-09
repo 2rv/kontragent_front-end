@@ -1,9 +1,12 @@
-import { SectionLayout } from '../../../../lib/elements/layout';
 import { SupportRequestListItem } from './support-request-list.item';
+import styled from 'styled-components';
+import { spacing } from '../../../../lib/theme';
+
 export function SupportRequestListComponent(props) {
+  const { supportRequestListData } = props;
   return (
-    <SectionLayout>
-      {props.supportRequestListData.map((supportRequest) => (
+    <Container>
+      {supportRequestListData.map((supportRequest) => (
         <SupportRequestListItem
           problemTid={supportRequest.problemTid}
           requestCause={supportRequest.requestCause}
@@ -12,6 +15,12 @@ export function SupportRequestListComponent(props) {
           status={supportRequest.status}
         />
       ))}
-    </SectionLayout>
+    </Container>
   );
 }
+
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: ${spacing(4.5)};
+`;

@@ -18,7 +18,8 @@ import KONTRAGENT_REVIEW from './kontragent-review.json';
 import AUTH_CHANGE_PASSWORD from './auth-change-password.json';
 import AUTH_RECOVERY_ACCOUNT from './auth-recovery-account.json';
 import FOOTER from './footer.json';
-import INSPECTION from './inspection.json';
+import MY_CHECKS from './my-checks.json';
+import CONTRACTOR from './contractor.json';
 
 export const RU = {
   translation: {
@@ -42,6 +43,7 @@ export const RU = {
     AUTH_CHANGE_PASSWORD,
     AUTH_RECOVERY_ACCOUNT,
     FOOTER,
-    INSPECTION,
+    MY_CHECKS,
+    CONTRACTOR,
   },
 };

@@ -11,7 +11,7 @@ import {
   spacing,
 } from '../../../../lib/theme';
 
-export function InspectionRequestListItem(props) {
+export function MyChecksListItemComponent(props) {
   const {
     company,
     inspectionTypeId,
@@ -46,14 +46,14 @@ export function InspectionRequestListItem(props) {
               </LineContainer>
             </SectionLayout>
             <InspectionListItemButtonLayout>
-              <CancelButton tid="INSPECTION.BUTTON.CANCEL" />
+              <CancelButton tid="MY_CHECKS.BUTTON.CANCEL" />
               <Button
                 payed={payed}
                 disabled={payed ? true : false}
                 tid={
                   payed
-                    ? 'INSPECTION.BUTTON.PAYED'
-                    : 'INSPECTION.BUTTON.NOT_PAYED'
+                    ? 'MY_CHECKS.BUTTON.PAYED'
+                    : 'MY_CHECKS.BUTTON.NOT_PAYED'
                 }
               />
             </InspectionListItemButtonLayout>
@@ -120,17 +120,26 @@ const Sum = styled(PrimaryText)`
 
 const InspectionListItemButtonLayout = styled.div`
   display: flex;
-  grid-column-gap: ${spacing(4)};
+  gap: ${spacing(4)};
 `;
 
 const Button = styled(PrimaryButton)`
-  padding: ${`${spacing(4)} ${spacing(10)}`};
   background-color: ${(props) => props.payed && THEME_COLOR.TEXT.SECONDARY};
+  width: 161px;
+  height: 46px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 const CancelButton = styled(Button)`
   color: ${THEME_COLOR.TEXT.VALIDATION};
   background-color: ${THEME_COLOR.COLOR.SECONDARY};
+  width: 161px;
+  height: 46px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 const CompanyName = styled(PrimaryText)`
