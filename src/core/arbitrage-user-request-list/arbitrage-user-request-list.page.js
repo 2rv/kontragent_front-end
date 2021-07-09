@@ -1,5 +1,10 @@
 import { ArbitrageUserRequestListContainer } from './arbitrage-user-request-list.container';
+import { DashboardLayout } from '../../lib/common/dashboard';
 
 export function ArbitrageRequestListPage() {
-  return <ArbitrageUserRequestListContainer />;
+  return (
+    <DashboardLayout>
+      <ArbitrageUserRequestListContainer />
+    </DashboardLayout>
+  );
 }
