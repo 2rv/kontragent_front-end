@@ -18,6 +18,7 @@ export function SecondaryInput(props: SecondaryInputPropsType) {
 
 const Input = styled(PrimaryInput)`
   color: ${THEME_COLOR.TEXT.SECONDARY};
+  padding-right: ${spacing(11)};
   background-color: inherit;
   width: 100%;
   height: 100%;
