@@ -25,22 +25,8 @@ const Title = styled(PrimaryTitleText)`
   font-size: ${THEME_SIZE.FONT.HUGE};
 `;
 
-const IconCase = styled.div`
-  position: absolute;
-  right: ${spacing(4.5)};
-  display: flex;
-  align-items: center;
-  justify-content: center;
-`;
-
 const Field = styled(SecondaryInput)`
   background-color: ${THEME_COLOR.COLOR.BASE};
-`;
-
-const FieldCase = styled.div`
-  position: relative;
-  align-items: center;
-  display: grid;
 `;
 
 const HeaderCase = styled.div`
