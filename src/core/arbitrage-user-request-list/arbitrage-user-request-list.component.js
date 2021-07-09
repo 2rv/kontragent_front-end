@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { spacing, THEME_COLOR } from '../../lib/theme';
-import { ArbitrageRequestListContainer } from './frame/arbitrage-request-list';
+import { ArbitrageRequestListContainer } from './frame';
 import { FilterComponent } from '../../lib/elements/filter-component';
 import { SecondaryButton } from '../../lib/elements/button';
 export function ArbitrageUserRequestListComponent(props) {
