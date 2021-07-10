@@ -4,17 +4,18 @@ import { FindCompleteNotificationItemComponent } from './find-complete-notificat
 import { NewMessageNotificationItemComponent } from './new-message-notification-item.component';
 import { RatingNotificationItemComponent } from './rating-notification-item.component';
 import { ProblemNotificationItemComponent } from './problem-notification-item.component';
+
 export function NotificationsListComponent(props) {
-  const { notificationsData } = props;
+  const { feedAndNotificationsListData } = props;
   return (
     <Container>
-      {notificationsData.map((data, index) => (
-        <>
+      {feedAndNotificationsListData.map((data, index) => (
+        <div key={index}>
           <RatingNotificationItemComponent />
           <FindCompleteNotificationItemComponent />
           <NewMessageNotificationItemComponent />
           <ProblemNotificationItemComponent />
-        </>
+        </div>
       ))}
     </Container>
   );

@@ -1,19 +1,21 @@
-import { NotificationsComponent } from './notifications.component';
+import { FeedAndNotificationsListComponent } from './feed-and-notifications-list.component';
 
-export function NotificationsContainer() {
+export function FeedAndNotificationsListContainer() {
   return (
-    <NotificationsComponent
-      selectOption={selectOption}
-      notificationsData={notificationsData}
+    <FeedAndNotificationsListComponent
+      feedAndNotificationsListSelectOption={
+        feedAndNotificationsListSelectOption
+      }
+      feedAndNotificationsListData={feedAndNotificationsListData}
     />
   );
 }
-const selectOption = [
+const feedAndNotificationsListSelectOption = [
   { id: 0, tid: 'По дате' },
   { id: 1, tid: 'По имени' },
   { id: 2, tid: 'По статусу' },
 ];
-const notificationsData = [
+const feedAndNotificationsListData = [
   {
     id: 2,
     status: 'Ожидает оплаты',
