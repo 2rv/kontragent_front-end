@@ -3,7 +3,7 @@ import React from 'react';
 import { SectionLayout } from '../../../../lib/elements/layout';
 import { FieldLayout } from '../../../../lib/elements/layout';
 import { SecondaryTitleText } from '../../../../lib/elements/text';
-import { SelectField } from '../../../../lib/elements/field';
+import { PrimarySelect } from '../../../../lib/elements/field';
 import { TextareaField } from '../../../../lib/elements/field';
 import { SecondaryButton } from '../../../../lib/elements/button';
 import { ErrorAlert } from '../../../../lib/elements/alert';
@@ -52,7 +52,7 @@ export function SupportFormCreateRequestComponent(props) {
           <SectionLayout type="LARGE">
             <SecondaryTitleText tid="SUPPORT.CREATE_REQUEST.HEADER" />
             <FieldLayout>
-              <SelectField
+              <PrimarySelect
                 titleTid="SUPPORT.CREATE_REQUEST.FIELD.PROBLEM_CATEGORY.TITLE"
                 name={fieldProblemCategory}
                 onChange={handleChange}

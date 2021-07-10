@@ -8,9 +8,9 @@ import { SecondaryText } from '../text';
 
 import { ReactComponent as ArrowIcon } from '../../../asset/svg/selectArrow.svg';
 
-import { SelectFieldPropsType } from './type.field';
+import { PrimarySelectPropsType } from './type.field';
 
-export function SelectField(props: SelectFieldPropsType) {
+export function PrimarySelect(props: PrimarySelectPropsType) {
   const { onChange, onBlur, option, titleTid, name } = props;
   return (
     <Container>
