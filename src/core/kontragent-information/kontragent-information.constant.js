@@ -1,19 +1,19 @@
 export const KONTRAGENT_INFORMATION_ROUTE_PATH = '/kontragent-information';
 
 export const TABS_LIST = [
-  { id: 1,  text: 'Детальная информация' },
-  { id: 2,  text: 'Рейтинг и оценка рисков' },
-  { id: 3,  text: 'Отзывы' },
-  { id: 4,  text: 'Проверки' },
-  { id: 5,  text: 'Арбитражные дела' },
-  { id: 6,  text: 'Красная зона', active: true },
+  { id: 1,  text: 'KONTRAGENT_INFORMATION.TABS.DETAIL_INFORMATION' },
+  { id: 2,  text: 'KONTRAGENT_INFORMATION.TABS.RISK_RATING_AND_ASSESSMENT' },
+  { id: 3,  text: 'KONTRAGENT_INFORMATION.TABS.TESTIMONIALS' },
+  { id: 4,  text: 'KONTRAGENT_INFORMATION.TABS.CHECKS' },
+  { id: 5,  text: 'KONTRAGENT_INFORMATION.TABS.ARBITRATION_CASES' },
+  { id: 6,  text: 'KONTRAGENT_INFORMATION.TABS.RED_ZONE', active: true },
 ];
 
 export const DANGER_NOTICES_1 = [
   {
     id: 1,
     title: 'По состоянию на 2021-05-14 действовали ограничения на операции по банковским счетам организации, установленные ИФНС',
-    description: 'Это означает, что в отношении данной организации ИФНС отправляла в банки своё решение о частичном или полном прекращении расходных операций по счетам (ст. 76 НК РФ). В настоящий момент это решение может быть уже отменено, а расходные операции разрешены.'
+    description: 'Это означает, что в отношении данной организации ИФНС отправляла в банки своё решение о частичном или полном прекращении расходных операций по счетам (ст. 76 НК РФ). В настоящий момент это решение может быть уже отменено, а расходные операции разрешены.',
   },
   {
     id: 2,

@@ -1,0 +1,22 @@
+{
+  "TITLE": "Контрагент",
+  "TABS": {
+    "DETAIL_INFORMATION": "Детальная информация",
+    "RISK_RATING_AND_ASSESSMENT": "Рейтинг и оценка рисков",
+    "TESTIMONIALS": "Отзывы",
+    "CHECKS": "Проверки",
+    "ARBITRATION_CASES": "Арбитражные дела",
+    "RED_ZONE": "Красная зона"
+  },
+  "DANGER_NOTICES": {
+    "TITLE": "Уведомления об опасности",
+    "RED_ZONE": "Красная зона",
+    "INFO": {
+      "COMPANY_TYPE": "Ваше ООО",
+      "COMPANY_NAME": "\"Компания Гермес-Электро\"",
+      "DESCRIPTION": "находится в красной зоне. Вы можете исправить это по советам ниже."
+    },
+    "PRICE_OF_RESOLVING_ISSUE": "Цена решения вопроса",
+    "ORDER": "Заказать"
+  }
+}

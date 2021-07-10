@@ -10,11 +10,11 @@ export function DangerNoticesComponent({ dangerNotices1, dangerNotices2 }) {
   return (
     <div>
       <RedZoneContainer>
-        <RedZoneText tid="Красная зона" />
+        <RedZoneText tid="KONTRAGENT_INFORMATION.DANGER_NOTICES.RED_ZONE" />
         <div>
-          <SecondaryText tid="Ваше ООО" />&nbsp;
-          <CompanyGermesElectroText tid={'"Компания Гермес-Электро"'} />&nbsp;
-          <SecondaryText tid="находится в красной зоне. Вы можете исправить это по советам ниже." />
+          <SecondaryText tid="KONTRAGENT_INFORMATION.DANGER_NOTICES.INFO.COMPANY_TYPE" />&nbsp;
+          <CompanyGermesElectroText tid="KONTRAGENT_INFORMATION.DANGER_NOTICES.INFO.COMPANY_NAME" />&nbsp;
+          <SecondaryText tid="KONTRAGENT_INFORMATION.DANGER_NOTICES.INFO.DESCRIPTION" />
         </div>
       </RedZoneContainer>
       <DangerNotice1Component dangerNotices1={dangerNotices1} />

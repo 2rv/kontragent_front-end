@@ -11,7 +11,7 @@ import { spacing, THEME_SIZE } from '../../lib/theme';
 export function KontragentInformationComponent() {
   return (
     <div>
-      <KontragentTitle tid="Контрагент" />
+      <KontragentTitle tid="KONTRAGENT_INFORMATION.TITLE" />
       <TabsComponent tabsList={TABS_LIST} />
       <DangerNoticesComponent dangerNotices1={DANGER_NOTICES_1} dangerNotices2={DANGER_NOTICES_2} />
     </div>

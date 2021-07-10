@@ -11,7 +11,7 @@ export function DangerNotice2Component({ dangerNotices2 }) {
   return (
     <Box>
       <Layout>
-        <DangerNoticeHeadline tid="Уведомления об опасности" />
+        <DangerNoticeHeadline tid="KONTRAGENT_INFORMATION.DANGER_NOTICES.TITLE" />
         <DangerNoticeContainer>
           {dangerNotices2.map((dangerNotice) => (
             <DangerNoticeContent
@@ -23,8 +23,8 @@ export function DangerNotice2Component({ dangerNotices2 }) {
               <DangerNoticeTitle tid={dangerNotice.title} />
               <DangerNoticeDescription tid={dangerNotice.description} />
               <div>
-                <DangerNoticePrice tid={dangerNotice.price} />&nbsp;
-                <LightGrayText tid="руб" />.
+                <DangerNoticePrice tid={dangerNotice.price} />
+                <LightGrayText tid="SIDEBAR.ACCOUNT_INFO_CURRENCY" />
               </div>
             </DangerNoticeContent>
           ))}
@@ -32,13 +32,13 @@ export function DangerNotice2Component({ dangerNotices2 }) {
         <Divider />
         <FooterContainer>
           <div>
-            <LightGrayText tid="Цена решения вопроса" />
+            <LightGrayText tid="KONTRAGENT_INFORMATION.DANGER_NOTICES.PRICE_OF_RESOLVING_ISSUE" />
             <div>
-              <BlueText>3 500&nbsp;</BlueText>
-              <PrimaryText tid="руб" />.
+              <BlueText>3 500</BlueText>
+              <PrimaryText tid="SIDEBAR.ACCOUNT_INFO_CURRENCY" />
             </div>
           </div>
-          <SecondaryButton tid="Заказать" />
+          <SecondaryButton tid="KONTRAGENT_INFORMATION.DANGER_NOTICES.ORDER" />
         </FooterContainer>
       </Layout>
     </Box>
