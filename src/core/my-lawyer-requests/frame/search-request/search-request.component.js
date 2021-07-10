@@ -4,19 +4,20 @@ import { ReactComponent as Search } from '../../../../asset/svg/search.svg';
 import { ReactComponent as ArrowIcon } from '../../../../asset/svg/selectArrow.svg';
 
 import { spacing, THEME_COLOR, THEME_SIZE, THEME_VALUE } from '../../../../lib/theme';
+import { text } from '../../../../lib/common/text';
 
 export function SearchRequestsComponent() {
   return (
     <SearchRequestsContainer>
       <SearchLawyerRequestsContent>
-        <SearchLawyerRequestsInput placeholder="Найти запрос" />
+        <SearchLawyerRequestsInput placeholder={text('MY_LAWYER_REQUESTS.FIND_REQUEST')} />
         <SearchIcon />
       </SearchLawyerRequestsContent>
       <SearchLawyerRequestsContent>
         <LawyerRequestsSortSelect name="lawyerRequestSort">
-          {[ 'По дате', 'По месяцу' ].map((dialog, index) => (
-            <option key={index} value={dialog}>
-              {dialog}
+          {[ 'MY_LAWYER_REQUESTS.SELECT_OPTION.BY_DATE', 'MY_LAWYER_REQUESTS.SELECT_OPTION.BY_MONTH' ].map((dialog, index) => (
+            <option key={index} value={text(dialog)}>
+              {text(dialog)}
             </option>
           ))}
         </LawyerRequestsSortSelect>

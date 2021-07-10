@@ -8,11 +8,11 @@ export const REQUESTS_LIST = [
     time: '15 минут назад',
     messages: '25',
     status: {
-      title: 'Контрагент',
+      title: 'MY_LAWYER_REQUESTS.STATUSES.KONTRAGENT',
       id: 0,
     },
     info: {
-      title: 'Решено',
+      title: 'MY_LAWYER_REQUESTS.INFO.RESOLVED',
       id: 0,
     },
   },
@@ -23,11 +23,11 @@ export const REQUESTS_LIST = [
     time: '40 минут назад',
     messages: '5',
     status: {
-      title: 'Жалоба',
+      title: 'MY_LAWYER_REQUESTS.STATUSES.COMPLAINT',
       id: 1,
     },
     info: {
-      title: 'На рассмотрении',
+      title: 'MY_LAWYER_REQUESTS.INFO.UNDER_CONSIDERATION',
       id: 1,
     },
   },
@@ -38,11 +38,11 @@ export const REQUESTS_LIST = [
     time: 'Вчера',
     messages: '0',
     status: {
-      title: 'Подозрение',
+      title: 'MY_LAWYER_REQUESTS.STATUSES.SUSPICION',
       id: 2,
     },
     info: {
-      title: 'Отклонено',
+      title: 'MY_LAWYER_REQUESTS.INFO.REJECTED',
       id: 2,
     },
   },

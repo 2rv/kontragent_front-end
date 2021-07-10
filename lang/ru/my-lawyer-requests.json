@@ -1,0 +1,18 @@
+{
+  "TITLE": "Мои запросы юристам",
+  "FIND_REQUEST": "Найти запрос",
+  "SELECT_OPTION": {
+    "BY_DATE": "По дате",
+    "BY_MONTH": "По месяцу"
+  },
+  "STATUSES": {
+    "KONTRAGENT": "Контрагент",
+    "COMPLAINT": "Жалоба",
+    "SUSPICION": "Подозрение"
+  },
+  "INFO": {
+    "RESOLVED": "Решено",
+    "UNDER_CONSIDERATION": "На рассмотрении",
+    "REJECTED": "Отклонено"
+  }
+}

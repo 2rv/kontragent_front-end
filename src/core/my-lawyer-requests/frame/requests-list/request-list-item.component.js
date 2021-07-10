@@ -24,7 +24,7 @@ export function RequestListItemComponent(props) {
         <Container>
           <Content>
             <MessageText>{text}</MessageText>
-            <Status statusId={status.id}>{status.title}</Status>
+            <Status tid={status.title} statusId={status.id} />
           </Content>
           <Content justify>
             <div>
@@ -32,7 +32,7 @@ export function RequestListItemComponent(props) {
               <CicleDivider />
               <Date>{time}</Date>
               <CicleDivider />
-              <Info infoId={info.id}>{info.title}</Info>
+              <Info tid={info.title} infoId={info.id} />
             </div>
             <div>
               <Message />
@@ -81,7 +81,7 @@ const Content = styled.div`
   `};
 `;
 
-const Status = styled.span`
+const Status = styled(SecondaryText)`
   font-size: ${THEME_SIZE.FONT.DEFAULT};
   font-weight: ${THEME_VALUE.FONT_WEIGHT.SEMY_BOLD};
   color: ${(props) => {
@@ -98,7 +98,7 @@ const Status = styled.span`
   }};
 `;
 
-const Info = styled.span`
+const Info = styled(SecondaryText)`
   font-size: ${THEME_SIZE.FONT.TINY};
   font-weight: ${THEME_VALUE.FONT_WEIGHT.MEDIUM};
   color: ${(props) => {

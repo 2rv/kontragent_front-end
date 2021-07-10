@@ -11,7 +11,7 @@ import { spacing, THEME_SIZE } from '../../lib/theme';
 export function MyLawyerReqeustsComponent() {
   return (
     <div>
-      <MyLawyerRequestsTitle tid="Мои запросы юристам" />
+      <MyLawyerRequestsTitle tid="MY_LAWYER_REQUESTS.TITLE" />
       <SearchRequestsComponent />
       <RequestsListComponent requestsList={REQUESTS_LIST} />
     </div>
