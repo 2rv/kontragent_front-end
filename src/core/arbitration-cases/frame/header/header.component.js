@@ -6,10 +6,10 @@ import { spacing, THEME_SIZE, THEME_VALUE } from '../../../../lib/theme';
 export function HeaderComponent() {
   return (
     <HeaderContainer>
-      <ArbitrationCasesText tid="Арбитражные дела" />
+      <ArbitrationCasesText tid="ARBITRATION_CASES.HEADER.TITLE" />
       <div>
-        <SecondaryText tid={'Общество с ограниченной ответственностью'} />&nbsp;
-        <PrimaryText tid={'"Компания Гермес-Электро"'} />
+        <SecondaryText tid="ARBITRATION_CASES.HEADER.COMPANY.TITLE" />&nbsp;
+        <PrimaryText tid="ARBITRATION_CASES.HEADER.COMPANY.NAME" />
       </div>
     </HeaderContainer>
   );

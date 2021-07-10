@@ -17,14 +17,14 @@ export function ArbitrationCasesListComponent({ arbitrationCasesList }) {
           <Container>
             <Content>
               <MessageText>{arbitrationCase.text}</MessageText>
-              <Status statusId={arbitrationCase.status.id}>{arbitrationCase.status.title}</Status>
+              <Status tid={arbitrationCase.status.title} statusId={arbitrationCase.status.id} />
             </Content>
             <Content>
               <FullNameText>{arbitrationCase.name}</FullNameText>
               <CicleDivider />
               <Date>{arbitrationCase.time}</Date>
               <CicleDivider />
-              <Info infoId={arbitrationCase.info.id}>{arbitrationCase.info.title}</Info>
+              <Info tid={arbitrationCase.info.title} infoId={arbitrationCase.info.id} />
             </Content>
           </Container>
           <MessagesContainer>
@@ -60,7 +60,7 @@ const Content = styled.div`
   grid-column-gap: ${spacing(2)};
 `;
 
-const Status = styled.span`
+const Status = styled(SecondaryText)`
   font-size: ${THEME_SIZE.FONT.DEFAULT};
   font-weight: ${THEME_VALUE.FONT_WEIGHT.SEMY_BOLD};
   color: ${(props) => {
@@ -77,7 +77,7 @@ const Status = styled.span`
   }};
 `;
 
-const Info = styled.span`
+const Info = styled(SecondaryText)`
   font-size: ${THEME_SIZE.FONT.TINY};
   font-weight: ${THEME_VALUE.FONT_WEIGHT.MEDIUM};
   color: ${(props) => {

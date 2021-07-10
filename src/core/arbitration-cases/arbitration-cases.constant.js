@@ -9,11 +9,11 @@ export const ARBITRATION_CASES_LIST = [
     time: '15 минут назад',
     messages: '25',
     status: {
-      title: 'Контрагент',
+      title: 'ARBITRATION_CASES.STATUSES.KONTRAGENT',
       id: 0,
     },
     info: {
-      title: 'Решено',
+      title: 'ARBITRATION_CASES.INFO.RESOLVED',
       id: 0,
     },
   },
@@ -25,11 +25,11 @@ export const ARBITRATION_CASES_LIST = [
     time: '40 минут назад',
     messages: '5',
     status: {
-      title: 'Жалоба',
+      title: 'ARBITRATION_CASES.STATUSES.COMPLAINT',
       id: 1,
     },
     info: {
-      title: 'На рассмотрении',
+      title: 'ARBITRATION_CASES.INFO.UNDER_CONSIDERATION',
       id: 1,
     },
   },
@@ -41,11 +41,11 @@ export const ARBITRATION_CASES_LIST = [
     time: 'Вчера',
     messages: '0',
     status: {
-      title: 'Подозрение',
+      title: 'ARBITRATION_CASES.STATUSES.SUSPICION',
       id: 2,
     },
     info: {
-      title: 'Отклонено',
+      title: 'ARBITRATION_CASES.INFO.REJECTED',
       id: 2,
     },
   },
