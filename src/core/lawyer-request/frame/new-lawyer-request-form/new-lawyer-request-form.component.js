@@ -26,21 +26,21 @@ export function NewLawyerRequestFormComponent(props) {
       <IndentLayout>
         <SectionLayout>
           <form onSubmit={handleSubmit}>
-            <PrimaryTitleText tid="Новый запрос юристу" />
+            <PrimaryTitleText tid="LAWYER_REQUEST.FORM.TITLE" />
 
             <FieldContainer>
               <SelectField
-                titleTid="Выбирете категорию вопроса"
+                titleTid="LAWYER_REQUEST.FORM.FIELDS.TITLES.QUESTION_CATEGORY"
                 name={fieldQuestionCategory}
                 onChange={handleChange}
                 onBlur={handleBlur}
-                option={[{ id: 1, tid: 'Как защитить себя от атак' }]}
+                option={[{ id: 1, tid: 'LAWYER_REQUEST.FORM.FIELDS.SELECT_OPTIONS.QUESTION_CATEGORY.PROTECT_FROM_ATTACKS' }]}
               />
             </FieldContainer>
             <FieldContainer>
               <PrimaryField
-                titleTid="Вкратце опишите свой вопрос"
-                placeholderTid="Опишите проблему уловжившись в 1-2 предложения"
+                titleTid="LAWYER_REQUEST.FORM.FIELDS.TITLES.YOUR_QUESTION"
+                placeholderTid="LAWYER_REQUEST.FORM.FIELDS.PLACEHOLDERS.YOUR_QUESTION"
                 name={fieldYourQuestion}
                 value={values[fieldYourQuestion]}
                 onChange={handleChange}
@@ -49,8 +49,8 @@ export function NewLawyerRequestFormComponent(props) {
             </FieldContainer>
             <FieldContainer hasIcon>
               <TextareaField
-                titleTid="Детально опишите проблему"
-                placeholderTid="Опишите проблему в полном объёме"
+                titleTid="LAWYER_REQUEST.FORM.FIELDS.TITLES.PROBLEM_DESCRIPTION"
+                placeholderTid="LAWYER_REQUEST.FORM.FIELDS.PLACEHOLDERS.PROBLEM_DESCRIPTION"
                 name={fieldProblemDescription}
                 onChange={handleChange}
                 onBlur={handleBlur}
@@ -60,16 +60,16 @@ export function NewLawyerRequestFormComponent(props) {
             </FieldContainer>
 
             <PriceOfResolvingIssueContainer>
-              <PriceOfResolvingIssueText tid="Цена решения вопроса" />
+              <PriceOfResolvingIssueText tid="LAWYER_REQUEST.FORM.PRICE_OF_RESOLVING_ISSUE" />
               <div>
-                <PriceText>500</PriceText>&nbsp;
-                <ValuteText tid="руб" />.
+                <PriceText>500</PriceText>
+                <ValuteText tid="SIDEBAR.ACCOUNT_INFO_CURRENCY" />
               </div>
             </PriceOfResolvingIssueContainer>
 
             <ButtonFields>
-              <PrimaryButton tid="Отправить и оплатить" />
-              <SecondaryButton tid="Смотреть мои вопросы" type="button" />
+              <PrimaryButton tid="LAWYER_REQUEST.FORM.FIELDS.BUTTONS.SEND_AND_PAY" />
+              <SecondaryButton tid="LAWYER_REQUEST.FORM.FIELDS.BUTTONS.WATCH_MY_QUESTIONS" type="button" />
             </ButtonFields>
           </form>
         </SectionLayout>

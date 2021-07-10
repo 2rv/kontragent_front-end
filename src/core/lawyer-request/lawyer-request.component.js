@@ -9,8 +9,8 @@ export function LawyerReqeustComponent(props) {
   return (
     <div>
       <div>
-        <LawyerRequestQuestionTitle tid="Задать вопрос юристам" />
-        <LawyerRequestQuestionDescription>Задача организации, в особенности же начало повседневной работы по формированию позиции влечет за собой процесс внедрения и модернизации существенных финансовых и административных условий.</LawyerRequestQuestionDescription>
+        <LawyerRequestQuestionTitle tid="LAWYER_REQUEST.TITLE" />
+        <LawyerRequestQuestionDescription tid="LAWYER_REQUEST.DESCRIPTION" />
       </div>
       <NewLawyerRequestFormContainer {...props} />
     </div>
