@@ -6,10 +6,10 @@ import { spacing, THEME_SIZE, THEME_VALUE } from '../../../../lib/theme';
 export function HeaderComponent() {
   return (
     <HeaderContainer>
-      <ChecksText tid="Проверки" />
+      <ChecksText tid="KONTRAGENT_CHECKS.HEADER.TITLE" />
       <div>
-        <SecondaryText tid={'Общество с ограниченной ответственностью'} />&nbsp;
-        <PrimaryText tid={'"Компания Гермес-Электро"'} />
+        <SecondaryText tid="KONTRAGENT_CHECKS.HEADER.COMPANY.TITLE" />&nbsp;
+        <PrimaryText tid="KONTRAGENT_CHECKS.HEADER.COMPANY.NAME" />
       </div>
     </HeaderContainer>
   );

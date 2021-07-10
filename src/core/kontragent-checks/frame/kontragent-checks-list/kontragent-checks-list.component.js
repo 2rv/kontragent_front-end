@@ -15,22 +15,22 @@ export function KontragentChecksListComponent({ kontragentChecksList }) {
           <Container>
             <Content>
               <MessageText>{kontragentCheck.companyName}</MessageText>
-              <Status statusId={kontragentCheck.status.id}>{kontragentCheck.status.title}</Status>
+              <Status tid={kontragentCheck.status.title} statusId={kontragentCheck.status.id} />
             </Content>
             <Content>
               <PriceText>{kontragentCheck.price}</PriceText>
               <CicleDivider />
               <Date>{kontragentCheck.time}</Date>
               <CicleDivider />
-              <Info infoId={kontragentCheck.info.id}>{kontragentCheck.info.title}</Info>
+              <Info tid={kontragentCheck.info.title} infoId={kontragentCheck.info.id} />
             </Content>
           </Container>
           <ButtonsContainer>
-            <CancelButton tid="Отменить" />
+            <CancelButton tid="KONTRAGENT_CHECKS.BUTTONS.CANCEL" />
             {kontragentCheck.paid ? (
-              <PaidButton tid="Оплачена" />
+              <PaidButton tid="KONTRAGENT_CHECKS.BUTTONS.PAID" />
             ) : (
-              <PrimaryButton tid="Оплатить" />
+              <PrimaryButton tid="KONTRAGENT_CHECKS.BUTTONS.PAY" />
             )}
           </ButtonsContainer>
         </Layout>
@@ -62,7 +62,7 @@ const Content = styled.div`
   grid-column-gap: ${spacing(2)};
 `;
 
-const Status = styled.span`
+const Status = styled(SecondaryText)`
   font-size: ${THEME_SIZE.FONT.DEFAULT};
   font-weight: ${THEME_VALUE.FONT_WEIGHT.SEMY_BOLD};
   color: ${(props) => {
@@ -77,7 +77,7 @@ const Status = styled.span`
   }};
 `;
 
-const Info = styled.span`
+const Info = styled(SecondaryText)`
   font-size: ${THEME_SIZE.FONT.TINY};
   font-weight: ${THEME_VALUE.FONT_WEIGHT.MEDIUM};
   color: ${(props) => {

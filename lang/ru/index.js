@@ -18,6 +18,7 @@ import KONTRAGENT_REVIEW from './kontragent-review.json';
 import AUTH_CHANGE_PASSWORD from './auth-change-password.json';
 import AUTH_RECOVERY_ACCOUNT from './auth-recovery-account.json';
 import FOOTER from './footer.json';
+import KONTRAGENT_CHECKS from './kontragent-checks.json';
 export const RU = {
   translation: {
     META,
@@ -40,5 +41,6 @@ export const RU = {
     AUTH_CHANGE_PASSWORD,
     AUTH_RECOVERY_ACCOUNT,
     FOOTER,
+    KONTRAGENT_CHECKS,
   },
 };
