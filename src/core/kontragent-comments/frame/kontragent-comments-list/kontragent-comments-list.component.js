@@ -18,7 +18,7 @@ export function KontragentCommentsListComponent({ kontragentCommentsList }) {
             <ContentCase>
               <div>
                 <Author tid={author} />&nbsp;
-                <Status statusId={status.id}>{status.title}</Status>
+                <Status tid={status.title} statusId={status.id} />
               </div>
               <Text tid={text} />
               <Time tid={time} />
@@ -30,7 +30,7 @@ export function KontragentCommentsListComponent({ kontragentCommentsList }) {
       <FooterCase>
         <Avatar src='https://cdn.7days.ru/upload/images/bb8/7c5a98f4a0e6eab48972c70f942b6.jpg' />
         <FieldCase>
-          <PrimaryField placeholderTid="Написать комментарий" />
+          <PrimaryField placeholderTid="KONTRAGENT_COMMENTS.WRITE_MESSAGE" />
           <ActionsCase>
             <FileIcon />
             <SendIcon />
@@ -98,7 +98,7 @@ const Time = styled(PrimaryText)`
   color: ${THEME_COLOR.COLOR.LIGHT_GREY};
 `;
 
-const Status = styled.span`
+const Status = styled(SecondaryText)`
   font-size: ${THEME_SIZE.FONT.DEFAULT};
   font-weight: ${THEME_VALUE.FONT_WEIGHT.SEMY_BOLD};
   color: ${(props) => {

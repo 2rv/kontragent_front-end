@@ -8,7 +8,7 @@ export const KONTRAGENT_COMMENTS_LIST = [
     time: '15 минут назад',
     avatar: 'http://archilab.online/images/1/123.jpg',
     status: {
-      title: 'Истец',
+      title: 'KONTRAGENT_COMMENTS.STATUSES.PLAINTIFF',
       id: 1,
     },
   },
@@ -19,7 +19,7 @@ export const KONTRAGENT_COMMENTS_LIST = [
     time: '15 минут наазд',
     avatar: 'https://klike.net/uploads/posts/2019-03/1551511801_1.jpg',
     status: {
-      title: 'Ответчик',
+      title: 'KONTRAGENT_COMMENTS.STATUSES.DEFENDANT',
       id: 0,
     },
   },
