@@ -5,25 +5,19 @@ import { SecondaryText } from '../../../../lib/elements/text';
 import { spacing, THEME_COLOR } from '../../../../lib/theme';
 import { PrimaryDivider } from '../../../../lib/elements/divider';
 export function BookListComponent(props) {
+  const { bookReviewListData } = props;
   return (
     <SectionLayout>
       <Columns>
-        <SecondaryText>Загружена</SecondaryText>
-        <SecondaryText>Период книги</SecondaryText>
-        <SecondaryText>Ваше юр. лицо</SecondaryText>
-        <SecondaryText>Тип книги</SecondaryText>
-        <SecondaryText>Контрагентов</SecondaryText>
+        <SecondaryText tid="Загружена книга" />
+        <SecondaryText tid="Период книги" />
+        <SecondaryText tid="Ваше юр. лицо" />
+        <SecondaryText tid="Тип книги" />
+        <SecondaryText tid="Контрагентов" />
       </Columns>
       <Divider />
-      {props.booksListData.map((company, index) => (
-        <BookListItem
-          key={index}
-          loadDate={company.loadDate}
-          bookPeriod={company.bookPeriod}
-          companyName={company.companyName}
-          bookType={company.bookType}
-          kontragentNumber={company.kontragentNumber}
-        />
+      {bookReviewListData.map((data, index) => (
+        <BookListItem key={index} data={data} />
       ))}
     </SectionLayout>
   );
@@ -32,9 +26,8 @@ export function BookListComponent(props) {
 const Divider = styled(PrimaryDivider)`
   background-color: ${THEME_COLOR.COLOR.BASE};
 `;
-
 const Columns = styled.div`
   display: grid;
   grid-template-columns: 120px 200px 300px 130px auto auto;
-  grid-column-gap: ${spacing(4)};
+  gap: ${spacing(4)};
 `;

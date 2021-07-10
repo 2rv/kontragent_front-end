@@ -3,17 +3,17 @@ import { BookReviewListComponent } from './book-review-list.component';
 export function BookReviewListContainer() {
   return (
     <BookReviewListComponent
-      selectOption={selectOption}
-      booksListData={booksListData}
+      bookReviewListSelectOption={bookReviewListSelectOption}
+      bookReviewListData={bookReviewListData}
     />
   );
 }
-const selectOption = [
+const bookReviewListSelectOption = [
   { id: 0, tid: 'По дате' },
   { id: 1, tid: 'По имени' },
   { id: 2, tid: 'По статусу' },
 ];
-const booksListData = [
+const bookReviewListData = [
   {
     loadDate: '3 Фев 2020',
     bookPeriod: '1 Сен 2019 - 01 Окт 2021',

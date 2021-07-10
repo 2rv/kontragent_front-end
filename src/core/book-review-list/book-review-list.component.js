@@ -5,22 +5,17 @@ import { FilterComponent } from '../../lib/elements/filter-component';
 import { SecondaryButton } from '../../lib/elements/button';
 
 export function BookReviewListComponent(props) {
-  const { booksListData, selectOption } = props;
+  const { bookReviewListData, bookReviewListSelectOption } = props;
   return (
     <Container>
       <FilterComponent
         titleTid="Книги"
-        selectOption={selectOption}
+        selectOption={bookReviewListSelectOption}
         placeholderTid="Найти книгу"
       >
-        <PaginationCase>
-          <Button tid="1" pageActived={true} />
-          <Button tid="2" />
-          <Button tid="3" />
-          <Button tid="4" />
-        </PaginationCase>
+        <Button tid="Загрузить книгу" />
       </FilterComponent>
-      <BookListContainer booksListData={booksListData} />
+      <BookListContainer bookReviewListData={bookReviewListData} />
     </Container>
   );
 }
@@ -31,15 +26,8 @@ const Container = styled.div`
   flex-direction: column;
   gap: ${spacing(4.5)};
 `;
-const PaginationCase = styled.div`
-  display: flex;
-  gap: ${spacing(3.5)};
-`;
 const Button = styled(SecondaryButton)`
-  background-color: ${({ pageActived }) =>
-    !pageActived && THEME_COLOR.COLOR.BASE};
-  color: ${({ pageActived }) => !pageActived && THEME_COLOR.COLOR.PRIMARY};
-  width: 46px;
+  width: 226px;
   height: 46px;
   display: flex;
   align-items: center;

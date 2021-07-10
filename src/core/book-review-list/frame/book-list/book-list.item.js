@@ -7,11 +7,11 @@ import { ReactComponent as LoadBookIcon } from '../../../../asset/svg/loadbook.s
 
 export function BookListItem(props) {
   const { loadDate, bookPeriod, companyName, bookType, kontragentNumber } =
-    props;
+    props.data;
   return (
     <Container>
       <PrimaryBox>
-        <Indent type="SMALL">
+        <Indent>
           <InspectionRequestListItemContainer>
             <LoadDate>{loadDate}</LoadDate>
             <PrimaryText>{bookPeriod}</PrimaryText>
@@ -33,7 +33,7 @@ const BookItemButtonLayout = styled.div`
   display: flex;
   grid-template-columns: repeat(2, auto);
   justify-content: flex-end;
-  grid-column-gap: ${spacing(3)};
+  gap: ${spacing(3)};
   padding-right: ${spacing(4)};
 `;
 
@@ -48,7 +48,7 @@ const Indent = styled.div`
 const InspectionRequestListItemContainer = styled.div`
   display: grid;
   grid-template-columns: 120px 200px 300px 130px auto auto;
-  grid-column-gap: ${spacing(4)};
+  gap: ${spacing(4)};
   align-items: center;
 `;
 
