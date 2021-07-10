@@ -1,2 +1,2 @@
-import { ArbitrationPage } from '../../core/arbitration';
-export default ArbitrationPage;
+import { ArbitrationRequestsListPage } from '../../core/arbitration-requests-list';
+export default ArbitrationRequestsListPage;

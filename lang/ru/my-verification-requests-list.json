@@ -1,0 +1,11 @@
+{
+	"TITLE": "Мои проверки",
+	"FIELD": {
+		"FIND_VERIFICATION": "Найти проверку"
+	},
+	"BUTTON": {
+		"CANCEL": "Отменить",
+		"NOT_PAYED": "Оплатить",
+		"PAYED": "Оплачена"
+	}
+}
