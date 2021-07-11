@@ -5,8 +5,7 @@ import { SecondaryInput } from '../input';
 import { PrimaryTitleText } from '../text';
 
 export function FilterComponent(props) {
-  const { titleTid, children, selectOption, placeholderTid, icon } = props;
-
+  const { titleTid, children, selectOption, placeholderTid } = props;
   return (
     <Container>
       <HeaderCase>
@@ -14,7 +13,7 @@ export function FilterComponent(props) {
         {children}
       </HeaderCase>
       <InputCase>
-        <Field placeholder={placeholderTid} />
+        <Field placeholderTid={placeholderTid} />
         {selectOption && <SecodarySelect option={selectOption} />}
       </InputCase>
     </Container>
