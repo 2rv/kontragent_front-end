@@ -32,7 +32,6 @@ const Content = styled.div`
 
 const MainContent = styled.div`
   background-color: ${THEME_COLOR.COLOR.SECONDARY};
-  overflow: auto;
   width: 100%;
   height: 100%;
 `;
