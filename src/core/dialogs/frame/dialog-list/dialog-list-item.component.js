@@ -1,24 +1,28 @@
+import React from 'react';
 import styled from 'styled-components';
-
 import { IndentLayout, SectionLayout } from '../../../../lib/elements/layout';
 import { PrimaryBox } from '../../../../lib/elements/box';
 import { PrimaryText, SecondaryText } from '../../../../lib/elements/text';
-import { CicleDivider, PrimaryDivider } from '../../../../lib/elements/divider';
-import { spacing, THEME_SIZE, THEME_COLOR, THEME_VALUE } from '../../../../lib/theme';
+import {
+  CircleDivider,
+  PrimaryDivider,
+} from '../../../../lib/elements/divider';
+import {
+  spacing,
+  THEME_SIZE,
+  THEME_COLOR,
+  THEME_VALUE,
+} from '../../../../lib/theme';
 
 export function DialogListItemComponent(props) {
-  const {
-    img,
-    name,
-    status,
-    statusId,
-    content,
-  } = props;
+  const { img, name, status, statusId, content } = props;
 
   return (
-    <>
+    <React.Fragment>
       <Box>
-        {content.unreadedMessages && <Unread>{content.unreadedMessages}</Unread>}
+        {content.unreadedMessages && (
+          <Unread>{content.unreadedMessages}</Unread>
+        )}
         <IndentLayout type="SMALL">
           <Container>
             <UserImage src={img} />
@@ -30,30 +34,25 @@ export function DialogListItemComponent(props) {
               <Content>
                 <ContentMessage>
                   <div>
-                    <YouText>{content.you ? <>{content.you}&nbsp;</> : null}</YouText>
+                    <YouText>
+                      {content.you ? <>{content.you}&nbsp;</> : null}
+                    </YouText>
                     <MessageText>{content.message}</MessageText>
                   </div>
                 </ContentMessage>
-                {!content.you && (
-                  <>
-                    <Date>{content.date}</Date>
-                    <CicleDivider />
-                  </>
-                )}
+                {!content.you && <Date>{content.date}</Date>}
               </Content>
             </SectionLayout>
           </Container>
         </IndentLayout>
       </Box>
-      {content.you ? <Divider /> : null}
-    </>
+      {statusId === 0 ? <Divider /> : null}
+    </React.Fragment>
   );
 }
 
 const Box = styled(PrimaryBox)`
   position: relative;
-  width: 100%;
-  margin: ${spacing(4)} 0;
 `;
 
 const Unread = styled.div`

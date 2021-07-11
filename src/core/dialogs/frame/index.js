@@ -1,2 +1,2 @@
-export { DialogListComponent } from './dialog-list';
-export { DialogComponent } from './dialog';
+export { DialogListContainer } from './dialog-list';
+export { DialogContainer } from './dialog';

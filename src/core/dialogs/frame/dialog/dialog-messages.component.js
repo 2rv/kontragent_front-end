@@ -1,35 +1,42 @@
 import styled from 'styled-components';
 
 import { SecondaryText } from '../../../../lib/elements/text';
-import { spacing, THEME_SIZE, THEME_COLOR, THEME_VALUE } from '../../../../lib/theme';
+import {
+  spacing,
+  THEME_SIZE,
+  THEME_COLOR,
+  THEME_VALUE,
+} from '../../../../lib/theme';
 
 export function DialogMessagesComponent({ img, message }) {
-  return (
-    message.you ? (
-      <MessageContent endContent>
-        <Message>
-          <InfoText endContent>{message.you}:</InfoText>
-          <MessageText>{message.text}</MessageText>
-          <InfoText endContent>{message.date}</InfoText>
-        </Message>
-        <UserImage endContent src={img} />
-      </MessageContent>
-    ) : (
-      <MessageContent>
-        <Message>
-          <UserImage src={img} />
-          <MessageText>{message.text}</MessageText>
-        </Message>
-        <InfoText marginLeft={spacing(10)}>{message.date}</InfoText>
-      </MessageContent>
-    )
+  return message.you ? (
+    <MessageContent endContent>
+      <Message>
+        {message.you && (
+          <InfoText tid="DIALOGS.DIALOG.YOUR_MESSAGE" endContent />
+        )}
+        <MessageText>{message.text}</MessageText>
+        <InfoText endContent>{message.date}</InfoText>
+      </Message>
+      <UserImage endContent src={img} />
+    </MessageContent>
+  ) : (
+    <MessageContent>
+      <Message>
+        <UserImage src={img} />
+        <MessageText>{message.text}</MessageText>
+      </Message>
+      <InfoText marginLeft={spacing(10)}>{message.date}</InfoText>
+    </MessageContent>
   );
 }
 
 const MessageContent = styled.div`
   margin-bottom: ${spacing(6)};
 
-  ${(props) => props.endContent && `
+  ${(props) =>
+    props.endContent &&
+    `
     display: flex;
     flex-direction: row;
     align-items: flex-end;
@@ -51,10 +58,13 @@ const UserImage = styled.img`
   width: 30px;
   height: 30px;
   border-radius: 50%;
-  ${(props) => props.endContent ? `
+  ${(props) =>
+    props.endContent
+      ? `
     margin-left: ${spacing(2)};
     margin-bottom: ${spacing(8)};
-  ` : `
+  `
+      : `
     margin-right: ${spacing(2)};
     margin-top: ${spacing(8)};
   `};

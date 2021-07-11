@@ -11,5 +11,5 @@ export interface InputCommonPropsType {
 
 export interface SecondaryInputPropsType {
   onChange: any;
-  placeholder: string;
+  placeholderTid: string;
 }

@@ -1,0 +1,15 @@
+{
+  "DIALOG_LIST": {
+    "TITLE": "Диалоги",
+    "SELECT_OPTION": {
+      "0": "Все диалоги",
+      "1": "Все диалоги",
+      "2": "Все диалоги"
+    },
+    "SEARCH_PLACEHOLDER": "Найти диалог или сообщение"
+  },
+  "DIALOG": {
+    "LAST_SEEN": "{{was}} в сети {{time}}",
+    "YOUR_MESSAGE": "Вы:"
+  }
+}

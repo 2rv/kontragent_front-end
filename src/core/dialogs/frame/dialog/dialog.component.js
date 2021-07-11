@@ -8,18 +8,28 @@ import { ReactComponent as Send } from '../../../../asset/svg/send.svg';
 
 import { PrimaryText, SecondaryText } from '../../../../lib/elements/text';
 import { PrimaryInput } from '../../../../lib/elements/input';
-import { spacing, THEME_VALUE, THEME_COLOR, THEME_SIZE } from '../../../../lib/theme';
+import {
+  spacing,
+  THEME_VALUE,
+  THEME_COLOR,
+  THEME_SIZE,
+} from '../../../../lib/theme';
 
-export function DialogComponent({ dialogMessages }) {
+export function DialogComponent(props) {
+  const { dialogMessages, dialogInfo } = props;
+  const { name, status, statusId, genderId, lastseen } = dialogInfo;
   return (
     <DialogLayout>
       <DialogHeader>
         <div>
-          <FullName>Дуейн Джонсон</FullName>
-          <Status statusId={1}>Агент</Status>
+          <FullName>{name}</FullName>
+          <Status statusId={statusId}>{status}</Status>
         </div>
         <div>
-          <SecondaryText>Был в сети в 12:50 </SecondaryText>
+          <SecondaryText
+            tid="DIALOGS.DIALOG.LAST_SEEN"
+            tvalue={{ was: genderId === 0 ? 'Была' : 'Был', time: lastseen }}
+          />
           <LastSeenIcon />
         </div>
       </DialogHeader>
@@ -38,7 +48,6 @@ export function DialogComponent({ dialogMessages }) {
 }
 
 const DialogLayout = styled.div`
-  height: calc(100vh - 95px);
   padding: ${spacing(6)};
   background: ${THEME_COLOR.COLOR.BASE};
   overflow-y: auto;

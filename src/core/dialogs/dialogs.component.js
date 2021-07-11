@@ -1,23 +1,21 @@
 import styled from 'styled-components';
+import { DialogListContainer, DialogContainer } from './frame';
 
-import { DialogListComponent, DialogComponent } from './frame';
-
-import { USERS_DIALOG_LIST, DIALOG_MESSAGES } from './dialogs.constant';
-
-import { spacing } from '../../lib/theme';
-
-export function DialogsComponent() {
+export function DialogsComponent(props) {
+  const { usersDialogList, dialogMessages, dialogInfo } = props;
   return (
     <DialogsLayout>
-      <DialogListComponent usersDialogList={USERS_DIALOG_LIST} />
-      <DialogComponent dialogMessages={DIALOG_MESSAGES} />
+      <DialogListContainer usersDialogList={usersDialogList} />
+      <DialogContainer
+        dialogInfo={dialogInfo}
+        dialogMessages={dialogMessages}
+      />
     </DialogsLayout>
   );
 }
 
 const DialogsLayout = styled.div`
+  height: 100%;
   display: grid;
-  grid-template-columns: 1fr 1.8fr;
-  height: calc(100vh - 95px);
-  margin: -${spacing(8)};
+  grid-template-columns: minmax(450px, 1fr) minmax(400px, 1.8fr);
 `;

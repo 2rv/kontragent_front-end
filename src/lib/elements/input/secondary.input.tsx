@@ -3,12 +3,13 @@ import { PrimaryInput } from './primary.input';
 import { SecondaryInputPropsType } from './type.input';
 import { ReactComponent as SearchIcon } from '../../../asset/svg/searchIcon.svg';
 import { spacing, THEME_COLOR, THEME_SIZE } from '../../theme';
+import { text } from '../../common/text';
 
 export function SecondaryInput(props: SecondaryInputPropsType) {
-  const { onChange, placeholder } = props;
+  const { onChange, placeholderTid } = props;
   return (
     <Container>
-      <Input onChange={onChange} placeholder={placeholder} />
+      <Input onChange={onChange} placeholder={text(placeholderTid)} />
       <IconContainer>
         <SearchIcon />
       </IconContainer>

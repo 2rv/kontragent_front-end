@@ -19,6 +19,7 @@ import AUTH_CHANGE_PASSWORD from './auth-change-password.json';
 import AUTH_RECOVERY_ACCOUNT from './auth-recovery-account.json';
 import FOOTER from './footer.json';
 import INSPECTION from './inspection.json';
+import DIALOGS from './dialogs.json';
 
 export const RU = {
   translation: {
@@ -43,5 +44,6 @@ export const RU = {
     AUTH_RECOVERY_ACCOUNT,
     FOOTER,
     INSPECTION,
+    DIALOGS,
   },
 };

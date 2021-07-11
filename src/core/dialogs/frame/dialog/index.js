@@ -1,1 +1,1 @@
-export { DialogComponent } from './dialog.component';
+export { DialogContainer } from './dialog.container';
