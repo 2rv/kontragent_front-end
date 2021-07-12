@@ -3,13 +3,15 @@ import styled from 'styled-components';
 import { PrimaryText, SecondaryText } from '../../../../lib/elements/text';
 import { spacing, THEME_SIZE, THEME_VALUE } from '../../../../lib/theme';
 
-export function HeaderComponent() {
+export function KontragentCommentsHeaderComponent(props) {
+  const { companyName, companyType } = props;
   return (
     <HeaderContainer>
       <KontragentCommentsText tid="KONTRAGENT_COMMENTS.HEADER.TITLE" />
       <div>
-        <SecondaryText tid="KONTRAGENT_COMMENTS.HEADER.COMPANY.TITLE" />&nbsp;
-        <PrimaryText tid="KONTRAGENT_COMMENTS.HEADER.COMPANY.NAME" />
+        <SecondaryText>{companyType}</SecondaryText>
+        &nbsp;
+        <PrimaryText>{companyName}</PrimaryText>
       </div>
     </HeaderContainer>
   );
@@ -19,7 +21,6 @@ const HeaderContainer = styled.div`
   display: flex;
   flex-direction: column;
   span {
-    line-height 20px;
     margin-bottom: ${spacing(3)};
   }
 `;

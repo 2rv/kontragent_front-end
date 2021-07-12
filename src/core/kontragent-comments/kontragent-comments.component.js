@@ -1,27 +1,25 @@
-import styled from 'styled-components';
-
-import { HeaderComponent } from './frame/header';
+import { KontragentCommentsHeaderContainer } from './frame/kontragent-comments-header';
 import { KontragentCommentsListComponent } from './frame/kontragent-comments-list';
 
 import { KONTRAGENT_COMMENTS_LIST } from './kontragent-comments.constant';
 
 import { PrimaryBox } from '../../lib/elements/box';
 import { IndentLayout, SectionLayout } from '../../lib/elements/layout';
-import { spacing } from '../../lib/theme';
 
 export function KontragentCommentsComponent() {
   return (
-    <Box>
+    <PrimaryBox>
       <IndentLayout>
-        <SectionLayout>
-          <HeaderComponent />
-          <KontragentCommentsListComponent kontragentCommentsList={KONTRAGENT_COMMENTS_LIST} />
+        <SectionLayout type="LARGE">
+          <KontragentCommentsHeaderContainer
+            companyName={'Компания Гермес-Электро'}
+            companyType={'Общество с ограниченной ответственностью'}
+          />
+          <KontragentCommentsListComponent
+            kontragentCommentsList={KONTRAGENT_COMMENTS_LIST}
+          />
         </SectionLayout>
       </IndentLayout>
-    </Box>
+    </PrimaryBox>
   );
 }
-
-const Box = styled(PrimaryBox)`
-  margin: ${spacing(7)};
-`;
