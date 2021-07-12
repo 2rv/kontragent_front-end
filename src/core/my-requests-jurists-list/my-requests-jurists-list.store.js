@@ -7,34 +7,32 @@ import {
 } from '../../main/store/store.service';
 
 const initialState = {
-  myRequestsJuristsListData: initRequestState(),
+  myRequestsJuristsList: initRequestState(),
 };
 
 export function myRequestsJuristsListStore(state = initialState, action) {
   switch (action.type) {
-    case MY_REQUESTS_JURISTS_LIST_ACTION_TYPE.MY_REQUESTS_JURISTS_LIST_REQUEST_GET_DATA_PENDING:
+    case MY_REQUESTS_JURISTS_LIST_ACTION_TYPE.MY_REQUESTS_JURISTS_LIST_LOAD_REQUEST_PENDING:
       return {
         ...state,
-        myRequestsJuristsListData: setRequestPending(
-          state.myRequestsJuristsListData,
-        ),
+        myRequestsJuristsList: setRequestPending(state.myRequestsJuristsList),
       };
 
-    case MY_REQUESTS_JURISTS_LIST_ACTION_TYPE.MY_REQUESTS_JURISTS_LIST_REQUEST_GET_DATA_SUCCESS:
+    case MY_REQUESTS_JURISTS_LIST_ACTION_TYPE.MY_REQUESTS_JURISTS_LIST_LOAD_REQUEST_SUCCESS:
       return {
         ...state,
-        myRequestsJuristsListData: setRequestSuccess(
-          state.myRequestsJuristsListData,
+        myRequestsJuristsList: setRequestSuccess(
+          state.myRequestsJuristsList,
           action.data,
         ),
       };
       s;
 
-    case MY_REQUESTS_JURISTS_LIST_ACTION_TYPE.MY_REQUESTS_JURISTS_LIST_REQUEST_GET_DATA_ERROR:
+    case MY_REQUESTS_JURISTS_LIST_ACTION_TYPE.MY_REQUESTS_JURISTS_LIST_LOAD_REQUEST_ERROR:
       return {
         ...state,
-        myRequestsJuristsListData: setRequestError(
-          state.myRequestsJuristsListData,
+        myRequestsJuristsList: setRequestError(
+          state.myRequestsJuristsList,
           action.errorMessage,
         ),
       };
