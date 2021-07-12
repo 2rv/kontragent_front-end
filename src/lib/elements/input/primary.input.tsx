@@ -4,9 +4,19 @@ import { THEME_COLOR, THEME_VALUE, THEME_SIZE } from '../../theme';
 import { spacing } from '../../theme';
 
 export function PrimaryInput(props: InputCommonPropsType) {
-  const { onChange, onBlur, value, name, placeholder, isError, type } = props;
+  const {
+    onChange,
+    onBlur,
+    value,
+    name,
+    placeholder,
+    isError,
+    type,
+    className,
+  } = props;
   return (
     <Input
+      className={className}
       onChange={onChange}
       onBlur={onBlur}
       value={value}

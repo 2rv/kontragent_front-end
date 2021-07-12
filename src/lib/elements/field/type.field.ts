@@ -10,12 +10,13 @@ export interface FieldPrimaryPropsType {
 }
 
 type optionObject = { id: number; tid: string; tvalue?: object };
-export interface SelectFieldPropsType {
+export interface PrimarySelectPropsType {
   titleTid: string;
   option: optionObject[];
   onChange: any;
   onBlur: any;
   name: string;
+  className: string;
 }
 
 export interface TextAreaPropsType {

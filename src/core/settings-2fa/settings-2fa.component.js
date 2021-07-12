@@ -10,19 +10,23 @@ export function Settings2FAComponent(props) {
     isSuccess,
     errorMessage,
     initialValue,
-    settings2faFormFieldName,
+    fieldName,
+    validation,
+    onSubmitForm,
   } = props;
   return (
     <React.Fragment>
       {(isPending || pageLoading) && <PrimaryLoader />}
       <Settings2FAFormContainer
         initialValue={initialValue}
-        settings2faFormFieldName={settings2faFormFieldName}
+        fieldName={fieldName}
         pageLoading={pageLoading}
         isPending={isPending}
         isError={isError}
         isSuccess={isSuccess}
         errorMessage={errorMessage}
+        validation={validation}
+        onSubmitForm={onSubmitForm}
       />
     </React.Fragment>
   );
