@@ -22,5 +22,16 @@
     "resolveJsonModule": true
   },
   "exclude": ["dist", "lang/.next", "out", "next.config.js"],
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/lib/common/lang/lang.constant.js", "src/lib/common/lang/lang.action.js", "src/lib/common/lang/lang.main.js", "src/main/store/storeHandlers.js", "src/main/store/store.convert.js", "src/core/Home/Home.page.js"]
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "src/lib/common/lang/lang.constant.js",
+    "src/lib/common/lang/lang.action.js",
+    "src/lib/common/lang/lang.main.js",
+    "src/main/store/storeHandlers.js",
+    "src/main/store/store.convert.js",
+    "src/core/Home/Home.page.js",
+    "src/lib/common/request/pagination.service.ts"
+  ]
 }

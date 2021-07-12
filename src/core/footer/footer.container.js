@@ -6,10 +6,6 @@ export function FooterContainer() {
   const { activePath } = useSelector((state) => ({
     activePath: state[NAVIGATION_STORE_NAME].activePath,
   }));
-  const footerItems = FOOTER_ITEMS;
-  footerItems.forEach((i) =>
-    i.pathname === activePath ? (i.isActive = true) : (i.isActive = false),
-  );
 
-  return <FooterComponent footerItems={footerItems} />;
+  return <FooterComponent activePath={activePath} footerItems={FOOTER_ITEMS} />;
 }

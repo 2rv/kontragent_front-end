@@ -4,11 +4,15 @@ import { THEME_COLOR, spacing, THEME_SIZE, THEME_VALUE } from '../../lib/theme';
 import { PrimaryLink } from '../../lib/elements/link';
 
 export function FooterComponent(props) {
-  const { footerItems } = props;
+  const { footerItems, activePath } = props;
   return (
     <Container>
-      {footerItems.map(({ tid, pathname, isActive }) => (
-        <TextLink isActive={isActive} tid={tid} pathname={pathname} />
+      {footerItems.map(({ tid, pathname, path }) => (
+        <TextLink
+          isActive={pathname === activePath}
+          tid={tid}
+          pathname={path}
+        />
       ))}
     </Container>
   );

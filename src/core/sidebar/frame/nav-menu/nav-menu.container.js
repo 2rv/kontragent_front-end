@@ -1,11 +1,13 @@
 import { NavMenuComponent } from './nav-menu.component';
-import { SIDEBAR_NAV_MENU_LINK_LIST } from '../../sidebar.constant';
+import { useSelector } from 'react-redux';
+import { NAVMENU_ITEMS } from '../../sidebar.constant';
+import { NAVIGATION_STORE_NAME } from '../../../../lib/common/navigation/navigation.constant';
 
-export function NavMenuContainer() {
+export function NavMenuContainer(props) {
+  const { activePath } = useSelector((state) => ({
+    activePath: state[NAVIGATION_STORE_NAME].activePath,
+  }));
   return (
-    <NavMenuComponent
-      activeLinkIndex={0}
-      navMenuLinkList={SIDEBAR_NAV_MENU_LINK_LIST}
-    />
+    <NavMenuComponent activePath={activePath} navmenuItems={NAVMENU_ITEMS} />
   );
 }

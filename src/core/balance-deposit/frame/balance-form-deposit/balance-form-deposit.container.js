@@ -18,10 +18,17 @@ export function BalanceFormDepositContainer(props) {
     errorMessage,
     pageLoading,
     paymentMethod,
+    initialValue,
+    validation,
+    onSubmitForm,
   } = props;
   return (
     <div>
-      <Formik initialValues={props.initialValue}>
+      <Formik
+        initialValues={initialValue}
+        validate={validation}
+        onSubmit={onSubmitForm}
+      >
         {(props) => (
           <BalanceFormDepositComponent
             fieldPaymentMethod={PAYMENT_METHOD}

@@ -11,15 +11,20 @@ export function Settings2FAFormContainer(props) {
     isSuccess,
     errorMessage,
     initialValue,
-    settings2faFormFieldName,
+    fieldName,
+    onSubmitForm,
+    validation,
   } = props;
 
-  const PHONE_NUMBER =
-    settings2faFormFieldName[SETTINGS_2FA_FORM_FIELD_KEY.PHONE_NUMBER];
+  const PHONE_NUMBER = fieldName[SETTINGS_2FA_FORM_FIELD_KEY.PHONE_NUMBER];
 
   return (
     <div>
-      <Formik initialValues={{ initialValue }}>
+      <Formik
+        initialValues={initialValue}
+        validate={validation}
+        onSubmit={onSubmitForm}
+      >
         {(props) => (
           <Settings2FAFormComponent
             fieldPhoneNumber={PHONE_NUMBER}

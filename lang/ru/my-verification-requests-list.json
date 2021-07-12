@@ -1,0 +1,18 @@
+{
+  "TITLE": "Мои проверки",
+  "INPUT_PLACEHOLDER": "Найти проверку",
+  "BUTTON": {
+    "CANCEL": "Отменить",
+    "NOT_PAYED": "Оплатить",
+    "PAYED": "Оплачена"
+  },
+  "TYPE": {
+    "STANDART": "Стандартная",
+    "EXTENDED": "Расширенная"
+  },
+  "STATUS": {
+    "COMPLETED": "Выполнена",
+    "IN_PROGRESS": "Выполняется",
+    "AWAITING_PAYMENT": "Ожидает оплаты"
+  }
+}
