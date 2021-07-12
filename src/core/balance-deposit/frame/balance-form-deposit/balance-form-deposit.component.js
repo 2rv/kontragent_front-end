@@ -1,9 +1,8 @@
 import React from 'react';
-
 import { SectionLayout } from '../../../../lib/elements/layout';
 import { FieldLayout } from '../../../../lib/elements/layout';
 import { SecondaryTitleText } from '../../../../lib/elements/text';
-import { SelectField } from '../../../../lib/elements/field';
+import { PrimarySelect } from '../../../../lib/elements/field';
 import { PrimaryField } from '../../../../lib/elements/field';
 import { PrimaryButton } from '../../../../lib/elements/button';
 import { ErrorAlert } from '../../../../lib/elements/alert';
@@ -51,7 +50,7 @@ export function BalanceFormDepositComponent(props) {
           <SectionLayout type="LARGE">
             <SecondaryTitleText tid="BALANCE.BALANCE_DEPOSIT.HEADER" />
             <FieldLayout type="double">
-              <SelectField
+              <PrimarySelect
                 titleTid="BALANCE.BALANCE_DEPOSIT.FIELD.PAYMENT_METHOD.TITLE"
                 name={fieldPaymentMethod}
                 onChange={handleChange}

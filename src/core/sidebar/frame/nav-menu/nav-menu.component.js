@@ -5,17 +5,17 @@ import { SectionLayout } from '../../../../lib/elements/layout';
 import { PrimaryLink } from '../../../../lib/elements/link';
 
 export function NavMenuComponent(props) {
-  const { navMenuLinkList, activeLinkIndex } = props;
+  const { navmenuItems, activePath } = props;
   return (
     <SectionLayout type="MEDIUM">
-      {navMenuLinkList.map((link, index) => (
+      {navmenuItems.map((item, index) => (
         <span>
           <NavMenuLink
-            key={link.tid + index}
-            tid={link.tid}
-            isActive={index === activeLinkIndex ? true : false}
-            pathname={link.pathname}
-            config={link.config}
+            key={index}
+            tid={item.tid}
+            isActive={item.pathname === activePath}
+            pathname={item.path}
+            config={item.config}
           />
         </span>
       ))}

@@ -1,0 +1,12 @@
+export const MY_REQUESTS_JURISTS_LIST_ROUTE_PATH = '/my-requests-jurists-list';
+
+export const MY_REQUESTS_JURISTS_LIST_STORE_NAME = 'MY_REQUESTS_JURISTS_LIST';
+
+export const MY_REQUESTS_JURISTS_LIST_API = {
+  MY_REQUESTS_JURISTS_LIST_LOAD: {
+    ENDPOINT: null,
+    TYPE: 'POST',
+  },
+};
+
+export const MY_REQUESTS_JURISTS_LIST_REDIRECT_ON_LOGGED_PATH = '/logout';

@@ -19,6 +19,14 @@ import AUTH_CHANGE_PASSWORD from './auth-change-password.json';
 import AUTH_RECOVERY_ACCOUNT from './auth-recovery-account.json';
 import FOOTER from './footer.json';
 import KONTRAGENT_COMMENTS from './kontragent-comments.json';
+import ARBITRATION_CASES from './arbitration-cases.json';
+import MY_VERIFICATION_REQUESTS_LIST from './my-verification-requests-list.json';
+import MY_COUNTERPARTIES_LIST from './my-counterparties-list.json';
+import ARBITRATION_REQUESTS_LIST from './arbitration-requests-list.json';
+import DIALOGS from './dialogs.json';
+import MY_LEGAL_ENTITIES from './my-legal-entities.json';
+import MY_SUPPORT_REQUEST_LIST from './my-support-request-list.json';
+
 export const RU = {
   translation: {
     META,
@@ -42,5 +50,12 @@ export const RU = {
     AUTH_RECOVERY_ACCOUNT,
     FOOTER,
     KONTRAGENT_COMMENTS,
+    ARBITRATION_CASES,
+    MY_VERIFICATION_REQUESTS_LIST,
+    MY_COUNTERPARTIES_LIST,
+    ARBITRATION_REQUESTS_LIST,
+    DIALOGS,
+    MY_LEGAL_ENTITIES,
+    MY_SUPPORT_REQUEST_LIST,
   },
 };

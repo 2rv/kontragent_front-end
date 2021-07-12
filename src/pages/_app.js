@@ -12,9 +12,9 @@ import { authSetData, authGetCookieToken } from '../lib/common/auth';
 
 import { NavigationObserver } from '../lib/common/navigation';
 
-import '../asset/css/main.css';
-
 import { setCurrentAuthCookie } from '../main/auth';
+
+import '../asset/css/main.css';
 
 class MyApp extends App {
   componentDidMount() {
