@@ -6,12 +6,12 @@
       "TITLE": "Общество с ограниченной ответственностью"
     }
   },
-  "STATUSES": {
+  "TYPE": {
     "KONTRAGENT": "Контрагент",
     "COMPLAINT": "Жалоба",
     "SUSPICION": "Подозрение"
   },
-  "INFO": {
+  "STATUS": {
     "RESOLVED": "Решено",
     "UNDER_CONSIDERATION": "На рассмотрении",
     "REJECTED": "Отклонено"

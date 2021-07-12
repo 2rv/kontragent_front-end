@@ -5,36 +5,45 @@ import { ReactComponent as Message } from '../../../../asset/svg/message.svg';
 import { PrimaryBox } from '../../../../lib/elements/box';
 import { IndentLayout } from '../../../../lib/elements/layout';
 import { PrimaryText, SecondaryText } from '../../../../lib/elements/text';
-import { CicleDivider } from '../../../../lib/elements/divider';
-import { spacing, THEME_SIZE, THEME_COLOR, THEME_VALUE } from '../../../../lib/theme';
+import { CircleDivider } from '../../../../lib/elements/divider';
+import {
+  spacing,
+  THEME_SIZE,
+  THEME_COLOR,
+  THEME_VALUE,
+} from '../../../../lib/theme';
 
 export function ArbitrationCasesListComponent({ arbitrationCasesList }) {
-  return (
-    arbitrationCasesList.map((arbitrationCase) => (
-      <Box key={arbitrationCase.id}>
-        <Layout type="SMALL">
-          <ArbitrationCaseImage src={arbitrationCase.image} />
-          <Container>
-            <Content>
-              <MessageText>{arbitrationCase.text}</MessageText>
-              <Status tid={arbitrationCase.status.title} statusId={arbitrationCase.status.id} />
-            </Content>
-            <Content>
-              <FullNameText>{arbitrationCase.name}</FullNameText>
-              <CicleDivider />
-              <Date>{arbitrationCase.time}</Date>
-              <CicleDivider />
-              <Info tid={arbitrationCase.info.title} infoId={arbitrationCase.info.id} />
-            </Content>
-          </Container>
-          <MessagesContainer>
-            <Message />
-            <Messages>{arbitrationCase.messages}</Messages>
-          </MessagesContainer>
-        </Layout>
-      </Box>
-    ))
-  );
+  return arbitrationCasesList.map((arbitrationCase) => (
+    <Box key={arbitrationCase.id}>
+      <Layout type="SMALL">
+        <ArbitrationCaseImage src={arbitrationCase.image} />
+        <Container>
+          <Content>
+            <MessageText>{arbitrationCase.text}</MessageText>
+            <Status
+              tid={arbitrationCase.status.title}
+              statusId={arbitrationCase.status.id}
+            />
+          </Content>
+          <Content>
+            <FullNameText>{arbitrationCase.name}</FullNameText>
+            <CircleDivider />
+            <Date>{arbitrationCase.time}</Date>
+            <CircleDivider />
+            <Info
+              tid={arbitrationCase.info.title}
+              infoId={arbitrationCase.info.id}
+            />
+          </Content>
+        </Container>
+        <MessagesContainer>
+          <Message />
+          <Messages>{arbitrationCase.messages}</Messages>
+        </MessagesContainer>
+      </Layout>
+    </Box>
+  ));
 }
 
 const Box = styled(PrimaryBox)`
@@ -52,6 +61,7 @@ const Container = styled.div`
   width: 100%;
   grid-gap: ${spacing(2)};
   padding: ${spacing(2)};
+  padding-left: ${spacing(4)};
 `;
 
 const Content = styled.div`
