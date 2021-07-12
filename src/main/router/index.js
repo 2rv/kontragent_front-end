@@ -13,6 +13,7 @@ import { bookReviewListRouter } from '../../core/book-review-list';
 import { balanceDepositRouter } from '../../core/balance-deposit';
 import { arbitrationRequestsListRouter } from '../../core/arbitration-requests-list';
 import { settingsRouter } from '../../core/settings';
+import { ArbitrationCasesRouter } from '../../core/arbitration-cases';
 
 import { LOGIN_ROUTE_PATH } from '../../core/login';
 import { SIGNUP_ROUTE_PATH } from '../../core/signup';
@@ -28,6 +29,7 @@ import { BOOK_REVIEW_LIST_ROUTE_PATH } from '../../core/book-review-list';
 import { BALANCE_DEPOSIT_ROUTE_PATH } from '../../core/balance-deposit';
 import { ARBITRATION_REQUESTS_LIST_ROUTE_PATH } from '../../core/arbitration-requests-list';
 import { SETTINGS_ROUTE_PATH } from '../../core/settings';
+import { ARBITRATION_CASES_ROUTE_PATH } from '../../core/arbitration-cases';
 
 export const routes = {
   [LOGIN_ROUTE_PATH]: LoginRouter,
@@ -44,6 +46,7 @@ export const routes = {
   [BALANCE_DEPOSIT_ROUTE_PATH]: balanceDepositRouter,
   [ARBITRATION_REQUESTS_LIST_ROUTE_PATH]: arbitrationRequestsListRouter,
   [SETTINGS_ROUTE_PATH]: settingsRouter,
+  [ARBITRATION_CASES_ROUTE_PATH]: ArbitrationCasesRouter,
 };
 
 export const Router = routesInit(routes);

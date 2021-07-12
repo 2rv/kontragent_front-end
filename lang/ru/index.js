@@ -18,6 +18,7 @@ import KONTRAGENT_REVIEW from './kontragent-review.json';
 import AUTH_CHANGE_PASSWORD from './auth-change-password.json';
 import AUTH_RECOVERY_ACCOUNT from './auth-recovery-account.json';
 import FOOTER from './footer.json';
+import ARBITRATION_CASES from './arbitration-cases.json';
 import MY_VERIFICATION_REQUESTS_LIST from './my-verification-requests-list.json';
 import MY_COUNTERPARTIES_LIST from './my-counterparties-list.json';
 import ARBITRATION_REQUESTS_LIST from './arbitration-requests-list.json';
@@ -47,6 +48,7 @@ export const RU = {
     AUTH_CHANGE_PASSWORD,
     AUTH_RECOVERY_ACCOUNT,
     FOOTER,
+    ARBITRATION_CASES,
     MY_VERIFICATION_REQUESTS_LIST,
     MY_COUNTERPARTIES_LIST,
     ARBITRATION_REQUESTS_LIST,
