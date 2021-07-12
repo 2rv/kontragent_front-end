@@ -8,11 +8,23 @@ import { spacing } from '../../theme';
 import { text } from '../../common/text';
 
 export function PrimaryButton(props: ButtonPropsType) {
-  const { tid, disabled, type = 'submit', className } = props;
+  const {
+    tid,
+    disabled,
+    type = 'submit',
+    className,
+    children,
+    onClick,
+  } = props;
 
   return (
-    <Button type={type} className={className} disabled={disabled}>
-      {text(tid)}
+    <Button
+      onClick={onClick}
+      type={type}
+      className={className}
+      disabled={disabled}
+    >
+      {children ? children : text(tid)}
     </Button>
   );
 }

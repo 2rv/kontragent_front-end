@@ -42,8 +42,6 @@ export function SupportFormCreateRequestComponent(props) {
       : !isValid || isSubmitting || isSuccess || pageLoading;
   };
 
-  console.log(`formik values: ${JSON.stringify(values)}`);
-
   return (
     <React.Fragment>
       {(isPending || pageLoading) && <PrimaryLoader />}

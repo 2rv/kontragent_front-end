@@ -1,31 +1,49 @@
+import React from 'react';
 import styled from 'styled-components';
 import { SectionLayout } from '../../../../lib/elements/layout';
 import { BookListItem } from './book-list.item';
 import { SecondaryText } from '../../../../lib/elements/text';
 import { spacing, THEME_COLOR } from '../../../../lib/theme';
 import { PrimaryDivider } from '../../../../lib/elements/divider';
+import { PrimaryLoader } from '../../../../lib/elements/loader';
+import { ListSkeleton } from '../../../../lib/elements/skeleton';
 export function BookListComponent(props) {
+  const {
+    isPending,
+    pageLoading,
+    isError,
+    isSuccess,
+    errorMessage,
+    booksListData,
+  } = props;
   return (
-    <SectionLayout>
-      <Columns>
-        <SecondaryText>Загружена</SecondaryText>
-        <SecondaryText>Период книги</SecondaryText>
-        <SecondaryText>Ваше юр. лицо</SecondaryText>
-        <SecondaryText>Тип книги</SecondaryText>
-        <SecondaryText>Контрагентов</SecondaryText>
-      </Columns>
-      <Divider />
-      {props.booksListData.map((company, index) => (
-        <BookListItem
-          key={index}
-          loadDate={company.loadDate}
-          bookPeriod={company.bookPeriod}
-          companyName={company.companyName}
-          bookType={company.bookType}
-          kontragentNumber={company.kontragentNumber}
-        />
-      ))}
-    </SectionLayout>
+    <React.Fragment>
+      {(isPending || pageLoading) && <PrimaryLoader />}
+      <SectionLayout>
+        <Columns>
+          <SecondaryText>Загружена</SecondaryText>
+          <SecondaryText>Период книги</SecondaryText>
+          <SecondaryText>Ваше юр. лицо</SecondaryText>
+          <SecondaryText>Тип книги</SecondaryText>
+          <SecondaryText>Контрагентов</SecondaryText>
+        </Columns>
+        <Divider />
+        {isPending || pageLoading ? (
+          <ListSkeleton />
+        ) : (
+          booksListData.map((company, index) => (
+            <BookListItem
+              key={index}
+              loadDate={company.loadDate}
+              bookPeriod={company.bookPeriod}
+              companyName={company.companyName}
+              bookType={company.bookType}
+              kontragentNumber={company.kontragentNumber}
+            />
+          ))
+        )}
+      </SectionLayout>
+    </React.Fragment>
   );
 }
 

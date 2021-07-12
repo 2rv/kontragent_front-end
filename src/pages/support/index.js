@@ -1,2 +1,2 @@
-import { SupportCreateRequestPage } from '../../core/support-create-request';
-export default SupportCreateRequestPage;
+import { SupportCreateRequestContainer } from '../../core/support-create-request';
+export default SupportCreateRequestContainer;

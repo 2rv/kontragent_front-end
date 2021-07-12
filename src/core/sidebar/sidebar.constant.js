@@ -1,8 +1,22 @@
-export const SIDEBAR_NAV_MENU_LINK_LIST = [
+export const NAVMENU_ITEMS = [
   {
     tid: 'SIDEBAR.NAV_MENU.NEWS_AND_NOTIFICATIONS',
+    pathname: '',
+    path: '/',
   },
   {
     tid: 'SIDEBAR.NAV_MENU.NEWS_AND_NOTIFICATIONS',
+    pathname: '/',
+    path: '/',
+  },
+  {
+    tid: 'SIDEBAR.NAV_MENU.NEWS_AND_NOTIFICATIONS',
+    pathname: '/',
+    path: '/',
+  },
+  {
+    tid: 'SIDEBAR.NAV_MENU.NEWS_AND_NOTIFICATIONS',
+    pathname: '/',
+    path: '/',
   },
 ];
