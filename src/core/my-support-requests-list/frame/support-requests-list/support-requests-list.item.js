@@ -5,7 +5,7 @@ import { PrimaryText, SecondaryText } from '../../../../lib/elements/text';
 import { THEME_VALUE, THEME_COLOR } from '../../../../lib/theme';
 
 export function SupportRequestListItem(props) {
-  const { problemTid, requestCause, requestStatusId, status, date } =
+  const { problemTid, requestCause, requestStatusId, statusTid, date } =
     props.data;
   return (
     <PrimaryBox>
@@ -16,7 +16,7 @@ export function SupportRequestListItem(props) {
             <SecondaryText>{requestCause}</SecondaryText>
           </SectionLayout>
           <SectionCase type="MEDIUM">
-            <StatusText statusId={requestStatusId}>{status}</StatusText>
+            <StatusText tid={statusTid} statusId={requestStatusId} />
             <SecondaryText>{date}</SecondaryText>
           </SectionCase>
         </Container>

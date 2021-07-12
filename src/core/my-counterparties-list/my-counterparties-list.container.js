@@ -1,18 +1,41 @@
+import { useEffect } from 'react';
 import { MyCounterpartiesListComponent } from './my-counterparties-list.component';
+import { MY_COUNTERPARTIES_LIST_SELECT_OPTION } from './my-counterparties-list.constant';
+import { myCounterpartiesListLoad } from './my-counterparties-list.action';
+import { useDispatch, useSelector } from 'react-redux';
+import { NAVIGATION_STORE_NAME } from '../../lib/common/navigation/navigation.constant';
+import { MY_COUNTERPARTIES_LIST_STORE_NAME } from './my-counterparties-list.constant';
+import {
+  getRequestErrorMessage,
+  isRequestError,
+  isRequestPending,
+  isRequestSuccess,
+} from '../../main/store/store.service';
 
 export function MyCounterpartiesListContainer() {
+  const dispatch = useDispatch();
+  const { state, pageLoading } = useSelector((state) => ({
+    state: state[MY_COUNTERPARTIES_LIST_STORE_NAME],
+    pageLoading: state[NAVIGATION_STORE_NAME].pageLoading,
+  }));
+
+  useEffect(() => {
+    dispatch(myCounterpartiesListLoad());
+  }, []);
+
   return (
     <MyCounterpartiesListComponent
-      myCounterpartiesSelectOption={myCounterpartiesSelectOption}
+      isPending={isRequestPending(state.myCounterpartiesList)}
+      isError={isRequestError(state.myCounterpartiesList)}
+      isSuccess={isRequestSuccess(state.myCounterpartiesList)}
+      pageLoading={pageLoading}
+      errorMessage={getRequestErrorMessage(state.myCounterpartiesList)}
+      myCounterpartiesSortOption={MY_COUNTERPARTIES_LIST_SELECT_OPTION}
       myCounterpartiesListData={myCounterpartiesListData}
     />
   );
 }
-const myCounterpartiesSelectOption = [
-  { id: 0, tid: 'По дате' },
-  { id: 1, tid: 'По имени' },
-  { id: 2, tid: 'По статусу' },
-];
+
 const myCounterpartiesListData = [
   {
     approved: true,

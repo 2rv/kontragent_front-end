@@ -3,7 +3,7 @@ import { DashboardLayout } from '../../lib/common/dashboard';
 
 export function MyVerificationRequestsListPage() {
   return (
-    <DashboardLayout>
+    <DashboardLayout displayFooter={true}>
       <MyVerificationRequestsListContainer />
     </DashboardLayout>
   );

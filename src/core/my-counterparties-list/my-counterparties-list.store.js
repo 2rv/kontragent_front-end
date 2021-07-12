@@ -7,34 +7,32 @@ import {
 } from '../../main/store/store.service';
 
 const initialState = {
-  myCounterpartiesListData: initRequestState(),
+  myCounterpartiesList: initRequestState(),
 };
 
 export function myCounterpartiesListStore(state = initialState, action) {
   switch (action.type) {
-    case MY_COUNTERPARTIES_LIST_ACTION_TYPE.MY_COUNTERPARTIES_LIST_REQUEST_UPLOAD_DATA_PENDING:
+    case MY_COUNTERPARTIES_LIST_ACTION_TYPE.MY_COUNTERPARTIES_LIST_REQUEST_LOAD_LIST_PENDING:
       return {
         ...state,
-        myCounterpartiesListData: setRequestPending(
-          state.myCounterpartiesListData,
-        ),
+        myCounterpartiesList: setRequestPending(state.myCounterpartiesList),
       };
 
-    case MY_COUNTERPARTIES_LIST_ACTION_TYPE.MY_COUNTERPARTIES_LIST_REQUEST_UPLOAD_DATA_SUCCESS:
+    case MY_COUNTERPARTIES_LIST_ACTION_TYPE.MY_COUNTERPARTIES_LIST_REQUEST_LOAD_LIST_SUCCESS:
       return {
         ...state,
-        myCounterpartiesListData: setRequestSuccess(
-          state.myCounterpartiesListData,
+        myCounterpartiesList: setRequestSuccess(
+          state.myCounterpartiesList,
           action.data,
         ),
       };
       s;
 
-    case MY_COUNTERPARTIES_LIST_ACTION_TYPE.MY_COUNTERPARTIES_LIST_REQUEST_UPLOAD_DATA_ERROR:
+    case MY_COUNTERPARTIES_LIST_ACTION_TYPE.MY_COUNTERPARTIES_LIST_REQUEST_LOAD_LIST_ERROR:
       return {
         ...state,
-        myCounterpartiesListData: setRequestError(
-          state.myCounterpartiesListData,
+        myCounterpartiesList: setRequestError(
+          state.myCounterpartiesList,
           action.errorMessage,
         ),
       };

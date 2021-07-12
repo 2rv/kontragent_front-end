@@ -16,10 +16,7 @@ export interface PrimarySelectPropsType {
   onChange: any;
   onBlur: any;
   name: string;
-}
-export interface SecondarySelectPropsType {
-  option: optionObject[];
-  onChange: any;
+  className: string;
 }
 
 export interface TextAreaPropsType {

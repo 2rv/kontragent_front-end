@@ -1,15 +1,13 @@
 import styled from 'styled-components';
-import { PrimaryInput } from './primary.input';
-import { SecondaryInputPropsType } from './type.input';
-import { ReactComponent as FindIcon } from '../../../asset/svg/find-icon-15x15.svg';
-import { spacing, THEME_COLOR, THEME_SIZE } from '../../theme';
-import { text } from '../../common/text';
+import { spacing, THEME_COLOR, THEME_SIZE } from '../../../../lib/theme';
+import { ReactComponent as FindIcon } from '../../../../asset/svg/find-icon-15x15.svg';
+import { PrimaryInput } from '../../../../lib/elements/input/primary.input';
+import { text } from '../../../../lib/common/text';
 
-export function SecondaryInput(props: SecondaryInputPropsType) {
-  const { onChange, placeholder } = props;
+export function ListHeaderSearchComponent() {
   return (
     <Container>
-      <Input onChange={onChange} placeholder={text(placeholder)} />
+      <Input placeholder={text('MY_COUNTERPARTIES_LIST.INPUT_PLACEHOLDER')} />
       <IconContainer>
         <FindIcon />
       </IconContainer>

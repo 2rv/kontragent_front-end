@@ -1,14 +1,15 @@
 {
-	"TITLE": "Мои контрагенты",
-	"FIELD": {
-		"FIND_COUNTERPARTY": "Найти контрагента"
-	},
-	"VERIFICATION": "Проверка",
-	"COUNTERPARTY": "Контрагент",
-	"YOUR_LEGAL_ENTITY": "Ваше юр. лицо",
-	"TURNOVER": "Оборот",
-	"RISKS": "Риски",
-	"YOUR_ASSESSING": "Ваша оценка",
-	"PEOPLES_RATING": "Народный рейтинг",
-	"ADDITIONAL_ACCRUAL": "Доначисления"
+  "TITLE": "Мои контрагенты",
+  "INPUT_PLACEHOLDER": "Найти контрагента",
+  "SELECT_OPTION": {
+    "BY_REQUEST_TIME": "По времени запроса"
+  },
+  "VERIFICATION": "Проверка",
+  "COUNTERPARTY": "Контрагент",
+  "YOUR_LEGAL_ENTITY": "Ваше юр. лицо",
+  "TURNOVER": "Оборот",
+  "RISKS": "Риски",
+  "YOUR_ASSESSING": "Ваша оценка",
+  "PEOPLES_RATING": "Народный рейтинг",
+  "ADDITIONAL_ACCRUAL": "Доначисления"
 }

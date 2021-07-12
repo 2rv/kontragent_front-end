@@ -8,5 +8,3 @@ export const MY_SUPPORT_REQUESTS_LIST_API = {
     TYPE: 'POST',
   },
 };
-
-export const MY_SUPPORT_REQUESTS_LIST_REDIRECT_ON_LOGGED_PATH = '/logout';

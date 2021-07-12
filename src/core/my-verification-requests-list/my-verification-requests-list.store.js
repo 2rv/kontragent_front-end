@@ -7,32 +7,32 @@ import {
 } from '../../main/store/store.service';
 
 const initialState = {
-  myVerificationListData: initRequestState(),
+  myVerificationList: initRequestState(),
 };
 
 export function myVerificationRequestsListStore(state = initialState, action) {
   switch (action.type) {
-    case MY_VERIFICATION_REQUESTS_LIST_ACTION_TYPE.MY_VERIFICATION_REQUESTS_LIST_REQUEST_UPLOAD_DATA_PENDING:
+    case MY_VERIFICATION_REQUESTS_LIST_ACTION_TYPE.MY_VERIFICATION_REQUESTS_LIST_LOAD_REQUEST_PENDING:
       return {
         ...state,
-        myVerificationListData: setRequestPending(state.myVerificationListData),
+        myVerificationList: setRequestPending(state.myVerificationList),
       };
 
-    case MY_VERIFICATION_REQUESTS_LIST_ACTION_TYPE.MY_VERIFICATION_REQUESTS_LIST_REQUEST_UPLOAD_DATA_SUCCESS:
+    case MY_VERIFICATION_REQUESTS_LIST_ACTION_TYPE.MY_VERIFICATION_REQUESTS_LIST_LOAD_REQUEST_SUCCESS:
       return {
         ...state,
-        myVerificationListData: setRequestSuccess(
-          state.myVerificationListData,
+        myVerificationList: setRequestSuccess(
+          state.myVerificationList,
           action.data,
         ),
       };
       s;
 
-    case MY_VERIFICATION_REQUESTS_LIST_ACTION_TYPE.MY_VERIFICATION_REQUESTS_LIST_REQUEST_UPLOAD_DATA_ERROR:
+    case MY_VERIFICATION_REQUESTS_LIST_ACTION_TYPE.MY_VERIFICATION_REQUESTS_LIST_LOAD_REQUEST_ERROR:
       return {
         ...state,
-        myVerificationListData: setRequestError(
-          state.myVerificationListData,
+        myVerificationList: setRequestError(
+          state.myVerificationList,
           action.errorMessage,
         ),
       };

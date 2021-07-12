@@ -7,32 +7,29 @@ import {
 } from '../../main/store/store.service';
 
 const initialState = {
-  arbitrationListData: initRequestState(),
+  arbitrationList: initRequestState(),
 };
 
 export function arbitrationRequestsListStore(state = initialState, action) {
   switch (action.type) {
-    case ARBITRATION_REQUESTS_LIST_ACTION_TYPE.ARBITRATION_REQUESTS_LIST_REQUEST_UPLOAD_DATA_PENDING:
+    case ARBITRATION_REQUESTS_LIST_ACTION_TYPE.ARBITRATION_REQUESTS_LIST_LOAD_REQUEST_PENDING:
       return {
         ...state,
-        arbitrationListData: setRequestPending(state.arbitrationListData),
+        arbitrationList: setRequestPending(state.arbitrationList),
       };
 
-    case ARBITRATION_REQUESTS_LIST_ACTION_TYPE.ARBITRATION_REQUESTS_LIST_REQUEST_UPLOAD_DATA_SUCCESS:
+    case ARBITRATION_REQUESTS_LIST_ACTION_TYPE.ARBITRATION_REQUESTS_LIST_LOAD_REQUEST_SUCCESS:
       return {
         ...state,
-        arbitrationListData: setRequestSuccess(
-          state.arbitrationListData,
-          action.data,
-        ),
+        arbitrationList: setRequestSuccess(state.arbitrationList, action.data),
       };
       s;
 
-    case ARBITRATION_REQUESTS_LIST_ACTION_TYPE.ARBITRATION_REQUESTS_LIST_REQUEST_UPLOAD_DATA_ERROR:
+    case ARBITRATION_REQUESTS_LIST_ACTION_TYPE.ARBITRATION_REQUESTS_LIST_LOAD_REQUEST_ERROR:
       return {
         ...state,
-        arbitrationListData: setRequestError(
-          state.arbitrationListData,
+        arbitrationList: setRequestError(
+          state.arbitrationList,
           action.errorMessage,
         ),
       };

@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 import { PrimaryBox } from '../../../../lib/elements/box';
 import { PrimaryText, SecondaryText } from '../../../../lib/elements/text';
-import { PrimaryButton } from '../../../../lib/elements/button';
 import { ReactComponent as ApprovedCompanyIcon } from '../../../../asset/svg/approvedCompanyIcon.svg';
 import { ReactComponent as IconStar } from '../../../../asset/svg/star-icon.svg';
 import {

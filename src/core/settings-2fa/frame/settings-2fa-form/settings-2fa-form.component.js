@@ -46,7 +46,7 @@ export function Settings2FAFormComponent(props) {
         <SecondaryTitleText tid="SETTINGS.2FA.TITLE" />
         <form onSubmit={handleSubmit}>
           <SectionLayout>
-            <Settings2FALayout>
+            <SectionLayout>
               <PrimaryField
                 titleTid="SETTINGS.2FA.FIELD.PHONE_NUMBER.TITLE"
                 placeholderTid="SETTINGS.2FA.FIELD.PHONE_NUMBER.PLACEHOLDER"
@@ -58,7 +58,7 @@ export function Settings2FAFormComponent(props) {
               />
 
               <Button tid="SETTINGS.2FA.BUTTON" disabled={isSubmitDisabled()} />
-            </Settings2FALayout>
+            </SectionLayout>
 
             {(isError || errorMessage) && (
               <ErrorAlert tid={`ERROR.${errorMessage}`} />
@@ -71,13 +71,6 @@ export function Settings2FAFormComponent(props) {
     </React.Fragment>
   );
 }
-
-const Settings2FALayout = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-row-gap: ${spacing(3)};
-  grid-column-gap: ${spacing(3)};
-`;
 
 const Button = styled(SecondaryButton)`
   align-self: flex-end;

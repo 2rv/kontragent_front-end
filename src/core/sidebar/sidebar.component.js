@@ -18,11 +18,8 @@ export function SidebarComponent() {
 
         <Container>
           <PrimaryDivider />
-
           <AccountInfoContainer />
-
           <PrimaryDivider />
-
           <NavMenuContainer />
         </Container>
 

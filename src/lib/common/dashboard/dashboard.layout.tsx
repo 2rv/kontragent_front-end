@@ -1,20 +1,35 @@
 import { SidebarContainer } from '../../../core/sidebar';
 import { HeaderContainer } from '../../../core/header';
-
+import { FooterContainer } from '../../../core/footer';
+import { DashboardLayoutPropsType } from './type.dashboard';
 import styled from 'styled-components';
 import { THEME_COLOR } from 'src/lib/theme';
+import { IndentLayout } from '../../elements/layout';
 
-export function DashboardLayout(props) {
+export function DashboardLayout(props: DashboardLayoutPropsType) {
+  const { children, displayFooter } = props;
   return (
     <Container>
       <SidebarContainer />
       <Content>
         <HeaderContainer />
-        <MainContent>{props.children}</MainContent>
+        <MainContent>
+          <IndentLayout>{children}</IndentLayout>
+        </MainContent>
+        {displayFooter && (
+          <Footer>
+            <FooterContainer />
+          </Footer>
+        )}
       </Content>
     </Container>
   );
 }
+
+const Footer = styled.div`
+  align-self: flex-end;
+  width: 100%;
+`;
 
 const Container = styled.div`
   display: flex;
@@ -32,7 +47,6 @@ const Content = styled.div`
 
 const MainContent = styled.div`
   background-color: ${THEME_COLOR.COLOR.SECONDARY};
-  overflow: auto;
   width: 100%;
   height: 100%;
 `;

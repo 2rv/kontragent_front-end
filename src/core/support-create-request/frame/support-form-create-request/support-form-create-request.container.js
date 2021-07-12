@@ -20,10 +20,17 @@ export function SupportFormCreateRequestContainer(props) {
     errorMessage,
     pageLoading,
     problemCategory,
+    validation,
+    onSubmitForm,
+    initialValue,
   } = props;
   return (
     <div>
-      <Formik initialValues={props.initialValue}>
+      <Formik
+        initialValues={initialValue}
+        validate={validation}
+        onSubmit={onSubmitForm}
+      >
         {(props) => (
           <SupportFormCreateRequestComponent
             fieldProblemCategory={PROBLEM_CATEGORY}

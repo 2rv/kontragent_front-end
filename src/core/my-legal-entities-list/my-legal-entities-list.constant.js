@@ -8,5 +8,3 @@ export const MY_LEGAL_ENTITIES_LIST_API = {
     TYPE: 'POST',
   },
 };
-
-export const MY_LEGAL_ENTITIES_LIST_REDIRECT_ON_LOGGED_PATH = '/logout';

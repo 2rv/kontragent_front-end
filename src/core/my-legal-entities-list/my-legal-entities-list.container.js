@@ -1,18 +1,39 @@
+import { useEffect } from 'react';
+import { myLegalEntitiesListLoad } from './my-legal-entities-list.action';
+import { useDispatch, useSelector } from 'react-redux';
+import { NAVIGATION_STORE_NAME } from '../../lib/common/navigation/navigation.constant';
+import { MY_LEGAL_ENTITIES_LIST_STORE_NAME } from './my-legal-entities-list.constant';
 import { MyLegalEntitiesListComponent } from './my-legal-entities-list.component';
+import {
+  getRequestErrorMessage,
+  isRequestError,
+  isRequestPending,
+  isRequestSuccess,
+} from '../../main/store/store.service';
 
 export function MyLegalEntitiesListContainer() {
+  const dispatch = useDispatch();
+  const { state, pageLoading } = useSelector((state) => ({
+    state: state[MY_LEGAL_ENTITIES_LIST_STORE_NAME],
+    pageLoading: state[NAVIGATION_STORE_NAME].pageLoading,
+  }));
+
+  useEffect(() => {
+    dispatch(myLegalEntitiesListLoad());
+  }, []);
+
   return (
     <MyLegalEntitiesListComponent
-      myLegalEntitiesSelectOption={myLegalEntitiesSelectOption}
+      isPending={isRequestPending(state.myLegalEntitiesList)}
+      isError={isRequestError(state.myLegalEntitiesList)}
+      isSuccess={isRequestSuccess(state.myLegalEntitiesList)}
+      pageLoading={pageLoading}
+      errorMessage={getRequestErrorMessage(state.myLegalEntitiesList)}
       myLegalEntitiesListData={myLegalEntitiesListData}
     />
   );
 }
-const myLegalEntitiesSelectOption = [
-  { id: 0, tid: 'По дате' },
-  { id: 1, tid: 'По имени' },
-  { id: 2, tid: 'По статусу' },
-];
+
 const myLegalEntitiesListData = [
   {
     companyName: 'ООО "КАПСТРОЙЭНЕРОГОТЕХ"',

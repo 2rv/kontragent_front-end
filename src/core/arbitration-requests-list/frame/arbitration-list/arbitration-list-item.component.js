@@ -8,7 +8,7 @@ import { ReactComponent as MessageIcon } from '../../../../asset/svg/message-ico
 import Image from 'next/image';
 
 export function ArbitrationListItemComponent(props) {
-  const { id, status, topic, recipient, date, messageNumber, avatar } =
+  const { statusId, statusTid, topic, recipient, date, messageNumber, avatar } =
     props.data;
 
   return (
@@ -26,7 +26,7 @@ export function ArbitrationListItemComponent(props) {
                 <CircleDivider />
                 <SecondaryText>{date}</SecondaryText>
                 <CircleDivider />
-                <StatusText statusId={id}>{status}</StatusText>
+                <StatusText tid={statusTid} statusId={statusId} />
               </RequestListItemDataContainer>
             </SectionLayout>
           </ArbitrageListItemInfoLayout>

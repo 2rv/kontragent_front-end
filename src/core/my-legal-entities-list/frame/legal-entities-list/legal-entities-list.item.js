@@ -57,7 +57,7 @@ const Indent = styled.div`
 
 const InspectionRequestListItemContainer = styled.div`
   display: grid;
-  grid-template-columns: 5fr 2fr 3fr 4fr 4fr 1fr 3fr 2fr 3fr;
+  grid-template-columns: 6fr 2fr 2fr 5fr 3fr 1fr 3fr 2fr 3fr;
   grid-column-gap: ${spacing(4)};
   align-items: center;
 `;

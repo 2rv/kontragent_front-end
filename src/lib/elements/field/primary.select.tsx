@@ -11,10 +11,10 @@ import { ReactComponent as ArrowIcon } from '../../../asset/svg/selectArrow.svg'
 import { PrimarySelectPropsType } from './type.field';
 
 export function PrimarySelect(props: PrimarySelectPropsType) {
-  const { onChange, onBlur, option, titleTid, name } = props;
+  const { onChange, onBlur, option, titleTid, name, className } = props;
   return (
-    <Container>
-      <Title tid={titleTid} />
+    <Container className={className}>
+      {titleTid && <Title tid={titleTid} />}
       <SelectWrapper>
         <Select onBlur={onBlur} onChange={onChange} name={name}>
           {option.map((e, index) => (

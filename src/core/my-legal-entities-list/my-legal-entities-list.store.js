@@ -7,34 +7,32 @@ import {
 } from '../../main/store/store.service';
 
 const initialState = {
-  myLegalEntitiesListData: initRequestState(),
+  myLegalEntitiesList: initRequestState(),
 };
 
 export function myLegalEntitiesListStore(state = initialState, action) {
   switch (action.type) {
-    case MY_LEGAL_ENTITIES_LIST_ACTION_TYPE.MY_LEGAL_ENTITIES_LIST_REQUEST_UPLOAD_DATA_PENDING:
+    case MY_LEGAL_ENTITIES_LIST_ACTION_TYPE.MY_LEGAL_ENTITIES_LIST_LOAD_REQUEST_PENDING:
       return {
         ...state,
-        myLegalEntitiesListData: setRequestPending(
-          state.myLegalEntitiesListData,
-        ),
+        myLegalEntitiesList: setRequestPending(state.myLegalEntitiesList),
       };
 
-    case MY_LEGAL_ENTITIES_LIST_ACTION_TYPE.MY_LEGAL_ENTITIES_LIST_REQUEST_UPLOAD_DATA_SUCCESS:
+    case MY_LEGAL_ENTITIES_LIST_ACTION_TYPE.MY_LEGAL_ENTITIES_LIST_LOAD_REQUEST_SUCCESS:
       return {
         ...state,
-        myLegalEntitiesListData: setRequestSuccess(
-          state.myLegalEntitiesListData,
+        myLegalEntitiesList: setRequestSuccess(
+          state.myLegalEntitiesList,
           action.data,
         ),
       };
       s;
 
-    case MY_LEGAL_ENTITIES_LIST_ACTION_TYPE.MY_LEGAL_ENTITIES_LIST_REQUEST_UPLOAD_DATA_ERROR:
+    case MY_LEGAL_ENTITIES_LIST_ACTION_TYPE.MY_LEGAL_ENTITIES_LIST_LOAD_REQUEST_ERROR:
       return {
         ...state,
-        myLegalEntitiesListData: setRequestError(
-          state.myLegalEntitiesListData,
+        myLegalEntitiesList: setRequestError(
+          state.myLegalEntitiesList,
           action.errorMessage,
         ),
       };

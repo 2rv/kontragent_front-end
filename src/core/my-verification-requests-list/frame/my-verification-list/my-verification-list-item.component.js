@@ -15,11 +15,11 @@ export function MyVerificationListItemComponent(props) {
   const {
     company,
     inspectionTypeId,
-    inspectionType,
+    inspectionTypeTid,
     sum,
     date,
     inspectionStatusId,
-    inspectionStatus,
+    inspectionStatusTid,
     payed,
   } = props.data;
   return (
@@ -30,9 +30,10 @@ export function MyVerificationListItemComponent(props) {
             <SectionLayout type="SMALL">
               <LineContainer>
                 <CompanyName>{company}</CompanyName>
-                <InspectionType type={inspectionTypeId}>
-                  {inspectionType}
-                </InspectionType>
+                <InspectionType
+                  tid={inspectionTypeTid}
+                  type={inspectionTypeId}
+                />
               </LineContainer>
 
               <LineContainer>
@@ -40,9 +41,10 @@ export function MyVerificationListItemComponent(props) {
                 <CircleDivider />
                 <SecondaryText>{date}</SecondaryText>
                 <CircleDivider />
-                <StatusText statusId={inspectionStatusId}>
-                  {inspectionStatus}
-                </StatusText>
+                <StatusText
+                  tid={inspectionStatusTid}
+                  statusId={inspectionStatusId}
+                />
               </LineContainer>
             </SectionLayout>
             <InspectionListItemButtonLayout>

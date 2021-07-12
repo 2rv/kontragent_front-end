@@ -7,18 +7,18 @@ import {
 } from '../../main/store/store.service';
 
 const initialState = {
-  mySupportRequestsListData: initRequestState(),
+  mySupportRequestsList: initRequestState(),
 };
 
 export function mySupportRequestsListStore(state = initialState, action) {
   switch (action.type) {
-    case MY_SUPPORT_REQUESTS_LIST_ACTION_TYPE.MY_SUPPORT_REQUESTS_LIST_REQUEST_UPLOAD_DATA_PENDING:
+    case MY_SUPPORT_REQUESTS_LIST_ACTION_TYPE.MY_SUPPORT_REQUESTS_LIST_LOAD_REQUEST_PENDING:
       return {
         ...state,
         mySupportRequestsList: setRequestPending(state.mySupportRequestsList),
       };
 
-    case MY_SUPPORT_REQUESTS_LIST_ACTION_TYPE.MY_SUPPORT_REQUESTS_LIST_REQUEST_UPLOAD_DATA_SUCCESS:
+    case MY_SUPPORT_REQUESTS_LIST_ACTION_TYPE.MY_SUPPORT_REQUESTS_LIST_LOAD_REQUEST_SUCCESS:
       return {
         ...state,
         mySupportRequestsList: setRequestSuccess(
@@ -28,7 +28,7 @@ export function mySupportRequestsListStore(state = initialState, action) {
       };
       s;
 
-    case MY_SUPPORT_REQUESTS_LIST_ACTION_TYPE.MY_SUPPORT_REQUESTS_LIST_REQUEST_UPLOAD_DATA_ERROR:
+    case MY_SUPPORT_REQUESTS_LIST_ACTION_TYPE.MY_SUPPORT_REQUESTS_LIST_LOAD_REQUEST_PENDING:
       return {
         ...state,
         mySupportRequestsList: setRequestError(

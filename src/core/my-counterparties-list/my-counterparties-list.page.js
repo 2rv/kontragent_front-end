@@ -4,7 +4,7 @@ import { DashboardLayout } from '../../lib/common/dashboard';
 export function MyCounterpartiesListPage() {
   return (
     <DashboardLayout>
-      <MyCounterpartiesListContainer />;
+      <MyCounterpartiesListContainer />
     </DashboardLayout>
   );
 }
