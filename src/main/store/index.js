@@ -52,6 +52,10 @@ import {
   settings2FAStore,
   SETTINGS_2FA_STORE_NAME,
 } from '../../core/settings-2fa';
+import {
+  myRequestsJuristsListStore,
+  MY_REQUESTS_JURISTS_LIST_STORE_NAME,
+} from '../../core/my-requests-jurists-list';
 
 export const reducers = combineReducers({
   [AUTH_STORE_NAME]: authStore,
@@ -70,6 +74,7 @@ export const reducers = combineReducers({
   [BALANCE_DEPOSIT_STORE_NAME]: balanceDepositFormStore,
   [ARBITRATION_REQUESTS_LIST_STORE_NAME]: arbitrationRequestsListStore,
   [SETTINGS_2FA_STORE_NAME]: settings2FAStore,
+  [MY_REQUESTS_JURISTS_LIST_STORE_NAME]: myRequestsJuristsListStore,
 });
 
 export { initStore } from './store.core';

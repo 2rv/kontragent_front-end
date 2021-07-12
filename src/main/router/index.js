@@ -14,6 +14,7 @@ import { balanceDepositRouter } from '../../core/balance-deposit';
 import { arbitrationRequestsListRouter } from '../../core/arbitration-requests-list';
 import { settingsRouter } from '../../core/settings';
 import { ArbitrationCasesRouter } from '../../core/arbitration-cases';
+import { MyRequestsJuristsListRouter } from '../../core/my-requests-jurists-list';
 
 import { LOGIN_ROUTE_PATH } from '../../core/login';
 import { SIGNUP_ROUTE_PATH } from '../../core/signup';
@@ -30,6 +31,7 @@ import { BALANCE_DEPOSIT_ROUTE_PATH } from '../../core/balance-deposit';
 import { ARBITRATION_REQUESTS_LIST_ROUTE_PATH } from '../../core/arbitration-requests-list';
 import { SETTINGS_ROUTE_PATH } from '../../core/settings';
 import { ARBITRATION_CASES_ROUTE_PATH } from '../../core/arbitration-cases';
+import { MY_REQUESTS_JURISTS_LIST_ROUTE_PATH } from '../../core/my-requests-jurists-list';
 
 export const routes = {
   [LOGIN_ROUTE_PATH]: LoginRouter,
@@ -47,6 +49,7 @@ export const routes = {
   [ARBITRATION_REQUESTS_LIST_ROUTE_PATH]: arbitrationRequestsListRouter,
   [SETTINGS_ROUTE_PATH]: settingsRouter,
   [ARBITRATION_CASES_ROUTE_PATH]: ArbitrationCasesRouter,
+  [MY_REQUESTS_JURISTS_LIST_ROUTE_PATH]: MyRequestsJuristsListRouter,
 };
 
 export const Router = routesInit(routes);
