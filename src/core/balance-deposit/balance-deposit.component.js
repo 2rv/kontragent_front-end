@@ -41,4 +41,5 @@ export function BalanceDepositComponent(props) {
 const Container = styled.div`
   display: flex;
   height: max-content;
+  width: 100%;
 `;

@@ -65,7 +65,7 @@ export const NAVMENU_ITEMS = [
     path: '/auth-recovery-account',
   },
   {
-    tid: 'Восстановление пароля',
+    tid: 'Логин',
     pathname: '/login',
     path: '/login',
   },
