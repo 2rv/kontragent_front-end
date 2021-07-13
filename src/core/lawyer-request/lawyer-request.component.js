@@ -7,15 +7,19 @@ import { spacing, THEME_SIZE } from '../../lib/theme';
 
 export function LawyerReqeustComponent(props) {
   return (
-    <div>
+    <Container>
       <div>
         <LawyerRequestQuestionTitle tid="LAWYER_REQUEST.TITLE" />
         <LawyerRequestQuestionDescription tid="LAWYER_REQUEST.DESCRIPTION" />
       </div>
       <NewLawyerRequestFormContainer {...props} />
-    </div>
+    </Container>
   );
 }
+
+const Container = styled.div`
+  width: 100%;
+`;
 
 const LawyerRequestQuestionTitle = styled(PrimaryTitleText)`
   font-size: ${THEME_SIZE.FONT.HUGE};

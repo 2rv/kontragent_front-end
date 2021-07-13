@@ -1,3 +1,5 @@
+import styled from 'styled-components';
+
 import { HeaderComponent } from './frame/header';
 import { ArbitrationCasesListComponent } from './frame/arbitration-cases-list';
 
@@ -8,7 +10,7 @@ import { IndentLayout, SectionLayout } from '../../lib/elements/layout';
 
 export function ArbitrationCasesComponent() {
   return (
-    <PrimaryBox>
+    <Container>
       <IndentLayout>
         <SectionLayout type="LARGE">
           <HeaderComponent />
@@ -19,6 +21,11 @@ export function ArbitrationCasesComponent() {
           </SectionLayout>
         </SectionLayout>
       </IndentLayout>
-    </PrimaryBox>
+    </Container>
   );
 }
+
+const Container = styled(PrimaryBox)`
+  width: 100%;
+  height: fit-content;
+`;
