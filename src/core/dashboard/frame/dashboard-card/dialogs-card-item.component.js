@@ -8,7 +8,6 @@ import {
 import { PrimaryDivider } from '../../../../lib/elements/divider';
 import { PrimaryText } from '../../../../lib/elements/text';
 import { PrimaryBox } from '../../../../lib/elements/box';
-import { IconButton } from '../../../../lib/elements/button';
 import { ReactComponent as FindIcon } from '../../../../asset/svg/find-icon.svg';
 
 export function DialogsCardItemComponent() {
@@ -16,13 +15,13 @@ export function DialogsCardItemComponent() {
     <Сontent>
       <Header>
         <TitlePrimary tid="DASHBOARD_CARD.ARBITRATION_DIALOGUES" />
-        <IconButton icon={FindIcon} />
+        <FindIcon />
       </Header>
       <PrimaryDivider />
       <ContentCase>
         <DialogList>
-          Список арбитражных диалогов когда будет готова страница с диалогами
-          взять список от туда
+          Здесь нужен список диалогов какой не знаю скорее всего арбитража Взять
+          из arbitration
         </DialogList>
       </ContentCase>
     </Сontent>
@@ -51,6 +50,6 @@ const Сontent = styled(PrimaryBox)`
   height: 100%;
   display: flex;
   flex-direction: column;
-  gap: ${spacing(2)};
+  gap: ${spacing(3)};
   padding: ${spacing(4)};
 `;

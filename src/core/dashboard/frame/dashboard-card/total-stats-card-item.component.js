@@ -20,7 +20,7 @@ export function TotalStatsCardItemComponent() {
           <TitlePrimary tid="DASHBOARD_CARD.TOTAL_STATS" />
           <TitleSecondary tid="DASHBOARD_CARD.PERIOD.DAY" />
         </TitleCase>
-        <IconButton icon={OptionIcon} />
+        <OptionIcon />
       </Header>
       <PrimaryDivider />
       <ContentCase>
@@ -43,10 +43,10 @@ const Link = styled(PrimaryLink)`
   color: ${THEME_COLOR.TEXT.ACCENT};
 `;
 const Diagram = styled.div`
-  width: 100%;
-  height: 100%;
+  height: 72px;
+  width: 72px;
   border: 5px solid blueviolet;
-  border-radius: 100%;
+  border-radius: ${THEME_SIZE.RADIUS.CIRCLE};
 `;
 const DiagramCase = styled.div`
   height: 72px;
@@ -59,7 +59,7 @@ const TextCase = styled.span`
 const Column = styled.div`
   display: flex;
   flex-direction: column;
-  gap: ${spacing(2)};
+  gap: ${spacing(3)};
 `;
 const ContentCase = styled.div`
   display: flex;
@@ -90,9 +90,8 @@ const TitleCase = styled.div`
   align-items: baseline;
 `;
 const Сontent = styled(PrimaryBox)`
-  height: 100%;
   display: flex;
   flex-direction: column;
-  gap: ${spacing(2)};
+  gap: ${spacing(3)};
   padding: ${spacing(4)};
 `;

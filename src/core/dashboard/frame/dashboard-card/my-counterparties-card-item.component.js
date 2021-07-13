@@ -8,10 +8,7 @@ import {
 import { PrimaryDivider } from '../../../../lib/elements/divider';
 import { PrimaryText } from '../../../../lib/elements/text';
 import { PrimaryBox } from '../../../../lib/elements/box';
-import { IconButton, TextButton } from '../../../../lib/elements/button';
-import { ReactComponent as StarIcon } from '../../../../asset/svg/star-icon.svg';
-import { SecondarySelect } from '../../../../lib/elements/field';
-
+import { PrimaryLink } from '../../../../lib/elements/link';
 const items = [
   {
     title: `ООО "ТЕХЭЛЕКТРО МСК"`,
@@ -33,78 +30,43 @@ const options = [
   { id: 2, tid: 'Сначала старые' },
   { id: 3, tid: 'Сначала лучшие' },
 ];
+
 export function MyCounterpartiesCardItemComponent() {
   return (
     <Сontent>
       <Header>
         <TitlePrimary tid="DASHBOARD_CARD.MY_COUNTERPARTIES" />
-        <SecondarySelect option={options} />
+        <div>Нужен селект</div>
       </Header>
       <PrimaryDivider />
       <ContentCase>
-        <ConterpartiesList>
-          {items.map(({ title, price, valute, rate, discount }, index) => (
-            <ConterpartiesItem key={index}>
-              <TitlePrimary tid={title} />
-              <ItemContent>
-                <PrimaryText tid={price} />
-                <ValuteText tid={valute} />
-                <SymbolText tid="·" />
-                {[1, 2, 3, 4, 5].map((item, index) => (
-                  <StarCase key={index} activeStar={item <= rate}>
-                    <StarIcon />
-                  </StarCase>
-                ))}
-                <SymbolText tid="·" />
-                <PrimaryText tid={discount} />
-              </ItemContent>
-            </ConterpartiesItem>
-          ))}
-        </ConterpartiesList>
-        <ShowMoreButton tid="DASHBOARD_CARD.SHOW_MORE" />
+        <CounterPartiesList>
+          Список контрагентов взять из my-conterparties указана высота и ширина
+          удалить если надо!
+        </CounterPartiesList>
+        <ShowMore tid="DASHBOARD_CARD.SHOW_MORE" />
       </ContentCase>
     </Сontent>
   );
 }
-const StarCase = styled.span`
-  fill: ${({ activeStar }) => (activeStar ? `#F2994A` : '#B5B5B5')};
-`;
-const ValuteText = styled(PrimaryText)`
-  font-size: ${THEME_SIZE.FONT.TINY};
-  color: ${THEME_COLOR.COLOR.LIGHT_GREY};
-`;
-const SymbolText = styled(ValuteText)`
-  font-size: ${THEME_SIZE.FONT.LARGE};
-`;
-const ItemContent = styled.div`
+
+const CounterPartiesList = styled.div`
+  background-color: blueviolet;
   display: flex;
-  align-items: baseline;
-  gap: ${spacing(1.5)};
-`;
-const ConterpartiesItem = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: ${spacing(2)};
-  padding: ${spacing(5)} ${spacing(4)};
-  border-radius: ${THEME_SIZE.RADIUS.DEFAULT};
-  background-color: ${THEME_COLOR.COLOR.SECONDARY};
-`;
-const ShowMoreButton = styled(TextButton)`
-  color: ${THEME_COLOR.TEXT.SECONDARY};
-  padding: 16px;
-  display: grid;
+  height: 172px;
   width: 100%;
-  justify-content: center;
 `;
-const ConterpartiesList = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: ${spacing(3)};
+const ShowMore = styled(PrimaryLink)`
+  color: ${THEME_COLOR.TEXT.SECONDARY};
+  padding: ${spacing(4)};
+  background-color: red;
 `;
 const ContentCase = styled.div`
-  display: grid;
-  gap: ${spacing(3)};
+  display: flex;
+  gap: ${spacing(2)};
+  flex-direction: column;
   align-items: center;
+  justify-content: center;
 `;
 const TitlePrimary = styled(PrimaryText)`
   font-weight: ${THEME_VALUE.FONT_WEIGHT.SEMY_BOLD};
@@ -116,9 +78,9 @@ const Header = styled.div`
   align-items: center;
 `;
 const Сontent = styled(PrimaryBox)`
-  height: 100%;
   display: flex;
   flex-direction: column;
-  gap: ${spacing(2)};
+  gap: ${spacing(3)};
   padding: ${spacing(4)};
+  height: max-content;
 `;
