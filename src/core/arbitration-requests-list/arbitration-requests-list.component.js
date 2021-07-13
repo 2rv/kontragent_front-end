@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { spacing } from '../../lib/theme';
-import { ArbitrationListContainer } from './frame';
+import { ArbitrationRequestsListHeaderFilterComponent, ArbitrationListContainer } from './frame';
 
 export function ArbitrationRequestsListComponent(props) {
   const {
@@ -13,6 +13,7 @@ export function ArbitrationRequestsListComponent(props) {
   } = props;
   return (
     <Container>
+      <ArbitrationRequestsListHeaderFilterComponent />
       <ArbitrationListContainer
         isPending={isPending}
         isError={isError}
