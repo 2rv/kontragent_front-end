@@ -1,3 +1,5 @@
+import styled from 'styled-components';
+
 import { KontragentCommentsHeaderContainer } from './frame/kontragent-comments-header';
 import { KontragentCommentsListComponent } from './frame/kontragent-comments-list';
 
@@ -8,7 +10,7 @@ import { IndentLayout, SectionLayout } from '../../lib/elements/layout';
 
 export function KontragentCommentsComponent() {
   return (
-    <PrimaryBox>
+    <Container>
       <IndentLayout>
         <SectionLayout type="LARGE">
           <KontragentCommentsHeaderContainer
@@ -20,6 +22,11 @@ export function KontragentCommentsComponent() {
           />
         </SectionLayout>
       </IndentLayout>
-    </PrimaryBox>
+    </Container>
   );
 }
+
+const Container = styled(PrimaryBox)`
+  width: 100%;
+  height: fit-content;
+`;
