@@ -2,6 +2,7 @@ import { SupportFormCreateRequestContainer } from './frame/support-form-create-r
 import { SupportCreateRequestHeaderContainer } from './frame/support-create-request-header';
 import { SectionLayout, IndentLayout } from '../../lib/elements/layout';
 import { PrimaryBox } from '../../lib/elements/box';
+import styled from 'styled-components';
 
 export function SupportCreateRequestComponent(props) {
   const {
@@ -18,7 +19,7 @@ export function SupportCreateRequestComponent(props) {
   } = props;
 
   return (
-    <SectionLayout type="LARGE">
+    <Container>
       <SupportCreateRequestHeaderContainer />
       <PrimaryBox>
         <IndentLayout type="MEDIUM">
@@ -36,6 +37,12 @@ export function SupportCreateRequestComponent(props) {
           />
         </IndentLayout>
       </PrimaryBox>
-    </SectionLayout>
+    </Container>
   );
 }
+const Container = styled.div`
+  gap: 24px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+`;

@@ -62,7 +62,7 @@ const Container = styled.div`
   background-color: #f3f3f3;
   display: flex;
   flex-direction: column;
-  width: 800px;
+  width: 100%;
   gap: ${spacing(3)};
 `;
 const TitleCase = styled.div`

@@ -29,8 +29,8 @@ export function BookReviewListComponent(props) {
 }
 
 const Container = styled.div`
-  padding: ${spacing(8)};
   display: flex;
+  width: 100%;
   flex-direction: column;
   gap: ${spacing(4.5)};
 `;

@@ -1,10 +1,10 @@
-import { IndentLayout } from '../../lib/elements/layout';
+import { DashboardLayout } from '../../lib/common/dashboard';
 import { NewsContainer } from './news.container';
 
 export function NewsPage() {
   return (
-    <IndentLayout>
+    <DashboardLayout>
       <NewsContainer />
-    </IndentLayout>
+    </DashboardLayout>
   );
 }
