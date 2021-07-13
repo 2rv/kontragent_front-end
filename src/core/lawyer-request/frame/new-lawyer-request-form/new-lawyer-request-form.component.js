@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { ReactComponent as File } from '../../../../asset/svg/file.svg';
 
 import {
-  SecondarySelect,
+  PrimarySelect,
   PrimaryField,
   TextareaField,
 } from '../../../../lib/elements/field';
@@ -38,14 +38,14 @@ export function NewLawyerRequestFormComponent(props) {
   } = props;
 
   return (
-    <Box>
+    <Container>
       <IndentLayout>
         <SectionLayout>
           <form onSubmit={handleSubmit}>
             <PrimaryTitleText tid="LAWYER_REQUEST.FORM.TITLE" />
 
             <FieldContainer>
-              <SecondarySelect
+              <PrimarySelect
                 titleTid="LAWYER_REQUEST.FORM.FIELDS.TITLES.QUESTION_CATEGORY"
                 name={fieldQuestionCategory}
                 onChange={handleChange}
@@ -98,11 +98,11 @@ export function NewLawyerRequestFormComponent(props) {
           </form>
         </SectionLayout>
       </IndentLayout>
-    </Box>
+    </Container>
   );
 }
 
-const Box = styled(PrimaryBox)`
+const Container = styled(PrimaryBox)`
   margin-top: ${spacing(6)};
 `;
 

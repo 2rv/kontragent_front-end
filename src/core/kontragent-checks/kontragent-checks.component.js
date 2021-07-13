@@ -11,17 +11,19 @@ import { spacing } from '../../lib/theme';
 
 export function KontragentChecksComponent() {
   return (
-    <Box>
+    <Container>
       <IndentLayout>
         <SectionLayout>
           <HeaderComponent />
           <KontragentChecksListComponent kontragentChecksList={KONTRAGENT_CHECKS_LIST} />
         </SectionLayout>
       </IndentLayout>
-    </Box>
+    </Container>
   );
 }
 
-const Box = styled(PrimaryBox)`
+const Container = styled(PrimaryBox)`
+  width: 100%;
+  height: fit-content;
   margin: ${spacing(7)};
 `;
