@@ -1,6 +1,9 @@
 import styled from 'styled-components';
 import { spacing } from '../../lib/theme';
-import { ArbitrationRequestsListHeaderFilterComponent, ArbitrationListContainer } from './frame';
+import {
+  ArbitrationRequestsListHeaderFilterComponent,
+  ArbitrationListContainer,
+} from './frame';
 
 export function ArbitrationRequestsListComponent(props) {
   const {
@@ -29,4 +32,5 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   gap: ${spacing(4)};
+  width: 100%;
 `;

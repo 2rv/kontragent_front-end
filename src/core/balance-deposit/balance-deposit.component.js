@@ -1,6 +1,7 @@
 import { BalanceFormDepositContainer } from './frame/balance-form-deposit';
 import { SectionLayout, IndentLayout } from '../../lib/elements/layout';
 import { PrimaryBox } from '../../lib/elements/box';
+import styled from 'styled-components';
 
 export function BalanceDepositComponent(props) {
   const {
@@ -17,7 +18,7 @@ export function BalanceDepositComponent(props) {
   } = props;
 
   return (
-    <SectionLayout type="LARGE">
+    <Container>
       <PrimaryBox>
         <IndentLayout type="MEDIUM">
           <BalanceFormDepositContainer
@@ -34,6 +35,10 @@ export function BalanceDepositComponent(props) {
           />
         </IndentLayout>
       </PrimaryBox>
-    </SectionLayout>
+    </Container>
   );
 }
+const Container = styled.div`
+  display: flex;
+  height: max-content;
+`;

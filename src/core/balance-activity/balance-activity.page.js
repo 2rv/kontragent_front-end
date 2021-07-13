@@ -1,9 +1,9 @@
 import { BalanceActivityContainer } from './balance-activity.container';
-import { IndentLayout } from '../../lib/elements/layout';
+import { DashboardLayout } from '../../lib/common/dashboard';
 export function BalanceActivityPage() {
   return (
-    <IndentLayout>
+    <DashboardLayout>
       <BalanceActivityContainer />
-    </IndentLayout>
+    </DashboardLayout>
   );
 }

@@ -11,7 +11,7 @@ export function CompanyMembersComponent(props) {
   return (
     <Container>
       <HeaderCase>
-        <Title tid={`ООО "КРИМИНАЛСТРОЙТЕХ"`} />
+        <Title tid={`ООО "КОМПАНИЯ"`} />
         <Desctiption tid="Настройки вашей компании. Вы можете управлять списком участников и их ролями." />
       </HeaderCase>
       <CompanyMembersListComponent memberItem={memberItem} />
@@ -27,7 +27,6 @@ const Container = styled.div`
   flex-direction: column;
   gap: ${spacing(6)};
   padding: ${spacing(8)};
-  background-color: ${THEME_COLOR.COLOR.BACKGROUND};
   height: 100%;
 `;
 const Desctiption = styled(SecondaryText)`

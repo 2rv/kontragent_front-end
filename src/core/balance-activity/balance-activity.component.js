@@ -49,7 +49,8 @@ export function BalanceActivityComponent({ activityItems, balance }) {
 }
 
 const Container = styled.div`
-  display: grid;
+  display: flex;
+  flex-direction: column;
   gap: ${spacing(6)};
   width: 100%;
   height: 100%;

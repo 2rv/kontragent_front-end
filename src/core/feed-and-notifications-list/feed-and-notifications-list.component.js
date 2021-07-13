@@ -14,8 +14,7 @@ export function FeedAndNotificationsListComponent(props) {
   );
 }
 const Container = styled.div`
-  padding: ${spacing(8)};
   display: flex;
   flex-direction: column;
-  gap: ${spacing(4.5)};
+  gap: ${spacing(6)};
 `;

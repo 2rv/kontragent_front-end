@@ -29,6 +29,7 @@ const Primary = styled(PrimaryText)`
 `;
 const Secondary = styled(SecondaryText)`
   font-size: ${THEME_SIZE.FONT.SMALL};
+  line-height: 21px;
 `;
 const Base = styled(PrimaryText)`
   font-size: ${THEME_SIZE.FONT.SMALL};

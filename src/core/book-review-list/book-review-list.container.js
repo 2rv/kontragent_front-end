@@ -34,9 +34,9 @@ export function BookReviewListContainer() {
     },
   ];
 
-  useEffect(() => {
-    dispatch(bookReviewListLoad());
-  }, []);
+  //   useEffect(() => {
+  //     dispatch(bookReviewListLoad());
+  //   }, []);
 
   return (
     <BookReviewListComponent
