@@ -8,10 +8,12 @@ import {
   passwordRepeat,
   email,
   required,
+  fullname,
 } from '../../main/validate/validate.service';
 
 const config = {
   [SIGNUP_FIELD_NAME.LOGIN]: [required, login],
+  [SIGNUP_FIELD_NAME.FULLNAME]: [required, fullname],
   [SIGNUP_FIELD_NAME.EMAIL]: [required, email],
   [SIGNUP_FIELD_NAME.PASSWORD]: [required, password],
   [SIGNUP_FIELD_NAME.PASSWORD_REPEAT]: [

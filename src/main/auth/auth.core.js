@@ -4,6 +4,7 @@ import { AUTH_HEADER, AUTH_COOKIE } from './auth.constant';
 import { setCookie } from '../cookie/cookie.core';
 
 import { httpRequest } from '../http/index';
+import { getBrowserCookie } from '../cookie';
 
 import { getBrowserCookie } from '../cookie';
 

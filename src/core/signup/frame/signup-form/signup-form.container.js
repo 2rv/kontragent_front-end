@@ -11,6 +11,7 @@ export function SignupFormContainer(props) {
   const PASSWORD_REPEAT_NAME =
     props.fieldName[SIGNUP_FORM_FIELD_KEY.PASSWORD_REPEAT];
   const EMAIL_NAME = props.fieldName[SIGNUP_FORM_FIELD_KEY.EMAIL];
+  const FULLNAME = props.fieldName[SIGNUP_FORM_FIELD_KEY.FULLNAME];
   const { isPending, isError, isSuccess, errorMessage, pageLoading } = props;
   return (
     <div>
@@ -25,6 +26,7 @@ export function SignupFormContainer(props) {
             fieldLogin={LOGIN_NAME}
             fieldPasswordRepeat={PASSWORD_REPEAT_NAME}
             fieldEmail={EMAIL_NAME}
+            fieldFullname={FULLNAME}
             {...props}
             isPending={isPending}
             isError={isError}
