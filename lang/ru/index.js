@@ -29,6 +29,7 @@ import MY_SUPPORT_REQUEST_LIST from './my-support-request-list.json';
 import BOOK_REVIEW_LIST from './book-review-list.json';
 import KONTRAGENT_CHECKS from './kontragent-checks.json';
 import REFERRAL from './referral.json';
+import KONTRAGENT_INFORMATION from './kontragent-information.json';
 
 export const RU = {
   translation: {
@@ -63,5 +64,6 @@ export const RU = {
     BOOK_REVIEW_LIST,
     KONTRAGENT_CHECKS,
     REFERRAL,
+    KONTRAGENT_INFORMATION,
   },
 };
