@@ -4,7 +4,7 @@ import { Provider as ReduxProvider } from 'react-redux';
 import withRedux from 'next-redux-wrapper';
 
 import { initStore } from '../main/store';
-import { setAutorization } from '../main/auth';
+import { setAutorization, setCurrentAuthCookie } from '../main/auth';
 import { Router } from '../main/router';
 
 import { langServerDetection, langBrowserDetection } from '../lib/common/lang';

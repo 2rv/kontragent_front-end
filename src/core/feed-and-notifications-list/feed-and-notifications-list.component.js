@@ -1,18 +1,12 @@
 import styled from 'styled-components';
 import { spacing, THEME_COLOR } from '../../lib/theme';
 import { NotificationsListContainer } from './frame';
-import { FilterComponent } from '../../lib/elements/filter-component';
 
 export function FeedAndNotificationsListComponent(props) {
   const { feedAndNotificationsListData, feedAndNotificationsListSelectOption } =
     props;
   return (
     <Container>
-      <FilterComponent
-        titleTid="Лента и уведомления"
-        selectOption={feedAndNotificationsListSelectOption}
-        placeholderTid="Найти юрлицо"
-      />
       <NotificationsListContainer
         feedAndNotificationsListData={feedAndNotificationsListData}
       />

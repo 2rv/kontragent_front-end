@@ -4,7 +4,7 @@ import { PrimaryBox } from '../../../../lib/elements/box';
 import { IndentLayout } from '../../../../lib/elements/layout';
 import { PrimaryText, SecondaryText } from '../../../../lib/elements/text';
 import { PrimaryButton } from '../../../../lib/elements/button';
-import { CicleDivider } from '../../../../lib/elements/divider';
+import { CircleDivider } from '../../../../lib/elements/divider';
 import { spacing, THEME_SIZE, THEME_COLOR, THEME_VALUE } from '../../../../lib/theme';
 
 export function KontragentChecksListComponent({ kontragentChecksList }) {
@@ -19,9 +19,9 @@ export function KontragentChecksListComponent({ kontragentChecksList }) {
             </Content>
             <Content>
               <PriceText>{kontragentCheck.price}</PriceText>
-              <CicleDivider />
+              <CircleDivider />
               <Date>{kontragentCheck.time}</Date>
-              <CicleDivider />
+              <CircleDivider />
               <Info tid={kontragentCheck.info.title} infoId={kontragentCheck.info.id} />
             </Content>
           </Container>

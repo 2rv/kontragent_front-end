@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 import { spacing, THEME_COLOR } from '../../lib/theme';
 import { BookListContainer } from './frame';
-import { FilterComponent } from '../../lib/elements/filter-component';
 import { SecondaryButton } from '../../lib/elements/button';
 
 export function BookReviewListComponent(props) {

@@ -7,7 +7,7 @@ import { ReactComponent as LoadBookIcon } from '../../../../asset/svg/loadbook.s
 
 export function BookListItem(props) {
   const { loadDate, bookPeriod, companyName, bookType, kontragentNumber } =
-    props.data;
+    props;
   return (
     <Container>
       <PrimaryBox>
