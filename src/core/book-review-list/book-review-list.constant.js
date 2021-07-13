@@ -8,3 +8,5 @@ export const BOOK_REVIEW_LIST_API = {
     TYPE: 'POST',
   },
 };
+
+export const SIGNUP_REDIRECT_ON_LOGGED_PATH = '/logout';

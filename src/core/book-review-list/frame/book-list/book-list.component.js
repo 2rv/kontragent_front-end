@@ -50,9 +50,8 @@ export function BookListComponent(props) {
 const Divider = styled(PrimaryDivider)`
   background-color: ${THEME_COLOR.COLOR.BASE};
 `;
-
 const Columns = styled.div`
   display: grid;
   grid-template-columns: 120px 200px 300px 130px auto auto;
-  grid-column-gap: ${spacing(4)};
+  gap: ${spacing(4)};
 `;

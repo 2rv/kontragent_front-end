@@ -1,2 +1,2 @@
-import { BookReviewListPage } from '../../core/book-review-list/book-review-list.page';
+import { BookReviewListPage } from '../../core/book-review-list';
 export default BookReviewListPage;
