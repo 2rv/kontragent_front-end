@@ -9,6 +9,11 @@ import { CommentListComponent, CommentInputComponent } from './frame';
 
 export function ThemeArbitrationComponent(props) {
   const {
+    isPending,
+    pageLoading,
+    isError,
+    isSuccess,
+    errorMessage,
     theme,
     role,
     description,
@@ -20,6 +25,7 @@ export function ThemeArbitrationComponent(props) {
     myAvatar,
   } = props;
   const { roleColor, roleText } = RoleConverter(role);
+
   return (
     <Container>
       <HeaderCase>
@@ -41,7 +47,14 @@ export function ThemeArbitrationComponent(props) {
             <NameCompany tid={`"${companyName}"`} />
           </LineCase>
         </HeaderCase>
-        <CommentListComponent dataComment={commentItem} />
+        <CommentListComponent
+          dataComment={commentItem}
+          pageLoading={pageLoading}
+          isPending={isPending}
+          isError={isError}
+          isSuccess={isSuccess}
+          errorMessage={errorMessage}
+        />
         <CommentInputComponent myAvatar={myAvatar} />
       </ContentCase>
     </Container>
@@ -94,8 +107,6 @@ const Container = styled.div`
   height: 100vh;
   flex-direction: column;
   gap: ${spacing(6)};
-  padding: ${spacing(8)};
-  background-color: ${THEME_COLOR.COLOR.BACKGROUND};
 `;
 const RoleConverter = (role) => {
   switch (role) {
