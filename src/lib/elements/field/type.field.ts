@@ -18,6 +18,14 @@ export interface PrimarySelectPropsType {
   name: string;
   className: string;
 }
+export interface SecondarySelectPropsType {
+  titleTid: string;
+  option: optionObject[];
+  onChange: any;
+  onBlur: any;
+  name: string;
+  className: string;
+}
 
 export interface TextAreaPropsType {
   titleTid: string;

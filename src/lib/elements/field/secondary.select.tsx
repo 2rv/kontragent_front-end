@@ -6,7 +6,7 @@ import { ReactComponent as ArrowIcon } from '../../../asset/svg/selectArrow.svg'
 import { SecondarySelectPropsType } from './type.field';
 
 export function SecondarySelect(props: SecondarySelectPropsType) {
-  const { onChange, option } = props;
+  const { option } = props;
   return (
     <SelectWrapper>
       <Select>
