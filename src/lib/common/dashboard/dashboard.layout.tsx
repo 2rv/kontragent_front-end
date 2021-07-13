@@ -3,8 +3,7 @@ import { HeaderContainer } from '../../../core/header';
 import { FooterContainer } from '../../../core/footer';
 import { DashboardLayoutPropsType } from './type.dashboard';
 import styled from 'styled-components';
-import { THEME_COLOR } from 'src/lib/theme';
-import { IndentLayout } from '../../elements/layout';
+import { spacing, THEME_COLOR } from 'src/lib/theme';
 
 export function DashboardLayout(props: DashboardLayoutPropsType) {
   const { children, displayFooter } = props;
@@ -14,7 +13,7 @@ export function DashboardLayout(props: DashboardLayoutPropsType) {
       <Content>
         <HeaderContainer />
         <MainContent>
-          <IndentLayout>{children}</IndentLayout>
+          <Layout>{children}</Layout>
         </MainContent>
         {displayFooter && (
           <Footer>
@@ -25,7 +24,12 @@ export function DashboardLayout(props: DashboardLayoutPropsType) {
     </Container>
   );
 }
-
+const Layout = styled.div`
+  display: flex;
+  width: 100%;
+  height: 100%;
+  padding: ${spacing(8)};
+`;
 const Footer = styled.div`
   align-self: flex-end;
   width: 100%;
@@ -49,4 +53,5 @@ const MainContent = styled.div`
   background-color: ${THEME_COLOR.COLOR.SECONDARY};
   width: 100%;
   height: 100%;
+  position: relative;
 `;

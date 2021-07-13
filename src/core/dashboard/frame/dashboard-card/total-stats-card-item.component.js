@@ -45,7 +45,7 @@ const Link = styled(PrimaryLink)`
 const Diagram = styled.div`
   height: 72px;
   width: 72px;
-  border: 5px solid blueviolet;
+  border: 10px solid ${THEME_COLOR.COLOR.ACCENT};
   border-radius: ${THEME_SIZE.RADIUS.CIRCLE};
 `;
 const DiagramCase = styled.div`

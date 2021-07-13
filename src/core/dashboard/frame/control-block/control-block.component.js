@@ -21,7 +21,7 @@ export function ControlBlockComponent() {
           <DashboardCardContainer type="referal" />
         </PrimaryCase>
         <SecondaryCase>
-          <DashboardCardContainer type="dialogs" />
+          <DashboardCardContainer type="counterparties" />
           <DashboardCardContainer type="counterparties" />
         </SecondaryCase>
       </Content>

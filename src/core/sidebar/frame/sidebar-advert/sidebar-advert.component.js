@@ -5,7 +5,9 @@ import { PrimaryBox } from '../../../../lib/elements/box';
 import { SecondaryText } from '../../../../lib/elements/text';
 
 export function SidebarAdvertComponent(props) {
-  const { backgroungImageURL = 'https://via.placeholder.com/350' } = props;
+  const {
+    backgroungImageURL = 'https://i.ytimg.com/vi/G6l368Oa6lk/maxresdefault.jpg',
+  } = props;
   return (
     <SidebaerAdvertLayout backgroungImageURL={backgroungImageURL}>
       <AdvertInfoCardLayout>
@@ -31,7 +33,7 @@ const AdvertInfoCardLayout = styled(PrimaryBox)`
   width: 85px;
   height: 36px;
   background-color: ${THEME_COLOR.COLOR.PRIMARY};
-  opacity: 0.5;
+  opacity: 0.8;
   backdrop-filter: blur(25px);
   display: flex;
   align-items: center;

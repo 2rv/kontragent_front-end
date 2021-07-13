@@ -12,7 +12,9 @@ import { SecondaryText } from '../../../../lib/elements/text';
 export function AdvertCardComponent(props) {
   const { advertImageURL } = props;
   return (
-    <AdvertCardLayout advertImageURL={advertImageURL}>
+    <AdvertCardLayout
+      advertImageURL={'https://i.ytimg.com/vi/G6l368Oa6lk/maxresdefault.jpg'}
+    >
       <AdvertInfoCardLayout>
         <AdvertInfoCardText tid="ADVERT.ADVERT_INFO" />
       </AdvertInfoCardLayout>

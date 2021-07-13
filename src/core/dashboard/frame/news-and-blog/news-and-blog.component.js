@@ -6,8 +6,9 @@ import {
   THEME_VALUE,
 } from '../../../../lib/theme';
 import { AdvertContainer } from '../../../advert';
-import { PrimaryTitleText } from '../../../../lib/elements/text';
+import { PrimaryTitleText, SecondaryText } from '../../../../lib/elements/text';
 import { PrimaryLink } from '../../../../lib/elements/link';
+
 export function NewsAndBlogComponent() {
   return (
     <Container>
@@ -16,12 +17,66 @@ export function NewsAndBlogComponent() {
         <ViewAll tid="DASHBOARD.VIEW_ALL" />
       </TitleCase>
       <Content>
-        <AdvertContainer type="CARD" />
-        <AdvertContainer type="CARD" />
+        <NewsCard>
+          <CardImage src="https://bgstaff.ru/upload/bgstaff/pages/startup_programmer.png" />
+          <CardInfo>
+            <CardTitle tid="Новая система проверки контрагентов!" />
+            <CardText>
+              Задача организации, в особенности же консультация с широким
+              активом играет важную роль в формировании систем массового
+              участия. <CardLink tid="Читать далее " />
+            </CardText>
+          </CardInfo>
+        </NewsCard>
+        <NewsCard>
+          <CardImage src="https://bgstaff.ru/upload/bgstaff/pages/startup_programmer.png" />
+          <CardInfo>
+            <CardTitle tid="Новая система проверки контрагентов!" />
+            <CardText>
+              Задача организации, в особенности же консультация с широким
+              активом играет важную роль в формировании систем массового
+              участия. <CardLink tid="Читать далее " />
+            </CardText>
+          </CardInfo>
+        </NewsCard>
       </Content>
     </Container>
   );
 }
+const CardText = styled(SecondaryText)`
+  font-size: 14px;
+  line-height: 21px;
+  font-weight: ${THEME_VALUE.FONT_WEIGHT.MEDIUM};
+`;
+const CardLink = styled(PrimaryLink)`
+  font-size: 14px;
+  line-height: 21px;
+`;
+const NewsCard = styled.div`
+  display: flex;
+  height: 222px;
+  width: 100%;
+  background-color: #fff;
+  padding: ${spacing(4)};
+  gap: ${spacing(4)};
+  border-radius: ${THEME_SIZE.RADIUS.DEFAULT};
+`;
+const CardImage = styled.img`
+  width: 186px;
+  height: 186px;
+  border-radius: ${THEME_SIZE.RADIUS.DEFAULT};
+`;
+const CardInfo = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: ${spacing(2)};
+`;
+
+const CardTitle = styled(PrimaryTitleText)`
+  font-size: 20px;
+  line-height: 30px;
+  font-weight: ${THEME_VALUE.FONT_WEIGHT.SEMY_BOLD};
+`;
 const TitleCase = styled.div`
   display: flex;
   justify-content: space-between;

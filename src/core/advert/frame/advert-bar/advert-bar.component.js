@@ -12,7 +12,11 @@ import { SecondaryText } from '../../../../lib/elements/text';
 export function AdvertBarComponent(props) {
   const { advertImageURL } = props;
   return (
-    <AdvertBarLayout advertImageURL={advertImageURL}>
+    <AdvertBarLayout
+      advertImageURL={
+        'https://upload.wikimedia.org/wikipedia/commons/f/f3/Mono_Crater_closeup-1000px.jpeg'
+      }
+    >
       <AdvertInfoCardLayout>
         <AdvertInfoCardText tid="ADVERT.ADVERT_INFO" />
       </AdvertInfoCardLayout>
@@ -35,7 +39,7 @@ const AdvertInfoCardLayout = styled(PrimaryBox)`
   width: 85px;
   height: 36px;
   background-color: ${THEME_COLOR.COLOR.PRIMARY};
-  opacity: 0.5;
+  opacity: 0.8;
   display: flex;
   align-items: center;
   justify-content: center;
