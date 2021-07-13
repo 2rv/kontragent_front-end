@@ -27,6 +27,7 @@ import DIALOGS from './dialogs.json';
 import MY_LEGAL_ENTITIES from './my-legal-entities.json';
 import MY_SUPPORT_REQUEST_LIST from './my-support-request-list.json';
 import BOOK_REVIEW_LIST from './book-review-list.json';
+import KONTRAGENT_CHECKS from './kontragent-checks.json';
 
 export const RU = {
   translation: {
@@ -59,5 +60,6 @@ export const RU = {
     MY_LEGAL_ENTITIES,
     MY_SUPPORT_REQUEST_LIST,
     BOOK_REVIEW_LIST,
+    KONTRAGENT_CHECKS,
   },
 };

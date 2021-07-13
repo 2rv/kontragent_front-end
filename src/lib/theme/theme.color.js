@@ -11,6 +11,7 @@ export const THEME_COLOR = {
     INFO: '#2F80ED',
     VALIDATION: '#EB5757',
     PREMIUM: '#9B51E0',
+    PURPLE: '#9B51E0',
   },
 
   COLOR: {
