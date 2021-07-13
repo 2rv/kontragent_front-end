@@ -1,11 +1,12 @@
 import styled from 'styled-components';
-import { MyVerificationListContainer } from './frame';
+import { MyVerificationRequestsListHeaderFilterComponent, MyVerificationListContainer } from './frame';
 import { spacing } from '../../lib/theme';
 
 export function MyVerificationRequestsListComponent(props) {
   const { myVerificationListData } = props;
   return (
     <Container>
+      <MyVerificationRequestsListHeaderFilterComponent />
       <MyVerificationListContainer
         myVerificationListData={myVerificationListData}
       />
