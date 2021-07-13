@@ -9,7 +9,7 @@ import { PrimaryDivider } from '../../../../lib/elements/divider';
 import { PrimaryText } from '../../../../lib/elements/text';
 import { PrimaryBox } from '../../../../lib/elements/box';
 import { TextButton } from '../../../../lib/elements/button';
-import { SelectField } from '../../../../lib/elements/field';
+import { SecondarySelect } from '../../../../lib/elements/field';
 
 const options = [
   { id: 1, tid: 'Сначала новые' },
@@ -21,7 +21,7 @@ export function ArbitrationCardItemComponent() {
     <Сontent>
       <Header>
         <TitlePrimary tid="DASHBOARD_CARD.ARBITRATION" />
-        <SelectField option={options} />
+        <SecondarySelect option={options} />
       </Header>
       <PrimaryDivider />
       <ContentCase>

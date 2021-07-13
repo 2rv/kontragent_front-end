@@ -2,13 +2,29 @@ import styled from 'styled-components';
 
 import { ReactComponent as File } from '../../../../asset/svg/file.svg';
 
-import { SelectField, PrimaryField, TextareaField } from '../../../../lib/elements/field';
-import { PrimaryTitleText, PrimaryText, SecondaryText } from '../../../../lib/elements/text';
-import { PrimaryButton, SecondaryButton } from '../../../../lib/elements/button';
+import {
+  SecondarySelect,
+  PrimaryField,
+  TextareaField,
+} from '../../../../lib/elements/field';
+import {
+  PrimaryTitleText,
+  PrimaryText,
+  SecondaryText,
+} from '../../../../lib/elements/text';
+import {
+  PrimaryButton,
+  SecondaryButton,
+} from '../../../../lib/elements/button';
 import { PrimaryBox } from '../../../../lib/elements/box';
 import { IndentLayout, SectionLayout } from '../../../../lib/elements/layout';
 
-import { spacing, THEME_COLOR, THEME_SIZE, THEME_VALUE } from '../../../../lib/theme';
+import {
+  spacing,
+  THEME_COLOR,
+  THEME_SIZE,
+  THEME_VALUE,
+} from '../../../../lib/theme';
 
 export function NewLawyerRequestFormComponent(props) {
   const {
@@ -29,12 +45,17 @@ export function NewLawyerRequestFormComponent(props) {
             <PrimaryTitleText tid="LAWYER_REQUEST.FORM.TITLE" />
 
             <FieldContainer>
-              <SelectField
+              <SecondarySelect
                 titleTid="LAWYER_REQUEST.FORM.FIELDS.TITLES.QUESTION_CATEGORY"
                 name={fieldQuestionCategory}
                 onChange={handleChange}
                 onBlur={handleBlur}
-                option={[{ id: 1, tid: 'LAWYER_REQUEST.FORM.FIELDS.SELECT_OPTIONS.QUESTION_CATEGORY.PROTECT_FROM_ATTACKS' }]}
+                option={[
+                  {
+                    id: 1,
+                    tid: 'LAWYER_REQUEST.FORM.FIELDS.SELECT_OPTIONS.QUESTION_CATEGORY.PROTECT_FROM_ATTACKS',
+                  },
+                ]}
               />
             </FieldContainer>
             <FieldContainer>
@@ -69,7 +90,10 @@ export function NewLawyerRequestFormComponent(props) {
 
             <ButtonFields>
               <PrimaryButton tid="LAWYER_REQUEST.FORM.FIELDS.BUTTONS.SEND_AND_PAY" />
-              <SecondaryButton tid="LAWYER_REQUEST.FORM.FIELDS.BUTTONS.WATCH_MY_QUESTIONS" type="button" />
+              <SecondaryButton
+                tid="LAWYER_REQUEST.FORM.FIELDS.BUTTONS.WATCH_MY_QUESTIONS"
+                type="button"
+              />
             </ButtonFields>
           </form>
         </SectionLayout>
@@ -120,4 +144,3 @@ const ButtonFields = styled.div`
   grid-template-columns: 1fr 1fr;
   grid-column-gap: ${spacing(4)};
 `;
-

@@ -10,8 +10,8 @@ import { PrimaryText } from '../../../../lib/elements/text';
 import { PrimaryBox } from '../../../../lib/elements/box';
 import { IconButton, TextButton } from '../../../../lib/elements/button';
 import { ReactComponent as StarIcon } from '../../../../asset/svg/star-icon.svg';
-import { SelectField } from '../../../../lib/elements/field';
-import { useState } from 'react';
+import { SecondarySelect } from '../../../../lib/elements/field';
+
 const items = [
   {
     title: `ООО "ТЕХЭЛЕКТРО МСК"`,
@@ -38,7 +38,7 @@ export function MyCounterpartiesCardItemComponent() {
     <Сontent>
       <Header>
         <TitlePrimary tid="DASHBOARD_CARD.MY_COUNTERPARTIES" />
-        <SelectField option={options} />
+        <SecondarySelect option={options} />
       </Header>
       <PrimaryDivider />
       <ContentCase>
