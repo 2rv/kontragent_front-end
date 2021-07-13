@@ -33,7 +33,6 @@ import KONTRAGENT_INFORMATION from './kontragent-information.json';
 import LAWYER_REQUEST from './lawyer-request.json';
 import DASHBOARD_CARD from './dashboard-card.json';
 import DASHBOARD from './dashboard.json';
-
 export const RU = {
   translation: {
     META,

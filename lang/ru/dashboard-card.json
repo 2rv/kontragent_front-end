@@ -4,18 +4,26 @@
 	"SERVICE_STATS": "Статистика сервиса за",
 	"DONATES_PER_DAY": "Пополнений за день",
 	"SPENT_BALANCES_DAY": "Потрачено с балансов за день",
-	"REFERRAL_ACCRUALS": "Реферальных зачислений",
 	"STATS_ATTENDANCE": "Статистика посещений",
 	"UNIQUE_USERS": "Уникальных пользователей",
 	"ONLINE_USERS": "Пользователей в сети",
-	"REFERRAL_SYSTEM": "Реферальная система",
 	"IMPORTANT_DIALOGUES": "Важные диалоги",
 	"ARBITRATION": "Арбитраж",
+	"TOTAL_STATS": "Общая статистика",
+	"YOUR_STATS": "Ваша статистика за",
 	"PERIOD": {
 		"DAY": "(Сутки)",
 		"24H": "24ч."
 	},
-	"SHOW_MORE": "Показать больше",
+	"VIEWS_YOUR_CONTERPARTIES": "Просмотров ваших контрагентов",
 	"LEARN_MORE": "Узнать больше",
-	"VALUTE": "руб."
+	"VALUTE": "руб.",
+	"ADD_ACCRUALS": "Доначисления",
+	"TURNOVER": "Оборот",
+	"REFERRAL_ACCRUALS": "Реферальных зачислений",
+	"REFERRAL_OPPERATIONS": "Операций реферальных пользователей",
+	"REFERRAL_SYSTEM": "Реферальная система",
+	"SHOW_MORE": "Показать больше",
+	"ARBITRATION_DIALOGUES": "Арбитраж",
+	"MY_COUNTERPARTIES": "Мои контрагенты"
 }
