@@ -30,6 +30,7 @@ import BOOK_REVIEW_LIST from './book-review-list.json';
 import KONTRAGENT_CHECKS from './kontragent-checks.json';
 import REFERRAL from './referral.json';
 import KONTRAGENT_INFORMATION from './kontragent-information.json';
+import LAWYER_REQUEST from './lawyer-request.json';
 
 export const RU = {
   translation: {
@@ -65,5 +66,6 @@ export const RU = {
     KONTRAGENT_CHECKS,
     REFERRAL,
     KONTRAGENT_INFORMATION,
+    LAWYER_REQUEST,
   },
 };
