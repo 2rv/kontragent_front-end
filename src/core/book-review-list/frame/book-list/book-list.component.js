@@ -21,11 +21,11 @@ export function BookListComponent(props) {
       {(isPending || pageLoading) && <PrimaryLoader />}
       <SectionLayout>
         <Columns>
-          <SecondaryText>Загружена</SecondaryText>
-          <SecondaryText>Период книги</SecondaryText>
-          <SecondaryText>Ваше юр. лицо</SecondaryText>
-          <SecondaryText>Тип книги</SecondaryText>
-          <SecondaryText>Контрагентов</SecondaryText>
+          <SecondaryText tid="BOOK_REVIEW_LIST.TABLE.LOADED" />
+          <SecondaryText tid="BOOK_REVIEW_LIST.TABLE.BOOK_PERIOD" />
+          <SecondaryText tid="BOOK_REVIEW_LIST.TABLE.YOUR_LEGAL_ENTITY" />
+          <SecondaryText tid="BOOK_REVIEW_LIST.TABLE.BOOK_TYPE" />
+          <SecondaryText tid="BOOK_REVIEW_LIST.TABLE.COUNTERPARTIES" />
         </Columns>
         <Divider />
         {isPending || pageLoading ? (
