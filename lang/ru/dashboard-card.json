@@ -1,0 +1,21 @@
+{
+	"QUANTITATIVE_STATS": "Количественная статистика",
+	"NEW_CONTERPARTIES_DAY": "Новых контрагентов за день с учётом нерешенных.",
+	"SERVICE_STATS": "Статистика сервиса за",
+	"DONATES_PER_DAY": "Пополнений за день",
+	"SPENT_BALANCES_DAY": "Потрачено с балансов за день",
+	"REFERRAL_ACCRUALS": "Реферальных зачислений",
+	"STATS_ATTENDANCE": "Статистика посещений",
+	"UNIQUE_USERS": "Уникальных пользователей",
+	"ONLINE_USERS": "Пользователей в сети",
+	"REFERRAL_SYSTEM": "Реферальная система",
+	"IMPORTANT_DIALOGUES": "Важные диалоги",
+	"ARBITRATION": "Арбитраж",
+	"PERIOD": {
+		"DAY": "(Сутки)",
+		"24H": "24ч."
+	},
+	"SHOW_MORE": "Показать больше",
+	"LEARN_MORE": "Узнать больше",
+	"VALUTE": "руб."
+}

@@ -31,6 +31,8 @@ import KONTRAGENT_CHECKS from './kontragent-checks.json';
 import REFERRAL from './referral.json';
 import KONTRAGENT_INFORMATION from './kontragent-information.json';
 import LAWYER_REQUEST from './lawyer-request.json';
+import DASHBOARD_CARD from './dashboard-card.json';
+import DASHBOARD from './dashboard.json';
 
 export const RU = {
   translation: {
@@ -67,5 +69,7 @@ export const RU = {
     REFERRAL,
     KONTRAGENT_INFORMATION,
     LAWYER_REQUEST,
+    DASHBOARD_CARD,
+    DASHBOARD,
   },
 };
