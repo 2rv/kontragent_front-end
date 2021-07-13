@@ -56,6 +56,10 @@ import {
   myRequestsJuristsListStore,
   MY_REQUESTS_JURISTS_LIST_STORE_NAME,
 } from '../../core/my-requests-jurists-list';
+import {
+  themeArbitrationStore,
+  THEME_ARBITRATION_STORE_NAME,
+} from '../../core/theme-arbitration';
 import { captchaStore, CAPTCHA_STORE_NAME } from '../../lib/common/captcha';
 
 export const reducers = combineReducers({
@@ -77,6 +81,7 @@ export const reducers = combineReducers({
   [SETTINGS_2FA_STORE_NAME]: settings2FAStore,
   [MY_REQUESTS_JURISTS_LIST_STORE_NAME]: myRequestsJuristsListStore,
   [CAPTCHA_STORE_NAME]: captchaStore,
+  [THEME_ARBITRATION_STORE_NAME]: themeArbitrationStore,
 });
 
 export { initStore } from './store.core';
