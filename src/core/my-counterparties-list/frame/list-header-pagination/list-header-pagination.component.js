@@ -11,7 +11,7 @@ export function ListHeaderPaginationComponent(props) {
       {paginationButtonArray.map((page) => (
         <Button
           type="button"
-          disabled={disabled}
+          disabled={!disabled}
           pageActive={page === currentPage}
         >
           {page}
