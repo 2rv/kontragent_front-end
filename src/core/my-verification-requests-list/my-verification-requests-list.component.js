@@ -1,5 +1,8 @@
 import styled from 'styled-components';
-import { MyVerificationRequestsListHeaderFilterComponent, MyVerificationListContainer } from './frame';
+import {
+  MyVerificationRequestsListHeaderFilterComponent,
+  MyVerificationListContainer,
+} from './frame';
 import { spacing } from '../../lib/theme';
 
 export function MyVerificationRequestsListComponent(props) {
@@ -15,6 +18,7 @@ export function MyVerificationRequestsListComponent(props) {
 }
 
 const Container = styled.div`
+  width: 100%;
   display: flex;
   flex-direction: column;
   gap: ${spacing(4)};

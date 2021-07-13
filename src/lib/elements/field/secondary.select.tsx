@@ -9,7 +9,7 @@ export function SecondarySelect(props: SecondarySelectPropsType) {
   const { onChange, option } = props;
   return (
     <SelectWrapper>
-      <Select onChange={(e) => onChange(e.target.value)}>
+      <Select>
         {option.map((e, index) => (
           <option key={e.tid + index} value={e.id}>
             {text(e.tid, e.tvalue)}
