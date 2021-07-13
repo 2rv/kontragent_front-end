@@ -23,7 +23,6 @@ export function bookReviewListStore(state = initialState, action) {
         ...state,
         bookReviewList: setRequestSuccess(state.bookReviewList, action.data),
       };
-      s;
 
     case BOOK_REVIEW_LIST_ACTION_TYPE.BOOK_REVIEW_LIST_LOAD_REQUEST_ERROR:
       return {
