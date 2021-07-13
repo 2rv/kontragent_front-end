@@ -41,6 +41,7 @@ export function SignupContainer() {
       [SIGNUP_FIELD_NAME.EMAIL]: '',
       [SIGNUP_FIELD_NAME.PASSWORD_REPEAT]: '',
       [SIGNUP_FIELD_NAME.FULLNAME]: '',
+      [SIGNUP_FIELD_NAME.CAPTCHA]: '',
     };
   };
 

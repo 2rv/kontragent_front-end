@@ -56,6 +56,7 @@ import {
   myRequestsJuristsListStore,
   MY_REQUESTS_JURISTS_LIST_STORE_NAME,
 } from '../../core/my-requests-jurists-list';
+import { captchaStore, CAPTCHA_STORE_NAME } from '../../lib/common/captcha';
 
 export const reducers = combineReducers({
   [AUTH_STORE_NAME]: authStore,
@@ -75,6 +76,7 @@ export const reducers = combineReducers({
   [ARBITRATION_REQUESTS_LIST_STORE_NAME]: arbitrationRequestsListStore,
   [SETTINGS_2FA_STORE_NAME]: settings2FAStore,
   [MY_REQUESTS_JURISTS_LIST_STORE_NAME]: myRequestsJuristsListStore,
+  [CAPTCHA_STORE_NAME]: captchaStore,
 });
 
 export { initStore } from './store.core';

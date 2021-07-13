@@ -7,6 +7,7 @@ import { PrimaryButton } from '../../../../lib/elements/button';
 import { ErrorAlert } from '../../../../lib/elements/alert';
 import { PrimaryLoader } from '../../../../lib/elements/loader';
 import { SuccessAlert } from '../../../../lib/elements/alert';
+import { CaptchaFieldContainer } from '../../../../lib/common/captcha';
 
 export function SignupFormComponent(props) {
   const {
@@ -24,6 +25,8 @@ export function SignupFormComponent(props) {
     fieldPasswordRepeat,
     fieldEmail,
     fieldFullname,
+    fieldCaptcha,
+
     pageLoading,
     isSuccess,
     isPending,
@@ -97,6 +100,16 @@ export function SignupFormComponent(props) {
               value={values[fieldPasswordRepeat]}
               error={isFieldError(fieldPasswordRepeat)}
               type="password"
+            />
+
+            <CaptchaFieldContainer
+              titleTid="SIGNUP.SIGNUP_FORM.FIELD.CAPTCHA.TITLE"
+              placeholderTid="SIGNUP.SIGNUP_FORM.FIELD.CAPTCHA.PLACEHOLDER"
+              name={fieldCaptcha}
+              onChange={handleChange}
+              onBlur={handleBlur}
+              value={values[fieldCaptcha]}
+              error={isFieldError(fieldCaptcha)}
             />
           </FieldLayout>
           <PrimaryButton
