@@ -1,2 +1,2 @@
-import { DashboardComponent } from '../../core/dashboard';
-export default DashboardComponent;
+import { DashboardPage } from '../../core/dashboard';
+export default DashboardPage;
