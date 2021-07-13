@@ -44,8 +44,7 @@ const Title: typeof SecondaryText = styled(SecondaryText)`
 `;
 
 const Container = styled.div`
-  display: flex;
-  flex-direction: column;
+  display: grid;
 `;
 
 const InputError: typeof ErrorMessage = styled(ErrorMessage)`
