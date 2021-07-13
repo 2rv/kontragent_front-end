@@ -1,7 +1,7 @@
 import { THEME_SIZE } from 'src/lib/theme';
 import styled, { keyframes } from 'styled-components';
-import { SkeletonPropsType } from './type.skeleton';
-export function FieldSkeleton(props: SkeletonPropsType) {
+import { ListSkeletonPropsType } from './type.skeleton';
+export function FieldSkeleton(props: ListSkeletonPropsType) {
   return <Skeleton className={props.className} />;
 }
 

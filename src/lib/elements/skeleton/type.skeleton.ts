@@ -1,3 +1,3 @@
-export interface SkeletonPropsType {
+export interface ListSkeletonPropsType {
   className?: any;
 }
