@@ -17,7 +17,7 @@ export function ListHeaderComponent(props) {
             totalPages={4}
             disabled={true}
           />
-          <PrimaryButton tid="Заказать проверку" />
+          <Button tid="Заказать проверку" />
         </PaginationAndOrderVerificationContainer>
       </HeaderCase>
       <InputCase>
@@ -27,7 +27,9 @@ export function ListHeaderComponent(props) {
     </Container>
   );
 }
-
+const Button = styled(PrimaryButton)`
+  width: 226px;
+`;
 const Title = styled(PrimaryTitleText)`
   font-size: ${THEME_SIZE.FONT.HUGE};
 `;

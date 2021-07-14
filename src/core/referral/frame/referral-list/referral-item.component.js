@@ -69,7 +69,7 @@ const Avatar = styled.img`
 const Container = styled(PrimaryBox)`
   display: flex;
   justify-content: space-between;
-  background-color: ${THEME_COLOR.COLOR.BACKGROUND};
+  background-color: ${THEME_COLOR.COLOR.SECONDARY};
   padding: ${spacing(3)} ${spacing(4)};
   align-items: center;
 `;
