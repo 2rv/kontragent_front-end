@@ -10,35 +10,37 @@ import { PrimaryDivider } from '../../../../lib/elements/divider';
 import { PrimaryField } from '../../../../lib/elements/field';
 import { ReactComponent as SendIcon } from '../../../../asset/svg/send-icon.svg';
 import { ReactComponent as FileIcon } from '../../../../asset/svg/file-icon.svg';
+import { SectionLayout } from '../../../../lib/elements/layout';
+
 export function NewsCommentComponent(props) {
   const { newsComment, myAvatar } = props;
   return (
-    <Container>
+    <SectionLayout type="MEDIUM">
       <Title tid="Комментарии" />
-      <CommentList>
+      <SectionLayout type="MEDIUM">
         {newsComment.map(({ avatar, author, time, text }) => (
-          <CommentItem>
+          <CommentItem type="MEDIUM">
             <Avatar src={avatar} />
-            <ContentCase>
+            <CommentText type="MEDIUM">
               <Author tid={author} />
               <Text tid={text} />
               <Time tid={time} />
               <PrimaryDivider />
-            </ContentCase>
+            </CommentText>
           </CommentItem>
         ))}
-      </CommentList>
+      </SectionLayout>
       <FooterCase>
         <Avatar src={myAvatar} />
         <FieldCase>
-          <Field placeholderTid="Написать комментарий" />
+          <PrimaryField placeholderTid="Написать комментарий" />
           <ActionsCase>
             <FileIcon />
             <SendIcon />
           </ActionsCase>
         </FieldCase>
       </FooterCase>
-    </Container>
+    </SectionLayout>
   );
 }
 const ActionsCase = styled.div`
@@ -55,47 +57,36 @@ const FieldCase = styled.div`
   width: 100%;
   align-items: center;
 `;
-const Field = styled(PrimaryField)``;
 const CommentItem = styled.div`
   display: flex;
   gap: ${spacing(4)};
-  align-items: flex-start;
 `;
-const FooterCase = styled(CommentItem)`
+const FooterCase = styled.div`
+  display: flex;
+  gap: ${spacing(4)};
+  margin-top: ${spacing(3)};
   align-items: center;
 `;
 const Author = styled(PrimaryText)`
   font-weight: ${THEME_VALUE.FONT_WEIGHT.MEDIUM};
 `;
+const CommentText = styled(SectionLayout)`
+  margin-top: ${spacing(2)};
+`;
 const Text = styled(SecondaryText)`
   font-size: ${THEME_SIZE.FONT.SMALL};
-`;
-const ContentCase = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: ${spacing(3)};
+  line-height: 1.5;
 `;
 const Avatar = styled.img`
   width: 56px;
   height: 56px;
   border-radius: ${THEME_SIZE.RADIUS.CIRCLE};
 `;
-
-const CommentList = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: ${spacing(3)};
-`;
-const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: ${spacing(3)};
-`;
 const Title = styled(PrimaryText)`
   font-size: ${THEME_SIZE.FONT.MEDIUM};
   font-weight: ${THEME_VALUE.FONT_WEIGHT.SEMY_BOLD};
+  line-height: 1.5;
 `;
-const Time = styled(PrimaryText)`
-  font-size: ${THEME_SIZE.FONT.SMALL};
+const Time = styled(SecondaryText)`
   color: ${THEME_COLOR.COLOR.LIGHT_GREY};
 `;

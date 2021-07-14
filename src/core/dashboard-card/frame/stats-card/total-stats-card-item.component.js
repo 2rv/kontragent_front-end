@@ -7,19 +7,18 @@ import {
 } from '../../../../lib/theme';
 import { PrimaryDivider } from '../../../../lib/elements/divider';
 import { PrimaryText } from '../../../../lib/elements/text';
-import { PrimaryBox } from '../../../../lib/elements/box';
-import { IconButton } from '../../../../lib/elements/button';
 import { ReactComponent as OptionIcon } from '../../../../asset/svg/option-icon.svg';
 import { PrimaryLink } from '../../../../lib/elements/link';
 
-export function QuantitativeStatsCardItemComponent() {
+export function TotalStatsCardItemComponent() {
   return (
-    <Сontent>
+    <Container>
       <Header>
         <TitleCase>
-          <TitlePrimary tid="DASHBOARD_CARD.QUANTITATIVE_STATS" />
+          <TitlePrimary tid="DASHBOARD_CARD.TOTAL_STATS" />
+          <TitleSecondary tid="DASHBOARD_CARD.PERIOD.DAY" />
         </TitleCase>
-        <IconButton icon={OptionIcon} />
+        <OptionIcon />
       </Header>
       <PrimaryDivider />
       <ContentCase>
@@ -30,22 +29,22 @@ export function QuantitativeStatsCardItemComponent() {
           <TextCase>
             <TinyTextPrimary tid="250" />
             &nbsp;
-            <TinyTextSecondary tid="DASHBOARD_CARD.NEW_CONTERPARTIES_DAY" />
+            <TinyTextSecondary tid="DASHBOARD_CARD.VIEWS_YOUR_CONTERPARTIES" />
           </TextCase>
           <Link tid="DASHBOARD_CARD.LEARN_MORE" />
         </Column>
       </ContentCase>
-    </Сontent>
+    </Container>
   );
 }
 const Link = styled(PrimaryLink)`
   color: ${THEME_COLOR.TEXT.ACCENT};
 `;
 const Diagram = styled.div`
-  width: 100%;
-  height: 100%;
-  border: 5px solid blueviolet;
-  border-radius: 100%;
+  height: 72px;
+  width: 72px;
+  border: 10px solid ${THEME_COLOR.COLOR.ACCENT};
+  border-radius: ${THEME_SIZE.RADIUS.CIRCLE};
 `;
 const DiagramCase = styled.div`
   height: 72px;
@@ -58,7 +57,7 @@ const TextCase = styled.span`
 const Column = styled.div`
   display: flex;
   flex-direction: column;
-  gap: ${spacing(2)};
+  gap: ${spacing(3)};
 `;
 const ContentCase = styled.div`
   display: flex;
@@ -68,6 +67,9 @@ const ContentCase = styled.div`
 const TitlePrimary = styled(PrimaryText)`
   font-weight: ${THEME_VALUE.FONT_WEIGHT.SEMY_BOLD};
   color: ${THEME_COLOR.TEXT.PRIMARY};
+`;
+const TitleSecondary = styled(TitlePrimary)`
+  color: ${THEME_COLOR.TEXT.SECONDARY};
 `;
 const TinyTextPrimary = styled(TitlePrimary)`
   font-size: ${THEME_SIZE.FONT.TINY};
@@ -79,18 +81,14 @@ const TinyTextSecondary = styled(PrimaryText)`
 const Header = styled.div`
   display: flex;
   justify-content: space-between;
-  align-items: center;
 `;
 const TitleCase = styled.div`
   display: flex;
   gap: ${spacing(1)};
   align-items: baseline;
 `;
-const Сontent = styled(PrimaryBox)`
-  height: 100%;
+const Container = styled.div`
   display: flex;
   flex-direction: column;
-  gap: ${spacing(2)};
-  padding: ${spacing(4)};
-  box-shadow: 0px 15px 75px rgba(0, 0, 0, 0.1);
+  gap: ${spacing(3)};
 `;

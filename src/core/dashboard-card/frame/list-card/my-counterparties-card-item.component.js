@@ -6,10 +6,8 @@ import {
   THEME_VALUE,
 } from '../../../../lib/theme';
 import { PrimaryDivider } from '../../../../lib/elements/divider';
-import { PrimaryBox } from '../../../../lib/elements/box';
 import { PrimaryLink } from '../../../../lib/elements/link';
 import { PrimaryText, SecondaryText } from '../../../../lib/elements/text';
-import { ReactComponent as ApprovedCompanyIcon } from '../../../../asset/svg/approvedCompanyIcon.svg';
 import { ReactComponent as IconStar } from '../../../../asset/svg/star-icon.svg';
 
 const myCounterpartiesListData = [
@@ -36,7 +34,7 @@ const myCounterpartiesListData = [
 ];
 export function MyCounterpartiesCardItemComponent() {
   return (
-    <Сontent>
+    <Container>
       <Header>
         <TitlePrimary tid="DASHBOARD_CARD.MY_COUNTERPARTIES" />
       </Header>
@@ -49,7 +47,7 @@ export function MyCounterpartiesCardItemComponent() {
         </List>
         <ShowMore tid="DASHBOARD_CARD.SHOW_MORE" />
       </ContentCase>
-    </Сontent>
+    </Container>
   );
 }
 
@@ -79,12 +77,11 @@ const Header = styled.div`
   justify-content: space-between;
   align-items: center;
 `;
-const Сontent = styled(PrimaryBox)`
+const Container = styled.div`
   height: max-content;
   display: flex;
   flex-direction: column;
   gap: ${spacing(3)};
-  padding: ${spacing(4)};
 `;
 
 export function CounterpartiesListItemComponent(props) {

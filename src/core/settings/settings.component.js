@@ -7,6 +7,7 @@ import { SettingsPasswordContainer } from '../settings-password';
 import { SettingsAdvertContainer } from '../settings-advert';
 import { SettingsNotificationContainer } from '../settings-notification';
 import { SettingsAvatarContainer } from '../settings-avatar';
+import { SectionLayout } from '../../lib/elements/layout';
 
 import { PrimaryBox } from '../../lib/elements/box';
 import { PrimaryTitleText } from '../../lib/elements/text';
@@ -14,40 +15,34 @@ import { spacing } from '../../lib/theme';
 
 export function SettingsComponent() {
   return (
-    <div>
-      <SectionTitle tid="Настройки безопасности" />
-      <Container>
+    <Container type="LARGE">
+      <PrimaryTitleText tid="Настройки безопасности" />
+      <PrimaryBox>
         <Settings2FAContainer />
-      </Container>
-      <Container>
+      </PrimaryBox>
+      <PrimaryBox>
         <SettingEmailContainer />
-      </Container>
-      <Container>
+      </PrimaryBox>
+      <PrimaryBox>
         <SettingsPhoneContainer />
-      </Container>
-      <Container>
+      </PrimaryBox>
+      <PrimaryBox>
         <SettingsPasswordContainer />
-      </Container>
-      <SectionTitle tid="Другое" />
-      <Container>
+      </PrimaryBox>
+      <PrimaryTitleText tid="Другое" />
+      <PrimaryBox>
         <SettingsAdvertContainer />
-      </Container>
-      <Container>
+      </PrimaryBox>
+      <PrimaryBox>
         <SettingsNotificationContainer />
-      </Container>
-      <SectionTitle tid="Персонализация" />
-      <Container>
+      </PrimaryBox>
+      <PrimaryTitleText tid="Персонализация" />
+      <PrimaryBox>
         <SettingsAvatarContainer />
-      </Container>
-    </div>
+      </PrimaryBox>
+    </Container>
   );
 }
-
-const SectionTitle = styled(PrimaryTitleText)`
-  margin-bottom: ${spacing(6)};
-`;
-
-const Container = styled(PrimaryBox)`
-  width: 500px;
-  margin: ${spacing(6)} 0;
+const Container = styled(SectionLayout)`
+  width: 100%;
 `;

@@ -7,25 +7,32 @@ import {
 } from '../../../../lib/theme';
 import { PrimaryDivider } from '../../../../lib/elements/divider';
 import { PrimaryText } from '../../../../lib/elements/text';
-import { PrimaryBox } from '../../../../lib/elements/box';
-import { IconButton } from '../../../../lib/elements/button';
+import { PrimaryButton } from '../../../../lib/elements/button';
 import { ReactComponent as FindIcon } from '../../../../asset/svg/find-icon.svg';
 
 export function ApplicationCardItemComponent() {
   return (
-    <Сontent>
+    <Container>
       <Header>
         <TitlePrimary tid="DASHBOARD_CARD.IMPORTANT_DIALOGUES" />
-        <IconButton icon={FindIcon} />
+        <Button>
+          <FindIcon />
+        </Button>
       </Header>
       <PrimaryDivider />
       <ContentCase>
         <DialogList>Заглушка сюда нужен список диалогов</DialogList>
       </ContentCase>
-    </Сontent>
+    </Container>
   );
 }
-
+const Container = styled.div``;
+const Button = styled(PrimaryButton)`
+  width: 40px;
+  height: 40px;
+  padding: ${spacing(2.5)};
+  background-color: ${THEME_COLOR.COLOR.PRIMARY};
+`;
 const DialogList = styled.div`
   height: 266px;
   width: 100%;
@@ -44,12 +51,4 @@ const Header = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-`;
-const Сontent = styled(PrimaryBox)`
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: ${spacing(2)};
-  padding: ${spacing(4)};
-  box-shadow: 0px 15px 75px rgba(0, 0, 0, 0.1);
 `;

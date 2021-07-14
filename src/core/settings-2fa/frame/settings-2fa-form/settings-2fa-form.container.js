@@ -19,24 +19,22 @@ export function Settings2FAFormContainer(props) {
   const PHONE_NUMBER = fieldName[SETTINGS_2FA_FORM_FIELD_KEY.PHONE_NUMBER];
 
   return (
-    <div>
-      <Formik
-        initialValues={initialValue}
-        validate={validation}
-        onSubmit={onSubmitForm}
-      >
-        {(props) => (
-          <Settings2FAFormComponent
-            fieldPhoneNumber={PHONE_NUMBER}
-            pageLoading={pageLoading}
-            isPending={isPending}
-            isError={isError}
-            isSuccess={isSuccess}
-            errorMessage={errorMessage}
-            {...props}
-          />
-        )}
-      </Formik>
-    </div>
+    <Formik
+      initialValues={initialValue}
+      validate={validation}
+      onSubmit={onSubmitForm}
+    >
+      {(props) => (
+        <Settings2FAFormComponent
+          fieldPhoneNumber={PHONE_NUMBER}
+          pageLoading={pageLoading}
+          isPending={isPending}
+          isError={isError}
+          isSuccess={isSuccess}
+          errorMessage={errorMessage}
+          {...props}
+        />
+      )}
+    </Formik>
   );
 }

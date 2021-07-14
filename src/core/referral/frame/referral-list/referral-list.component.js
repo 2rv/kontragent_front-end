@@ -9,35 +9,21 @@ import { PrimaryTitleText } from '../../../../lib/elements/text';
 import { PrimaryBox } from '../../../../lib/elements/box';
 import { ReactComponent as OptionIcon } from '../../../../asset/svg/option-icon.svg';
 import { ReferralItemComponent } from './referral-item.component';
+import { IndentLayout, SectionLayout } from '../../../../lib/elements/layout';
 
 export function ReferralListComponent({ referralItems }) {
   return (
-    <Container>
-      <HeaderCase>
-        <PrimaryTitleText tid="REFERRAL.REFERRAL_LIST" />
-        <OptionIcon />
-      </HeaderCase>
-      <Content>
-        {referralItems.map((item, index) => (
-          <ReferralItemComponent key={item?.id || index} {...item} />
-        ))}
-      </Content>
-    </Container>
+    <SectionLayout type="LARGE">
+      <PrimaryTitleText tid="REFERRAL.REFERRAL_LIST" />
+      <PrimaryBox>
+        <IndentLayout>
+          <SectionLayout>
+            {referralItems.map((item, index) => (
+              <ReferralItemComponent key={item?.id || index} {...item} />
+            ))}
+          </SectionLayout>
+        </IndentLayout>
+      </PrimaryBox>
+    </SectionLayout>
   );
 }
-const HeaderCase = styled.div`
-  gap: ${spacing(3)};
-  display: flex;
-  align-items: center;
-`;
-const Container = styled.div`
-  gap: ${spacing(6)};
-  display: flex;
-  flex-direction: column;
-`;
-const Content = styled(PrimaryBox)`
-  padding: ${spacing(6)};
-  gap: ${spacing(4.5)};
-  display: flex;
-  flex-direction: column;
-`;

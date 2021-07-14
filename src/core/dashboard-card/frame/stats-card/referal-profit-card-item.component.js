@@ -9,7 +9,7 @@ import { PrimaryDivider } from '../../../../lib/elements/divider';
 import { PrimaryText } from '../../../../lib/elements/text';
 import { PrimaryBox } from '../../../../lib/elements/box';
 
-export function ReferalAccountCardItemComponent() {
+export function ReferalProfitCardItemComponent() {
   return (
     <Container>
       <Title tid="REFERRAL.REFERRAL_ACCOUNTS" />
@@ -66,11 +66,9 @@ const ValuteText = styled(PrimaryText)`
   color: ${THEME_COLOR.COLOR.LIGHT_GREY};
 `;
 const Container = styled(PrimaryBox)`
-  height: 149px;
-  width: 338px;
+  height: 118px;
+  width: 308px;
   display: flex;
   flex-direction: column;
   gap: ${spacing(2)};
-  padding: ${spacing(5)};
-  box-shadow: 0px 15px 75px rgba(0, 0, 0, 0.1);
 `;

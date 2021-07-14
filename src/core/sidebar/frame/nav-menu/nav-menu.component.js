@@ -28,7 +28,7 @@ export function NavMenuComponent(props) {
 const Container = styled(SectionLayout)`
   display: flex;
   flex-direction: column;
-  gap: ${spacing(4.5)};
+  gap: ${spacing(4)};
 `;
 const NavMenuLink = styled(PrimaryLink)`
   color: ${(props) =>

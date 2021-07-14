@@ -26,8 +26,8 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   gap: ${spacing(6)};
-  padding: ${spacing(8)};
   height: 100%;
+  width: 100%;
 `;
 const Desctiption = styled(SecondaryText)`
   font-size: ${THEME_SIZE.FONT.DEFAULT};

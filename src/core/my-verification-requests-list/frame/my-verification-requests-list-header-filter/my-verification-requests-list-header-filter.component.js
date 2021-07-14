@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import {  SecondarySelect } from '../../../../lib/elements/field';
+import { SecondarySelect } from '../../../../lib/elements/field';
 import { PrimaryInput } from '../../../../lib/elements/input';
 import { SecondaryButton } from '../../../../lib/elements/button';
 import { PrimaryTitleText } from '../../../../lib/elements/text';
@@ -38,7 +38,7 @@ const Title = styled(PrimaryTitleText)`
 
 const PaginationCase = styled.div`
   display: flex;
-  gap: ${spacing(3.5)};
+  gap: ${spacing(3)};
 `;
 const Button = styled(SecondaryButton)`
   background-color: ${({ pageActived }) =>
@@ -64,12 +64,12 @@ const HeaderCase = styled.div`
 const InputCase = styled.div`
   display: grid;
   grid-template-columns: 1fr minmax(auto, 229px);
-  gap: ${spacing(4.5)};
+  gap: ${spacing(4)};
   width: 100%;
 `;
 
 const Container = styled.div`
   display: flex;
   flex-direction: column;
-  gap: ${spacing(4.5)};
+  gap: ${spacing(4)};
 `;

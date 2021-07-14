@@ -30,6 +30,6 @@ const Background = styled.div`
   bottom: 0;
   left: 0;
   right: 0;
-  height: 336px;
+  height: 50%;
   background-color: ${THEME_COLOR.COLOR.ACCENT};
 `;

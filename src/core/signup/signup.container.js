@@ -31,7 +31,7 @@ export function SignupContainer() {
   }));
   const signupFormSendData = (values) => {
     const data = convertSignupFormData(values);
-    dispatch(signupFormUploadData(data));
+    // dispatch(signupFormUploadData(data));
   };
 
   const getInitialValue = () => {

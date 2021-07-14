@@ -7,13 +7,12 @@ import {
 } from '../../../../lib/theme';
 import { PrimaryDivider } from '../../../../lib/elements/divider';
 import { PrimaryText, SecondaryText } from '../../../../lib/elements/text';
-import { PrimaryBox } from '../../../../lib/elements/box';
 import { ReactComponent as FindIcon } from '../../../../asset/svg/find-icon.svg';
 import { PrimaryLink } from '../../../../lib/elements/link';
-
+import { SectionLayout } from '../../../../lib/elements/layout';
 export function ReferalCardItemComponent() {
   return (
-    <Сontent>
+    <SectionLayout type="MEDIUM">
       <Header>
         <TitleCase>
           <TitlePrimary tid="DASHBOARD_CARD.REFERRAL_SYSTEM" />
@@ -38,7 +37,7 @@ export function ReferalCardItemComponent() {
         </Column>
         <Link tid="DASHBOARD_CARD.SHOW_MORE" />
       </ContentCase>
-    </Сontent>
+    </SectionLayout>
   );
 }
 const Link = styled(PrimaryLink)`
@@ -79,10 +78,4 @@ const TitleCase = styled.div`
   display: flex;
   gap: ${spacing(1)};
   align-items: baseline;
-`;
-const Сontent = styled(PrimaryBox)`
-  display: flex;
-  flex-direction: column;
-  gap: ${spacing(3)};
-  padding: ${spacing(4)};
 `;

@@ -20,21 +20,19 @@ export function SettingsFormChangeEmailContainer(props) {
       settingsEmailFieldName[SETTINGS_FORM_CHANGE_EMAIL_FIELD_KEY.PASSWORD];
 
   return (
-    <div>
-      <Formik initialValues={initialValue}>
-        {(props) => (
-          <SettingsFormChangeEmailComponent
-            fieldEmail={EMAIL_NAME}
-            fieldPassword={PASSWORD_NAME}
-            pageLoading={pageLoading}
-            isPending={isPending}
-            isError={isError}
-            isSuccess={isSuccess}
-            errorMessage={errorMessage}
-            {...props}
-          />
-        )}
-      </Formik>
-    </div>
+    <Formik initialValues={initialValue}>
+      {(props) => (
+        <SettingsFormChangeEmailComponent
+          fieldEmail={EMAIL_NAME}
+          fieldPassword={PASSWORD_NAME}
+          pageLoading={pageLoading}
+          isPending={isPending}
+          isError={isError}
+          isSuccess={isSuccess}
+          errorMessage={errorMessage}
+          {...props}
+        />
+      )}
+    </Formik>
   );
 }

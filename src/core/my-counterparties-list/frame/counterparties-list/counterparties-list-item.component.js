@@ -32,12 +32,12 @@ export function CounterpartiesListItemComponent(props) {
             </IsApproved>
             <CompanyName>{company}</CompanyName>
             <CompanyName>{userCompany}</CompanyName>
-            <Sum>
+            <MediumText>
               {turnover} <Text> руб.</Text>
-            </Sum>
-            <Sum>
+            </MediumText>
+            <MediumText>
               {addCharges} <Text> руб.</Text>
-            </Sum>
+            </MediumText>
             <Text>{risks ? risks : 'Нет'}</Text>
             <Rating>
               {[1, 2, 3, 4, 5].map((item, index) => (
@@ -64,6 +64,7 @@ const Rating = styled.div`
 
 const Text = styled(SecondaryText)`
   font-size: ${THEME_SIZE.FONT.DEFAULT};
+  line-height: 1.5;
 `;
 
 const IsApproved = styled.div`
@@ -97,10 +98,12 @@ const Container = styled.div`
   transition: border ${THEME_SIZE.TRANSACTION.DEFAULT} ease;
 `;
 
-const Sum = styled(PrimaryText)`
+const MediumText = styled(PrimaryText)`
   font-weight: ${THEME_VALUE.FONT_WEIGHT.MEDIUM};
+  line-height: 1.5;
 `;
 
 const CompanyName = styled(PrimaryText)`
   font-weight: ${THEME_VALUE.FONT_WEIGHT.MEDIUM};
+  line-height: 1.5;
 `;

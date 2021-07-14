@@ -17,20 +17,18 @@ export function AccountInfoFormContainer(props) {
   const FULLNAME_NAME =
     accountInfoFormFieldName[ACCOUNT_INFO_FORM_FIELD_KEY.FULLNAME_NAME];
   return (
-    <div>
-      <Formik initialValues={props.initialValue}>
-        {(props) => (
-          <AccountInfoFormComponent
-            fieldFullName={FULLNAME_NAME}
-            {...props}
-            isPending={isPending}
-            isError={isError}
-            isSuccess={isSuccess}
-            errorMessage={errorMessage}
-            pageLoading={pageLoading}
-          />
-        )}
-      </Formik>
-    </div>
+    <Formik initialValues={props.initialValue}>
+      {(props) => (
+        <AccountInfoFormComponent
+          fieldFullName={FULLNAME_NAME}
+          {...props}
+          isPending={isPending}
+          isError={isError}
+          isSuccess={isSuccess}
+          errorMessage={errorMessage}
+          pageLoading={pageLoading}
+        />
+      )}
+    </Formik>
   );
 }

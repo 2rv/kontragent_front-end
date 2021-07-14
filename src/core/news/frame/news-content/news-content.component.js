@@ -6,41 +6,37 @@ import {
   THEME_SIZE,
   THEME_VALUE,
 } from '../../../../lib/theme';
+import { SectionLayout } from '../../../../lib/elements/layout';
 
 export function NewsContentComponent(props) {
   const { primary, secondary, base, image } = props.newsContent;
   return (
-    <Container>
-      <Primary tid={primary[0]} />
-      <Secondary tid={secondary[0]} />
-      <Secondary tid={secondary[1]} />
+    <SectionLayout type="MEDIUM">
+      <Paragraph tid={primary[0]} />
+      <Text tid={secondary[0]} />
+      <Text tid={secondary[1]} />
       <Image src={image[0]} />
-      <Primary tid={primary[1]} />
-      <Secondary tid={secondary[2]} />
-      <Primary tid={primary[2]} />
-      <Secondary tid={secondary[3]} />
+      <Paragraph tid={primary[1]} />
+      <Text tid={secondary[2]} />
+      <Paragraph tid={primary[2]} />
+      <Text tid={secondary[3]} />
       <Base tid={base[0]} />
       <Image src={image[1]} />
-    </Container>
+    </SectionLayout>
   );
 }
-const Primary = styled(PrimaryText)`
-  font-size: ${THEME_SIZE.FONT.DEFAULT};
+const Paragraph = styled(PrimaryText)`
+  font-weight: ${THEME_VALUE.FONT_WEIGHT.MEDIUM};
 `;
-const Secondary = styled(SecondaryText)`
-  font-size: ${THEME_SIZE.FONT.SMALL};
-  line-height: 21px;
+const Text = styled(SecondaryText)`
+  line-height: 1.5;
 `;
-const Base = styled(PrimaryText)`
-  font-size: ${THEME_SIZE.FONT.SMALL};
+const Base = styled(SecondaryText)`
+  color: ${THEME_COLOR.TEXT.PRIMARY};
+  line-height: 1.5;
 `;
 const Image = styled.img`
   width: 100%;
   height: 288px;
   border-radius: ${THEME_SIZE.RADIUS.DEFAULT};
-`;
-const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: ${spacing(3)};
 `;

@@ -8,18 +8,21 @@ import {
 import { PrimaryDivider } from '../../../../lib/elements/divider';
 import { PrimaryText } from '../../../../lib/elements/text';
 import { PrimaryBox } from '../../../../lib/elements/box';
-import { IconButton } from '../../../../lib/elements/button';
+import { PrimaryButton } from '../../../../lib/elements/button';
 import { ReactComponent as FindIcon } from '../../../../asset/svg/find-icon.svg';
 import { PrimaryLink } from '../../../../lib/elements/link';
 
 export function AttendanceStatsCardItemComponent() {
   return (
-    <Сontent>
+    <Container>
       <Header>
         <TitleCase>
           <TitlePrimary tid="DASHBOARD_CARD.STATS_ATTENDANCE" />
         </TitleCase>
-        <IconButton icon={FindIcon} />
+
+        <Button>
+          <FindIcon />
+        </Button>
       </Header>
       <PrimaryDivider />
       <ContentCase>
@@ -37,9 +40,15 @@ export function AttendanceStatsCardItemComponent() {
           <Link tid="DASHBOARD_CARD.SHOW_MORE" />
         </Column>
       </ContentCase>
-    </Сontent>
+    </Container>
   );
 }
+const Button = styled(PrimaryButton)`
+  width: 40px;
+  height: 40px;
+  padding: ${spacing(2.5)};
+  background-color: ${THEME_COLOR.COLOR.PRIMARY};
+`;
 const Link = styled(PrimaryLink)`
   font-size: ${THEME_SIZE.FONT.TINY};
   color: ${THEME_COLOR.TEXT.SECONDARY};
@@ -82,11 +91,8 @@ const TitleCase = styled.div`
   gap: ${spacing(1)};
   align-items: baseline;
 `;
-const Сontent = styled(PrimaryBox)`
-  height: 100%;
+const Container = styled.div`
   display: flex;
   flex-direction: column;
   gap: ${spacing(2)};
-  padding: ${spacing(4)};
-  box-shadow: 0px 15px 75px rgba(0, 0, 0, 0.1);
 `;

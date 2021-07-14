@@ -17,10 +17,10 @@ export function DashboardComponent() {
 }
 
 const Content = styled.div`
+  width: 100%;
   position: relative;
   display: flex;
   flex-direction: column;
-  height: 100%;
   gap: ${spacing(8)};
 `;
 const Background = styled.div`

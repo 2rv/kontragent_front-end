@@ -31,7 +31,7 @@ export function CompanyMembersListComponent(props) {
 const List = styled.div`
   display: flex;
   flex-direction: column;
-  gap: ${spacing(4.5)};
+  gap: ${spacing(4)};
 `;
 const Title = styled(PrimaryText)`
   font-size: ${THEME_SIZE.FONT.MEDIUM};

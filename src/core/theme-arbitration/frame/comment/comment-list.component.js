@@ -21,22 +21,24 @@ export function CommentListComponent(props) {
     errorMessage,
     dataComment,
   } = props;
+
+  (isPending || pageLoading) && <PrimaryLoader />;
+
   return (
-    <React.Fragment>
-      {(isPending || pageLoading) && <PrimaryLoader />}
-      <Container>
-        {isPending || pageLoading ? (
-          <ListSkeleton />
-        ) : (
-          dataComment.map((item, index) => (
+    <Container>
+      {isPending || pageLoading ? (
+        <ListSkeleton />
+      ) : (
+        dataComment.map((item, index) => (
           <CommentItemComponent key={item?.id || index} {...item} />
-        )))}
-      </Container>
-    </React.Fragment>
+        ))
+      )}
+    </Container>
   );
 }
 const Container = styled.div`
   display: flex;
+  height: 100%;
   gap: ${spacing(4)};
   align-items: flex-start;
   flex-direction: column;

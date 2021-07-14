@@ -87,6 +87,7 @@ const NameCompany = styled(PrimaryText)`
 
 const ContentCase = styled.div`
   display: flex;
+  height: 100%;
   flex-direction: column;
   gap: ${spacing(8)};
   padding: ${spacing(8)};
@@ -95,7 +96,7 @@ const ContentCase = styled.div`
 `;
 const LineCase = styled.div`
   display: flex;
-  gap: ${spacing(2.5)};
+  gap: ${spacing(2)};
 `;
 const HeaderCase = styled.div`
   display: flex;

@@ -60,11 +60,9 @@ const ValuteText = styled(PrimaryText)`
   font-size: 18px;
 `;
 const Container = styled(PrimaryBox)`
-  height: 130px;
-  width: 391px;
+  height: 98px;
+  width: 360px;
   display: flex;
   gap: ${spacing(3)};
-  padding: ${spacing(5)};
   justify-content: space-between;
-  box-shadow: 0px 15px 75px rgba(0, 0, 0, 0.1);
 `;

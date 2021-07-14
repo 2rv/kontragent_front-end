@@ -7,12 +7,11 @@ import {
 } from '../../../../lib/theme';
 import { PrimaryDivider } from '../../../../lib/elements/divider';
 import { PrimaryText, SecondaryText } from '../../../../lib/elements/text';
-import { PrimaryBox } from '../../../../lib/elements/box';
 import { ReactComponent as FindIcon } from '../../../../asset/svg/find-icon.svg';
 
 export function MyStatsCardItemComponent() {
   return (
-    <Сontent>
+    <Container>
       <Header>
         <TitlePrimary>
           <TitlePrimary tid="DASHBOARD_CARD.YOUR_STATS" />
@@ -51,7 +50,7 @@ export function MyStatsCardItemComponent() {
           </TinyPrimaryText>
         </Column>
       </ContentCase>
-    </Сontent>
+    </Container>
   );
 }
 const Column = styled.div`
@@ -83,9 +82,8 @@ const Header = styled.div`
   display: flex;
   justify-content: space-between;
 `;
-const Сontent = styled(PrimaryBox)`
+const Container = styled.div`
   display: flex;
   flex-direction: column;
   gap: ${spacing(3)};
-  padding: ${spacing(4)};
 `;

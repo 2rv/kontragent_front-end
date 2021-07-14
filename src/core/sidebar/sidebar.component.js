@@ -21,11 +21,16 @@ export function SidebarComponent() {
         <PrimaryDivider />
         <NavMenuContainer />
       </Content>
-      <SidebarAdvertContainer />
+      <AdvertCase>
+        <SidebarAdvertContainer />
+      </AdvertCase>
     </Container>
   );
 }
-
+const AdvertCase = styled.div`
+  height: 286px;
+  width: 286px;
+`;
 const Container = styled.div`
   height: 100%;
   width: 100%;
@@ -33,7 +38,7 @@ const Container = styled.div`
   flex-direction: column;
   background-color: ${THEME_COLOR.COLOR.BASE};
   padding: ${spacing(8)};
-  gap: ${spacing(8.5)};
+  gap: ${spacing(8)};
 `;
 const Content = styled.div`
   height: 100%;

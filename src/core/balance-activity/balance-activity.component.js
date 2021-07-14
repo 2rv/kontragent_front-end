@@ -5,10 +5,11 @@ import {
   PrimaryTitleText,
 } from '../../lib/elements/text';
 import { spacing, THEME_COLOR, THEME_SIZE, THEME_VALUE } from '../../lib/theme';
-import { ReactComponent as OptionIcon } from '../../asset/svg/option-icon-30x30.svg';
 import { ReactComponent as FindIcon } from '../../asset/svg/find-icon-15x15.svg';
 import { ReactComponent as KIcon } from '../../asset/svg/k-icon.svg';
 import { PrimaryButton } from '../../lib/elements/button';
+import { IndentLayout, SectionLayout } from '../../lib/elements/layout';
+import { PrimaryBox } from '../../lib/elements/box';
 
 export function BalanceActivityComponent({ activityItems, balance }) {
   return (
@@ -16,38 +17,39 @@ export function BalanceActivityComponent({ activityItems, balance }) {
       <HeaderCase>
         <TitleCase>
           <Title tid="BALANCE.BALANCE_ACTIVITY.TITLE" />
-          <Balace tid={balance} />
+          <Balance tid={balance} />
           <Valute tid="BALANCE.BALANCE_ACTIVITY.VALUTE" />
         </TitleCase>
-        <ActionCase>
-          <IconButton>
-            <OptionIcon />
-          </IconButton>
-          <Button tid="BALANCE.BALANCE_ACTIVITY.BUTTON" />
-        </ActionCase>
+        <Button tid="BALANCE.BALANCE_ACTIVITY.BUTTON" />
       </HeaderCase>
       <ContentCase>
         {activityItems.map(({ operation, time, sentMoney, check = false }) => {
           return (
-            <ItemCase>
-              <InfoCase>
-                <ItemImageIcon altColor={check}>
-                  {check ? <FindIcon /> : <KIcon />}
-                </ItemImageIcon>
-                <ItemInfoCase>
-                  <ItemTitle tid={operation} />
-                  <ItemText tid={time} />
-                </ItemInfoCase>
-              </InfoCase>
-              {sentMoney && <SentMoney tid={`-${sentMoney}`} />}
-            </ItemCase>
+            <PrimaryBox>
+              <IndentLayout type="STANDART">
+                <ItemCase>
+                  <InfoCase>
+                    <ItemImageIcon altColor={check}>
+                      {check ? <WhiteFindIcon /> : <KIcon />}
+                    </ItemImageIcon>
+                    <ItemInfoCase>
+                      <ItemTitle tid={operation} />
+                      <ItemText tid={time} />
+                    </ItemInfoCase>
+                  </InfoCase>
+                  {sentMoney && <SentMoney tid={`-${sentMoney}`} />}
+                </ItemCase>
+              </IndentLayout>
+            </PrimaryBox>
           );
         })}
       </ContentCase>
     </Container>
   );
 }
-
+const WhiteFindIcon = styled(FindIcon)`
+  fill: ${THEME_COLOR.COLOR.BASE};
+`;
 const Container = styled.div`
   display: flex;
   flex-direction: column;
@@ -68,32 +70,23 @@ const TitleCase = styled.div`
 const Title = styled(PrimaryTitleText)`
   font-size: ${THEME_SIZE.FONT.HUGE};
 `;
-const Balace = styled(PrimaryTitleText)`
+const Balance = styled(PrimaryTitleText)`
   font-size: ${THEME_SIZE.FONT.HUGE};
   color: ${THEME_COLOR.TEXT.ACCENT};
 `;
 const Valute = styled(SecondaryText)`
   font-size: ${THEME_SIZE.FONT.SMALL};
 `;
-const ActionCase = styled.div`
-  display: flex;
-  gap: ${spacing(4)};
-  align-items: center;
-`;
-const IconButton = styled.div``;
 const Button = styled(PrimaryButton)`
-  padding: ${spacing(3)} ${spacing(10)};
+  width: 226px;
 `;
 const ContentCase = styled.div`
   display: grid;
-  gap: ${spacing(4.5)};
+  gap: ${spacing(4)};
 `;
 const ItemCase = styled.div`
   display: flex;
   justify-content: space-between;
-  background-color: ${THEME_COLOR.COLOR.BASE};
-  border-radius: ${THEME_SIZE.RADIUS.DEFAULT};
-  padding: ${spacing(4)};
   align-items: center;
 `;
 const InfoCase = styled.div`

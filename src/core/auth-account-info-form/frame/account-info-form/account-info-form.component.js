@@ -43,7 +43,7 @@ export function AccountInfoFormComponent(props) {
   };
 
   return (
-    <React.Fragment>
+    <>
       {(isPending || pageLoading) && <PrimaryLoader />}
       <form onSubmit={handleSubmit}>
         <SectionLayout>
@@ -73,7 +73,6 @@ export function AccountInfoFormComponent(props) {
               disabled={isSubmitDisabled()}
             />
           </SectionLayout>
-
           {(isError || errorMessage) && (
             <ErrorAlert tid={`ERROR.${errorMessage}`} />
           )}
@@ -83,7 +82,7 @@ export function AccountInfoFormComponent(props) {
           )}
         </SectionLayout>
       </form>
-    </React.Fragment>
+    </>
   );
 }
 

@@ -29,5 +29,5 @@ export function ArbitrationListComponent(props) {
 const Container = styled.div`
   display: flex;
   flex-direction: column;
-  gap: ${spacing(4.5)};
+  gap: ${spacing(4)};
 `;

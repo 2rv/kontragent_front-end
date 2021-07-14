@@ -7,7 +7,6 @@ import {
 } from '../../../../lib/theme';
 import { PrimaryDivider } from '../../../../lib/elements/divider';
 import { PrimaryText } from '../../../../lib/elements/text';
-import { PrimaryBox } from '../../../../lib/elements/box';
 import { TextButton } from '../../../../lib/elements/button';
 import { SecondarySelect } from '../../../../lib/elements/field';
 
@@ -18,7 +17,7 @@ const options = [
 ];
 export function ArbitrationCardItemComponent() {
   return (
-    <Сontent>
+    <Container>
       <Header>
         <TitlePrimary tid="DASHBOARD_CARD.ARBITRATION" />
         <SecondarySelect option={options} />
@@ -30,9 +29,10 @@ export function ArbitrationCardItemComponent() {
         </ConterpartiesList>
         <ShowMoreButton tid="DASHBOARD_CARD.SHOW_MORE" />
       </ContentCase>
-    </Сontent>
+    </Container>
   );
 }
+const Container = styled.div``;
 const DialogList = styled.div`
   height: 172px;
   width: 100%;
@@ -63,12 +63,4 @@ const Header = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-`;
-const Сontent = styled(PrimaryBox)`
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: ${spacing(2)};
-  padding: ${spacing(4)};
-  box-shadow: 0px 15px 75px rgba(0, 0, 0, 0.1);
 `;

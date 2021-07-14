@@ -45,54 +45,47 @@ export function SettingsFormChangePhoneComponent(props) {
   return (
     <React.Fragment>
       {(isPending || pageLoading) && <PrimaryLoader />}
-      <Container>
-        <IndentLayout>
-          <SectionLayout>
-            <SecondaryTitleText tid="SETTINGS.PHONE.TITLE" />
-            <form onSubmit={handleSubmit}>
-              <SectionLayout>
-                <PrimaryField
-                  titleTid="SETTINGS.PHONE.FIELD.PHONE_NUMBER.TITLE"
-                  placeholderTid="SETTINGS.PHONE.FIELD.PHONE_NUMBER.PLACEHOLDER"
-                  name={fieldPhoneNumber}
-                  onChange={handleChange}
-                  onBlur={handleBlur}
-                  value={values[fieldPhoneNumber]}
-                  error={isFieldError(fieldPhoneNumber)}
-                />
+      <IndentLayout>
+        <SectionLayout>
+          <SecondaryTitleText tid="SETTINGS.PHONE.TITLE" />
+          <form onSubmit={handleSubmit}>
+            <SectionLayout>
+              <PrimaryField
+                titleTid="SETTINGS.PHONE.FIELD.PHONE_NUMBER.TITLE"
+                placeholderTid="SETTINGS.PHONE.FIELD.PHONE_NUMBER.PLACEHOLDER"
+                name={fieldPhoneNumber}
+                onChange={handleChange}
+                onBlur={handleBlur}
+                value={values[fieldPhoneNumber]}
+                error={isFieldError(fieldPhoneNumber)}
+              />
 
-                <PrimaryField
-                  titleTid="SETTINGS.PHONE.FIELD.PASSWORD.TITLE"
-                  placeholderTid="SETTINGS.PHONE.FIELD.PASSWORD.PLACEHOLDER"
-                  name={fieldPassword}
-                  onChange={handleChange}
-                  onBlur={handleBlur}
-                  value={values[fieldPassword]}
-                  error={isFieldError(fieldPassword)}
-                />
+              <PrimaryField
+                titleTid="SETTINGS.PHONE.FIELD.PASSWORD.TITLE"
+                placeholderTid="SETTINGS.PHONE.FIELD.PASSWORD.PLACEHOLDER"
+                name={fieldPassword}
+                onChange={handleChange}
+                onBlur={handleBlur}
+                value={values[fieldPassword]}
+                error={isFieldError(fieldPassword)}
+              />
 
-                <SecondaryButton
-                  tid="SETTINGS.PHONE.BUTTON"
-                  disabled={isSubmitDisabled()}
-                />
+              <SecondaryButton
+                tid="SETTINGS.PHONE.BUTTON"
+                disabled={isSubmitDisabled()}
+              />
 
-                {(isError || errorMessage) && (
-                  <ErrorAlert tid={`ERROR.${errorMessage}`} />
-                )}
+              {(isError || errorMessage) && (
+                <ErrorAlert tid={`ERROR.${errorMessage}`} />
+              )}
 
-                {isSuccess && (
-                  <SuccessAlert tid={'SETTINGS.PHONE.SUCCESS_MESSAGE'} />
-                )}
-              </SectionLayout>
-            </form>
-          </SectionLayout>
-        </IndentLayout>
-      </Container>
+              {isSuccess && (
+                <SuccessAlert tid={'SETTINGS.PHONE.SUCCESS_MESSAGE'} />
+              )}
+            </SectionLayout>
+          </form>
+        </SectionLayout>
+      </IndentLayout>
     </React.Fragment>
   );
 }
-
-const Container = styled(PrimaryBox)`
-  width: 500px;
-  margin: ${spacing(6)} 0;
-`;

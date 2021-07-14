@@ -17,7 +17,7 @@ import { spacing } from '../../../../lib/theme';
 
 export function AccountVerificationStatusComponent() {
   return (
-    <SectionLayout>
+    <SectionLayout type="MEDIUM">
       <PrimaryBox>
         <IndentLayout>
           <Header tid="AUTH_ACCOUNT_VERIFICATION_STATUS.HEADER" />
@@ -28,7 +28,7 @@ export function AccountVerificationStatusComponent() {
           <Button tid="AUTH_ACCOUNT_VERIFICATION_STATUS.BUTTON" />
         </IndentLayout>
       </PrimaryBox>
-      <ErrorAlert />
+      <ErrorAlert tid="Ошибка. Проерьте данные" />
     </SectionLayout>
   );
 }

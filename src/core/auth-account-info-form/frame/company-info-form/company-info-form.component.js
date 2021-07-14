@@ -2,7 +2,7 @@ import React from 'react';
 
 import styled from 'styled-components';
 import { THEME_COLOR, THEME_SIZE, THEME_VALUE } from '../../../../lib/theme';
-
+import { PrimaryDivider } from '../../../../lib/elements/divider';
 import { SectionLayout } from '../../../../lib/elements/layout';
 import { FieldLayout } from '../../../../lib/elements/layout';
 import { PrimaryField } from '../../../../lib/elements/field';
@@ -29,16 +29,10 @@ export function CompanyInfoFormComponent() {
         />
         <DeleteItemAction tid="AUTH_ACCOUNT_INFO_FORM.COMPANY_INFO_FORM.FORM_ACTION" />
       </FieldLayout>
-      <Line />
+      <PrimaryDivider />
     </SectionLayout>
   );
 }
-
-const Line = styled.div`
-  height: 2px;
-  background-color: ${THEME_COLOR.COLOR.SECONDARY};
-  border-radius: 30px;
-`;
 
 const DeleteItemAction = styled(TextButton)`
   text-decoration-line: underline;

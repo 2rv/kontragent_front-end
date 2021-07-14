@@ -45,14 +45,14 @@ const HeaderCase = styled.div`
 const InputCase = styled.div`
   display: grid;
   grid-template-columns: 1fr minmax(auto, 250px);
-  gap: ${spacing(4.5)};
+  gap: ${spacing(4)};
   width: 100%;
 `;
 
 const Container = styled.div`
   display: flex;
   flex-direction: column;
-  gap: ${spacing(4.5)};
+  gap: ${spacing(4)};
 `;
 
 const FieldContainer = styled.div`

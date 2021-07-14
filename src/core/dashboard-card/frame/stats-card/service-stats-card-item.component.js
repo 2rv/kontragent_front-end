@@ -7,19 +7,20 @@ import {
 } from '../../../../lib/theme';
 import { PrimaryDivider } from '../../../../lib/elements/divider';
 import { PrimaryText } from '../../../../lib/elements/text';
-import { PrimaryBox } from '../../../../lib/elements/box';
-import { IconButton } from '../../../../lib/elements/button';
+import { PrimaryButton } from '../../../../lib/elements/button';
 import { ReactComponent as FindIcon } from '../../../../asset/svg/find-icon.svg';
 
 export function ServiceStatsCardItemComponent() {
   return (
-    <Сontent>
+    <Container>
       <Header>
         <TitleCase>
           <TitlePrimary tid="DASHBOARD_CARD.SERVICE_STATS" />
           <TitlePrimary tid="DASHBOARD_CARD.PERIOD.24H" />
         </TitleCase>
-        <IconButton icon={FindIcon} />
+        <Button>
+          <FindIcon />
+        </Button>
       </Header>
       <PrimaryDivider />
       <ContentCase>
@@ -58,9 +59,15 @@ export function ServiceStatsCardItemComponent() {
           </TextCase>
         </Column>
       </ContentCase>
-    </Сontent>
+    </Container>
   );
 }
+const Button = styled(PrimaryButton)`
+  width: 40px;
+  height: 40px;
+  padding: ${spacing(2.5)};
+  background-color: ${THEME_COLOR.COLOR.PRIMARY};
+`;
 const TextCase = styled.span`
   display: flex;
 `;
@@ -99,11 +106,9 @@ const TitleCase = styled.div`
   gap: ${spacing(1)};
   align-items: baseline;
 `;
-const Сontent = styled(PrimaryBox)`
+const Container = styled.div`
   height: 100%;
   display: flex;
   flex-direction: column;
   gap: ${spacing(2)};
-  padding: ${spacing(4)};
-  box-shadow: 0px 15px 75px rgba(0, 0, 0, 0.1);
 `;

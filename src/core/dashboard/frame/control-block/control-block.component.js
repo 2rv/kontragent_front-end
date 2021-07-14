@@ -6,46 +6,53 @@ import {
   THEME_VALUE,
 } from '../../../../lib/theme';
 import { PrimaryTitleText, SecondaryText } from '../../../../lib/elements/text';
-import { DashboardCardContainer } from '../dashboard-card';
-import { IconButton } from '../../../../lib/elements/button';
-import { ReactComponent as PlusIcon } from '../../../../asset/svg/plus-icon.svg';
+import { DashboardCard } from '../../../dashboard-card';
+import { PrimaryButton } from '../../../../lib/elements/button';
+import { ReactComponent as IconPlus } from '../../../../asset/svg/plus-icon.svg';
+import { SectionLayout } from '../../../../lib/elements/layout';
 
 export function ControlBlockComponent() {
   return (
-    <Container>
+    <SectionLayout type="LARGE">
       <Title tid="DASHBOARD.CONTROL_BLOCK_TITLE" />
       <Content>
         <PrimaryCase>
-          <DashboardCardContainer type="total" />
-          <DashboardCardContainer type="my" />
-          <DashboardCardContainer type="referal" />
+          <DashboardCard type="total" />
+          <DashboardCard type="my" />
+          <DashboardCard type="referal" />
         </PrimaryCase>
         <SecondaryCase>
-          <DashboardCardContainer type="counterparties" />
-          <DashboardCardContainer type="counterparties" />
+          <DashboardCard type="counterparties" />
+          <DashboardCard type="counterparties" />
         </SecondaryCase>
       </Content>
-      <Footer>
-        <Button icon={PlusIcon} />
-        <TextButton tid="DASHBOARD.ADD_BLOCK" />
-      </Footer>
-    </Container>
+      <Button>
+        <PlusIcon />
+        <ButtonText tid="DASHBOARD.ADD_BLOCK" />
+      </Button>
+    </SectionLayout>
   );
 }
-const TextButton = styled(SecondaryText)`
+const Button = styled(PrimaryButton)`
+  height: 40px;
+  gap: ${spacing(3)};
+  width: max-content;
+  align-items: center;
+  display: flex;
+  background-color: transparent;
+  padding: 0;
+`;
+const ButtonText = styled(SecondaryText)`
   font-size: ${THEME_SIZE.FONT.DEFAULT};
   font-weight: ${THEME_VALUE.FONT_WEIGHT.MEDIUM};
 `;
-const Button = styled(IconButton)`
+const PlusIcon = styled(IconPlus)`
+  width: 40px;
+  height: 40px;
   padding: ${spacing(2.5)};
   background-color: ${THEME_COLOR.COLOR.PRIMARY};
+  border-radius: ${THEME_SIZE.RADIUS.DEFAULT};
 `;
-const Footer = styled.div`
-  display: flex;
-  align-items: center;
-  gap: ${spacing(3)};
-`;
-
 const Title = styled(PrimaryTitleText)`
   font-size: ${THEME_SIZE.FONT.HUGE};
   color: ${THEME_COLOR.TEXT.BASE};
@@ -63,10 +70,4 @@ const SecondaryCase = styled.div`
 const Content = styled.div`
   display: grid;
   gap: ${spacing(8)};
-`;
-
-const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: ${spacing(6)};
 `;

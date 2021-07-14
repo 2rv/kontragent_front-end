@@ -28,22 +28,20 @@ export function SettingsFormChangePasswordContainer(props) {
       ];
 
   return (
-    <div>
-      <Formik initialValues={initialValue}>
-        {(props) => (
-          <SettingsFormChangePasswordComponent
-            fieldNewPassword={NEW_PASSWORD}
-            fieldRepeatNewPassword={REPEAT_NEW_PASSWORD}
-            fieldOldPassword={OLD_PASSWORD}
-            pageLoading={pageLoading}
-            isPending={isPending}
-            isError={isError}
-            isSuccess={isSuccess}
-            errorMessage={errorMessage}
-            {...props}
-          />
-        )}
-      </Formik>
-    </div>
+    <Formik initialValues={initialValue}>
+      {(props) => (
+        <SettingsFormChangePasswordComponent
+          fieldNewPassword={NEW_PASSWORD}
+          fieldRepeatNewPassword={REPEAT_NEW_PASSWORD}
+          fieldOldPassword={OLD_PASSWORD}
+          pageLoading={pageLoading}
+          isPending={isPending}
+          isError={isError}
+          isSuccess={isSuccess}
+          errorMessage={errorMessage}
+          {...props}
+        />
+      )}
+    </Formik>
   );
 }

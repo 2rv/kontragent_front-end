@@ -5,12 +5,9 @@ import {
   THEME_SIZE,
   THEME_VALUE,
 } from '../../../../lib/theme';
-import {
-  PrimaryTitleText,
-  PrimaryText,
-  SecondaryText,
-} from '../../../../lib/elements/text';
+import { PrimaryText, SecondaryText } from '../../../../lib/elements/text';
 import { PrimaryBox } from '../../../../lib/elements/box';
+import { SectionLayout } from '../../../../lib/elements/layout';
 
 export function ReferralItemComponent(props) {
   const { avatar, name, referralSignedData, receivedMonth, receivedAllTime } =
@@ -20,12 +17,13 @@ export function ReferralItemComponent(props) {
     <Container>
       <UserCase>
         <Avatar src={avatar} />
-        <Pair>
+        <SectionLayout type="SMALL">
           <Username tid={name} />
           <ValuteText>
-            Ваш реферал с <SecondaryText tid={referralSignedData} />
+            <ValuteText tid="REFERRAL.YOUR_REFERRAL_FROM" />{' '}
+            <SecondaryText tid={referralSignedData} />
           </ValuteText>
-        </Pair>
+        </SectionLayout>
       </UserCase>
       <MoneyInfoCase>
         <SecondaryText>
@@ -50,12 +48,11 @@ const UserCase = styled.div`
   gap: ${spacing(4)};
   align-items: center;
 `;
-const Pair = styled.div`
+
+const MoneyInfoCase = styled.div`
   display: flex;
   flex-direction: column;
   gap: ${spacing(2)};
-`;
-const MoneyInfoCase = styled(Pair)`
   align-items: flex-end;
 `;
 const ValuteText = styled(SecondaryText)`

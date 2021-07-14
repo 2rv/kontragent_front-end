@@ -39,7 +39,7 @@ const Role = styled(PrimaryText)`
 `;
 const Line = styled.div`
   display: flex;
-  gap: ${spacing(2.5)};
+  gap: ${spacing(2)};
 `;
 const Container = styled.div`
   display: flex;

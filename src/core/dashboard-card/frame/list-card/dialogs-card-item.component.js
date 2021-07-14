@@ -46,7 +46,7 @@ const dialogsListData = [
 
 export function DialogsCardItemComponent() {
   return (
-    <Сontent>
+    <Container>
       <Header>
         <TitlePrimary tid="DASHBOARD_CARD.ARBITRATION_DIALOGUES" />
         <FindIcon />
@@ -59,10 +59,10 @@ export function DialogsCardItemComponent() {
           ))}
         </DialogList>
       </ContentCase>
-    </Сontent>
+    </Container>
   );
 }
-
+const Container = styled.div``;
 const DialogList = styled.div`
   display: flex;
   width: 100%;
@@ -81,13 +81,6 @@ const TitlePrimary = styled(PrimaryText)`
 const Header = styled.div`
   display: flex;
   justify-content: space-between;
-`;
-const Сontent = styled(PrimaryBox)`
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: ${spacing(3)};
-  padding: ${spacing(4)};
 `;
 
 export function ArbitrationListItemComponent(props) {
