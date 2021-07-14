@@ -31,7 +31,6 @@ const FindIcon = styled(IconFind)`
   fill: ${THEME_COLOR.COLOR.BASE};
 `;
 const MainCase = styled.div`
-  margin-top: ${spacing(2)};
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -43,8 +42,7 @@ const ContentCase = styled.div`
 `;
 const Container = styled.div`
   display: flex;
-  border-radius: ${THEME_SIZE.RADIUS.DEFAULT};
-  padding: ${spacing(4)} ${spacing(2)};
+  padding: ${spacing(4)} ${spacing(8)};
   &:hover {
     background-color: ${THEME_COLOR.COLOR.SECONDARY};
   }
@@ -60,6 +58,7 @@ const AvatarCase = styled.div`
 `;
 const Title = styled(SecondaryText)`
   color: ${THEME_COLOR.TEXT.PRIMARY};
+  line-height: 21px;
 `;
 const Time = styled(SecondaryText)`
   color: ${THEME_COLOR.COLOR.LIGHT_GREY};
