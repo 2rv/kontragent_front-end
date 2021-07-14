@@ -19,7 +19,6 @@ export function SignupFormContainer(props) {
   const PASSOWORD_NAME = fieldName[SIGNUP_FORM_FIELD_KEY.PASSWORD];
   const PASSWORD_REPEAT_NAME = fieldName[SIGNUP_FORM_FIELD_KEY.PASSWORD_REPEAT];
   const EMAIL_NAME = fieldName[SIGNUP_FORM_FIELD_KEY.EMAIL];
-  const FULLNAME = fieldName[SIGNUP_FORM_FIELD_KEY.FULLNAME];
   const CAPTCHA_NAME = fieldName[SIGNUP_FORM_FIELD_KEY.CAPTCHA];
 
   return (
@@ -35,7 +34,6 @@ export function SignupFormContainer(props) {
             fieldLogin={LOGIN_NAME}
             fieldPasswordRepeat={PASSWORD_REPEAT_NAME}
             fieldEmail={EMAIL_NAME}
-            fieldFullname={FULLNAME}
             fieldCaptcha={CAPTCHA_NAME}
             {...props}
             isPending={isPending}

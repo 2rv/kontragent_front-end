@@ -104,7 +104,7 @@ const HeaderCase = styled.div`
 `;
 const Container = styled.div`
   display: flex;
-  height: 100vh;
+  height: 100%;
   flex-direction: column;
   gap: ${spacing(6)};
 `;

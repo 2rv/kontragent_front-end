@@ -13,5 +13,4 @@ export function LogotypeComponent() {
 
 const LogotypeComponentImageContainer = styled.div`
   display: flex;
-  justify-content: flex-start;
 `;

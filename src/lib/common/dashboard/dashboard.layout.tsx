@@ -6,52 +6,47 @@ import styled from 'styled-components';
 import { spacing, THEME_COLOR } from 'src/lib/theme';
 
 export function DashboardLayout(props: DashboardLayoutPropsType) {
-  const { children, displayFooter } = props;
+  const { children } = props;
   return (
     <Container>
       <SidebarContainer />
       <Content>
-        <HeaderContainer />
-        <MainContent>
-          <Layout>{children}</Layout>
-        </MainContent>
-        {displayFooter && (
-          <Footer>
-            <FooterContainer />
-          </Footer>
-        )}
+        <Header>
+          <HeaderContainer />
+        </Header>
+        <MainContent>{children}</MainContent>
+        <Footer>
+          <FooterContainer />
+        </Footer>
       </Content>
     </Container>
   );
 }
-const Layout = styled.div`
-  display: flex;
-  width: 100%;
-  height: 100%;
-  padding: ${spacing(8)};
-`;
-const Footer = styled.div`
-  align-self: flex-end;
-  width: 100%;
-`;
-
 const Container = styled.div`
-  display: flex;
   width: 100%;
   height: 100vh;
+  display: grid;
+  grid-template-columns: 350px auto;
 `;
-
 const Content = styled.div`
   display: flex;
   flex-direction: column;
-  width: calc(100vw - 350px);
-  min-width: 500px;
+  width: 100%;
+  min-width: 750px;
   height: 100%;
-`;
-
-const MainContent = styled.div`
   background-color: ${THEME_COLOR.COLOR.SECONDARY};
+`;
+const Header = styled.div`
+  width: 100%;
+  height: 95px;
+`;
+const Footer = styled.div`
+  width: 100%;
+`;
+const MainContent = styled.div`
+  display: flex;
   width: 100%;
   height: 100%;
   position: relative;
+  padding: ${spacing(8)};
 `;

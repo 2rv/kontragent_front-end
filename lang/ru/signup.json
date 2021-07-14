@@ -1,35 +1,31 @@
 {
-  "SIGNUP_FORM": {
-    "FIELD": {
-      "LOGIN": {
-        "TITLE": "Логин",
-        "PLACEHOLDER": "Укажите свой логин"
-      },
-      "PASSWORD": {
-        "TITLE": "Пароль",
-        "PLACEHOLDER": "Password"
-      },
-      "PASSWORD_REPEAT": {
-        "TITLE": "Повторите пароль",
-        "PLACEHOLDER": "Password"
-      },
-      "EMAIL": {
-        "TITLE": "Email",
-        "PLACEHOLDER": "Contragent@gmail.com"
-      },
-      "CAPTCHA": {
-        "TITLE": "CAPTCHA",
-        "PLACEHOLDER": "CAPTCHA"
-      },
-      "FULLNAME": {
-        "TITLE": "FULLNAME",
-        "PLACEHOLDER": "FULLNAME"
-      }
-    },
-    "HEADER": "Создать аккаунт",
-    "BUTTON": "Войти",
-    "SIGNIN_PROPOSAL": "Уже есть аккаунт?",
-    "LINK_TO_SIGN_IN": "Войти",
-    "SUCCESS_MESSAGE": "SUCCESS_MESSAGE"
-  }
+	"SIGNUP_FORM": {
+		"FIELD": {
+			"LOGIN": {
+				"TITLE": "Логин",
+				"PLACEHOLDER": "Укажите свой логин"
+			},
+			"PASSWORD": {
+				"TITLE": "Пароль",
+				"PLACEHOLDER": "Password"
+			},
+			"PASSWORD_REPEAT": {
+				"TITLE": "Повторите пароль",
+				"PLACEHOLDER": "Password"
+			},
+			"EMAIL": {
+				"TITLE": "Email",
+				"PLACEHOLDER": "Contragent@gmail.com"
+			},
+			"CAPTCHA": {
+				"TITLE": "Капча",
+				"PLACEHOLDER": "Введите капчу"
+			}
+		},
+		"HEADER": "Создать аккаунт",
+		"BUTTON": "Войти",
+		"SIGNIN_PROPOSAL": "Уже есть аккаунт?",
+		"LINK_TO_SIGN_IN": "Войти",
+		"SUCCESS_MESSAGE": "Успешно"
+	}
 }

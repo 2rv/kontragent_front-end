@@ -1,4 +1,4 @@
-export const ARBITRATION_REQUESTS_LIST_ROUTE_PATH = '/arbitration-request-list';
+export const ARBITRATION_REQUESTS_LIST_ROUTE_PATH = '/arbitration';
 
 export const ARBITRATION_REQUESTS_LIST_STORE_NAME = 'ARBITRATION_REQUESTS_LIST';
 

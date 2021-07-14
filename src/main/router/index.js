@@ -13,10 +13,13 @@ import { bookReviewListRouter } from '../../core/book-review-list';
 import { balanceDepositRouter } from '../../core/balance-deposit';
 import { arbitrationRequestsListRouter } from '../../core/arbitration-requests-list';
 import { settingsRouter } from '../../core/settings';
-import { ArbitrationCasesRouter } from '../../core/arbitration-cases';
+import { arbitrationCasesRouter } from '../../core/arbitration-cases';
 import { MyRequestsJuristsListRouter } from '../../core/my-requests-jurists-list';
 import { KontragentCommentsRouter } from '../../core/kontragent-comments';
 import { themeArbitrationRouter } from '../../core/theme-arbitration';
+import { dashboardRouter } from '../../core/dashboard';
+import { lawyerRequestRouter } from '../../core/lawyer-request';
+import { kontragentInformationtRouter } from '../../core/kontragent-information';
 
 import { LOGIN_ROUTE_PATH } from '../../core/login';
 import { SIGNUP_ROUTE_PATH } from '../../core/signup';
@@ -36,26 +39,31 @@ import { ARBITRATION_CASES_ROUTE_PATH } from '../../core/arbitration-cases';
 import { MY_REQUESTS_JURISTS_LIST_ROUTE_PATH } from '../../core/my-requests-jurists-list';
 import { KONTRAGENT_COMMENTS_ROUTE_PATH } from '../../core/kontragent-comments';
 import { THEME_ARBITRATION_ROUTE_PATH } from '../../core/theme-arbitration';
+import { DASHBOARD_ROUTE_PATH } from '../../core/dashboard';
+import { LAWYER_REQUEST_ROUTE_PATH } from '../../core/lawyer-request';
+import { KONTRAGENT_INFORMATION_ROUTE_PATH } from '../../core/kontragent-information';
 
 export const routes = {
-  [LOGIN_ROUTE_PATH]: LoginRouter,
-  [SIGNUP_ROUTE_PATH]: SignupRouter,
+  [KONTRAGENT_INFORMATION_ROUTE_PATH]: kontragentInformationtRouter,
+  [LAWYER_REQUEST_ROUTE_PATH]: lawyerRequestRouter,
+  [DASHBOARD_ROUTE_PATH]: dashboardRouter,
+  [ARBITRATION_CASES_ROUTE_PATH]: arbitrationCasesRouter,
+  [ARBITRATION_REQUESTS_LIST_ROUTE_PATH]: arbitrationRequestsListRouter,
   [AUTH_RECOVERY_ACCOUNT_ROUTE_PATH]: AuthRecoveryAccountRouter,
   [AUTH_CHANGE_PASSWORD_ROUTE_PATH]: AuthChangePasswordRouter,
+  [BALANCE_DEPOSIT_ROUTE_PATH]: balanceDepositRouter,
+  [BOOK_REVIEW_LIST_ROUTE_PATH]: bookReviewListRouter,
+  [LOGIN_ROUTE_PATH]: LoginRouter,
+  [SIGNUP_ROUTE_PATH]: SignupRouter,
   [DIALOGS_ROUTE_PATH]: DialogsRouter,
   [MY_COUNTERPARTIES_LIST_ROUTE_PATH]: myCounterpartiesListRouter,
   [MY_LEGAL_ENTITIES_LIST_ROUTE_PATH]: myLegalEntitiesListRouter,
   [MY_SUPPORT_REQUESTS_LIST_ROUTE_PATH]: mySupportRequestsListRouter,
   [MY_VERIFICATION_REQUESTS_LIST_ROUTE_PATH]: myVerificationRequestsListRouter,
   [SUPPORT_CREATE_REQUEST_ROUTE_PATH]: SupportCreateRequestRouter,
-  [BOOK_REVIEW_LIST_ROUTE_PATH]: bookReviewListRouter,
-  [BALANCE_DEPOSIT_ROUTE_PATH]: balanceDepositRouter,
-  [ARBITRATION_REQUESTS_LIST_ROUTE_PATH]: arbitrationRequestsListRouter,
   [SETTINGS_ROUTE_PATH]: settingsRouter,
-  [ARBITRATION_CASES_ROUTE_PATH]: ArbitrationCasesRouter,
   [MY_REQUESTS_JURISTS_LIST_ROUTE_PATH]: MyRequestsJuristsListRouter,
   [KONTRAGENT_COMMENTS_ROUTE_PATH]: KontragentCommentsRouter,
   [THEME_ARBITRATION_ROUTE_PATH]: themeArbitrationRouter,
 };
-
 export const Router = routesInit(routes);
