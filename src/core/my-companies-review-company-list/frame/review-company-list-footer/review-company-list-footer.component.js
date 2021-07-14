@@ -25,13 +25,13 @@ export function ReviewCompanyListFooterComponent(props) {
 const Container = styled.div`
   display: flex;
   align-items: center;
-  column-gap: ${spacing(3)};
+  gap: ${spacing(3)};
 `;
 
 const ButtonTextContainer = styled.div`
   display: flex;
   flex-direction: column;
-  row-gap: ${spacing(2)};
+  gap: ${spacing(2)};
 `;
 
 const ButtonHeader = styled(PrimaryText)`

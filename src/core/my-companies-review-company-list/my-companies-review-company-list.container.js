@@ -7,17 +7,15 @@ import { NAVIGATION_STORE_NAME } from '../../lib/common/navigation/navigation.co
 
 export function MyCompaniesReviewCompanyListContainer() {
   const dispatch = useDispatch();
-  const { reviewCompanyList, pageLoading, settingsChangeEmailState } =
-    useSelector((state) => ({
-      reviewCompanyList:
-        state[MY_COMPANIES_REVIEW_COMPANY_LIST_STORE_NAME].reviewCompanyList,
-      pageLoading: state[NAVIGATION_STORE_NAME].pageLoading,
-    }));
-  useEffect(() => {
-    dispatch(myCompaniesLoadCompaniesData());
-  }, []);
+  //   const { reviewCompanyList, pageLoading, settingsChangeEmailState } =
+  //     useSelector((state) => ({
+  //       reviewCompanyList:
+  //         state[MY_COMPANIES_REVIEW_COMPANY_LIST_STORE_NAME].reviewCompanyList,
+  //       pageLoading: state[NAVIGATION_STORE_NAME].pageLoading,
+  //     }));
+  //   useEffect(() => {
+  //     dispatch(myCompaniesLoadCompaniesData());
+  //   }, []);
 
-  return (
-    <MyCompaniesReviewCompanyListComponent data={reviewCompanyList.data} />
-  );
+  return <MyCompaniesReviewCompanyListComponent />;
 }

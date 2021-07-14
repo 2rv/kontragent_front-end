@@ -8,7 +8,7 @@ import {
 import { PrimaryText, SecondaryText } from '../../../../lib/elements/text';
 import { PrimaryBox } from '../../../../lib/elements/box';
 import { IndentLayout, SectionLayout } from '../../../../lib/elements/layout';
-import { CicleDivider } from '../../../../lib/elements/divider';
+import { CircleDivider } from '../../../../lib/elements/divider';
 import { MY_COMPANIES_REVIEW_COMPANY_LIST_DATA_NAME } from '../../my-companies-review-company-list.constant';
 import { ReactComponent as OptionsIcon } from '../../../../asset/svg/options.svg';
 export function ReviewCompanyListItem(props) {
@@ -19,29 +19,11 @@ export function ReviewCompanyListItem(props) {
           <IndentLayout type="MEDIUM">
             <Container>
               <SectionLayout type="SMALL">
-                <PrimaryText>
-                  {
-                    props.companyData[
-                      MY_COMPANIES_REVIEW_COMPANY_LIST_DATA_NAME.COMPANY_NAME
-                    ]
-                  }
-                </PrimaryText>
+                <PrimaryText>ООО "КАПСТРОЙЭНЕРГОТЕХ"</PrimaryText>
                 <Content>
-                  <Role>
-                    {
-                      props.companyData[
-                        MY_COMPANIES_REVIEW_COMPANY_LIST_DATA_NAME.USER_ROLE
-                      ]
-                    }
-                  </Role>
-                  <CicleDivider />
-                  <SecondaryText>
-                    {
-                      props.companyData[
-                        MY_COMPANIES_REVIEW_COMPANY_LIST_DATA_NAME.CREATE_DATE
-                      ]
-                    }
-                  </SecondaryText>
+                  <Role>Менеджер</Role>
+                  <CircleDivider />
+                  <SecondaryText>с 06.08.2020</SecondaryText>
                 </Content>
               </SectionLayout>
               <IconContainer>
@@ -71,8 +53,8 @@ const Content = styled.div`
   align-items: center;
 `;
 
-const Role = styled(SecondaryText)`::after
-  color: ${THEME_COLOR.TEXT.PRIMARY}
+const Role = styled(SecondaryText)`
+  color: ${THEME_COLOR.TEXT.PRIMARY};
 `;
 
 const Container = styled.div`
