@@ -1,12 +1,12 @@
 import styled from 'styled-components';
-import { spacing, THEME_COLOR } from '../../lib/theme';
-import { NotificationsListContainer } from './frame';
+import { spacing } from '../../lib/theme';
+import { FeedAndNotificationsHeaderComponent, NotificationsListContainer } from './frame';
 
 export function FeedAndNotificationsListComponent(props) {
-  const { feedAndNotificationsListData, feedAndNotificationsListSelectOption } =
-    props;
+  const { feedAndNotificationsListData } = props;
   return (
     <Container>
+      <FeedAndNotificationsHeaderComponent />
       <NotificationsListContainer
         feedAndNotificationsListData={feedAndNotificationsListData}
       />
@@ -17,4 +17,5 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   gap: ${spacing(6)};
+  width: 100%;
 `;

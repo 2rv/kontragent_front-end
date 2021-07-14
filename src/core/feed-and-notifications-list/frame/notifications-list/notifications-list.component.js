@@ -23,7 +23,7 @@ export function NotificationsListComponent(props) {
 const Container = styled.div`
   display: flex;
   flex-direction: column;
-  padding: ${spacing(8)};
   background-color: ${THEME_COLOR.COLOR.BASE};
   border-radius: ${THEME_SIZE.RADIUS.DEFAULT};
+  padding: ${spacing(4)} 0;
 `;
