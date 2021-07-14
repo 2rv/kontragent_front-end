@@ -1,7 +1,6 @@
 import styled from 'styled-components';
-import { spacing, THEME_COLOR } from '../../lib/theme';
-import { BookListContainer } from './frame';
-import { SecondaryButton } from '../../lib/elements/button';
+import { spacing } from '../../lib/theme';
+import { BookReviewHeaderComponent, BookListContainer } from './frame';
 
 export function BookReviewListComponent(props) {
   const {
@@ -15,6 +14,7 @@ export function BookReviewListComponent(props) {
   } = props;
   return (
     <Container>
+      <BookReviewHeaderComponent />
       <BookListContainer
         pageLoading={pageLoading}
         isPending={isPending}

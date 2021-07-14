@@ -1,11 +1,11 @@
 import styled from 'styled-components';
 import { PrimaryBox } from '../../../../lib/elements/box';
 import { PrimaryText, SecondaryText } from '../../../../lib/elements/text';
-import { THEME_COLOR, THEME_SIZE, spacing } from '../../../../lib/theme';
+import { THEME_COLOR, THEME_SIZE, THEME_VALUE, spacing } from '../../../../lib/theme';
 import { ReactComponent as DeleteBookIcon } from '../../../../asset/svg/deletebook.svg';
 import { ReactComponent as LoadBookIcon } from '../../../../asset/svg/loadbook.svg';
 
-export function BookListItem(props) {
+export function BookListItemComponent(props) {
   const { loadDate, bookPeriod, companyName, bookType, kontragentNumber } =
     props;
   return (
@@ -14,10 +14,10 @@ export function BookListItem(props) {
         <Indent>
           <InspectionRequestListItemContainer>
             <LoadDate>{loadDate}</LoadDate>
-            <PrimaryText>{bookPeriod}</PrimaryText>
-            <PrimaryText>{companyName}</PrimaryText>
+            <BoldText>{bookPeriod}</BoldText>
+            <BoldText>{companyName}</BoldText>
             <Text>{bookType}</Text>
-            <PrimaryText>{kontragentNumber}</PrimaryText>
+            <BoldText>{kontragentNumber}</BoldText>
             <BookItemButtonLayout>
               <DeleteBookIcon />
               <LoadBookIcon />
@@ -35,10 +35,6 @@ const BookItemButtonLayout = styled.div`
   justify-content: flex-end;
   gap: ${spacing(3)};
   padding-right: ${spacing(4)};
-`;
-
-const Text = styled(SecondaryText)`
-  font-size: ${THEME_SIZE.FONT.DEFAULT};
 `;
 
 const Indent = styled.div`
@@ -59,6 +55,15 @@ const Container = styled.div`
     border: 1px solid ${THEME_COLOR.COLOR.LIGHT_GREY};
   }
   transition: border ${THEME_SIZE.TRANSACTION.DEFAULT} ease;
+`;
+
+const Text = styled(SecondaryText)`
+  font-size: ${THEME_SIZE.FONT.DEFAULT};
+  font-weight: ${THEME_VALUE.FONT_WEIGHT.MEDIUM};
+`;
+
+const BoldText = styled(PrimaryText)`
+  font-weight: ${THEME_VALUE.FONT_WEIGHT.SEMY_BOLD};
 `;
 
 const LoadDate = styled(Text)`

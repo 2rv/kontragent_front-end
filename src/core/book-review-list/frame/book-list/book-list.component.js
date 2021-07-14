@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { SectionLayout } from '../../../../lib/elements/layout';
-import { BookListItem } from './book-list.item';
+import { BookListItemComponent } from './book-list-item.component';
 import { SecondaryText } from '../../../../lib/elements/text';
 import { spacing, THEME_COLOR } from '../../../../lib/theme';
 import { PrimaryDivider } from '../../../../lib/elements/divider';
@@ -32,7 +32,7 @@ export function BookListComponent(props) {
           <ListSkeleton />
         ) : (
           booksListData.map((company, index) => (
-            <BookListItem
+            <BookListItemComponent
               key={index}
               loadDate={company.loadDate}
               bookPeriod={company.bookPeriod}
