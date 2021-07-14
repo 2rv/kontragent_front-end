@@ -33,6 +33,8 @@ import KONTRAGENT_INFORMATION from './kontragent-information.json';
 import LAWYER_REQUEST from './lawyer-request.json';
 import DASHBOARD_CARD from './dashboard-card.json';
 import DASHBOARD from './dashboard.json';
+import MY_COMPANIES from './my-companies.json';
+
 export const RU = {
   translation: {
     META,
@@ -70,5 +72,6 @@ export const RU = {
     LAWYER_REQUEST,
     DASHBOARD_CARD,
     DASHBOARD,
+    MY_COMPANIES,
   },
 };

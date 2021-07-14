@@ -61,6 +61,10 @@ import {
   THEME_ARBITRATION_STORE_NAME,
 } from '../../core/theme-arbitration';
 import { captchaStore, CAPTCHA_STORE_NAME } from '../../lib/common/captcha';
+import {
+  myCompaniesAddCompanyStore,
+  MY_COMPANIES_ADD_COMPANY_STORE_NAME,
+} from '../../core/my-companies-add-company';
 
 export const reducers = combineReducers({
   [AUTH_STORE_NAME]: authStore,
@@ -82,6 +86,7 @@ export const reducers = combineReducers({
   [MY_REQUESTS_JURISTS_LIST_STORE_NAME]: myRequestsJuristsListStore,
   [CAPTCHA_STORE_NAME]: captchaStore,
   [THEME_ARBITRATION_STORE_NAME]: themeArbitrationStore,
+  [MY_COMPANIES_ADD_COMPANY_STORE_NAME]: myCompaniesAddCompanyStore,
 });
 
 export { initStore } from './store.core';
