@@ -17,6 +17,7 @@ import { ArbitrationCasesRouter } from '../../core/arbitration-cases';
 import { MyRequestsJuristsListRouter } from '../../core/my-requests-jurists-list';
 import { KontragentCommentsRouter } from '../../core/kontragent-comments';
 import { themeArbitrationRouter } from '../../core/theme-arbitration';
+import { counterpartyRouter } from '../../core/counterparty';
 
 import { LOGIN_ROUTE_PATH } from '../../core/login';
 import { SIGNUP_ROUTE_PATH } from '../../core/signup';
@@ -36,6 +37,7 @@ import { ARBITRATION_CASES_ROUTE_PATH } from '../../core/arbitration-cases';
 import { MY_REQUESTS_JURISTS_LIST_ROUTE_PATH } from '../../core/my-requests-jurists-list';
 import { KONTRAGENT_COMMENTS_ROUTE_PATH } from '../../core/kontragent-comments';
 import { THEME_ARBITRATION_ROUTE_PATH } from '../../core/theme-arbitration';
+import { COUNTERPARTY_ROUTE_PATH } from '../../core/counterparty';
 
 export const routes = {
   [LOGIN_ROUTE_PATH]: LoginRouter,
@@ -56,6 +58,7 @@ export const routes = {
   [MY_REQUESTS_JURISTS_LIST_ROUTE_PATH]: MyRequestsJuristsListRouter,
   [KONTRAGENT_COMMENTS_ROUTE_PATH]: KontragentCommentsRouter,
   [THEME_ARBITRATION_ROUTE_PATH]: themeArbitrationRouter,
+  [COUNTERPARTY_ROUTE_PATH]: counterpartyRouter,
 };
 
 export const Router = routesInit(routes);
