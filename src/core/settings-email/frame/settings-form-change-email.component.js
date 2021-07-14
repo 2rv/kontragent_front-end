@@ -1,15 +1,11 @@
 import React from 'react';
 
-import {
-  SectionLayout,
-  FieldLayout,
-  ButtonLayout,
-} from '../../../lib/elements/layout';
+import { SectionLayout, IndentLayout } from '../../../lib/elements/layout';
 import { SecondaryTitleText } from '../../../lib/elements/text';
 import { PrimaryField } from '../../../lib/elements/field';
 import { SecondaryButton } from '../../../lib/elements/button';
-import { ErrorAlert } from '../../../lib/elements/error';
-import { SuccessAlert } from '../../../../lib/elements/alert';
+import { ErrorMessage } from '../../../lib/elements/error';
+import { SuccessAlert } from '../../../lib/elements/alert';
 import { PrimaryLoader } from '../../../lib/elements/loader';
 
 export function SettingsFormChangeEmailComponent(props) {
@@ -45,11 +41,11 @@ export function SettingsFormChangeEmailComponent(props) {
   return (
     <React.Fragment>
       {(isPending || pageLoading) && <PrimaryLoader />}
-      <SectionLayout>
-        <SecondaryTitleText tid="SETTINGS.EMAIL.TITLE" />
-        <form onSubmit={handleSubmit}>
-          <SectionLayout>
-            <FieldLayout type="double">
+      <IndentLayout>
+        <SectionLayout>
+          <SecondaryTitleText tid="SETTINGS.EMAIL.TITLE" />
+          <form onSubmit={handleSubmit}>
+            <SectionLayout>
               <PrimaryField
                 titleTid="SETTINGS.EMAIL.FIELD.EMAIL.TITLE"
                 placeholderTid="SETTINGS.EMAIL.FIELD.EMAIL.PLACEHOLDER"
@@ -69,25 +65,23 @@ export function SettingsFormChangeEmailComponent(props) {
                 value={values[fieldPassword]}
                 error={isFieldError(fieldPassword)}
               />
-            </FieldLayout>
 
-            <ButtonLayout type="double">
               <SecondaryButton
                 tid="SETTINGS.EMAIL.BUTTON"
                 disabled={isSubmitDisabled()}
               />
-            </ButtonLayout>
 
-            {(isError || errorMessage) && (
-              <ErrorAlert tid={`ERROR.${errorMessage}`} />
-            )}
+              {(isError || errorMessage) && (
+                <ErrorMessage tid={`ERROR.${errorMessage}`} />
+              )}
 
-            {isSuccess && (
-              <SuccessAlert tid={'SETTINGS.EMAIL.SUCCESS_MESSAGE'} />
-            )}
-          </SectionLayout>
-        </form>
-      </SectionLayout>
+              {isSuccess && (
+                <SuccessAlert tid={'SETTINGS.EMAIL.SUCCESS_MESSAGE'} />
+              )}
+            </SectionLayout>
+          </form>
+        </SectionLayout>
+      </IndentLayout>
     </React.Fragment>
   );
 }

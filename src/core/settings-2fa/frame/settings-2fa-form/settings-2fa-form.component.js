@@ -1,9 +1,6 @@
 import React from 'react';
 
-import styled from 'styled-components';
-import { spacing } from '../../../../lib/theme';
-
-import { SectionLayout } from '../../../../lib/elements/layout';
+import { IndentLayout, SectionLayout } from '../../../../lib/elements/layout';
 import { SecondaryTitleText } from '../../../../lib/elements/text';
 import { PrimaryField } from '../../../../lib/elements/field';
 import { SecondaryButton } from '../../../../lib/elements/button';
@@ -42,36 +39,34 @@ export function Settings2FAFormComponent(props) {
   return (
     <React.Fragment>
       {(isPending || pageLoading) && <PrimaryLoader />}
-      <SectionLayout>
-        <SecondaryTitleText tid="SETTINGS.2FA.TITLE" />
-        <form onSubmit={handleSubmit}>
-          <SectionLayout>
+      <IndentLayout>
+        <SectionLayout>
+          <SecondaryTitleText tid="SETTINGS.2FA.TITLE" />
+          <form onSubmit={handleSubmit}>
             <SectionLayout>
-              <PrimaryField
-                titleTid="SETTINGS.2FA.FIELD.PHONE_NUMBER.TITLE"
-                placeholderTid="SETTINGS.2FA.FIELD.PHONE_NUMBER.PLACEHOLDER"
-                name={fieldPhoneNumber}
-                onChange={handleChange}
-                onBlur={handleBlur}
-                value={values[fieldPhoneNumber]}
-                error={isFieldError(fieldPhoneNumber)}
-              />
+              <SectionLayout>
+                <PrimaryField
+                  titleTid="SETTINGS.2FA.FIELD.PHONE_NUMBER.TITLE"
+                  placeholderTid="SETTINGS.2FA.FIELD.PHONE_NUMBER.PLACEHOLDER"
+                  name={fieldPhoneNumber}
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  value={values[fieldPhoneNumber]}
+                  error={isFieldError(fieldPhoneNumber)}
+                />
 
-              <Button tid="SETTINGS.2FA.BUTTON" disabled={isSubmitDisabled()} />
+                <SecondaryButton tid="SETTINGS.2FA.BUTTON" disabled={isSubmitDisabled()} />
+              </SectionLayout>
+
+              {(isError || errorMessage) && (
+                <ErrorAlert tid={`ERROR.${errorMessage}`} />
+              )}
+
+              {isSuccess && <SuccessAlert tid={'SETTINGS.2FA.SUCCESS_MESSAGE'} />}
             </SectionLayout>
-
-            {(isError || errorMessage) && (
-              <ErrorAlert tid={`ERROR.${errorMessage}`} />
-            )}
-
-            {isSuccess && <SuccessAlert tid={'SETTINGS.2FA.SUCCESS_MESSAGE'} />}
-          </SectionLayout>
-        </form>
-      </SectionLayout>
+          </form>
+        </SectionLayout>
+      </IndentLayout>
     </React.Fragment>
   );
 }
-
-const Button = styled(SecondaryButton)`
-  align-self: flex-end;
-`;

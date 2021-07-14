@@ -1,16 +1,16 @@
 import React from 'react';
+import styled from 'styled-components';
 
-import {
-  SectionLayout,
-  FieldLayout,
-  ButtonLayout,
-} from '../../../../lib/elements/layout';
+import { SectionLayout, IndentLayout } from '../../../../lib/elements/layout';
+import { PrimaryBox } from '../../../../lib/elements/box';
 import { SecondaryTitleText } from '../../../../lib/elements/text';
 import { PrimaryField } from '../../../../lib/elements/field';
 import { SecondaryButton } from '../../../../lib/elements/button';
 import { ErrorAlert } from '../../../../lib/elements/alert';
 import { SuccessAlert } from '../../../../lib/elements/alert';
 import { PrimaryLoader } from '../../../../lib/elements/loader';
+
+import { spacing } from '../../../../lib/theme';
 
 export function SettingsFormChangePhoneComponent(props) {
   const {
@@ -45,49 +45,54 @@ export function SettingsFormChangePhoneComponent(props) {
   return (
     <React.Fragment>
       {(isPending || pageLoading) && <PrimaryLoader />}
-      <SectionLayout>
-        <SecondaryTitleText tid="SETTINGS.PHONE.TITLE" />
-        <form onSubmit={handleSubmit}>
+      <Container>
+        <IndentLayout>
           <SectionLayout>
-            <FieldLayout type="double">
-              <PrimaryField
-                titleTid="SETTINGS.PHONE.FIELD.PHONE_NUMBER.TITLE"
-                placeholderTid="SETTINGS.PHONE.FIELD.PHONE_NUMBER.PLACEHOLDER"
-                name={fieldPhoneNumber}
-                onChange={handleChange}
-                onBlur={handleBlur}
-                value={values[fieldPhoneNumber]}
-                error={isFieldError(fieldPhoneNumber)}
-              />
+            <SecondaryTitleText tid="SETTINGS.PHONE.TITLE" />
+            <form onSubmit={handleSubmit}>
+              <SectionLayout>
+                <PrimaryField
+                  titleTid="SETTINGS.PHONE.FIELD.PHONE_NUMBER.TITLE"
+                  placeholderTid="SETTINGS.PHONE.FIELD.PHONE_NUMBER.PLACEHOLDER"
+                  name={fieldPhoneNumber}
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  value={values[fieldPhoneNumber]}
+                  error={isFieldError(fieldPhoneNumber)}
+                />
 
-              <PrimaryField
-                titleTid="SETTINGS.PHONE.FIELD.PASSWORD.TITLE"
-                placeholderTid="SETTINGS.PHONE.FIELD.PASSWORD.PLACEHOLDER"
-                name={fieldPassword}
-                onChange={handleChange}
-                onBlur={handleBlur}
-                value={values[fieldPassword]}
-                error={isFieldError(fieldPassword)}
-              />
-            </FieldLayout>
+                <PrimaryField
+                  titleTid="SETTINGS.PHONE.FIELD.PASSWORD.TITLE"
+                  placeholderTid="SETTINGS.PHONE.FIELD.PASSWORD.PLACEHOLDER"
+                  name={fieldPassword}
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  value={values[fieldPassword]}
+                  error={isFieldError(fieldPassword)}
+                />
 
-            <ButtonLayout type="double">
-              <SecondaryButton
-                tid="SETTINGS.PHONE.BUTTON"
-                disabled={isSubmitDisabled()}
-              />
-            </ButtonLayout>
+                <SecondaryButton
+                  tid="SETTINGS.PHONE.BUTTON"
+                  disabled={isSubmitDisabled()}
+                />
 
-            {(isError || errorMessage) && (
-              <ErrorAlert tid={`ERROR.${errorMessage}`} />
-            )}
+                {(isError || errorMessage) && (
+                  <ErrorAlert tid={`ERROR.${errorMessage}`} />
+                )}
 
-            {isSuccess && (
-              <SuccessAlert tid={'SETTINGS.PHONE.SUCCESS_MESSAGE'} />
-            )}
+                {isSuccess && (
+                  <SuccessAlert tid={'SETTINGS.PHONE.SUCCESS_MESSAGE'} />
+                )}
+              </SectionLayout>
+            </form>
           </SectionLayout>
-        </form>
-      </SectionLayout>
+        </IndentLayout>
+      </Container>
     </React.Fragment>
   );
 }
+
+const Container = styled(PrimaryBox)`
+  width: 500px;
+  margin: ${spacing(6)} 0;
+`;

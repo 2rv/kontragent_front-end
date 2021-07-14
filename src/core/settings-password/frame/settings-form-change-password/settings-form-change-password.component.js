@@ -1,15 +1,14 @@
 import React from 'react';
-import {
-  SectionLayout,
-  FieldLayout,
-  ButtonLayout,
-} from '../../../../lib/elements/layout';
+
+import { SectionLayout, IndentLayout } from '../../../../lib/elements/layout';
 import { SecondaryTitleText } from '../../../../lib/elements/text';
 import { PrimaryField } from '../../../../lib/elements/field';
 import { SecondaryButton } from '../../../../lib/elements/button';
 import { ErrorAlert } from '../../../../lib/elements/alert';
 import { SuccessAlert } from '../../../../lib/elements/alert';
 import { PrimaryLoader } from '../../../../lib/elements/loader';
+
+import { } from '../../../../lib/theme';
 
 export function SettingsFormChangePasswordComponent(props) {
   const {
@@ -44,11 +43,11 @@ export function SettingsFormChangePasswordComponent(props) {
   return (
     <React.Fragment>
       {(isPending || pageLoading) && <PrimaryLoader />}
-      <SectionLayout>
-        <SecondaryTitleText tid="SETTINGS.PASSWORD.TITLE" />
-        <form onSubmit={handleSubmit}>
-          <SectionLayout>
-            <FieldLayout type="double">
+      <IndentLayout>
+        <SectionLayout>
+          <SecondaryTitleText tid="SETTINGS.PASSWORD.TITLE" />
+          <form onSubmit={handleSubmit}>
+            <SectionLayout>
               <PrimaryField
                 titleTid="SETTINGS.PASSWORD.FIELD.NEW_PASSWORD.TITLE"
                 placeholderTid="SETTINGS.PASSWORD.FIELD.NEW_PASSWORD.PLACEHOLDER"
@@ -78,25 +77,23 @@ export function SettingsFormChangePasswordComponent(props) {
                 value={values[fieldPhoneNumber]}
                 error={isFieldError(fieldPhoneNumber)}
               />
-            </FieldLayout>
 
-            <ButtonLayout type="double">
               <SecondaryButton
                 tid="SETTINGS.PASSWORD.BUTTON"
                 disabled={isSubmitDisabled()}
               />
-            </ButtonLayout>
 
-            {(isError || errorMessage) && (
-              <ErrorAlert tid={`ERROR.${errorMessage}`} />
-            )}
+              {(isError || errorMessage) && (
+                <ErrorAlert tid={`ERROR.${errorMessage}`} />
+              )}
 
-            {isSuccess && (
-              <SuccessAlert tid={'SETTINGS.PASSWORD.SUCCESS_MESSAGE'} />
-            )}
-          </SectionLayout>
-        </form>
-      </SectionLayout>
+              {isSuccess && (
+                <SuccessAlert tid={'SETTINGS.PASSWORD.SUCCESS_MESSAGE'} />
+              )}
+            </SectionLayout>
+          </form>
+        </SectionLayout>
+      </IndentLayout>
     </React.Fragment>
   );
 }

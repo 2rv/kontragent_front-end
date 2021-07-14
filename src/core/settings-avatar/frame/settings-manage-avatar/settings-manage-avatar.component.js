@@ -3,8 +3,7 @@ import styled from 'styled-components';
 
 import Image from 'next/image';
 
-import { SectionLayout } from '../../../../lib/elements/layout';
-
+import { SectionLayout, IndentLayout } from '../../../../lib/elements/layout';
 import { SecondaryTitleText } from '../../../../lib/elements/text';
 import { SecondaryButton } from '../../../../lib/elements/button';
 import { BasicButton } from '../../../../lib/elements/button';
@@ -15,14 +14,16 @@ export function SettingsManageAvatarComponent(props) {
 
   return (
     <React.Fragment>
-      <Title tid="SETTINGS.AVATAR.TITLE" />
-      <Container>
-        <Image src={imageURL} width={115} height={115} />
-        <SectionLayout type="MEDIUM">
-          <BasicButton tid="SETTINGS.AVATAR.BUTTON.FIRST" />
-          <SecondaryButton tid="SETTINGS.AVATAR.BUTTON.SECOND" />
-        </SectionLayout>
-      </Container>
+      <IndentLayout>
+        <Title tid="SETTINGS.AVATAR.TITLE" />
+        <Container>
+          <Image src={imageURL} width={115} height={115} />
+          <SectionLayout type="MEDIUM">
+            <SecondaryButton tid="SETTINGS.AVATAR.BUTTON.FIRST" />
+            <BasicButton tid="SETTINGS.AVATAR.BUTTON.SECOND" />
+          </SectionLayout>
+        </Container>
+      </IndentLayout>
     </React.Fragment>
   );
 }

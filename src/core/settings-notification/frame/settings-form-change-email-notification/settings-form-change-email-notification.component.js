@@ -2,7 +2,7 @@ import React from 'react';
 
 import styled from 'styled-components';
 
-import { SectionLayout } from '../../../../lib/elements/layout';
+import { SectionLayout, IndentLayout } from '../../../../lib/elements/layout';
 import { SecondaryTitleText } from '../../../../lib/elements/text';
 import { SecondaryText } from '../../../../lib/elements/text';
 import { PrimaryField } from '../../../../lib/elements/field';
@@ -43,40 +43,42 @@ export function SettingsFormChangeNotificationComponent(props) {
   return (
     <React.Fragment>
       {(isPending || pageLoading) && <PrimaryLoader />}
-      <SectionLayout>
-        <SectionLayout type="SMALL">
-          <SecondaryTitleText tid="SETTINGS.NOTIFICATION.TITLE" />
-          <Subtitle tid="SETTINGS.NOTIFICATION.SUBTITLE" />
-        </SectionLayout>
-
-        <form onSubmit={handleSubmit}>
-          <SectionLayout>
-            <SectionLayout type="MEDIUM">
-              <PrimaryField
-                titleTid="SETTINGS.NOTIFICATION.FIELD.EMAIL.TITLE"
-                placeholderTid="SETTINGS.NOTIFICATION.FIELD.EMAIL.PLACEHOLDER"
-                name={fieldEmail}
-                onChange={handleChange}
-                onBlur={handleBlur}
-                value={values[fieldEmail]}
-                error={isFieldError(fieldEmail)}
-              />
-              <SecondaryButton
-                tid="SETTINGS.NOTIFICATION.BUTTON"
-                disabled={isSubmitDisabled()}
-              />
-            </SectionLayout>
-
-            {(isError || errorMessage) && (
-              <ErrorAlert tid={`ERROR.${errorMessage}`} />
-            )}
-
-            {isSuccess && (
-              <SuccessAlert tid={'SETTINGS.NOTIFICATION.SUCCESS_MESSAGE'} />
-            )}
+      <IndentLayout>
+        <SectionLayout>
+          <SectionLayout type="SMALL">
+            <SecondaryTitleText tid="SETTINGS.NOTIFICATION.TITLE" />
+            <Subtitle tid="SETTINGS.NOTIFICATION.SUBTITLE" />
           </SectionLayout>
-        </form>
-      </SectionLayout>
+
+          <form onSubmit={handleSubmit}>
+            <SectionLayout>
+              <SectionLayout type="MEDIUM">
+                <PrimaryField
+                  titleTid="SETTINGS.NOTIFICATION.FIELD.EMAIL.TITLE"
+                  placeholderTid="SETTINGS.NOTIFICATION.FIELD.EMAIL.PLACEHOLDER"
+                  name={fieldEmail}
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  value={values[fieldEmail]}
+                  error={isFieldError(fieldEmail)}
+                />
+                <SecondaryButton
+                  tid="SETTINGS.NOTIFICATION.BUTTON"
+                  disabled={isSubmitDisabled()}
+                />
+              </SectionLayout>
+
+              {(isError || errorMessage) && (
+                <ErrorAlert tid={`ERROR.${errorMessage}`} />
+              )}
+
+              {isSuccess && (
+                <SuccessAlert tid={'SETTINGS.NOTIFICATION.SUCCESS_MESSAGE'} />
+              )}
+            </SectionLayout>
+          </form>
+        </SectionLayout>
+      </IndentLayout>
     </React.Fragment>
   );
 }
