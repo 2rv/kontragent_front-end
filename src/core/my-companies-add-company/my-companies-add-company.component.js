@@ -3,6 +3,7 @@ import { IndentLayout, SectionLayout } from '../../lib/elements/layout';
 import { AddCompanyHeaderContainer } from './frame/add-company-header';
 import { AddCompanyFormContainer } from './frame/add-company-form';
 import { MyCompaniesAddCompanyHeaderContainer } from './frame/my-companies-add-company-header';
+import styled from 'styled-components';
 
 export function MyCompaniesAddCompanyComponent(props) {
   const {
@@ -17,7 +18,7 @@ export function MyCompaniesAddCompanyComponent(props) {
     errorMessage,
   } = props;
   return (
-    <SectionLayout type="LARGE">
+    <Container type="LARGE">
       <MyCompaniesAddCompanyHeaderContainer />
       <PrimaryBox>
         <IndentLayout>
@@ -37,6 +38,11 @@ export function MyCompaniesAddCompanyComponent(props) {
           </SectionLayout>
         </IndentLayout>
       </PrimaryBox>
-    </SectionLayout>
+    </Container>
   );
 }
+const Container = styled(SectionLayout)`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+`;
