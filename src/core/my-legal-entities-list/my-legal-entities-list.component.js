@@ -1,11 +1,12 @@
 import styled from 'styled-components';
-import { LegalEntitiesListContainer } from './frame';
+import { MyLegalEntitesHeaderComponent, LegalEntitiesListContainer } from './frame';
 import { spacing } from '../../lib/theme';
 
 export function MyLegalEntitiesListComponent(props) {
   const { myLegalEntitiesListData } = props;
   return (
     <Container>
+      <MyLegalEntitesHeaderComponent />
       <LegalEntitiesListContainer
         myLegalEntitiesListData={myLegalEntitiesListData}
       />

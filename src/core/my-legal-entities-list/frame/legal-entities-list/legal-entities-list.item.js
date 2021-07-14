@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { PrimaryBox } from '../../../../lib/elements/box';
 import { PrimaryText, SecondaryText } from '../../../../lib/elements/text';
-import { THEME_COLOR, THEME_SIZE, spacing } from '../../../../lib/theme';
+import { THEME_COLOR, THEME_SIZE, spacing, THEME_VALUE } from '../../../../lib/theme';
 
 export function LegalEntitiesListItem(props) {
   const {
@@ -24,32 +24,29 @@ export function LegalEntitiesListItem(props) {
             <CompanyName>{companyName}</CompanyName>
             <Text>{books}</Text>
             <Text>{kontragent}</Text>
-            <PrimaryText>
-              {turnover} <Text tid="руб." />
-            </PrimaryText>
-            <PrimaryText>
-              {addCharges} <Text tid="руб." />
-            </PrimaryText>
+            <BoldText>
+              {turnover} <LightGrayText tid="руб." />
+            </BoldText>
+            <BoldText>
+              {addCharges} <LightGrayText tid="руб." />
+            </BoldText>
             <Text>{risks ? risks : 'Нет'}</Text>
-            <PrimaryText>
-              {generalRating} <Text tid="Баллов" />
-            </PrimaryText>
-            <PrimaryText>
-              {penalties} <Text tid="руб." />
-            </PrimaryText>
-            <PrimaryText>
-              {fines} <Text tid="руб." />
-              <PrimaryText>({finesNumber})</PrimaryText>
-            </PrimaryText>
+            <BoldText>
+              {generalRating} <LightGrayText tid="Баллов" />
+            </BoldText>
+            <BoldText>
+              {penalties} <LightGrayText tid="руб." />
+            </BoldText>
+            <BoldText>
+              {fines} <LightGrayText tid="руб." />
+              <BoldText>({finesNumber})</BoldText>
+            </BoldText>
           </InspectionRequestListItemContainer>
         </Indent>
       </PrimaryBox>
     </Container>
   );
 }
-const Text = styled(SecondaryText)`
-  font-size: ${THEME_SIZE.FONT.DEFAULT};
-`;
 
 const Indent = styled.div`
   padding: ${spacing(6)} 0;
@@ -71,6 +68,18 @@ const Container = styled.div`
   transition: border ${THEME_SIZE.TRANSACTION.DEFAULT} ease;
 `;
 
-const CompanyName = styled(PrimaryText)`
+const Text = styled(SecondaryText)`
+  font-size: ${THEME_SIZE.FONT.DEFAULT};
+`;
+
+const LightGrayText = styled(Text)`
+  color: ${THEME_COLOR.COLOR.LIGHT_GREY};
+`;
+
+const BoldText = styled(PrimaryText)`
+  font-weight: ${THEME_VALUE.FONT_WEIGHT.SEMY_BOLD};
+`;
+
+const CompanyName = styled(BoldText)`
   padding-left: ${spacing(4)};
 `;
