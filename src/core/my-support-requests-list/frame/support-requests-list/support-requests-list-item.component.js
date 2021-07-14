@@ -4,7 +4,7 @@ import { IndentLayout, SectionLayout } from '../../../../lib/elements/layout';
 import { PrimaryText, SecondaryText } from '../../../../lib/elements/text';
 import { THEME_VALUE, THEME_COLOR } from '../../../../lib/theme';
 
-export function SupportRequestListItem(props) {
+export function SupportRequestListItemComponent(props) {
   const { problemTid, requestCause, requestStatusId, statusTid, date } =
     props.data;
   return (
@@ -12,12 +12,12 @@ export function SupportRequestListItem(props) {
       <IndentLayout type="MEDIUM">
         <Container>
           <SectionLayout type="MEDIUM">
-            <PrimaryText tid={problemTid} />
+            <TItleText tid={problemTid} />
             <SecondaryText>{requestCause}</SecondaryText>
           </SectionLayout>
           <SectionCase type="MEDIUM">
             <StatusText tid={statusTid} statusId={requestStatusId} />
-            <SecondaryText>{date}</SecondaryText>
+            <DateText>{date}</DateText>
           </SectionCase>
         </Container>
       </IndentLayout>
@@ -42,4 +42,12 @@ const StatusText = styled(SecondaryText)`
 
 const SectionCase = styled(SectionLayout)`
   text-align: end;
+`;
+
+const TItleText = styled(PrimaryText)`
+  font-weight: ${THEME_VALUE.FONT_WEIGHT.MEDIUM};
+`;
+
+const DateText = styled(SecondaryText)`
+  color: ${THEME_COLOR.COLOR.LIGHT_GREY};
 `;
