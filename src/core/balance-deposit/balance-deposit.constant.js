@@ -9,7 +9,7 @@ export const BALANCE_DEPOSIT_STORE_NAME = 'BALANCE_DEPOSIT_STORE';
 
 export const BALANCE_DEPOSIT_API = {
   BALANCE_FORM_DEPOSIT_UPLOAD: {
-    ENDPOINT: '/auth/login',
+    ENDPOINT: '/',
     TYPE: 'POST',
   },
 };

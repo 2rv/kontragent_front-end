@@ -8,39 +8,36 @@ import { SidebarAdvertContainer } from './frame/sidebar-advert';
 import { PrimaryDivider } from '../../lib/elements/divider';
 
 import styled from 'styled-components';
-import { spacing } from '../../lib/theme';
+import { spacing, THEME_COLOR } from '../../lib/theme';
 
 export function SidebarComponent() {
   return (
-    <SidebarBox>
-      <SideBarIndent>
-        <LogotypeContainer />
+    <Container>
+      <LogotypeContainer />
 
-        <Container>
-          <PrimaryDivider />
-          <AccountInfoContainer />
-          <PrimaryDivider />
-          <NavMenuContainer />
-        </Container>
-
-        <SidebarAdvertContainer />
-      </SideBarIndent>
-    </SidebarBox>
+      <Content>
+        <PrimaryDivider />
+        <AccountInfoContainer />
+        <PrimaryDivider />
+        <NavMenuContainer />
+      </Content>
+      <SidebarAdvertContainer />
+    </Container>
   );
 }
 
-const SidebarBox = styled(PrimaryBox)`
-  min-height: 100vh;
-  border-radius: 0;
-`;
-
-const SideBarIndent = styled(IndentLayout)`
-  padding-right: ${spacing(9)};
-`;
-
 const Container = styled.div`
-  display: grid;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: ${THEME_COLOR.COLOR.BASE};
+  padding: ${spacing(8)};
+  gap: ${spacing(8.5)};
+`;
+const Content = styled.div`
+  height: 100%;
+  display: flex;
+  flex-direction: column;
   gap: ${spacing(6)};
-  padding-top: ${spacing(8)};
-  padding-bottom: ${spacing(20)};
 `;

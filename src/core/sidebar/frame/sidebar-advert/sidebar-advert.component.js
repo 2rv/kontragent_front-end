@@ -33,8 +33,8 @@ const AdvertInfoCardLayout = styled(PrimaryBox)`
   width: 85px;
   height: 36px;
   background-color: ${THEME_COLOR.COLOR.PRIMARY};
-  opacity: 0.8;
   backdrop-filter: blur(25px);
+  opacity: 0.5;
   display: flex;
   align-items: center;
   justify-content: center;
