@@ -37,11 +37,11 @@ export function EntityContainer() {
 
   return (
     <EntityComponent
-      isPending={isRequestPending(state.bookReviewList)}
-      isError={isRequestError(state.bookReviewList)}
-      isSuccess={isRequestSuccess(state.bookReviewList)}
+      isPending={isRequestPending(state.entity)}
+      isError={isRequestError(state.entity)}
+      isSuccess={isRequestSuccess(state.entity)}
       pageLoading={pageLoading}
-      errorMessage={getRequestErrorMessage(state.bookReviewList)}
+      errorMessage={getRequestErrorMessage(state.entity)}
       tabsList={TABS_LIST}
       tabsComponentList={TABS_COMPONENT_LIST}
       activeTabId={activeTabId}
