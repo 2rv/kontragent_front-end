@@ -11,7 +11,7 @@ import { SectionLayout } from '../../../../lib/elements/layout';
 
 export function ReferralItemComponent(props) {
   const { avatar, name, referralSignedData, receivedMonth, receivedAllTime } =
-    props;
+    props.data;
   const Procent = Math.round(receivedAllTime / receivedMonth);
   return (
     <Container>

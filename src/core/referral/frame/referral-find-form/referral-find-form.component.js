@@ -11,7 +11,8 @@ import { IndentLayout, SectionLayout } from '../../../../lib/elements/layout';
 import { PrimaryField } from '../../../../lib/elements/field';
 import { PrimaryLink } from '../../../../lib/elements/link';
 
-export function ReferralFindComponent() {
+export function ReferralFindFormComponent(props) {
+  const { isPending, pageLoading, isError, isSuccess, errorMessage } = props;
   return (
     <PrimaryBox>
       <IndentLayout type="LARGE">

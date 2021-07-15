@@ -1,9 +1,39 @@
 import { ReferralComponent } from './referral.component';
+import { useEffect } from 'react';
+import { referralListLoad } from './referral.action';
+import { useDispatch, useSelector } from 'react-redux';
+import { NAVIGATION_STORE_NAME } from '../../lib/common/navigation/navigation.constant';
+import { REFERRAL_STORE_NAME } from './referral.constant';
+import {
+  getRequestErrorMessage,
+  isRequestError,
+  isRequestPending,
+  isRequestSuccess,
+} from '../../main/store/store.service';
 
 export function ReferralContainer() {
-  return <ReferralComponent referralItems={referralItems} />;
+  const dispatch = useDispatch();
+  const { state, pageLoading } = useSelector((state) => ({
+    state: state[REFERRAL_STORE_NAME],
+    pageLoading: state[NAVIGATION_STORE_NAME].pageLoading,
+  }));
+
+  //   useEffect(() => {
+  //     dispatch(referralListLoad());
+  //   }, []);
+
+  return (
+    <ReferralComponent
+      isPending={isRequestPending(state.referralList)}
+      isError={isRequestError(state.referralList)}
+      isSuccess={isRequestSuccess(state.referralList)}
+      pageLoading={pageLoading}
+      errorMessage={getRequestErrorMessage(state.referralList)}
+      referralList={referralList}
+    />
+  );
 }
-const referralItems = [
+const referralList = [
   {
     avatar:
       'https://i.pinimg.com/originals/0c/a9/e2/0ca9e28dcb12dc698cfd2beda6d6fa64.jpg',
