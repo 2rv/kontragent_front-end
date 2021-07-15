@@ -15,11 +15,11 @@ import { arbitrationRequestsListRouter } from '../../core/arbitration-requests-l
 import { settingsRouter } from '../../core/settings';
 import { arbitrationCasesRouter } from '../../core/arbitration-cases';
 import { MyRequestsJuristsListRouter } from '../../core/my-requests-jurists-list';
-import { KontragentCommentsRouter } from '../../core/kontragent-comments';
 import { themeArbitrationRouter } from '../../core/theme-arbitration';
 import { dashboardRouter } from '../../core/dashboard';
 import { lawyerRequestRouter } from '../../core/lawyer-request';
 import { kontragentInformationtRouter } from '../../core/kontragent-information';
+import { counterpartyRouter } from '../../core/counterparty';
 
 import { LOGIN_ROUTE_PATH } from '../../core/login';
 import { SIGNUP_ROUTE_PATH } from '../../core/signup';
@@ -35,13 +35,13 @@ import { BOOK_REVIEW_LIST_ROUTE_PATH } from '../../core/book-review-list';
 import { BALANCE_DEPOSIT_ROUTE_PATH } from '../../core/balance-deposit';
 import { ARBITRATION_REQUESTS_LIST_ROUTE_PATH } from '../../core/arbitration-requests-list';
 import { SETTINGS_ROUTE_PATH } from '../../core/settings';
-import { ARBITRATION_CASES_ROUTE_PATH } from '../../core/arbitration-cases';
 import { MY_REQUESTS_JURISTS_LIST_ROUTE_PATH } from '../../core/my-requests-jurists-list';
-import { KONTRAGENT_COMMENTS_ROUTE_PATH } from '../../core/kontragent-comments';
 import { THEME_ARBITRATION_ROUTE_PATH } from '../../core/theme-arbitration';
 import { DASHBOARD_ROUTE_PATH } from '../../core/dashboard';
 import { LAWYER_REQUEST_ROUTE_PATH } from '../../core/lawyer-request';
 import { KONTRAGENT_INFORMATION_ROUTE_PATH } from '../../core/kontragent-information';
+import { COUNTERPARTY_ROUTE_PATH } from '../../core/counterparty';
+import { ARBITRATION_CASES_ROUTE_PATH } from '../../core/arbitration-cases';
 
 export const routes = {
   [KONTRAGENT_INFORMATION_ROUTE_PATH]: kontragentInformationtRouter,
@@ -63,7 +63,7 @@ export const routes = {
   [SUPPORT_CREATE_REQUEST_ROUTE_PATH]: SupportCreateRequestRouter,
   [SETTINGS_ROUTE_PATH]: settingsRouter,
   [MY_REQUESTS_JURISTS_LIST_ROUTE_PATH]: MyRequestsJuristsListRouter,
-  [KONTRAGENT_COMMENTS_ROUTE_PATH]: KontragentCommentsRouter,
   [THEME_ARBITRATION_ROUTE_PATH]: themeArbitrationRouter,
+  [COUNTERPARTY_ROUTE_PATH]: counterpartyRouter,
 };
 export const Router = routesInit(routes);
