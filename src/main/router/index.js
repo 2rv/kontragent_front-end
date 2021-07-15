@@ -20,6 +20,7 @@ import { themeArbitrationRouter } from '../../core/theme-arbitration';
 import { dashboardRouter } from '../../core/dashboard';
 import { lawyerRequestRouter } from '../../core/lawyer-request';
 import { kontragentInformationtRouter } from '../../core/kontragent-information';
+import { entityRouter } from '../../core/entity';
 
 import { LOGIN_ROUTE_PATH } from '../../core/login';
 import { SIGNUP_ROUTE_PATH } from '../../core/signup';
@@ -42,6 +43,7 @@ import { THEME_ARBITRATION_ROUTE_PATH } from '../../core/theme-arbitration';
 import { DASHBOARD_ROUTE_PATH } from '../../core/dashboard';
 import { LAWYER_REQUEST_ROUTE_PATH } from '../../core/lawyer-request';
 import { KONTRAGENT_INFORMATION_ROUTE_PATH } from '../../core/kontragent-information';
+import { ENTITY_ROUTE_PATH } from '../../core/entity';
 
 export const routes = {
   [KONTRAGENT_INFORMATION_ROUTE_PATH]: kontragentInformationtRouter,
@@ -65,5 +67,6 @@ export const routes = {
   [MY_REQUESTS_JURISTS_LIST_ROUTE_PATH]: MyRequestsJuristsListRouter,
   [KONTRAGENT_COMMENTS_ROUTE_PATH]: KontragentCommentsRouter,
   [THEME_ARBITRATION_ROUTE_PATH]: themeArbitrationRouter,
+  [ENTITY_ROUTE_PATH]: entityRouter,
 };
 export const Router = routesInit(routes);
