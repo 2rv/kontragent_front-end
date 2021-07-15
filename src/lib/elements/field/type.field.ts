@@ -35,4 +35,5 @@ export interface TextAreaPropsType {
   name: string;
   row?: number;
   error: string;
+  children: any;
 }

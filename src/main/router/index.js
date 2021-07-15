@@ -3,7 +3,7 @@ import { AuthChangePasswordRouter } from '../../core/auth-change-password';
 import { AuthRecoveryAccountRouter } from '../../core/auth-recovery-account';
 import { LoginRouter } from '../../core/login';
 import { SignupRouter } from '../../core/signup';
-import { DialogsRouter } from '../../core/dialogs';
+import { dialogPersonalRouter } from '../../core/dialog-personal';
 import { myCounterpartiesListRouter } from '../../core/my-counterparties-list';
 import { myLegalEntitiesListRouter } from '../../core/my-legal-entities-list';
 import { mySupportRequestsListRouter } from '../../core/my-support-requests-list';
@@ -27,7 +27,7 @@ import { LOGIN_ROUTE_PATH } from '../../core/login';
 import { SIGNUP_ROUTE_PATH } from '../../core/signup';
 import { AUTH_RECOVERY_ACCOUNT_ROUTE_PATH } from '../../core/auth-recovery-account';
 import { AUTH_CHANGE_PASSWORD_ROUTE_PATH } from '../../core/auth-change-password';
-import { DIALOGS_ROUTE_PATH } from '../../core/dialogs';
+import { DIALOG_PERSONAL_ROUTE_PATH } from '../../core/dialog-personal';
 import { MY_COUNTERPARTIES_LIST_ROUTE_PATH } from '../../core/my-counterparties-list';
 import { MY_LEGAL_ENTITIES_LIST_ROUTE_PATH } from '../../core/my-legal-entities-list';
 import { MY_SUPPORT_REQUESTS_LIST_ROUTE_PATH } from '../../core/my-support-requests-list';
@@ -60,7 +60,7 @@ export const routes = {
   [BOOK_REVIEW_LIST_ROUTE_PATH]: bookReviewListRouter,
   [LOGIN_ROUTE_PATH]: LoginRouter,
   [SIGNUP_ROUTE_PATH]: SignupRouter,
-  [DIALOGS_ROUTE_PATH]: DialogsRouter,
+  [DIALOG_PERSONAL_ROUTE_PATH]: dialogPersonalRouter,
   [MY_COUNTERPARTIES_LIST_ROUTE_PATH]: myCounterpartiesListRouter,
   [MY_LEGAL_ENTITIES_LIST_ROUTE_PATH]: myLegalEntitiesListRouter,
   [MY_SUPPORT_REQUESTS_LIST_ROUTE_PATH]: mySupportRequestsListRouter,

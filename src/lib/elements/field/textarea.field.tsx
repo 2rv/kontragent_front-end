@@ -18,19 +18,23 @@ export function TextareaField(props: TextAreaPropsType) {
     placeholderTid,
     error,
     row = 3,
+    children,
   } = props;
   return (
     <Container>
-      <Title tid={titleTid} />
-      <Textarea
-        placeholder={text(placeholderTid)}
-        onBlur={onBlur}
-        onChange={onChange}
-        name={name}
-        isError={!!error}
-        rows={row}
-      />
-      {error && <InputError error={error} />}
+      {titleTid && <SecondaryText tid={titleTid} />}
+      <RelativeCase>
+        <Textarea
+          placeholder={text(placeholderTid)}
+          onBlur={onBlur}
+          onChange={onChange}
+          name={name}
+          isError={!!error}
+          rows={row}
+        />
+        {children}
+      </RelativeCase>
+      {error && <ErrorMessage error={error} />}
     </Container>
   );
 }
@@ -38,17 +42,20 @@ export function TextareaField(props: TextAreaPropsType) {
 const Container = styled.div`
   display: flex;
   flex-direction: column;
+  height: auto;
+  gap: ${spacing(2)};
+  width: 100%;
 `;
-
-const Title: typeof SecondaryText = styled(SecondaryText)`
-  margin-bottom: ${spacing(2)};
+const RelativeCase = styled.div`
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: inherit;
 `;
-
-const InputError: typeof ErrorMessage = styled(ErrorMessage)`
-  margin-top: ${spacing(1)};
-`;
-
 const Textarea = styled.textarea`
+  width: 100%;
+  height: auto;
   resize: none;
   padding: ${spacing(4)};
   border-radius: ${THEME_SIZE.RADIUS.DEFAULT};

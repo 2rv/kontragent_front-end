@@ -32,7 +32,7 @@ const Content = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
-  min-width: 750px;
+  min-width: 800px;
   height: 100%;
   background-color: ${THEME_COLOR.COLOR.SECONDARY};
 `;

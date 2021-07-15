@@ -54,51 +54,51 @@ export const NAVMENU_ITEMS = [
     pathname: '/my-counterparties',
     path: '/my-counterparties',
   },
-  {
-    tid: 'Мои юрлица',
-    pathname: '/my-legal-entities',
-    path: '/my-legal-entities',
-  },
-  {
-    tid: 'Книги',
-    pathname: '/book-review-list',
-    path: '/book-review-list',
-  },
-  {
-    tid: 'Задать вопрос юристу',
-    pathname: '/lawyer-request',
-    path: '/lawyer-request',
-  },
-  {
-    tid: 'Добавить компанию',
-    pathname: '/my-companies-add-company',
-    path: '/my-companies-add-company',
-  },
-  {
-    tid: 'Создать запрос в поддержку',
-    pathname: '/support',
-    path: '/support',
-  },
-  {
-    tid: 'Мои запросы в поддержку',
-    pathname: '/support/my-requests',
-    path: '/support/my-requests',
-  },
-  {
-    tid: 'Диалоги',
-    pathname: '/dialogs',
-    path: '/dialogs',
-  },
-  {
-    tid: 'Арбитраж',
-    pathname: '/arbitration',
-    path: '/arbitration',
-  },
-  {
-    tid: 'Участники компании',
-    pathname: '/company-members',
-    path: '/company-members',
-  },
+  //   {
+  //     tid: 'Мои юрлица',
+  //     pathname: '/my-legal-entities',
+  //     path: '/my-legal-entities',
+  //   },
+  //   {
+  //     tid: 'Книги',
+  //     pathname: '/book-review-list',
+  //     path: '/book-review-list',
+  //   },
+  //   {
+  //     tid: 'Задать вопрос юристу',
+  //     pathname: '/lawyer-request',
+  //     path: '/lawyer-request',
+  //   },
+  //   {
+  //     tid: 'Добавить компанию',
+  //     pathname: '/my-companies-add-company',
+  //     path: '/my-companies-add-company',
+  //   },
+  //   {
+  //     tid: 'Создать запрос в поддержку',
+  //     pathname: '/support',
+  //     path: '/support',
+  //   },
+  //   {
+  //     tid: 'Мои запросы в поддержку',
+  //     pathname: '/support/my-requests',
+  //     path: '/support/my-requests',
+  //   },
+  //   {
+  //     tid: 'Диалоги',
+  //     pathname: '/dialogs',
+  //     path: '/dialogs',
+  //   },
+  //   {
+  //     tid: 'Арбитраж',
+  //     pathname: '/arbitration',
+  //     path: '/arbitration',
+  //   },
+  //   {
+  //     tid: 'Участники компании',
+  //     pathname: '/company-members',
+  //     path: '/company-members',
+  //   },
 ];
 
 // {
