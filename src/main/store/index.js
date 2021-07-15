@@ -78,7 +78,14 @@ import {
   NEWS_ARTICLE_STORE_NAME,
   newsArticleStore,
 } from '../../core/news-article';
-import { entityStore, ENTITY_STORE_NAME } from '../../core/entity';
+import {
+  BALANCE_ACTIVITY_STORE_NAME,
+  balanceActivityStore,
+} from '../../core/balance-activity';
+import {
+  entityStore,
+  ENTITY_STORE_NAME,
+} from '../../core/entity';
 
 export const reducers = combineReducers({
   [REFERRAL_STORE_NAME]: referralStore,
@@ -106,6 +113,7 @@ export const reducers = combineReducers({
   [MY_COMPANIES_ADD_COMPANY_STORE_NAME]: myCompaniesAddCompanyStore,
   [COUNTERPARTY_STORE_NAME]: counterpartyStore,
   [ENTITY_STORE_NAME]: entityStore,
+  [BALANCE_ACTIVITY_STORE_NAME]: balanceActivityStore,
 });
 
 export { initStore } from './store.core';
