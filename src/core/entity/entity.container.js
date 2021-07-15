@@ -16,6 +16,7 @@ import { ReviewsContainer } from './frames/reviews';
 import { VerificationsContainer } from './frames/verifications';
 import { ArbitrationCasesContainer } from './frames/arbitration-cases';
 import { ParticipantsContainer } from './frames/participants';
+import { SettingsContainer } from './frames/settings';
 
 export function EntityContainer() {
   const dispatch = useDispatch();
@@ -67,5 +68,5 @@ const TABS_COMPONENT_LIST = [
   { id: 5, component: <ArbitrationCasesContainer /> },
   { id: 6, component: <ParticipantsContainer /> },
   { id: 7, component: null },
-  { id: 8, component: null },
+  { id: 8, component: <SettingsContainer /> },
 ];
