@@ -15,6 +15,7 @@ import { RiskRatingAssessmentContainer } from './frames/risk-rating-assessment';
 import { ReviewsContainer } from './frames/reviews';
 import { VerificationsContainer } from './frames/verifications';
 import { ArbitrationCasesContainer } from './frames/arbitration-cases';
+import { ParticipantsContainer } from './frames/participants';
 
 export function EntityContainer() {
   const dispatch = useDispatch();
@@ -55,6 +56,7 @@ const TABS_LIST = [
   { id: 5, text: 'Арбитражные дела' },
   { id: 6, text: 'Участники' },
   { id: 7, text: 'Баланс' },
+  { id: 8, text: 'Настройка' },
 ];
 
 const TABS_COMPONENT_LIST = [
@@ -63,6 +65,7 @@ const TABS_COMPONENT_LIST = [
   { id: 3, component: <ReviewsContainer /> },
   { id: 4, component: <VerificationsContainer /> },
   { id: 5, component: <ArbitrationCasesContainer /> },
-  { id: 6, component: null },
+  { id: 6, component: <ParticipantsContainer /> },
   { id: 7, component: null },
+  { id: 8, component: null },
 ];
