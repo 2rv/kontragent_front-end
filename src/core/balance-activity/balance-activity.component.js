@@ -1,3 +1,4 @@
+import React from 'react';
 import styled from 'styled-components';
 import {
   SecondaryText,
@@ -10,41 +11,55 @@ import { ReactComponent as KIcon } from '../../asset/svg/k-icon.svg';
 import { PrimaryButton } from '../../lib/elements/button';
 import { IndentLayout, SectionLayout } from '../../lib/elements/layout';
 import { PrimaryBox } from '../../lib/elements/box';
+import { PrimaryLoader } from '../../lib/elements/loader';
 
-export function BalanceActivityComponent({ activityItems, balance }) {
+export function BalanceActivityComponent(props) {
+  const {
+    isPending,
+    isError,
+    isSuccess,
+    pageLoading,
+    errorMessage,
+    balance,
+    activityItems,
+  } = props;
+
   return (
-    <Container>
-      <HeaderCase>
-        <TitleCase>
-          <Title tid="BALANCE.BALANCE_ACTIVITY.TITLE" />
-          <Balance tid={balance} />
-          <Valute tid="BALANCE.BALANCE_ACTIVITY.VALUTE" />
-        </TitleCase>
-        <Button tid="BALANCE.BALANCE_ACTIVITY.BUTTON" />
-      </HeaderCase>
-      <ContentCase>
-        {activityItems.map(({ operation, time, sentMoney, check = false }) => {
-          return (
-            <PrimaryBox>
-              <IndentLayout type="STANDART">
-                <ItemCase>
-                  <InfoCase>
-                    <ItemImageIcon altColor={check}>
-                      {check ? <WhiteFindIcon /> : <KIcon />}
-                    </ItemImageIcon>
-                    <ItemInfoCase>
-                      <ItemTitle tid={operation} />
-                      <ItemText tid={time} />
-                    </ItemInfoCase>
-                  </InfoCase>
-                  {sentMoney && <SentMoney tid={`-${sentMoney}`} />}
-                </ItemCase>
-              </IndentLayout>
-            </PrimaryBox>
-          );
-        })}
-      </ContentCase>
-    </Container>
+    <React.Fragment>
+      {(isPending || pageLoading) && <PrimaryLoader />}
+      <Container>
+        <HeaderCase>
+          <TitleCase>
+            <Title tid="BALANCE.BALANCE_ACTIVITY.TITLE" />
+            <Balance tid={balance} />
+            <Valute tid="BALANCE.BALANCE_ACTIVITY.VALUTE" />
+          </TitleCase>
+          <Button tid="BALANCE.BALANCE_ACTIVITY.BUTTON" />
+        </HeaderCase>
+        <ContentCase>
+          {activityItems.map(({ operation, time, sentMoney, check = false }) => {
+            return (
+              <PrimaryBox>
+                <IndentLayout type="STANDART">
+                  <ItemCase>
+                    <InfoCase>
+                      <ItemImageIcon altColor={check}>
+                        {check ? <WhiteFindIcon /> : <KIcon />}
+                      </ItemImageIcon>
+                      <ItemInfoCase>
+                        <ItemTitle tid={operation} />
+                        <ItemText tid={time} />
+                      </ItemInfoCase>
+                    </InfoCase>
+                    {sentMoney && <SentMoney tid={`-${sentMoney}`} />}
+                  </ItemCase>
+                </IndentLayout>
+              </PrimaryBox>
+            );
+          })}
+        </ContentCase>
+      </Container>
+    </React.Fragment>
   );
 }
 const WhiteFindIcon = styled(FindIcon)`
