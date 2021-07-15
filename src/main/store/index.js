@@ -79,8 +79,13 @@ import {
   newsArticleStore,
 } from '../../core/news-article';
 import { entityStore, ENTITY_STORE_NAME } from '../../core/entity';
+import {
+  DIALOG_PERSONAL_STORE_NAME,
+  dialogPersonalStore,
+} from '../../core/dialog-personal';
 
 export const reducers = combineReducers({
+  [DIALOG_PERSONAL_STORE_NAME]: dialogPersonalStore,
   [REFERRAL_STORE_NAME]: referralStore,
   [NEWS_ARTICLE_STORE_NAME]: newsArticleStore,
   [COMPANY_MEMBERS_STORE_NAME]: companyMembersStore,
