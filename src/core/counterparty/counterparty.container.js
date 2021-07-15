@@ -26,7 +26,7 @@ export function CounterpartyContainer() {
   }));
 
   //   React.useEffect(() => {
-  //     dispatch(bookReviewListLoad());
+  //     dispatch(counterpartyLoad());
   //   }, []);
 
   const activeTabHandler = (tab) => {
@@ -35,11 +35,11 @@ export function CounterpartyContainer() {
 
   return (
     <CounterpartyComponent
-      isPending={isRequestPending(state.bookReviewList)}
-      isError={isRequestError(state.bookReviewList)}
-      isSuccess={isRequestSuccess(state.bookReviewList)}
+      isPending={isRequestPending(state.counterparty)}
+      isError={isRequestError(state.counterparty)}
+      isSuccess={isRequestSuccess(state.counterparty)}
       pageLoading={pageLoading}
-      errorMessage={getRequestErrorMessage(state.bookReviewList)}
+      errorMessage={getRequestErrorMessage(state.counterparty)}
       tabsList={TABS_LIST}
       tabsComponentList={TABS_COMPONENT_LIST}
       activeTabId={activeTabId}

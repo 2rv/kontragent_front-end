@@ -3,7 +3,7 @@ import { httpRequest } from '../../main/http';
 import { COUNTERPARTY_ACTION_TYPE } from './counterparty.type';
 import { COUNTERPARTY_API } from './counterparty.constant';
 
-export function bookReviewListLoad() {
+export function counterpartyLoad() {
   return async (dispatch) => {
     dispatch({
       type: COUNTERPARTY_ACTION_TYPE.COUNTERPARTY_LOAD_REQUEST_PENDING,

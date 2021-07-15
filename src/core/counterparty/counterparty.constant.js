@@ -1,4 +1,4 @@
-export const COUNTERPARTY_ROUTE_PATH = '/book-review-list';
+export const COUNTERPARTY_ROUTE_PATH = '/counterparty';
 
 export const COUNTERPARTY_STORE_NAME = 'COUNTERPARTY_STORE';
 
