@@ -52,7 +52,7 @@ export function RatingComponent() {
 const Container = styled.div`
   display: grid;
   grid-template-columns: 1fr 6fr;
-  grid-gap: ${spacing(2)};
+  grid-column-gap: ${spacing(2)};
 `;
 
 const Content = styled.div`

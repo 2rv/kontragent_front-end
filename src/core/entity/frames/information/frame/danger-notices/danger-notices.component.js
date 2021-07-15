@@ -43,6 +43,7 @@ const DangerNoticeContent = styled.div`
   border: 2px solid ${THEME_COLOR.TEXT.WARNING};
   border-radius: 10px;
   height: fit-content;
+  gap: ${spacing(4)};
   padding: ${spacing(4)};
   margin-top: ${spacing(4)};
 `;
@@ -60,6 +61,5 @@ const DangerNoticeTitle = styled(SecondaryText)`
 
 const DangerNoticeDescription = styled(SecondaryText)`
   color: ${THEME_COLOR.COLOR.LIGHT_GREY};
-  margin-top: ${spacing(4)};
   line-height: 21px;
 `;

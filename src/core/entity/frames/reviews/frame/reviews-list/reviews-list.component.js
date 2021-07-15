@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 
+import { ReviewsCommentComponent } from '../reviews-comment';
+
 import { PrimaryDivider } from '../../../../../../lib/elements/divider';
 import { PrimaryText, SecondaryText } from '../../../../../../lib/elements/text';
 import { SectionLayout } from '../../../../../../lib/elements/layout';
@@ -9,31 +11,28 @@ import {
   THEME_COLOR,
   THEME_VALUE,
 } from '../../../../../../lib/theme';
-import { ReviewsCommentComponent } from '../reviews-comment';
 
 export function ReviewsListComponent({ reviewsList }) {
   return (
     <div>
       <SectionLayout type="LARGE">
-        <SectionLayout>
-          {reviewsList.map(
-            ({ avatar, author, time, text, status }, index) => (
-              <CommentItem key={index}>
-                <Avatar src={avatar} />
-                <ContentCase>
-                  <div>
-                    <Author tid={author} />
-                    &nbsp;
-                    <Status tid={status.statusTid} statusId={status.statusId} />
-                  </div>
-                  <Text tid={text} />
-                  <Time tid={time} />
-                  <PrimaryDivider />
-                </ContentCase>
-              </CommentItem>
-            ),
-          )}
-        </SectionLayout>
+        {reviewsList.map(
+          ({ avatar, author, time, text, status }, index) => (
+            <CommentItem key={index}>
+              <Avatar src={avatar} />
+              <ContentCase>
+                <div>
+                  <Author tid={author} />
+                  &nbsp;
+                  <Status tid={status.statusTid} statusId={status.statusId} />
+                </div>
+                <Text tid={text} />
+                <Time tid={time} />
+                <PrimaryDivider />
+              </ContentCase>
+            </CommentItem>
+          ),
+        )}
         <ReviewsCommentComponent />
       </SectionLayout>
     </div>
@@ -58,14 +57,12 @@ const ContentCase = styled.div`
   display: flex;
   flex-direction: column;
   gap: ${spacing(3)};
-  margin-top: ${spacing(6)};
 `;
 
 const Avatar = styled.img`
   width: 56px;
   height: 56px;
   border-radius: ${THEME_SIZE.RADIUS.CIRCLE};
-  margin-top: ${spacing(3)};
 `;
 
 const Time = styled(PrimaryText)`

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { HeaderComponent } from './frame/header';
+import { HeaderComponent } from '../header';
 import { ReviewsListComponent } from './frame/reviews-list';
 
 import { REVIEWS_LIST } from './reviews.constant';
@@ -13,7 +13,11 @@ export function ReviewsComponent() {
     <Container>
       <IndentLayout>
         <SectionLayout>
-          <HeaderComponent />
+          <HeaderComponent
+            title="Отзывы"
+            companyType="Общество с ограниченной ответственностью"
+            companyName={'"Компания Гермес-Электро"'}
+          />
           <ReviewsListComponent reviewsList={REVIEWS_LIST} />
         </SectionLayout>
       </IndentLayout>

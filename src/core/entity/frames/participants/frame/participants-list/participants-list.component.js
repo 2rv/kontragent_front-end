@@ -28,7 +28,9 @@ export function ParticipantsListComponent({ participantsList }) {
             <LastVisitText>{participant.lastVisit}</LastVisitText>
           </Content>
         </Container>
-        <OptionIcon />
+        <EndContent>
+          <Option />
+        </EndContent>
       </Layout>
     </Box>
   ));
@@ -78,6 +80,7 @@ const LastVisitText = styled(SecondaryText)`
   color: ${THEME_COLOR.COLOR.LIGHT_GREY};
 `;
 
-const OptionIcon = styled(Option)`
-  margin-top: ${spacing(4)};
+const EndContent = styled.div`
+  display: flex;
+  align-items: center;
 `;

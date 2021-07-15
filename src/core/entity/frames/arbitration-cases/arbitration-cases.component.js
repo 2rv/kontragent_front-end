@@ -1,8 +1,7 @@
 import styled from 'styled-components';
 
-import { HeaderComponent } from './frame/header';
 import { ArbitrationCasesListComponent } from './frame/arbitration-cases-list';
-
+import { HeaderComponent } from '../header';
 import { ARBITRATION_CASES_LIST } from './arbitration-cases.constant';
 
 import { PrimaryBox } from '../../../../lib/elements/box';
@@ -13,12 +12,12 @@ export function ArbitrationCasesComponent() {
     <Container>
       <IndentLayout>
         <SectionLayout>
-          <HeaderComponent />
-          <SectionLayout>
-            <ArbitrationCasesListComponent
-              arbitrationCasesList={ARBITRATION_CASES_LIST}
-            />
-          </SectionLayout>
+          <HeaderComponent
+            title="Арбитражные дела"
+            companyType="Общество с ограниченной ответственностью"
+            companyName={'"Компания Гермес-Электро"'}
+          />
+          <ArbitrationCasesListComponent arbitrationCasesList={ARBITRATION_CASES_LIST} />
         </SectionLayout>
       </IndentLayout>
     </Container>

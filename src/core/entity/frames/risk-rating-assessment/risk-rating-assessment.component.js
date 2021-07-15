@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { HeaderComponent } from './frame/header';
+import { HeaderComponent } from '../header';
 import { RatingComponent } from './frame/rating';
 
 import { PrimaryBox } from '../../../../lib/elements/box';
@@ -11,7 +11,11 @@ export function RiskRatingAssessmentComponent() {
     <Container>
       <IndentLayout>
         <SectionLayout>
-          <HeaderComponent />
+          <HeaderComponent
+            title="Рейтинг и оценка рисков"
+            companyType="Общество с ограниченной ответственностью"
+            companyName={'"Компания Гермес-Электро"'}
+          />
           <RatingComponent />
         </SectionLayout>
       </IndentLayout>

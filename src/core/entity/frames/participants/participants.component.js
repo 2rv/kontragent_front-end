@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { HeaderComponent } from './frame/header';
+import { HeaderComponent } from '../header';
 import { ParticipantsListComponent } from './frame/participants-list';
 import { AddParticipantComponent } from './frame/add-participant';
 
@@ -15,7 +15,11 @@ export function ParticipantsComponent() {
       <Container>
         <IndentLayout>
           <SectionLayout>
-            <HeaderComponent />
+            <HeaderComponent
+              title="Участники компании"
+              companyType="Общество с ограниченной ответственностью"
+              companyName={'"Компания Гермес-Электро"'}
+            />
             <ParticipantsListComponent participantsList={PARTICIPANTS_LIST} />
           </SectionLayout>
         </IndentLayout>

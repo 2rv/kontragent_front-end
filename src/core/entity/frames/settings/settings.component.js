@@ -1,4 +1,4 @@
-import { HeaderComponent } from './frame/header';
+import { HeaderComponent } from '../header';
 import { FieldsComponent } from './frame/fields';
 
 import { PrimaryBox } from '../../../../lib/elements/box';
@@ -9,7 +9,11 @@ export function SettingsComponent(props) {
     <PrimaryBox>
       <IndentLayout>
         <SectionLayout>
-          <HeaderComponent />
+          <HeaderComponent
+            title="Настройка компании"
+            companyType="Общество с ограниченной ответственностью"
+            companyName={'"Компания Гермес-Электро"'}
+          />
           <FieldsComponent {...props} />
         </SectionLayout>
       </IndentLayout>

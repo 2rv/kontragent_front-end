@@ -22,7 +22,7 @@ export function StatisticsComponent() {
               </div>
               <MenuIcon />
             </HeaderContainer>
-            <PrimaryDivider />
+            <Divider />
             <Content>
               <CircularProgress />
               <Column>
@@ -52,7 +52,7 @@ export function StatisticsComponent() {
               <TitlePrimary tid="Статистика за 24ч." />
               <SearchIcon />
             </HeaderContainer>
-            <PrimaryDivider />
+            <Divider />
             <Content>
               <Column>
                 <div>
@@ -89,7 +89,6 @@ const Container = styled.div`
 const HeaderContainer = styled.div`
   display: flex;
   justify-content: space-between;
-  margin-bottom: ${spacing(2)};
 `;
 
 const TitlePrimary = styled(PrimaryText)`
@@ -129,6 +128,7 @@ const LinkText = styled(TitlePrimary)`
 const BottomUnderlineText = styled(TitlePrimary)`
   font-size: ${THEME_SIZE.FONT.TINY};
   text-decoration: underline;
+  cursor: pointer;
 `;
 
 const EasyBoldText = styled(TinyTextPrimary)`
@@ -144,7 +144,6 @@ const Content = styled.div`
   display: flex;
   align-items: center;
   gap: ${spacing(3)};
-  margin-top: ${spacing(2)};
 `;
 
 const CircularProgress = styled.div`
@@ -158,4 +157,8 @@ const Column = styled.div`
   display: flex;
   flex-direction: column;
   gap: ${spacing(1)};
+`;
+
+const Divider = styled(PrimaryDivider)`
+  margin: ${spacing(2)};
 `;
