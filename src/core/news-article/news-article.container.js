@@ -1,9 +1,38 @@
-import { NewsComponent } from './news.component';
+import { NewsArticleComponent } from './news-article.component';
+import { useEffect } from 'react';
+import { newsArticleContentLoad } from './news-article.action';
+import { useDispatch, useSelector } from 'react-redux';
+import { NAVIGATION_STORE_NAME } from '../../lib/common/navigation/navigation.constant';
+import { NEWS_ARTICLE_STORE_NAME } from './news-article.constant';
+import {
+  getRequestErrorMessage,
+  isRequestError,
+  isRequestPending,
+  isRequestSuccess,
+} from '../../main/store/store.service';
 
-export function NewsContainer() {
-  return <NewsComponent {...item} />;
+export function NewsArticleContainer() {
+  const dispatch = useDispatch();
+  const { state, pageLoading } = useSelector((state) => ({
+    state: state[NEWS_ARTICLE_STORE_NAME],
+    pageLoading: state[NAVIGATION_STORE_NAME].pageLoading,
+  }));
+
+  //   useEffect(() => {
+  //     dispatch(newsArticleContentLoad());
+  //   }, []);
+  return (
+    <NewsArticleComponent
+      isPending={isRequestPending(state.newsArticleContent)}
+      isError={isRequestError(state.newsArticleContent)}
+      isSuccess={isRequestSuccess(state.newsArticleContent)}
+      pageLoading={pageLoading}
+      errorMessage={getRequestErrorMessage(state.newsArticleContent)}
+      newsArticleContent={newsArticleContent}
+    />
+  );
 }
-const item = {
+const newsArticleContent = {
   newsTitle: 'Новая система проверки контрагентов!',
   newsDescription: 'Без задержек, проблем и недоразумений!',
   newsTime: '15 минут назад',
