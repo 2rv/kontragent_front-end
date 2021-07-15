@@ -10,7 +10,6 @@ export function BookReviewListComponent(props) {
     isSuccess,
     errorMessage,
     booksListData,
-    bookReviewListData,
   } = props;
   return (
     <Container>
@@ -22,7 +21,6 @@ export function BookReviewListComponent(props) {
         isSuccess={isSuccess}
         errorMessage={errorMessage}
         booksListData={booksListData}
-        bookReviewListData={bookReviewListData}
       />
     </Container>
   );

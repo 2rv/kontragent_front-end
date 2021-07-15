@@ -69,8 +69,12 @@ import {
   myCompaniesAddCompanyStore,
   MY_COMPANIES_ADD_COMPANY_STORE_NAME,
 } from '../../core/my-companies-add-company';
-
+import {
+  COMPANY_MEMBERS_STORE_NAME,
+  companyMembersStore,
+} from '../../core/company-members';
 export const reducers = combineReducers({
+  [COMPANY_MEMBERS_STORE_NAME]: companyMembersStore,
   [AUTH_STORE_NAME]: authStore,
   [LANG_STORE_NAME]: langStore,
   [NAVIGATION_STORE_NAME]: navigationStore,

@@ -13,43 +13,48 @@ import {
 import { PrimaryField } from '../../../../lib/elements/field';
 import { SecondaryButton } from '../../../../lib/elements/button';
 import { PrimaryLink } from '../../../../lib/elements/link';
+import {
+  FieldLayout,
+  IndentLayout,
+  SectionLayout,
+} from '../../../../lib/elements/layout';
+import { PrimaryBox } from '../../../../lib/elements/box';
+
 export function CompanyMembersFormComponent() {
   return (
-    <Container>
-      <Title tid="Добавить сотрудника" />
-      <FieldCase>
-        <Field placeholderTid="Почта пользователя" />
-        <SecondaryButton tid="Пригласить" />
-      </FieldCase>
-      <TinyText>
-        Добавляя пользователя он автоматически становится менеджером, для
-        изменения должности читайтев FAQ. <TinyLink tid="Подробнее" />
-      </TinyText>
-    </Container>
+    <PrimaryBox>
+      <IndentLayout>
+        <SectionLayout type="MEDIUM">
+          <Title tid="COMPANY_MEMBERS.FIND_BOX.ADD_NEW_MEMBER" />
+          <FieldCase type="double">
+            <PrimaryField placeholderTid="COMPANY_MEMBERS.FIND_BOX.EMAIL_USER" />
+            <Button tid="COMPANY_MEMBERS.FIND_BOX.INVITE" />
+          </FieldCase>
+          <TinyText>
+            <TinyText tid="COMPANY_MEMBERS.FIND_BOX.DESCRIPTION_FAQ" />
+            <TinyLink tid="COMPANY_MEMBERS.FIND_BOX.MORE_DETAILS" />
+          </TinyText>
+        </SectionLayout>
+      </IndentLayout>
+    </PrimaryBox>
   );
 }
+const FieldCase = styled.div`
+  display: grid;
+  gap: ${spacing(4)};
+  grid-template-columns: 1fr auto;
+`;
+const Button = styled(SecondaryButton)`
+  height: 46px;
+  width: 194px;
+`;
 const TinyLink = styled(PrimaryLink)`
   font-size: ${THEME_SIZE.FONT.TINY};
 `;
 const TinyText = styled(SecondaryText)`
   font-size: ${THEME_SIZE.FONT.TINY};
 `;
-const Field = styled(PrimaryField)`
-  display: grid;
-`;
-const FieldCase = styled.div`
-  display: grid;
-  grid-template-columns: 1fr minmax(auto, 194px);
-  gap: ${spacing(4)};
-`;
 const Title = styled(PrimaryText)`
   font-weight: ${THEME_VALUE.FONT_WEIGHT.SEMY_BOLD};
-`;
-const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: ${spacing(3)};
-  padding: ${spacing(6)};
-  background-color: ${THEME_COLOR.COLOR.BASE};
-  border-radius: ${THEME_SIZE.RADIUS.DEFAULT};
+  line-height: 1.5;
 `;

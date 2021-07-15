@@ -2,19 +2,34 @@ import styled from 'styled-components';
 import { THEME_COLOR, spacing, THEME_SIZE } from '../../lib/theme';
 import { PrimaryTitleText, SecondaryText } from '../../lib/elements/text';
 import {
-  CompanyMembersListComponent,
+  CompanyMembersListContainer,
   CompanyMembersFormComponent,
 } from './frames';
+import { SectionLayout } from '../../lib/elements/layout';
 
 export function CompanyMembersComponent(props) {
-  const { memberItem } = props;
+  const {
+    isPending,
+    pageLoading,
+    isError,
+    isSuccess,
+    errorMessage,
+    companyMembersListData,
+  } = props;
   return (
-    <Container>
-      <HeaderCase>
+    <Container type="LARGE">
+      <SectionLayout type="SMALL">
         <Title tid={`ООО "КОМПАНИЯ"`} />
-        <Desctiption tid="Настройки вашей компании. Вы можете управлять списком участников и их ролями." />
-      </HeaderCase>
-      <CompanyMembersListComponent memberItem={memberItem} />
+        <Desctiption tid="COMPANY_MEMBERS.DESCRIPTION" />
+      </SectionLayout>
+      <CompanyMembersListContainer
+        pageLoading={pageLoading}
+        isPending={isPending}
+        isError={isError}
+        isSuccess={isSuccess}
+        errorMessage={errorMessage}
+        companyMembersListData={companyMembersListData}
+      />
       <CompanyMembersFormComponent />
     </Container>
   );
@@ -22,18 +37,11 @@ export function CompanyMembersComponent(props) {
 const Title = styled(PrimaryTitleText)`
   font-size: ${THEME_SIZE.FONT.HUGE};
 `;
-const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: ${spacing(6)};
-  height: 100%;
-  width: 100%;
-`;
 const Desctiption = styled(SecondaryText)`
   font-size: ${THEME_SIZE.FONT.DEFAULT};
 `;
-const HeaderCase = styled.div`
+const Container = styled(SectionLayout)`
   display: flex;
   flex-direction: column;
-  gap: ${spacing(2)};
+  width: 100%;
 `;
