@@ -87,7 +87,6 @@ import {
   BALANCE_ACTIVITY_STORE_NAME,
   balanceActivityStore,
 } from '../../core/balance-activity';
-import { entityStore, ENTITY_STORE_NAME } from '../../core/entity';
 
 export const reducers = combineReducers({
   [DIALOG_PERSONAL_STORE_NAME]: dialogPersonalStore,
