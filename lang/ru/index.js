@@ -34,6 +34,7 @@ import LAWYER_REQUEST from './lawyer-request.json';
 import DASHBOARD_CARD from './dashboard-card.json';
 import DASHBOARD from './dashboard.json';
 import MY_COMPANIES from './my-companies.json';
+import COMPANY_MEMBERS from './company-members.json';
 
 export const RU = {
   translation: {
@@ -73,5 +74,6 @@ export const RU = {
     DASHBOARD_CARD,
     DASHBOARD,
     MY_COMPANIES,
+    COMPANY_MEMBERS,
   },
 };

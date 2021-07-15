@@ -5,51 +5,46 @@ import {
   THEME_SIZE,
   THEME_VALUE,
 } from '../../../../lib/theme';
-import {
-  PrimaryTitleText,
-  SecondaryText,
-  PrimaryText,
-} from '../../../../lib/elements/text';
+import { SecondaryText, PrimaryText } from '../../../../lib/elements/text';
 import { CompanyMembersItemComponent } from './company-members-item.component';
+import { SectionLayout, IndentLayout } from '../../../../lib/elements/layout';
+import { PrimaryBox } from '../../../../lib/elements/box';
+import { PrimaryLoader } from '../../../../lib/elements/loader';
 
 export function CompanyMembersListComponent(props) {
-  const { memberItem } = props;
+  const {
+    isPending,
+    pageLoading,
+    isError,
+    isSuccess,
+    errorMessage,
+    companyMembersListData,
+  } = props;
   return (
-    <Container>
-      <HeaderCase>
-        <Title tid="Участники компании" />
-        <Desctiption tid="Вы можете добавить новых участников либо сменить их роль." />
-      </HeaderCase>
-      <List>
-        {memberItem.map((item) => (
-          <CompanyMembersItemComponent {...item} />
-        ))}
-      </List>
-    </Container>
+    <>
+      {(isPending || pageLoading) && <PrimaryLoader />}
+      <PrimaryBox>
+        <IndentLayout>
+          <SectionLayout type="LARGE">
+            <SectionLayout type="MEDIUM">
+              <Title tid="COMPANY_MEMBERS.LIST_BOX.TITLE_COMPANY_MEMBERS" />
+              <Desctiption tid="COMPANY_MEMBERS.LIST_BOX.DESCRIPTION_BOX_LIST" />
+            </SectionLayout>
+            <SectionLayout>
+              {companyMembersListData.map((data, index) => (
+                <CompanyMembersItemComponent key={index} data={data} />
+              ))}
+            </SectionLayout>
+          </SectionLayout>
+        </IndentLayout>
+      </PrimaryBox>
+    </>
   );
 }
-const List = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: ${spacing(4)};
-`;
 const Title = styled(PrimaryText)`
   font-size: ${THEME_SIZE.FONT.MEDIUM};
   font-weight: ${THEME_VALUE.FONT_WEIGHT.MEDIUM};
 `;
-const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: ${spacing(6)};
-  padding: ${spacing(8)};
-  background-color: ${THEME_COLOR.COLOR.BASE};
-  border-radius: ${THEME_SIZE.RADIUS.DEFAULT};
-`;
 const Desctiption = styled(SecondaryText)`
   font-size: ${THEME_SIZE.FONT.DEFAULT};
-`;
-const HeaderCase = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: ${spacing(3)};
 `;

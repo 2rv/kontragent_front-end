@@ -18,6 +18,7 @@ import { themeArbitrationRouter } from '../../core/theme-arbitration';
 import { dashboardRouter } from '../../core/dashboard';
 import { lawyerRequestRouter } from '../../core/lawyer-request';
 import { counterpartyRouter } from '../../core/counterparty';
+import { companyMembersRouter } from '../../core/company-members';
 
 import { LOGIN_ROUTE_PATH } from '../../core/login';
 import { SIGNUP_ROUTE_PATH } from '../../core/signup';
@@ -38,8 +39,10 @@ import { THEME_ARBITRATION_ROUTE_PATH } from '../../core/theme-arbitration';
 import { DASHBOARD_ROUTE_PATH } from '../../core/dashboard';
 import { LAWYER_REQUEST_ROUTE_PATH } from '../../core/lawyer-request';
 import { COUNTERPARTY_ROUTE_PATH } from '../../core/counterparty';
+import { COMPANY_MEMBERS_ROUTE_PATH } from '../../core/company-members';
 
 export const routes = {
+  [COMPANY_MEMBERS_ROUTE_PATH]: companyMembersRouter,
   [LAWYER_REQUEST_ROUTE_PATH]: lawyerRequestRouter,
   [DASHBOARD_ROUTE_PATH]: dashboardRouter,
   [ARBITRATION_REQUESTS_LIST_ROUTE_PATH]: arbitrationRequestsListRouter,

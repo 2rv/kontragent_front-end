@@ -1,1 +1,1 @@
-export { CompanyMembersListComponent } from './company-members-list.component';
+export { CompanyMembersListContainer } from './company-members-list.container';
