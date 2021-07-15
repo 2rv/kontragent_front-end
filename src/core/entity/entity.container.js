@@ -16,6 +16,7 @@ import { ReviewsContainer } from './frames/reviews';
 import { VerificationsContainer } from './frames/verifications';
 import { ArbitrationCasesContainer } from './frames/arbitration-cases';
 import { ParticipantsContainer } from './frames/participants';
+import { BalanceContainer } from './frames/balance';
 import { SettingsContainer } from './frames/settings';
 
 export function EntityContainer() {
@@ -67,6 +68,6 @@ const TABS_COMPONENT_LIST = [
   { id: 4, component: <VerificationsContainer /> },
   { id: 5, component: <ArbitrationCasesContainer /> },
   { id: 6, component: <ParticipantsContainer /> },
-  { id: 7, component: null },
+  { id: 7, component: <BalanceContainer /> },
   { id: 8, component: <SettingsContainer /> },
 ];
