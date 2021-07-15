@@ -1,3 +1,4 @@
 export { ReferralDashboardComponent } from './referral-dashboard';
-export { ReferralListComponent } from './referral-list';
-export { ReferralFindComponent } from './referral-find';
+export { ReferralListContainer } from './referral-list';
+export { ReferralFindFormContainer } from './referral-find-form';
+export { ReferralHeaderComponent } from './referral-header';

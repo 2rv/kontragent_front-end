@@ -1,1 +1,1 @@
-export { ReferralListComponent } from './referral-list.component';
+export { ReferralListContainer } from './referral-list.container';

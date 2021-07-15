@@ -2,19 +2,49 @@ import styled from 'styled-components';
 import { spacing, THEME_COLOR, THEME_SIZE } from '../../lib/theme';
 import {
   ReferralDashboardComponent,
-  ReferralListComponent,
-  ReferralFindComponent,
+  ReferralListContainer,
+  ReferralFindFormContainer,
+  ReferralHeaderComponent,
 } from './frame';
+import { PrimaryLoader } from '../../lib/elements/loader';
 
 export function ReferralComponent(props) {
-  const { referralItems } = props;
+  const {
+    isPending,
+    isError,
+    isSuccess,
+    pageLoading,
+    errorMessage,
+    referralList,
+  } = props;
   return (
     <>
+      {(isPending || pageLoading) && <PrimaryLoader />}
       <Background />
       <Content>
-        <ReferralDashboardComponent />
-        <ReferralListComponent referralItems={referralItems} />
-        <ReferralFindComponent />
+        <ReferralHeaderComponent />
+        <ReferralDashboardComponent
+          pageLoading={pageLoading}
+          isPending={isPending}
+          isError={isError}
+          isSuccess={isSuccess}
+          errorMessage={errorMessage}
+        />
+        <ReferralListContainer
+          pageLoading={pageLoading}
+          isPending={isPending}
+          isError={isError}
+          isSuccess={isSuccess}
+          errorMessage={errorMessage}
+          referralList={referralList}
+        />
+        <ReferralFindFormContainer
+          pageLoading={pageLoading}
+          isPending={isPending}
+          isError={isError}
+          isSuccess={isSuccess}
+          errorMessage={errorMessage}
+        />
       </Content>
     </>
   );
