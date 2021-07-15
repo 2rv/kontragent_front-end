@@ -13,12 +13,10 @@ import { bookReviewListRouter } from '../../core/book-review-list';
 import { balanceDepositRouter } from '../../core/balance-deposit';
 import { arbitrationRequestsListRouter } from '../../core/arbitration-requests-list';
 import { settingsRouter } from '../../core/settings';
-import { arbitrationCasesRouter } from '../../core/arbitration-cases';
 import { MyRequestsJuristsListRouter } from '../../core/my-requests-jurists-list';
 import { themeArbitrationRouter } from '../../core/theme-arbitration';
 import { dashboardRouter } from '../../core/dashboard';
 import { lawyerRequestRouter } from '../../core/lawyer-request';
-import { kontragentInformationtRouter } from '../../core/kontragent-information';
 import { counterpartyRouter } from '../../core/counterparty';
 
 import { LOGIN_ROUTE_PATH } from '../../core/login';
@@ -39,15 +37,11 @@ import { MY_REQUESTS_JURISTS_LIST_ROUTE_PATH } from '../../core/my-requests-juri
 import { THEME_ARBITRATION_ROUTE_PATH } from '../../core/theme-arbitration';
 import { DASHBOARD_ROUTE_PATH } from '../../core/dashboard';
 import { LAWYER_REQUEST_ROUTE_PATH } from '../../core/lawyer-request';
-import { KONTRAGENT_INFORMATION_ROUTE_PATH } from '../../core/kontragent-information';
 import { COUNTERPARTY_ROUTE_PATH } from '../../core/counterparty';
-import { ARBITRATION_CASES_ROUTE_PATH } from '../../core/arbitration-cases';
 
 export const routes = {
-  [KONTRAGENT_INFORMATION_ROUTE_PATH]: kontragentInformationtRouter,
   [LAWYER_REQUEST_ROUTE_PATH]: lawyerRequestRouter,
   [DASHBOARD_ROUTE_PATH]: dashboardRouter,
-  [ARBITRATION_CASES_ROUTE_PATH]: arbitrationCasesRouter,
   [ARBITRATION_REQUESTS_LIST_ROUTE_PATH]: arbitrationRequestsListRouter,
   [AUTH_RECOVERY_ACCOUNT_ROUTE_PATH]: AuthRecoveryAccountRouter,
   [AUTH_CHANGE_PASSWORD_ROUTE_PATH]: AuthChangePasswordRouter,
