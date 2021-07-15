@@ -19,6 +19,7 @@ import { dashboardRouter } from '../../core/dashboard';
 import { lawyerRequestRouter } from '../../core/lawyer-request';
 import { counterpartyRouter } from '../../core/counterparty';
 import { companyMembersRouter } from '../../core/company-members';
+import { newsArticleRouter } from '../../core/news-article';
 
 import { LOGIN_ROUTE_PATH } from '../../core/login';
 import { SIGNUP_ROUTE_PATH } from '../../core/signup';
@@ -40,8 +41,10 @@ import { DASHBOARD_ROUTE_PATH } from '../../core/dashboard';
 import { LAWYER_REQUEST_ROUTE_PATH } from '../../core/lawyer-request';
 import { COUNTERPARTY_ROUTE_PATH } from '../../core/counterparty';
 import { COMPANY_MEMBERS_ROUTE_PATH } from '../../core/company-members';
+import { NEWS_ARTICLE_ROUTE_PATH } from '../../core/news-article';
 
 export const routes = {
+  [NEWS_ARTICLE_ROUTE_PATH]: newsArticleRouter,
   [COMPANY_MEMBERS_ROUTE_PATH]: companyMembersRouter,
   [LAWYER_REQUEST_ROUTE_PATH]: lawyerRequestRouter,
   [DASHBOARD_ROUTE_PATH]: dashboardRouter,

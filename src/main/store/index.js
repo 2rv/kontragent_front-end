@@ -73,7 +73,13 @@ import {
   COMPANY_MEMBERS_STORE_NAME,
   companyMembersStore,
 } from '../../core/company-members';
+import {
+  NEWS_ARTICLE_STORE_NAME,
+  newsArticleStore,
+} from '../../core/news-article';
+
 export const reducers = combineReducers({
+  [NEWS_ARTICLE_STORE_NAME]: newsArticleStore,
   [COMPANY_MEMBERS_STORE_NAME]: companyMembersStore,
   [AUTH_STORE_NAME]: authStore,
   [LANG_STORE_NAME]: langStore,
