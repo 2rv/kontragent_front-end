@@ -124,8 +124,14 @@ import {
   authVerificationEmailStore,
   AUTH_VERIFICATION_EMAIL_STORE_NAME,
 } from '../../core/auth-verification-email';
+import {
+  MY_COMPANIES_REVIEW_COMPANY_LIST_STORE_NAME,
+  myCompaniesReviewCompanyListStore,
+} from '../../core/my-companies-review-company-list';
 
 export const reducers = combineReducers({
+  [MY_COMPANIES_REVIEW_COMPANY_LIST_STORE_NAME]:
+    myCompaniesReviewCompanyListStore,
   [FEED_AND_NOTIFICATIONS_LIST_STORE_NAME]: feedAndNotificationsListStore,
   [DASHBOARD_STORE_NAME]: dashboardStore,
   [DIALOG_PERSONAL_STORE_NAME]: dialogPersonalStore,
