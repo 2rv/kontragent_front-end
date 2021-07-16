@@ -4,7 +4,6 @@ import { AUTH_HEADER, AUTH_COOKIE } from './auth.constant';
 import { setCookie, getBrowserCookie } from '../cookie/cookie.core';
 
 import { httpRequest } from '../http/index';
-import { getBrowserCookie } from '../cookie';
 
 export function authDecode(raw) {
   return jwtDecode(raw);
