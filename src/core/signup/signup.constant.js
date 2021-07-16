@@ -9,7 +9,7 @@ export const SIGNUP_API = {
   },
 };
 
-export const SIGNUP_FORM_REDIRECT_ON_UPLOAD_PATH = '/home';
+export const SIGNUP_FORM_REDIRECT_ON_UPLOAD_PATH = '/auth/verification-email';
 
 export const SIGNUP_REDIRECT_ON_LOGGED_PATH = '/logout';
 

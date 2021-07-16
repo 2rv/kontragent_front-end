@@ -34,6 +34,7 @@ import COMPANY_MEMBERS from './company-members.json';
 import COUNTERPARTY from './counterparty.json';
 import ENTITY from './entity.json';
 import AUTH_VERIFICATION_PHONE from './auth-verification-phone.json';
+import AUTH_VERIFICATION_EMAIL from './auth-verification-email.json';
 
 export const RU = {
   translation: {
@@ -73,5 +74,6 @@ export const RU = {
     COUNTERPARTY,
     ENTITY,
     AUTH_VERIFICATION_PHONE,
+    AUTH_VERIFICATION_EMAIL,
   },
 };
