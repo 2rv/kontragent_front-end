@@ -104,6 +104,11 @@ export const NAVMENU_ITEMS = [
     pathname: '/dialog-personal',
     path: '/dialog-personal',
   },
+  {
+    tid: 'Мои компании',
+    pathname: '/my-companies',
+    path: '/my-companies',
+  },
 ];
 
 // {
