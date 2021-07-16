@@ -78,6 +78,5 @@ export const routes = {
   [BALANCE_ACTIVITY_ROUTE_PATH]: balanceActivityRouter,
   [DASHBOARD_ADMIN_ROUTE_PATH]: dashboardAdminRouter,
   [LAWYER_REQUEST_ROUTE_PATH]: lawyerRequestRouter,
-  [AUTH_PHONE_VERIFICATION_INFO_ROUTE_PATH]: authPhoneVerificationInfoRouter,
 };
 export const Router = routesInit(routes);
