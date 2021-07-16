@@ -24,7 +24,7 @@ const Loader = styled.progress`
   top: 0;
   left: 0;
   width: 100%;
-
+  z-index: 2;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
