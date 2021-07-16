@@ -31,7 +31,6 @@ import DASHBOARD_CARD from './dashboard-card.json';
 import DASHBOARD from './dashboard.json';
 import MY_COMPANIES from './my-companies.json';
 import COMPANY_MEMBERS from './company-members.json';
-import COUNTERPARTY from './counterparty.json';
 import ENTITY from './entity.json';
 
 export const RU = {
@@ -69,7 +68,6 @@ export const RU = {
     DASHBOARD,
     MY_COMPANIES,
     COMPANY_MEMBERS,
-    COUNTERPARTY,
     ENTITY,
   },
 };
