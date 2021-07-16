@@ -47,9 +47,9 @@ export function SettingsPhoneContainer() {
     dispatch(settingsFormChangePhoneUploadForm(data, resetForm));
   };
 
-  useEffect(() => {
-    dispatch(settingsPhoneGetPhone());
-  }, []);
+  //   useEffect(() => {
+  //     dispatch(settingsPhoneGetPhone());
+  //   }, []);
 
   return (
     <SettingsPhoneComponent
