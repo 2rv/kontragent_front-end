@@ -89,6 +89,11 @@ export const NAVMENU_ITEMS = [
     pathname: '/feed-and-notifications',
     path: '/feed-and-notifications',
   },
+  {
+    tid: 'Задать вопрос юристу',
+    pathname: '/lawyer-request',
+    path: '/lawyer-request',
+  },
 ];
 // {
 //     tid: 'Мои запросы в поддержку',
@@ -100,11 +105,7 @@ export const NAVMENU_ITEMS = [
 //     pathname: '/dialog-personal',
 //     path: '/dialog-personal',
 //   },
-// {
-//     tid: 'Задать вопрос юристу',
-//     pathname: '/lawyer-request',
-//     path: '/lawyer-request',
-//   },
+
 // {
 //     tid: 'Тема арбитража',
 //     pathname: '/theme-arbitration',

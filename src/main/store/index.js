@@ -92,7 +92,6 @@ import {
   feedAndNotificationsListStore,
   FEED_AND_NOTIFICATIONS_LIST_STORE_NAME,
 } from '../../core/feed-and-notifications-list';
-import { DASHBOARD_STORE_NAME, dashboardStore } from '../../core/dashboard';
 import {
   DASHBOARD_ADMIN_STORE_NAME,
   dashboardAdminStore,
@@ -132,7 +131,6 @@ export const reducers = combineReducers({
   [COUNTERPARTY_STORE_NAME]: counterpartyStore,
   [ENTITY_STORE_NAME]: entityStore,
   [BALANCE_ACTIVITY_STORE_NAME]: balanceActivityStore,
-  [DASHBOARD_STORE_NAME]: dashboardStore,
   [DASHBOARD_ADMIN_STORE_NAME]: dashboardAdminStore,
   [LAWYER_REQUEST_STORE_NAME]: lawyerRequestStore,
 });

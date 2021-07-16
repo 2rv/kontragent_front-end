@@ -23,11 +23,20 @@ export function LawyerReqeustComponent(props) {
     <>
       {(isPending || pageLoading) && <PrimaryLoader />}
       <Container>
-        <div>
+        <SectionLayout type="MEDIUM">
           <LawyerRequestQuestionTitle tid="LAWYER_REQUEST.TITLE" />
           <LawyerRequestQuestionDescription tid="LAWYER_REQUEST.DESCRIPTION" />
-        </div>
-        <NewLawyerRequestFormContainer {...props} />
+        </SectionLayout>
+        <NewLawyerRequestFormContainer
+          pageLoading={pageLoading}
+          isPending={isPending}
+          isError={isError}
+          isSuccess={isSuccess}
+          errorMessage={errorMessage}
+          initialValue={initialValue}
+          onSubmit={onSubmit}
+          fieldName={fieldName}
+        />
       </Container>
     </>
   );
@@ -37,12 +46,9 @@ const Container = styled.div`
   flex-direction: column;
   gap: ${spacing(6)};
 `;
-
 const LawyerRequestQuestionTitle = styled(PrimaryTitleText)`
   font-size: ${THEME_SIZE.FONT.HUGE};
-  line-height: 1.5;
 `;
-
 const LawyerRequestQuestionDescription = styled(SecondaryText)`
   line-height: 1.5;
 `;

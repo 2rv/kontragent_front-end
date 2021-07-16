@@ -5,7 +5,16 @@ import { NewLawyerRequestFormComponent } from './new-lawyer-request-form.compone
 import { NEW_LAWYER_REQUEST_FORM_FIELD_KEY } from './new-lawyer-request-form.type';
 
 export function NewLawyerRequestFormContainer(props) {
-  const { initialValue, onSubmit, fieldName } = props;
+  const {
+    initialValue,
+    onSubmit,
+    fieldName,
+    isPending,
+    pageLoading,
+    isError,
+    isSuccess,
+    errorMessage,
+  } = props;
 
   const QUESTION_CATEGORY_NAME =
     fieldName[NEW_LAWYER_REQUEST_FORM_FIELD_KEY.QUESTION_CATEGORY];

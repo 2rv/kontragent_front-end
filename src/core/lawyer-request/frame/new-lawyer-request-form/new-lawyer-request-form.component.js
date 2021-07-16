@@ -17,7 +17,11 @@ import {
   SecondaryButton,
 } from '../../../../lib/elements/button';
 import { PrimaryBox } from '../../../../lib/elements/box';
-import { IndentLayout, SectionLayout } from '../../../../lib/elements/layout';
+import {
+  IndentLayout,
+  SectionLayout,
+  ButtonLayout,
+} from '../../../../lib/elements/layout';
 
 import {
   spacing,
@@ -38,13 +42,12 @@ export function NewLawyerRequestFormComponent(props) {
   } = props;
 
   return (
-    <Container>
+    <PrimaryBox>
       <IndentLayout>
-        <SectionLayout>
-          <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit}>
+          <SectionLayout>
             <PrimaryTitleText tid="LAWYER_REQUEST.FORM.TITLE" />
-
-            <FieldContainer>
+            <SectionLayout type="MEDIUM">
               <PrimarySelect
                 titleTid="LAWYER_REQUEST.FORM.FIELDS.TITLES.QUESTION_CATEGORY"
                 name={fieldQuestionCategory}
@@ -57,8 +60,6 @@ export function NewLawyerRequestFormComponent(props) {
                   },
                 ]}
               />
-            </FieldContainer>
-            <FieldContainer>
               <PrimaryField
                 titleTid="LAWYER_REQUEST.FORM.FIELDS.TITLES.YOUR_QUESTION"
                 placeholderTid="LAWYER_REQUEST.FORM.FIELDS.PLACEHOLDERS.YOUR_QUESTION"
@@ -67,80 +68,52 @@ export function NewLawyerRequestFormComponent(props) {
                 onChange={handleChange}
                 onBlur={handleBlur}
               />
-            </FieldContainer>
-            <FieldContainer hasIcon>
-              <TextareaField
-                titleTid="LAWYER_REQUEST.FORM.FIELDS.TITLES.PROBLEM_DESCRIPTION"
-                placeholderTid="LAWYER_REQUEST.FORM.FIELDS.PLACEHOLDERS.PROBLEM_DESCRIPTION"
-                name={fieldProblemDescription}
-                onChange={handleChange}
-                onBlur={handleBlur}
-                row={8}
-              />
-              <FileIcon />
-            </FieldContainer>
-
-            <PriceOfResolvingIssueContainer>
+              <TextareaCase>
+                <TextareaField
+                  titleTid="LAWYER_REQUEST.FORM.FIELDS.TITLES.PROBLEM_DESCRIPTION"
+                  placeholderTid="LAWYER_REQUEST.FORM.FIELDS.PLACEHOLDERS.PROBLEM_DESCRIPTION"
+                  name={fieldProblemDescription}
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  row={8}
+                />
+                <FileIcon />
+              </TextareaCase>
+            </SectionLayout>
+            <SectionLayout type="SMALL">
               <PriceOfResolvingIssueText tid="LAWYER_REQUEST.FORM.PRICE_OF_RESOLVING_ISSUE" />
-              <div>
-                <PriceText>500</PriceText>
-                <ValuteText tid="SIDEBAR.ACCOUNT_INFO_CURRENCY" />
-              </div>
-            </PriceOfResolvingIssueContainer>
-
-            <ButtonFields>
+              <PriceText>
+                500 <ValuteText tid="SIDEBAR.ACCOUNT_INFO_CURRENCY" />
+              </PriceText>
+            </SectionLayout>
+            <ButtonLayout type="double">
               <PrimaryButton tid="LAWYER_REQUEST.FORM.FIELDS.BUTTONS.SEND_AND_PAY" />
-              <SecondaryButton
-                tid="LAWYER_REQUEST.FORM.FIELDS.BUTTONS.WATCH_MY_QUESTIONS"
-                type="button"
-              />
-            </ButtonFields>
-          </form>
-        </SectionLayout>
+              <SecondaryButton tid="LAWYER_REQUEST.FORM.FIELDS.BUTTONS.WATCH_MY_QUESTIONS" />
+            </ButtonLayout>
+          </SectionLayout>
+        </form>
       </IndentLayout>
-    </Container>
+    </PrimaryBox>
   );
 }
 
-const Container = styled(PrimaryBox)`
-  margin-top: ${spacing(6)};
+const TextareaCase = styled.div`
+  position: relative;
 `;
-
-const FieldContainer = styled.div`
-  margin-top: ${spacing(6)};
-  ${(props) => props.hasIcon && `position: relative`};
-`;
-
 const FileIcon = styled(File)`
   position: absolute;
   right: 16px;
-  top: 40px;
+  top: 16px;
 `;
-
-const PriceOfResolvingIssueContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  margin: ${spacing(5)} 0;
-`;
-
 const PriceOfResolvingIssueText = styled(SecondaryText)`
   font-size: ${THEME_SIZE.FONT.TINY};
   color: ${THEME_COLOR.COLOR.LIGHT_GREY};
-  margin-bottom: ${spacing(2)};
 `;
-
 const PriceText = styled(PrimaryText)`
   font-size: ${THEME_SIZE.FONT.MEDIUM};
   font-weight: ${THEME_VALUE.FONT_WEIGHT.SEMY_BOLD};
 `;
-
 const ValuteText = styled(PrimaryText)`
   font-size: ${THEME_SIZE.FONT.SMALL};
   font-weight: ${THEME_VALUE.FONT_WEIGHT.MEDIUM};
-`;
-
-const ButtonFields = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-column-gap: ${spacing(4)};
 `;
