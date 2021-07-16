@@ -87,6 +87,18 @@ import {
   BALANCE_ACTIVITY_STORE_NAME,
   balanceActivityStore,
 } from '../../core/balance-activity';
+import {
+  DASHBOARD_STORE_NAME,
+  dashboardStore,
+} from '../../core/dashboard';
+import {
+  DASHBOARD_ADMIN_STORE_NAME,
+  dashboardAdminStore,
+} from '../../core/dashboard-admin';
+import {
+  LAWYER_REQUEST_STORE_NAME,
+  lawyerRequestStore,
+} from '../../core/lawyer-request';
 
 export const reducers = combineReducers({
   [DIALOG_PERSONAL_STORE_NAME]: dialogPersonalStore,
@@ -116,6 +128,9 @@ export const reducers = combineReducers({
   [COUNTERPARTY_STORE_NAME]: counterpartyStore,
   [ENTITY_STORE_NAME]: entityStore,
   [BALANCE_ACTIVITY_STORE_NAME]: balanceActivityStore,
+  [DASHBOARD_STORE_NAME]: dashboardStore,
+  [DASHBOARD_ADMIN_STORE_NAME]: dashboardAdminStore,
+  [LAWYER_REQUEST_STORE_NAME]: lawyerRequestStore,
 });
 
 export { initStore } from './store.core';
