@@ -23,10 +23,10 @@ export function DashboardContainer() {
 
   return (
     <DashboardComponent
-      //   isPending={isRequestPending(state.dashboard)}
-      //   isError={isRequestError(state.dashboard)}
-      //   isSuccess={isRequestSuccess(state.dashboard)}
-      //   errorMessage={getRequestErrorMessage(state.dashboard)}
+      isPending={isRequestPending(state.dashboard)}
+      isError={isRequestError(state.dashboard)}
+      isSuccess={isRequestSuccess(state.dashboard)}
+      errorMessage={getRequestErrorMessage(state.dashboard)}
       pageLoading={pageLoading}
     />
   );

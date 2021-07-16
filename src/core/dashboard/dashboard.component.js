@@ -2,10 +2,13 @@ import styled from 'styled-components';
 import { spacing, THEME_COLOR, THEME_SIZE } from '../../lib/theme';
 import { AdvertContainer } from '../advert';
 import { NewsAndBlogComponent, ControlBlockComponent } from './frame';
+import { PrimaryLoader } from '../../lib/elements/loader';
 
-export function DashboardComponent() {
+export function DashboardComponent(props) {
+  const { isPending, isError, isSuccess, errorMessage, pageLoading } = props;
   return (
     <>
+      {(isPending || pageLoading) && <PrimaryLoader />}
       <Background />
       <Content>
         <AdvertContainer type="BAR" />
