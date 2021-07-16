@@ -18,9 +18,9 @@ export function MySupportRequestsListContainer() {
     pageLoading: state[NAVIGATION_STORE_NAME].pageLoading,
   }));
 
-  useEffect(() => {
-    dispatch(mySupportRequestsListLoad());
-  }, []);
+  //   useEffect(() => {
+  //     dispatch(mySupportRequestsListLoad());
+  //   }, []);
 
   return (
     <MySupportRequestsListComponent

@@ -94,12 +94,13 @@ export const NAVMENU_ITEMS = [
     pathname: '/lawyer-request',
     path: '/lawyer-request',
   },
+  {
+    tid: 'Мои запросы в поддержку',
+    pathname: '/support/my-requests',
+    path: '/support/my-requests',
+  },
 ];
-// {
-//     tid: 'Мои запросы в поддержку',
-//     pathname: '/support/my-requests',
-//     path: '/support/my-requests',
-//   },
+
 //   {
 //     tid: 'Диалоги личные сообщения',
 //     pathname: '/dialog-personal',
