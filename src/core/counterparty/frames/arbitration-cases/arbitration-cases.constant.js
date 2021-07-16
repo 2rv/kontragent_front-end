@@ -8,11 +8,11 @@ export const ARBITRATION_CASES_LIST = [
     time: '15 минут назад',
     messages: '25',
     status: {
-      title: 'ARBITRATION_CASES.TYPE.KONTRAGENT',
+      title: 'COUNTERPARTY.ARBITRATION_CASES.TYPE.KONTRAGENT',
       id: 0,
     },
     info: {
-      title: 'ARBITRATION_CASES.STATUS.RESOLVED',
+      title: 'COUNTERPARTY.ARBITRATION_CASES.STATUS.RESOLVED',
       id: 0,
     },
   },
@@ -25,11 +25,11 @@ export const ARBITRATION_CASES_LIST = [
     time: '40 минут назад',
     messages: '5',
     status: {
-      title: 'ARBITRATION_CASES.TYPE.COMPLAINT',
+      title: 'COUNTERPARTY.ARBITRATION_CASES.TYPE.COMPLAINT',
       id: 1,
     },
     info: {
-      title: 'ARBITRATION_CASES.STATUS.UNDER_CONSIDERATION',
+      title: 'COUNTERPARTY.ARBITRATION_CASES.STATUS.UNDER_CONSIDERATION',
       id: 1,
     },
   },
@@ -42,11 +42,11 @@ export const ARBITRATION_CASES_LIST = [
     time: 'Вчера',
     messages: '0',
     status: {
-      title: 'ARBITRATION_CASES.TYPE.SUSPICION',
+      title: 'COUNTERPARTY.ARBITRATION_CASES.TYPE.SUSPICION',
       id: 2,
     },
     info: {
-      title: 'ARBITRATION_CASES.STATUS.REJECTED',
+      title: 'COUNTERPARTY.ARBITRATION_CASES.STATUS.REJECTED',
       id: 2,
     },
   },

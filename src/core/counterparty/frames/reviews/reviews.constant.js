@@ -6,7 +6,7 @@ export const REVIEWS_LIST = [
     time: '15 минут назад',
     avatar: 'https://picsum.photos/1/1?grayscale',
     status: {
-      statusTid: 'KONTRAGENT_COMMENTS.TYPE.PLAINTIFF',
+      statusTid: 'COUNTERPARTY.REVIEWS.TYPE.PLAINTIFF',
       statusId: 1,
     },
   },
@@ -17,7 +17,7 @@ export const REVIEWS_LIST = [
     time: '5 минут назад',
     avatar: 'https://picsum.photos/1/1?grayscale',
     status: {
-      statusTid: 'KONTRAGENT_COMMENTS.TYPE.DEFENDANT',
+      statusTid: 'COUNTERPARTY.REVIEWS.TYPE.DEFENDANT',
       statusId: 0,
     },
   },
@@ -28,7 +28,7 @@ export const REVIEWS_LIST = [
     time: '5 минут назад',
     avatar: 'https://picsum.photos/1/1?grayscale',
     status: {
-      statusTid: 'KONTRAGENT_COMMENTS.TYPE.DEFENDANT',
+      statusTid: 'COUNTERPARTY.REVIEWS.TYPE.DEFENDANT',
       statusId: 0,
     },
   },

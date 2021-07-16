@@ -49,12 +49,12 @@ export function CounterpartyContainer() {
 }
 
 const TABS_LIST = [
-  { id: 1, text: 'Детальная информация' },
-  { id: 2, text: 'Рейтинг и оценка рисков' },
-  { id: 3, text: 'Отзывы' },
-  { id: 4, text: 'Проверки' },
-  { id: 5, text: 'Арбитражные дела' },
-  { id: 6, text: 'Красная зона', hasDangerNotices: true },
+  { id: 1, text: 'COUNTERPARTY.TABS.DETAIL_INFORMATION' },
+  { id: 2, text: 'COUNTERPARTY.TABS.RISK_RATING_AND_ASSESSMENT' },
+  { id: 3, text: 'COUNTERPARTY.TABS.TESTIMONIALS' },
+  { id: 4, text: 'COUNTERPARTY.TABS.VERIFICATIONS' },
+  { id: 5, text: 'COUNTERPARTY.TABS.ARBITRATION_CASES' },
+  { id: 6, text: 'COUNTERPARTY.TABS.RED_ZONE', hasDangerNotices: true },
 ];
 
 const TABS_COMPONENT_LIST = [

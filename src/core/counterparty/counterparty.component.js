@@ -16,7 +16,7 @@ export function CounterpartyComponent(props) {
 
   return (
     <Container>
-      <CounterpartyText tid="Контрагент" />
+      <CounterpartyText tid="COUNTERPARTY.TITLE" />
       <TabsComponent tabsList={tabsList} activeTabId={activeTabId} activeTabHandler={activeTabHandler} />
       {tabsComponentList.map((component) => {
         if (component.id === activeTabId) {

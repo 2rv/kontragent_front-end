@@ -11,7 +11,7 @@ export function DangerNotice2Component({ dangerNotices2 }) {
   return (
     <Box>
       <Layout>
-        <DangerNoticeHeadline tid="KONTRAGENT_INFORMATION.DANGER_NOTICES.TITLE" />
+        <DangerNoticeHeadline tid="COUNTERPARTY.DETAIL_INFORMATION.DANGER_NOTICE_TITLE" />
         <DangerNoticeContainer>
           {dangerNotices2.map((dangerNotice) => (
             <DangerNoticeContent
@@ -23,8 +23,8 @@ export function DangerNotice2Component({ dangerNotices2 }) {
               <DangerNoticeTitle tid={dangerNotice.title} />
               <DangerNoticeDescription tid={dangerNotice.description} />
               <div>
-                <DangerNoticePrice tid={dangerNotice.price} />
-                <LightGrayText tid="SIDEBAR.ACCOUNT_INFO_CURRENCY" />
+                <DangerNoticePrice tid={dangerNotice.price} />&nbsp;
+                <LightGrayText tid="руб." />
               </div>
             </DangerNoticeContent>
           ))}
@@ -32,13 +32,13 @@ export function DangerNotice2Component({ dangerNotices2 }) {
         <Divider />
         <FooterContainer>
           <div>
-            <LightGrayText tid="KONTRAGENT_INFORMATION.DANGER_NOTICES.PRICE_OF_RESOLVING_ISSUE" />
+            <LightGrayText tid="COUNTERPARTY.RED_ZONE.PRICE_OF_RESOLVING_ISSUE" />
             <div>
-              <BlueText>3 500</BlueText>
-              <PrimaryText tid="SIDEBAR.ACCOUNT_INFO_CURRENCY" />
+              <BlueText>3 500</BlueText>&nbsp;
+              <PrimaryText tid="руб." />
             </div>
           </div>
-          <SecondaryButton tid="KONTRAGENT_INFORMATION.DANGER_NOTICES.ORDER" />
+          <SecondaryButton tid="COUNTERPARTY.RED_ZONE.ORDER" />
         </FooterContainer>
       </Layout>
     </Box>
