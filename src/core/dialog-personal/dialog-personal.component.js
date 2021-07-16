@@ -46,5 +46,6 @@ const Container = styled.div`
   bottom: 0;
   right: 0;
   display: grid;
+  overflow: hidden;
   grid-template-columns: 400px minmax(400px, 1fr);
 `;

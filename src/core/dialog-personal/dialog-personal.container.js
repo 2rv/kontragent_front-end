@@ -81,6 +81,117 @@ const dialogPersonalUserListData = [
       unreadedMessages: 3,
     },
   },
+  {
+    id: 1,
+    img: 'https://picsum.photos/1/1?grayscale',
+    name: 'Джон Уик',
+    status: 'Менеджер',
+    statusId: 0,
+    content: {
+      you: 'Вы:',
+      message:
+        'Отличная работа, Отличная работа, Отличная работа, Отличная работа,',
+      date: 'Сегодня',
+    },
+  },
+  {
+    id: 2,
+    img: 'https://picsum.photos/1/1?grayscale',
+    name: 'Дуейн Джонсон',
+    status: 'Агент',
+    statusId: 1,
+    content: {
+      message:
+        'Отличная работа, Отличная работа, Отличная работа, Отличная работа,',
+      date: 'Вчера',
+    },
+  },
+  {
+    id: 3,
+    img: 'https://picsum.photos/1/1?grayscale',
+    name: 'Джон Сина',
+    status: 'Клиент',
+    statusId: 2,
+    content: {
+      message: 'Отличная работа',
+      date: '15:25',
+      unreadedMessages: 3,
+    },
+  },
+  {
+    id: 1,
+    img: 'https://picsum.photos/1/1?grayscale',
+    name: 'Джон Уик',
+    status: 'Менеджер',
+    statusId: 0,
+    content: {
+      you: 'Вы:',
+      message:
+        'Отличная работа, Отличная работа, Отличная работа, Отличная работа,',
+      date: 'Сегодня',
+    },
+  },
+  {
+    id: 2,
+    img: 'https://picsum.photos/1/1?grayscale',
+    name: 'Дуейн Джонсон',
+    status: 'Агент',
+    statusId: 1,
+    content: {
+      message:
+        'Отличная работа, Отличная работа, Отличная работа, Отличная работа,',
+      date: 'Вчера',
+    },
+  },
+  {
+    id: 3,
+    img: 'https://picsum.photos/1/1?grayscale',
+    name: 'Джон Сина',
+    status: 'Клиент',
+    statusId: 2,
+    content: {
+      message: 'Отличная работа',
+      date: '15:25',
+      unreadedMessages: 3,
+    },
+  },
+  {
+    id: 1,
+    img: 'https://picsum.photos/1/1?grayscale',
+    name: 'Джон Уик',
+    status: 'Менеджер',
+    statusId: 0,
+    content: {
+      you: 'Вы:',
+      message:
+        'Отличная работа, Отличная работа, Отличная работа, Отличная работа,',
+      date: 'Сегодня',
+    },
+  },
+  {
+    id: 2,
+    img: 'https://picsum.photos/1/1?grayscale',
+    name: 'Дуейн Джонсон',
+    status: 'Агент',
+    statusId: 1,
+    content: {
+      message:
+        'Отличная работа, Отличная работа, Отличная работа, Отличная работа,',
+      date: 'Вчера',
+    },
+  },
+  {
+    id: 3,
+    img: 'https://picsum.photos/1/1?grayscale',
+    name: 'Джон Сина',
+    status: 'Клиент',
+    statusId: 2,
+    content: {
+      message: 'Отличная работа',
+      date: '15:25',
+      unreadedMessages: 3,
+    },
+  },
 ];
 const dialogPersonalMessageListData = [
   {
