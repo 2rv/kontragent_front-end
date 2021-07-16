@@ -24,7 +24,7 @@ export function EntityComponent(props) {
     <React.Fragment>
       {(isPending || pageLoading) && <PrimaryLoader />}
       <Container>
-        <EntityText tid="Юрлицо" />
+        <EntityText tid="ENTITY.TITLE" />
         <TabsComponent tabsList={tabsList} activeTabId={activeTabId} activeTabHandler={activeTabHandler} />
         {tabsComponentList.map((component) => {
           if (component.id === activeTabId) {

@@ -18,8 +18,6 @@ import KONTRAGENT_REVIEW from './kontragent-review.json';
 import AUTH_CHANGE_PASSWORD from './auth-change-password.json';
 import AUTH_RECOVERY_ACCOUNT from './auth-recovery-account.json';
 import FOOTER from './footer.json';
-import KONTRAGENT_COMMENTS from './kontragent-comments.json';
-import ARBITRATION_CASES from './arbitration-cases.json';
 import MY_VERIFICATION_REQUESTS_LIST from './my-verification-requests-list.json';
 import MY_COUNTERPARTIES_LIST from './my-counterparties-list.json';
 import ARBITRATION_REQUESTS_LIST from './arbitration-requests-list.json';
@@ -27,14 +25,17 @@ import DIALOGS from './dialogs.json';
 import MY_LEGAL_ENTITIES from './my-legal-entities.json';
 import MY_SUPPORT_REQUEST_LIST from './my-support-request-list.json';
 import BOOK_REVIEW_LIST from './book-review-list.json';
-import KONTRAGENT_CHECKS from './kontragent-checks.json';
 import REFERRAL from './referral.json';
-import KONTRAGENT_INFORMATION from './kontragent-information.json';
 import LAWYER_REQUEST from './lawyer-request.json';
 import DASHBOARD_CARD from './dashboard-card.json';
 import DASHBOARD from './dashboard.json';
 import MY_COMPANIES from './my-companies.json';
 import COMPANY_MEMBERS from './company-members.json';
+<<<<<<< Updated upstream
+=======
+import COUNTERPARTY from './counterparty.json';
+import ENTITY from './entity.json';
+>>>>>>> Stashed changes
 
 export const RU = {
   translation: {
@@ -58,8 +59,6 @@ export const RU = {
     AUTH_CHANGE_PASSWORD,
     AUTH_RECOVERY_ACCOUNT,
     FOOTER,
-    KONTRAGENT_COMMENTS,
-    ARBITRATION_CASES,
     MY_VERIFICATION_REQUESTS_LIST,
     MY_COUNTERPARTIES_LIST,
     ARBITRATION_REQUESTS_LIST,
@@ -67,13 +66,16 @@ export const RU = {
     MY_LEGAL_ENTITIES,
     MY_SUPPORT_REQUEST_LIST,
     BOOK_REVIEW_LIST,
-    KONTRAGENT_CHECKS,
     REFERRAL,
-    KONTRAGENT_INFORMATION,
     LAWYER_REQUEST,
     DASHBOARD_CARD,
     DASHBOARD,
     MY_COMPANIES,
     COMPANY_MEMBERS,
+<<<<<<< Updated upstream
+=======
+    COUNTERPARTY,
+    ENTITY,
+>>>>>>> Stashed changes
   },
 };

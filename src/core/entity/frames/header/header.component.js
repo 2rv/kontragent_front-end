@@ -15,8 +15,8 @@ export function HeaderComponent(props) {
     <HeaderContainer>
       <Title tid={title} />
       <div>
-        <SecondaryText>{companyType}</SecondaryText>&nbsp;
-        <CompanyName>{companyName}</CompanyName>
+        <SecondaryText tid={companyType} />&nbsp;
+        <CompanyName tid={companyName} />
       </div>
       {children ? children : null}
     </HeaderContainer>

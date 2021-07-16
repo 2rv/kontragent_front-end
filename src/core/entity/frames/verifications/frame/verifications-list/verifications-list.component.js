@@ -26,11 +26,11 @@ export function VerificationsListComponent({ verificationsList }) {
             </Content>
           </Container>
           <ButtonsContainer>
-            <CancelButton tid="KONTRAGENT_CHECKS.BUTTONS.CANCEL" />
+            <CancelButton tid="ENTITY.VERIFICATIONS.BUTTONS.CANCEL" />
             {verification.paid ? (
-              <PaidButton tid="KONTRAGENT_CHECKS.BUTTONS.PAID" />
+              <PaidButton tid="ENTITY.VERIFICATIONS.BUTTONS.PAID" />
             ) : (
-              <PrimaryButton tid="KONTRAGENT_CHECKS.BUTTONS.PAY" />
+              <PrimaryButton tid="ENTITY.VERIFICATIONS.BUTTONS.PAY" />
             )}
           </ButtonsContainer>
         </Layout>

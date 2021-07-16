@@ -14,8 +14,8 @@ export function ReviewsComponent() {
       <IndentLayout>
         <SectionLayout>
           <HeaderComponent
-            title="Отзывы"
-            companyType="Общество с ограниченной ответственностью"
+            title="ENTITY.REVIEWS.HEADER.TITLE"
+            companyType="ENTITY.REVIEWS.HEADER.COMPANY_TYPE"
             companyName={'"Компания Гермес-Электро"'}
           />
           <ReviewsListComponent reviewsList={REVIEWS_LIST} />

@@ -1,0 +1,179 @@
+{
+  "TITLE": "Юрлицо",
+  "TABS": {
+    "DETAIL_INFORMATION": "Детальная информация",
+    "RISK_RATING_AND_ASSESSMENT": "Рейтинг и оценка рисков",
+    "TESTIMONIALS": "Отзывы",
+    "VERIFICATIONS": "Проверки",
+    "ARBITRATION_CASES": "Арбитражные дела",
+    "PARTICIPANTS": "Участники",
+    "BALANCE": "Баланс",
+    "SETTING": "Настройка"
+  },
+  "DETAIL_INFORMATION": {
+    "HEADER": {
+      "TITLE": "Детальная информация",
+      "COMPANY_TYPE": "Общество с ограниченной ответственностью",
+      "DOWNLOAD_INFO_IN_PDF": "Скачать информацию в PDF",
+      "LEGAL_ADVICE_FACE": "Консультация по юр. лицу"
+    },
+    "ERROR_ALERT": "Внимание! Компания не прошла верификацию. Для прохождение кликните по уведомлению",
+    "DANGER_NOTICE_TITLE": "Уведомления об опасности",
+    "STATISTICS": {
+      "TOTAL_STATISTICS": {
+        "TITLE": "Общая статистика",
+        "DAY": "(сутки)",
+        "COUNTERPARTIES_VIEWS": "Просмотров контрагентов, из них",
+        "NEGATIVE": "негативных",
+        "POSITIVE": "положительных",
+        "AND": "и",
+        "NOT_RATED": "не оценено",
+        "LEARN_MORE": "Узнать больше"
+      },
+      "STATISTICS_FOR_24H": {
+        "TITLE": "Статистика за 24ч.",
+        "COUNTERPARTIES_VIEWS": "Просмотров контрагентов.",
+        "LEARN_MORE_ABOUT_EACH": "Узнать подробно о каждом",
+        "ADDITIONAL_ACCRUALS": "Доначисления.",
+        "HOW_TO_REDUCE_RISK_ACCRUALS": "Как уменьшить риск доначислений?",
+        "TURNOVER": "Оборот"
+      }
+    },
+    "INFO": {
+      "ACTING": "Действующее",
+      "DATE_OF_INFORMATION": "Дата образования",
+      "TELEPHONE": "Телефон",
+      "AUTHORIZED_CAPITAL": "Уставный капитал",
+      "EXECUTION_PROCEEDINGS": "Исполнительные производства",
+      "NO_ENFORCEMENT_PROCEEDINGS_FOUND": "Не найдено исполнительных производств",
+      "EXTRACT_FROM_USRLE": "Выписка из ЕГРЮЛ",
+      "TO_FORM": "Сформировать",
+      "IN_TODAYS_DATE": "по состоянию на сегодня",
+      "CEO": "Генеральный директор",
+      "FOUNDERS_INDIVIDUALS": "Учредители - физические лица:",
+      "FINANCES_AT_THE_END_OF_2020": "Финансы на конец 2020 года",
+      "BALANCE": "Баланс:",
+      "REVENUE": "Выручка:",
+      "NET_PROFIT": "Чистая прибыль:"
+    }
+  },
+  "RISK_RATING_ASSESSMENT": {
+    "HEADER": {
+      "TITLE": "Рейтинг и оценка рисков",
+      "COMPANY_TYPE": "Общество с ограниченной ответственностью"
+    },
+    "YOUR_MARK": "Ваша оценка",
+    "PEOPLES_RATING": "Народный рейтинг",
+    "POINTS": "Баллов",
+    "TURNOVER": "Оборот",
+    "RISK_OF_ADDITIONAL_ACCRUAL": "Риск доначисления"
+  },
+  "REVIEWS": {
+    "HEADER": {
+      "TITLE": "Отзывы",
+      "COMPANY_TYPE": "Общество с ограниченной ответственностью"
+    },
+    "TYPE": {
+      "PLAINTIFF": "Истец",
+      "DEFENDANT": "Ответчик"
+    },
+    "WRITE_MESSAGE": "Сообщение от своего имени"
+  },
+  "VERIFICATIONS": {
+    "HEADER": {
+      "TITLE": "Проверки",
+      "COMPANY_TYPE": "Общество с ограниченной ответственностью"
+    },
+    "STATUS": {
+      "STANDART": "Стандартная",
+      "EXTENDED": "Расширенная"
+    },
+    "TYPE": {
+      "DONE": "Выполнено",
+      "AWAITING_PAYMENT": "Ожидает оплаты",
+      "PERFORMED": "Выполняется"
+    },
+    "BUTTONS": {
+      "CANCEL": "Отменить",
+      "PAID": "Оплачена",
+      "PAY": "Оплатить"
+    }
+  },
+  "ARBITRATION_CASES": {
+    "HEADER": {
+      "TITLE": "Арбитражные дела",
+      "COMPANY_TYPE": "Общество с ограниченной ответственностью"
+    },
+    "STATUS": {
+      "RESOLVED": "Решено",
+      "UNDER_CONSIDERATION": "На рассмотрении",
+      "REJECTED": "Отклонено"
+    },
+    "TYPE": {
+      "KONTRAGENT": "Контрагент",
+      "COMPLAINT": "Жалоба",
+      "SUSPICION": "Подозрение"
+    }
+  },
+  "RED_ZONE": {
+    "HEADER": {
+      "TITLE": "Красная зона",
+      "COMPANY_TYPE": "Общество с ограниченной ответственностью"
+    },
+    "PRICE_OF_RESOLVING_ISSUE": "Цена решения вопроса",
+    "ORDER": "Заказать"
+  },
+  "PARTICIPANTS": {
+    "HEADER": {
+      "TITLE": "Участники компании",
+      "COMPANY_TYPE": "Общество с ограниченной ответственностью"
+    },
+    "STATUS": {
+      "MANAGER": "Менеджер",
+      "OWNER": "Владелец",
+      "ADVERTISER": "Рекламодатель"
+    },
+    "ADD_PARTICIPANT": {
+      "TITLE": "Добавить сотрудника",
+      "INPUT_PLACEHOLDER": "Почта пользователя",
+      "INVITE": "Пригласить",
+      "INFO_TEXT": "Добавляя пользователя он автоматически становится менеджером, для изменения должности читайтев FAQ",
+      "MORE_DETAILS": "Подробнее"
+    }
+  },
+  "BALANCE": {
+    "HEADER": {
+      "TITLE": "Баланс Компании",
+      "COMPANY_TYPE": "Общество с ограниченной ответственностью",
+      "CURRENT_BALANCE": "Текущий баланс",
+      "SPENT_IN_A_MONTH": "Потрачено за месяц",
+      "TOP_UP_BALANCE": "Пополнить баланс"
+    },
+    "COMPANY_SPENDING_HISTORY": "История трат компании"
+  },
+  "SETTING": {
+    "HEADER": {
+      "TITLE": "Настройка компании",
+      "COMPANY_TYPE": "Общество с ограниченной ответственностью"
+    },
+    "FORM": {
+      "COMPANY_NAME_FIELD": {
+        "PLACEHOLDER": "Contragent",
+        "TITLE": "Название"
+      },
+      "ENTITY_FIELD": {
+        "PLACEHOLDER": "ООО Контрагент",
+        "TITLE": "Юр. лицо"
+      },
+      "OWNER_FIELD": {
+        "PLACEHOLDER": "Dwayne Johnson",
+        "TITLE": "Владелец"
+      },
+      "ORGANIZATION_FIELD": {
+        "PLACEHOLDER": "Нет",
+        "TITLE": "Организация"
+      },
+      "SAVE_COMPANY_INFORMATION": "Сохранить ифнормацию о компании"
+    }
+  }
+}

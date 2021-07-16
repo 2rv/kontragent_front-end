@@ -9,7 +9,7 @@ export function DangerNoticesComponent({ dangerNotices }) {
   return (
     <Container>
       <Layout>
-        <DangerNoticeHeadline tid="KONTRAGENT_INFORMATION.DANGER_NOTICES.TITLE" />
+        <DangerNoticeHeadline tid="ENTITY.DETAIL_INFORMATION.DANGER_NOTICE_TITLE" />
         <DangerNoticeContainer>
           {dangerNotices.map((notice) => (
             <DangerNoticeContent key={notice.id}>

@@ -19,38 +19,38 @@ export function FieldItemComponent(props) {
   return (
     <Form onSubmit={handleSubmit}>
       <PrimaryField
-        placeholderTid="Contragent"
-        titleTid="Название"
+        titleTid="ENTITY.SETTING.FORM.COMPANY_NAME_FIELD.TITLE"
+        placeholderTid="ENTITY.SETTING.FORM.COMPANY_NAME_FIELD.PLACEHOLDER"
         name={fieldName}
         value={values[fieldName]}
         onChange={handleChange}
         onBlur={handleBlur}
       />
       <PrimaryField
-        titleTid="Юр. лицо"
-        placeholderTid="ООО Contragent"
+        titleTid="ENTITY.SETTING.FORM.ENTITY_FIELD.TITLE"
+        placeholderTid="ENTITY.SETTING.FORM.ENTITY_FIELD.PLACEHOLDER"
         name={fieldEntity}
         value={values[fieldEntity]}
         onChange={handleChange}
         onBlur={handleBlur}
       />
       <PrimaryField
-        titleTid="Владелец"
-        placeholderTid="Илья Зинченко Андреевич"
+        titleTid="ENTITY.SETTING.FORM.OWNER_FIELD.TITLE"
+        placeholderTid="ENTITY.SETTING.FORM.OWNER_FIELD.PLACEHOLDER"
         name={fieldOwner}
         value={values[fieldOwner]}
         onChange={handleChange}
         onBlur={handleBlur}
       />
       <PrimaryField
-        titleTid="Организация"
-        placeholderTid="Нет"
+        titleTid="ENTITY.SETTING.FORM.ORGANIZATION_FIELD.TITLE"
+        placeholderTid="ENTITY.SETTING.FORM.ORGANIZATION_FIELD.PLACEHOLDER"
         name={fieldOrganization}
         value={values[fieldOrganization]}
         onChange={handleChange}
         onBlur={handleBlur}
       />
-      <SecondaryButton tid="Сохранить ифнормацию о компании" />
+      <SecondaryButton tid="ENTITY.SETTING.FORM.SAVE_COMPANY_INFORMATION" />
     </Form>
   );
 }

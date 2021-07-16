@@ -17,8 +17,8 @@ export function StatisticsComponent() {
           <IndentLayout type="STANDART">
             <HeaderContainer>
               <div>
-                <TitlePrimary tid="Общая статистика" />&nbsp;
-                <TitleSecondary tid="(сутки)" />
+                <TitlePrimary tid="ENTITY.DETAIL_INFORMATION.STATISTICS.TOTAL_STATISTICS.TITLE" />&nbsp;
+                <TitleSecondary tid="ENTITY.DETAIL_INFORMATION.STATISTICS.TOTAL_STATISTICS.DAY" />
               </div>
               <MenuIcon />
             </HeaderContainer>
@@ -28,18 +28,18 @@ export function StatisticsComponent() {
               <Column>
                 <div>
                   <TinyTextPrimary tid="250" />&nbsp;
-                  <TinyTextSecondary tid="Просмотров контрагентов, из них" />:
+                  <TinyTextSecondary tid="ENTITY.DETAIL_INFORMATION.STATISTICS.TOTAL_STATISTICS.COUNTERPARTIES_VIEWS" />:
                 </div>
                 <div>
                   <RedText tid="25%" />&nbsp;
-                  <RedText tid="негативных" />,&nbsp;
+                  <RedText tid="ENTITY.DETAIL_INFORMATION.STATISTICS.TOTAL_STATISTICS.NEGATIVE" />,&nbsp;
                   <GreenText tid="25%" />&nbsp;
-                  <GreenText tid="положительных" />&nbsp;
-                  <TinyTextSecondary tid="и" />&nbsp;
+                  <GreenText tid="ENTITY.DETAIL_INFORMATION.STATISTICS.TOTAL_STATISTICS.POSITIVE" />&nbsp;
+                  <TinyTextSecondary tid="ENTITY.DETAIL_INFORMATION.STATISTICS.TOTAL_STATISTICS.AND" />&nbsp;
                   <BlueText tid="50%" />&nbsp;
-                  <BlueText tid="не оценено" />.
+                  <BlueText tid="ENTITY.DETAIL_INFORMATION.STATISTICS.TOTAL_STATISTICS.NOT_RATED" />.
                 </div>
-                <LinkText tid="Узнать больше" />
+                <LinkText tid="ENTITY.DETAIL_INFORMATION.STATISTICS.TOTAL_STATISTICS.LEARN_MORE" />
               </Column>
             </Content>
           </IndentLayout>
@@ -49,7 +49,7 @@ export function StatisticsComponent() {
         <SectionLayout>
           <IndentLayout type="STANDART">
             <HeaderContainer>
-              <TitlePrimary tid="Статистика за 24ч." />
+              <TitlePrimary tid="ENTITY.DETAIL_INFORMATION.STATISTICS.STATISTICS_FOR_24H.TITLE" />
               <SearchIcon />
             </HeaderContainer>
             <Divider />
@@ -57,19 +57,19 @@ export function StatisticsComponent() {
               <Column>
                 <div>
                   <GreenText tid="250" />&nbsp;
-                  <EasyBoldText tid="Просмотров контрагентов." />&nbsp;
-                  <BottomUnderlineText tid="Узнать подробно о каждом" />
+                  <EasyBoldText tid="ENTITY.DETAIL_INFORMATION.STATISTICS.STATISTICS_FOR_24H.COUNTERPARTIES_VIEWS" />&nbsp;
+                  <BottomUnderlineText tid="ENTITY.DETAIL_INFORMATION.STATISTICS.STATISTICS_FOR_24H.LEARN_MORE_ABOUT_EACH" />
                 </div>
                 <div>
                   <RedText tid="1250" />&nbsp;
                   <ValuteText tid="руб." />&nbsp;
-                  <EasyBoldText tid="Доначисления." />&nbsp;
-                  <BottomUnderlineText tid="Как уменьшить риск доначислений?" />
+                  <EasyBoldText tid="ENTITY.DETAIL_INFORMATION.STATISTICS.STATISTICS_FOR_24H.ADDITIONAL_ACCRUALS" />&nbsp;
+                  <BottomUnderlineText tid="ENTITY.DETAIL_INFORMATION.STATISTICS.STATISTICS_FOR_24H.HOW_TO_REDUCE_RISK_ACCRUALS" />
                 </div>
                 <div>
                   <BlueText tid="250 000" />&nbsp;
                   <ValuteText tid="руб." />&nbsp;
-                  <EasyBoldText tid="Оборот." />&nbsp;
+                  <EasyBoldText tid="ENTITY.DETAIL_INFORMATION.STATISTICS.STATISTICS_FOR_24H.TURNOVER" />&nbsp;
                 </div>
               </Column>
             </Content>

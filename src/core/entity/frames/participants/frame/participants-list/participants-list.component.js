@@ -23,7 +23,7 @@ export function ParticipantsListComponent({ participantsList }) {
             <FullnameText>{participant.name}</FullnameText>
           </Content>
           <Content>
-            <StatusText>{participant.status}</StatusText>
+            <StatusText tid={participant.status} />
             <CircleDivider />
             <LastVisitText>{participant.lastVisit}</LastVisitText>
           </Content>

@@ -10,8 +10,8 @@ export function SettingsComponent(props) {
       <IndentLayout>
         <SectionLayout>
           <HeaderComponent
-            title="Настройка компании"
-            companyType="Общество с ограниченной ответственностью"
+            title="ENTITY.SETTING.HEADER.TITLE"
+            companyType="ENTITY.SETTING.HEADER.COMPANY_TYPE"
             companyName={'"Компания Гермес-Электро"'}
           />
           <FieldsComponent {...props} />

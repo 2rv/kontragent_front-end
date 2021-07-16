@@ -51,14 +51,14 @@ export function EntityContainer() {
 }
 
 const TABS_LIST = [
-  { id: 1, text: 'Детальная информация' },
-  { id: 2, text: 'Рейтинг и оценка рисков' },
-  { id: 3, text: 'Отзывы' },
-  { id: 4, text: 'Проверки' },
-  { id: 5, text: 'Арбитражные дела' },
-  { id: 6, text: 'Участники' },
-  { id: 7, text: 'Баланс' },
-  { id: 8, text: 'Настройка' },
+  { id: 1, text: 'ENTITY.TABS.DETAIL_INFORMATION' },
+  { id: 2, text: 'ENTITY.TABS.RISK_RATING_AND_ASSESSMENT' },
+  { id: 3, text: 'ENTITY.TABS.TESTIMONIALS' },
+  { id: 4, text: 'ENTITY.TABS.VERIFICATIONS' },
+  { id: 5, text: 'ENTITY.TABS.ARBITRATION_CASES' },
+  { id: 6, text: 'ENTITY.TABS.PARTICIPANTS' },
+  { id: 7, text: 'ENTITY.TABS.BALANCE' },
+  { id: 8, text: 'ENTITY.TABS.SETTING' },
 ];
 
 const TABS_COMPONENT_LIST = [
