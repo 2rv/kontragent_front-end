@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { SectionLayout, IndentLayout } from '../../../../lib/elements/layout';
 import { SecondaryTitleText } from '../../../../lib/elements/text';
 import { PrimaryField } from '../../../../lib/elements/field';
@@ -7,8 +5,6 @@ import { SecondaryButton } from '../../../../lib/elements/button';
 import { ErrorAlert } from '../../../../lib/elements/alert';
 import { SuccessAlert } from '../../../../lib/elements/alert';
 import { PrimaryLoader } from '../../../../lib/elements/loader';
-
-import { } from '../../../../lib/theme';
 
 export function SettingsFormChangePasswordComponent(props) {
   const {
@@ -42,7 +38,7 @@ export function SettingsFormChangePasswordComponent(props) {
   };
 
   return (
-    <React.Fragment>
+    <div>
       {(isPending || pageLoading) && <PrimaryLoader />}
       <IndentLayout>
         <SectionLayout>
@@ -98,6 +94,6 @@ export function SettingsFormChangePasswordComponent(props) {
           </form>
         </SectionLayout>
       </IndentLayout>
-    </React.Fragment>
+    </div>
   );
 }
