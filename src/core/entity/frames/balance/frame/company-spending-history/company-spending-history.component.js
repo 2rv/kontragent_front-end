@@ -13,7 +13,7 @@ import {
 export function CompanySpendingHistoryComponent({ companySpendingHistoryList }) {
   return (
     <>
-      <CompanySpendingHistoryTitle tid="История трат компании" />
+      <CompanySpendingHistoryTitle tid="ENTITY.BALANCE.COMPANY_SPENDING_HISTORY" />
       {companySpendingHistoryList.map((spendingHistory) => (
       <Box key={spendingHistory.id}>
         <Layout type="SMALL">

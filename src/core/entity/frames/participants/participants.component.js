@@ -16,8 +16,8 @@ export function ParticipantsComponent() {
         <IndentLayout>
           <SectionLayout>
             <HeaderComponent
-              title="Участники компании"
-              companyType="Общество с ограниченной ответственностью"
+              title="ENTITY.PARTICIPANTS.HEADER.TITLE"
+              companyType="ENTITY.PARTICIPANTS.HEADER.COMPANY_TYPE"
               companyName={'"Компания Гермес-Электро"'}
             />
             <ParticipantsListComponent participantsList={PARTICIPANTS_LIST} />

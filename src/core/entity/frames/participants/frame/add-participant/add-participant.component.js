@@ -2,24 +2,24 @@ import styled from 'styled-components';
 
 import { PrimaryBox } from '../../../../../../lib/elements/box';
 import { SectionLayout, IndentLayout } from '../../../../../../lib/elements/layout';
-import { PrimaryInput } from '../../../../../../lib/elements/input';
+import { PrimaryField } from '../../../../../../lib/elements/field';
 import { SecondaryButton } from '../../../../../../lib/elements/button';
 import { PrimaryText, SecondaryText } from '../../../../../../lib/elements/text';
-import { spacing, THEME_COLOR, THEME_SIZE, THEME_VALUE } from '../../../../../../lib/theme';
+import { spacing, THEME_SIZE, THEME_VALUE } from '../../../../../../lib/theme';
 
 export function AddParticipantComponent() {
   return (
     <PrimaryBox>
       <IndentLayout>
         <SectionLayout>
-          <AddParticipantText tid="Добавить сотрудника" />
+          <AddParticipantText tid="ENTITY.PARTICIPANTS.ADD_PARTICIPANT.TITLE" />
           <FieldsContainer>
-            <PrimaryInput placeholder="Почта пользователя" />
-            <SecondaryButton tid="Пригласить" />
+            <PrimaryField placeholderTid="ENTITY.PARTICIPANTS.ADD_PARTICIPANT.INPUT_PLACEHOLDER" />
+            <SecondaryButton tid="ENTITY.PARTICIPANTS.ADD_PARTICIPANT.INVITE" />
           </FieldsContainer>
           <div>
-            <SecondaryText tid="Добавляя пользователя он автоматически становится менеджером, для изменения должности читайтев FAQ" />&nbsp;
-            <MoreDetailsText tid="Подробнее" />
+            <SecondaryText tid="ENTITY.PARTICIPANTS.ADD_PARTICIPANT.INFO_TEXT" />&nbsp;
+            <MoreDetailsText tid="ENTITY.PARTICIPANTS.ADD_PARTICIPANT.MORE_DETAILS" />
           </div>
         </SectionLayout>
       </IndentLayout>

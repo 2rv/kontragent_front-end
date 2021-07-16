@@ -14,15 +14,15 @@ import { spacing, THEME_COLOR } from '../../../../lib/theme';
 export function InformationComponent() {
   return (
     <Container>
-      <DarkRedAlert tid="Внимание! Компания не прошла верификацию. Для прохождение кликните по уведомлению" />
+      <DarkRedAlert tid="ENTITY.DETAIL_INFORMATION.ERROR_ALERT" />
       <HeaderComponent
-        title="Детальная информация"
-        companyType="Общество с ограниченной ответственностью"
+        title="ENTITY.DETAIL_INFORMATION.HEADER.TITLE"
+        companyType="ENTITY.DETAIL_INFORMATION.HEADER.COMPANY_TYPE"
         companyName={'"Компания Гермес-Электро"'}
       >
         <Content>
-          <PrimaryButton tid="Скачать информацию в PDF" />
-          <SecondaryButton tid="Консультация по юр. лицу" />
+          <PrimaryButton tid="ENTITY.DETAIL_INFORMATION.HEADER.DOWNLOAD_INFO_IN_PDF" />
+          <SecondaryButton tid="ENTITY.DETAIL_INFORMATION.HEADER.LEGAL_ADVICE_FACE" />
         </Content>
       </HeaderComponent>
       <DangerNoticesComponent dangerNotices={DANGER_NOTICES} />

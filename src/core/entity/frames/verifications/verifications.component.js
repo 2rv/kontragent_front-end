@@ -14,8 +14,8 @@ export function VerificationsComponent() {
       <IndentLayout>
         <SectionLayout>
           <HeaderComponent
-            title="Проверки"
-            companyType="Общество с ограниченной ответственностью"
+            title="ENTITY.VERIFICATIONS.HEADER.TITLE"
+            companyType="ENTITY.VERIFICATIONS.HEADER.COMPANY_TYPE"
             companyName={'"Компания Гермес-Электро"'}
           />
           <VerificationsListComponent verificationsList={VERIFICATIONS_LIST} />

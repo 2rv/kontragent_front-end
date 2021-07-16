@@ -9,7 +9,7 @@ export function ReviewsCommentComponent() {
     <Container>
       <Avatar src="https://picsum.photos/1/1?grayscale" />
       <FieldCase>
-        <PrimaryField placeholderTid="KONTRAGENT_COMMENTS.WRITE_MESSAGE" />
+        <PrimaryField placeholderTid="ENTITY.REVIEWS.WRITE_MESSAGE" />
         <ActionsCase>
           <FileIcon />
           <SendIcon />

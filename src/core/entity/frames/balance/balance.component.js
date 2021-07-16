@@ -17,20 +17,20 @@ export function BalanceComponent() {
         <IndentLayout>
           <SectionLayout>
             <HeaderComponent
-              title="Баланс Компании"
-              companyType="Общество с ограниченной ответственностью"
+              title="ENTITY.BALANCE.HEADER.TITLE"
+              companyType="ENTITY.BALANCE.HEADER.COMPANY_TYPE"
               companyName={'"Компания Гермес-Электро"'}
             >
               <Content>
                 <Layout type="STANDART">
-                  <SecondaryText tid="Текущий баланс" />
+                  <SecondaryText tid="ENTITY.BALANCE.HEADER.CURRENT_BALANCE" />
                   <AccentPriceText tid="310 000.00 руб." />
                 </Layout>
                 <Layout type="STANDART">
-                  <SecondaryText tid="Потрачено за месяц" />
+                  <SecondaryText tid="ENTITY.BALANCE.HEADER.SPENT_IN_A_MONTH" />
                   <BoldPriceText tid="25 000.00 руб." />
                 </Layout>
-                <PrimaryButton tid="Пополнить баланс" />
+                <PrimaryButton tid="ENTITY.BALANCE.HEADER.TOP_UP_BALANCE" />
               </Content>
             </HeaderComponent>
           </SectionLayout>

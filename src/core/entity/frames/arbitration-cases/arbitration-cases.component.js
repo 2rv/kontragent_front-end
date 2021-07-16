@@ -13,8 +13,8 @@ export function ArbitrationCasesComponent() {
       <IndentLayout>
         <SectionLayout>
           <HeaderComponent
-            title="Арбитражные дела"
-            companyType="Общество с ограниченной ответственностью"
+            title="ENTITY.ARBITRATION_CASES.HEADER.TITLE"
+            companyType="ENTITY.ARBITRATION_CASES.HEADER.COMPANY_TYPE"
             companyName={'"Компания Гермес-Электро"'}
           />
           <ArbitrationCasesListComponent arbitrationCasesList={ARBITRATION_CASES_LIST} />
