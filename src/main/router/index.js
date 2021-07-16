@@ -27,6 +27,7 @@ import { myCompaniesAddCompanyRouter } from '../../core/my-companies-add-company
 import { feedAndNotificationsListRouter } from '../../core/feed-and-notifications-list';
 import { dashboardAdminRouter } from '../../core/dashboard-admin';
 import { AuthVerificationPhoneRouter } from '../../core/auth-verification-phone';
+import { AuthVerificationEmailConfirmRouter } from '../../core/auth-verification-email-confirm';
 
 import { LOGIN_ROUTE_PATH } from '../../core/login';
 import { SIGNUP_ROUTE_PATH } from '../../core/signup';
@@ -56,6 +57,7 @@ import { MY_COMPANIES_ADD_COMPANY_ROUTE_PATH } from '../../core/my-companies-add
 import { FEED_AND_NOTIFICATIONS_LIST_ROUTE_PATH } from '../../core/feed-and-notifications-list';
 import { DASHBOARD_ADMIN_ROUTE_PATH } from '../../core/dashboard-admin';
 import { AUTH_VERIFICATION_PHONE_ROUTE_PATH } from '../../core/auth-verification-phone';
+import { AUTH_VERIFICATION_EMAIL_CONFIRM_ROUTE_PATH } from '../../core/auth-verification-email-confirm';
 
 export const routes = {
   [FEED_AND_NOTIFICATIONS_LIST_ROUTE_PATH]: feedAndNotificationsListRouter,
@@ -87,5 +89,7 @@ export const routes = {
   [DASHBOARD_ADMIN_ROUTE_PATH]: dashboardAdminRouter,
   [LAWYER_REQUEST_ROUTE_PATH]: lawyerRequestRouter,
   [AUTH_VERIFICATION_PHONE_ROUTE_PATH]: AuthVerificationPhoneRouter,
+  [AUTH_VERIFICATION_EMAIL_CONFIRM_ROUTE_PATH]:
+    AuthVerificationEmailConfirmRouter,
 };
 export const Router = routesInit(routes);

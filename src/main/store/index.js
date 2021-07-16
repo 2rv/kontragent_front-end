@@ -116,6 +116,10 @@ import {
   settingsEmailStore,
   SETTINGS_EMAIL_STORE_NAME,
 } from '../../core/settings-email';
+import {
+  authVerificationEmailConfirmStore,
+  AUTH_VERIFICATION_EMAIL_CONFIRM_STORE_NAME,
+} from '../../core/auth-verification-email-confirm';
 
 export const reducers = combineReducers({
   [FEED_AND_NOTIFICATIONS_LIST_STORE_NAME]: feedAndNotificationsListStore,
@@ -153,6 +157,8 @@ export const reducers = combineReducers({
   [SETTINGS_PASSWORD_STORE_NAME]: settingsPasswordStore,
   [AUTH_VERIFICATION_PHONE_STORE_NAME]: authVerificationPhoneStore,
   [SETTINGS_EMAIL_STORE_NAME]: settingsEmailStore,
+  [AUTH_VERIFICATION_EMAIL_CONFIRM_STORE_NAME]:
+    authVerificationEmailConfirmStore,
 });
 
 export { initStore } from './store.core';
