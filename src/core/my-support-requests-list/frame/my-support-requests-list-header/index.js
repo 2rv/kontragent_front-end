@@ -1,1 +1,1 @@
-export { MySupportRequestsListHeaderComponent } from './my-support-requests-list-header.component';
+export { MySupportRequestsHeaderContainer } from './my-support-requests-list-header.container';

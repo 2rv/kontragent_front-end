@@ -5,10 +5,16 @@ import { spacing, THEME_SIZE, THEME_VALUE } from '../../../../lib/theme';
 import { SupportRequestListItemComponent } from './support-requests-list-item.component';
 
 export function SupportRequestsListComponent(props) {
-  const { mySupportRequestsListData } = props;
+  const {
+    isPending,
+    isError,
+    isSuccess,
+    pageLoading,
+    errorMessage,
+    mySupportRequestsListData,
+  } = props;
   return (
     <SectionLayout>
-      <Title tid="Запросы" />
       {mySupportRequestsListData.map((data, index) => (
         <SupportRequestListItemComponent key={index} data={data} />
       ))}
