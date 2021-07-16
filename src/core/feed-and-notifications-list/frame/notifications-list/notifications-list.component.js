@@ -4,9 +4,17 @@ import { FindCompleteNotificationItemComponent } from './find-complete-notificat
 import { NewMessageNotificationItemComponent } from './new-message-notification-item.component';
 import { RatingNotificationItemComponent } from './rating-notification-item.component';
 import { ProblemNotificationItemComponent } from './problem-notification-item.component';
+import { PrimaryBox } from '../../../../lib/elements/box';
 
 export function NotificationsListComponent(props) {
-  const { feedAndNotificationsListData } = props;
+  const {
+    isPending,
+    pageLoading,
+    isError,
+    isSuccess,
+    errorMessage,
+    feedAndNotificationsListData,
+  } = props;
   return (
     <Container>
       {feedAndNotificationsListData.map((data, index) => (
@@ -20,10 +28,8 @@ export function NotificationsListComponent(props) {
     </Container>
   );
 }
-const Container = styled.div`
+const Container = styled(PrimaryBox)`
   display: flex;
   flex-direction: column;
-  background-color: ${THEME_COLOR.COLOR.BASE};
-  border-radius: ${THEME_SIZE.RADIUS.DEFAULT};
   padding: ${spacing(4)} 0;
 `;

@@ -84,8 +84,12 @@ export const NAVMENU_ITEMS = [
     pathname: '/company-members',
     path: '/company-members',
   },
+  {
+    tid: 'Лента и уведомления',
+    pathname: '/feed-and-notifications',
+    path: '/feed-and-notifications',
+  },
 ];
-
 // {
 //     tid: 'Мои запросы в поддержку',
 //     pathname: '/support/my-requests',
@@ -136,11 +140,7 @@ export const NAVMENU_ITEMS = [
 //     pathname: '/balance-deposit',
 //     path: '/balance-deposit',
 //   },
-//   {
-//     tid: 'Лента и уведомления',
-//     pathname: '/feed-and-notifications',
-//     path: '/feed-and-notifications',
-//   },
+
 //   {
 //     tid: 'Контрагент проверки',
 //     pathname: '/kontragent-checks',

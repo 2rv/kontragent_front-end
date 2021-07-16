@@ -46,6 +46,8 @@ const FieldCase = styled.div`
 `;
 const Button = styled(SecondaryButton)`
   height: 46px;
+  display: flex;
+  align-items: center;
   width: 194px;
 `;
 const TinyLink = styled(PrimaryLink)`

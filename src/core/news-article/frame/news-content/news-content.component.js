@@ -11,17 +11,23 @@ import { SectionLayout } from '../../../../lib/elements/layout';
 export function NewsContentComponent(props) {
   const { primary, secondary, base, image } = props.newsContent;
   return (
-    <SectionLayout type="MEDIUM">
-      <Paragraph tid={primary[0]} />
-      <Text tid={secondary[0]} />
-      <Text tid={secondary[1]} />
-      <Image src={image[0]} />
-      <Paragraph tid={primary[1]} />
-      <Text tid={secondary[2]} />
-      <Paragraph tid={primary[2]} />
-      <Text tid={secondary[3]} />
-      <Base tid={base[0]} />
-      <Image src={image[1]} />
+    <SectionLayout type="LARGE">
+      <SectionLayout type="SMALL">
+        <Paragraph tid={primary[0]} />
+        <Text tid={secondary[0]} />
+        <Text tid={secondary[1]} />
+        <Image src={image[0]} />
+      </SectionLayout>
+      <SectionLayout type="SMALL">
+        <Paragraph tid={primary[1]} />
+        <Text tid={secondary[2]} />
+      </SectionLayout>
+      <SectionLayout type="SMALL">
+        <Paragraph tid={primary[2]} />
+        <Text tid={secondary[3]} />
+        <Base tid={base[0]} />
+        <Image src={image[1]} />
+      </SectionLayout>
     </SectionLayout>
   );
 }

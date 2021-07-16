@@ -1,16 +1,43 @@
 import styled from 'styled-components';
 import { spacing } from '../../lib/theme';
-import { FeedAndNotificationsHeaderComponent, NotificationsListContainer } from './frame';
+import {
+  FeedAndNotificationsHeaderContainer,
+  NotificationsListContainer,
+} from './frame';
+import { PrimaryLoader } from '../../lib/elements/loader';
 
 export function FeedAndNotificationsListComponent(props) {
-  const { feedAndNotificationsListData } = props;
+  const {
+    isPending,
+    isError,
+    isSuccess,
+    pageLoading,
+    errorMessage,
+    feedAndNotificationsListData,
+    feedAndNotificationsSelectOption,
+  } = props;
   return (
-    <Container>
-      <FeedAndNotificationsHeaderComponent />
-      <NotificationsListContainer
-        feedAndNotificationsListData={feedAndNotificationsListData}
-      />
-    </Container>
+    <>
+      {(isPending || pageLoading) && <PrimaryLoader />}
+      <Container>
+        <FeedAndNotificationsHeaderContainer
+          isPending={isPending}
+          isError={isError}
+          isSuccess={isSuccess}
+          pageLoading={pageLoading}
+          errorMessage={errorMessage}
+          feedAndNotificationsSelectOption={feedAndNotificationsSelectOption}
+        />
+        <NotificationsListContainer
+          isPending={isPending}
+          isError={isError}
+          isSuccess={isSuccess}
+          pageLoading={pageLoading}
+          errorMessage={errorMessage}
+          feedAndNotificationsListData={feedAndNotificationsListData}
+        />
+      </Container>
+    </>
   );
 }
 const Container = styled.div`
