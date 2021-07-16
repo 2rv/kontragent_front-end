@@ -88,8 +88,13 @@ import {
   balanceActivityStore,
 } from '../../core/balance-activity';
 import { DASHBOARD_STORE_NAME, dashboardStore } from '../../core/dashboard';
+import {
+  feedAndNotificationsListStore,
+  FEED_AND_NOTIFICATIONS_LIST_STORE_NAME,
+} from '../../core/feed-and-notifications-list';
 
 export const reducers = combineReducers({
+  [FEED_AND_NOTIFICATIONS_LIST_STORE_NAME]: feedAndNotificationsListStore,
   [DASHBOARD_STORE_NAME]: dashboardStore,
   [DIALOG_PERSONAL_STORE_NAME]: dialogPersonalStore,
   [REFERRAL_STORE_NAME]: referralStore,

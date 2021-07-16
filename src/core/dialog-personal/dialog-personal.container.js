@@ -163,8 +163,7 @@ const dialogPersonalUserListData = [
     statusId: 0,
     content: {
       you: 'Вы:',
-      message:
-        'Отличная работа, Отличная работа, Отличная работа, Отличная работа,',
+      message: 'Отличная работа',
       date: 'Сегодня',
     },
   },
@@ -199,6 +198,12 @@ const dialogPersonalMessageListData = [
     img: 'https://picsum.photos/1/1?grayscale',
     message: {
       text: `Я понять не могу почему так выходит. 
+		Что не запуск то новый баг какой-то. Я понять не могу почему так выходит. 
+		Что не запуск то новый баг какой-то. Я понять не могу почему так выходит. 
+		Что не запуск то новый баг какой-то.Я понять не могу почему так выходит. 
+		Что не запуск то новый баг какой-то.Я понять не могу почему так выходит. 
+		Что не запуск то новый баг какой-то.Я понять не могу почему так выходит. 
+		Что не запуск то новый баг какой-то.Я понять не могу почему так выходит. 
 		Что не запуск то новый баг какой-то.`,
       date: 'Вчера, 14:25',
       you: true,
@@ -391,7 +396,7 @@ const dialogPersonalMessageListData = [
     id: 3,
     img: 'https://picsum.photos/1/1?grayscale',
     message: {
-      text: 'Да конечно, лучше брошу это дело пойду таксистом поработаю.',
+      text: 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
       date: 'Вчера, 15:50',
       you: true,
     },

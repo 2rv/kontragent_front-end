@@ -3,7 +3,7 @@ import { httpRequest } from '../../main/http';
 import { FEED_AND_NOTIFICATIONS_LIST_ACTION_TYPE } from './feed-and-notifications-list.type';
 import { FEED_AND_NOTIFICATIONS_LIST_API } from './feed-and-notifications-list.constant';
 
-export function feedAndNotificationsListGetData() {
+export function feedAndNotificationsListLoadData() {
   return async (dispatch) => {
     dispatch({
       type: FEED_AND_NOTIFICATIONS_LIST_ACTION_TYPE.FEED_AND_NOTIFICATIONS_LIST_GET_DATA_REQUEST_PENDING,

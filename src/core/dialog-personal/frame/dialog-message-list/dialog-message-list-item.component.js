@@ -13,17 +13,24 @@ export function DialogMessageListItemComponent(props) {
   const { img, message } = props.data;
   return (
     <Container my={message?.you}>
-      {message?.you && <InfoText tid="DIALOGS.DIALOG.YOUR_MESSAGE" />}
+      <InfoCase>
+        {message?.you && <InfoText tid="DIALOGS.DIALOG.YOUR_MESSAGE" />}
+      </InfoCase>
       <Content my={message?.you}>
         <Avatar src={img} />
         <Case>
           <MessageText>{message?.text}</MessageText>
         </Case>
       </Content>
-      <InfoText>{message?.date}</InfoText>
+      <InfoCase>
+        <InfoText>{message?.date}</InfoText>
+      </InfoCase>
     </Container>
   );
 }
+const InfoCase = styled.div`
+  margin: 0 38px;
+`;
 const Content = styled.div`
   display: grid;
   grid-template-columns: ${({ my = false }) => (my ? '1fr auto' : 'auto 1fr')};
@@ -31,13 +38,15 @@ const Content = styled.div`
     my ? `'case avatar'` : `'avatar case'`};
   align-items: flex-end;
   gap: ${spacing(2)};
+  ${({ my }) => (my ? 'margin-left: 38px;' : 'margin-right: 38px;')};
 `;
 const Container = styled.div`
   height: max-content;
+  width: fit-content;
   display: flex;
   flex-direction: column;
   gap: ${spacing(2)};
-  ${({ my }) => my && 'margin-left: auto;'};
+  ${({ my }) => my && 'margin-left: auto'};
 `;
 const Avatar = styled.img`
   grid-area: avatar;
@@ -49,7 +58,8 @@ const Case = styled(PrimaryBox)`
   background: ${THEME_COLOR.COLOR.SECONDARY};
   grid-area: case;
   padding: ${spacing(4)};
-  max-width: 300px;
+  overflow: hidden;
+  word-break: break-word;
 `;
 const MessageText = styled(SecondaryText)`
   line-height: 1.5;
