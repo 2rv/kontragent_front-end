@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { HeaderComponent } from './frame/header';
+import { HeaderComponent } from '../header';
 import { VerificationsListComponent } from './frame/verifications-list';
 
 import { VERIFICATIONS_LIST } from './verifications.constant';
@@ -13,7 +13,11 @@ export function VerificationsComponent() {
     <Container>
       <IndentLayout>
         <SectionLayout>
-          <HeaderComponent />
+          <HeaderComponent
+            title="COUNTERPARTY.VERIFICATIONS.HEADER.TITLE"
+            companyType="COUNTERPARTY.VERIFICATIONS.HEADER.COMPANY_TYPE"
+            companyName={'"Компания Гермес-Электро"'}
+          />
           <VerificationsListComponent verificationsList={VERIFICATIONS_LIST} />
         </SectionLayout>
       </IndentLayout>

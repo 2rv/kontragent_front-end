@@ -6,11 +6,11 @@ export const VERIFICATIONS_LIST = [
     time: '25.08.2021',
     paid: true,
     status: {
-      title: 'KONTRAGENT_CHECKS.STATUSES.STANDART',
+      title: 'COUNTERPARTY.VERIFICATIONS.STATUS.STANDART',
       id: 0,
     },
     info: {
-      title: 'KONTRAGENT_CHECKS.INFO.DONE',
+      title: 'COUNTERPARTY.VERIFICATIONS.TYPE.DONE',
       id: 0,
     },
   },
@@ -21,11 +21,11 @@ export const VERIFICATIONS_LIST = [
     time: '06.08.2020',
     paid: false,
     status: {
-      title: 'KONTRAGENT_CHECKS.STATUSES.STANDART',
+      title: 'COUNTERPARTY.VERIFICATIONS.STATUS.STANDART',
       id: 0,
     },
     info: {
-      title: 'KONTRAGENT_CHECKS.INFO.AWAITING_PAYMENT',
+      title: 'COUNTERPARTY.VERIFICATIONS.TYPE.AWAITING_PAYMENT',
       id: 1,
     },
   },
@@ -36,11 +36,11 @@ export const VERIFICATIONS_LIST = [
     time: '06.08.2020',
     paid: false,
     status: {
-      title: 'KONTRAGENT_CHECKS.STATUSES.EXTENDED',
+      title: 'COUNTERPARTY.VERIFICATIONS.STATUS.EXTENDED',
       id: 1,
     },
     info: {
-      title: 'KONTRAGENT_CHECKS.INFO.PERFORMED',
+      title: 'COUNTERPARTY.VERIFICATIONS.TYPE.PERFORMED',
       id: 2,
     },
   },

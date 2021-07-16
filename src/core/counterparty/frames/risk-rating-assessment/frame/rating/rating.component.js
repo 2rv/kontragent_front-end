@@ -10,7 +10,7 @@ export function RatingComponent() {
     <Container>
         <Content>
           <div>
-            <SecondaryText tid="Ваша оценка" />
+            <SecondaryText tid="COUNTERPARTY.RISK_RATING_ASSESSMENT.YOUR_MARK" />
           </div>
           <div>
             <FullstarIcon />
@@ -22,16 +22,16 @@ export function RatingComponent() {
         </Content>
         <Content>
           <div>
-            <SecondaryText tid="Народный рейтинг" />
+            <SecondaryText tid="COUNTERPARTY.RISK_RATING_ASSESSMENT.PEOPLES_RATING" />
           </div>
           <div>
             <PrimaryText>3,5</PrimaryText>&nbsp;
-            <LightText tid="Баллов" />
+            <LightText tid="COUNTERPARTY.RISK_RATING_ASSESSMENT.POINTS" />
           </div>
         </Content>
         <Content>
           <div>
-            <SecondaryText tid="Оборот" />
+            <SecondaryText tid="COUNTERPARTY.RISK_RATING_ASSESSMENT.TURNOVER" />
           </div>
           <div>
             <PrimaryText>310 988.65 руб.</PrimaryText>
@@ -39,7 +39,7 @@ export function RatingComponent() {
         </Content>
         <Content>
           <div>
-            <SecondaryText tid="Риск доначисления" />
+            <SecondaryText tid="COUNTERPARTY.RISK_RATING_ASSESSMENT.RISK_OF_ADDITIONAL_ACCRUAL" />
           </div>
           <div>
             <RedText>47 438.93 руб.</RedText>
