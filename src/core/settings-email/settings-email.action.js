@@ -1,36 +1,60 @@
 import { httpRequest } from '../../main/http';
 
-import { SIGNUP_ACTION_TYPE } from './signup.type';
-import { SIGNUP_API } from './signup.constant';
+import { SETTINGS_EMAIL_ACTION_TYPE } from './settings-email.type';
+import {
+  SETTINGS_EMAIL_API,
+  SETTINGS_FORM_CHANGE_EMAIL_API,
+} from './settings-email.constant';
+import { performSettingsEmail } from './settings-email.convert';
 
-import { authSetData } from '../../lib/common/auth/auth.action';
-import { SIGNUP_FORM_REDIRECT_ON_UPLOAD_PATH } from './signup.constant';
-import { redirect } from '../../main/navigation/navigation.core';
-
-export function signupFormUploadData(data) {
+export function settingsEmailGetEmail() {
   return async (dispatch) => {
     dispatch({
-      type: SIGNUP_ACTION_TYPE.SIGNUP_FORM_UPLOAD_PENDING,
+      type: SETTINGS_EMAIL_ACTION_TYPE.SETTINGS_EMAIL_GET_EMAIL_PENDING,
     });
 
     try {
       const res = await httpRequest({
-        method: SIGNUP_API.SIGNUP_FORM_UPLOAD.TYPE,
-        url: SIGNUP_API.SIGNUP_FORM_UPLOAD.ENDPOINT,
-        data,
+        method: SETTINGS_EMAIL_API.TYPE,
+        url: SETTINGS_EMAIL_API.ENDPOINT,
       });
 
-      dispatch(authSetData(res.data.accessToken));
-
+      const data = performSettingsEmail(res.data);
       dispatch({
-        type: SIGNUP_ACTION_TYPE.SIGNUP_FORM_UPLOAD_SUCCESS,
+        type: SETTINGS_EMAIL_ACTION_TYPE.SETTINGS_EMAIL_GET_EMAIL_SUCCESS,
+        data: data,
       });
-
-      redirect(SIGNUP_FORM_REDIRECT_ON_UPLOAD_PATH);
     } catch (error) {
       if (error) {
         dispatch({
-          type: SIGNUP_ACTION_TYPE.SIGNUP_FORM_UPLOAD_ERROR,
+          type: SETTINGS_EMAIL_ACTION_TYPE.SETTINGS_EMAIL_GET_EMAIL_ERROR,
+          errorMessage: error.response.data.message,
+        });
+      }
+    }
+  };
+}
+
+export function settingsFormChangeEmailUploadForm(data) {
+  return async (dispatch) => {
+    dispatch({
+      type: SETTINGS_EMAIL_ACTION_TYPE.SETTINGS_FORM_CHANGE_EMAIL_UPLOAD_PENDING,
+    });
+
+    try {
+      await httpRequest({
+        method: SETTINGS_FORM_CHANGE_EMAIL_API.TYPE,
+        url: SETTINGS_FORM_CHANGE_EMAIL_API.ENDPOINT,
+        data,
+      });
+
+      dispatch({
+        type: SETTINGS_EMAIL_ACTION_TYPE.SETTINGS_FORM_CHANGE_EMAIL_UPLOAD_SUCCESS,
+      });
+    } catch (error) {
+      if (error) {
+        dispatch({
+          type: SETTINGS_EMAIL_ACTION_TYPE.SETTINGS_FORM_CHANGE_EMAIL_UPLOAD_ERROR,
           errorMessage: error.response.data.message,
         });
       }

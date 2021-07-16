@@ -1,29 +1,38 @@
 import React from 'react';
-import { PrimaryLoader } from '../../lib/elements/loader';
 import { SettingsFormChangeEmailContainer } from './frame/settings-form-change-email.container';
 
 export function SettingEmailComponent(props) {
   const {
+    validation,
+    onSubmitForm,
     pageLoading,
-    isPending,
-    isError,
-    isSuccess,
-    errorMessage,
+    FormPending,
+    FormError,
+    FormSuccess,
+    FormErrorMessage,
     initialValue,
     settingsEmailFieldName,
+    enableReinitialize,
+
+    dataPending,
+    dataError,
+    dataErrorMessage,
   } = props;
   return (
-    <React.Fragment>
-      {(isPending || pageLoading) && <PrimaryLoader />}
-      <SettingsFormChangeEmailContainer
-        initialValue={initialValue}
-        settingsEmailFieldName={settingsEmailFieldName}
-        pageLoading={pageLoading}
-        isPending={isPending}
-        isError={isError}
-        isSuccess={isSuccess}
-        errorMessage={errorMessage}
-      />
-    </React.Fragment>
+    <SettingsFormChangeEmailContainer
+      validation={validation}
+      onSubmitForm={onSubmitForm}
+      enableReinitialize={enableReinitialize}
+      initialValue={initialValue}
+      settingsEmailFieldName={settingsEmailFieldName}
+      pageLoading={pageLoading}
+      FormPending={FormPending}
+      FormError={FormError}
+      FormSuccess={FormSuccess}
+      FormErrorMessage={FormErrorMessage}
+      dataPending={dataPending}
+      dataError={dataError}
+      dataErrorMessage={dataErrorMessage}
+    />
   );
 }

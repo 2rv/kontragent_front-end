@@ -1,1 +1,6 @@
-export { authDecode, setAutorization, setCurrentAuthCookie } from './auth.core';
+export {
+  authDecode,
+  setAutorization,
+  setCurrentAuthCookie,
+  setAutorizationHeader,
+} from './auth.core';

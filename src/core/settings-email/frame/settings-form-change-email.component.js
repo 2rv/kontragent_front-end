@@ -1,10 +1,14 @@
 import React from 'react';
 
-import { SectionLayout, IndentLayout } from '../../../lib/elements/layout';
+import {
+  SectionLayout,
+  IndentLayout,
+  FieldLayout,
+} from '../../../lib/elements/layout';
 import { SecondaryTitleText } from '../../../lib/elements/text';
 import { PrimaryField } from '../../../lib/elements/field';
 import { SecondaryButton } from '../../../lib/elements/button';
-import { ErrorMessage } from '../../../lib/elements/error';
+import { ErrorAlert } from '../../../lib/elements/alert';
 import { SuccessAlert } from '../../../lib/elements/alert';
 import { PrimaryLoader } from '../../../lib/elements/loader';
 
@@ -22,10 +26,14 @@ export function SettingsFormChangeEmailComponent(props) {
     pageLoading,
     fieldPassword,
     fieldEmail,
-    isSuccess,
-    isPending,
-    isError,
-    errorMessage,
+
+    FormPending,
+    FormError,
+    FormSuccess,
+    FormErrorMessage,
+    dataPending,
+    dataError,
+    dataErrorMessage,
   } = props;
 
   const isFieldError = (name) => {
@@ -35,17 +43,17 @@ export function SettingsFormChangeEmailComponent(props) {
   const isSubmitDisabled = () => {
     return JSON.stringify(touched) === '{}'
       ? true
-      : !isValid || isSubmitting || isSuccess || pageLoading;
+      : !isValid || isSubmitting || FormSuccess || pageLoading || dataPending;
   };
 
   return (
     <React.Fragment>
-      {(isPending || pageLoading) && <PrimaryLoader />}
-      <IndentLayout>
-        <SectionLayout>
-          <SecondaryTitleText tid="SETTINGS.EMAIL.TITLE" />
-          <form onSubmit={handleSubmit}>
-            <SectionLayout>
+      {(FormPending || pageLoading) && <PrimaryLoader />}
+      <SectionLayout>
+        <SecondaryTitleText tid="SETTINGS.EMAIL.TITLE" />
+        <form onSubmit={handleSubmit}>
+          <SectionLayout>
+            <FieldLayout type="double">
               <PrimaryField
                 titleTid="SETTINGS.EMAIL.FIELD.EMAIL.TITLE"
                 placeholderTid="SETTINGS.EMAIL.FIELD.EMAIL.PLACEHOLDER"
@@ -64,24 +72,29 @@ export function SettingsFormChangeEmailComponent(props) {
                 onBlur={handleBlur}
                 value={values[fieldPassword]}
                 error={isFieldError(fieldPassword)}
+                type="password"
               />
+            </FieldLayout>
 
-              <SecondaryButton
-                tid="SETTINGS.EMAIL.BUTTON"
-                disabled={isSubmitDisabled()}
-              />
+            <SecondaryButton
+              tid="SETTINGS.EMAIL.BUTTON"
+              disabled={isSubmitDisabled()}
+            />
 
-              {(isError || errorMessage) && (
-                <ErrorMessage tid={`ERROR.${errorMessage}`} />
-              )}
+            {(FormError || FormErrorMessage) && (
+              <ErrorAlert tid={`ERROR.${FormErrorMessage}`} />
+            )}
 
-              {isSuccess && (
-                <SuccessAlert tid={'SETTINGS.EMAIL.SUCCESS_MESSAGE'} />
-              )}
-            </SectionLayout>
-          </form>
-        </SectionLayout>
-      </IndentLayout>
+            {(dataError || dataErrorMessage) && (
+              <ErrorAlert tid={`ERROR.${dataErrorMessage}`} />
+            )}
+
+            {FormSuccess && (
+              <SuccessAlert tid={'SETTINGS.EMAIL.SUCCESS_MESSAGE'} />
+            )}
+          </SectionLayout>
+        </form>
+      </SectionLayout>
     </React.Fragment>
   );
 }

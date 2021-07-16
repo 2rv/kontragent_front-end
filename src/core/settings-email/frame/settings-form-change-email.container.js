@@ -5,13 +5,20 @@ import { SETTINGS_FORM_CHANGE_EMAIL_FIELD_KEY } from './settings-form-change-ema
 
 export function SettingsFormChangeEmailContainer(props) {
   const {
+    validation,
+    onSubmitForm,
     pageLoading,
-    isPending,
-    isError,
-    isSuccess,
-    errorMessage,
+    FormPending,
+    FormError,
+    FormSuccess,
+    FormErrorMessage,
     initialValue,
     settingsEmailFieldName,
+    enableReinitialize,
+
+    dataPending,
+    dataError,
+    dataErrorMessage,
   } = props;
 
   const EMAIL_NAME =
@@ -20,19 +27,29 @@ export function SettingsFormChangeEmailContainer(props) {
       settingsEmailFieldName[SETTINGS_FORM_CHANGE_EMAIL_FIELD_KEY.PASSWORD];
 
   return (
-    <Formik initialValues={initialValue}>
-      {(props) => (
-        <SettingsFormChangeEmailComponent
-          fieldEmail={EMAIL_NAME}
-          fieldPassword={PASSWORD_NAME}
-          pageLoading={pageLoading}
-          isPending={isPending}
-          isError={isError}
-          isSuccess={isSuccess}
-          errorMessage={errorMessage}
-          {...props}
-        />
-      )}
-    </Formik>
+    <div>
+      <Formik
+        enableReinitialize={enableReinitialize}
+        initialValues={initialValue}
+        validate={validation}
+        onSubmit={onSubmitForm}
+      >
+        {(props) => (
+          <SettingsFormChangeEmailComponent
+            fieldEmail={EMAIL_NAME}
+            fieldPassword={PASSWORD_NAME}
+            pageLoading={pageLoading}
+            FormPending={FormPending}
+            FormError={FormError}
+            FormSuccess={FormSuccess}
+            FormErrorMessage={FormErrorMessage}
+            {...props}
+            dataPending={dataPending}
+            dataError={dataError}
+            dataErrorMessage={dataErrorMessage}
+          />
+        )}
+      </Formik>
+    </div>
   );
 }

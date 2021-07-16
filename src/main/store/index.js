@@ -112,6 +112,10 @@ import {
   authVerificationPhoneStore,
   AUTH_VERIFICATION_PHONE_STORE_NAME,
 } from '../../core/auth-verification-phone';
+import {
+  settingsEmailStore,
+  SETTINGS_EMAIL_STORE_NAME,
+} from '../../core/settings-email';
 
 export const reducers = combineReducers({
   [FEED_AND_NOTIFICATIONS_LIST_STORE_NAME]: feedAndNotificationsListStore,
@@ -148,6 +152,7 @@ export const reducers = combineReducers({
   [SETTINGS_PHONE_STORE_NAME]: settingsPhoneStore,
   [SETTINGS_PASSWORD_STORE_NAME]: settingsPasswordStore,
   [AUTH_VERIFICATION_PHONE_STORE_NAME]: authVerificationPhoneStore,
+  [SETTINGS_EMAIL_STORE_NAME]: settingsEmailStore,
 });
 
 export { initStore } from './store.core';

@@ -1,7 +1,16 @@
-import { SIGNUP_DATA_NAME, SIGNUP_FIELD_NAME } from './signup.type'
+import {
+  SETTINGS_EMAIL_DATA_NAME,
+  SETTINGS_EMAIL_FIELD_NAME,
+} from './settings-email.type';
 
-export const convertSignupFormData = (data) => ({
-  [SIGNUP_DATA_NAME.LOGIN]: data[SIGNUP_FIELD_NAME.LOGIN],
-  [SIGNUP_DATA_NAME.PASSWORD]: data[SIGNUP_FIELD_NAME.PASSWORD],
-  [SIGNUP_DATA_NAME.EMAIL]: data[SIGNUP_FIELD_NAME.EMAIL],
-})
+import { SETTINGS_EMAIL_DATA_KEY } from './settings-email.constant';
+
+export const convertSettingsFormChangeEmailData = (values) => ({
+  [SETTINGS_EMAIL_DATA_NAME.EMAIL]: values[SETTINGS_EMAIL_FIELD_NAME.EMAIL],
+  [SETTINGS_EMAIL_DATA_NAME.PASSWORD]:
+    values[SETTINGS_EMAIL_FIELD_NAME.PASSWORD],
+});
+
+export const performSettingsEmail = (rawdata) => ({
+  [SETTINGS_EMAIL_DATA_NAME.EMAIL]: rawdata[SETTINGS_EMAIL_DATA_KEY.EMAIL],
+});
