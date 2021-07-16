@@ -1,36 +1,28 @@
 import { httpRequest } from '../../main/http';
 
-import { SIGNUP_ACTION_TYPE } from './signup.type';
-import { SIGNUP_API } from './signup.constant';
+import { SETTINGS_PASSWORD_ACTION_TYPE } from './settings-password.type';
+import { SETTINGS_PASSWORD_API } from './settings-password.constant';
 
-import { authSetData } from '../../lib/common/auth/auth.action';
-import { SIGNUP_FORM_REDIRECT_ON_UPLOAD_PATH } from './signup.constant';
-import { redirect } from '../../main/navigation/navigation.core';
-
-export function signupFormUploadData(data) {
+export function settingsFormChangePasswordUploadForm(data) {
   return async (dispatch) => {
     dispatch({
-      type: SIGNUP_ACTION_TYPE.SIGNUP_FORM_UPLOAD_PENDING,
+      type: SETTINGS_PASSWORD_ACTION_TYPE.SETTINGS_FORM_CHANGE_PASSWORD_UPLOAD_PENDING,
     });
 
     try {
-      const res = await httpRequest({
-        method: SIGNUP_API.SIGNUP_FORM_UPLOAD.TYPE,
-        url: SIGNUP_API.SIGNUP_FORM_UPLOAD.ENDPOINT,
+      await httpRequest({
+        method: SETTINGS_PASSWORD_API.TYPE,
+        url: SETTINGS_PASSWORD_API.ENDPOINT,
         data,
       });
 
-      dispatch(authSetData(res.data.accessToken));
-
       dispatch({
-        type: SIGNUP_ACTION_TYPE.SIGNUP_FORM_UPLOAD_SUCCESS,
+        type: SETTINGS_PASSWORD_ACTION_TYPE.SETTINGS_FORM_CHANGE_PASSWORD_UPLOAD_SUCCESS,
       });
-
-      redirect(SIGNUP_FORM_REDIRECT_ON_UPLOAD_PATH);
     } catch (error) {
       if (error) {
         dispatch({
-          type: SIGNUP_ACTION_TYPE.SIGNUP_FORM_UPLOAD_ERROR,
+          type: SETTINGS_PASSWORD_ACTION_TYPE.SETTINGS_FORM_CHANGE_PASSWORD_UPLOAD_ERROR,
           errorMessage: error.response.data.message,
         });
       }

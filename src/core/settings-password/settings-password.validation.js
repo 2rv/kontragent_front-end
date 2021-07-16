@@ -1,23 +1,21 @@
+import { SETTINGS_PASSWORD_FIELD_NAME } from './settings-password.type';
+
 import { validate } from '../../main/validate';
 
-import { SIGNUP_FIELD_NAME } from './signup.type';
-
 import {
-  login,
+  required,
   password,
   passwordRepeat,
-  email,
-  required,
 } from '../../main/validate/validate.service';
 
 const config = {
-  [SIGNUP_FIELD_NAME.LOGIN]: [required, login],
-  [SIGNUP_FIELD_NAME.EMAIL]: [required, email],
-  [SIGNUP_FIELD_NAME.PASSWORD]: [required, password],
-  [SIGNUP_FIELD_NAME.PASSWORD_REPEAT]: [
+  [SETTINGS_PASSWORD_FIELD_NAME.NEW_PASSWORD]: [required, password],
+  [SETTINGS_PASSWORD_FIELD_NAME.REPEAT_NEW_PASSWORD]: [
     required,
-    passwordRepeat([SIGNUP_FIELD_NAME.PASSWORD]),
+    passwordRepeat([SETTINGS_PASSWORD_FIELD_NAME.NEW_PASSWORD]),
   ],
+  [SETTINGS_PASSWORD_FIELD_NAME.OLD_PASSWORD]: [required, password],
 };
 
-export const signupFormValidation = (values) => validate(values, config);
+export const settingsFormChangePasswordValidation = (values) =>
+  validate(values, config);

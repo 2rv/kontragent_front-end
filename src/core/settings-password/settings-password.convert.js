@@ -1,7 +1,11 @@
-import { SIGNUP_DATA_NAME, SIGNUP_FIELD_NAME } from './signup.type'
+import {
+  SETTINGS_PASSWORD_DATA_NAME,
+  SETTINGS_PASSWORD_FIELD_NAME,
+} from './settings-password.type';
 
-export const convertSignupFormData = (data) => ({
-  [SIGNUP_DATA_NAME.LOGIN]: data[SIGNUP_FIELD_NAME.LOGIN],
-  [SIGNUP_DATA_NAME.PASSWORD]: data[SIGNUP_FIELD_NAME.PASSWORD],
-  [SIGNUP_DATA_NAME.EMAIL]: data[SIGNUP_FIELD_NAME.EMAIL],
-})
+export const convertSettingsFormChangePasswordData = (values) => ({
+  [SETTINGS_PASSWORD_DATA_NAME.NEW_PASSWORD]:
+    values[SETTINGS_PASSWORD_FIELD_NAME.NEW_PASSWORD],
+  [SETTINGS_PASSWORD_DATA_NAME.PASSWORD]:
+    values[SETTINGS_PASSWORD_FIELD_NAME.OLD_PASSWORD],
+});

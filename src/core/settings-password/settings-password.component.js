@@ -4,26 +4,27 @@ import { SettingsFormChangePasswordContainer } from './frame/settings-form-chang
 
 export function SettingsPasswordComponent(props) {
   const {
+    settingsPasswordFieldName,
     pageLoading,
     isPending,
     isError,
     isSuccess,
     errorMessage,
     initialValue,
-    settingsPasswordFieldName,
+    onSubmitForm,
+    validation,
   } = props;
   return (
-    <React.Fragment>
-      {(isPending || pageLoading) && <PrimaryLoader />}
-      <SettingsFormChangePasswordContainer
-        initialValue={initialValue}
-        settingsPasswordFieldName={settingsPasswordFieldName}
-        pageLoading={pageLoading}
-        isPending={isPending}
-        isError={isError}
-        isSuccess={isSuccess}
-        errorMessage={errorMessage}
-      />
-    </React.Fragment>
+    <SettingsFormChangePasswordContainer
+      initialValue={initialValue}
+      settingsPasswordFieldName={settingsPasswordFieldName}
+      pageLoading={pageLoading}
+      isPending={isPending}
+      isError={isError}
+      isSuccess={isSuccess}
+      errorMessage={errorMessage}
+      onSubmitForm={onSubmitForm}
+      validation={validation}
+    />
   );
 }

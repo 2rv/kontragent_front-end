@@ -104,6 +104,10 @@ import {
   settingsPhoneStore,
   SETTINGS_PHONE_STORE_NAME,
 } from '../../core/settings-phone';
+import {
+  settingsPasswordStore,
+  SETTINGS_PASSWORD_STORE_NAME,
+} from '../../core/settings-password';
 
 export const reducers = combineReducers({
   [FEED_AND_NOTIFICATIONS_LIST_STORE_NAME]: feedAndNotificationsListStore,
@@ -138,6 +142,7 @@ export const reducers = combineReducers({
   [DASHBOARD_ADMIN_STORE_NAME]: dashboardAdminStore,
   [LAWYER_REQUEST_STORE_NAME]: lawyerRequestStore,
   [SETTINGS_PHONE_STORE_NAME]: settingsPhoneStore,
+  [SETTINGS_PASSWORD_STORE_NAME]: settingsPasswordStore,
 });
 
 export { initStore } from './store.core';

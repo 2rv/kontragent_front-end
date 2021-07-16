@@ -22,8 +22,9 @@ export function SettingsFormChangePasswordComponent(props) {
     isSubmitting,
 
     pageLoading,
-    fieldPassword,
-    fieldPhoneNumber,
+    fieldNewPassword,
+    fieldRepeatNewPassword,
+    fieldOldPassword,
     isSuccess,
     isPending,
     isError,
@@ -51,31 +52,34 @@ export function SettingsFormChangePasswordComponent(props) {
               <PrimaryField
                 titleTid="SETTINGS.PASSWORD.FIELD.NEW_PASSWORD.TITLE"
                 placeholderTid="SETTINGS.PASSWORD.FIELD.NEW_PASSWORD.PLACEHOLDER"
-                name={fieldPhoneNumber}
+                name={fieldNewPassword}
                 onChange={handleChange}
                 onBlur={handleBlur}
-                value={values[fieldPhoneNumber]}
-                error={isFieldError(fieldPhoneNumber)}
+                value={values[fieldNewPassword]}
+                error={isFieldError(fieldNewPassword)}
+                type="password"
               />
 
               <PrimaryField
                 titleTid="SETTINGS.PASSWORD.FIELD.REPEAT_NEW_PASSWORD.TITLE"
                 placeholderTid="SETTINGS.PASSWORD.FIELD.REPEAT_NEW_PASSWORD.PLACEHOLDER"
-                name={fieldPassword}
+                name={fieldRepeatNewPassword}
                 onChange={handleChange}
                 onBlur={handleBlur}
-                value={values[fieldPassword]}
-                error={isFieldError(fieldPassword)}
+                value={values[fieldRepeatNewPassword]}
+                error={isFieldError(fieldRepeatNewPassword)}
+                type="password"
               />
 
               <PrimaryField
                 titleTid="SETTINGS.PASSWORD.FIELD.OLD_PASSWORD.TITLE"
                 placeholderTid="SETTINGS.PASSWORD.FIELD.OLD_PASSWORD.PLACEHOLDER"
-                name={fieldPhoneNumber}
+                name={fieldOldPassword}
                 onChange={handleChange}
                 onBlur={handleBlur}
-                value={values[fieldPhoneNumber]}
-                error={isFieldError(fieldPhoneNumber)}
+                value={values[fieldOldPassword]}
+                error={isFieldError(fieldOldPassword)}
+                type="password"
               />
 
               <SecondaryButton

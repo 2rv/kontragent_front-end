@@ -1,33 +1,37 @@
-import { SIGNUP_ACTION_TYPE } from './signup.type';
 import {
   initRequestState,
-  setRequestPending,
   setRequestSuccess,
+  setRequestPending,
   setRequestError,
 } from '../../main/store/store.service';
 
+import { SETTINGS_PASSWORD_ACTION_TYPE } from './settings-password.type';
+
 const initialState = {
-  signupForm: initRequestState(),
+  settingsChangePassword: initRequestState(),
 };
 
-export function signupStore(state = initialState, action) {
+export function settingsPasswordStore(state = initialState, action) {
   switch (action.type) {
-    case SIGNUP_ACTION_TYPE.SIGNUP_FORM_UPLOAD_PENDING:
+    case SETTINGS_PASSWORD_ACTION_TYPE.SETTINGS_FORM_CHANGE_PASSWORD_UPLOAD_SUCCESS:
       return {
         ...state,
-        signupForm: setRequestPending(state.signupForm),
+        settingsChangePassword: setRequestSuccess(state.settingsChangePassword),
       };
 
-    case SIGNUP_ACTION_TYPE.SIGNUP_FORM_UPLOAD_SUCCESS:
+    case SETTINGS_PASSWORD_ACTION_TYPE.SETTINGS_FORM_CHANGE_PASSWORD_UPLOAD_PENDING:
       return {
         ...state,
-        signupForm: setRequestSuccess(state.signupForm),
+        settingsChangePassword: setRequestPending(state.settingsChangePassword),
       };
 
-    case SIGNUP_ACTION_TYPE.SIGNUP_FORM_UPLOAD_ERROR:
+    case SETTINGS_PASSWORD_ACTION_TYPE.SETTINGS_FORM_CHANGE_PASSWORD_UPLOAD_ERROR:
       return {
         ...state,
-        signupForm: setRequestError(state.signupForm, action.errorMessage),
+        settingsChangePassword: setRequestError(
+          state.settingsChangePassword,
+          action.errorMessage,
+        ),
       };
 
     default:
