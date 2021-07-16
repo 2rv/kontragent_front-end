@@ -9,6 +9,7 @@ import {
   email,
   required,
   fullname,
+  phone,
 } from '../../main/validate/validate.service';
 
 const config = {
@@ -17,6 +18,7 @@ const config = {
   [SIGNUP_FIELD_NAME.EMAIL]: [required, email],
   [SIGNUP_FIELD_NAME.CAPTCHA]: [required],
   [SIGNUP_FIELD_NAME.PASSWORD]: [required, password],
+  [SIGNUP_FIELD_NAME.PHONE]: [required, phone],
   [SIGNUP_FIELD_NAME.PASSWORD_REPEAT]: [
     required,
     passwordRepeat([SIGNUP_FIELD_NAME.PASSWORD]),

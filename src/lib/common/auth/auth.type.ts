@@ -1,9 +1,13 @@
 export enum AUTH_USER_DATA {
   ID = 'id',
+  EMAIL = 'email',
+  PHONE = 'phone',
 }
 
 export interface AuthUserDto {
   id: number;
+  email: string;
+  phone: string;
 }
 
 export interface AuthStoreState {

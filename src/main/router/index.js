@@ -26,6 +26,7 @@ import { balanceActivityRouter } from '../../core/balance-activity';
 import { myCompaniesAddCompanyRouter } from '../../core/my-companies-add-company';
 import { feedAndNotificationsListRouter } from '../../core/feed-and-notifications-list';
 import { dashboardAdminRouter } from '../../core/dashboard-admin';
+import { AuthVerificationPhoneRouter } from '../../core/auth-verification-phone';
 
 import { LOGIN_ROUTE_PATH } from '../../core/login';
 import { SIGNUP_ROUTE_PATH } from '../../core/signup';
@@ -54,6 +55,7 @@ import { BALANCE_ACTIVITY_ROUTE_PATH } from '../../core/balance-activity';
 import { MY_COMPANIES_ADD_COMPANY_ROUTE_PATH } from '../../core/my-companies-add-company';
 import { FEED_AND_NOTIFICATIONS_LIST_ROUTE_PATH } from '../../core/feed-and-notifications-list';
 import { DASHBOARD_ADMIN_ROUTE_PATH } from '../../core/dashboard-admin';
+import { AUTH_VERIFICATION_PHONE_ROUTE_PATH } from '../../core/auth-verification-phone';
 
 export const routes = {
   [FEED_AND_NOTIFICATIONS_LIST_ROUTE_PATH]: feedAndNotificationsListRouter,
@@ -84,5 +86,6 @@ export const routes = {
   [BALANCE_ACTIVITY_ROUTE_PATH]: balanceActivityRouter,
   [DASHBOARD_ADMIN_ROUTE_PATH]: dashboardAdminRouter,
   [LAWYER_REQUEST_ROUTE_PATH]: lawyerRequestRouter,
+  [AUTH_VERIFICATION_PHONE_ROUTE_PATH]: AuthVerificationPhoneRouter,
 };
 export const Router = routesInit(routes);

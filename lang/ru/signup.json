@@ -17,15 +17,19 @@
 				"TITLE": "Email",
 				"PLACEHOLDER": "Contragent@gmail.com"
 			},
+			"PHONE": {
+				"TITLE": "Номер телефона",
+				"PLACEHOLDER": "Укажите номер телефона"
+			},
 			"CAPTCHA": {
-				"TITLE": "Капча",
-				"PLACEHOLDER": "Введите капчу"
+				"TITLE": "CAPTCHA",
+				"PLACEHOLDER": "CAPTCHA"
 			}
 		},
 		"HEADER": "Создать аккаунт",
 		"BUTTON": "Войти",
 		"SIGNIN_PROPOSAL": "Уже есть аккаунт?",
 		"LINK_TO_SIGN_IN": "Войти",
-		"SUCCESS_MESSAGE": "Успешно"
+		"SUCCESS_MESSAGE": "SUCCESS_MESSAGE"
 	}
 }

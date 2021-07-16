@@ -108,6 +108,10 @@ import {
   settingsPasswordStore,
   SETTINGS_PASSWORD_STORE_NAME,
 } from '../../core/settings-password';
+import {
+  authVerificationPhoneStore,
+  AUTH_VERIFICATION_PHONE_STORE_NAME,
+} from '../../core/auth-verification-phone';
 
 export const reducers = combineReducers({
   [FEED_AND_NOTIFICATIONS_LIST_STORE_NAME]: feedAndNotificationsListStore,
@@ -143,6 +147,7 @@ export const reducers = combineReducers({
   [LAWYER_REQUEST_STORE_NAME]: lawyerRequestStore,
   [SETTINGS_PHONE_STORE_NAME]: settingsPhoneStore,
   [SETTINGS_PASSWORD_STORE_NAME]: settingsPasswordStore,
+  [AUTH_VERIFICATION_PHONE_STORE_NAME]: authVerificationPhoneStore,
 });
 
 export { initStore } from './store.core';

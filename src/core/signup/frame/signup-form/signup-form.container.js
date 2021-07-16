@@ -20,7 +20,7 @@ export function SignupFormContainer(props) {
   const PASSWORD_REPEAT_NAME = fieldName[SIGNUP_FORM_FIELD_KEY.PASSWORD_REPEAT];
   const EMAIL_NAME = fieldName[SIGNUP_FORM_FIELD_KEY.EMAIL];
   const CAPTCHA_NAME = fieldName[SIGNUP_FORM_FIELD_KEY.CAPTCHA];
-
+  const PHONE_NAME = fieldName[SIGNUP_FORM_FIELD_KEY.PHONE];
   return (
     <div>
       <Formik
@@ -35,6 +35,7 @@ export function SignupFormContainer(props) {
             fieldPasswordRepeat={PASSWORD_REPEAT_NAME}
             fieldEmail={EMAIL_NAME}
             fieldCaptcha={CAPTCHA_NAME}
+            fieldPhone={PHONE_NAME}
             {...props}
             isPending={isPending}
             isError={isError}

@@ -1,8 +1,8 @@
 {
-	"SIGN_UP_USER_ALREADY_EXISTS": "ПОЛЬЗОВАТЕЛЬ С ТАКИМ ЛОГИНОМ ИЛИ ПОЧТОЙ УЖЕ СУЩЕСТВУЕТ",
+	"SIGN_UP_USER_ALREADY_EXISTS": "ПОЛЬЗОВАТЕЛЬ С ТАКИМ ЛОГИНОМ, НОМЕРОМ ТЕЛЕФОНА ИЛИ ПОЧТОЙ УЖЕ СУЩЕСТВУЕТ",
 	"LOGIN_UNCORRECT_PASSWORD_OR_LOGIN": "НЕПРАВИЛЬНЫЙ ЛОГИН ИЛИ ПАРОЛЬ",
 	"LOGIN_COULDNT_FOUND_USER": "ТАКОГО ПОЛЬЗОВАТЕЛЯ НЕ СУЩЕСТВУЕТ",
 	"USER_RECOVERY_PASSWORD_INCORRECT_CODE": "Сессия восстановления аккаунта устарела или не найдена",
-	"CAPTCHA_VALUE_IS_UNCORRECT": "НАПИСАТЬ ДЛЯ CAPTCHA_VALUE_IS_UNCORRECT",
-	"USER_SETTINGS_UNCORRECT_CURRENT_PASSWORD": "НАПИСАТЬ ДЛЯ USER_SETTINGS_UNCORRECT_CURRENT_PASSWORD"
+	"USER_USER_VERIFICATION_PHONE_ALLREADY_CONFIRM": "НАПИСАТЬ ДЛЯ USER_USER_VERIFICATION_PHONE_ALLREADY_CONFIRM",
+	"USER_USER_VERIFICATION_PHONE_UNCORRECT_CODE": "НАПИСАТЬ ДЛЯ USER_USER_VERIFICATION_PHONE_UNCORRECT_CODE"
 }
