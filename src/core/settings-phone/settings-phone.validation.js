@@ -1,23 +1,17 @@
+import { SETTINGS_PHONE_FIELD_NAME } from './settings-phone.type';
+
 import { validate } from '../../main/validate';
 
-import { SIGNUP_FIELD_NAME } from './signup.type';
-
 import {
-  login,
-  password,
-  passwordRepeat,
-  email,
   required,
+  password,
+  phone,
 } from '../../main/validate/validate.service';
 
 const config = {
-  [SIGNUP_FIELD_NAME.LOGIN]: [required, login],
-  [SIGNUP_FIELD_NAME.EMAIL]: [required, email],
-  [SIGNUP_FIELD_NAME.PASSWORD]: [required, password],
-  [SIGNUP_FIELD_NAME.PASSWORD_REPEAT]: [
-    required,
-    passwordRepeat([SIGNUP_FIELD_NAME.PASSWORD]),
-  ],
+  [SETTINGS_PHONE_FIELD_NAME.PHONE_NUMBER]: [required, phone],
+  [SETTINGS_PHONE_FIELD_NAME.PASSWORD]: [required, password],
 };
 
-export const signupFormValidation = (values) => validate(values, config);
+export const settingsFormChangePhoneValidation = (values) =>
+  validate(values, config);

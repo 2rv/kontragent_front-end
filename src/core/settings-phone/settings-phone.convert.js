@@ -1,7 +1,17 @@
-import { SIGNUP_DATA_NAME, SIGNUP_FIELD_NAME } from './signup.type'
+import {
+  SETTINGS_PHONE_DATA_NAME,
+  SETTINGS_PHONE_FIELD_NAME,
+} from './settings-phone.type';
 
-export const convertSignupFormData = (data) => ({
-  [SIGNUP_DATA_NAME.LOGIN]: data[SIGNUP_FIELD_NAME.LOGIN],
-  [SIGNUP_DATA_NAME.PASSWORD]: data[SIGNUP_FIELD_NAME.PASSWORD],
-  [SIGNUP_DATA_NAME.EMAIL]: data[SIGNUP_FIELD_NAME.EMAIL],
-})
+import { SETTINGS_PHONE_DATA_KEY } from './settings-phone.constant';
+
+export const convertSettingsFormChangePhoneData = (values) => ({
+  [SETTINGS_PHONE_DATA_NAME.PHONE]:
+    values[SETTINGS_PHONE_FIELD_NAME.PHONE_NUMBER],
+  [SETTINGS_PHONE_DATA_NAME.PASSWORD]:
+    values[SETTINGS_PHONE_FIELD_NAME.PASSWORD],
+});
+
+export const performSettingsPhone = (rawdata) => ({
+  [SETTINGS_PHONE_DATA_NAME.PHONE]: rawdata[SETTINGS_PHONE_DATA_KEY.PHONE],
+});

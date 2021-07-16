@@ -100,6 +100,10 @@ import {
   LAWYER_REQUEST_STORE_NAME,
   lawyerRequestStore,
 } from '../../core/lawyer-request';
+import {
+  settingsPhoneStore,
+  SETTINGS_PHONE_STORE_NAME,
+} from '../../core/settings-phone';
 
 export const reducers = combineReducers({
   [FEED_AND_NOTIFICATIONS_LIST_STORE_NAME]: feedAndNotificationsListStore,
@@ -133,6 +137,7 @@ export const reducers = combineReducers({
   [BALANCE_ACTIVITY_STORE_NAME]: balanceActivityStore,
   [DASHBOARD_ADMIN_STORE_NAME]: dashboardAdminStore,
   [LAWYER_REQUEST_STORE_NAME]: lawyerRequestStore,
+  [SETTINGS_PHONE_STORE_NAME]: settingsPhoneStore,
 });
 
 export { initStore } from './store.core';

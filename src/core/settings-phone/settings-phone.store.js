@@ -1,33 +1,59 @@
-import { SIGNUP_ACTION_TYPE } from './signup.type';
 import {
   initRequestState,
-  setRequestPending,
   setRequestSuccess,
+  setRequestPending,
   setRequestError,
 } from '../../main/store/store.service';
 
+import { SETTINGS_PHONE_ACTION_TYPE } from './settings-phone.type';
+
 const initialState = {
-  signupForm: initRequestState(),
+  settingsChangePhone: initRequestState(),
+  settingsPhone: initRequestState(),
 };
 
-export function signupStore(state = initialState, action) {
+export function settingsPhoneStore(state = initialState, action) {
   switch (action.type) {
-    case SIGNUP_ACTION_TYPE.SIGNUP_FORM_UPLOAD_PENDING:
+    case SETTINGS_PHONE_ACTION_TYPE.SETTINGS_PHONE_GET_PHONE_SUCCESS:
       return {
         ...state,
-        signupForm: setRequestPending(state.signupForm),
+        settingsPhone: setRequestSuccess(state.settingsPhone, action.data),
       };
 
-    case SIGNUP_ACTION_TYPE.SIGNUP_FORM_UPLOAD_SUCCESS:
+    case SETTINGS_PHONE_ACTION_TYPE.SETTINGS_PHONE_GET_PHONE_PENDING:
       return {
         ...state,
-        signupForm: setRequestSuccess(state.signupForm),
+        settingsPhone: setRequestPending(state.settingsPhone),
       };
 
-    case SIGNUP_ACTION_TYPE.SIGNUP_FORM_UPLOAD_ERROR:
+    case SETTINGS_PHONE_ACTION_TYPE.SETTINGS_PHONE_GET_PHONE_ERROR:
       return {
         ...state,
-        signupForm: setRequestError(state.signupForm, action.errorMessage),
+        settingsPhone: setRequestError(
+          state.settingsPhone,
+          action.errorMessage,
+        ),
+      };
+
+    case SETTINGS_PHONE_ACTION_TYPE.SETTINGS_FORM_CHANGE_PHONE_UPLOAD_SUCCESS:
+      return {
+        ...state,
+        settingsChangePhone: setRequestSuccess(state.settingsChangePhone),
+      };
+
+    case SETTINGS_PHONE_ACTION_TYPE.SETTINGS_FORM_CHANGE_PHONE_UPLOAD_PENDING:
+      return {
+        ...state,
+        settingsChangePhone: setRequestPending(state.settingsChangePhone),
+      };
+
+    case SETTINGS_PHONE_ACTION_TYPE.SETTINGS_FORM_CHANGE_PHONE_UPLOAD_ERROR:
+      return {
+        ...state,
+        settingsChangePhone: setRequestError(
+          state.settingsChangePhone,
+          action.errorMessage,
+        ),
       };
 
     default:
