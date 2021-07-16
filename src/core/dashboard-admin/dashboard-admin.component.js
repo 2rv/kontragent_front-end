@@ -2,15 +2,27 @@ import styled from 'styled-components';
 import { spacing, THEME_COLOR, THEME_SIZE } from '../../lib/theme';
 import { ControlBlockComponent } from './frame';
 import { IndentLayout } from '../../lib/elements/layout';
+import { PrimaryLoader } from '../../lib/elements/loader';
 
-export function DashboardAdminComponent() {
+export function DashboardAdminComponent(props) {
+  const {
+    isPending,
+    pageLoading,
+    isError,
+    isSuccess,
+    errorMessage,
+  } = props;
+
   return (
-    <Container>
-      <Background />
-      <Content>
-        <ControlBlockComponent />
-      </Content>
-    </Container>
+    <>
+      {(isPending || pageLoading) && <PrimaryLoader />}
+      <Container>
+        <Background />
+        <Content>
+          <ControlBlockComponent />
+        </Content>
+      </Container>
+    </>
   );
 }
 const Container = styled.div`

@@ -25,6 +25,7 @@ import { entityRouter } from '../../core/entity';
 import { balanceActivityRouter } from '../../core/balance-activity';
 import { myCompaniesAddCompanyRouter } from '../../core/my-companies-add-company';
 import { feedAndNotificationsListRouter } from '../../core/feed-and-notifications-list';
+import { dashboardAdminRouter } from '../../core/dashboard-admin';
 
 import { LOGIN_ROUTE_PATH } from '../../core/login';
 import { SIGNUP_ROUTE_PATH } from '../../core/signup';
@@ -52,6 +53,7 @@ import { ENTITY_ROUTE_PATH } from '../../core/entity';
 import { BALANCE_ACTIVITY_ROUTE_PATH } from '../../core/balance-activity';
 import { MY_COMPANIES_ADD_COMPANY_ROUTE_PATH } from '../../core/my-companies-add-company';
 import { FEED_AND_NOTIFICATIONS_LIST_ROUTE_PATH } from '../../core/feed-and-notifications-list';
+import { DASHBOARD_ADMIN_ROUTE_PATH } from '../../core/dashboard-admin';
 
 export const routes = {
   [FEED_AND_NOTIFICATIONS_LIST_ROUTE_PATH]: feedAndNotificationsListRouter,
@@ -80,5 +82,7 @@ export const routes = {
   [COUNTERPARTY_ROUTE_PATH]: counterpartyRouter,
   [ENTITY_ROUTE_PATH]: entityRouter,
   [BALANCE_ACTIVITY_ROUTE_PATH]: balanceActivityRouter,
+  [DASHBOARD_ADMIN_ROUTE_PATH]: dashboardAdminRouter,
+  [LAWYER_REQUEST_ROUTE_PATH]: lawyerRequestRouter,
 };
 export const Router = routesInit(routes);
