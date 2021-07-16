@@ -18,9 +18,9 @@ export function MyLegalEntitiesListContainer() {
     pageLoading: state[NAVIGATION_STORE_NAME].pageLoading,
   }));
 
-  useEffect(() => {
-    dispatch(myLegalEntitiesListLoad());
-  }, []);
+  //   useEffect(() => {
+  //     dispatch(myLegalEntitiesListLoad());
+  //   }, []);
 
   return (
     <MyLegalEntitiesListComponent
@@ -30,10 +30,15 @@ export function MyLegalEntitiesListContainer() {
       pageLoading={pageLoading}
       errorMessage={getRequestErrorMessage(state.myLegalEntitiesList)}
       myLegalEntitiesListData={myLegalEntitiesListData}
+      myLegalEntitiesSelectOption={myLegalEntitiesSelectOption}
     />
   );
 }
-
+export const myLegalEntitiesSelectOption = [
+  { id: 0, tid: '1' },
+  { id: 1, tid: '2' },
+  { id: 2, tid: '3' },
+];
 const myLegalEntitiesListData = [
   {
     companyName: 'ООО "КАПСТРОЙЭНЕРОГОТЕХ"',

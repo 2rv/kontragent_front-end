@@ -17,23 +17,6 @@ export function BookReviewListContainer() {
     state: state[BOOK_REVIEW_LIST_STORE_NAME],
     pageLoading: state[NAVIGATION_STORE_NAME].pageLoading,
   }));
-  const booksListData = [
-    {
-      loadDate: '3 Фев 2020',
-      bookPeriod: '1 Сен 2019 - 01 Окт 2021',
-      companyName: 'ООО "КАПСТРОЙЭНЕРОГОТЕХ"',
-      bookType: 'Книга покупок',
-      kontragentNumber: '50',
-    },
-    {
-      loadDate: '5 Янв 2019',
-      bookPeriod: '1 Окт 2017 - 31 Дек 2017',
-      companyName: 'ООО "FLYONE DESIGN"',
-      bookType: 'Книга покупок',
-      kontragentNumber: '25',
-    },
-  ];
-
   //   useEffect(() => {
   //     dispatch(bookReviewListLoad());
   //   }, []);
@@ -46,6 +29,28 @@ export function BookReviewListContainer() {
       pageLoading={pageLoading}
       errorMessage={getRequestErrorMessage(state.bookReviewList)}
       booksListData={booksListData}
+      booksListSelectOption={booksListSelectOption}
     />
   );
 }
+export const booksListSelectOption = [
+  { id: 0, tid: '1' },
+  { id: 1, tid: '2' },
+  { id: 2, tid: '3' },
+];
+const booksListData = [
+  {
+    loadDate: '3 Фев 2020',
+    bookPeriod: '1 Сен 2019 - 01 Окт 2021',
+    companyName: 'ООО "КАПСТРОЙЭНЕРОГОТЕХ"',
+    bookType: 'Книга покупок',
+    kontragentNumber: '50',
+  },
+  {
+    loadDate: '5 Янв 2019',
+    bookPeriod: '1 Окт 2017 - 31 Дек 2017',
+    companyName: 'ООО "FLYONE DESIGN"',
+    bookType: 'Книга покупок',
+    kontragentNumber: '25',
+  },
+];

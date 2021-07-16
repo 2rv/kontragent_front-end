@@ -1,31 +1,40 @@
 import styled from 'styled-components';
 import { spacing } from '../../lib/theme';
-import {
-  ArbitrationRequestsListHeaderFilterComponent,
-  ArbitrationListContainer,
-} from './frame';
+import { ArbitrationHeaderContainer, ArbitrationListContainer } from './frame';
+import { PrimaryLoader } from '../../lib/elements/loader';
 
 export function ArbitrationRequestsListComponent(props) {
   const {
-    arbitrationListData,
     isPending,
     isError,
     isSuccess,
     pageLoading,
     errorMessage,
+    arbitrationListData,
+    arbitrationListSelectOption,
   } = props;
   return (
-    <Container>
-      <ArbitrationRequestsListHeaderFilterComponent />
-      <ArbitrationListContainer
-        isPending={isPending}
-        isError={isError}
-        isSuccess={isSuccess}
-        pageLoading={pageLoading}
-        errorMessage={errorMessage}
-        arbitrationListData={arbitrationListData}
-      />
-    </Container>
+    <>
+      {(isPending || pageLoading) && <PrimaryLoader />}
+      <Container>
+        <ArbitrationHeaderContainer
+          isPending={isPending}
+          isError={isError}
+          isSuccess={isSuccess}
+          pageLoading={pageLoading}
+          errorMessage={errorMessage}
+          arbitrationListSelectOption={arbitrationListSelectOption}
+        />
+        <ArbitrationListContainer
+          isPending={isPending}
+          isError={isError}
+          isSuccess={isSuccess}
+          pageLoading={pageLoading}
+          errorMessage={errorMessage}
+          arbitrationListData={arbitrationListData}
+        />
+      </Container>
+    </>
   );
 }
 const Container = styled.div`

@@ -1,7 +1,10 @@
 import styled from 'styled-components';
 import { spacing } from '../../lib/theme';
-import { ListHeaderContainer } from './frame/list-header';
-import { CounterpartiesListContainer } from './frame';
+import {
+  CounterpartiesListContainer,
+  CounterpartiesHeaderContainer,
+} from './frame';
+import { PrimaryLoader } from '../../lib/elements/loader';
 
 export function MyCounterpartiesListComponent(props) {
   const {
@@ -14,24 +17,32 @@ export function MyCounterpartiesListComponent(props) {
     errorMessage,
   } = props;
   return (
-    <Container>
-      <ListHeaderContainer
-        myCounterpartiesSortOption={myCounterpartiesSortOption}
-      />
-      <CounterpartiesListContainer
-        isPending={isPending}
-        isError={isError}
-        isSuccess={isSuccess}
-        pageLoading={pageLoading}
-        errorMessage={errorMessage}
-        myCounterpartiesListData={myCounterpartiesListData}
-      />
-    </Container>
+    <>
+      {(isPending || pageLoading) && <PrimaryLoader />}
+      <Container>
+        <CounterpartiesHeaderContainer
+          isPending={isPending}
+          isError={isError}
+          isSuccess={isSuccess}
+          pageLoading={pageLoading}
+          errorMessage={errorMessage}
+          myCounterpartiesSortOption={myCounterpartiesSortOption}
+        />
+        <CounterpartiesListContainer
+          isPending={isPending}
+          isError={isError}
+          isSuccess={isSuccess}
+          pageLoading={pageLoading}
+          errorMessage={errorMessage}
+          myCounterpartiesListData={myCounterpartiesListData}
+        />
+      </Container>
+    </>
   );
 }
 
 const Container = styled.div`
   display: flex;
   flex-direction: column;
-  gap: ${spacing(5)};
+  gap: ${spacing(6)};
 `;

@@ -7,7 +7,14 @@ import { PrimaryDivider } from '../../../../lib/elements/divider';
 import { ReactComponent as QuestionIcon } from '../../../../asset/svg/question-icon.svg';
 
 export function LegalEntitiesListComponent(props) {
-  const { myLegalEntitiesListData } = props;
+  const {
+    myLegalEntitiesListData,
+    isPending,
+    isError,
+    isSuccess,
+    pageLoading,
+    errorMessage,
+  } = props;
   return (
     <SectionLayout>
       <Columns>

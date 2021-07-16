@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { SectionLayout } from '../../../../lib/elements/layout';
 import { PrimaryTitleText } from '../../../../lib/elements/text';
 import { spacing, THEME_SIZE, THEME_VALUE } from '../../../../lib/theme';
 import { SupportRequestListItemComponent } from './support-requests-list-item.component';
@@ -6,22 +7,15 @@ import { SupportRequestListItemComponent } from './support-requests-list-item.co
 export function SupportRequestsListComponent(props) {
   const { mySupportRequestsListData } = props;
   return (
-    <Container>
-      <RequestsText tid="Запросы" />
+    <SectionLayout>
+      <Title tid="Запросы" />
       {mySupportRequestsListData.map((data, index) => (
         <SupportRequestListItemComponent key={index} data={data} />
       ))}
-    </Container>
+    </SectionLayout>
   );
 }
-
-const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: ${spacing(4)};
-`;
-
-const RequestsText = styled(PrimaryTitleText)`
+const Title = styled(PrimaryTitleText)`
   font-size: ${THEME_SIZE.FONT.MEDIUM};
   font-weight: ${THEME_VALUE.FONT_WEIGHT.MEDIUM};
 `;

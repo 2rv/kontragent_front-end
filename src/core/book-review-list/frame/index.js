@@ -1,2 +1,2 @@
-export { BookReviewHeaderComponent } from './book-review-header';
+export { BookHeaderContainer } from './book-header';
 export { BookListContainer } from './book-list';

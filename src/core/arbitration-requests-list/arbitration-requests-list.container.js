@@ -18,9 +18,9 @@ export function ArbitrationRequestsListContainer() {
     pageLoading: state[NAVIGATION_STORE_NAME].pageLoading,
   }));
 
-  useEffect(() => {
-    dispatch(arbitrationRequestsListLoadData);
-  }, []);
+  //   useEffect(() => {
+  //     dispatch(arbitrationRequestsListLoadData);
+  //   }, []);
 
   return (
     <ArbitrationRequestsListComponent
@@ -30,9 +30,16 @@ export function ArbitrationRequestsListContainer() {
       pageLoading={pageLoading}
       errorMessage={getRequestErrorMessage(state.arbitrationList)}
       arbitrationListData={arbitrationListData}
+      arbitrationListSelectOption={arbitrationListSelectOption}
     />
   );
 }
+
+const arbitrationListSelectOption = [
+  { id: 0, tid: 'По дате' },
+  { id: 1, tid: 'По имени' },
+  { id: 2, tid: 'По статусу' },
+];
 
 const arbitrationListData = [
   {

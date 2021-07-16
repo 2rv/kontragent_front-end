@@ -1,4 +1,4 @@
-export const MY_LEGAL_ENTITIES_LIST_ROUTE_PATH = '/my-legal-entities-list';
+export const MY_LEGAL_ENTITIES_LIST_ROUTE_PATH = '/my-legal-entities';
 
 export const MY_LEGAL_ENTITIES_LIST_STORE_NAME = 'MY_LEGAL_ENTITIES_LIST';
 

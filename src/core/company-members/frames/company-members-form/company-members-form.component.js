@@ -53,6 +53,7 @@ const TinyLink = styled(PrimaryLink)`
 `;
 const TinyText = styled(SecondaryText)`
   font-size: ${THEME_SIZE.FONT.TINY};
+  line-height: 1.5;
 `;
 const Title = styled(PrimaryText)`
   font-weight: ${THEME_VALUE.FONT_WEIGHT.SEMY_BOLD};

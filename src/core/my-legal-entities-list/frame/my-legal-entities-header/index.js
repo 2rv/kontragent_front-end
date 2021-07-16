@@ -1,1 +1,1 @@
-export { MyLegalEntitesHeaderComponent } from './my-legal-entites-header.component';
+export { MyLegalEntitesHeaderContainer } from './my-legal-entities-header.container';

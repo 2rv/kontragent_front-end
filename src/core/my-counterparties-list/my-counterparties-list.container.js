@@ -1,7 +1,6 @@
 import { useEffect } from 'react';
-import { MyCounterpartiesListComponent } from './my-counterparties-list.component';
-import { MY_COUNTERPARTIES_LIST_SELECT_OPTION } from './my-counterparties-list.constant';
 import { myCounterpartiesListLoad } from './my-counterparties-list.action';
+import { MyCounterpartiesListComponent } from './my-counterparties-list.component';
 import { useDispatch, useSelector } from 'react-redux';
 import { NAVIGATION_STORE_NAME } from '../../lib/common/navigation/navigation.constant';
 import { MY_COUNTERPARTIES_LIST_STORE_NAME } from './my-counterparties-list.constant';
@@ -19,9 +18,9 @@ export function MyCounterpartiesListContainer() {
     pageLoading: state[NAVIGATION_STORE_NAME].pageLoading,
   }));
 
-  useEffect(() => {
-    dispatch(myCounterpartiesListLoad());
-  }, []);
+  //   useEffect(() => {
+  //     dispatch(myCounterpartiesListLoad());
+  //   }, []);
 
   return (
     <MyCounterpartiesListComponent
@@ -30,11 +29,16 @@ export function MyCounterpartiesListContainer() {
       isSuccess={isRequestSuccess(state.myCounterpartiesList)}
       pageLoading={pageLoading}
       errorMessage={getRequestErrorMessage(state.myCounterpartiesList)}
-      myCounterpartiesSortOption={MY_COUNTERPARTIES_LIST_SELECT_OPTION}
+      myCounterpartiesSortOption={myCounterpartiesSortOption}
       myCounterpartiesListData={myCounterpartiesListData}
     />
   );
 }
+export const myCounterpartiesSortOption = [
+  { id: 0, tid: 'MY_COUNTERPARTIES_LIST.SELECT_OPTION.BY_REQUEST_TIME' },
+  { id: 1, tid: 'MY_COUNTERPARTIES_LIST.SELECT_OPTION.BY_REQUEST_TIME' },
+  { id: 2, tid: 'MY_COUNTERPARTIES_LIST.SELECT_OPTION.BY_REQUEST_TIME' },
+];
 
 const myCounterpartiesListData = [
   {

@@ -23,6 +23,7 @@ import { referralRouter } from '../../core/referral';
 import { newsArticleRouter } from '../../core/news-article';
 import { entityRouter } from '../../core/entity';
 import { balanceActivityRouter } from '../../core/balance-activity';
+import { myCompaniesAddCompanyRouter } from '../../core/my-companies-add-company';
 
 import { LOGIN_ROUTE_PATH } from '../../core/login';
 import { SIGNUP_ROUTE_PATH } from '../../core/signup';
@@ -48,8 +49,10 @@ import { REFERRAL_ROUTE_PATH } from '../../core/referral';
 import { NEWS_ARTICLE_ROUTE_PATH } from '../../core/news-article';
 import { ENTITY_ROUTE_PATH } from '../../core/entity';
 import { BALANCE_ACTIVITY_ROUTE_PATH } from '../../core/balance-activity';
+import { MY_COMPANIES_ADD_COMPANY_ROUTE_PATH } from '../../core/my-companies-add-company';
 
 export const routes = {
+  [MY_COMPANIES_ADD_COMPANY_ROUTE_PATH]: myCompaniesAddCompanyRouter,
   [REFERRAL_ROUTE_PATH]: referralRouter,
   [NEWS_ARTICLE_ROUTE_PATH]: newsArticleRouter,
   [COMPANY_MEMBERS_ROUTE_PATH]: companyMembersRouter,

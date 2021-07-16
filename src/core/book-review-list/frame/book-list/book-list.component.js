@@ -5,8 +5,8 @@ import { BookListItemComponent } from './book-list-item.component';
 import { SecondaryText } from '../../../../lib/elements/text';
 import { spacing, THEME_COLOR } from '../../../../lib/theme';
 import { PrimaryDivider } from '../../../../lib/elements/divider';
-import { PrimaryLoader } from '../../../../lib/elements/loader';
 import { ListSkeleton } from '../../../../lib/elements/skeleton';
+
 export function BookListComponent(props) {
   const {
     isPending,
@@ -17,33 +17,23 @@ export function BookListComponent(props) {
     booksListData,
   } = props;
   return (
-    <React.Fragment>
-      {(isPending || pageLoading) && <PrimaryLoader />}
-      <SectionLayout>
-        <Columns>
-          <SecondaryText tid="BOOK_REVIEW_LIST.TABLE.LOADED" />
-          <SecondaryText tid="BOOK_REVIEW_LIST.TABLE.BOOK_PERIOD" />
-          <SecondaryText tid="BOOK_REVIEW_LIST.TABLE.YOUR_LEGAL_ENTITY" />
-          <SecondaryText tid="BOOK_REVIEW_LIST.TABLE.BOOK_TYPE" />
-          <SecondaryText tid="BOOK_REVIEW_LIST.TABLE.COUNTERPARTIES" />
-        </Columns>
-        <Divider />
-        {isPending || pageLoading ? (
-          <ListSkeleton />
-        ) : (
-          booksListData.map((company, index) => (
-            <BookListItemComponent
-              key={index}
-              loadDate={company.loadDate}
-              bookPeriod={company.bookPeriod}
-              companyName={company.companyName}
-              bookType={company.bookType}
-              kontragentNumber={company.kontragentNumber}
-            />
-          ))
-        )}
-      </SectionLayout>
-    </React.Fragment>
+    <SectionLayout>
+      <Columns>
+        <SecondaryText tid="BOOK_REVIEW_LIST.TABLE.LOADED" />
+        <SecondaryText tid="BOOK_REVIEW_LIST.TABLE.BOOK_PERIOD" />
+        <SecondaryText tid="BOOK_REVIEW_LIST.TABLE.YOUR_LEGAL_ENTITY" />
+        <SecondaryText tid="BOOK_REVIEW_LIST.TABLE.BOOK_TYPE" />
+        <SecondaryText tid="BOOK_REVIEW_LIST.TABLE.COUNTERPARTIES" />
+      </Columns>
+      <Divider />
+      {isPending || pageLoading ? (
+        <ListSkeleton />
+      ) : (
+        booksListData.map((data, index) => (
+          <BookListItemComponent key={index} data={data} />
+        ))
+      )}
+    </SectionLayout>
   );
 }
 

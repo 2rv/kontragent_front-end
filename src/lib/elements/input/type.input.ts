@@ -8,3 +8,8 @@ export interface InputCommonPropsType {
   type: string;
   className?: string;
 }
+export interface SecondaryInputPropsType {
+  onChange: any;
+  placeholder: string;
+  placeholderTvalue: object;
+}

@@ -4,28 +4,30 @@ import { NewLawyerRequestFormContainer } from './frame/new-lawyer-request-form';
 
 import { PrimaryTitleText, SecondaryText } from '../../lib/elements/text';
 import { spacing, THEME_SIZE } from '../../lib/theme';
+import { SectionLayout } from '../../lib/elements/layout';
 
 export function LawyerReqeustComponent(props) {
   return (
     <Container>
-      <div>
+      <SectionLayout type="MEDIUM">
         <LawyerRequestQuestionTitle tid="LAWYER_REQUEST.TITLE" />
         <LawyerRequestQuestionDescription tid="LAWYER_REQUEST.DESCRIPTION" />
-      </div>
+      </SectionLayout>
       <NewLawyerRequestFormContainer {...props} />
     </Container>
   );
 }
-
 const Container = styled.div`
-  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: ${spacing(6)};
 `;
 
 const LawyerRequestQuestionTitle = styled(PrimaryTitleText)`
   font-size: ${THEME_SIZE.FONT.HUGE};
-  margin-bottom: ${spacing(3)};
+  line-height: 1.5;
 `;
 
 const LawyerRequestQuestionDescription = styled(SecondaryText)`
-  line-height: 21px;
+  line-height: 1.5;
 `;

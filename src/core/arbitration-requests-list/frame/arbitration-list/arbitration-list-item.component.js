@@ -5,7 +5,6 @@ import { PrimaryBox } from '../../../../lib/elements/box';
 import { PrimaryText, SecondaryText } from '../../../../lib/elements/text';
 import { CircleDivider } from '../../../../lib/elements/divider';
 import { ReactComponent as MessageIcon } from '../../../../asset/svg/message-icon.svg';
-import Image from 'next/image';
 
 export function ArbitrationListItemComponent(props) {
   const { statusId, statusTid, topic, recipient, date, messageNumber, avatar } =
@@ -13,63 +12,57 @@ export function ArbitrationListItemComponent(props) {
 
   return (
     <PrimaryBox>
-      <IndentLayout type="MEDIUM">
-        <ArbitrageListItemLayout>
-          <ArbitrageListItemInfoLayout>
-            <RecipientAvatarWrapper>
-              <Image src={avatar} layout="fill" />
-            </RecipientAvatarWrapper>
+      <IndentLayout type="STANDART">
+        <Container>
+          <Content>
+            <Avatar src={avatar} />
             <SectionLayout type="SMALL">
               <TopicNameText>{topic}</TopicNameText>
-              <RequestListItemDataContainer>
+              <ContentInfoCase>
                 <SecondaryText>{recipient}</SecondaryText>
                 <CircleDivider />
                 <SecondaryText>{date}</SecondaryText>
                 <CircleDivider />
                 <StatusText tid={statusTid} statusId={statusId} />
-              </RequestListItemDataContainer>
+              </ContentInfoCase>
             </SectionLayout>
-          </ArbitrageListItemInfoLayout>
-          <MessageInfoWrapper>
+          </Content>
+          <MessageInfoCase>
             <MessageIcon />
             <SecondaryText>{messageNumber}</SecondaryText>
-          </MessageInfoWrapper>
-        </ArbitrageListItemLayout>
+          </MessageInfoCase>
+        </Container>
       </IndentLayout>
     </PrimaryBox>
   );
 }
-
-const ArbitrageListItemLayout = styled.div`
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-`;
-
-const ArbitrageListItemInfoLayout = styled.div`
-  display: flex;
-  align-items: center;
-`;
-
-const MessageInfoWrapper = styled.div`
-  display: grid;
-  grid-template-columns: repeat(2, auto);
-  grid-column-gap: ${spacing(2)};
-  align-items: center;
-`;
-
-const RecipientAvatarWrapper = styled.div`
-  position: relative;
-  min-width: 56px;
+const Avatar = styled.img`
+  width: 56px;
   height: 56px;
-  margin-right: ${spacing(4)};
+`;
+const Container = styled.div`
+  display: grid;
+  grid-template-columns: 1fr auto;
+  justify-content: space-between;
+`;
+
+const Content = styled.div`
+  display: flex;
+  align-items: center;
+  gap: ${spacing(4)};
+`;
+
+const MessageInfoCase = styled.div`
+  display: flex;
+  gap: ${spacing(2)};
+  align-items: center;
 `;
 
 const TopicNameText = styled(PrimaryText)`
   font-weight: ${THEME_VALUE.FONT_WEIGHT.MEDIUM};
 `;
 
-const RequestListItemDataContainer = styled.div`
+const ContentInfoCase = styled.div`
   display: flex;
   gap: ${spacing(2)};
   align-items: center;

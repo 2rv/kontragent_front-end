@@ -1,33 +1,21 @@
-import React from 'react';
-import styled from 'styled-components';
 import { ArbitrationListItemComponent } from './arbitration-list-item.component';
-import { spacing } from '../../../../lib/theme';
-import { PrimaryLoader } from '../../../../lib/elements/loader';
+import { SectionLayout } from '../../../../lib/elements/layout';
 
 export function ArbitrationListComponent(props) {
   const {
-    arbitrationListData,
     isPending,
     isError,
     isSuccess,
     pageLoading,
     errorMessage,
+    arbitrationListData,
   } = props;
 
   return (
-    <React.Fragment>
-      {(isPending || pageLoading) && <PrimaryLoader />}
-      <Container>
-        {arbitrationListData.map((data, index) => (
-          <ArbitrationListItemComponent data={data} key={index} />
-        ))}
-      </Container>
-    </React.Fragment>
+    <SectionLayout>
+      {arbitrationListData.map((data, index) => (
+        <ArbitrationListItemComponent data={data} key={index} />
+      ))}
+    </SectionLayout>
   );
 }
-
-const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: ${spacing(4)};
-`;

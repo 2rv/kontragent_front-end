@@ -1,22 +1,22 @@
-import { CounterpartiesListComponent } from './counterparties-list.component';
+import { CounterpartiesHeaderComponent } from './counterparties-header.component';
 
-export function CounterpartiesListContainer(props) {
+export function CounterpartiesHeaderContainer(props) {
   const {
     isPending,
     pageLoading,
     isError,
     isSuccess,
     errorMessage,
-    myCounterpartiesListData,
+    myCounterpartiesSortOption,
   } = props;
   return (
-    <CounterpartiesListComponent
+    <CounterpartiesHeaderComponent
       pageLoading={pageLoading}
       isPending={isPending}
       isError={isError}
       isSuccess={isSuccess}
       errorMessage={errorMessage}
-      myCounterpartiesListData={myCounterpartiesListData}
+      myCounterpartiesSortOption={myCounterpartiesSortOption}
     />
   );
 }

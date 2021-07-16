@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { spacing } from '../../lib/theme';
-import { BookReviewHeaderComponent, BookListContainer } from './frame';
+import { BookHeaderContainer, BookListContainer } from './frame';
+import { PrimaryLoader } from '../../lib/elements/loader';
 
 export function BookReviewListComponent(props) {
   const {
@@ -10,19 +11,23 @@ export function BookReviewListComponent(props) {
     isSuccess,
     errorMessage,
     booksListData,
+    booksListSelectOption,
   } = props;
   return (
-    <Container>
-      <BookReviewHeaderComponent />
-      <BookListContainer
-        pageLoading={pageLoading}
-        isPending={isPending}
-        isError={isError}
-        isSuccess={isSuccess}
-        errorMessage={errorMessage}
-        booksListData={booksListData}
-      />
-    </Container>
+    <>
+      {(isPending || pageLoading) && <PrimaryLoader />}
+      <Container>
+        <BookHeaderContainer booksListSelectOption={booksListSelectOption} />
+        <BookListContainer
+          pageLoading={pageLoading}
+          isPending={isPending}
+          isError={isError}
+          isSuccess={isSuccess}
+          errorMessage={errorMessage}
+          booksListData={booksListData}
+        />
+      </Container>
+    </>
   );
 }
 

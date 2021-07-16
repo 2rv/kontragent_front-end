@@ -1,28 +1,31 @@
 import styled from 'styled-components';
-
-import { ReactComponent as Search } from '../../../../asset/svg/search.svg';
-
 import { SecondarySelect } from '../../../../lib/elements/field';
 import { SecondaryInput } from '../../../../lib/elements/input';
-import { SectionLayout } from '../../../../lib/elements/layout';
+import { SecondaryButton } from '../../../../lib/elements/button';
 import { PrimaryTitleText } from '../../../../lib/elements/text';
 import { spacing, THEME_COLOR, THEME_SIZE } from '../../../../lib/theme';
+import { SectionLayout } from '../../../../lib/elements/layout';
 
-export function MyLegalEntitesHeaderComponent(props) {
+export function BookHeaderComponent(props) {
   const {
-    myLegalEntitiesSelectOption,
     isPending,
+    pageLoading,
     isError,
     isSuccess,
-    pageLoading,
     errorMessage,
+    booksListSelectOption,
   } = props;
   return (
-    <SectionLayout type="LARGE">
-      <Title tid="Мои юрлица" />
+    <SectionLayout>
+      <HeaderCase>
+        <Title tid="Книги" />
+        <SecondaryButton tid="Загрузить книгу" />
+      </HeaderCase>
       <InputCase>
-        <SecondaryInput placeholder="Найти юрлицо" />
-        <SecondarySelect option={myLegalEntitiesSelectOption} />
+        <SecondaryInput placeholder="Найти книгу" />
+        {booksListSelectOption && (
+          <SecondarySelect option={booksListSelectOption} />
+        )}
       </InputCase>
     </SectionLayout>
   );
@@ -30,6 +33,11 @@ export function MyLegalEntitesHeaderComponent(props) {
 
 const Title = styled(PrimaryTitleText)`
   font-size: ${THEME_SIZE.FONT.HUGE};
+`;
+const HeaderCase = styled.div`
+  display: grid;
+  grid-template-columns: 1fr minmax(auto, 226px);
+  align-items: center;
 `;
 const InputCase = styled.div`
   display: grid;

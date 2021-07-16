@@ -1,22 +1,22 @@
-import { LegalEntitiesListComponent } from './legal-entities-list.component';
+import { ArbitrationHeaderComponent } from './arbitration-header.component';
 
-export function LegalEntitiesListContainer(props) {
+export function ArbitrationHeaderContainer(props) {
   const {
-    myLegalEntitiesListData,
     isPending,
     isError,
     isSuccess,
     pageLoading,
     errorMessage,
+    arbitrationListSelectOption,
   } = props;
   return (
-    <LegalEntitiesListComponent
+    <ArbitrationHeaderComponent
       isPending={isPending}
       isError={isError}
       isSuccess={isSuccess}
       pageLoading={pageLoading}
       errorMessage={errorMessage}
-      myLegalEntitiesListData={myLegalEntitiesListData}
+      arbitrationListSelectOption={arbitrationListSelectOption}
     />
   );
 }

@@ -4,22 +4,34 @@ import {
   SupportRequestsListContainer,
 } from './frame';
 import { spacing } from '../../lib/theme';
+import { SectionLayout } from '../../lib/elements/layout';
 
 export function MySupportRequestsListComponent(props) {
-  const { mySupportRequestsListData } = props;
+  const {
+    mySupportRequestsListData,
+    isPending,
+    isError,
+    isSuccess,
+    pageLoading,
+    errorMessage,
+  } = props;
   return (
     <Container>
       <MySupportRequestsListHeaderComponent />
       <SupportRequestsListContainer
+        isPending={isPending}
+        isError={isError}
+        isSuccess={isSuccess}
+        pageLoading={pageLoading}
+        errorMessage={errorMessage}
         mySupportRequestsListData={mySupportRequestsListData}
       />
     </Container>
   );
 }
-
 const Container = styled.div`
+  width: 100%;
   display: flex;
   flex-direction: column;
-  gap: ${spacing(4)};
-  width: 100%;
+  gap: ${spacing(6)};
 `;

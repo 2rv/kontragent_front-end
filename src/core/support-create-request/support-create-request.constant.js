@@ -4,7 +4,7 @@ export const SUPPORT_CREATE_REQUEST_PROBLEM_CATEGORY = [
   { id: 2, tid: 'DATA.PROBLEM_CATEGORY.3' },
 ];
 
-export const SUPPORT_CREATE_REQUEST_ROUTE_PATH = '/support-create-request';
+export const SUPPORT_CREATE_REQUEST_ROUTE_PATH = '/support/create-request';
 
 export const SUPPORT_CREATE_REQUEST_STORE_NAME = 'SUPPORT_CREATE_REQUEST';
 

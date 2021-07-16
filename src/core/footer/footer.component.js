@@ -7,8 +7,9 @@ export function FooterComponent(props) {
   const { footerItems, activePath } = props;
   return (
     <Container>
-      {footerItems.map(({ tid, pathname, path }) => (
+      {footerItems.map(({ tid, pathname, path }, index) => (
         <TextLink
+          key={index}
           isActive={pathname === activePath}
           tid={tid}
           pathname={path}

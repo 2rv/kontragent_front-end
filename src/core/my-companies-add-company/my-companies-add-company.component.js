@@ -4,6 +4,7 @@ import { AddCompanyHeaderContainer } from './frame/add-company-header';
 import { AddCompanyFormContainer } from './frame/add-company-form';
 import { MyCompaniesAddCompanyHeaderContainer } from './frame/my-companies-add-company-header';
 import styled from 'styled-components';
+import { PrimaryLoader } from '../../lib/elements/loader';
 
 export function MyCompaniesAddCompanyComponent(props) {
   const {
@@ -18,27 +19,30 @@ export function MyCompaniesAddCompanyComponent(props) {
     errorMessage,
   } = props;
   return (
-    <Container type="LARGE">
-      <MyCompaniesAddCompanyHeaderContainer />
-      <PrimaryBox>
-        <IndentLayout>
-          <SectionLayout>
-            <AddCompanyHeaderContainer />
-            <AddCompanyFormContainer
-              initialValue={initialValue}
-              pageLoading={pageLoading}
-              isPending={isPending}
-              isError={isError}
-              isSuccess={isSuccess}
-              errorMessage={errorMessage}
-              validation={validation}
-              onSubmitForm={onSubmitForm}
-              fieldName={fieldName}
-            />
-          </SectionLayout>
-        </IndentLayout>
-      </PrimaryBox>
-    </Container>
+    <>
+      {(isPending || pageLoading) && <PrimaryLoader />}
+      <Container type="LARGE">
+        <MyCompaniesAddCompanyHeaderContainer />
+        <PrimaryBox>
+          <IndentLayout>
+            <SectionLayout>
+              <AddCompanyHeaderContainer />
+              <AddCompanyFormContainer
+                initialValue={initialValue}
+                pageLoading={pageLoading}
+                isPending={isPending}
+                isError={isError}
+                isSuccess={isSuccess}
+                errorMessage={errorMessage}
+                validation={validation}
+                onSubmitForm={onSubmitForm}
+                fieldName={fieldName}
+              />
+            </SectionLayout>
+          </IndentLayout>
+        </PrimaryBox>
+      </Container>
+    </>
   );
 }
 const Container = styled(SectionLayout)`

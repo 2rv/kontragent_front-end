@@ -1,13 +1,18 @@
 import styled from 'styled-components';
 import { PrimaryBox } from '../../../../lib/elements/box';
 import { PrimaryText, SecondaryText } from '../../../../lib/elements/text';
-import { THEME_COLOR, THEME_SIZE, THEME_VALUE, spacing } from '../../../../lib/theme';
+import {
+  THEME_COLOR,
+  THEME_SIZE,
+  THEME_VALUE,
+  spacing,
+} from '../../../../lib/theme';
 import { ReactComponent as DeleteBookIcon } from '../../../../asset/svg/deletebook.svg';
 import { ReactComponent as LoadBookIcon } from '../../../../asset/svg/loadbook.svg';
 
 export function BookListItemComponent(props) {
   const { loadDate, bookPeriod, companyName, bookType, kontragentNumber } =
-    props;
+    props.data;
   return (
     <Container>
       <PrimaryBox>

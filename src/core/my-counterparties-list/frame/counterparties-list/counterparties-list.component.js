@@ -6,7 +6,14 @@ import { spacing } from '../../../../lib/theme';
 import { ReactComponent as QuestionIcon } from '../../../../asset/svg/question-icon.svg';
 
 export function CounterpartiesListComponent(props) {
-  const { myCounterpartiesListData } = props;
+  const {
+    isPending,
+    pageLoading,
+    isError,
+    isSuccess,
+    errorMessage,
+    myCounterpartiesListData,
+  } = props;
   return (
     <SectionLayout>
       <Columns>

@@ -8,7 +8,7 @@ import { SecondarySelectPropsType } from './type.field';
 export function SecondarySelect(props: SecondarySelectPropsType) {
   const { option } = props;
   return (
-    <SelectWrapper>
+    <Container>
       <Select>
         {option.map((e, index) => (
           <option key={e.tid + index} value={e.id}>
@@ -17,33 +17,34 @@ export function SecondarySelect(props: SecondarySelectPropsType) {
         ))}
       </Select>
       <SelectArrowIcon />
-    </SelectWrapper>
+    </Container>
   );
 }
 
-const SelectWrapper = styled.div`
+const Container = styled.div`
   width: 100%;
+  height: 46px;
   position: relative;
+  display: grid;
+  align-items: center;
 `;
 
 const SelectArrowIcon = styled(ArrowIcon)`
   position: absolute;
-  top: 0;
-  bottom: 0;
-  margin: auto;
   right: ${spacing(4)};
   pointer-events: none;
 `;
 
 const Select = styled.select`
+  height: 100%;
   width: 100%;
-  appearance: none;
-  padding: ${spacing(4)};
+  padding-left: ${spacing(4)};
   border-radius: ${THEME_SIZE.RADIUS.DEFAULT};
-  border: none;
   font-size: ${THEME_SIZE.FONT.SMALL};
-  color: ${THEME_COLOR.TEXT.SECONDARY};
-  font-weight: ${THEME_VALUE.FONT_WEIGHT.REGULAR};
+  font-weight: ${THEME_VALUE.FONT_WEIGHT.MEDIUM};
+  color: ${THEME_COLOR.TEXT.PRIMARY};
+  appearance: none;
+  border: none;
   cursor: pointer;
   background-color: ${THEME_COLOR.COLOR.BASE};
   &:hover {

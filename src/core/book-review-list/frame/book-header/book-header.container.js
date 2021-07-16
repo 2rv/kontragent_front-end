@@ -1,22 +1,22 @@
-import { CounterpartiesListComponent } from './counterparties-list.component';
+import { BookHeaderComponent } from './book-header.component';
 
-export function CounterpartiesListContainer(props) {
+export function BookHeaderContainer(props) {
   const {
     isPending,
     pageLoading,
     isError,
     isSuccess,
     errorMessage,
-    myCounterpartiesListData,
+    booksListSelectOption,
   } = props;
   return (
-    <CounterpartiesListComponent
+    <BookHeaderComponent
       pageLoading={pageLoading}
       isPending={isPending}
       isError={isError}
       isSuccess={isSuccess}
       errorMessage={errorMessage}
-      myCounterpartiesListData={myCounterpartiesListData}
+      booksListSelectOption={booksListSelectOption}
     />
   );
 }
