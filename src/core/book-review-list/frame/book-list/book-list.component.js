@@ -1,11 +1,17 @@
 import React from 'react';
 import styled from 'styled-components';
-import { SectionLayout } from '../../../../lib/elements/layout';
-import { BookListItemComponent } from './book-list-item.component';
-import { SecondaryText } from '../../../../lib/elements/text';
-import { spacing, THEME_COLOR } from '../../../../lib/theme';
+import { SectionLayout, IndentLayout } from '../../../../lib/elements/layout';
 import { PrimaryDivider } from '../../../../lib/elements/divider';
-import { ListSkeleton } from '../../../../lib/elements/skeleton';
+import { BaseList } from '../../../../lib/elements/list';
+import { PrimaryText, SecondaryText } from '../../../../lib/elements/text';
+import {
+  THEME_COLOR,
+  THEME_SIZE,
+  THEME_VALUE,
+  spacing,
+} from '../../../../lib/theme';
+import { ReactComponent as DeleteBookIcon } from '../../../../asset/svg/deletebook.svg';
+import { ReactComponent as LoadBookIcon } from '../../../../asset/svg/loadbook.svg';
 
 export function BookListComponent(props) {
   const {
@@ -17,31 +23,72 @@ export function BookListComponent(props) {
     booksListData,
   } = props;
   return (
-    <SectionLayout>
-      <Columns>
+    <Container>
+      <HeaderTableCase>
         <SecondaryText tid="BOOK_REVIEW_LIST.TABLE.LOADED" />
         <SecondaryText tid="BOOK_REVIEW_LIST.TABLE.BOOK_PERIOD" />
         <SecondaryText tid="BOOK_REVIEW_LIST.TABLE.YOUR_LEGAL_ENTITY" />
         <SecondaryText tid="BOOK_REVIEW_LIST.TABLE.BOOK_TYPE" />
         <SecondaryText tid="BOOK_REVIEW_LIST.TABLE.COUNTERPARTIES" />
-      </Columns>
+      </HeaderTableCase>
       <Divider />
-      {isPending || pageLoading ? (
-        <ListSkeleton />
-      ) : (
-        booksListData.map((data, index) => (
-          <BookListItemComponent key={index} data={data} />
-        ))
-      )}
-    </SectionLayout>
+      <BaseList
+        listData={booksListData}
+        skeletonAction={pageLoading || isPending}
+      >
+        {({
+          loadDate,
+          bookPeriod,
+          companyName,
+          bookType,
+          kontragentNumber,
+        }) => {
+          return (
+            <TableCase>
+              <Text>{loadDate}</Text>
+              <BoldText>{bookPeriod}</BoldText>
+              <BoldText>{companyName}</BoldText>
+              <Text>{bookType}</Text>
+              <BoldText>{kontragentNumber}</BoldText>
+              <ActionCase>
+                <DeleteBookIcon />
+                <LoadBookIcon />
+              </ActionCase>
+            </TableCase>
+          );
+        }}
+      </BaseList>
+    </Container>
   );
 }
-
+const Container = styled(SectionLayout)`
+  overflow: auto;
+  padding-bottom: ${spacing(6)};
+`;
 const Divider = styled(PrimaryDivider)`
   background-color: ${THEME_COLOR.COLOR.BASE};
 `;
-const Columns = styled.div`
+const TableCase = styled.div`
   display: grid;
-  grid-template-columns: 120px 200px 300px 130px auto auto;
+  grid-template-columns: 115px 220px 370px 200px 94px 1fr;
+  align-items: center;
   gap: ${spacing(4)};
+`;
+const HeaderTableCase = styled(TableCase)`
+  padding: 0 ${spacing(4)};
+`;
+const ActionCase = styled.div`
+  display: flex;
+  grid-template-columns: repeat(2, auto);
+  justify-content: flex-end;
+  gap: ${spacing(3)};
+`;
+const Text = styled(SecondaryText)`
+  font-size: ${THEME_SIZE.FONT.DEFAULT};
+  font-weight: ${THEME_VALUE.FONT_WEIGHT.MEDIUM};
+  line-height: 1.5;
+`;
+const BoldText = styled(PrimaryText)`
+  font-weight: ${THEME_VALUE.FONT_WEIGHT.SEMY_BOLD};
+  line-height: 1.5;
 `;

@@ -40,11 +40,11 @@ export const booksListSelectOption = [
 ];
 const booksListData = [
   {
-    loadDate: '3 Фев 2020',
-    bookPeriod: '1 Сен 2019 - 01 Окт 2021',
-    companyName: 'ООО "КАПСТРОЙЭНЕРОГОТЕХ"',
-    bookType: 'Книга покупок',
-    kontragentNumber: '50',
+    loadDate: '31 Фев 2020',
+    bookPeriod: '30 Сен 2019 - 01 Окт 2021',
+    companyName: 'ООО "ПЕРЕИСПОДВЫПОДВЕРТА НА ДОНУ"',
+    bookType: 'Книга переисподвыподверта',
+    kontragentNumber: '99999',
   },
   {
     loadDate: '5 Янв 2019',

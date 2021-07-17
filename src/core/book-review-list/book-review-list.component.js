@@ -33,7 +33,7 @@ export function BookReviewListComponent(props) {
 
 const Container = styled.div`
   display: flex;
-  width: 100%;
   flex-direction: column;
-  gap: ${spacing(4)};
+  gap: ${spacing(6)};
+  width: 100%;
 `;
