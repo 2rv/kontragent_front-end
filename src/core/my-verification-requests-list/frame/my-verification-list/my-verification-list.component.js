@@ -1,20 +1,22 @@
 import styled from 'styled-components';
+import { SectionLayout } from '../../../../lib/elements/layout';
 import { spacing } from '../../../../lib/theme';
 import { MyVerificationListItemComponent } from './my-verification-list-item.component';
 
 export function MyVerificationListComponent(props) {
-  const { myVerificationListData } = props;
+  const {
+    isPending,
+    isError,
+    isSuccess,
+    pageLoading,
+    errorMessage,
+    myVerificationListData,
+  } = props;
   return (
-    <Container>
+    <SectionLayout>
       {myVerificationListData.map((data, index) => (
         <MyVerificationListItemComponent key={index} data={data} />
       ))}
-    </Container>
+    </SectionLayout>
   );
 }
-
-const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: ${spacing(4)};
-`;

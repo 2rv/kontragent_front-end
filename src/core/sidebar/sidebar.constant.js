@@ -109,6 +109,11 @@ export const NAVMENU_ITEMS = [
     pathname: '/my-companies',
     path: '/my-companies',
   },
+  {
+    tid: 'Мои проверки',
+    pathname: '/my-verifications',
+    path: '/my-verifications',
+  },
 ];
 
 // {
@@ -131,11 +136,7 @@ export const NAVMENU_ITEMS = [
 //     pathname: '/auth/phone-verification',
 //     path: '/auth/phone-verification',
 //   },
-// {
-//     tid: 'Мои проверки',
-//     pathname: '/my-verifications',
-//     path: '/my-verifications',
-//   },
+
 //   {
 //     tid: 'Арбитражные дела',
 //     pathname: '/arbitration-cases',

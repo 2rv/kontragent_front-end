@@ -18,9 +18,9 @@ export function MyVerificationRequestsListContainer() {
     pageLoading: state[NAVIGATION_STORE_NAME].pageLoading,
   }));
 
-  useEffect(() => {
-    dispatch(myVerificationRequestsListLoad());
-  }, []);
+  //   useEffect(() => {
+  //     dispatch(myVerificationRequestsListLoad());
+  //   }, []);
 
   return (
     <MyVerificationRequestsListComponent
@@ -30,10 +30,15 @@ export function MyVerificationRequestsListContainer() {
       pageLoading={pageLoading}
       errorMessage={getRequestErrorMessage(state.myVerificationList)}
       myVerificationListData={myVerificationListData}
+      myVerificationSelectOption={myVerificationSelectOption}
     />
   );
 }
-
+const myVerificationSelectOption = [
+  { id: 0, tid: 'По времени запроса' },
+  { id: 1, tid: 'По имени' },
+  { id: 2, tid: 'По статусу' },
+];
 const myVerificationListData = [
   {
     company: 'ООО "КАПСТРОЙЭНЕРОГОТЕХ"',
