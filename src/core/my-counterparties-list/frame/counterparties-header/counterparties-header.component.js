@@ -21,25 +21,17 @@ export function CounterpartiesHeaderComponent(props) {
     isError,
     isSuccess,
     errorMessage,
-    myCounterpartiesSortOption,
+    myCounterpartiesSelectOption,
   } = props;
   return (
     <SectionLayout>
       <HeaderCase>
         <Title tid="MY_COUNTERPARTIES_LIST.TITLE" />
-        <ActionsCase>
-          <PaginationCase>
-            <PaginationButton tid="1" pageActive />
-            <PaginationButton tid="2" />
-            <PaginationButton tid="3" />
-            <PaginationButton tid="4" />
-          </PaginationCase>
-          <Button tid="Заказать проверку" />
-        </ActionsCase>
+        <Button tid="Заказать проверку" />
       </HeaderCase>
       <InputCase>
         <SecondaryInput placeholder="MY_COUNTERPARTIES_LIST.INPUT_PLACEHOLDER" />
-        <SecondarySelect option={myCounterpartiesSortOption} />
+        <SecondarySelect option={myCounterpartiesSelectOption} />
       </InputCase>
     </SectionLayout>
   );
@@ -51,24 +43,6 @@ const HeaderCase = styled.div`
 `;
 const Title = styled(PrimaryTitleText)`
   font-size: ${THEME_SIZE.FONT.HUGE};
-`;
-const ActionsCase = styled.div`
-  display: flex;
-  gap: ${spacing(4)};
-`;
-const PaginationCase = styled.div`
-  display: flex;
-  gap: ${spacing(3)};
-`;
-const PaginationButton = styled(SecondaryButton)`
-  background-color: ${({ pageActive }) =>
-    !pageActive && THEME_COLOR.COLOR.BASE};
-  color: ${({ pageActive }) => !pageActive && THEME_COLOR.COLOR.PRIMARY};
-  width: 46px;
-  height: 46px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 `;
 const InputCase = styled.div`
   display: grid;

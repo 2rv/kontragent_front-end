@@ -29,12 +29,12 @@ export function MyCounterpartiesListContainer() {
       isSuccess={isRequestSuccess(state.myCounterpartiesList)}
       pageLoading={pageLoading}
       errorMessage={getRequestErrorMessage(state.myCounterpartiesList)}
-      myCounterpartiesSortOption={myCounterpartiesSortOption}
+      myCounterpartiesSelectOption={myCounterpartiesSelectOption}
       myCounterpartiesListData={myCounterpartiesListData}
     />
   );
 }
-export const myCounterpartiesSortOption = [
+export const myCounterpartiesSelectOption = [
   { id: 0, tid: 'MY_COUNTERPARTIES_LIST.SELECT_OPTION.BY_REQUEST_TIME' },
   { id: 1, tid: 'MY_COUNTERPARTIES_LIST.SELECT_OPTION.BY_REQUEST_TIME' },
   { id: 2, tid: 'MY_COUNTERPARTIES_LIST.SELECT_OPTION.BY_REQUEST_TIME' },

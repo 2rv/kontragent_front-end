@@ -7,7 +7,7 @@ export function CounterpartiesHeaderContainer(props) {
     isError,
     isSuccess,
     errorMessage,
-    myCounterpartiesSortOption,
+    myCounterpartiesSelectOption,
   } = props;
   return (
     <CounterpartiesHeaderComponent
@@ -16,7 +16,7 @@ export function CounterpartiesHeaderContainer(props) {
       isError={isError}
       isSuccess={isSuccess}
       errorMessage={errorMessage}
-      myCounterpartiesSortOption={myCounterpartiesSortOption}
+      myCounterpartiesSelectOption={myCounterpartiesSelectOption}
     />
   );
 }

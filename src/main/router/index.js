@@ -13,7 +13,7 @@ import { bookReviewListRouter } from '../../core/book-review-list';
 import { balanceDepositRouter } from '../../core/balance-deposit';
 import { arbitrationRequestsListRouter } from '../../core/arbitration-requests-list';
 import { settingsRouter } from '../../core/settings';
-import { MyRequestsJuristsListRouter } from '../../core/my-requests-jurists-list';
+import { myLawyerRequestListRouter } from '../../core/my-lawyer-request-list';
 import { themeArbitrationRouter } from '../../core/theme-arbitration';
 import { dashboardRouter } from '../../core/dashboard';
 import { lawyerRequestRouter } from '../../core/lawyer-request';
@@ -44,7 +44,7 @@ import { BOOK_REVIEW_LIST_ROUTE_PATH } from '../../core/book-review-list';
 import { BALANCE_DEPOSIT_ROUTE_PATH } from '../../core/balance-deposit';
 import { ARBITRATION_REQUESTS_LIST_ROUTE_PATH } from '../../core/arbitration-requests-list';
 import { SETTINGS_ROUTE_PATH } from '../../core/settings';
-import { MY_REQUESTS_JURISTS_LIST_ROUTE_PATH } from '../../core/my-requests-jurists-list';
+import { MY_LAWYER_REQUEST_LIST_ROUTE_PATH } from '../../core/my-lawyer-request-list';
 import { THEME_ARBITRATION_ROUTE_PATH } from '../../core/theme-arbitration';
 import { DASHBOARD_ROUTE_PATH } from '../../core/dashboard';
 import { LAWYER_REQUEST_ROUTE_PATH } from '../../core/lawyer-request';
@@ -85,7 +85,7 @@ export const routes = {
   [MY_VERIFICATION_REQUESTS_LIST_ROUTE_PATH]: myVerificationRequestsListRouter,
   [SUPPORT_CREATE_REQUEST_ROUTE_PATH]: SupportCreateRequestRouter,
   [SETTINGS_ROUTE_PATH]: settingsRouter,
-  [MY_REQUESTS_JURISTS_LIST_ROUTE_PATH]: MyRequestsJuristsListRouter,
+  [MY_LAWYER_REQUEST_LIST_ROUTE_PATH]: myLawyerRequestListRouter,
   [THEME_ARBITRATION_ROUTE_PATH]: themeArbitrationRouter,
   [COUNTERPARTY_ROUTE_PATH]: counterpartyRouter,
   [ENTITY_ROUTE_PATH]: entityRouter,

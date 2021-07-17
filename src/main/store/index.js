@@ -53,9 +53,9 @@ import {
   SETTINGS_2FA_STORE_NAME,
 } from '../../core/settings-2fa';
 import {
-  myRequestsJuristsListStore,
-  MY_REQUESTS_JURISTS_LIST_STORE_NAME,
-} from '../../core/my-requests-jurists-list';
+  myLawyerRequestListStore,
+  MY_LAWYER_REQUEST_LIST_STORE_NAME,
+} from '../../core/my-lawyer-request-list';
 import {
   themeArbitrationStore,
   THEME_ARBITRATION_STORE_NAME,
@@ -154,7 +154,7 @@ export const reducers = combineReducers({
   [BALANCE_DEPOSIT_STORE_NAME]: balanceDepositFormStore,
   [ARBITRATION_REQUESTS_LIST_STORE_NAME]: arbitrationRequestsListStore,
   [SETTINGS_2FA_STORE_NAME]: settings2FAStore,
-  [MY_REQUESTS_JURISTS_LIST_STORE_NAME]: myRequestsJuristsListStore,
+  [MY_LAWYER_REQUEST_LIST_STORE_NAME]: myLawyerRequestListStore,
   [CAPTCHA_STORE_NAME]: captchaStore,
   [THEME_ARBITRATION_STORE_NAME]: themeArbitrationStore,
   [MY_COMPANIES_ADD_COMPANY_STORE_NAME]: myCompaniesAddCompanyStore,
