@@ -1,19 +1,43 @@
 import styled from 'styled-components';
 import {
-  MyVerificationRequestsListHeaderFilterComponent,
+  MyVerificationHeaderContainer,
   MyVerificationListContainer,
 } from './frame';
 import { spacing } from '../../lib/theme';
+import { PrimaryLoader } from '../../lib/elements/loader';
 
 export function MyVerificationRequestsListComponent(props) {
-  const { myVerificationListData } = props;
+  const {
+    isPending,
+    isError,
+    isSuccess,
+    pageLoading,
+    errorMessage,
+    myVerificationListData,
+    myVerificationSelectOption,
+  } = props;
   return (
-    <Container>
-      <MyVerificationRequestsListHeaderFilterComponent />
-      <MyVerificationListContainer
-        myVerificationListData={myVerificationListData}
-      />
-    </Container>
+    <>
+      {(isPending || pageLoading) && <PrimaryLoader />}
+      <Container>
+        <MyVerificationHeaderContainer
+          pageLoading={pageLoading}
+          isPending={isPending}
+          isError={isError}
+          isSuccess={isSuccess}
+          errorMessage={errorMessage}
+          myVerificationSelectOption={myVerificationSelectOption}
+        />
+        <MyVerificationListContainer
+          pageLoading={pageLoading}
+          isPending={isPending}
+          isError={isError}
+          isSuccess={isSuccess}
+          errorMessage={errorMessage}
+          myVerificationListData={myVerificationListData}
+        />
+      </Container>
+    </>
   );
 }
 
