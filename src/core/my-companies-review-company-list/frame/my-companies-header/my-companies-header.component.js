@@ -17,9 +17,10 @@ export function MyCompaniesHeaderComponent(props) {
   } = props;
   return (
     <SectionLayout>
-      <SectionLayout type="SMALL">
+      <HeaderCase type="SMALL">
         <Title tid="Мои компании" />
-      </SectionLayout>
+        <Button tid="Добавить компанию" />
+      </HeaderCase>
       <InputCase>
         <SecondaryInput placeholder="Найти компанию" />
         {myCompaniesSelectOption && (
@@ -29,7 +30,11 @@ export function MyCompaniesHeaderComponent(props) {
     </SectionLayout>
   );
 }
-
+const HeaderCase = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+`;
 const Title = styled(PrimaryTitleText)`
   font-size: ${THEME_SIZE.FONT.HUGE};
 `;
@@ -38,4 +43,12 @@ const InputCase = styled.div`
   grid-template-columns: 1fr 226px;
   gap: ${spacing(4)};
   width: 100%;
+`;
+const Button = styled(SecondaryButton)`
+  width: 226px;
+  height: 46px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;

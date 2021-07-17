@@ -1,15 +1,15 @@
 import styled from 'styled-components';
 import { spacing } from '../../lib/theme';
-import {
-  CounterpartiesListContainer,
-  CounterpartiesHeaderContainer,
-} from './frame';
 import { PrimaryLoader } from '../../lib/elements/loader';
+import {
+  LawyerRequestListContainer,
+  LawyerRequestHeaderContainer,
+} from './frame';
 
-export function MyCounterpartiesListComponent(props) {
+export function MyLawyerRequestListComponent(props) {
   const {
-    myCounterpartiesSelectOption,
-    myCounterpartiesListData,
+    myLawyerRequestListSelectOption,
+    myLawyerRequestListData,
     isPending,
     isError,
     isSuccess,
@@ -20,29 +20,29 @@ export function MyCounterpartiesListComponent(props) {
     <>
       {(isPending || pageLoading) && <PrimaryLoader />}
       <Container>
-        <CounterpartiesHeaderContainer
+        <LawyerRequestHeaderContainer
           isPending={isPending}
           isError={isError}
           isSuccess={isSuccess}
           pageLoading={pageLoading}
           errorMessage={errorMessage}
-          myCounterpartiesSelectOption={myCounterpartiesSelectOption}
+          myLawyerRequestListSelectOption={myLawyerRequestListSelectOption}
         />
-        <CounterpartiesListContainer
+        <LawyerRequestListContainer
           isPending={isPending}
           isError={isError}
           isSuccess={isSuccess}
           pageLoading={pageLoading}
           errorMessage={errorMessage}
-          myCounterpartiesListData={myCounterpartiesListData}
+          myLawyerRequestListData={myLawyerRequestListData}
         />
       </Container>
     </>
   );
 }
-
 const Container = styled.div`
   display: flex;
   flex-direction: column;
-  gap: ${spacing(6)};
+  gap: ${spacing(4)};
+  width: 100%;
 `;

@@ -114,6 +114,31 @@ export const NAVMENU_ITEMS = [
     pathname: '/my-verifications',
     path: '/my-verifications',
   },
+  {
+    tid: 'Мои запросы к юристам',
+    pathname: '/my-lawyer-request',
+    path: '/my-lawyer-request',
+  },
+  {
+    tid: 'Пополнение баланса',
+    pathname: '/balance-deposit',
+    path: '/balance-deposit',
+  },
+  {
+    tid: 'Страница подтерждения телефона',
+    pathname: '/auth/phone-verification',
+    path: '/auth/phone-verification',
+  },
+  {
+    tid: 'Восстановление пароля этап 2',
+    pathname: '/auth/email-verification',
+    path: '/auth/email-verification',
+  },
+  {
+    tid: 'Восстановление пароля этап 3',
+    pathname: '/auth-change-password',
+    path: '/auth-change-password',
+  },
 ];
 
 // {
@@ -122,54 +147,12 @@ export const NAVMENU_ITEMS = [
 //     path: '/theme-arbitration',
 //   },
 //   {
-//     tid: 'Мои запросы к юристам',
-//     pathname: '/my-requests-jurists-list',
-//     path: '/my-requests-jurists-list',
-//   },
-//   {
 //     tid: 'Панель управления администратора',
 //     pathname: '/dashboard-admin',
 //     path: '/dashboard-admin',
 //   },
 //   {
-//     tid: 'Страница подтерждения телефона',
-//     pathname: '/auth/phone-verification',
-//     path: '/auth/phone-verification',
-//   },
-
-//   {
-//     tid: 'Арбитражные дела',
-//     pathname: '/arbitration-cases',
-//     path: '/arbitration-cases',
-//   },
-//   {
-//     tid: 'Пополнение баланса',
-//     pathname: '/balance-deposit',
-//     path: '/balance-deposit',
-//   },
-
-//   {
-//     tid: 'Контрагент проверки',
-//     pathname: '/kontragent-checks',
-//     path: '/kontragent-checks',
-//   },
-//   {
-//     tid: 'Контрагент отзывы ',
-//     pathname: '/kontragent-comments',
-//     path: '/kontragent-comments',
-//   },
-//   {
-//     tid: 'Контрагент красная зона',
-//     pathname: '/kontragent-information',
-//     path: '/kontragent-information',
-//   },
-// {
-// 	tid: 'Восстановление пароля этап 2',
-// 	pathname: '/auth/email-verification',
-// 	path: '/auth/email-verification',
-//   },
-//   {
-// 	tid: 'Восстановление пароля этап 3',
-// 	pathname: '/auth-change-password',
-// 	path: '/auth-change-password',
+//     tid: 'Панель управления главная её (нужно сделать!!!)',
+//     pathname: '/home',
+//     path: '/home',
 //   },

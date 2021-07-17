@@ -7,7 +7,7 @@ import { CircleDivider } from '../../../../lib/elements/divider';
 import { ReactComponent as MessageIcon } from '../../../../asset/svg/message-icon.svg';
 import Image from 'next/image';
 
-export function RequestsJuristsListItemComponent(props) {
+export function LawyerRequestListItemComponent(props) {
   const { id, status, topic, recipient, date, messageNumber, avatar } =
     props.data;
 

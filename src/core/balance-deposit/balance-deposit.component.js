@@ -20,23 +20,25 @@ export function BalanceDepositComponent(props) {
 
   return (
     <Container>
-      <BalanceFormDepositContainer
-        initialValue={initialValue}
-        validation={validation}
-        onSubmitForm={onSubmitForm}
-        pageLoading={pageLoading}
-        isPending={isPending}
-        isError={isError}
-        isSuccess={isSuccess}
-        errorMessage={errorMessage}
-        fieldName={fieldName}
-        paymentMethod={paymentMethod}
-      />
+      <IndentLayout>
+        <BalanceFormDepositContainer
+          initialValue={initialValue}
+          validation={validation}
+          onSubmitForm={onSubmitForm}
+          pageLoading={pageLoading}
+          isPending={isPending}
+          isError={isError}
+          isSuccess={isSuccess}
+          errorMessage={errorMessage}
+          fieldName={fieldName}
+          paymentMethod={paymentMethod}
+        />
+      </IndentLayout>
     </Container>
   );
 }
 const Container = styled(PrimaryBox)`
   display: flex;
   height: max-content;
-  padding: ${spacing(8)};
+  width: 100%;
 `;

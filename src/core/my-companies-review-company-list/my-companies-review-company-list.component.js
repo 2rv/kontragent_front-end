@@ -1,7 +1,6 @@
 import {
-  ReviewCompanyListContainer,
-  ReviewCompanyListFooterContainer,
   MyCompaniesHeaderContainer,
+  ReviewCompanyListContainer,
 } from './frame';
 import styled from 'styled-components';
 import { spacing } from '../../lib/theme';
@@ -36,13 +35,6 @@ export function MyCompaniesReviewCompanyListComponent(props) {
           pageLoading={pageLoading}
           errorMessage={errorMessage}
           myCompaniesListData={myCompaniesListData}
-        />
-        <ReviewCompanyListFooterContainer
-          isPending={isPending}
-          isError={isError}
-          isSuccess={isSuccess}
-          pageLoading={pageLoading}
-          errorMessage={errorMessage}
         />
       </Container>
     </>
