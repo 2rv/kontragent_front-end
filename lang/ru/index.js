@@ -35,6 +35,7 @@ import COUNTERPARTY from './counterparty.json';
 import ENTITY from './entity.json';
 import AUTH_VERIFICATION_PHONE from './auth-verification-phone.json';
 import AUTH_VERIFICATION_EMAIL from './auth-verification-email.json';
+import THEME_ARBITRATION from './theme-arbitration.json';
 
 export const RU = {
   translation: {
@@ -75,5 +76,6 @@ export const RU = {
     ENTITY,
     AUTH_VERIFICATION_PHONE,
     AUTH_VERIFICATION_EMAIL,
+    THEME_ARBITRATION,
   },
 };

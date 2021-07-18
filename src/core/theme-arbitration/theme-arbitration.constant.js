@@ -17,7 +17,7 @@ export const THEME_ARBITRATION_COMMENTS_LIST = {
   description: 'Тема в разделе Арбитраж создана пользователем Иван Иванов',
   time: '15 минут назад',
   status: 'Решено',
-  companyType: 'Общество с ограниченной ответственностью',
+  companyType: 'THEME_ARBITRATION.COMPANY_TYPE',
   companyName: 'Компания Гермес-Электро',
   commentItem: [
     {

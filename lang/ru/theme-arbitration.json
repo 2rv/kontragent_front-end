@@ -1,0 +1,14 @@
+{
+  "COUNTERPARTY": "Контрагент",
+  "ADMIN": "Админ",
+  "REVIEWS": "Отзывы",
+  "COMPANY_TYPE": "Общество с ограниченной ответственностью",
+  "WRITE_COMMENT": "Написать комментарий",
+  "STATUS": {
+    "DECIDED": "Решено"
+  },
+  "ROLE": {
+    "PLAINTIFF": "Истец",
+    "DEFENDANT": "Ответчик"
+  }
+}
