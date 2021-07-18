@@ -41,7 +41,7 @@ export function ThemeArbitrationComponent(props) {
       </HeaderCase>
       <ContentCase>
         <HeaderCase>
-          <ContentTitle tid="Отзывы" />
+          <ContentTitle tid="THEME_ARBITRATION.REVIEWS" />
           <LineCase>
             <TypeCompany tid={companyType} />
             <NameCompany tid={`"${companyName}"`} />
@@ -112,10 +112,10 @@ const Container = styled.div`
 const RoleConverter = (role) => {
   switch (role) {
     case 1:
-      return { roleColor: THEME_COLOR.TEXT.ACCENT, roleText: 'Контрагент' };
+      return { roleColor: THEME_COLOR.TEXT.ACCENT, roleText: 'THEME_ARBITRATION.COUNTERPARTY' };
 
     case 2:
-      return { roleColor: THEME_COLOR.TEXT.PURPLE, roleText: 'Админ' };
+      return { roleColor: THEME_COLOR.TEXT.PURPLE, roleText: 'THEME_ARBITRATION.ADMIN' };
 
     default:
       return { roleColor: null, roleText: null };

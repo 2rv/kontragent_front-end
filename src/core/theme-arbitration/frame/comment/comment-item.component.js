@@ -69,10 +69,10 @@ const Time = styled(SecondaryText)`
 const RoleConverter = (role) => {
   switch (role) {
     case 1:
-      return { roleColor: THEME_COLOR.TEXT.PURPLE, roleText: 'Истец' };
+      return { roleColor: THEME_COLOR.TEXT.PURPLE, roleText: 'THEME_ARBITRATION.ROLE.PLAINTIFF' };
 
     case 2:
-      return { roleColor: THEME_COLOR.TEXT.ACCENT, roleText: 'Ответчик' };
+      return { roleColor: THEME_COLOR.TEXT.ACCENT, roleText: 'THEME_ARBITRATION.ROLE.DEFENDANT' };
 
     default:
       return { roleColor: null, roleText: null };

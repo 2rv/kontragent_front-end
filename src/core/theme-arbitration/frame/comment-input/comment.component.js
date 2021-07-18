@@ -17,7 +17,7 @@ export function CommentInputComponent(props) {
     <Container>
       <Avatar src={myAvatar} />
       <FieldCase>
-        <Field placeholderTid="Написать комментарий" />
+        <Field placeholderTid="THEME_ARBITRATION.WRITE_COMMENT" />
         <ActionsCase>
           <FileIcon />
           <SendIcon />

@@ -36,6 +36,7 @@ import ENTITY from './entity.json';
 import AUTH_VERIFICATION_PHONE from './auth-verification-phone.json';
 import AUTH_VERIFICATION_EMAIL from './auth-verification-email.json';
 import MY_LAWYER_REQUEST from './my-lawyer-request.json';
+import THEME_ARBITRATION from './theme-arbitration.json';
 
 export const RU = {
   translation: {
@@ -77,5 +78,6 @@ export const RU = {
     AUTH_VERIFICATION_PHONE,
     AUTH_VERIFICATION_EMAIL,
     MY_LAWYER_REQUEST,
+    THEME_ARBITRATION,
   },
 };
