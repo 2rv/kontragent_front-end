@@ -26,7 +26,7 @@ export function LawyerRequestListItemComponent(props) {
                 <CircleDivider />
                 <SecondaryText>{date}</SecondaryText>
                 <CircleDivider />
-                <StatusText statusId={id}>{status}</StatusText>
+                <StatusText tid={status} statusId={id} />
               </RequestListItemDataContainer>
             </SectionLayout>
           </ArbitrageListItemInfoLayout>

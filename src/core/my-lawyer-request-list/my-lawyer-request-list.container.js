@@ -42,7 +42,7 @@ export const myLawyerRequestListSelectOption = [
 const myLawyerRequestListData = [
   {
     id: 2,
-    status: 'Ожидает оплаты',
+    status: 'MY_LAWYER_REQUEST.STATUS.AWAITING_PAYMENT',
     topic: `Жалоба по теме нарушения налоговых правил компанией REFLEX`,
     recipient: 'Татьяна Лавелина',
     date: '40 минут назад',
@@ -51,7 +51,7 @@ const myLawyerRequestListData = [
   },
   {
     id: 0,
-    status: 'Ожидает оплаты',
+    status: 'MY_LAWYER_REQUEST.STATUS.AWAITING_PAYMENT',
     topic: `Жалоба по теме нарушения налоговых правил компанией REFLEX`,
     recipient: 'Татьяна Лавелина',
     date: '40 минут назад',
@@ -60,7 +60,7 @@ const myLawyerRequestListData = [
   },
   {
     id: 1,
-    status: 'Ожидает оплаты',
+    status: 'MY_LAWYER_REQUEST.STATUS.AWAITING_PAYMENT',
     topic: `Жалоба по теме нарушения налоговых правил компанией REFLEX`,
     recipient: 'Татьяна Лавелина',
     date: '40 минут назад',
