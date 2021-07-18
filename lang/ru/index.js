@@ -4,7 +4,7 @@ import ERROR from './error.json';
 import STATIC from './static.json';
 import SIGNUP from './signup.json';
 import LOGIN from './login.json';
-import SIDEBAR from './sideabar.json';
+import SIDEBAR from './sidebar.json';
 import ADVERT from './advert.json';
 import AUTH_ACCOUNT_VERIFICATION_STATUS from './auth-account-verifiction-status.json';
 import AUTH_EMAIL_VERIFICATION_STATUS from './auth-email-verifiction-status.json';

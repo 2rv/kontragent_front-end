@@ -1,0 +1,36 @@
+{
+  "NAV_MENU": {
+    "NEWS_AND_NOTIFICATIONS": "Новости и уведомления",
+    "ITEMS": {
+      "PASSWORD_RECOVERY_FIRST_TAGE": "Восстановление пароля этап 1",
+      "LOGIN": "Логин",
+      "REGISTRATION": "Регистрация",
+      "COMPANY_REGISTRATION": "Регистрация компании",
+      "VERIFICATION_STATUS": "Статус верификации",
+      "SETTINGS": "Настройки",
+      "NEWS": "Новость",
+      "DASHBOARD": "Дэшборд",
+      "REFERRALS": "Рефералы",
+      "TRANSACTION_HISTORY": "История транзакций",
+      "MY_COUNTERPARTIES": "Мои контрагенты",
+      "MY_LEGAL_ENTITES": "Мои юрлица",
+      "BOOKS": "Книги",
+      "ADD_COMPANY": "Добавить компанию",
+      "CREATE_SUPPORT_REQUEST": "Создать запрос в поддержку",
+      "ARBITRATION": "Арбитраж",
+      "COMPANY_MEMBERS": "Участники компании",
+      "FEED_AND_NOTIFICATIONS": "Лента и уведомления",
+      "ASK_A_QUESTION_TO_A_LAWYER": "Задать вопрос юристу",
+      "MY_SUPPORT_REQUESTS": "Мои запросы в поддержку",
+      "PRIVATE_MESSAGE_DIALOGS": "Диалоги личные сообщения",
+      "MY_COMPANIES": "Мои компании",
+      "MY_VERIFICATIONS": "Мои проверки",
+      "MY_INQUIRIES_TO_LAWYERS": "Мои запросы к юристам",
+      "BALANCE_REPLENISHMENT": "Пополнение баланса",
+      "PHONE_CONFIRMATION_PAGE": "Страница подтерждения телефона",
+      "PASSWORD_RECOVERY_SECOND_TAGE": "Восстановление пароля этап 2",
+      "PASSWORD_RECOVERY_THIRS_TAGE": "Восстановление пароля этап 3"
+    }
+  },
+  "ACCOUNT_INFO_CURRENCY": " руб."
+}
