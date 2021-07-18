@@ -1,31 +1,35 @@
-import { HeaderNotificationContainer } from './frame/header-notification';
-import { HeaderProfileContainer } from './frame/header-profile';
-
+import {
+  HeaderNotificationContainer,
+  HeaderProfileContainer,
+  LogotypeContainer,
+} from './frame';
 import styled from 'styled-components';
 import { THEME_COLOR, spacing } from '../../lib/theme';
 
 export function HeaderComponent() {
   return (
-    <HeaderContainer>
-      <HeaderContentLayout>
+    <Container>
+      <LogotypeContainer />
+      <Content>
         <HeaderNotificationContainer />
         <HeaderProfileContainer imageURL="/static/img/headerAvatar.svg" />
-      </HeaderContentLayout>
-    </HeaderContainer>
+      </Content>
+    </Container>
   );
 }
 
-const HeaderContentLayout = styled.div`
+const Content = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-column-gap: ${spacing(6)};
-  padding-right: ${spacing(10)};
+  gap: ${spacing(6)};
 `;
 
-const HeaderContainer = styled.div`
+const Container = styled.div`
+  padding: ${spacing(8)};
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: center;
-  height: 95px;
+  height: 100px;
+  width: 100%;
   background-color: ${THEME_COLOR.COLOR.BASE};
 `;

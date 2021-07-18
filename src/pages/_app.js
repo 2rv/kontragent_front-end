@@ -1,4 +1,5 @@
 import App from 'next/app';
+import Head from 'next/head';
 import React from 'react';
 import { Provider as ReduxProvider } from 'react-redux';
 import withRedux from 'next-redux-wrapper';

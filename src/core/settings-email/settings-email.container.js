@@ -46,9 +46,9 @@ export function SettingEmailContainer() {
     dispatch(settingsFormChangeEmailUploadForm(data));
   };
 
-  useEffect(() => {
-    dispatch(settingsEmailGetEmail());
-  }, []);
+  //   useEffect(() => {
+  //     dispatch(settingsEmailGetEmail());
+  //   }, []);
 
   return (
     <SettingEmailComponent

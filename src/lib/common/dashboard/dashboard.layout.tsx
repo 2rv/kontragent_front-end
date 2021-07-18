@@ -9,44 +9,56 @@ export function DashboardLayout(props: DashboardLayoutPropsType) {
   const { children } = props;
   return (
     <Container>
-      <SidebarContainer />
+      <HeaderCase>
+        <HeaderContainer />
+      </HeaderCase>
       <Content>
-        <Header>
-          <HeaderContainer />
-        </Header>
-        <MainContent>{children}</MainContent>
-        <Footer>
+        <SidebarCase>
+          <SidebarContainer />
+        </SidebarCase>
+        <ContentCase>
+          <MainContent>{!false && children}</MainContent>
           <FooterContainer />
-        </Footer>
+        </ContentCase>
       </Content>
     </Container>
   );
 }
 const Container = styled.div`
-  width: 100%;
-  height: 100vh;
-  display: grid;
-  grid-template-columns: 350px auto;
-`;
-const Content = styled.div`
   display: flex;
   flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+`;
+const HeaderCase = styled.div`
+  height: 100px;
   width: 100%;
-  min-width: 800px;
-  height: 100%;
+`;
+const Content = styled.div`
+  display: grid;
+  flex-grow: 1;
+  min-height: 0;
+  grid-template-columns: 350px auto;
+`;
+const SidebarCase = styled.div`
+  display: flex;
+  flex-grow: 1;
+  min-height: 0;
+  width: 350px;
+`;
+const ContentCase = styled.div`
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
   background-color: ${THEME_COLOR.COLOR.SECONDARY};
 `;
-const Header = styled.div`
-  width: 100%;
-  height: 95px;
-`;
-const Footer = styled.div`
-  width: 100%;
-`;
 const MainContent = styled.div`
+  flex-grow: 1;
   display: flex;
-  width: 100%;
-  height: 100%;
-  position: relative;
+  flex-direction: column;
+  min-height: 0;
   padding: ${spacing(8)};
+  position: relative;
+  overflow: auto;
 `;

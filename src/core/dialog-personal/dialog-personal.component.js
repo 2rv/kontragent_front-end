@@ -40,12 +40,12 @@ export function DialogPersonalComponent(props) {
 }
 
 const Container = styled.div`
+  display: flex;
+  flex-grow: 1;
+  min-height: 0;
   position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  display: grid;
-  overflow: hidden;
-  grid-template-columns: 400px minmax(400px, 1fr);
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
 `;

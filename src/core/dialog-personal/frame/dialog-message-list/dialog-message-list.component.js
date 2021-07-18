@@ -59,34 +59,32 @@ export function DialogMessageListComponent(props) {
     </Container>
   );
 }
+const Container = styled.div`
+  background: ${THEME_COLOR.COLOR.BASE};
+  display: flex;
+  flex-direction: column;
+  gap: ${spacing(6)};
+  padding: ${spacing(8)} ${spacing(3.5)} ${spacing(8)} ${spacing(8)};
+  min-width: 400px;
+  flex-grow: 2;
+`;
+const Header = styled.div`
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-right: ${spacing(4.5)};
+`;
 const Footer = styled.div`
   display: grid;
-  height: auto;
-  padding-right: ${spacing(6)};
+  padding-right: ${spacing(4.5)};
 `;
-
 const ActionCase = styled.div`
   position: absolute;
   display: flex;
   gap: ${spacing(3)};
   align-items: center;
   right: ${spacing(4)};
-`;
-const Container = styled.div`
-  background: ${THEME_COLOR.COLOR.BASE};
-  display: grid;
-  height: 100%;
-  width: 100%;
-  overflow: hidden;
-  grid-template-rows: auto 1fr auto;
-  gap: ${spacing(6)};
-  padding: ${spacing(6)} 0 ${spacing(6)} ${spacing(6)};
-`;
-const Header = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding-right: ${spacing(6)};
 `;
 const Line = styled.div`
   display: flex;
@@ -115,7 +113,17 @@ const Status = styled.span`
 const Content = styled.div`
   display: flex;
   flex-direction: column;
+  min-height: 0;
+  flex-grow: 1;
   overflow: auto;
   gap: ${spacing(6)};
-  padding-right: ${spacing(6)};
+  padding-right: ${spacing(4)};
+  ::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background-color: rgba(181, 181, 181, 1);
+    border-radius: ${THEME_SIZE.RADIUS.DEFAULT};
+  }
 `;
