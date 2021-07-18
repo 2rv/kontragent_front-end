@@ -17,9 +17,9 @@ export function LawyerRequestHeaderComponent(props) {
   } = props;
   return (
     <SectionLayout>
-      <Title tid="Мои компании" />
+      <Title tid="MY_LAWYER_REQUEST.TITLE" />
       <InputCase>
-        <SecondaryInput placeholder="Найти компанию" />
+        <SecondaryInput placeholder="MY_LAWYER_REQUEST.INPUT_PLACEHOLDER" />
         {myLawyerRequestListSelectOption && (
           <SecondarySelect option={myLawyerRequestListSelectOption} />
         )}
