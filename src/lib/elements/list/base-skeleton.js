@@ -37,13 +37,14 @@ const AnimateBlock = styled.div`
   position: absolute;
   right: 0;
   height: 70px;
-  width: 100px;
+  width: 400px;
   background: linear-gradient(
     to right,
     transparent 0%,
     #e8e8e8 50%,
     transparent 100%
   );
+  opacity: 0.8;
   animation: ${animation} 4s infinite;
   animation-delay: ${({ delay = 0 }) => delay + 's'};
 `;
