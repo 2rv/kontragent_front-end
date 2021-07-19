@@ -11,5 +11,7 @@ export function PrimaryDivider(props: PrimaryDividerPropsType) {
 const Divider = styled.div`
   border-radius: ${THEME_SIZE.RADIUS.DEFAULT};
   background-color: ${THEME_COLOR.COLOR.SECONDARY};
+  min-height: 2px;
   height: 2px;
+  display: grid;
 `;

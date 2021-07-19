@@ -494,8 +494,8 @@ input[type='number'] {
 }
 body,
 html {
-  min-height: 100vh;
-  height: auto;
+  height: 100vh;
+  width: 100vw;
 }
 * {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
@@ -551,4 +551,17 @@ select:-webkit-autofill:hover,
 textarea:-webkit-autofill,
 textarea:-webkit-autofill:hover textarea:-webkit-autofill:focus {
   -webkit-text-fill-color: inherit;
+}
+*::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+*::-webkit-scrollbar-thumb {
+  background: rgba(181, 181, 181, 0.2);
+  border-radius: 10px;
+  width: 0;
+  transition: all;
+}
+*::-webkit-scrollbar-thumb:hover {
+  background: rgba(181, 181, 181, 1);
 }

@@ -1,13 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
 import { spacing, THEME_COLOR, THEME_SIZE, THEME_VALUE } from '../../theme';
-
 import { text } from '../../common/text';
-
 import { SecondaryText } from '../text';
 import { ErrorMessage } from '../error';
-
 import { TextAreaPropsType } from './type.field';
+import { ReactComponent as FileIcon } from 'src/asset/svg/file.svg';
+import { ReactComponent as SendIcon } from 'src/asset/svg/send.svg';
 
 export function TextareaField(props: TextAreaPropsType) {
   const {
@@ -19,6 +18,8 @@ export function TextareaField(props: TextAreaPropsType) {
     error,
     row = 3,
     children,
+    isFile,
+    isSend,
   } = props;
   return (
     <Container>
@@ -32,30 +33,37 @@ export function TextareaField(props: TextAreaPropsType) {
           isError={!!error}
           rows={row}
         />
+        <ActionCase>
+          {isFile && <FileIcon />}
+          {isSend && <SendIcon />}
+        </ActionCase>
         {children}
       </RelativeCase>
       {error && <ErrorMessage error={error} />}
     </Container>
   );
 }
-
+const ActionCase = styled.div`
+  position: absolute;
+  display: flex;
+  top: ${spacing(4)};
+  right: ${spacing(4)};
+`;
 const Container = styled.div`
   display: flex;
   flex-direction: column;
-  height: auto;
+  min-height: 56px;
   gap: ${spacing(2)};
-  width: 100%;
 `;
 const RelativeCase = styled.div`
-  width: 100%;
-  position: relative;
   display: flex;
+  position: relative;
   align-items: center;
-  height: inherit;
 `;
 const Textarea = styled.textarea`
-  width: 100%;
-  height: auto;
+  min-height: 56px;
+  /* width: 100%; */
+  flex-grow: 1;
   resize: none;
   padding: ${spacing(4)};
   border-radius: ${THEME_SIZE.RADIUS.DEFAULT};

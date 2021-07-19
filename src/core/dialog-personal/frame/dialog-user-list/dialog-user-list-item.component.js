@@ -128,5 +128,5 @@ const Date = styled(SecondaryText)`
   font-size: ${THEME_SIZE.FONT.TINY};
 `;
 const Divider = styled(PrimaryDivider)`
-  background: ${THEME_COLOR.COLOR.BASE};
+  background-color: ${THEME_COLOR.COLOR.LIGHT_GREY};
 `;

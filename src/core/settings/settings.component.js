@@ -15,7 +15,7 @@ import { spacing } from '../../lib/theme';
 
 export function SettingsComponent() {
   return (
-    <Container type="LARGE">
+    <SectionLayout type="LARGE">
       <PrimaryTitleText tid="Настройки безопасности" />
       <PrimaryBox>
         <Settings2FAContainer />
@@ -40,9 +40,6 @@ export function SettingsComponent() {
       <PrimaryBox>
         <SettingsAvatarContainer />
       </PrimaryBox>
-    </Container>
+    </SectionLayout>
   );
 }
-const Container = styled(SectionLayout)`
-  width: 100%;
-`;

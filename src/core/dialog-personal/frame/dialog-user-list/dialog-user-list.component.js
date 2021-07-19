@@ -10,7 +10,7 @@ import {
   THEME_VALUE,
 } from '../../../../lib/theme';
 import { SecondarySelect } from '../../../../lib/elements/field';
-import { PrimaryInput } from '../../../../lib/elements/input';
+import { SecondaryInput } from '../../../../lib/elements/input';
 
 export function DialogUserListComponent(props) {
   const {
@@ -23,13 +23,13 @@ export function DialogUserListComponent(props) {
     selectOption,
   } = props;
   return (
-    <Container type="LARGE">
-      <Header type="LARGE">
+    <Container>
+      <Header>
         <Line>
           <Title tid="DIALOGS.DIALOG_LIST.TITLE" />
           <SecondarySelect option={selectOption} />
         </Line>
-        <Field placeholder="Найти диалог или сообщение" />
+        <SecondaryInput placeholder="Найти диалог или сообщение" />
       </Header>
       <List>
         {dialogPersonalUserListData.map((data, index) => (
@@ -39,41 +39,38 @@ export function DialogUserListComponent(props) {
     </Container>
   );
 }
-const Header = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-direction: column;
-  padding-right: ${spacing(6)};
-  gap: ${spacing(6)};
-`;
 const Container = styled.div`
-  display: grid;
-  height: 100%;
-  width: 100%;
-  overflow: hidden;
-  grid-template-rows: 116px auto;
-  gap: ${spacing(6)};
-  padding: ${spacing(6)} 0 ${spacing(6)} ${spacing(6)};
-`;
-const List = styled.div`
   display: flex;
   flex-direction: column;
-  overflow: auto;
+  min-height: 0;
+  min-width: 400px;
+  flex-grow: 1;
   gap: ${spacing(6)};
-  padding-right: ${spacing(6)};
+  padding: ${spacing(8)} ${spacing(3.5)} ${spacing(8)} ${spacing(8)};
 `;
-const Title = styled(PrimaryTitleText)`
-  font-size: ${THEME_SIZE.FONT.HUGE};
-  margin-right: ${spacing(13)};
+const Header = styled.div`
+  display: grid;
+  gap: ${spacing(4)};
+  padding-right: ${spacing(4.5)};
 `;
 const Line = styled.div`
   display: grid;
   align-items: center;
-  grid-template-columns: auto 170px;
+  grid-template-columns: 1fr 167px;
 `;
-const Field = styled(PrimaryInput)`
-  width: 100%;
-  height: 46px;
-  background-color: ${THEME_COLOR.COLOR.BASE};
+const List = styled.div`
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  flex-grow: 1;
+  overflow: auto;
+  gap: ${spacing(4)};
+  padding-right: ${spacing(4)};
+  ::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+  }
+`;
+const Title = styled(PrimaryTitleText)`
+  font-size: ${THEME_SIZE.FONT.HUGE};
 `;
