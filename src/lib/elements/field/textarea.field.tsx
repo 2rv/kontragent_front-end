@@ -46,7 +46,8 @@ export function TextareaField(props: TextAreaPropsType) {
 const ActionCase = styled.div`
   position: absolute;
   display: flex;
-  top: ${spacing(4)};
+  align-items: center;
+  top: ${spacing(13)};
   right: ${spacing(4)};
 `;
 const Container = styled.div`
@@ -66,6 +67,7 @@ const Textarea = styled.textarea`
   flex-grow: 1;
   resize: none;
   padding: ${spacing(4)};
+  padding-right: ${spacing(14)};
   border-radius: ${THEME_SIZE.RADIUS.DEFAULT};
   font-size: ${THEME_SIZE.FONT.SMALL};
   color: ${THEME_COLOR.TEXT.PRIMARY};
@@ -85,5 +87,4 @@ const Textarea = styled.textarea`
   &:hover {
     opacity: ${THEME_VALUE.OPACITY.HOVER};
   }
-  overflow: hidden;
 `;
