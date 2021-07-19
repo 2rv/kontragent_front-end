@@ -70,10 +70,6 @@ const List = styled.div`
     width: 4px;
     height: 4px;
   }
-  ::-webkit-scrollbar-thumb {
-    background-color: rgba(181, 181, 181, 0.4);
-    border-radius: ${THEME_SIZE.RADIUS.DEFAULT};
-  }
 `;
 const Title = styled(PrimaryTitleText)`
   font-size: ${THEME_SIZE.FONT.HUGE};

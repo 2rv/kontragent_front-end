@@ -36,4 +36,6 @@ export interface TextAreaPropsType {
   row?: number;
   error: string;
   children: any;
+  isFile: any;
+  isSend: any;
 }

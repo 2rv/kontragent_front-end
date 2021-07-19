@@ -37,10 +37,6 @@ const Container = styled(SectionLayout)`
     width: 4px;
     height: 4px;
   }
-  ::-webkit-scrollbar-thumb {
-    background-color: rgba(181, 181, 181, 0.4);
-    border-radius: ${THEME_SIZE.RADIUS.DEFAULT};
-  }
 `;
 const NavMenuLink = styled(PrimaryLink)`
   color: ${(props) =>

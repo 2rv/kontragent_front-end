@@ -557,6 +557,11 @@ textarea:-webkit-autofill:hover textarea:-webkit-autofill:focus {
   height: 10px;
 }
 *::-webkit-scrollbar-thumb {
-  background-color: rgba(181, 181, 181, 1);
+  background: rgba(181, 181, 181, 0.2);
   border-radius: 10px;
+  width: 0;
+  transition: all;
+}
+*::-webkit-scrollbar-thumb:hover {
+  background: rgba(181, 181, 181, 1);
 }

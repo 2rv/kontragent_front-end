@@ -49,12 +49,11 @@ export function DialogMessageListComponent(props) {
         ))}
       </Content>
       <Footer>
-        <TextareaField placeholderTid="Напишите сообщение">
-          <ActionCase>
-            <FileIcon />
-            <SendIcon />
-          </ActionCase>
-        </TextareaField>
+        <TextareaField
+          placeholderTid="Напишите сообщение"
+          isFile={true}
+          isSend={true}
+        />
       </Footer>
     </Container>
   );
@@ -121,9 +120,5 @@ const Content = styled.div`
   ::-webkit-scrollbar {
     width: 4px;
     height: 4px;
-  }
-  ::-webkit-scrollbar-thumb {
-    background-color: rgba(181, 181, 181, 1);
-    border-radius: ${THEME_SIZE.RADIUS.DEFAULT};
   }
 `;
