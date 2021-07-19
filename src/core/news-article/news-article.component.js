@@ -42,12 +42,11 @@ export function NewsArticleComponent(props) {
         />
         <PrimaryBox>
           <IndentLayout type="STANDART">
-            <SectionLayout type="LARGE">
+            <SectionLayout type="MEDIUM">
               <NewsContentComponent
                 newsTime={newsTime}
                 newsContent={newsContent}
               />
-              <Time tid={newsTime} />
               <PrimaryDivider />
               <NewsCommentComponent
                 myAvatar={myAvatar}
@@ -60,8 +59,3 @@ export function NewsArticleComponent(props) {
     </>
   );
 }
-
-const Time = styled(PrimaryText)`
-  font-size: ${THEME_SIZE.FONT.SMALL};
-  color: ${THEME_COLOR.COLOR.LIGHT_GREY};
-`;

@@ -51,7 +51,7 @@ const FieldCase = styled.div`
 `;
 const FooterCase = styled.div`
   display: flex;
-  gap: ${spacing(4)};
+  gap: ${spacing(3)};
   margin-top: ${spacing(3)};
   align-items: center;
 `;

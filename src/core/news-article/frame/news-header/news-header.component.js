@@ -19,7 +19,7 @@ export function NewsHeader(props) {
     <SectionLayout type="MEDIUM">
       <Title tid={newsTitle} />
       <DescriptionCase>
-        <SecondaryText tid={newsDescription} />
+        <Text tid={newsDescription} />
         <CircleDivider />
         <Time tid={newsTime} />
         <CircleDivider />
@@ -28,13 +28,17 @@ export function NewsHeader(props) {
     </SectionLayout>
   );
 }
-
+const Text = styled(SecondaryText)`
+  line-height: 1.5;
+`;
 const Time = styled(SecondaryText)`
   color: ${THEME_COLOR.COLOR.LIGHT_GREY};
+  line-height: 1.5;
 `;
 const Author = styled(SecondaryText)`
   color: ${THEME_COLOR.TEXT.PRIMARY};
   font-weight: ${THEME_VALUE.FONT_WEIGHT.MEDIUM};
+  line-height: 1.5;
 `;
 const Title = styled(PrimaryTitleText)`
   font-size: ${THEME_SIZE.FONT.MEDIUM};

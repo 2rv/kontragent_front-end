@@ -28,13 +28,13 @@ export function NewsCommentListItemComponent(props) {
 
 const CommentItem = styled.div`
   display: flex;
-  gap: ${spacing(4)};
+  gap: ${spacing(3)};
 `;
 const Author = styled(PrimaryText)`
   font-weight: ${THEME_VALUE.FONT_WEIGHT.MEDIUM};
 `;
 const CommentText = styled(SectionLayout)`
-  margin-top: ${spacing(2)};
+  padding-top: ${spacing(2)};
 `;
 const Text = styled(SecondaryText)`
   font-size: ${THEME_SIZE.FONT.SMALL};

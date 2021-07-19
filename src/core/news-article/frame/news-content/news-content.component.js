@@ -9,7 +9,8 @@ import {
 import { SectionLayout } from '../../../../lib/elements/layout';
 
 export function NewsContentComponent(props) {
-  const { primary, secondary, base, image } = props.newsContent;
+  const { newsTime, newsContent } = props;
+  const { primary, secondary, base, image } = newsContent;
   return (
     <SectionLayout type="LARGE">
       <SectionLayout type="SMALL">
@@ -27,6 +28,7 @@ export function NewsContentComponent(props) {
         <Text tid={secondary[3]} />
         <Base tid={base[0]} />
         <Image src={image[1]} />
+        <Time tid={newsTime} />
       </SectionLayout>
     </SectionLayout>
   );
@@ -45,4 +47,8 @@ const Image = styled.img`
   width: 100%;
   height: 288px;
   border-radius: ${THEME_SIZE.RADIUS.DEFAULT};
+`;
+const Time = styled(PrimaryText)`
+  font-size: ${THEME_SIZE.FONT.SMALL};
+  color: ${THEME_COLOR.COLOR.LIGHT_GREY};
 `;
