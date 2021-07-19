@@ -9,7 +9,6 @@ import { SecondaryText, PrimaryText } from '../../../../lib/elements/text';
 import { CompanyMembersItemComponent } from './company-members-item.component';
 import { SectionLayout, IndentLayout } from '../../../../lib/elements/layout';
 import { PrimaryBox } from '../../../../lib/elements/box';
-import { PrimaryLoader } from '../../../../lib/elements/loader';
 
 export function CompanyMembersListComponent(props) {
   const {
@@ -21,24 +20,17 @@ export function CompanyMembersListComponent(props) {
     companyMembersListData,
   } = props;
   return (
-    <>
-      {(isPending || pageLoading) && <PrimaryLoader />}
-      <PrimaryBox>
-        <IndentLayout>
-          <SectionLayout type="LARGE">
-            <SectionLayout type="MEDIUM">
-              <Title tid="COMPANY_MEMBERS.LIST_BOX.TITLE_COMPANY_MEMBERS" />
-              <Desctiption tid="COMPANY_MEMBERS.LIST_BOX.DESCRIPTION_BOX_LIST" />
-            </SectionLayout>
-            <SectionLayout>
-              {companyMembersListData.map((data, index) => (
-                <CompanyMembersItemComponent key={index} data={data} />
-              ))}
-            </SectionLayout>
-          </SectionLayout>
-        </IndentLayout>
-      </PrimaryBox>
-    </>
+    <Container>
+      <SectionLayout type="MEDIUM">
+        <Title tid="COMPANY_MEMBERS.LIST_BOX.TITLE_COMPANY_MEMBERS" />
+        <Desctiption tid="COMPANY_MEMBERS.LIST_BOX.DESCRIPTION_BOX_LIST" />
+      </SectionLayout>
+      <List>
+        {companyMembersListData.map((data, index) => (
+          <CompanyMembersItemComponent key={index} data={data} />
+        ))}
+      </List>
+    </Container>
   );
 }
 const Title = styled(PrimaryText)`
@@ -47,4 +39,21 @@ const Title = styled(PrimaryText)`
 `;
 const Desctiption = styled(SecondaryText)`
   font-size: ${THEME_SIZE.FONT.DEFAULT};
+`;
+const Container = styled(PrimaryBox)`
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  flex-grow: 1;
+  gap: ${spacing(6)};
+  padding: ${spacing(8)};
+  padding-right: ${spacing(2)};
+`;
+const List = styled(SectionLayout)`
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  flex-grow: 1;
+  overflow: auto;
+  padding-right: ${spacing(6)};
 `;

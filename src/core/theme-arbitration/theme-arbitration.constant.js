@@ -1,4 +1,4 @@
-export const THEME_ARBITRATION_ROUTE_PATH = '/book-review-list';
+export const THEME_ARBITRATION_ROUTE_PATH = '/theme-arbitration';
 
 export const THEME_ARBITRATION_STORE_NAME = 'THEME_ARBITRATION_STORE';
 

@@ -1,5 +1,5 @@
 import React from 'react';
-
+import styled from 'styled-components';
 import {
   SectionLayout,
   IndentLayout,
@@ -11,6 +11,7 @@ import { SecondaryButton } from '../../../lib/elements/button';
 import { ErrorAlert } from '../../../lib/elements/alert';
 import { SuccessAlert } from '../../../lib/elements/alert';
 import { PrimaryLoader } from '../../../lib/elements/loader';
+import { PrimaryBox } from '../../../lib/elements/box';
 
 export function SettingsFormChangeEmailComponent(props) {
   const {
@@ -49,52 +50,56 @@ export function SettingsFormChangeEmailComponent(props) {
   return (
     <React.Fragment>
       {(FormPending || pageLoading) && <PrimaryLoader />}
-      <SectionLayout>
-        <SecondaryTitleText tid="SETTINGS.EMAIL.TITLE" />
-        <form onSubmit={handleSubmit}>
+      <PrimaryBox>
+        <IndentLayout>
           <SectionLayout>
-            <FieldLayout type="double">
-              <PrimaryField
-                titleTid="SETTINGS.EMAIL.FIELD.EMAIL.TITLE"
-                placeholderTid="SETTINGS.EMAIL.FIELD.EMAIL.PLACEHOLDER"
-                name={fieldEmail}
-                onChange={handleChange}
-                onBlur={handleBlur}
-                value={values[fieldEmail]}
-                error={isFieldError(fieldEmail)}
-              />
+            <SecondaryTitleText tid="SETTINGS.EMAIL.TITLE" />
+            <form onSubmit={handleSubmit}>
+              <SectionLayout>
+                <FieldLayout type="double">
+                  <PrimaryField
+                    titleTid="SETTINGS.EMAIL.FIELD.EMAIL.TITLE"
+                    placeholderTid="SETTINGS.EMAIL.FIELD.EMAIL.PLACEHOLDER"
+                    name={fieldEmail}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    value={values[fieldEmail]}
+                    error={isFieldError(fieldEmail)}
+                  />
 
-              <PrimaryField
-                titleTid="SETTINGS.EMAIL.FIELD.PASSWORD.TITLE"
-                placeholderTid="SETTINGS.EMAIL.FIELD.PASSWORD.PLACEHOLDER"
-                name={fieldPassword}
-                onChange={handleChange}
-                onBlur={handleBlur}
-                value={values[fieldPassword]}
-                error={isFieldError(fieldPassword)}
-                type="password"
-              />
-            </FieldLayout>
+                  <PrimaryField
+                    titleTid="SETTINGS.EMAIL.FIELD.PASSWORD.TITLE"
+                    placeholderTid="SETTINGS.EMAIL.FIELD.PASSWORD.PLACEHOLDER"
+                    name={fieldPassword}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    value={values[fieldPassword]}
+                    error={isFieldError(fieldPassword)}
+                    type="password"
+                  />
+                </FieldLayout>
 
-            <SecondaryButton
-              tid="SETTINGS.EMAIL.BUTTON"
-              disabled={isSubmitDisabled()}
-            />
+                <SecondaryButton
+                  tid="SETTINGS.EMAIL.BUTTON"
+                  disabled={isSubmitDisabled()}
+                />
 
-            {(FormError || FormErrorMessage) && (
-              <ErrorAlert tid={`ERROR.${FormErrorMessage}`} />
-            )}
+                {(FormError || FormErrorMessage) && (
+                  <ErrorAlert tid={`ERROR.${FormErrorMessage}`} />
+                )}
 
-            {(dataError || dataErrorMessage) && (
-              <ErrorAlert tid={`ERROR.${dataErrorMessage}`} />
-            )}
+                {(dataError || dataErrorMessage) && (
+                  <ErrorAlert tid={`ERROR.${dataErrorMessage}`} />
+                )}
 
-            {FormSuccess && (
-              <SuccessAlert tid={'SETTINGS.EMAIL.SUCCESS_MESSAGE'} />
-            )}
+                {FormSuccess && (
+                  <SuccessAlert tid={'SETTINGS.EMAIL.SUCCESS_MESSAGE'} />
+                )}
+              </SectionLayout>
+            </form>
           </SectionLayout>
-        </form>
-      </SectionLayout>
+        </IndentLayout>
+      </PrimaryBox>
     </React.Fragment>
   );
 }

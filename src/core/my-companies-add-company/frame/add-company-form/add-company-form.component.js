@@ -6,7 +6,6 @@ import { PrimaryField } from '../../../../lib/elements/field';
 import { SecondaryButton } from '../../../../lib/elements/button';
 import { ErrorAlert } from '../../../../lib/elements/alert';
 import { SuccessAlert } from '../../../../lib/elements/alert';
-import { PrimaryLoader } from '../../../../lib/elements/loader';
 
 export function AddCompanyFormComponent(props) {
   const {
@@ -39,51 +38,48 @@ export function AddCompanyFormComponent(props) {
   };
 
   return (
-    <React.Fragment>
-      {(isPending || pageLoading) && <PrimaryLoader />}
-      <form onSubmit={handleSubmit}>
-        <SectionLayout>
-          <FieldLayout type="double">
-            <PrimaryField
-              titleTid="MY_COMPANIES.MY_COMPANIES_ADD_COMPANY.ADD_COMPANY_FORM.FIELD.NAME.TITLE"
-              placeholderTid="MY_COMPANIES.MY_COMPANIES_ADD_COMPANY.ADD_COMPANY_FORM.FIELD.NAME.PLACEHOLDER"
-              name={fieldName}
-              onChange={handleChange}
-              onBlur={handleBlur}
-              value={values[fieldName]}
-              error={isFieldError(fieldName)}
-            />
+    <form onSubmit={handleSubmit}>
+      <SectionLayout>
+        <FieldLayout>
+          <PrimaryField
+            titleTid="MY_COMPANIES.MY_COMPANIES_ADD_COMPANY.ADD_COMPANY_FORM.FIELD.NAME.TITLE"
+            placeholderTid="MY_COMPANIES.MY_COMPANIES_ADD_COMPANY.ADD_COMPANY_FORM.FIELD.NAME.PLACEHOLDER"
+            name={fieldName}
+            onChange={handleChange}
+            onBlur={handleBlur}
+            value={values[fieldName]}
+            error={isFieldError(fieldName)}
+          />
 
-            <PrimaryField
-              titleTid="MY_COMPANIES.MY_COMPANIES_ADD_COMPANY.ADD_COMPANY_FORM.FIELD.INN.TITLE"
-              placeholderTid="MY_COMPANIES.MY_COMPANIES_ADD_COMPANY.ADD_COMPANY_FORM.FIELD.INN.PLACEHOLDER"
-              name={fieldInn}
-              onChange={handleChange}
-              onBlur={handleBlur}
-              value={values[fieldInn]}
-              error={isFieldError(fieldInn)}
-            />
-          </FieldLayout>
-          <ButtonLayout type="double">
-            <SecondaryButton
-              tid="MY_COMPANIES.MY_COMPANIES_ADD_COMPANY.ADD_COMPANY_FORM.BUTTON"
-              disabled={isSubmitDisabled()}
-            />
-          </ButtonLayout>
+          <PrimaryField
+            titleTid="MY_COMPANIES.MY_COMPANIES_ADD_COMPANY.ADD_COMPANY_FORM.FIELD.INN.TITLE"
+            placeholderTid="MY_COMPANIES.MY_COMPANIES_ADD_COMPANY.ADD_COMPANY_FORM.FIELD.INN.PLACEHOLDER"
+            name={fieldInn}
+            onChange={handleChange}
+            onBlur={handleBlur}
+            value={values[fieldInn]}
+            error={isFieldError(fieldInn)}
+          />
+        </FieldLayout>
+        <ButtonLayout type="double">
+          <SecondaryButton
+            tid="MY_COMPANIES.MY_COMPANIES_ADD_COMPANY.ADD_COMPANY_FORM.BUTTON"
+            disabled={isSubmitDisabled()}
+          />
+        </ButtonLayout>
 
-          {(isError || errorMessage) && (
-            <ErrorAlert tid={`ERROR.${errorMessage}`} />
-          )}
+        {(isError || errorMessage) && (
+          <ErrorAlert tid={`ERROR.${errorMessage}`} />
+        )}
 
-          {isSuccess && (
-            <SuccessAlert
-              tid={
-                'MY_COMPANIES.MY_COMPANIES_ADD_COMPANY.ADD_COMPANY_FORM.SUCCESS_MESSAGE'
-              }
-            />
-          )}
-        </SectionLayout>
-      </form>
-    </React.Fragment>
+        {isSuccess && (
+          <SuccessAlert
+            tid={
+              'MY_COMPANIES.MY_COMPANIES_ADD_COMPANY.ADD_COMPANY_FORM.SUCCESS_MESSAGE'
+            }
+          />
+        )}
+      </SectionLayout>
+    </form>
   );
 }

@@ -32,10 +32,7 @@ const Image = styled.img`
   height: 280px;
   border-radius: ${THEME_SIZE.RADIUS.DEFAULT};
 `;
-const Role = styled(PrimaryText)`
-  color: ${({ roleColor }) => roleColor};
-  font-weight: ${THEME_VALUE.FONT_WEIGHT.SEMY_BOLD};
-`;
+
 const Line = styled.div`
   display: flex;
   align-items: center;
@@ -58,6 +55,10 @@ const ContentCase = styled.div`
 `;
 const Author = styled(PrimaryText)`
   font-weight: ${THEME_VALUE.FONT_WEIGHT.MEDIUM};
+`;
+const Role = styled(PrimaryText)`
+  color: ${({ roleColor }) => roleColor};
+  font-weight: ${THEME_VALUE.FONT_WEIGHT.SEMY_BOLD};
 `;
 const Text = styled(SecondaryText)`
   font-size: ${THEME_SIZE.FONT.SMALL};

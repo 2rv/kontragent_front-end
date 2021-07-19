@@ -35,6 +35,13 @@ export function NewsCommentComponent(props) {
     </SectionLayout>
   );
 }
+const Container = styled(SectionLayout)`
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  min-height: 0;
+  padding-right: ${spacing(2)};
+`;
 const ActionsCase = styled.div`
   position: absolute;
   right: ${spacing(4)};

@@ -6,12 +6,13 @@ import { SupportFormCreateRequestComponent } from './support-form-create-request
 import { SUPPORT_FORM_CREATE_REQUEST_FIELD_KEY } from './support-form-create-request.type';
 
 export function SupportFormCreateRequestContainer(props) {
+  const { fieldName } = props;
   const PROBLEM_CATEGORY =
-    props.fieldName[SUPPORT_FORM_CREATE_REQUEST_FIELD_KEY.PROBLEM_CATEGORY];
+    fieldName[SUPPORT_FORM_CREATE_REQUEST_FIELD_KEY.PROBLEM_CATEGORY];
   const PROBLEM_OUTLINE =
-    props.fieldName[SUPPORT_FORM_CREATE_REQUEST_FIELD_KEY.PROBLEM_OUTLINE];
+    fieldName[SUPPORT_FORM_CREATE_REQUEST_FIELD_KEY.PROBLEM_OUTLINE];
   const PROBLEM_DESCRIPTION =
-    props.fieldName[SUPPORT_FORM_CREATE_REQUEST_FIELD_KEY.PROBLEM_DESCRIPTION];
+    fieldName[SUPPORT_FORM_CREATE_REQUEST_FIELD_KEY.PROBLEM_DESCRIPTION];
 
   const {
     isPending,

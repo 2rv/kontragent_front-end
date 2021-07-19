@@ -21,7 +21,8 @@ export function ReviewsCommentComponent() {
 
 const Container = styled.div`
   display: flex;
-  gap: ${spacing(4)};
+  gap: ${spacing(3)};
+  padding-right: ${spacing(6)};
   align-items: center;
 `;
 

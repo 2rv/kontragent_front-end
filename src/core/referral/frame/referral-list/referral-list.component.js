@@ -21,17 +21,37 @@ export function ReferralListComponent(props) {
     referralList,
   } = props;
   return (
-    <SectionLayout type="LARGE">
+    <Container type="LARGE">
       <PrimaryTitleText tid="REFERRAL.REFERRAL_LIST" />
-      <PrimaryBox>
-        <IndentLayout>
-          <SectionLayout>
-            {referralList.map((data, index) => (
-              <ReferralItemComponent key={index} data={data} />
-            ))}
-          </SectionLayout>
-        </IndentLayout>
-      </PrimaryBox>
-    </SectionLayout>
+      <Content>
+        <List>
+          {referralList.map((data, index) => (
+            <ReferralItemComponent key={index} data={data} />
+          ))}
+        </List>
+      </Content>
+    </Container>
   );
 }
+const Container = styled(SectionLayout)`
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  flex-grow: 1;
+`;
+const Content = styled(PrimaryBox)`
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  flex-grow: 1;
+  padding: ${spacing(8)};
+  padding-right: ${spacing(2)};
+`;
+const List = styled(SectionLayout)`
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  flex-grow: 1;
+  overflow: auto;
+  padding-right: ${spacing(6)};
+`;

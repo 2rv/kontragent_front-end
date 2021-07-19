@@ -9,28 +9,43 @@ export function DashboardComponent(props) {
   return (
     <>
       {(isPending || pageLoading) && <PrimaryLoader />}
-      <Background />
-      <Content>
-        <AdvertContainer type="BAR" />
-        <NewsAndBlogComponent />
-        <ControlBlockComponent />
-      </Content>
+      <Container>
+        <Background />
+        <Content>
+          <AdvertContainer type="BAR" />
+          <NewsAndBlogComponent />
+          <ControlBlockComponent />
+        </Content>
+      </Container>
     </>
   );
 }
-
+const Container = styled.div`
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  bottom: 0px;
+  right: 0px;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  padding: ${spacing(8)};
+  padding-right: ${spacing(2)};
+`;
 const Content = styled.div`
-  width: 100%;
   position: relative;
   display: flex;
   flex-direction: column;
   gap: ${spacing(8)};
+  overflow: auto;
+  padding-right: ${spacing(6)};
 `;
 const Background = styled.div`
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
+  top: 0px;
+  left: 0px;
+  bottom: 0px;
+  right: 0px;
   height: 830px;
   background-color: ${THEME_COLOR.COLOR.ACCENT};
 `;

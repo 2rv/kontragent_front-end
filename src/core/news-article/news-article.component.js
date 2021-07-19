@@ -33,29 +33,52 @@ export function NewsArticleComponent(props) {
   return (
     <>
       {(isPending || pageLoading) && <PrimaryLoader />}
-      <SectionLayout type="LARGE">
+      <Container type="LARGE">
         <NewsHeader
           newsTitle={newsTitle}
           newsDescription={newsDescription}
           newsAuthor={newsAuthor}
           newsTime={newsTime}
         />
-        <PrimaryBox>
-          <IndentLayout type="STANDART">
-            <SectionLayout type="MEDIUM">
-              <NewsContentComponent
-                newsTime={newsTime}
-                newsContent={newsContent}
-              />
-              <PrimaryDivider />
-              <NewsCommentComponent
-                myAvatar={myAvatar}
-                newsComment={newsComment}
-              />
-            </SectionLayout>
-          </IndentLayout>
-        </PrimaryBox>
-      </SectionLayout>
+        <ContentCase>
+          <Content type="MEDIUM">
+            <NewsContentComponent
+              newsTime={newsTime}
+              newsContent={newsContent}
+            />
+            <PrimaryDivider />
+            <NewsCommentComponent
+              myAvatar={myAvatar}
+              newsComment={newsComment}
+            />
+          </Content>
+        </ContentCase>
+      </Container>
     </>
   );
 }
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  min-height: 0;
+  gap: ${spacing(6)};
+`;
+const ContentCase = styled(PrimaryBox)`
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  min-height: 0;
+  padding: ${spacing(8)};
+  padding-right: ${spacing(2)};
+`;
+
+const Content = styled.div`
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  min-height: 0;
+  overflow: auto;
+  padding-right: ${spacing(6)};
+  gap: ${spacing(3)};
+`;

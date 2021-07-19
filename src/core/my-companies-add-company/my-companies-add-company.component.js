@@ -48,5 +48,6 @@ export function MyCompaniesAddCompanyComponent(props) {
 const Container = styled(SectionLayout)`
   display: flex;
   flex-direction: column;
-  width: 100%;
+  flex-grow: 1;
+  min-height: 0;
 `;

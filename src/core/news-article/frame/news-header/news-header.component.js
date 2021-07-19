@@ -42,6 +42,7 @@ const Author = styled(SecondaryText)`
 `;
 const Title = styled(PrimaryTitleText)`
   font-size: ${THEME_SIZE.FONT.MEDIUM};
+  line-height: 1.5;
 `;
 const DescriptionCase = styled.div`
   align-items: center;

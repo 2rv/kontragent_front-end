@@ -6,6 +6,7 @@ import {
   CompanyMembersFormComponent,
 } from './frames';
 import { SectionLayout } from '../../lib/elements/layout';
+import { PrimaryLoader } from '../../lib/elements/loader';
 
 export function CompanyMembersComponent(props) {
   const {
@@ -17,21 +18,24 @@ export function CompanyMembersComponent(props) {
     companyMembersListData,
   } = props;
   return (
-    <Container type="LARGE">
-      <SectionLayout type="SMALL">
-        <Title tid={`ООО "КОМПАНИЯ"`} />
-        <Desctiption tid="COMPANY_MEMBERS.DESCRIPTION" />
-      </SectionLayout>
-      <CompanyMembersListContainer
-        pageLoading={pageLoading}
-        isPending={isPending}
-        isError={isError}
-        isSuccess={isSuccess}
-        errorMessage={errorMessage}
-        companyMembersListData={companyMembersListData}
-      />
-      <CompanyMembersFormComponent />
-    </Container>
+    <>
+      {(isPending || pageLoading) && <PrimaryLoader />}
+      <Container type="LARGE">
+        <SectionLayout type="SMALL">
+          <Title tid={`ООО "КОМПАНИЯ"`} />
+          <Desctiption tid="COMPANY_MEMBERS.DESCRIPTION" />
+        </SectionLayout>
+        <CompanyMembersListContainer
+          pageLoading={pageLoading}
+          isPending={isPending}
+          isError={isError}
+          isSuccess={isSuccess}
+          errorMessage={errorMessage}
+          companyMembersListData={companyMembersListData}
+        />
+        <CompanyMembersFormComponent />
+      </Container>
+    </>
   );
 }
 const Title = styled(PrimaryTitleText)`
@@ -43,5 +47,6 @@ const Desctiption = styled(SecondaryText)`
 const Container = styled(SectionLayout)`
   display: flex;
   flex-direction: column;
-  width: 100%;
+  min-height: 0;
+  flex-grow: 1;
 `;

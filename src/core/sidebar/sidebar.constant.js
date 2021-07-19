@@ -139,13 +139,23 @@ export const NAVMENU_ITEMS = [
     pathname: '/auth-change-password',
     path: '/auth-change-password',
   },
+  {
+    tid: 'Тема арбитража',
+    pathname: '/theme-arbitration',
+    path: '/theme-arbitration',
+  },
+  {
+    tid: 'Контрагент',
+    pathname: '/counterparty',
+    path: '/counterparty',
+  },
+  {
+    tid: 'Юрлицо',
+    pathname: '/entity',
+    path: '/entity',
+  },
 ];
 
-// {
-//     tid: 'Тема арбитража',
-//     pathname: '/theme-arbitration',
-//     path: '/theme-arbitration',
-//   },
 //   {
 //     tid: 'Панель управления администратора',
 //     pathname: '/dashboard-admin',

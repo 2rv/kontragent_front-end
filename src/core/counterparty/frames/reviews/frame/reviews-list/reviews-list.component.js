@@ -1,7 +1,10 @@
 import styled from 'styled-components';
 
 import { PrimaryDivider } from '../../../../../../lib/elements/divider';
-import { PrimaryText, SecondaryText } from '../../../../../../lib/elements/text';
+import {
+  PrimaryText,
+  SecondaryText,
+} from '../../../../../../lib/elements/text';
 import { SectionLayout } from '../../../../../../lib/elements/layout';
 import {
   spacing,
@@ -9,37 +12,36 @@ import {
   THEME_COLOR,
   THEME_VALUE,
 } from '../../../../../../lib/theme';
-import { ReviewsCommentComponent } from '../reviews-comment';
 
 export function ReviewsListComponent({ reviewsList }) {
   return (
-    <div>
-      <SectionLayout type="LARGE">
-        <SectionLayout>
-          {reviewsList.map(
-            ({ avatar, author, time, text, status }, index) => (
-              <CommentItem key={index}>
-                <Avatar src={avatar} />
-                <ContentCase>
-                  <div>
-                    <Author tid={author} />
-                    &nbsp;
-                    <Status tid={status.statusTid} statusId={status.statusId} />
-                  </div>
-                  <Text tid={text} />
-                  <Time tid={time} />
-                  <PrimaryDivider />
-                </ContentCase>
-              </CommentItem>
-            ),
-          )}
-        </SectionLayout>
-        <ReviewsCommentComponent />
-      </SectionLayout>
-    </div>
+    <Container>
+      {reviewsList.map(({ avatar, author, time, text, status }, index) => (
+        <CommentItem key={index}>
+          <Avatar src={avatar} />
+          <ContentCase>
+            <div>
+              <Author tid={author} />
+              &nbsp;
+              <Status tid={status.statusTid} statusId={status.statusId} />
+            </div>
+            <Text tid={text} />
+            <Time tid={time} />
+            <PrimaryDivider />
+          </ContentCase>
+        </CommentItem>
+      ))}
+    </Container>
   );
 }
-
+const Container = styled(SectionLayout)`
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  min-height: 0;
+  padding-right: ${spacing(6)};
+  overflow: auto;
+`;
 const CommentItem = styled.div`
   display: flex;
   gap: ${spacing(4)};

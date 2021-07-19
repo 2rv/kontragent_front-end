@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { ReactComponent as File } from '../../../../asset/svg/file.svg';
+import { ReactComponent as FileIcon } from '../../../../asset/svg/file.svg';
 
 import {
   PrimarySelect,
@@ -42,10 +42,10 @@ export function NewLawyerRequestFormComponent(props) {
   } = props;
 
   return (
-    <PrimaryBox>
-      <IndentLayout>
-        <form onSubmit={handleSubmit}>
-          <SectionLayout>
+    <form onSubmit={handleSubmit}>
+      <PrimaryBox>
+        <IndentLayout>
+          <SectionLayout type="LARGE">
             <PrimaryTitleText tid="LAWYER_REQUEST.FORM.TITLE" />
             <SectionLayout type="MEDIUM">
               <PrimarySelect
@@ -68,17 +68,14 @@ export function NewLawyerRequestFormComponent(props) {
                 onChange={handleChange}
                 onBlur={handleBlur}
               />
-              <TextareaCase>
-                <TextareaField
-                  titleTid="LAWYER_REQUEST.FORM.FIELDS.TITLES.PROBLEM_DESCRIPTION"
-                  placeholderTid="LAWYER_REQUEST.FORM.FIELDS.PLACEHOLDERS.PROBLEM_DESCRIPTION"
-                  name={fieldProblemDescription}
-                  onChange={handleChange}
-                  onBlur={handleBlur}
-                  row={8}
-                />
-                <FileIcon />
-              </TextareaCase>
+              <TextareaField
+                titleTid="LAWYER_REQUEST.FORM.FIELDS.TITLES.PROBLEM_DESCRIPTION"
+                placeholderTid="LAWYER_REQUEST.FORM.FIELDS.PLACEHOLDERS.PROBLEM_DESCRIPTION"
+                name={fieldProblemDescription}
+                onChange={handleChange}
+                onBlur={handleBlur}
+                row={8}
+              />
             </SectionLayout>
             <SectionLayout type="SMALL">
               <PriceOfResolvingIssueText tid="LAWYER_REQUEST.FORM.PRICE_OF_RESOLVING_ISSUE" />
@@ -91,20 +88,11 @@ export function NewLawyerRequestFormComponent(props) {
               <SecondaryButton tid="LAWYER_REQUEST.FORM.FIELDS.BUTTONS.WATCH_MY_QUESTIONS" />
             </ButtonLayout>
           </SectionLayout>
-        </form>
-      </IndentLayout>
-    </PrimaryBox>
+        </IndentLayout>
+      </PrimaryBox>
+    </form>
   );
 }
-
-const TextareaCase = styled.div`
-  position: relative;
-`;
-const FileIcon = styled(File)`
-  position: absolute;
-  right: 16px;
-  top: 16px;
-`;
 const PriceOfResolvingIssueText = styled(SecondaryText)`
   font-size: ${THEME_SIZE.FONT.TINY};
   color: ${THEME_COLOR.COLOR.LIGHT_GREY};

@@ -12,7 +12,7 @@ export function NewsContentComponent(props) {
   const { newsTime, newsContent } = props;
   const { primary, secondary, base, image } = newsContent;
   return (
-    <SectionLayout type="LARGE">
+    <Container type="LARGE">
       <SectionLayout type="SMALL">
         <Paragraph tid={primary[0]} />
         <Text tid={secondary[0]} />
@@ -30,9 +30,14 @@ export function NewsContentComponent(props) {
         <Image src={image[1]} />
         <Time tid={newsTime} />
       </SectionLayout>
-    </SectionLayout>
+    </Container>
   );
 }
+const Container = styled(SectionLayout)`
+  display: flex;
+  flex-direction: column;
+`;
+
 const Paragraph = styled(PrimaryText)`
   font-weight: ${THEME_VALUE.FONT_WEIGHT.MEDIUM};
 `;

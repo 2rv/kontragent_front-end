@@ -44,6 +44,8 @@ export function LawyerReqeustComponent(props) {
 const Container = styled.div`
   display: flex;
   flex-direction: column;
+  min-height: 0;
+  flex-grow: 1;
   gap: ${spacing(6)};
 `;
 const LawyerRequestQuestionTitle = styled(PrimaryTitleText)`
