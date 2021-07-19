@@ -1,23 +1,23 @@
 {
-  "LOGIN_FORM": {
-    "FIELD": {
-      "LOGIN": {
-        "TITLE": "Логин",
-        "PLACEHOLDER": "Укажите свой логин"
-      },
-      "PASSWORD": {
-        "TITLE": "Пароль",
-        "PLACEHOLDER": "Укажите свой пароль"
-      },
-      "CAPTCHA": {
-        "TITLE": "CAPTCHA",
-        "PLACEHOLDER": "CAPTCHA"
-      }
-    },
-    "HEADER": "Войти в аккаунт",
-    "BUTTON": "Войти",
-    "RESTORE_PROPOSAL": "Забыли пароль?",
-    "LINK_TO_RESTORE_PASSWORD": "Помощь",
-    "SUCCESS_MESSAGE": "SUCCESS_MESSAGE"
-  }
+	"LOGIN_FORM": {
+		"FIELD": {
+			"LOGIN": {
+				"TITLE": "Логин",
+				"PLACEHOLDER": "Укажите свой логин"
+			},
+			"PASSWORD": {
+				"TITLE": "Пароль",
+				"PLACEHOLDER": "Укажите свой пароль"
+			},
+			"CAPTCHA": {
+				"TITLE": "Капча",
+				"PLACEHOLDER": "Введите текст с изображения"
+			}
+		},
+		"HEADER": "Войти в аккаунт",
+		"BUTTON": "Войти",
+		"RESTORE_PROPOSAL": "Забыли пароль?",
+		"LINK_TO_RESTORE_PASSWORD": "Помощь",
+		"SUCCESS_MESSAGE": "SUCCESS_MESSAGE"
+	}
 }

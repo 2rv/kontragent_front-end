@@ -25,31 +25,35 @@ export function VerticalNewsCardComponent() {
     </Container>
   );
 }
-
+const Container = styled.div`
+  display: flex;
+  height: 186px;
+  min-height: 186px;
+  flex-grow: 1;
+  gap: ${spacing(4)};
+`;
 const CardText = styled(SecondaryText)`
-  font-size: 14px;
   line-height: 1.5;
   font-weight: ${THEME_VALUE.FONT_WEIGHT.MEDIUM};
 `;
 const CardLink = styled(PrimaryLink)`
-  font-size: 14px;
+  font-size: ${THEME_SIZE.FONT.SMALL};
   line-height: 1.5;
 `;
-const Container = styled.div`
-  display: flex;
-  height: 186px;
-  width: 100%;
-  gap: ${spacing(4)};
-`;
+
 const CardImage = styled.img`
-  width: 186px;
-  height: 186px;
+  display: flex;
+  flex-basis: 186px;
+  max-width: 186px;
+  max-height: 186px;
   border-radius: ${THEME_SIZE.RADIUS.DEFAULT};
 `;
 const CardInfo = styled.div`
   display: flex;
   flex-direction: column;
-  gap: ${spacing(2)};
+  min-height: 0;
+  flex-grow: 1;
+  overflow: auto;
 `;
 
 const CardTitle = styled(PrimaryTitleText)`

@@ -31,6 +31,7 @@ export const CaptchaFieldComponent = ({
           onChange={onChange}
           onBlur={onBlur}
           value={value}
+          error={captchaErrorMessage || error}
         />
 
         <Captcha>
@@ -46,7 +47,7 @@ export const CaptchaFieldComponent = ({
           )}
         </Captcha>
       </FieldLayout>
-
+      {/* 
       {error && (
         <ErrorContainer>
           <ErrorMessage error={error} />
@@ -57,7 +58,7 @@ export const CaptchaFieldComponent = ({
         <ErrorContainer>
           <ErrorMessage error={captchaErrorMessage} />
         </ErrorContainer>
-      )}
+      )} */}
     </div>
   );
 };

@@ -7,6 +7,7 @@ import { PrimaryButton } from '../../../../lib/elements/button';
 import { ErrorAlert } from '../../../../lib/elements/alert';
 import { SuccessAlert } from '../../../../lib/elements/alert';
 import { PrimaryLoader } from '../../../../lib/elements/loader';
+import { CaptchaFieldContainer } from '../../../../lib/common/captcha';
 
 export function LoginFormComponent(props) {
   const {
@@ -19,8 +20,10 @@ export function LoginFormComponent(props) {
     isValid,
     isSubmitting,
 
+    fieldCaptcha,
     fieldLogin,
     fieldPassword,
+
     pageLoading,
     isSuccess,
     isPending,
@@ -63,6 +66,15 @@ export function LoginFormComponent(props) {
               value={values[fieldPassword]}
               error={isFieldError(fieldPassword)}
               type="password"
+            />
+            <CaptchaFieldContainer
+              titleTid="LOGIN.LOGIN_FORM.FIELD.CAPTCHA.TITLE"
+              placeholderTid="LOGIN.LOGIN_FORM.FIELD.CAPTCHA.PLACEHOLDER"
+              name={fieldCaptcha}
+              onChange={handleChange}
+              onBlur={handleBlur}
+              value={values[fieldCaptcha]}
+              error={isFieldError(fieldCaptcha)}
             />
           </FieldLayout>
           <PrimaryButton

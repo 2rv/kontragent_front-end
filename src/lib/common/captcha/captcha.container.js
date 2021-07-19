@@ -21,9 +21,9 @@ export function CaptchaFieldContainer(props) {
   const captchaLoadCaptchaImage = () => {
     dispatch(captchaLoadCaptcha());
   };
-  useEffect(() => {
-    captchaLoadCaptchaImage();
-  }, []);
+  //   useEffect(() => {
+  //     captchaLoadCaptchaImage();
+  //   }, []);
 
   const captchaData = state.captchaGetImage.data?.[CAPTCHA_DATA_NAME.CAPTCHA];
   return (

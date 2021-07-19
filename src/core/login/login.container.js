@@ -38,6 +38,7 @@ export function LoginContainer() {
     return {
       [LOGIN_FIELD_NAME.LOGIN]: '',
       [LOGIN_FIELD_NAME.PASSWORD]: '',
+      [LOGIN_FIELD_NAME.CAPTCHA]: '',
     };
   };
 
