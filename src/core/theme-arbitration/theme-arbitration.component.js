@@ -5,7 +5,14 @@ import {
   SecondaryText,
 } from '../../lib/elements/text';
 import { spacing, THEME_COLOR, THEME_SIZE, THEME_VALUE } from '../../lib/theme';
-import { CommentListComponent, CommentInputComponent } from './frame';
+import {
+  CommentListComponent,
+  CommentInputComponent,
+  ThemeArbitrationHeaderComponent,
+} from './frame';
+import { PrimaryBox } from '../../lib/elements/box';
+import { IndentLayout, SectionLayout } from '../../lib/elements/layout';
+import { PrimaryLoader } from '../../lib/elements/loader';
 
 export function ThemeArbitrationComponent(props) {
   const {
@@ -24,100 +31,72 @@ export function ThemeArbitrationComponent(props) {
     commentItem,
     myAvatar,
   } = props;
-  const { roleColor, roleText } = RoleConverter(role);
 
   return (
-    <Container>
-      <HeaderCase>
-        <LineCase>
-          <Title tid={theme} />
-          <Role roleColor={roleColor} tid={roleText} />
-        </LineCase>
-        <LineCase>
-          <Description tid={description} />
-          <Time tid={`· ${time} ·`} />
-          <Status tid={status} />
-        </LineCase>
-      </HeaderCase>
-      <ContentCase>
-        <HeaderCase>
-          <ContentTitle tid="THEME_ARBITRATION.REVIEWS" />
-          <LineCase>
-            <TypeCompany tid={companyType} />
-            <NameCompany tid={`"${companyName}"`} />
-          </LineCase>
-        </HeaderCase>
-        <CommentListComponent
-          dataComment={commentItem}
-          pageLoading={pageLoading}
-          isPending={isPending}
-          isError={isError}
-          isSuccess={isSuccess}
-          errorMessage={errorMessage}
+    <>
+      {isPending || (pageLoading && <PrimaryLoader />)}
+      <Container>
+        <ThemeArbitrationHeaderComponent
+          description={description}
+          status={status}
+          theme={theme}
+          role={role}
+          time={time}
         />
-        <CommentInputComponent myAvatar={myAvatar} />
-      </ContentCase>
-    </Container>
+        <Content>
+          <ContentHeaderCase>
+            <ContentTitle tid="THEME_ARBITRATION.REVIEWS" />
+            <LineCase>
+              <SecondaryText tid={companyType} />
+              <NameCompany tid={`"${companyName}"`} />
+            </LineCase>
+          </ContentHeaderCase>
+          <CommentListComponent
+            dataComment={commentItem}
+            pageLoading={pageLoading}
+            isPending={isPending}
+            isError={isError}
+            isSuccess={isSuccess}
+            errorMessage={errorMessage}
+          />
+          <CommentInputComponent myAvatar={myAvatar} />
+        </Content>
+      </Container>
+    </>
   );
 }
-const Title = styled(PrimaryText)`
-  font-size: ${THEME_SIZE.FONT.MEDIUM};
-  font-weight: ${THEME_VALUE.FONT_WEIGHT.SEMY_BOLD};
-`;
-const Role = styled(PrimaryTitleText)`
-  font-size: ${THEME_SIZE.FONT.MEDIUM};
-  color: ${THEME_COLOR.TEXT.ACCENT};
-`;
-const Description = styled(SecondaryText)``;
-const Time = styled(SecondaryText)`
-  color: ${THEME_COLOR.COLOR.LIGHT_GREY};
-`;
-const Status = styled(SecondaryText)`
-  color: ${THEME_COLOR.TEXT.SUCCESS};
-  font-weight: ${THEME_VALUE.FONT_WEIGHT.MEDIUM};
-`;
 const ContentTitle = styled(PrimaryText)`
   font-size: ${THEME_SIZE.FONT.MEDIUM};
   font-weight: ${THEME_VALUE.FONT_WEIGHT.MEDIUM};
 `;
-const TypeCompany = styled(SecondaryText)``;
 const NameCompany = styled(PrimaryText)`
   font-weight: ${THEME_VALUE.FONT_WEIGHT.MEDIUM};
 `;
-
-const ContentCase = styled.div`
+const Content = styled(SectionLayout)`
   display: flex;
-  height: 100%;
   flex-direction: column;
-  gap: ${spacing(8)};
-  padding: ${spacing(8)};
+  min-height: 0;
+  flex-grow: 1;
   background-color: ${THEME_COLOR.COLOR.BASE};
   border-radius: ${THEME_SIZE.RADIUS.DEFAULT};
+  padding: ${spacing(8)};
+  padding-right: ${spacing(2)};
+  gap: ${spacing(6)};
 `;
 const LineCase = styled.div`
   display: flex;
   gap: ${spacing(2)};
+  align-items: center;
 `;
-const HeaderCase = styled.div`
+const ContentHeaderCase = styled.div`
   display: flex;
   flex-direction: column;
   gap: ${spacing(3)};
 `;
 const Container = styled.div`
   display: flex;
-  height: 100%;
   flex-direction: column;
+  min-height: 0;
+  flex-grow: 1;
   gap: ${spacing(6)};
 `;
-const RoleConverter = (role) => {
-  switch (role) {
-    case 1:
-      return { roleColor: THEME_COLOR.TEXT.ACCENT, roleText: 'THEME_ARBITRATION.COUNTERPARTY' };
-
-    case 2:
-      return { roleColor: THEME_COLOR.TEXT.PURPLE, roleText: 'THEME_ARBITRATION.ADMIN' };
-
-    default:
-      return { roleColor: null, roleText: null };
-  }
-};

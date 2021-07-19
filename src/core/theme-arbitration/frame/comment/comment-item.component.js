@@ -28,9 +28,8 @@ export function CommentItemComponent(props) {
   );
 }
 const Image = styled.img`
-  width: 100%;
-  height: 288px;
   display: flex;
+  height: 280px;
   border-radius: ${THEME_SIZE.RADIUS.DEFAULT};
 `;
 const Role = styled(PrimaryText)`
@@ -39,12 +38,12 @@ const Role = styled(PrimaryText)`
 `;
 const Line = styled.div`
   display: flex;
+  align-items: center;
   gap: ${spacing(2)};
 `;
 const Container = styled.div`
   display: flex;
-  gap: ${spacing(4)};
-  align-items: flex-start;
+  gap: ${spacing(3)};
 `;
 const Avatar = styled.img`
   width: 56px;
@@ -52,15 +51,17 @@ const Avatar = styled.img`
   border-radius: ${THEME_SIZE.RADIUS.CIRCLE};
 `;
 const ContentCase = styled.div`
+  padding-top: ${spacing(2)};
   display: flex;
   flex-direction: column;
-  gap: ${spacing(3)};
+  gap: ${spacing(2)};
 `;
 const Author = styled(PrimaryText)`
   font-weight: ${THEME_VALUE.FONT_WEIGHT.MEDIUM};
 `;
 const Text = styled(SecondaryText)`
   font-size: ${THEME_SIZE.FONT.SMALL};
+  line-height: 1.5;
 `;
 const Time = styled(SecondaryText)`
   color: ${THEME_COLOR.COLOR.LIGHT_GREY};
@@ -69,10 +70,16 @@ const Time = styled(SecondaryText)`
 const RoleConverter = (role) => {
   switch (role) {
     case 1:
-      return { roleColor: THEME_COLOR.TEXT.PURPLE, roleText: 'THEME_ARBITRATION.ROLE.PLAINTIFF' };
+      return {
+        roleColor: THEME_COLOR.TEXT.PURPLE,
+        roleText: 'THEME_ARBITRATION.ROLE.PLAINTIFF',
+      };
 
     case 2:
-      return { roleColor: THEME_COLOR.TEXT.ACCENT, roleText: 'THEME_ARBITRATION.ROLE.DEFENDANT' };
+      return {
+        roleColor: THEME_COLOR.TEXT.ACCENT,
+        roleText: 'THEME_ARBITRATION.ROLE.DEFENDANT',
+      };
 
     default:
       return { roleColor: null, roleText: null };

@@ -8,9 +8,6 @@ import {
   THEME_VALUE,
 } from '../../../../lib/theme';
 import { CommentItemComponent } from './comment-item.component';
-import { PrimaryDivider } from '../../../../lib/elements/divider';
-import { PrimaryLoader } from '../../../../lib/elements/loader';
-import { ListSkeleton } from '../../../../lib/elements/skeleton';
 
 export function CommentListComponent(props) {
   const {
@@ -22,24 +19,20 @@ export function CommentListComponent(props) {
     dataComment,
   } = props;
 
-  (isPending || pageLoading) && <PrimaryLoader />;
-
   return (
     <Container>
-      {isPending || pageLoading ? (
-        <ListSkeleton />
-      ) : (
-        dataComment.map((item, index) => (
-          <CommentItemComponent key={item?.id || index} {...item} />
-        ))
-      )}
+      {dataComment.map((item, index) => (
+        <CommentItemComponent key={item?.id || index} {...item} />
+      ))}
     </Container>
   );
 }
 const Container = styled.div`
   display: flex;
-  height: 100%;
-  gap: ${spacing(4)};
-  align-items: flex-start;
   flex-direction: column;
+  flex-grow: 1;
+  min-height: 0;
+  overflow: auto;
+  gap: ${spacing(4)};
+  padding-right: ${spacing(6)};
 `;
