@@ -63,6 +63,7 @@ const dialogPersonalUserListData = [
     name: 'Дуейн Джонсон',
     status: 'Агент',
     statusId: 2,
+    favorite: true,
     content: {
       message:
         'Отличная работа, Отличная работа, Отличная работа, Отличная работа,',
@@ -87,6 +88,7 @@ const dialogPersonalUserListData = [
     name: 'Джон Уик',
     status: 'Менеджер',
     statusId: 2,
+    favorite: true,
     content: {
       you: 'Вы:',
       message:
@@ -95,20 +97,8 @@ const dialogPersonalUserListData = [
     },
   },
   {
-    id: 5,
-    img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTC4jRg1btnvqAdcADoMgIw6RyQIXMOpZw-kg&usqp=CAU',
-    name: 'Дуейн Джонсон',
-    status: 'Агент',
-    statusId: 2,
-    content: {
-      message:
-        'Отличная работа, Отличная работа, Отличная работа, Отличная работа,',
-      date: 'Вчера',
-    },
-  },
-  {
-    id: 6,
-    img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtgBAVJwqCu4_k7is4kwmtaXwZfzOjgvlzag&usqp=CAU',
+    id: 3,
+    img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6uJ8hulxDIkfcskbltYkq6zknxkax-aNwzg&usqp=CAU',
     name: 'Джон Сина',
     status: 'Клиент',
     statusId: 2,
@@ -119,36 +109,12 @@ const dialogPersonalUserListData = [
     },
   },
   {
-    id: 7,
-    img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSDBhN3xCWonWztKURwk75Ek74jY9Vs17Etaw&usqp=CAU',
-    name: 'Джон Уик',
-    status: 'Менеджер',
-    statusId: 2,
-    content: {
-      you: 'Вы:',
-      message:
-        'Отличная работа, Отличная работа, Отличная работа, Отличная работа,',
-      date: 'Сегодня',
-    },
-  },
-  {
-    id: 8,
-    img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPe7yN7WdrGApjx3Nr9sFGEglLcT89K9PSgQ&usqp=CAU',
-    name: 'Дуейн Джонсон',
-    status: 'Агент',
-    statusId: 2,
-    content: {
-      message:
-        'Отличная работа, Отличная работа, Отличная работа, Отличная работа,',
-      date: 'Вчера',
-    },
-  },
-  {
-    id: 9,
-    img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtpnslabIwiCbhDln84JLPgfWYNRcjTW4axw&usqp=CAU',
+    id: 3,
+    img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6uJ8hulxDIkfcskbltYkq6zknxkax-aNwzg&usqp=CAU',
     name: 'Джон Сина',
     status: 'Клиент',
     statusId: 2,
+    favorite: true,
     content: {
       message: 'Отличная работа',
       date: '15:25',
@@ -156,245 +122,207 @@ const dialogPersonalUserListData = [
     },
   },
   {
-    id: 10,
-    img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROUVuUer3Cjc4XgRHitH8oTOLJ68lWE3Ti9Q&usqp=CAU',
-    name: 'Джон Уик',
-    status: 'Менеджер',
+    id: 3,
+    img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6uJ8hulxDIkfcskbltYkq6zknxkax-aNwzg&usqp=CAU',
+    name: 'Джон Сина',
+    status: 'Клиент',
     statusId: 2,
     content: {
-      you: 'Вы:',
       message: 'Отличная работа',
-      date: 'Сегодня',
-    },
-  },
-  {
-    id: 11,
-    img: 'https://77.img.avito.st/640x480/9591336877.jpg',
-    name: 'Дуейн Джонсон',
-    status: 'Агент',
-    statusId: 2,
-    content: {
-      message:
-        'Отличная работа, Отличная работа, Отличная работа, Отличная работа,',
-      date: 'Вчера',
+      date: '15:25',
+      unreadedMessages: 3,
     },
   },
 ];
 const dialogPersonalMessageListData = [
   {
     id: 1,
-    img: 'https://picsum.photos/1/1?grayscale',
+    img: 'https://77.img.avito.st/640x480/9591336877.jpg',
     message: {
-      text: `Я понять не могу почему так выходит. 
-		Что не запуск то новый баг какой-то. Я понять не могу почему так выходит. 
-		Что не запуск то новый баг какой-то. Я понять не могу почему так выходит. 
-		Что не запуск то новый баг какой-то.Я понять не могу почему так выходит. 
-		Что не запуск то новый баг какой-то.Я понять не могу почему так выходит. 
-		Что не запуск то новый баг какой-то.Я понять не могу почему так выходит. 
-		Что не запуск то новый баг какой-то.Я понять не могу почему так выходит. 
-		Что не запуск то новый баг какой-то.`,
+      text: `Я понять не могу почему так выходит.`,
       date: 'Вчера, 14:25',
       you: true,
+      file: {
+        image:
+          'data:image/jpeg;base64,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',
+      },
     },
   },
   {
     id: 2,
-    img: 'https://picsum.photos/1/1?grayscale',
+    img: 'https://77.img.avito.st/640x480/9591336877.jpg',
     message: {
       text: 'Слушай, да пошло оно всё.',
       date: 'Вчера, 15:30',
-    },
-  },
-  {
-    id: 3,
-    img: 'https://picsum.photos/1/1?grayscale',
-    message: {
-      text: 'Да конечно, лучше брошу это дело пойду таксистом поработаю.',
-      date: 'Вчера, 15:50',
-      you: true,
-    },
-  },
-  {
-    id: 4,
-    img: 'https://picsum.photos/1/1?grayscale',
-    message: {
-      text: 'А я сварщиком.',
-      date: 'Вчера, 15:51',
-    },
-  },
-  {
-    id: 1,
-    img: 'https://picsum.photos/1/1?grayscale',
-    message: {
-      text: `Я понять не могу почему так выходит. 
-		Что не запуск то новый баг какой-то.`,
-      date: 'Вчера, 14:25',
-      you: true,
+      file: {
+        files: [
+          {
+            filename: 'design',
+            filetype: '.zip',
+            filesize: '750B',
+          },
+        ],
+      },
     },
   },
   {
     id: 2,
-    img: 'https://picsum.photos/1/1?grayscale',
+    img: 'https://77.img.avito.st/640x480/9591336877.jpg',
     message: {
       text: 'Слушай, да пошло оно всё.',
       date: 'Вчера, 15:30',
+      you: true,
+      file: {
+        files: [
+          {
+            filename: 'design',
+            filetype: '.zip',
+            filesize: '750B',
+          },
+        ],
+      },
     },
   },
   {
     id: 3,
-    img: 'https://picsum.photos/1/1?grayscale',
+    img: 'https://77.img.avito.st/640x480/9591336877.jpg',
+    message: {
+      text: 'аааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааа',
+      date: 'Вчера, 15:50',
+      you: true,
+      file: {
+        images: [
+          'data:image/jpeg;base64,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',
+        ],
+      },
+    },
+  },
+  {
+    id: 4,
+    img: 'https://vjoy.cc/wp-content/uploads/2019/07/1-1.jpg',
     message: {
       text: 'Да конечно, лучше брошу это дело пойду таксистом поработаю.',
       date: 'Вчера, 15:50',
-      you: true,
+      you: false,
+      file: {
+        images: [
+          'https://vjoy.cc/wp-content/uploads/2019/07/1-1.jpg',
+          'https://vjoy.cc/wp-content/uploads/2019/07/1-1.jpg',
+          'https://vjoy.cc/wp-content/uploads/2019/07/1-1.jpg',
+          'https://vjoy.cc/wp-content/uploads/2019/07/1-1.jpg',
+        ],
+      },
     },
   },
   {
-    id: 4,
-    img: 'https://picsum.photos/1/1?grayscale',
+    id: 5,
+    img: 'https://77.img.avito.st/640x480/9591336877.jpg',
     message: {
-      text: 'А я сварщиком.',
-      date: 'Вчера, 15:51',
-    },
-  },
-  {
-    id: 1,
-    img: 'https://picsum.photos/1/1?grayscale',
-    message: {
-      text: `Я понять не могу почему так выходит. 
-		Что не запуск то новый баг какой-то.`,
-      date: 'Вчера, 14:25',
-      you: true,
-    },
-  },
-  {
-    id: 2,
-    img: 'https://picsum.photos/1/1?grayscale',
-    message: {
-      text: 'Слушай, да пошло оно всё.',
+      text: 'аааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааа',
       date: 'Вчера, 15:30',
+      file: {
+        files: [
+          {
+            filename: '1',
+            filetype: '.zip',
+            filesize: '750B',
+          },
+          {
+            filename: '22',
+            filetype: '.zip',
+            filesize: '750B',
+          },
+          {
+            filename: '334',
+            filetype: '.zip',
+            filesize: '750B',
+          },
+          {
+            filename: '4444',
+            filetype: '.zip',
+            filesize: '750B',
+          },
+          {
+            filename: '55555',
+            filetype: '.zip',
+            filesize: '750B',
+          },
+          {
+            filename: '666666',
+            filetype: '.zip',
+            filesize: '750B',
+          },
+          {
+            filename: '1234123456789105678910',
+            filetype: '.zip',
+            filesize: '750B',
+          },
+          {
+            filename: '7',
+            filetype: '.zip',
+            filesize: '750B',
+          },
+          {
+            filename: '8',
+            filetype: '.zip',
+            filesize: '750B',
+          },
+          {
+            filename: '9',
+            filetype: '.zip',
+            filesize: '750B',
+          },
+          {
+            filename: '10',
+            filetype: '.zip',
+            filesize: '750B',
+          },
+          {
+            filename: '111',
+            filetype: '.zip',
+            filesize: '750B',
+          },
+          {
+            filename: '12345678910',
+            filetype: '.zip',
+            filesize: '750B',
+          },
+          {
+            filename: '1234123456789105678910',
+            filetype: '.zip',
+            filesize: '750B',
+          },
+        ],
+      },
     },
   },
   {
-    id: 3,
-    img: 'https://picsum.photos/1/1?grayscale',
+    id: 7,
+    img: 'https://vjoy.cc/wp-content/uploads/2019/07/1-1.jpg',
     message: {
       text: 'Да конечно, лучше брошу это дело пойду таксистом поработаю.',
       date: 'Вчера, 15:50',
-      you: true,
-    },
-  },
-  {
-    id: 4,
-    img: 'https://picsum.photos/1/1?grayscale',
-    message: {
-      text: 'А я сварщиком.',
-      date: 'Вчера, 15:51',
-    },
-  },
-  {
-    id: 1,
-    img: 'https://picsum.photos/1/1?grayscale',
-    message: {
-      text: `Я понять не могу почему так выходит. 
-		Что не запуск то новый баг какой-то.`,
-      date: 'Вчера, 14:25',
-      you: true,
-    },
-  },
-  {
-    id: 2,
-    img: 'https://picsum.photos/1/1?grayscale',
-    message: {
-      text: 'Слушай, да пошло оно всё.',
-      date: 'Вчера, 15:30',
-    },
-  },
-  {
-    id: 3,
-    img: 'https://picsum.photos/1/1?grayscale',
-    message: {
-      text: 'Да конечно, лучше брошу это дело пойду таксистом поработаю.',
-      date: 'Вчера, 15:50',
-      you: true,
-    },
-  },
-  {
-    id: 4,
-    img: 'https://picsum.photos/1/1?grayscale',
-    message: {
-      text: 'А я сварщиком.',
-      date: 'Вчера, 15:51',
-    },
-  },
-  {
-    id: 1,
-    img: 'https://picsum.photos/1/1?grayscale',
-    message: {
-      text: `Я понять не могу почему так выходит. 
-		Что не запуск то новый баг какой-то.`,
-      date: 'Вчера, 14:25',
-      you: true,
-    },
-  },
-  {
-    id: 2,
-    img: 'https://picsum.photos/1/1?grayscale',
-    message: {
-      text: 'Слушай, да пошло оно всё.',
-      date: 'Вчера, 15:30',
-    },
-  },
-  {
-    id: 3,
-    img: 'https://picsum.photos/1/1?grayscale',
-    message: {
-      text: 'Да конечно, лучше брошу это дело пойду таксистом поработаю.',
-      date: 'Вчера, 15:50',
-      you: true,
-    },
-  },
-  {
-    id: 4,
-    img: 'https://picsum.photos/1/1?grayscale',
-    message: {
-      text: 'А я сварщиком.',
-      date: 'Вчера, 15:51',
-    },
-  },
-  {
-    id: 1,
-    img: 'https://picsum.photos/1/1?grayscale',
-    message: {
-      text: `Я понять не могу почему так выходит. 
-		Что не запуск то новый баг какой-то.`,
-      date: 'Вчера, 14:25',
-      you: true,
-    },
-  },
-  {
-    id: 2,
-    img: 'https://picsum.photos/1/1?grayscale',
-    message: {
-      text: 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
-      date: 'Вчера, 15:30',
-    },
-  },
-  {
-    id: 3,
-    img: 'https://picsum.photos/1/1?grayscale',
-    message: {
-      text: 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
-      date: 'Вчера, 15:50',
-      you: true,
-    },
-  },
-  {
-    id: 4,
-    img: 'https://picsum.photos/1/1?grayscale',
-    message: {
-      text: 'А я сварщиком.',
-      date: 'Вчера, 15:51',
+      you: false,
+      file: {
+        images: [
+          'https://vjoy.cc/wp-content/uploads/2019/07/1-1.jpg',
+          'https://vjoy.cc/wp-content/uploads/2019/07/1-1.jpg',
+          'https://vjoy.cc/wp-content/uploads/2019/07/1-1.jpg',
+          'https://vjoy.cc/wp-content/uploads/2019/07/1-1.jpg',
+          'https://vjoy.cc/wp-content/uploads/2019/07/1-1.jpg',
+          'https://vjoy.cc/wp-content/uploads/2019/07/1-1.jpg',
+          'https://vjoy.cc/wp-content/uploads/2019/07/1-1.jpg',
+          'https://vjoy.cc/wp-content/uploads/2019/07/1-1.jpg',
+          'https://vjoy.cc/wp-content/uploads/2019/07/1-1.jpg',
+          'https://vjoy.cc/wp-content/uploads/2019/07/1-1.jpg',
+          'https://vjoy.cc/wp-content/uploads/2019/07/1-1.jpg',
+          'https://vjoy.cc/wp-content/uploads/2019/07/1-1.jpg',
+          'https://vjoy.cc/wp-content/uploads/2019/07/1-1.jpg',
+          'https://vjoy.cc/wp-content/uploads/2019/07/1-1.jpg',
+          'https://vjoy.cc/wp-content/uploads/2019/07/1-1.jpg',
+          'https://vjoy.cc/wp-content/uploads/2019/07/1-1.jpg',
+        ],
+      },
     },
   },
 ];

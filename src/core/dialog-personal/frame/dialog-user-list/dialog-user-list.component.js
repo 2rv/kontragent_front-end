@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 import { DialogUserListItemComponent } from './dialog-user-list-item.component';
 import { IndentLayout, SectionLayout } from '../../../../lib/elements/layout';
-import { PrimaryTitleText } from '../../../../lib/elements/text';
+import { PrimaryText, PrimaryTitleText } from '../../../../lib/elements/text';
 import {
   spacing,
   THEME_SIZE,
@@ -11,6 +11,7 @@ import {
 } from '../../../../lib/theme';
 import { SecondarySelect } from '../../../../lib/elements/field';
 import { SecondaryInput } from '../../../../lib/elements/input';
+import { PrimaryDivider } from '../../../../lib/elements/divider';
 
 export function DialogUserListComponent(props) {
   const {
@@ -22,6 +23,18 @@ export function DialogUserListComponent(props) {
     dialogPersonalUserListData,
     selectOption,
   } = props;
+  const { favoriteList, usersList } = dialogPersonalUserListData.reduce(
+    (obj, user) => {
+      if (user.favorite) {
+        obj.favoriteList.push(user);
+      } else {
+        obj.usersList.push(user);
+      }
+      return obj;
+    },
+    { favoriteList: [], usersList: [] },
+  );
+
   return (
     <Container>
       <Header>
@@ -32,13 +45,24 @@ export function DialogUserListComponent(props) {
         <SecondaryInput placeholder="Найти диалог или сообщение" />
       </Header>
       <List>
-        {dialogPersonalUserListData.map((data, index) => (
+        {favoriteList && (
+          <>
+            {favoriteList.map((data, index) => (
+              <DialogUserListItemComponent key={index} data={data} />
+            ))}
+            <Divider />
+          </>
+        )}
+        {usersList.map((data, index) => (
           <DialogUserListItemComponent key={index} data={data} />
         ))}
       </List>
     </Container>
   );
 }
+const Divider = styled(PrimaryDivider)`
+  background-color: #e7e7e7;
+`;
 const Container = styled.div`
   display: flex;
   flex-direction: column;

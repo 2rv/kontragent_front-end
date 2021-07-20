@@ -16,7 +16,7 @@ import { CircleDivider } from '../../../../lib/elements/divider';
 export function NewsHeader(props) {
   const { newsTitle, newsDescription, newsTime, newsAuthor } = props;
   return (
-    <SectionLayout type="MEDIUM">
+    <SectionLayout type="SMALL">
       <Title tid={newsTitle} />
       <DescriptionCase>
         <Text tid={newsDescription} />

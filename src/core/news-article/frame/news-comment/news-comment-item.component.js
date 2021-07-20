@@ -12,17 +12,17 @@ import { SectionLayout } from '../../../../lib/elements/layout';
 export function NewsCommentListItemComponent(props) {
   const { avatar, author, time, text } = props.data;
   return (
-    <>
-      <CommentItem>
-        <Avatar src={avatar} />
+    <CommentItem>
+      <Avatar src={avatar} />
+      <SectionLayout type="MEDIUM">
         <CommentText type="SMALL">
           <Author tid={author} />
           <Text tid={text} />
           <Time tid={time} />
         </CommentText>
-      </CommentItem>
-      <PrimaryDivider />
-    </>
+        <PrimaryDivider />
+      </SectionLayout>
+    </CommentItem>
   );
 }
 

@@ -24,11 +24,11 @@ export function ReferralListComponent(props) {
     <Container type="LARGE">
       <PrimaryTitleText tid="REFERRAL.REFERRAL_LIST" />
       <Content>
-        <List>
+        <SectionLayout>
           {referralList.map((data, index) => (
             <ReferralItemComponent key={index} data={data} />
           ))}
-        </List>
+        </SectionLayout>
       </Content>
     </Container>
   );
@@ -36,22 +36,9 @@ export function ReferralListComponent(props) {
 const Container = styled(SectionLayout)`
   display: flex;
   flex-direction: column;
-  min-height: 0;
-  flex-grow: 1;
 `;
 const Content = styled(PrimaryBox)`
   display: flex;
   flex-direction: column;
-  min-height: 0;
-  flex-grow: 1;
   padding: ${spacing(8)};
-  padding-right: ${spacing(2)};
-`;
-const List = styled(SectionLayout)`
-  display: flex;
-  flex-direction: column;
-  min-height: 0;
-  flex-grow: 1;
-  overflow: auto;
-  padding-right: ${spacing(6)};
 `;

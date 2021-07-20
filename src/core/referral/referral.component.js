@@ -21,62 +21,51 @@ export function ReferralComponent(props) {
     <>
       {(isPending || pageLoading) && <PrimaryLoader />}
       <Container>
-        <Background />
-        <Content>
-          <ReferralHeaderComponent />
-          <ReferralDashboardComponent
-            pageLoading={pageLoading}
-            isPending={isPending}
-            isError={isError}
-            isSuccess={isSuccess}
-            errorMessage={errorMessage}
-          />
-          <ReferralListContainer
-            pageLoading={pageLoading}
-            isPending={isPending}
-            isError={isError}
-            isSuccess={isSuccess}
-            errorMessage={errorMessage}
-            referralList={referralList}
-          />
-          <ReferralFindFormContainer
-            pageLoading={pageLoading}
-            isPending={isPending}
-            isError={isError}
-            isSuccess={isSuccess}
-            errorMessage={errorMessage}
-          />
-        </Content>
+        <ReferralHeaderComponent />
+        <ReferralDashboardComponent
+          pageLoading={pageLoading}
+          isPending={isPending}
+          isError={isError}
+          isSuccess={isSuccess}
+          errorMessage={errorMessage}
+        />
+        <ReferralListContainer
+          pageLoading={pageLoading}
+          isPending={isPending}
+          isError={isError}
+          isSuccess={isSuccess}
+          errorMessage={errorMessage}
+          referralList={referralList}
+        />
+        <ReferralFindFormContainer
+          pageLoading={pageLoading}
+          isPending={isPending}
+          isError={isError}
+          isSuccess={isSuccess}
+          errorMessage={errorMessage}
+        />
       </Container>
     </>
   );
 }
+
 const Container = styled.div`
   position: absolute;
   top: 0px;
   left: 0px;
-  bottom: 0px;
   right: 0px;
-  display: flex;
-  flex-direction: column;
-  min-height: 0;
-  padding: ${spacing(8)};
-  padding-right: ${spacing(2)};
-`;
-const Content = styled.div`
-  position: relative;
-  display: flex;
-  flex-direction: column;
+  bottom: 0px;
   gap: ${spacing(8)};
-  min-height: 0;
+  padding: ${spacing(8)};
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
   flex-grow: 1;
-  padding-right: ${spacing(6)};
-`;
-const Background = styled.div`
-  position: absolute;
-  left: 0px;
-  bottom: 0px;
-  right: 0px;
-  height: 60%;
-  background-color: ${THEME_COLOR.COLOR.ACCENT};
+  min-height: 0;
+  background-color: ${THEME_COLOR.COLOR.SECONDARY};
+  background: linear-gradient(
+    0deg,
+    ${THEME_COLOR.COLOR.ACCENT} 55%,
+    ${THEME_COLOR.COLOR.SECONDARY} 55%
+  );
 `;

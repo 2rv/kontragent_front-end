@@ -7,7 +7,7 @@ import { ReactComponent as FileIcon } from '../../../../asset/svg/file.svg';
 import { ReactComponent as SendIcon } from '../../../../asset/svg/send.svg';
 
 import { PrimaryText, SecondaryText } from '../../../../lib/elements/text';
-import { TextareaField } from '../../../../lib/elements/field';
+import { PrimaryField } from '../../../../lib/elements/field';
 import {
   spacing,
   THEME_VALUE,
@@ -49,15 +49,15 @@ export function DialogMessageListComponent(props) {
         ))}
       </Content>
       <Footer>
-        <TextareaField
-          placeholderTid="Напишите сообщение"
-          isFile={true}
-          isSend={true}
-        />
+        <Field placeholderTid="Напишите сообщение" />
       </Footer>
     </Container>
   );
 }
+const Field = styled(PrimaryField)`
+  height: 56px;
+`;
+
 const Container = styled.div`
   background: ${THEME_COLOR.COLOR.BASE};
   display: flex;

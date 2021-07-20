@@ -10,7 +10,6 @@ export function DashboardComponent(props) {
     <>
       {(isPending || pageLoading) && <PrimaryLoader />}
       <Container>
-        <Background />
         <Content>
           <AdvertContainer type="BAR" />
           <NewsAndBlogComponent />
@@ -20,32 +19,30 @@ export function DashboardComponent(props) {
     </>
   );
 }
+const Content = styled.div`
+  padding-right: ${spacing(6)};
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  min-height: 0;
+  overflow: auto;
+  gap: ${spacing(8)};
+`;
 const Container = styled.div`
   position: absolute;
   top: 0px;
   left: 0px;
-  bottom: 0px;
   right: 0px;
-  display: flex;
-  flex-direction: column;
-  min-height: 0;
+  bottom: 0px;
   padding: ${spacing(8)};
   padding-right: ${spacing(2)};
-`;
-const Content = styled.div`
-  position: relative;
   display: flex;
   flex-direction: column;
-  gap: ${spacing(8)};
-  overflow: auto;
-  padding-right: ${spacing(6)};
-`;
-const Background = styled.div`
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  bottom: 0px;
-  right: 0px;
-  height: 830px;
-  background-color: ${THEME_COLOR.COLOR.ACCENT};
+  flex-grow: 1;
+  min-height: 0;
+  background: linear-gradient(
+    0deg,
+    ${THEME_COLOR.COLOR.SECONDARY} 30%,
+    ${THEME_COLOR.COLOR.ACCENT} 30%
+  );
 `;

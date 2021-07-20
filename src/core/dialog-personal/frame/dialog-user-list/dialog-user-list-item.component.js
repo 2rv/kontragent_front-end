@@ -13,47 +13,49 @@ import {
   THEME_COLOR,
   THEME_VALUE,
 } from '../../../../lib/theme';
+import { ReactComponent as StarIcon } from '../../../../asset/svg/star-icon.svg';
 
 export function DialogUserListItemComponent(props) {
-  const { img, name, status, statusId, content } = props.data;
+  const { img, name, status, statusId, content, favorite } = props.data;
 
   return (
-    <>
-      <Box>
-        {content.unreadedMessages && (
-          <UnreadBadge>
-            <UnreadNumber>{content.unreadedMessages}</UnreadNumber>
-          </UnreadBadge>
-        )}
-        <IndentLayout type="STANDART">
-          <Container>
-            <Avatar src={img} />
-            <SectionLayout type="SMALL">
-              <FullName>
-                {name} <Status statusId={statusId}>{status}</Status>
-              </FullName>
-              <Content>
-                <MessageText>
-                  {content.you && <BoldText>{content.you}&nbsp;</BoldText>}
-                  {content.message}
-                </MessageText>
-                {!content.you && (
-                  <DateCase>
-                    &nbsp;
-                    <CircleDivider />
-                    &nbsp;
-                    <Date>{content.date}</Date>
-                  </DateCase>
-                )}
-              </Content>
-            </SectionLayout>
-          </Container>
-        </IndentLayout>
-      </Box>
-      {statusId === 0 ? <Divider /> : null}
-    </>
+    <Box>
+      {content.unreadedMessages && (
+        <UnreadBadge>
+          <UnreadNumber>{content.unreadedMessages}</UnreadNumber>
+        </UnreadBadge>
+      )}
+      <IndentLayout type="STANDART">
+        <Container>
+          <Avatar src={img} />
+          <SectionLayout type="SMALL">
+            <FullName>
+              {name} <Status statusId={statusId}>{status}</Status>
+            </FullName>
+            <Content>
+              <MessageText>
+                {content.you && <BoldText>{content.you}&nbsp;</BoldText>}
+                {content.message}
+              </MessageText>
+              {!content.you && (
+                <DateCase>
+                  &nbsp;
+                  <CircleDivider />
+                  &nbsp;
+                  <Date>{content.date}</Date>
+                </DateCase>
+              )}
+            </Content>
+          </SectionLayout>
+          {favorite && <FavoriteIcon />}
+        </Container>
+      </IndentLayout>
+    </Box>
   );
 }
+const FavoriteIcon = styled(StarIcon)`
+  fill: ${THEME_COLOR.COLOR.LIGHT_GREY};
+`;
 const Box = styled(PrimaryBox)`
   position: relative;
   width: 100%;
@@ -78,7 +80,7 @@ const UnreadNumber = styled(PrimaryText)`
 const Container = styled.div`
   display: grid;
   align-items: center;
-  grid-template-columns: auto 1fr;
+  grid-template-columns: auto 1fr auto;
   gap: ${spacing(4)};
 `;
 const Avatar = styled.img`
@@ -126,7 +128,4 @@ const DateCase = styled.div`
 `;
 const Date = styled(SecondaryText)`
   font-size: ${THEME_SIZE.FONT.TINY};
-`;
-const Divider = styled(PrimaryDivider)`
-  background-color: ${THEME_COLOR.COLOR.LIGHT_GREY};
 `;
