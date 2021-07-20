@@ -11,7 +11,7 @@ export function CounterpartyComponent(props) {
 
   return (
     <Container>
-      <CounterpartyText tid="COUNTERPARTY.TITLE" />
+      <Title tid="COUNTERPARTY.TITLE" />
       <TabsComponent
         tabsList={tabsList}
         activeTabId={activeTabId}
@@ -37,6 +37,6 @@ const Container = styled.div`
   min-height: 0;
 `;
 
-const CounterpartyText = styled(PrimaryTitleText)`
+const Title = styled(PrimaryTitleText)`
   font-size: ${THEME_SIZE.FONT.HUGE};
 `;

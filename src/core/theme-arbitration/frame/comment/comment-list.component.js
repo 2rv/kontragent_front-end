@@ -20,14 +20,14 @@ export function CommentListComponent(props) {
   } = props;
 
   return (
-    <Container>
+    <List>
       {dataComment.map((item, index) => (
         <CommentItemComponent key={item?.id || index} {...item} />
       ))}
-    </Container>
+    </List>
   );
 }
-const Container = styled.div`
+const List = styled.div`
   display: flex;
   flex-direction: column;
   flex-grow: 1;

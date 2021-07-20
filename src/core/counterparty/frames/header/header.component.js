@@ -10,7 +10,7 @@ export function HeaderComponent(props) {
     <HeaderContainer>
       <Title tid={title} color={titleColor} />
       <div>
-        <SecondaryText tid={companyType} />
+        <Text tid={companyType} />
         &nbsp;
         <CompanyName tid={companyName} />
       </div>
@@ -30,7 +30,9 @@ const Title = styled(PrimaryText)`
   font-weight: ${THEME_VALUE.FONT_WEIGHT.MEDIUM};
   ${(props) => props.color && `color: ${props.color}`};
 `;
-
+const Text = styled(SecondaryText)`
+  font-size: ${THEME_SIZE.FONT.DEFAULT};
+`;
 const CompanyName = styled(PrimaryText)`
   font-weight: ${THEME_VALUE.FONT_WEIGHT.MEDIUM};
 `;

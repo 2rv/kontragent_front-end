@@ -15,72 +15,80 @@ export function DialogMessageListItemComponent(props) {
   const { img, message } = props.data;
 
   return (
-    <Container my={message?.you}>
-      <InfoCase>
-        {message?.you && <InfoText tid="DIALOGS.DIALOG.YOUR_MESSAGE" />}
-      </InfoCase>
-      <Content my={message?.you}>
-        <Avatar my={message?.you} src={img} />
-        <Case>
-          <TextCase>
-            <MessageText>{message?.text}</MessageText>
-          </TextCase>
+    <Layout my={message?.you}>
+      <Container>
+        <AvatarCase my={message?.you}>
+          <Avatar src={img} />
+        </AvatarCase>
+        <Content>
+          {message?.you && <InfoText tid="DIALOGS.DIALOG.YOUR_MESSAGE" />}
+          <Case>
+            <TextCase>
+              <MessageText>{message?.text}</MessageText>
+            </TextCase>
 
-          {message?.file?.images && (
-            <ImageList images={message.file.images.length}>
-              {message?.file?.images.map((img, index) => (
-                <ImageCase key={index} src={img} />
-              ))}
-            </ImageList>
-          )}
-          {message?.file?.files && (
-            <FileList>
-              {message.file.files.map(
-                ({ filename, filetype, filesize }, index) => (
-                  <FileCase key={index}>
-                    <Button>
-                      <BacketIcon />
-                    </Button>
-                    <FileInfo>
-                      <BoldText>
-                        {filename} {filetype}
-                      </BoldText>
-                      <InfoText>{filesize}</InfoText>
-                    </FileInfo>
-                  </FileCase>
-                ),
-              )}
-            </FileList>
-          )}
-        </Case>
-      </Content>
-      <InfoCase>
-        <InfoText>{message?.date}</InfoText>
-      </InfoCase>
-    </Container>
+            {message?.file?.images && (
+              <ImageList images={message.file.images.length}>
+                {message?.file?.images.map((img, index) => (
+                  <ImageCase key={index} src={img} />
+                ))}
+              </ImageList>
+            )}
+            {message?.file?.files && (
+              <FileList>
+                {message.file.files.map(
+                  ({ filename, filetype, filesize }, index) => (
+                    <FileCase key={index}>
+                      <Button>
+                        <BacketIcon />
+                      </Button>
+                      <FileInfo>
+                        <BoldText>
+                          {filename} {filetype}
+                        </BoldText>
+                        <InfoText>{filesize}</InfoText>
+                      </FileInfo>
+                    </FileCase>
+                  ),
+                )}
+              </FileList>
+            )}
+          </Case>
+          <InfoText>{message?.date}</InfoText>
+        </Content>
+      </Container>
+    </Layout>
   );
 }
-const Container = styled.div`
+const Layout = styled.div`
   display: flex;
-  flex-direction: column;
-  gap: ${spacing(2)};
-  ${({ my }) => my && 'margin-left: auto'};
+  ${({ my }) => my && 'justify-content: flex-end;'}
 `;
-const InfoCase = styled.div`
-  margin: 0 38px;
-`;
-const Content = styled.div`
+const AvatarCase = styled.div`
   display: flex;
-  flex-direction: row;
-  gap: ${spacing(2)};
-  ${({ my }) => (my ? 'margin-left: 38px;' : 'margin-right: 38px;')};
+  min-width: 30px;
+  align-items: flex-end;
+  margin-bottom: ${spacing(5)};
+  order: ${({ my }) => (my ? 1 : 0)};
 `;
 const Avatar = styled.img`
-  order: ${({ my }) => (my ? 1 : 0)};
   width: 30px;
   height: 30px;
   margin-top: ${spacing(2)};
   border-radius: ${THEME_SIZE.RADIUS.CIRCLE};
+`;
+const Container = styled.div`
+  max-width: 50%;
+  display: flex;
+  gap: ${spacing(3)};
+  @media screen and (max-width: 1000px) {
+    max-width: 80%;
+  }
+`;
+const Content = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: ${spacing(2)};
 `;
 const Case = styled(PrimaryBox)`
   background: ${THEME_COLOR.COLOR.SECONDARY};
@@ -107,8 +115,7 @@ const ImageList = styled.div`
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 `;
 const FileList = styled.div`
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
   gap: ${spacing(3)};
 `;
 const FileCase = styled.div`

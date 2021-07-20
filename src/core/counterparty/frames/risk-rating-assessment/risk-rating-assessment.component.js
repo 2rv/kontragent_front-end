@@ -10,7 +10,7 @@ export function RiskRatingAssessmentComponent() {
   return (
     <Container>
       <IndentLayout>
-        <SectionLayout>
+        <SectionLayout type="LARGE">
           <HeaderComponent
             title="COUNTERPARTY.RISK_RATING_ASSESSMENT.HEADER.TITLE"
             companyType="COUNTERPARTY.RISK_RATING_ASSESSMENT.HEADER.COMPANY_TYPE"
@@ -24,6 +24,5 @@ export function RiskRatingAssessmentComponent() {
 }
 
 const Container = styled(PrimaryBox)`
-  width: 100%;
-  height: fit-content;
+  display: flex;
 `;

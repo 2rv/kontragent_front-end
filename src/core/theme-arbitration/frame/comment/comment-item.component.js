@@ -7,6 +7,7 @@ import {
   THEME_VALUE,
 } from '../../../../lib/theme';
 import { PrimaryDivider } from '../../../../lib/elements/divider';
+import { SectionLayout } from '../../../../lib/elements/layout';
 
 export function CommentItemComponent(props) {
   const { avatar, author, role, time, text, images } = props;
@@ -15,20 +16,21 @@ export function CommentItemComponent(props) {
     <Container>
       <Avatar src={avatar} />
       <ContentCase>
-        <Line>
-          <Author tid={author} />
-          <Role roleColor={roleColor} tid={roleText} />
-        </Line>
-        <Text tid={text} />
-        {images && <Image src={images} />}
-        <Time tid={time} />
+        <SectionLayout type="SMALL">
+          <Line>
+            <Author tid={author} />
+            <Role roleColor={roleColor} tid={roleText} />
+          </Line>
+          <Text tid={text} />
+          {images && <Image src={images} />}
+          <Time tid={time} />
+        </SectionLayout>
         <PrimaryDivider />
       </ContentCase>
     </Container>
   );
 }
 const Image = styled.img`
-  display: flex;
   height: 280px;
   border-radius: ${THEME_SIZE.RADIUS.DEFAULT};
 `;
@@ -51,7 +53,7 @@ const ContentCase = styled.div`
   padding-top: ${spacing(2)};
   display: flex;
   flex-direction: column;
-  gap: ${spacing(2)};
+  gap: ${spacing(3)};
 `;
 const Author = styled(PrimaryText)`
   font-weight: ${THEME_VALUE.FONT_WEIGHT.MEDIUM};

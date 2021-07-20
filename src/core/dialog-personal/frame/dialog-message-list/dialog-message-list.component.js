@@ -117,8 +117,4 @@ const Content = styled.div`
   overflow: auto;
   gap: ${spacing(6)};
   padding-right: ${spacing(4)};
-  ::-webkit-scrollbar {
-    width: 4px;
-    height: 4px;
-  }
 `;

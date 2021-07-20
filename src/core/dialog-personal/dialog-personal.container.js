@@ -218,7 +218,7 @@ const dialogPersonalMessageListData = [
     id: 5,
     img: 'https://77.img.avito.st/640x480/9591336877.jpg',
     message: {
-      text: 'аааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааа',
+      text: 'Hello',
       date: 'Вчера, 15:30',
       file: {
         files: [
@@ -292,6 +292,24 @@ const dialogPersonalMessageListData = [
             filetype: '.zip',
             filesize: '750B',
           },
+        ],
+        images: [
+          'https://vjoy.cc/wp-content/uploads/2019/07/1-1.jpg',
+          'https://vjoy.cc/wp-content/uploads/2019/07/1-1.jpg',
+          'https://vjoy.cc/wp-content/uploads/2019/07/1-1.jpg',
+          'https://vjoy.cc/wp-content/uploads/2019/07/1-1.jpg',
+          'https://vjoy.cc/wp-content/uploads/2019/07/1-1.jpg',
+          'https://vjoy.cc/wp-content/uploads/2019/07/1-1.jpg',
+          'https://vjoy.cc/wp-content/uploads/2019/07/1-1.jpg',
+          'https://vjoy.cc/wp-content/uploads/2019/07/1-1.jpg',
+          'https://vjoy.cc/wp-content/uploads/2019/07/1-1.jpg',
+          'https://vjoy.cc/wp-content/uploads/2019/07/1-1.jpg',
+          'https://vjoy.cc/wp-content/uploads/2019/07/1-1.jpg',
+          'https://vjoy.cc/wp-content/uploads/2019/07/1-1.jpg',
+          'https://vjoy.cc/wp-content/uploads/2019/07/1-1.jpg',
+          'https://vjoy.cc/wp-content/uploads/2019/07/1-1.jpg',
+          'https://vjoy.cc/wp-content/uploads/2019/07/1-1.jpg',
+          'https://vjoy.cc/wp-content/uploads/2019/07/1-1.jpg',
         ],
       },
     },

@@ -43,7 +43,7 @@ export function ThemeArbitrationComponent(props) {
           role={role}
           time={time}
         />
-        <Content>
+        <Content type="LARGE">
           <ContentHeaderCase>
             <ContentTitle tid="THEME_ARBITRATION.REVIEWS" />
             <LineCase>
@@ -72,13 +72,11 @@ const ContentTitle = styled(PrimaryText)`
 const NameCompany = styled(PrimaryText)`
   font-weight: ${THEME_VALUE.FONT_WEIGHT.MEDIUM};
 `;
-const Content = styled(SectionLayout)`
+const Content = styled(PrimaryBox)`
   display: flex;
   flex-direction: column;
   min-height: 0;
   flex-grow: 1;
-  background-color: ${THEME_COLOR.COLOR.BASE};
-  border-radius: ${THEME_SIZE.RADIUS.DEFAULT};
   padding: ${spacing(8)};
   padding-right: ${spacing(2)};
   gap: ${spacing(6)};

@@ -6,22 +6,27 @@ import { NoticeInfoComponent } from './frame/notice-info';
 
 import { DANGER_NOTICES } from './information.constant';
 
-import { PrimaryButton, SecondaryButton } from '../../../../lib/elements/button';
+import {
+  PrimaryButton,
+  SecondaryButton,
+} from '../../../../lib/elements/button';
 import { spacing } from '../../../../lib/theme';
+import { SectionLayout } from '../../../../lib/elements/layout';
 
 export function InformationComponent() {
   return (
     <Container>
-      <HeaderComponent
-        title="COUNTERPARTY.DETAIL_INFORMATION.HEADER.TITLE"
-        companyType="COUNTERPARTY.DETAIL_INFORMATION.HEADER.COMPANY_TYPE"
-        companyName={'"Компания Гермес-Электро"'}
-      >
-        <Content>
+      <SectionLayout type="LARGE">
+        <HeaderComponent
+          title="COUNTERPARTY.DETAIL_INFORMATION.HEADER.TITLE"
+          companyType="COUNTERPARTY.DETAIL_INFORMATION.HEADER.COMPANY_TYPE"
+          companyName={'"Компания Гермес-Электро"'}
+        />
+        <ActionCase>
           <PrimaryButton tid="COUNTERPARTY.DETAIL_INFORMATION.HEADER.DOWNLOAD_INFO_IN_PDF" />
           <SecondaryButton tid="COUNTERPARTY.DETAIL_INFORMATION.HEADER.LEGAL_ADVICE_FACE" />
-        </Content>
-      </HeaderComponent>
+        </ActionCase>
+      </SectionLayout>
       <DangerNoticesComponent dangerNotices={DANGER_NOTICES} />
       <NoticeInfoComponent />
     </Container>
@@ -29,14 +34,16 @@ export function InformationComponent() {
 }
 
 const Container = styled.div`
-  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  min-height: 0;
+  gap: ${spacing(8)};
 `;
 
-const Content = styled.div`
-  display: flex;
+const ActionCase = styled.div`
+  display: grid;
   gap: ${spacing(4)};
-  margin-top: ${spacing(6)};
-  button {
-    width: 320px;
-  }
+  height: 46px;
+  grid-template-columns: minmax(auto, 318px) minmax(auto, 318px);
 `;
