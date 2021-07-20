@@ -39,7 +39,7 @@ export function BalanceActivityComponent(props) {
         <ContentCase>
           {activityItems.map(({ operation, time, sentMoney, check = false }) => {
             return (
-              <PrimaryBox>
+              <ListItemContent>
                 <IndentLayout type="STANDART">
                   <ItemCase>
                     <InfoCase>
@@ -54,7 +54,7 @@ export function BalanceActivityComponent(props) {
                     {sentMoney && <SentMoney tid={`-${sentMoney}`} />}
                   </ItemCase>
                 </IndentLayout>
-              </PrimaryBox>
+              </ListItemContent>
             );
           })}
         </ContentCase>
@@ -71,6 +71,13 @@ const Container = styled.div`
   gap: ${spacing(6)};
   width: 100%;
   height: 100%;
+`;
+const ListItemContent = styled.div`
+  display: flex;
+  padding: 0 ${spacing(4)};
+  &:hover {
+    background-color: ${THEME_COLOR.COLOR.SECONDARY};
+  }
 `;
 const HeaderCase = styled.div`
   display: flex;
@@ -95,9 +102,13 @@ const Valute = styled(SecondaryText)`
 const Button = styled(PrimaryButton)`
   width: 226px;
 `;
-const ContentCase = styled.div`
-  display: grid;
-  gap: ${spacing(4)};
+const ContentCase = styled(PrimaryBox)`
+  display: flex;
+  flex-direction: column;
+  padding: ${spacing(4)} 0;
+  min-height: 0:
+  flex-grow: 1:
+  overflow: auto:
 `;
 const ItemCase = styled.div`
   display: flex;
