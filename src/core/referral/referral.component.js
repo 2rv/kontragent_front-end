@@ -21,31 +21,29 @@ export function ReferralComponent(props) {
     <>
       {(isPending || pageLoading) && <PrimaryLoader />}
       <Container>
-        <Content>
-          <ReferralHeaderComponent />
-          <ReferralDashboardComponent
-            pageLoading={pageLoading}
-            isPending={isPending}
-            isError={isError}
-            isSuccess={isSuccess}
-            errorMessage={errorMessage}
-          />
-          <ReferralListContainer
-            pageLoading={pageLoading}
-            isPending={isPending}
-            isError={isError}
-            isSuccess={isSuccess}
-            errorMessage={errorMessage}
-            referralList={referralList}
-          />
-          <ReferralFindFormContainer
-            pageLoading={pageLoading}
-            isPending={isPending}
-            isError={isError}
-            isSuccess={isSuccess}
-            errorMessage={errorMessage}
-          />
-        </Content>
+        <ReferralHeaderComponent />
+        <ReferralDashboardComponent
+          pageLoading={pageLoading}
+          isPending={isPending}
+          isError={isError}
+          isSuccess={isSuccess}
+          errorMessage={errorMessage}
+        />
+        <ReferralListContainer
+          pageLoading={pageLoading}
+          isPending={isPending}
+          isError={isError}
+          isSuccess={isSuccess}
+          errorMessage={errorMessage}
+          referralList={referralList}
+        />
+        <ReferralFindFormContainer
+          pageLoading={pageLoading}
+          isPending={isPending}
+          isError={isError}
+          isSuccess={isSuccess}
+          errorMessage={errorMessage}
+        />
       </Container>
     </>
   );
@@ -56,8 +54,6 @@ const Content = styled.div`
   flex-direction: column;
   flex-grow: 1;
   min-height: 0;
-  overflow: auto;
-  gap: ${spacing(8)};
 `;
 const Container = styled.div`
   position: absolute;
@@ -65,7 +61,9 @@ const Container = styled.div`
   left: 0px;
   right: 0px;
   bottom: 0px;
-  padding: ${spacing(8)} ${spacing(2)};
+  overflow: auto;
+  gap: ${spacing(8)};
+  padding: ${spacing(8)};
   display: flex;
   flex-direction: column;
   flex-grow: 1;

@@ -43,6 +43,6 @@ export function FeedAndNotificationsListComponent(props) {
 const Container = styled.div`
   display: flex;
   flex-direction: column;
-  gap: ${spacing(6)};
+  gap: ${spacing(4)};
   width: 100%;
 `;

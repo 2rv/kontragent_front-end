@@ -17,7 +17,7 @@ export function CommentInputComponent(props) {
     <Container>
       <Avatar src={myAvatar} />
       <FieldCase>
-        <Field placeholderTid="THEME_ARBITRATION.WRITE_COMMENT" />
+        <PrimaryField placeholderTid="THEME_ARBITRATION.WRITE_COMMENT" />
         <ActionsCase>
           <FileIcon />
           <SendIcon />
@@ -36,15 +36,15 @@ const ActionsCase = styled.div`
 const FieldCase = styled.div`
   position: relative;
   display: grid;
-  height: 56px;
   width: 100%;
   align-items: center;
+  height: 56px;
 `;
-const Field = styled(PrimaryField)``;
 const Container = styled.div`
   display: flex;
   padding-right: ${spacing(6)};
   gap: ${spacing(4)};
+  height: 56px;
 `;
 const Avatar = styled.img`
   width: 56px;

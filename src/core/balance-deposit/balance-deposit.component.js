@@ -23,7 +23,7 @@ export function BalanceDepositComponent(props) {
   return (
     <>
       {(isPending || pageLoading) && <PrimaryLoader />}
-      <SectionLayout type="LARGE">
+      <Container type="LARGE">
         <HeaderCase>
           <Title tid="Баланс" />
           <Balance tid="2500" />
@@ -45,11 +45,15 @@ export function BalanceDepositComponent(props) {
             />
           </IndentLayout>
         </PrimaryBox>
-      </SectionLayout>
+      </Container>
     </>
   );
 }
-
+const Container = styled(SectionLayout)`
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+`;
 const HeaderCase = styled.div`
   display: flex;
   gap: ${spacing(2)};

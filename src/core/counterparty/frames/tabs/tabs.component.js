@@ -31,7 +31,7 @@ export function TabsComponent({ tabsList, activeTabId, activeTabHandler }) {
 const Container = styled(PrimaryBox)`
   display: flex;
   width: 100%;
-  gap: ${spacing(2)};
+  justify-content: flex-start;
 `;
 const Button = styled(PrimaryButton)`
   height: 44px;
@@ -40,6 +40,7 @@ const Button = styled(PrimaryButton)`
   box-sizing: border-box;
   padding: 0 ${spacing(4)};
   border-width: 1px;
+  width: max-content;
   border-style: solid;
   border-color: transparent;
   ${(p) => {
@@ -49,5 +50,5 @@ const Button = styled(PrimaryButton)`
 	  color: ${THEME_COLOR.TEXT.PRIMARY}; 
 	  font-weight: ${THEME_VALUE.FONT_WEIGHT.MEDIUM};`;
     if (p.hasDangerNotices) return `color: ${THEME_COLOR.TEXT.VALIDATION};`;
-  }}
+  }};
 `;

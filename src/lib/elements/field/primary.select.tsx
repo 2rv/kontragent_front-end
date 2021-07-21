@@ -43,8 +43,7 @@ const SelectArrowIcon = styled(ArrowIcon)`
 `;
 
 const Container = styled.div`
-  display: flex;
-  flex-direction: column;
+  display: grid;
 `;
 
 const Title: typeof SecondaryText = styled(SecondaryText)`
@@ -53,6 +52,7 @@ const Title: typeof SecondaryText = styled(SecondaryText)`
 
 const Select = styled.select`
   width: 100%;
+  height: 46px;
   padding: ${spacing(4)};
   border-radius: ${THEME_SIZE.RADIUS.DEFAULT};
   border: none;

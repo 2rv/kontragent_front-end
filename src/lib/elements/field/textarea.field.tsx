@@ -16,7 +16,7 @@ export function TextareaField(props: TextAreaPropsType) {
     name,
     placeholderTid,
     error,
-    row = 3,
+    row = 1,
     children,
     isFile,
     isSend,
@@ -48,6 +48,7 @@ const ActionCase = styled.div`
   display: flex;
   top: ${spacing(4)};
   right: ${spacing(4)};
+  align-items: center;
 `;
 const Container = styled.div`
   display: flex;
@@ -62,7 +63,6 @@ const RelativeCase = styled.div`
 `;
 const Textarea = styled.textarea`
   min-height: 56px;
-  /* width: 100%; */
   flex-grow: 1;
   resize: none;
   padding: ${spacing(4)};

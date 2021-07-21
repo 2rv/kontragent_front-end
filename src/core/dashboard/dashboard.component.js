@@ -10,34 +10,25 @@ export function DashboardComponent(props) {
     <>
       {(isPending || pageLoading) && <PrimaryLoader />}
       <Container>
-        <Content>
-          <AdvertContainer type="BAR" />
-          <NewsAndBlogComponent />
-          <ControlBlockComponent />
-        </Content>
+        <AdvertContainer type="BAR" />
+        <NewsAndBlogComponent />
+        <ControlBlockComponent />
       </Container>
     </>
   );
 }
-const Content = styled.div`
-  padding: 0 ${spacing(5)};
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
-  min-height: 0;
-  overflow: auto;
-  gap: ${spacing(8)};
-`;
 const Container = styled.div`
   position: absolute;
   top: 0px;
   left: 0px;
   right: 0px;
   bottom: 0px;
-  padding: ${spacing(8)} ${spacing(2)};
+  gap: ${spacing(8)};
+  padding: ${spacing(8)};
   display: flex;
   flex-direction: column;
   flex-grow: 1;
+  overflow: auto;
   min-height: 0;
   background: linear-gradient(
     0deg,

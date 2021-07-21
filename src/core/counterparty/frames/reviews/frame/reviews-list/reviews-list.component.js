@@ -15,7 +15,7 @@ import {
 
 export function ReviewsListComponent({ reviewsList }) {
   return (
-    <Container>
+    <Container type="MEDIUM">
       {reviewsList.map(({ avatar, author, time, text, status }, index) => (
         <CommentItem key={index}>
           <Avatar src={avatar} />
@@ -60,14 +60,13 @@ const ContentCase = styled.div`
   display: flex;
   flex-direction: column;
   gap: ${spacing(3)};
-  margin-top: ${spacing(6)};
+  padding-top: ${spacing(2)};
 `;
 
 const Avatar = styled.img`
   width: 56px;
   height: 56px;
   border-radius: ${THEME_SIZE.RADIUS.CIRCLE};
-  margin-top: ${spacing(3)};
 `;
 
 const Time = styled(PrimaryText)`
