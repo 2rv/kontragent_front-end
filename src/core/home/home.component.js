@@ -128,7 +128,7 @@ const Case = styled.div`
 `;
 const HomeSVGCase = styled.div`
   position: absolute;
-  left: -120px;
+  left: -105px;
   width: 110%;
 `;
 const Container = styled.div`
