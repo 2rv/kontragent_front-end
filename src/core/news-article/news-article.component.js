@@ -67,18 +67,11 @@ const Container = styled.div`
 const ContentCase = styled(PrimaryBox)`
   display: flex;
   flex-direction: column;
-  flex-grow: 1;
-  min-height: 0;
   padding: ${spacing(8)};
-  padding-right: ${spacing(2)};
 `;
 
 const Content = styled.div`
   display: flex;
   flex-direction: column;
-  flex-grow: 1;
-  min-height: 0;
-  overflow: auto;
-  padding-right: ${spacing(6)};
   gap: ${spacing(3)};
 `;

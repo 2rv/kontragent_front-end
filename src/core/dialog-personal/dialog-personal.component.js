@@ -43,6 +43,7 @@ const Container = styled.div`
   display: flex;
   flex-grow: 1;
   min-height: 0;
+  overflow: auto;
   position: absolute;
   top: 0px;
   left: 0px;

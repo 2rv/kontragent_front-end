@@ -12,12 +12,16 @@ import { spacing, THEME_COLOR } from '../../lib/theme';
 export function SidebarComponent() {
   return (
     <Container>
-      <AccountInfoContainer />
-      <PrimaryDivider />
+      <PaddingCase>
+        <AccountInfoContainer />
+        <PrimaryDivider />
+      </PaddingCase>
       <NavMenuContainer />
-      <AdvertCase>
-        <SidebarAdvertContainer />
-      </AdvertCase>
+      <PaddingCase>
+        <AdvertCase>
+          <SidebarAdvertContainer />
+        </AdvertCase>
+      </PaddingCase>
     </Container>
   );
 }
@@ -26,9 +30,12 @@ const Container = styled.div`
   flex-direction: column;
   min-height: 0;
   flex-grow: 1;
-  padding: 0 ${spacing(8)} ${spacing(8)} ${spacing(8)};
+  padding: 0 ${spacing(2)} ${spacing(8)} ${spacing(8)};
   gap: ${spacing(6)};
 `;
 const AdvertCase = styled.div`
   margin-top: auto;
+`;
+const PaddingCase = styled.div`
+  padding-right: ${spacing(5)};
 `;

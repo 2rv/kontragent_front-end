@@ -10,7 +10,10 @@ import {
   PrimaryText,
   SecondaryText,
 } from '../../../../../../lib/elements/text';
-import { PrimaryButton } from '../../../../../../lib/elements/button';
+import {
+  PrimaryButton,
+  SecondaryButton,
+} from '../../../../../../lib/elements/button';
 import { CircleDivider } from '../../../../../../lib/elements/divider';
 import {
   spacing,
@@ -37,26 +40,28 @@ export function VerificationsListComponent(props) {
             <Info tid={info.title} infoId={info.id} />
           </LineCase>
         </SectionLayout>
-        <ButtonLayout type="double">
+        <ActionCase>
           <CancelButton tid="COUNTERPARTY.VERIFICATIONS.BUTTONS.CANCEL" />
           {paid ? (
             <PaidButton tid="COUNTERPARTY.VERIFICATIONS.BUTTONS.PAID" />
           ) : (
-            <PrimaryButton tid="COUNTERPARTY.VERIFICATIONS.BUTTONS.PAY" />
+            <PayButton tid="COUNTERPARTY.VERIFICATIONS.BUTTONS.PAY" />
           )}
-        </ButtonLayout>
+        </ActionCase>
       </Layout>
     </Container>
   );
 }
 
 const Container = styled(PrimaryBox)`
+  display: flex;
   background: ${THEME_COLOR.COLOR.SECONDARY};
   height: 80px;
 `;
 const Layout = styled(IndentLayout)`
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr 332px;
+  gap: ${spacing(4)};
 `;
 const LineCase = styled.div`
   display: flex;
@@ -103,15 +108,32 @@ const Date = styled(SecondaryText)`
   font-size: ${THEME_SIZE.FONT.TINY};
   color: ${THEME_COLOR.COLOR.LIGHT_GREY};
 `;
+const ActionCase = styled.div`
+  display: grid;
+  grid-template-columns: 160px 160px;
+  gap: ${spacing(3)};
+`;
 const CancelButton = styled(PrimaryButton)`
   background: ${THEME_COLOR.COLOR.BASE};
   color: ${THEME_COLOR.COLOR.VALIDATION};
-  width: 161px;
   height: 46px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
 `;
-
-const PaidButton = styled(PrimaryButton)`
-  background: ${THEME_COLOR.TEXT.SECONDARY};
-  width: 161px;
+const PaidButton = styled(SecondaryButton)`
+  background-color: ${THEME_COLOR.TEXT.SECONDARY};
   height: 46px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+`;
+const PayButton = styled(PrimaryButton)`
+  height: 46px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
 `;

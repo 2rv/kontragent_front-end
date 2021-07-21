@@ -1,35 +1,30 @@
 import styled from 'styled-components';
 
-import { ReactComponent as Message } from '../../../../../../asset/svg/message.svg';
+import { ReactComponent as Message } from '../../../../asset/svg/message.svg';
 
-import { PrimaryBox } from '../../../../../../lib/elements/box';
-import {
-  IndentLayout,
-  SectionLayout,
-} from '../../../../../../lib/elements/layout';
-import {
-  PrimaryText,
-  SecondaryText,
-} from '../../../../../../lib/elements/text';
-import { CircleDivider } from '../../../../../../lib/elements/divider';
+import { PrimaryBox } from '../../../../lib/elements/box';
+import { IndentLayout, SectionLayout } from '../../../../lib/elements/layout';
+import { PrimaryText, SecondaryText } from '../../../../lib/elements/text';
+import { CircleDivider } from '../../../../lib/elements/divider';
 import {
   spacing,
   THEME_SIZE,
   THEME_COLOR,
   THEME_VALUE,
-} from '../../../../../../lib/theme';
+} from '../../../../lib/theme';
 
-export function ArbitrationCasesListComponent(props) {
+export function ArbitrationCasesListItemComponent(props) {
   const { id, image, text, status, name, time, info, messages } = props.data;
   return (
     <Container>
       <Layout type="SMALL">
         <ArbitrationCaseImage src={image} />
         <Content>
-          <LineCase>
+          <div>
             <MessageText>{text}</MessageText>
+            &nbsp;
             <Status tid={status.title} statusId={status.id} />
-          </LineCase>
+          </div>
           <LineCase>
             <FullNameText>{name}</FullNameText>
             <CircleDivider />
@@ -47,11 +42,15 @@ export function ArbitrationCasesListComponent(props) {
   );
 }
 const Content = styled.div`
-  display: grid;
+  display: flex;
+  flex-direction: column;
+  gap: ${spacing(1)};
 `;
 const Container = styled(PrimaryBox)`
   background: ${THEME_COLOR.COLOR.SECONDARY};
   height: 80px;
+  align-items: center;
+  display: flex;
 `;
 const Layout = styled(IndentLayout)`
   display: grid;
@@ -106,6 +105,7 @@ const ArbitrationCaseImage = styled.img`
 
 const MessageText = styled(PrimaryText)`
   font-weight: ${THEME_VALUE.FONT_WEIGHT.MEDIUM};
+  line-height: 1.5;
 `;
 
 const FullNameText = styled(SecondaryText)`

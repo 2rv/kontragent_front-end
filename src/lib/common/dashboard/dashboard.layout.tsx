@@ -17,7 +17,9 @@ export function DashboardLayout(props: DashboardLayoutPropsType) {
           <SidebarContainer />
         </SidebarCase>
         <ContentCase>
-          <MainContent>{!false && children}</MainContent>
+          <MainContent>
+            <OverflowCase>{!false && children}</OverflowCase>
+          </MainContent>
           <FooterContainer />
         </ContentCase>
       </Content>
@@ -51,6 +53,7 @@ const ContentCase = styled.div`
   display: flex;
   flex-direction: column;
   min-height: 0;
+  overflow: hidden;
   background-color: ${THEME_COLOR.COLOR.SECONDARY};
 `;
 const MainContent = styled.div`
@@ -58,7 +61,15 @@ const MainContent = styled.div`
   display: flex;
   flex-direction: column;
   min-height: 0;
-  padding: ${spacing(8)};
   position: relative;
-  overflow: auto;
+  padding: ${spacing(8)};
+  padding-right: ${spacing(2)};
+`;
+const OverflowCase = styled.div`
+  display: flex;
+  flex-grow: 1;
+  min-height: 0;
+  overflow-y: auto;
+  overflow-x: auto;
+  padding-right: ${spacing(5)};
 `;

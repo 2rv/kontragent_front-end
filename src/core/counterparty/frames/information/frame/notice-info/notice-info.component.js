@@ -121,6 +121,7 @@ export function NoticeInfoComponent() {
 const Container = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
+  gap: ${spacing(8)};
 `;
 const Text = styled(SecondaryText)`
   line-height: 21px;

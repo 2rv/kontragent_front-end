@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { SecondaryText } from '../../../../lib/elements/text';
+import { PrimaryButton } from '../../../../lib/elements/button';
 import { PrimaryBox } from '../../../../lib/elements/box';
 import {
   spacing,
@@ -11,50 +11,41 @@ import {
 
 export function TabsComponent({ tabsList, activeTabId, activeTabHandler }) {
   return (
-    <PrimaryBox>
-      <TabsItemContainer>
-        {(tabsList[tabsList.length - 1].hasDangerNotices
-          ? tabsList
-          : tabsList.slice(0, -1)
-        ).map((tab) => (
-          <TabsItemContent
-            key={tab.id}
-            active={tab.id === activeTabId}
-            onClick={() => activeTabHandler(tab)}
-          >
-            <TextTab
-              hasDangerNotices={tab.hasDangerNotices}
-              active={tab.id === activeTabId}
-              tid={tab.text}
-            />
-          </TabsItemContent>
-        ))}
-      </TabsItemContainer>
-    </PrimaryBox>
+    <Container>
+      {(tabsList[tabsList.length - 1].hasDangerNotices
+        ? tabsList
+        : tabsList.slice(0, -1)
+      ).map((tab) => (
+        <Button
+          hasDangerNotices={tab.hasDangerNotices}
+          active={tab.id === activeTabId}
+          tid={tab.text}
+          key={tab.id}
+          onClick={() => activeTabHandler(tab)}
+        />
+      ))}
+    </Container>
   );
 }
 
-const TabsItemContainer = styled.div`
+const Container = styled(PrimaryBox)`
   display: flex;
-  align-items: center;
+  width: 100%;
+  gap: ${spacing(2)};
 `;
-const TabsItemContent = styled.div`
-  cursor: pointer;
-  display: flex;
-  flex-grow: 1;
-  min-width: 120px;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  border-radius: ${THEME_SIZE.RADIUS.DEFAULT};
-  height: 46px;
-  border: 1px solid transparent;
-  ${(p) => p.active && ` border-color: ${THEME_COLOR.COLOR.LIGHT_GREY};`};
-`;
-const TextTab = styled(SecondaryText)`
+const Button = styled(PrimaryButton)`
+  height: 44px;
+  color: ${THEME_COLOR.TEXT.SECONDARY};
+  background-color: transparent;
+  box-sizing: border-box;
+  padding: 0 ${spacing(4)};
+  border-width: 1px;
+  border-style: solid;
+  border-color: transparent;
   ${(p) => {
     if (p.active)
       return `
+	  border-color: ${THEME_COLOR.COLOR.LIGHT_GREY};
 	  color: ${THEME_COLOR.TEXT.PRIMARY}; 
 	  font-weight: ${THEME_VALUE.FONT_WEIGHT.MEDIUM};`;
     if (p.hasDangerNotices) return `color: ${THEME_COLOR.TEXT.VALIDATION};`;

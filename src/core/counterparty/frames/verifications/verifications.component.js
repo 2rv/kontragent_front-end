@@ -29,17 +29,14 @@ export function VerificationsComponent() {
 const List = styled(SectionLayout)`
   display: flex;
   flex-direction: column;
-  flex-grow: 1;
-  min-height: 0;
-  overflow: auto;
+  min-width: max-content;
   padding-right: ${spacing(2)};
 `;
 const Container = styled(PrimaryBox)`
   display: flex;
   flex-direction: column;
-  flex-grow: 1;
-  min-height: 0;
   padding: ${spacing(8)};
   padding-right: ${spacing(2)};
   gap: ${spacing(6)};
+  flex: 0 0 auto;
 `;

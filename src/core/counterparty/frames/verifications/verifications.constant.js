@@ -15,6 +15,96 @@ export const VERIFICATIONS_LIST = [
     },
   },
   {
+    id: 1,
+    companyName: 'ООО "ТЕХЭЛЕКТРО МСК"',
+    price: '20 000 руб.',
+    time: '25.08.2021',
+    paid: true,
+    status: {
+      title: 'COUNTERPARTY.VERIFICATIONS.STATUS.STANDART',
+      id: 0,
+    },
+    info: {
+      title: 'COUNTERPARTY.VERIFICATIONS.TYPE.DONE',
+      id: 0,
+    },
+  },
+  {
+    id: 1,
+    companyName: 'ООО "ТЕХЭЛЕКТРО МСК"',
+    price: '20 000 руб.',
+    time: '25.08.2021',
+    paid: true,
+    status: {
+      title: 'COUNTERPARTY.VERIFICATIONS.STATUS.STANDART',
+      id: 0,
+    },
+    info: {
+      title: 'COUNTERPARTY.VERIFICATIONS.TYPE.DONE',
+      id: 0,
+    },
+  },
+  {
+    id: 1,
+    companyName: 'ООО "ТЕХЭЛЕКТРО МСК"',
+    price: '20 000 руб.',
+    time: '25.08.2021',
+    paid: true,
+    status: {
+      title: 'COUNTERPARTY.VERIFICATIONS.STATUS.STANDART',
+      id: 0,
+    },
+    info: {
+      title: 'COUNTERPARTY.VERIFICATIONS.TYPE.DONE',
+      id: 0,
+    },
+  },
+  {
+    id: 1,
+    companyName: 'ООО "ТЕХЭЛЕКТРО МСК"',
+    price: '20 000 руб.',
+    time: '25.08.2021',
+    paid: true,
+    status: {
+      title: 'COUNTERPARTY.VERIFICATIONS.STATUS.STANDART',
+      id: 0,
+    },
+    info: {
+      title: 'COUNTERPARTY.VERIFICATIONS.TYPE.DONE',
+      id: 0,
+    },
+  },
+  {
+    id: 1,
+    companyName: 'ООО "ТЕХЭЛЕКТРО МСК"',
+    price: '20 000 руб.',
+    time: '25.08.2021',
+    paid: true,
+    status: {
+      title: 'COUNTERPARTY.VERIFICATIONS.STATUS.STANDART',
+      id: 0,
+    },
+    info: {
+      title: 'COUNTERPARTY.VERIFICATIONS.TYPE.DONE',
+      id: 0,
+    },
+  },
+  {
+    id: 1,
+    companyName: 'ООО "ТЕХЭЛЕКТРО МСК"',
+    price: '20 000 руб.',
+    time: '25.08.2021',
+    paid: true,
+    status: {
+      title: 'COUNTERPARTY.VERIFICATIONS.STATUS.STANDART',
+      id: 0,
+    },
+    info: {
+      title: 'COUNTERPARTY.VERIFICATIONS.TYPE.DONE',
+      id: 0,
+    },
+  },
+  {
     id: 2,
     companyName: 'ООО "КАПСТРОЙЭНЕРОГОТЕХ"',
     price: '60 000 руб.',

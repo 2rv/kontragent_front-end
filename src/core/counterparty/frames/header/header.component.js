@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { SectionLayout } from '../../../../lib/elements/layout';
 
 import { SecondaryText, PrimaryText } from '../../../../lib/elements/text';
 import { spacing, THEME_SIZE, THEME_VALUE } from '../../../../lib/theme';
@@ -7,24 +8,19 @@ export function HeaderComponent(props) {
   const { title, companyType, companyName, titleColor } = props;
 
   return (
-    <HeaderContainer>
+    <SectionLayout type="MEDIUM">
       <Title tid={title} color={titleColor} />
-      <div>
+      <CompanyName>
+        <Text tid="Ваше" />
+        &nbsp;
         <Text tid={companyType} />
         &nbsp;
-        <CompanyName tid={companyName} />
-      </div>
-    </HeaderContainer>
+        {companyName}
+        <Text tid="находится в красной зоне. Вы можете исправить это по советам ниже" />
+      </CompanyName>
+    </SectionLayout>
   );
 }
-
-const HeaderContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  padding-right: ${spacing(6)};
-  gap: ${spacing(3)};
-`;
-
 const Title = styled(PrimaryText)`
   font-size: ${THEME_SIZE.FONT.MEDIUM};
   font-weight: ${THEME_VALUE.FONT_WEIGHT.MEDIUM};
@@ -32,7 +28,9 @@ const Title = styled(PrimaryText)`
 `;
 const Text = styled(SecondaryText)`
   font-size: ${THEME_SIZE.FONT.DEFAULT};
+  line-height: 1.5;
 `;
 const CompanyName = styled(PrimaryText)`
   font-weight: ${THEME_VALUE.FONT_WEIGHT.MEDIUM};
+  line-height: 1.5;
 `;

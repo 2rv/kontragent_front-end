@@ -32,9 +32,10 @@ export function CounterpartyComponent(props) {
 const Container = styled.div`
   display: flex;
   flex-direction: column;
-  gap: ${spacing(6)};
+  width: 100%;
+  min-width: fit-content;
   flex-grow: 1;
-  min-height: 0;
+  gap: ${spacing(6)};
 `;
 
 const Title = styled(PrimaryTitleText)`
