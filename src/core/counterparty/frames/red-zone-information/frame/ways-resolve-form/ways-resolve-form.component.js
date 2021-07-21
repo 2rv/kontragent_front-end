@@ -49,7 +49,10 @@ export function WaysResolveFormComponent(props) {
               {data.map((item, index) => {
                 return (
                   <CheckboxCase key={index} checked={values[item.name]}>
-                    <DangerNoticeTitle tid={item.title} />
+                    <DangerNoticeTitle
+                      tid={item.title}
+                      checked={values[item.name]}
+                    />
                     <DangerNoticeDescription tid={item.description} />
                     <div>
                       <DangerNoticePrice tid={item.price} />
@@ -82,6 +85,7 @@ const DangerNoticeTitle = styled(SecondaryText)`
   color: ${THEME_COLOR.TEXT.PRIMARY};
   font-weight: ${THEME_VALUE.FONT_WEIGHT.MEDIUM};
   line-height: 21px;
+  ${(p) => p.checked && `color: ${THEME_COLOR.TEXT.ACCENT};`};
 `;
 const DangerNoticeDescription = styled(SecondaryText)`
   color: ${THEME_COLOR.TEXT.SECONDARY};
@@ -108,11 +112,12 @@ const CheckboxCase = styled.label`
   padding: ${spacing(4)};
   border: 2px solid transparent;
   transition: 0.2s ease-in;
+  box-shadow: 0px 15px 75px rgba(0, 0, 0, 0.1);
   :hover {
-    background-color: #f3f3f3;
+    background-color: #fff;
   }
-  ${(p) => !p.checked && `box-shadow: 0px 15px 75px rgba(0, 0, 0, 0.1);`};
-  ${(p) => p.checked && `border-color: #3AB8FF; background-color: #f3f3f3;`}
+  background-color: #f3f3f3;
+  ${(p) => p.checked && `border-color: #3AB8FF;`}
 `;
 const Checkbox = styled(Field)`
   display: none;

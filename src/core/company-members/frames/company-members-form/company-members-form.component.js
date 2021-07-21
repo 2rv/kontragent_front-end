@@ -47,6 +47,7 @@ const FieldCase = styled.div`
 const Button = styled(SecondaryButton)`
   height: 46px;
   display: flex;
+  justify-content: center;
   align-items: center;
   width: 194px;
 `;

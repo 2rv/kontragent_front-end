@@ -40,6 +40,7 @@ export function DangerNoticeComponent(props) {
 }
 const DangerNoticeContainer = styled.div`
   display: grid;
+  grid-template-columns: 1fr 1fr;
   gap: ${spacing(4)};
 `;
 
@@ -48,6 +49,7 @@ const DangerNoticeContent = styled.div`
   flex-direction: column;
   gap: ${spacing(6)};
   padding: ${spacing(4)};
+  height: fit-content;
   border: 2px solid ${THEME_COLOR.TEXT.WARNING};
   border-radius: ${THEME_SIZE.RADIUS.DEFAULT};
 `;

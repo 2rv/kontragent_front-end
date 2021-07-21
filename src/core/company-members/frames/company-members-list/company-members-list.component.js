@@ -43,8 +43,6 @@ const Desctiption = styled(SecondaryText)`
 const Container = styled(PrimaryBox)`
   display: flex;
   flex-direction: column;
-  min-height: 0;
-  flex-grow: 1;
   gap: ${spacing(6)};
   padding: ${spacing(8)};
   padding-right: ${spacing(2)};
@@ -52,8 +50,5 @@ const Container = styled(PrimaryBox)`
 const List = styled(SectionLayout)`
   display: flex;
   flex-direction: column;
-  min-height: 0;
-  flex-grow: 1;
-  overflow: auto;
-  padding-right: ${spacing(6)};
+  padding-right: ${spacing(5)};
 `;

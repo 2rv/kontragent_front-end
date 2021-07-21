@@ -6,7 +6,7 @@ import {
   THEME_SIZE,
   THEME_VALUE,
 } from '../../../../lib/theme';
-import { PrimaryField } from '../../../../lib/elements/field';
+import { TextareaField } from '../../../../lib/elements/field';
 import { ReactComponent as SendIcon } from '../../../../asset/svg/send-icon.svg';
 import { ReactComponent as FileIcon } from '../../../../asset/svg/file-icon.svg';
 import { SectionLayout } from '../../../../lib/elements/layout';
@@ -25,7 +25,7 @@ export function NewsCommentComponent(props) {
       <FooterCase>
         <Avatar src={myAvatar} />
         <FieldCase>
-          <PrimaryField placeholderTid="Написать комментарий" />
+          <TextareaField placeholderTid="Написать комментарий" />
           <ActionsCase>
             <FileIcon />
             <SendIcon />

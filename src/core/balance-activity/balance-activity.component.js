@@ -37,26 +37,28 @@ export function BalanceActivityComponent(props) {
           <Button tid="BALANCE.BALANCE_ACTIVITY.BUTTON" />
         </HeaderCase>
         <ContentCase>
-          {activityItems.map(({ operation, time, sentMoney, check = false }) => {
-            return (
-              <ListItemContent>
-                <IndentLayout type="STANDART">
-                  <ItemCase>
-                    <InfoCase>
-                      <ItemImageIcon altColor={check}>
-                        {check ? <WhiteFindIcon /> : <KIcon />}
-                      </ItemImageIcon>
-                      <ItemInfoCase>
-                        <ItemTitle tid={operation} />
-                        <ItemText tid={time} />
-                      </ItemInfoCase>
-                    </InfoCase>
-                    {sentMoney && <SentMoney tid={`-${sentMoney}`} />}
-                  </ItemCase>
-                </IndentLayout>
-              </ListItemContent>
-            );
-          })}
+          {activityItems.map(
+            ({ operation, time, sentMoney, check = false }) => {
+              return (
+                <ListItemContent>
+                  <IndentLayout type="STANDART">
+                    <ItemCase>
+                      <InfoCase>
+                        <ItemImageIcon altColor={check}>
+                          {check ? <WhiteFindIcon /> : <KIcon />}
+                        </ItemImageIcon>
+                        <ItemInfoCase>
+                          <ItemTitle tid={operation} />
+                          <ItemText tid={time} />
+                        </ItemInfoCase>
+                      </InfoCase>
+                      {sentMoney && <SentMoney tid={`-${sentMoney}`} />}
+                    </ItemCase>
+                  </IndentLayout>
+                </ListItemContent>
+              );
+            },
+          )}
         </ContentCase>
       </Container>
     </React.Fragment>
@@ -68,7 +70,7 @@ const WhiteFindIcon = styled(FindIcon)`
 const Container = styled.div`
   display: flex;
   flex-direction: column;
-  gap: ${spacing(6)};
+  gap: ${spacing(4)};
   width: 100%;
   height: 100%;
 `;
@@ -106,9 +108,9 @@ const ContentCase = styled(PrimaryBox)`
   display: flex;
   flex-direction: column;
   padding: ${spacing(4)} 0;
-  min-height: 0:
-  flex-grow: 1:
-  overflow: auto:
+  min-height: 0;
+  flex-grow: 1;
+  overflow: auto;
 `;
 const ItemCase = styled.div`
   display: flex;

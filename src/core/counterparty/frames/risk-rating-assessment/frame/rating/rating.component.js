@@ -17,7 +17,7 @@ import {
 export function RatingComponent() {
   return (
     <Container>
-      <SectionLayout type="MEDIUM">
+      <SectionLayout>
         <Case>
           <SecondaryText tid="COUNTERPARTY.RISK_RATING_ASSESSMENT.YOUR_MARK" />
           <LineCase>

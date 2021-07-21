@@ -43,6 +43,7 @@ const Title = styled(PrimaryTitleText)`
 `;
 const Desctiption = styled(SecondaryText)`
   font-size: ${THEME_SIZE.FONT.DEFAULT};
+  line-height: 1.5;
 `;
 const Container = styled(SectionLayout)`
   display: flex;

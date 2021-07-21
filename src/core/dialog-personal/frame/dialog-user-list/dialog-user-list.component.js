@@ -69,7 +69,7 @@ const Container = styled.div`
   min-height: 0;
   min-width: 400px;
   flex-grow: 1;
-  gap: ${spacing(6)};
+  gap: ${spacing(4)};
   padding: ${spacing(8)} ${spacing(3.5)} ${spacing(8)} ${spacing(8)};
 `;
 const Header = styled.div`

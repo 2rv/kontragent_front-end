@@ -7,7 +7,7 @@ import { ReactComponent as FileIcon } from '../../../../asset/svg/file.svg';
 import { ReactComponent as SendIcon } from '../../../../asset/svg/send.svg';
 
 import { PrimaryText, SecondaryText } from '../../../../lib/elements/text';
-import { PrimaryField } from '../../../../lib/elements/field';
+import { TextareaField } from '../../../../lib/elements/field';
 import {
   spacing,
   THEME_VALUE,
@@ -54,7 +54,7 @@ export function DialogMessageListComponent(props) {
     </Container>
   );
 }
-const Field = styled(PrimaryField)`
+const Field = styled(TextareaField)`
   height: 56px;
 `;
 
@@ -75,6 +75,7 @@ const Header = styled.div`
   padding-right: ${spacing(4.5)};
 `;
 const Footer = styled.div`
+  height: 56px;
   display: grid;
   padding-right: ${spacing(4.5)};
 `;

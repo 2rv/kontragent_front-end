@@ -108,9 +108,9 @@ const Status = styled.span`
   }};
 `;
 const Content = styled.div`
-  display: grid;
-  grid-template-columns: auto min-content;
-  justify-content: space-between;
+  display: flex;
+  flex-grow: 1;
+  min-width: 0;
 `;
 const BoldText = styled(SecondaryText)`
   color: ${THEME_COLOR.TEXT.PRIMARY};
