@@ -53,7 +53,6 @@ const Title: typeof SecondaryText = styled(SecondaryText)`
 
 const Select = styled.select`
   width: 100%;
-  appearance: none;
   padding: ${spacing(4)};
   border-radius: ${THEME_SIZE.RADIUS.DEFAULT};
   border: none;
@@ -62,6 +61,7 @@ const Select = styled.select`
   font-weight: ${THEME_VALUE.FONT_WEIGHT.MEDIUM};
   cursor: pointer;
   background-color: ${THEME_COLOR.COLOR.SECONDARY};
+  appearance: none;
   &:hover {
     opacity: ${THEME_VALUE.OPACITY.HOVER};
   }

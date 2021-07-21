@@ -20,7 +20,7 @@ export function DashboardComponent(props) {
   );
 }
 const Content = styled.div`
-  padding-right: ${spacing(6)};
+  padding: 0 ${spacing(5)};
   display: flex;
   flex-direction: column;
   flex-grow: 1;
@@ -34,8 +34,7 @@ const Container = styled.div`
   left: 0px;
   right: 0px;
   bottom: 0px;
-  padding: ${spacing(8)};
-  padding-right: ${spacing(2)};
+  padding: ${spacing(8)} ${spacing(2)};
   display: flex;
   flex-direction: column;
   flex-grow: 1;

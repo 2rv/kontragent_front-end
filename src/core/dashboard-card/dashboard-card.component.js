@@ -64,5 +64,5 @@ export function DashboardCardComponent({ type, param }) {
 }
 const CardBox = styled(PrimaryBox)`
   box-shadow: 0px 15px 75px rgba(0, 0, 0, 0.1);
-  height: 100%;
+  display: flex;
 `;

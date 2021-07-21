@@ -1,15 +1,12 @@
 import styled from 'styled-components';
-
 import { HeaderComponent } from '../header';
 import { VerificationsListComponent } from './frame/verifications-list';
-
-import { VERIFICATIONS_LIST } from './verifications.constant';
-
 import { PrimaryBox } from '../../../../lib/elements/box';
 import { IndentLayout, SectionLayout } from '../../../../lib/elements/layout';
 import { spacing } from '../../../../lib/theme';
 
-export function VerificationsComponent() {
+export function VerificationsComponent(props) {
+  const { verificationListData } = props;
   return (
     <Container>
       <HeaderComponent
@@ -18,7 +15,7 @@ export function VerificationsComponent() {
         companyName={'"Компания Гермес-Электро"'}
       />
       <List>
-        {VERIFICATIONS_LIST.map((data, index) => (
+        {verificationListData.map((data, index) => (
           <VerificationsListComponent data={data} key={index} />
         ))}
       </List>

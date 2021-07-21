@@ -1,11 +1,7 @@
 import styled from 'styled-components';
-
 import { HeaderComponent } from '../header';
 import { DangerNoticesComponent } from './frame/danger-notices';
 import { NoticeInfoComponent } from './frame/notice-info';
-
-import { DANGER_NOTICES } from './information.constant';
-
 import {
   PrimaryButton,
   SecondaryButton,
@@ -13,7 +9,8 @@ import {
 import { spacing } from '../../../../lib/theme';
 import { SectionLayout } from '../../../../lib/elements/layout';
 
-export function InformationComponent() {
+export function InformationComponent(props) {
+  const { dangerNoticeList } = props;
   return (
     <Container>
       <SectionLayout type="LARGE">
@@ -27,7 +24,7 @@ export function InformationComponent() {
           <SecondaryButton tid="COUNTERPARTY.DETAIL_INFORMATION.HEADER.LEGAL_ADVICE_FACE" />
         </ActionCase>
       </SectionLayout>
-      <DangerNoticesComponent dangerNotices={DANGER_NOTICES} />
+      <DangerNoticesComponent dangerNotices={dangerNoticeList} />
       <NoticeInfoComponent />
     </Container>
   );
