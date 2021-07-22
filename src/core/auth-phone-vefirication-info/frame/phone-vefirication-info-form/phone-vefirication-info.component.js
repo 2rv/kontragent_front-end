@@ -89,6 +89,7 @@ const Container = styled.div`
 
 const Message = styled(SecondaryText)`
   font-size: ${THEME_SIZE.FONT.DEFAULT};
+  line-height: 1.5;
 `;
 
 const PhoneNumber = styled.span`

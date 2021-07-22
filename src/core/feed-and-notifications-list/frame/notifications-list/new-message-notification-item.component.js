@@ -13,23 +13,21 @@ export function NewMessageNotificationItemComponent(props) {
   const {} = props;
 
   return (
-    <Container>
-      <ContentCase>
-        <Avatar src="https://www.psyh.ru/wp-content/uploads/2018/01/6f36b7c998812ad5a43a934e3c81a51f.jpg" />
-        <MainCase>
-          <div>
-            <Title tid="Новое сообщение от" />
-            <ColoredText tid="вашего менеджера " />
-            <SecondaryText tid="Илья зинченко ждёт вашего ответа." />
-            &nbsp;
-            <button>
-              <Dots />
-            </button>
-          </div>
-          <Time tid="3 часа назад" />
-        </MainCase>
-      </ContentCase>
-    </Container>
+    <Content>
+      <Avatar src="https://www.psyh.ru/wp-content/uploads/2018/01/6f36b7c998812ad5a43a934e3c81a51f.jpg" />
+      <MainCase>
+        <div>
+          <Title tid="Новое сообщение от" />
+          <ColoredText tid="вашего менеджера " />
+          <SecondaryText tid="Илья зинченко ждёт вашего ответа." />
+          &nbsp;
+          <button>
+            <Dots />
+          </button>
+        </div>
+        <Time tid="3 часа назад" />
+      </MainCase>
+    </Content>
   );
 }
 const Dots = styled(DotsIcon)`
@@ -46,20 +44,10 @@ const MainCase = styled.div`
   align-items: flex-start;
   gap: ${spacing(2)};
 `;
-const ContentCase = styled.div`
+const Content = styled.div`
   display: flex;
   gap: ${spacing(2)};
 `;
-const Container = styled.div`
-  display: flex;
-  padding: ${spacing(4)} ${spacing(8)};
-  min-height: 80px;
-  transition: 0.2s ease-in;
-  &:hover {
-    background-color: ${THEME_COLOR.COLOR.SECONDARY};
-  }
-`;
-
 const Title = styled(SecondaryText)`
   color: ${THEME_COLOR.TEXT.PRIMARY};
   line-height: 1.5;

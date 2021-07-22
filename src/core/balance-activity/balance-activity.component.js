@@ -1,4 +1,3 @@
-import React from 'react';
 import styled from 'styled-components';
 import {
   SecondaryText,
@@ -6,12 +5,9 @@ import {
   PrimaryTitleText,
 } from '../../lib/elements/text';
 import { spacing, THEME_COLOR, THEME_SIZE, THEME_VALUE } from '../../lib/theme';
-import { ReactComponent as FindIcon } from '../../asset/svg/find-icon-15x15.svg';
-import { ReactComponent as KIcon } from '../../asset/svg/k-icon.svg';
 import { PrimaryButton } from '../../lib/elements/button';
-import { IndentLayout, SectionLayout } from '../../lib/elements/layout';
-import { PrimaryBox } from '../../lib/elements/box';
 import { PrimaryLoader } from '../../lib/elements/loader';
+import { BalanceActivityListContainer } from './frame';
 
 export function BalanceActivityComponent(props) {
   const {
@@ -21,11 +17,11 @@ export function BalanceActivityComponent(props) {
     pageLoading,
     errorMessage,
     balance,
-    activityItems,
+    balanceActivityListData,
   } = props;
 
   return (
-    <React.Fragment>
+    <>
       {(isPending || pageLoading) && <PrimaryLoader />}
       <Container>
         <HeaderCase>
@@ -36,50 +32,19 @@ export function BalanceActivityComponent(props) {
           </TitleCase>
           <Button tid="BALANCE.BALANCE_ACTIVITY.BUTTON" />
         </HeaderCase>
-        <ContentCase>
-          {activityItems.map(
-            ({ operation, time, sentMoney, check = false }) => {
-              return (
-                <ListItemContent>
-                  <IndentLayout type="STANDART">
-                    <ItemCase>
-                      <InfoCase>
-                        <ItemImageIcon altColor={check}>
-                          {check ? <WhiteFindIcon /> : <KIcon />}
-                        </ItemImageIcon>
-                        <ItemInfoCase>
-                          <ItemTitle tid={operation} />
-                          <ItemText tid={time} />
-                        </ItemInfoCase>
-                      </InfoCase>
-                      {sentMoney && <SentMoney tid={`-${sentMoney}`} />}
-                    </ItemCase>
-                  </IndentLayout>
-                </ListItemContent>
-              );
-            },
-          )}
-        </ContentCase>
+        <BalanceActivityListContainer
+          balanceActivityListData={balanceActivityListData}
+        />
       </Container>
-    </React.Fragment>
+    </>
   );
 }
-const WhiteFindIcon = styled(FindIcon)`
-  fill: ${THEME_COLOR.COLOR.BASE};
-`;
+
 const Container = styled.div`
   display: flex;
   gap: ${spacing(4)};
   flex: 1;
   flex-flow: column;
-`;
-const ListItemContent = styled.div`
-  display: flex;
-  padding: 0 ${spacing(4)};
-  transition: 0.2s ease-in;
-  &:hover {
-    background-color: ${THEME_COLOR.COLOR.SECONDARY};
-  }
 `;
 const HeaderCase = styled.div`
   display: flex;
@@ -110,52 +75,4 @@ const Button = styled(PrimaryButton)`
   display: flex;
   align-items: center;
   justify-content: center;
-`;
-const ContentCase = styled(PrimaryBox)`
-  display: flex;
-  flex-direction: column;
-  padding: ${spacing(4)} 0;
-  min-height: 0;
-  min-width: max-content;
-  overflow: auto;
-`;
-const ItemCase = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: ${spacing(3)};
-  min-width: max-content;
-`;
-const InfoCase = styled.div`
-  display: flex;
-  gap: ${spacing(2)};
-  align-items: center;
-`;
-const ItemImageIcon = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 40px;
-  min-height: 40px;
-  border-radius: ${THEME_SIZE.RADIUS.CIRCLE};
-  border: none;
-  background-color: ${({ altColor }) =>
-    altColor ? THEME_COLOR.TEXT.SUCCESS : THEME_COLOR.COLOR.ACCENT};
-`;
-const ItemInfoCase = styled.div`
-  display: flex;
-  gap: ${spacing(2)};
-  flex-flow: column;
-`;
-const ItemTitle = styled(PrimaryText)`
-  font-size: ${THEME_SIZE.FONT.SMALL};
-`;
-const ItemText = styled(PrimaryText)`
-  color: ${THEME_COLOR.COLOR.LIGHT_GREY};
-  font-weight: ${THEME_VALUE.FONT_WEIGHT.LIGHT};
-  font-size: ${THEME_SIZE.FONT.TINY};
-`;
-const SentMoney = styled(PrimaryTitleText)`
-  color: ${THEME_COLOR.TEXT.ERROR};
-  font-size: ${THEME_SIZE.FONT.STANDART};
 `;

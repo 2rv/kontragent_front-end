@@ -112,12 +112,12 @@ const CheckboxCase = styled.label`
   padding: ${spacing(4)};
   border: 2px solid transparent;
   transition: 0.2s ease-in;
-  box-shadow: 0px 15px 75px rgba(0, 0, 0, 0.1);
   :hover {
+    box-shadow: 0px 15px 75px rgba(0, 0, 0, 0.1);
     background-color: #fff;
   }
   background-color: #f3f3f3;
-  ${(p) => p.checked && `border-color: #3AB8FF;`}
+  ${(p) => p.checked && `border-color: #3AB8FF; background-color: #fff;`}
 `;
 const Checkbox = styled(Field)`
   display: none;

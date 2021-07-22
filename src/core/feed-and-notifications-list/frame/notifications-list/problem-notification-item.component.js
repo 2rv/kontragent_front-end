@@ -13,26 +13,24 @@ export function ProblemNotificationItemComponent(props) {
   const {} = props;
 
   return (
-    <Container>
-      <ContentCase>
-        <AvatarCase>
-          <Icon>
-            <StarIcon />
-          </Icon>
-        </AvatarCase>
-        <MainCase>
-          <HeaderCase>
-            <Title>
-              Указаны новые проблемы <BoldText tid={`ООО “УМК”`} />: контрагент
-              исчез, по нашей информации компания состоит в базе однодневок,
-              большой объём просроченной кредиторской задолженности. Компания
-              может нести риск доначислений!
-            </Title>
-          </HeaderCase>
-          <Time>Вчера, в 15:30</Time>
-        </MainCase>
-      </ContentCase>
-    </Container>
+    <Content>
+      <AvatarCase>
+        <Icon>
+          <StarIcon />
+        </Icon>
+      </AvatarCase>
+      <MainCase>
+        <HeaderCase>
+          <Title>
+            Указаны новые проблемы <BoldText tid={`ООО “УМК”`} />: контрагент
+            исчез, по нашей информации компания состоит в базе однодневок,
+            большой объём просроченной кредиторской задолженности. Компания
+            может нести риск доначислений!
+          </Title>
+        </HeaderCase>
+        <Time>Вчера, в 15:30</Time>
+      </MainCase>
+    </Content>
   );
 }
 const Icon = styled.div`
@@ -59,18 +57,9 @@ const MainCase = styled.div`
   align-items: flex-start;
   gap: ${spacing(2)};
 `;
-const ContentCase = styled.div`
+const Content = styled.div`
   display: flex;
   gap: ${spacing(2)};
-`;
-const Container = styled.div`
-  display: flex;
-  padding: ${spacing(4)} ${spacing(8)};
-  min-height: 80px;
-  transition: 0.2s ease-in;
-  &:hover {
-    background-color: ${THEME_COLOR.COLOR.SECONDARY};
-  }
 `;
 const Title = styled(SecondaryText)`
   color: ${THEME_COLOR.TEXT.PRIMARY};

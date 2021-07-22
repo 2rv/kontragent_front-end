@@ -64,6 +64,8 @@ const RelativeCase = styled.div`
 const Textarea = styled.textarea`
   min-height: 56px;
   flex-grow: 1;
+  display: flex;
+  line-height: 1.5;
   resize: none;
   padding: ${spacing(4)};
   border-radius: ${THEME_SIZE.RADIUS.DEFAULT};

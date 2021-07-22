@@ -56,6 +56,8 @@ export function DialogMessageListComponent(props) {
 }
 const Field = styled(TextareaField)`
   height: 56px;
+  display: flex;
+  align-items: center;
 `;
 
 const Container = styled.div`

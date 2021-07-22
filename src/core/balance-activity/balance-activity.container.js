@@ -30,12 +30,12 @@ export function BalanceActivityContainer() {
       pageLoading={pageLoading}
       errorMessage={getRequestErrorMessage(state.balanceActivity)}
       balance={balance}
-      activityItems={activityItems}
+      balanceActivityListData={balanceActivityListData}
     />
   );
 }
 const balance = 2500;
-const activityItems = [
+const balanceActivityListData = [
   {
     operation: 'Оплата проверки контрагента',
     time: '25 минут назад',
@@ -52,33 +52,6 @@ const activityItems = [
     time: '25 минут назад',
     sentMoney: 500,
     check: true,
-  },
-  {
-    operation: 'Оплата контрагента',
-    time: 'Час назад',
-    sentMoney: 1250,
-  },
-  {
-    operation: 'Оплата проверки контрагента',
-    time: '25 минут назад',
-    sentMoney: 500,
-    check: true,
-  },
-  {
-    operation: 'Оплата контрагента',
-    time: 'Час назад',
-    sentMoney: 1250,
-  },
-  {
-    operation: 'Оплата проверки контрагента',
-    time: '25 минут назад',
-    sentMoney: 500,
-    check: true,
-  },
-  {
-    operation: 'Оплата контрагента',
-    time: 'Час назад',
-    sentMoney: 1250,
   },
   {
     operation: 'Оплата проверки контрагента',
@@ -98,11 +71,6 @@ const activityItems = [
     check: true,
   },
   {
-    operation: 'Оплата контрагента',
-    time: 'Час назад',
-    sentMoney: 1250,
-  },
-  {
     operation: 'Оплата проверки контрагента',
     time: '25 минут назад',
     sentMoney: 500,
@@ -118,21 +86,5 @@ const activityItems = [
     time: '25 минут назад',
     sentMoney: 500,
     check: true,
-  },
-  {
-    operation: 'Оплата контрагента',
-    time: 'Час назад',
-    sentMoney: 1250,
-  },
-  {
-    operation: 'Оплата проверки контрагента',
-    time: '25 минут назад',
-    sentMoney: 500,
-    check: true,
-  },
-  {
-    operation: 'Оплата контрагента',
-    time: 'Час назад',
-    sentMoney: 1250,
   },
 ];

@@ -13,22 +13,20 @@ export function RatingNotificationItemComponent(props) {
   const {} = props;
 
   return (
-    <Container>
-      <ContentCase>
-        <AvatarCase>
-          <StarIcon />
-        </AvatarCase>
-        <MainCase>
-          <HeaderCase>
-            <Title>
-              Рейтинг компании <BoldText tid={`ООО "Dobro Motion" `} />
-              увеличился до 5
-            </Title>
-          </HeaderCase>
-          <Time>Сегодня, в 11:25</Time>
-        </MainCase>
-      </ContentCase>
-    </Container>
+    <Content>
+      <AvatarCase>
+        <StarIcon />
+      </AvatarCase>
+      <MainCase>
+        <HeaderCase>
+          <Title>
+            Рейтинг компании <BoldText tid={`ООО "Dobro Motion" `} />
+            увеличился до 5
+          </Title>
+        </HeaderCase>
+        <Time>Сегодня, в 11:25</Time>
+      </MainCase>
+    </Content>
   );
 }
 const HeaderCase = styled.div`
@@ -52,18 +50,9 @@ const MainCase = styled.div`
   align-items: flex-start;
   gap: ${spacing(2)};
 `;
-const ContentCase = styled.div`
+const Content = styled.div`
   display: flex;
   gap: ${spacing(2)};
-`;
-const Container = styled.div`
-  display: flex;
-  padding: ${spacing(4)} ${spacing(8)};
-  min-height: 80px;
-  transition: 0.2s ease-in;
-  &:hover {
-    background-color: ${THEME_COLOR.COLOR.SECONDARY};
-  }
 `;
 const Title = styled(SecondaryText)`
   color: ${THEME_COLOR.TEXT.PRIMARY};

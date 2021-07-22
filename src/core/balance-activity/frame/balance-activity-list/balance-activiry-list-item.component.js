@@ -1,22 +1,20 @@
 import styled from 'styled-components';
-
-import { PrimaryDivider } from '../../../../lib/elements/divider';
-import { IndentLayout, SectionLayout } from '../../../../lib/elements/layout';
-import { ReactComponent as FindIcon } from '../../../../asset/svg/find-icon-15x15.svg';
-import { ReactComponent as KIcon } from '../../../../asset/svg/k-icon.svg';
 import {
+  SecondaryText,
   PrimaryText,
   PrimaryTitleText,
-  SecondaryText,
 } from '../../../../lib/elements/text';
 import {
   spacing,
-  THEME_SIZE,
   THEME_COLOR,
+  THEME_SIZE,
   THEME_VALUE,
 } from '../../../../lib/theme';
+import { ReactComponent as FindIcon } from '../../../../asset/svg/find-icon-15x15.svg';
+import { ReactComponent as KIcon } from '../../../../asset/svg/k-icon.svg';
+import { PrimaryDivider } from '../../../../lib/elements/divider';
 
-export function BalanceHistoryListItem(props) {
+export function BalanceActivityListItemComponent(props) {
   const { operation, time, sentMoney, check = false } = props.data;
   return (
     <DividerCase>
@@ -32,19 +30,16 @@ export function BalanceHistoryListItem(props) {
         </Content>
         {sentMoney && <Price tid={`-${sentMoney}`} />}
       </Container>
-      <Divider />
+      <PrimaryDivider />
     </DividerCase>
   );
 }
-const Divider = styled(PrimaryDivider)`
-  background-color: ${THEME_COLOR.COLOR.BASE};
-`;
 const DividerCase = styled.div`
   display: grid;
   padding: 0 ${spacing(8)};
   transition: 0.2s ease-in;
   &:hover {
-    background-color: ${THEME_COLOR.COLOR.BASE};
+    background-color: ${THEME_COLOR.COLOR.SECONDARY};
   }
 `;
 const Container = styled.div`

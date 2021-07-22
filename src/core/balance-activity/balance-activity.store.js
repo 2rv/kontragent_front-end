@@ -7,7 +7,7 @@ import {
 } from '../../main/store/store.service';
 
 const initialState = {
-  balanceActivity: initRequestState(),
+  balanceActivityListData: initRequestState(),
 };
 
 export function balanceActivityStore(state = initialState, action) {
@@ -15,20 +15,25 @@ export function balanceActivityStore(state = initialState, action) {
     case BALANCE_ACTIVITY_ACTION_TYPE.BALANCE_ACTIVITY_LOAD_REQUEST_PENDING:
       return {
         ...state,
-        balanceActivity: setRequestPending(state.balanceActivity),
+        balanceActivityListData: setRequestPending(
+          state.balanceActivityListData,
+        ),
       };
 
     case BALANCE_ACTIVITY_ACTION_TYPE.BALANCE_ACTIVITY_LOAD_REQUEST_SUCCESS:
       return {
         ...state,
-        balanceActivity: setRequestSuccess(state.balanceActivity, action.data),
+        balanceActivityListData: setRequestSuccess(
+          state.balanceActivityListData,
+          action.data,
+        ),
       };
 
     case BALANCE_ACTIVITY_ACTION_TYPE.BALANCE_ACTIVITY_LOAD_REQUEST_ERROR:
       return {
         ...state,
-        balanceActivity: setRequestError(
-          state.balanceActivity,
+        balanceActivityListData: setRequestError(
+          state.balanceActivityListData,
           action.errorMessage,
         ),
       };
