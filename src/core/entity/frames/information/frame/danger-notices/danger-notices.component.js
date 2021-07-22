@@ -16,7 +16,8 @@ import {
   THEME_VALUE,
 } from '../../../../../../lib/theme';
 
-export function DangerNoticesComponent({ dangerNotices }) {
+export function DangerNoticesComponent(props) {
+  const { dangerNotices } = props;
   return (
     <PrimaryBox>
       <IndentLayout>

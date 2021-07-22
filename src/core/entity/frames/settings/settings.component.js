@@ -8,7 +8,7 @@ export function SettingsComponent(props) {
   return (
     <PrimaryBox>
       <IndentLayout>
-        <SectionLayout>
+        <SectionLayout type="LARGE">
           <HeaderComponent
             title="ENTITY.SETTING.HEADER.TITLE"
             companyType="ENTITY.SETTING.HEADER.COMPANY_TYPE"

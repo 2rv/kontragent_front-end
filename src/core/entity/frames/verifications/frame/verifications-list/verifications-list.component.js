@@ -1,67 +1,73 @@
 import styled from 'styled-components';
 
 import { PrimaryBox } from '../../../../../../lib/elements/box';
-import { IndentLayout } from '../../../../../../lib/elements/layout';
-import { PrimaryText, SecondaryText } from '../../../../../../lib/elements/text';
-import { PrimaryButton } from '../../../../../../lib/elements/button';
+import {
+  ButtonLayout,
+  IndentLayout,
+  SectionLayout,
+} from '../../../../../../lib/elements/layout';
+import {
+  PrimaryText,
+  SecondaryText,
+} from '../../../../../../lib/elements/text';
+import {
+  PrimaryButton,
+  SecondaryButton,
+} from '../../../../../../lib/elements/button';
 import { CircleDivider } from '../../../../../../lib/elements/divider';
-import { spacing, THEME_SIZE, THEME_COLOR, THEME_VALUE } from '../../../../../../lib/theme';
+import {
+  spacing,
+  THEME_SIZE,
+  THEME_COLOR,
+  THEME_VALUE,
+} from '../../../../../../lib/theme';
 
-export function VerificationsListComponent({ verificationsList }) {
+export function VerificationsListComponent(props) {
+  const { id, companyName, status, price, time, info, paid } = props.data;
   return (
-    verificationsList.map((verification) => (
-      <Box key={verification.id}>
-        <Layout type="SMALL">
-          <Container>
-            <Content>
-              <MessageText>{verification.companyName}</MessageText>
-              <Status tid={verification.status.title} statusId={verification.status.id} />
-            </Content>
-            <Content>
-              <PriceText>{verification.price}</PriceText>
-              <CircleDivider />
-              <Date>{verification.time}</Date>
-              <CircleDivider />
-              <Info tid={verification.info.title} infoId={verification.info.id} />
-            </Content>
-          </Container>
-          <ButtonsContainer>
-            <CancelButton tid="ENTITY.VERIFICATIONS.BUTTONS.CANCEL" />
-            {verification.paid ? (
-              <PaidButton tid="ENTITY.VERIFICATIONS.BUTTONS.PAID" />
-            ) : (
-              <PrimaryButton tid="ENTITY.VERIFICATIONS.BUTTONS.PAY" />
-            )}
-          </ButtonsContainer>
-        </Layout>
-      </Box>
-    ))
+    <Container>
+      <Layout type="STANDART">
+        <SectionLayout type="SMALL">
+          <LineCase>
+            <MessageText>{companyName}</MessageText>
+            <Status tid={status.title} statusId={status.id} />
+          </LineCase>
+          <LineCase>
+            <PriceText>{price}</PriceText>
+            <CircleDivider />
+            <Date>{time}</Date>
+            <CircleDivider />
+            <Info tid={info.title} infoId={info.id} />
+          </LineCase>
+        </SectionLayout>
+        <ActionCase>
+          <CancelButton tid="COUNTERPARTY.VERIFICATIONS.BUTTONS.CANCEL" />
+          {paid ? (
+            <PaidButton tid="COUNTERPARTY.VERIFICATIONS.BUTTONS.PAID" />
+          ) : (
+            <PayButton tid="COUNTERPARTY.VERIFICATIONS.BUTTONS.PAY" />
+          )}
+        </ActionCase>
+      </Layout>
+    </Container>
   );
 }
 
-const Box = styled(PrimaryBox)`
+const Container = styled(PrimaryBox)`
+  display: flex;
   background: ${THEME_COLOR.COLOR.SECONDARY};
+  height: 80px;
 `;
-
 const Layout = styled(IndentLayout)`
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr 332px;
+  gap: ${spacing(4)};
 `;
-
-const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  grid-gap: ${spacing(2)};
-  padding: ${spacing(2)};
-`;
-
-const Content = styled.div`
+const LineCase = styled.div`
   display: flex;
   align-items: center;
-  grid-column-gap: ${spacing(2)};
+  gap: ${spacing(2)};
 `;
-
 const Status = styled(SecondaryText)`
   font-size: ${THEME_SIZE.FONT.DEFAULT};
   font-weight: ${THEME_VALUE.FONT_WEIGHT.SEMY_BOLD};
@@ -76,7 +82,6 @@ const Status = styled(SecondaryText)`
     }
   }};
 `;
-
 const Info = styled(SecondaryText)`
   font-size: ${THEME_SIZE.FONT.TINY};
   font-weight: ${THEME_VALUE.FONT_WEIGHT.MEDIUM};
@@ -93,33 +98,42 @@ const Info = styled(SecondaryText)`
     }
   }};
 `;
-
 const MessageText = styled(PrimaryText)`
   font-weight: ${THEME_VALUE.FONT_WEIGHT.MEDIUM};
 `;
-
 const PriceText = styled(PrimaryText)`
   font-size: ${THEME_SIZE.FONT.SMALL};
 `;
-
 const Date = styled(SecondaryText)`
   font-size: ${THEME_SIZE.FONT.TINY};
   color: ${THEME_COLOR.COLOR.LIGHT_GREY};
 `;
-
-const ButtonsContainer = styled.div`
-  display: flex;
-  grid-column-gap: ${spacing(4)};
-  button {
-    width: 161px;
-  }
+const ActionCase = styled.div`
+  display: grid;
+  grid-template-columns: 160px 160px;
+  gap: ${spacing(3)};
 `;
-
 const CancelButton = styled(PrimaryButton)`
   background: ${THEME_COLOR.COLOR.BASE};
   color: ${THEME_COLOR.COLOR.VALIDATION};
+  height: 46px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
 `;
-
-const PaidButton = styled(PrimaryButton)`
-  background: ${THEME_COLOR.TEXT.SECONDARY};
+const PaidButton = styled(SecondaryButton)`
+  background-color: ${THEME_COLOR.TEXT.SECONDARY};
+  height: 46px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+`;
+const PayButton = styled(PrimaryButton)`
+  height: 46px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
 `;

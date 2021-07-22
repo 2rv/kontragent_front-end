@@ -44,6 +44,7 @@ const Container = styled.div`
   display: flex;
   padding: ${spacing(4)} ${spacing(8)};
   transition: 0.2s ease-in;
+  min-height: 80px;
   &:hover {
     background-color: ${THEME_COLOR.COLOR.SECONDARY};
   }

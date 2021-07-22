@@ -20,7 +20,7 @@ export function NoticeInfoComponent() {
   return (
     <PrimaryBox>
       <IndentLayout>
-        <NoticeInfoContainer>
+        <Container>
           <SectionLayout>
             <Pair>
               <SecondaryText>2011-10-19</SecondaryText>
@@ -39,12 +39,12 @@ export function NoticeInfoComponent() {
             <Pair>
               <SecondaryText tid="ENTITY.DETAIL_INFORMATION.INFO.AUTHORIZED_CAPITAL" />
               <BoldText>20 000 руб.</BoldText>
-              <OpacityText>2011-10-19</OpacityText>
+              <LightText>2011-10-19</LightText>
             </Pair>
             <Pair>
               <BoldText>Жуков Олег Юрьевич</BoldText>
               <BoldText>10 000 руб. - 50%</BoldText>
-              <OpacityText>2011-12-15</OpacityText>
+              <LightText>2011-12-15</LightText>
             </Pair>
             <Pair>
               <SecondaryText tid="ENTITY.DETAIL_INFORMATION.INFO.EXECUTION_PROCEEDINGS" />
@@ -84,43 +84,43 @@ export function NoticeInfoComponent() {
             <Column>
               <SecondaryText tid="ENTITY.DETAIL_INFORMATION.INFO.CEO" />
               <BoldText>Жуков Олег Юрьевич</BoldText>
-              <OpacityText>2011-12-15</OpacityText>
+              <LightText>2011-12-15</LightText>
             </Column>
             <Column>
               <SecondaryText tid="ENTITY.DETAIL_INFORMATION.INFO.FOUNDERS_INDIVIDUALS" />
               <BoldText>Василенко Владимир Николаевич</BoldText>
               <BoldText>10 000 руб. - 50%</BoldText>
-              <OpacityText>2011-10-19</OpacityText>
+              <LightText>2011-10-19</LightText>
             </Column>
             <div>
               <SecondaryText tid="ENTITY.DETAIL_INFORMATION.INFO.FINANCES_AT_THE_END_OF_2020" />
               <div>
-                <OpacityText tid="ENTITY.DETAIL_INFORMATION.INFO.BALANCE" />
+                <LightText tid="ENTITY.DETAIL_INFORMATION.INFO.BALANCE" />
                 &nbsp;
                 <BoldText>48 928 000 руб.</BoldText>
               </div>
               <div>
-                <OpacityText tid="ENTITY.DETAIL_INFORMATION.INFO.REVENUE" />
+                <LightText tid="ENTITY.DETAIL_INFORMATION.INFO.REVENUE" />
                 &nbsp;
                 <BoldText>136 653 000 руб.</BoldText>
               </div>
               <div>
-                <OpacityText tid="ENTITY.DETAIL_INFORMATION.INFO.NET_PROFIT" />
+                <LightText tid="ENTITY.DETAIL_INFORMATION.INFO.NET_PROFIT" />
                 &nbsp;
                 <BoldText>7 988 000 руб.</BoldText>
               </div>
             </div>
           </SectionLayout>
-        </NoticeInfoContainer>
+        </Container>
       </IndentLayout>
     </PrimaryBox>
   );
 }
-const NoticeInfoContainer = styled.div`
+const Container = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
+  gap: ${spacing(8)};
 `;
-
 const Pair = styled(SectionLayout)`
   gap: ${spacing(1)};
 `;
@@ -133,7 +133,7 @@ const BoldText = styled(PrimaryText)`
   font-size: ${THEME_SIZE.FONT.SMALL};
 `;
 
-const OpacityText = styled(SecondaryText)`
+const LightText = styled(SecondaryText)`
   font-size: ${THEME_SIZE.FONT.SMALL};
   color: ${THEME_COLOR.COLOR.LIGHT_GREY};
 `;

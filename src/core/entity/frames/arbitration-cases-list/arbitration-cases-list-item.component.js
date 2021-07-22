@@ -1,73 +1,66 @@
 import styled from 'styled-components';
 
-import { ReactComponent as Message } from '../../../../../../asset/svg/message.svg';
+import { ReactComponent as Message } from '../../../../asset/svg/message.svg';
 
-import { PrimaryBox } from '../../../../../../lib/elements/box';
-import { IndentLayout } from '../../../../../../lib/elements/layout';
-import { PrimaryText, SecondaryText } from '../../../../../../lib/elements/text';
-import { CircleDivider } from '../../../../../../lib/elements/divider';
+import { PrimaryBox } from '../../../../lib/elements/box';
+import { IndentLayout, SectionLayout } from '../../../../lib/elements/layout';
+import { PrimaryText, SecondaryText } from '../../../../lib/elements/text';
+import { CircleDivider } from '../../../../lib/elements/divider';
 import {
   spacing,
   THEME_SIZE,
   THEME_COLOR,
   THEME_VALUE,
-} from '../../../../../../lib/theme';
+} from '../../../../lib/theme';
 
-export function ArbitrationCasesListComponent({ arbitrationCasesList }) {
-  return arbitrationCasesList.map((arbitrationCase) => (
-    <Box key={arbitrationCase.id}>
+export function ArbitrationCasesListItemComponent(props) {
+  const { id, image, text, status, name, time, info, messages } = props.data;
+  return (
+    <Container>
       <Layout type="SMALL">
-        <ArbitrationCaseImage src={arbitrationCase.image} />
-        <Container>
-          <Content>
-            <MessageText>{arbitrationCase.text}</MessageText>
-            <Status
-              tid={arbitrationCase.status.title}
-              statusId={arbitrationCase.status.id}
-            />
-          </Content>
-          <Content>
-            <FullNameText>{arbitrationCase.name}</FullNameText>
+        <ArbitrationCaseImage src={image} />
+        <Content>
+          <div>
+            <MessageText>{text}</MessageText>
+            &nbsp;
+            <Status tid={status.title} statusId={status.id} />
+          </div>
+          <LineCase>
+            <FullNameText>{name}</FullNameText>
             <CircleDivider />
-            <Date>{arbitrationCase.time}</Date>
+            <Date>{time}</Date>
             <CircleDivider />
-            <Info
-              tid={arbitrationCase.info.title}
-              infoId={arbitrationCase.info.id}
-            />
-          </Content>
-        </Container>
+            <Info tid={info.title} infoId={info.id} />
+          </LineCase>
+        </Content>
         <MessagesContainer>
           <Message />
-          <Messages>{arbitrationCase.messages}</Messages>
+          <Messages>{messages}</Messages>
         </MessagesContainer>
       </Layout>
-    </Box>
-  ));
+    </Container>
+  );
 }
-
-const Box = styled(PrimaryBox)`
-  background: ${THEME_COLOR.COLOR.SECONDARY};
-`;
-
-const Layout = styled(IndentLayout)`
-  display: flex;
-  justify-content: space-between;
-`;
-
-const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  grid-gap: ${spacing(2)};
-  padding: ${spacing(2)};
-  padding-left: ${spacing(4)};
-`;
-
 const Content = styled.div`
   display: flex;
+  flex-direction: column;
+  gap: ${spacing(1)};
+`;
+const Container = styled(PrimaryBox)`
+  background: ${THEME_COLOR.COLOR.SECONDARY};
+  height: 80px;
   align-items: center;
-  grid-column-gap: ${spacing(2)};
+  display: flex;
+`;
+const Layout = styled(IndentLayout)`
+  display: grid;
+  gap: ${spacing(3)};
+  grid-template-columns: auto 1fr auto;
+`;
+const LineCase = styled.div`
+  display: flex;
+  align-items: center;
+  gap: ${spacing(2)};
 `;
 
 const Status = styled(SecondaryText)`
@@ -107,11 +100,12 @@ const Info = styled(SecondaryText)`
 const ArbitrationCaseImage = styled.img`
   width: 56px;
   height: 56px;
-  border-radius: 30px;
+  border-radius: ${THEME_SIZE.RADIUS.CIRCLE};
 `;
 
 const MessageText = styled(PrimaryText)`
   font-weight: ${THEME_VALUE.FONT_WEIGHT.MEDIUM};
+  line-height: 1.5;
 `;
 
 const FullNameText = styled(SecondaryText)`
@@ -131,5 +125,5 @@ const Messages = styled(SecondaryText)`
 const MessagesContainer = styled.div`
   display: flex;
   align-items: center;
-  grid-column-gap: ${spacing(1)};
+  gap: ${spacing(1)};
 `;

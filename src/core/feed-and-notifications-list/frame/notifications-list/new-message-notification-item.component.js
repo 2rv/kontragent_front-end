@@ -53,6 +53,7 @@ const ContentCase = styled.div`
 const Container = styled.div`
   display: flex;
   padding: ${spacing(4)} ${spacing(8)};
+  min-height: 80px;
   transition: 0.2s ease-in;
   &:hover {
     background-color: ${THEME_COLOR.COLOR.SECONDARY};

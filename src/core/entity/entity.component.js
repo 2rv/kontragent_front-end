@@ -24,11 +24,19 @@ export function EntityComponent(props) {
     <React.Fragment>
       {(isPending || pageLoading) && <PrimaryLoader />}
       <Container>
-        <EntityText tid="ENTITY.TITLE" />
-        <TabsComponent tabsList={tabsList} activeTabId={activeTabId} activeTabHandler={activeTabHandler} />
+        <Title tid="ENTITY.TITLE" />
+        <TabsComponent
+          tabsList={tabsList}
+          activeTabId={activeTabId}
+          activeTabHandler={activeTabHandler}
+        />
         {tabsComponentList.map((component) => {
           if (component.id === activeTabId) {
-            return <React.Fragment key={component.id}>{component.component}</React.Fragment>;
+            return (
+              <React.Fragment key={component.id}>
+                {component.component}
+              </React.Fragment>
+            );
           }
         })}
       </Container>
@@ -39,10 +47,12 @@ export function EntityComponent(props) {
 const Container = styled.div`
   display: flex;
   flex-direction: column;
-  gap: ${spacing(5)};
   width: 100%;
+  min-width: fit-content;
+  flex-grow: 1;
+  gap: ${spacing(6)};
 `;
 
-const EntityText = styled(PrimaryTitleText)`
+const Title = styled(PrimaryTitleText)`
   font-size: ${THEME_SIZE.FONT.HUGE};
 `;

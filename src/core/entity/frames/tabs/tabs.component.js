@@ -1,52 +1,51 @@
 import styled from 'styled-components';
 
-import { SecondaryText } from '../../../../lib/elements/text';
+import { PrimaryButton } from '../../../../lib/elements/button';
 import { PrimaryBox } from '../../../../lib/elements/box';
-import { spacing, THEME_COLOR, THEME_VALUE } from '../../../../lib/theme';
+import {
+  spacing,
+  THEME_COLOR,
+  THEME_SIZE,
+  THEME_VALUE,
+} from '../../../../lib/theme';
 
 export function TabsComponent({ tabsList, activeTabId, activeTabHandler }) {
   return (
     <Container>
-      <TabsItemContainer>
-        {tabsList.map((tab) => (
-          <TabsItemContent
-            key={tab.id}
-            active={tab.id === activeTabId}
-            hasDangerNotices={tab.hasDangerNotices}
-            onClick={() => activeTabHandler(tab)}
-          >
-            <SecondaryText tid={tab.text} />
-          </TabsItemContent>
-        ))}
-      </TabsItemContainer>
+      {tabsList.map((tab) => (
+        <Button
+          hasDangerNotices={tab.hasDangerNotices}
+          active={tab.id === activeTabId}
+          tid={tab.text}
+          key={tab.id}
+          onClick={() => activeTabHandler(tab)}
+        />
+      ))}
     </Container>
   );
 }
 
 const Container = styled(PrimaryBox)`
-  height: 46px;
-`;
-
-const TabsItemContainer = styled.div`
   display: flex;
-  align-items: center;
-  height: 100%;
-  gap: ${spacing(8)};
-  margin: 0 ${spacing(4)};
+  width: 100%;
+  justify-content: flex-start;
 `;
-
-const TabsItemContent = styled.div`
-  cursor: pointer;
-  ${(props) => props.active && `
-    display: flex;
-    align-items: center;
-    border: 1px solid ${THEME_COLOR.COLOR.LIGHT_GREY};
-    border-radius: 10px;
-    padding: ${spacing(4)};
-    margin: 0 -${spacing(4)};
-    span {
-      color: ${THEME_COLOR.TEXT.PRIMARY};
-      font-weight: ${THEME_VALUE.FONT_WEIGHT.MEDIUM}
-    }
-  `};
+const Button = styled(PrimaryButton)`
+  height: 44px;
+  color: ${THEME_COLOR.TEXT.SECONDARY};
+  background-color: transparent;
+  box-sizing: border-box;
+  padding: 0 ${spacing(4)};
+  border-width: 1px;
+  width: max-content;
+  border-style: solid;
+  border-color: transparent;
+  ${(p) => {
+    if (p.active)
+      return `
+	  border-color: ${THEME_COLOR.COLOR.LIGHT_GREY};
+	  color: ${THEME_COLOR.TEXT.PRIMARY}; 
+	  font-weight: ${THEME_VALUE.FONT_WEIGHT.MEDIUM};`;
+    if (p.hasDangerNotices) return `color: ${THEME_COLOR.TEXT.VALIDATION};`;
+  }};
 `;

@@ -30,6 +30,6 @@ export function ParticipantsComponent() {
 }
 
 const Container = styled(PrimaryBox)`
-  width: 100%;
+  display: flex;
   height: fit-content;
 `;

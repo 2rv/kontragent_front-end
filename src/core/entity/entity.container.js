@@ -14,14 +14,14 @@ import { InformationContainer } from './frames/information';
 import { RiskRatingAssessmentContainer } from './frames/risk-rating-assessment';
 import { ReviewsContainer } from './frames/reviews';
 import { VerificationsContainer } from './frames/verifications';
-import { ArbitrationCasesContainer } from './frames/arbitration-cases';
+import { ArbitrationCasesListContainer } from './frames/arbitration-cases-list';
 import { ParticipantsContainer } from './frames/participants';
 import { BalanceContainer } from './frames/balance';
 import { SettingsContainer } from './frames/settings';
 
 export function EntityContainer() {
   const dispatch = useDispatch();
-  const [ activeTabId, setActiveTabId ] = React.useState(1);
+  const [activeTabId, setActiveTabId] = React.useState(1);
   const { state, pageLoading } = useSelector((state) => ({
     state: state[ENTITY_STORE_NAME],
     pageLoading: state[NAVIGATION_STORE_NAME].pageLoading,
@@ -66,7 +66,7 @@ const TABS_COMPONENT_LIST = [
   { id: 2, component: <RiskRatingAssessmentContainer /> },
   { id: 3, component: <ReviewsContainer /> },
   { id: 4, component: <VerificationsContainer /> },
-  { id: 5, component: <ArbitrationCasesContainer /> },
+  { id: 5, component: <ArbitrationCasesListContainer /> },
   { id: 6, component: <ParticipantsContainer /> },
   { id: 7, component: <BalanceContainer /> },
   { id: 8, component: <SettingsContainer /> },

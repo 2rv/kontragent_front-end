@@ -124,7 +124,7 @@ const Container = styled.div`
   gap: ${spacing(8)};
 `;
 const Text = styled(SecondaryText)`
-  line-height: 21px;
+  line-height: 1.5;
 `;
 const Column = styled.div`
   display: flex;
@@ -135,7 +135,7 @@ const Column = styled.div`
 const BoldText = styled(PrimaryText)`
   font-weight: ${THEME_VALUE.FONT_WEIGHT.MEDIUM};
   font-size: ${THEME_SIZE.FONT.SMALL};
-  line-height: 21px;
+  line-height: 1.5;
 `;
 
 const OpacityText = styled(SecondaryText)`
