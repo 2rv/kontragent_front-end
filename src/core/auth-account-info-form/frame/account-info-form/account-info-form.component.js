@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import { CompanyInfoFormContainer } from '../company-info-form';
 
@@ -14,6 +14,14 @@ import { SuccessAlert } from '../../../../lib/elements/alert';
 import { PrimaryDivider } from '../../../../lib/elements/divider';
 
 export function AccountInfoFormComponent(props) {
+  const [countForm, setCountForm] = useState([false, true]);
+  const deleteCurrentForm = (index) => {
+    const array = countForm.splice(index, 1, false);
+    setCountForm(array);
+  };
+  const addCurrentForm = () => {
+    setCountForm([...countForm, true]);
+  };
   const {
     handleChange,
     handleBlur,
@@ -60,13 +68,17 @@ export function AccountInfoFormComponent(props) {
 
             <PrimaryDivider />
 
-            <CompanyInfoFormContainer />
+            <CompanyInfoFormContainer
+              countForm={countForm}
+              deleteCurrentForm={deleteCurrentForm}
+            />
           </SectionLayout>
 
           <SectionLayout type="SMALL">
             <AddCompanyFormButton
               tid="AUTH_ACCOUNT_INFO_FORM.COMPANY_INFO_FORM.BUTTON"
               type="button"
+              onClick={addCurrentForm}
             />
             <PrimaryButton
               tid="LOGIN.LOGIN_FORM.BUTTON"

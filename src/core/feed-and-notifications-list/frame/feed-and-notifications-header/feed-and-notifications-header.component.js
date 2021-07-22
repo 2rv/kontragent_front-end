@@ -40,7 +40,7 @@ const HeaderCase = styled.div`
 
 const InputCase = styled.div`
   display: grid;
-  grid-template-columns: 1fr 226px;
+  grid-template-columns: 1fr minmax(auto, 226px);
   gap: ${spacing(4)};
   width: 100%;
 `;

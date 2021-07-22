@@ -22,7 +22,6 @@ export function SecondarySelect(props: SecondarySelectPropsType) {
 }
 
 const Container = styled.div`
-  width: 100%;
   height: 46px;
   position: relative;
   display: grid;
@@ -36,9 +35,12 @@ const SelectArrowIcon = styled(ArrowIcon)`
 `;
 
 const Select = styled.select`
-  height: 100%;
-  width: 100%;
-  padding-left: ${spacing(4)};
+  background-color: ${THEME_COLOR.COLOR.BASE};
+  height: inherit;
+  display: flex;
+  width: inherit;
+  min-width: fit-content;
+  padding: 0 ${spacing(7)} 0 ${spacing(4)};
   border-radius: ${THEME_SIZE.RADIUS.DEFAULT};
   font-size: ${THEME_SIZE.FONT.SMALL};
   font-weight: ${THEME_VALUE.FONT_WEIGHT.MEDIUM};
@@ -46,7 +48,7 @@ const Select = styled.select`
   appearance: none;
   border: none;
   cursor: pointer;
-  background-color: ${THEME_COLOR.COLOR.BASE};
+
   &:hover {
     opacity: ${THEME_VALUE.OPACITY.HOVER};
   }

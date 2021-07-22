@@ -4,21 +4,16 @@ import { PrimaryText, SecondaryText } from '../../../../lib/elements/text';
 import { spacing, THEME_SIZE, THEME_VALUE } from '../../../../lib/theme';
 
 export function HeaderComponent(props) {
-  const {
-    title,
-    companyType,
-    companyName,
-    children,
-  } = props;
+  const { title, companyType, companyName } = props;
 
   return (
     <HeaderContainer>
       <Title tid={title} />
       <div>
-        <SecondaryText tid={companyType} />&nbsp;
+        <SecondaryText tid={companyType} />
+        &nbsp;
         <CompanyName tid={companyName} />
       </div>
-      {children ? children : null}
     </HeaderContainer>
   );
 }

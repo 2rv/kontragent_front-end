@@ -7,24 +7,29 @@ import { NoticeInfoComponent } from './frame/notice-info';
 
 import { DANGER_NOTICES } from './information.constant';
 
-import { PrimaryButton, SecondaryButton } from '../../../../lib/elements/button';
+import {
+  PrimaryButton,
+  SecondaryButton,
+} from '../../../../lib/elements/button';
 import { ErrorAlert } from '../../../../lib/elements/alert';
 import { spacing, THEME_COLOR } from '../../../../lib/theme';
+import { SectionLayout } from '../../../../lib/elements/layout';
 
 export function InformationComponent() {
   return (
     <Container>
       <DarkRedAlert tid="ENTITY.DETAIL_INFORMATION.ERROR_ALERT" />
-      <HeaderComponent
-        title="ENTITY.DETAIL_INFORMATION.HEADER.TITLE"
-        companyType="ENTITY.DETAIL_INFORMATION.HEADER.COMPANY_TYPE"
-        companyName={'"Компания Гермес-Электро"'}
-      >
+      <SectionLayout type="LARGE">
+        <HeaderComponent
+          title="ENTITY.DETAIL_INFORMATION.HEADER.TITLE"
+          companyType="ENTITY.DETAIL_INFORMATION.HEADER.COMPANY_TYPE"
+          companyName={'"Компания Гермес-Электро"'}
+        />
         <Content>
           <PrimaryButton tid="ENTITY.DETAIL_INFORMATION.HEADER.DOWNLOAD_INFO_IN_PDF" />
           <SecondaryButton tid="ENTITY.DETAIL_INFORMATION.HEADER.LEGAL_ADVICE_FACE" />
         </Content>
-      </HeaderComponent>
+      </SectionLayout>
       <DangerNoticesComponent dangerNotices={DANGER_NOTICES} />
       <StatisticsComponent />
       <NoticeInfoComponent />
@@ -33,15 +38,14 @@ export function InformationComponent() {
 }
 
 const Container = styled.div`
-  width: 100%;
+  display: grid;
+  gap: ${spacing(8)};
 `;
 
 const DarkRedAlert = styled(ErrorAlert)`
   background-color: ${THEME_COLOR.COLOR.VALIDATION};
-  margin-bottom: ${spacing(8)};
   span {
     color: white;
-    margin-bottom: 0;
   }
   svg {
     fill: ${THEME_COLOR.COLOR.BASE};

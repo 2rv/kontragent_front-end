@@ -5,6 +5,7 @@ import { NewMessageNotificationItemComponent } from './new-message-notification-
 import { RatingNotificationItemComponent } from './rating-notification-item.component';
 import { ProblemNotificationItemComponent } from './problem-notification-item.component';
 import { PrimaryBox } from '../../../../lib/elements/box';
+import React from 'react';
 
 export function NotificationsListComponent(props) {
   const {
@@ -17,14 +18,15 @@ export function NotificationsListComponent(props) {
   } = props;
   return (
     <Container>
-      {feedAndNotificationsListData.map((data, index) => (
-        <div key={index}>
-          <RatingNotificationItemComponent />
-          <FindCompleteNotificationItemComponent />
-          <NewMessageNotificationItemComponent />
-          <ProblemNotificationItemComponent />
-        </div>
-      ))}
+      <RatingNotificationItemComponent />
+      <FindCompleteNotificationItemComponent />
+      <NewMessageNotificationItemComponent />
+      <ProblemNotificationItemComponent />
+      {/* {feedAndNotificationsListData.map((data, index) => (
+        <React.Fragment key={index}>
+
+        </React.Fragment>
+      ))} */}
     </Container>
   );
 }
@@ -32,4 +34,5 @@ const Container = styled(PrimaryBox)`
   display: flex;
   flex-direction: column;
   padding: ${spacing(4)} 0;
+  flex-grow: 1;
 `;

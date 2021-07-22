@@ -41,8 +41,9 @@ const AvatarCase = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
+  min-width: 40px;
   height: 40px;
+  flex: 1 0;
   border-radius: ${THEME_SIZE.RADIUS.CIRCLE};
 `;
 const MainCase = styled.div`
@@ -58,6 +59,7 @@ const ContentCase = styled.div`
 const Container = styled.div`
   display: flex;
   padding: ${spacing(4)} ${spacing(8)};
+  transition: 0.2s ease-in;
   &:hover {
     background-color: ${THEME_COLOR.COLOR.SECONDARY};
   }

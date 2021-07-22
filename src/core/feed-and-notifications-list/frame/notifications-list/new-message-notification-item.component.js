@@ -17,23 +17,23 @@ export function NewMessageNotificationItemComponent(props) {
       <ContentCase>
         <Avatar src="https://www.psyh.ru/wp-content/uploads/2018/01/6f36b7c998812ad5a43a934e3c81a51f.jpg" />
         <MainCase>
-          <HeaderCase>
-            <Title>
-              Новое сообщение от <ColoredText tid="вашего менеджера " />
-              <SecondaryText tid="Илья зинченко ждёт вашего ответа." />
-            </Title>
-            <DotsIcon />
-          </HeaderCase>
+          <div>
+            <Title tid="Новое сообщение от" />
+            <ColoredText tid="вашего менеджера " />
+            <SecondaryText tid="Илья зинченко ждёт вашего ответа." />
+            &nbsp;
+            <button>
+              <Dots />
+            </button>
+          </div>
           <Time tid="3 часа назад" />
         </MainCase>
       </ContentCase>
     </Container>
   );
 }
-const HeaderCase = styled.div`
-  display: flex;
-  align-items: center;
-  gap: ${spacing(3)};
+const Dots = styled(DotsIcon)`
+  margin-bottom: 15%;
 `;
 const Avatar = styled.img`
   width: 40px;
@@ -53,6 +53,7 @@ const ContentCase = styled.div`
 const Container = styled.div`
   display: flex;
   padding: ${spacing(4)} ${spacing(8)};
+  transition: 0.2s ease-in;
   &:hover {
     background-color: ${THEME_COLOR.COLOR.SECONDARY};
   }
@@ -60,7 +61,7 @@ const Container = styled.div`
 
 const Title = styled(SecondaryText)`
   color: ${THEME_COLOR.TEXT.PRIMARY};
-  line-height: 21px;
+  line-height: 1.5;
 `;
 const ColoredText = styled(SecondaryText)`
   color: ${THEME_COLOR.TEXT.SUCCESS};

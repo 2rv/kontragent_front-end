@@ -23,21 +23,28 @@ export function SecondaryInput(props: SecondaryInputPropsType) {
 const Input = styled(PrimaryInput)`
   background-color: inherit;
   font-weight: ${THEME_VALUE.FONT_WEIGHT.MEDIUM};
-  width: 100%;
+  display: flex;
+  flex: 1;
   height: 46px;
+  min-width: min-content;
   padding-right: ${spacing(11)};
 `;
 
 const IconContainer = styled.div`
   display: flex;
-  align-items: center;
   position: absolute;
-  right: ${spacing(4)};
-  top: 0;
-  bottom: 0;
+  align-items: center;
+  align-self: flex-end;
+  right: 1px;
+  bottom: 1px;
+  border-radius: ${THEME_SIZE.RADIUS.DEFAULT};
+  background-color: #fff;
+  padding: ${spacing(2.75)} ${spacing(2.75)};
 `;
 
 const Container = styled.div`
+  display: flex;
+  align-items: center;
   position: relative;
   background-color: ${THEME_COLOR.COLOR.BASE};
   border-radius: ${THEME_SIZE.RADIUS.DEFAULT};

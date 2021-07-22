@@ -69,14 +69,14 @@ const WhiteFindIcon = styled(FindIcon)`
 `;
 const Container = styled.div`
   display: flex;
-  flex-direction: column;
   gap: ${spacing(4)};
-  width: 100%;
-  height: 100%;
+  flex: 1;
+  flex-flow: column;
 `;
 const ListItemContent = styled.div`
   display: flex;
   padding: 0 ${spacing(4)};
+  transition: 0.2s ease-in;
   &:hover {
     background-color: ${THEME_COLOR.COLOR.SECONDARY};
   }
@@ -85,6 +85,7 @@ const HeaderCase = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: ${spacing(4)};
 `;
 const TitleCase = styled.div`
   display: flex;
@@ -102,20 +103,28 @@ const Valute = styled(SecondaryText)`
   font-size: ${THEME_SIZE.FONT.SMALL};
 `;
 const Button = styled(PrimaryButton)`
-  width: 226px;
+  flex-basis: 226px;
+  min-width: max-content;
+  padding: 0 ${spacing(4)};
+  height: 46px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
 const ContentCase = styled(PrimaryBox)`
   display: flex;
   flex-direction: column;
   padding: ${spacing(4)} 0;
   min-height: 0;
-  flex-grow: 1;
+  min-width: max-content;
   overflow: auto;
 `;
 const ItemCase = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: ${spacing(3)};
+  min-width: max-content;
 `;
 const InfoCase = styled.div`
   display: flex;
@@ -126,8 +135,8 @@ const ItemImageIcon = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 40px;
+  min-width: 40px;
+  min-height: 40px;
   border-radius: ${THEME_SIZE.RADIUS.CIRCLE};
   border: none;
   background-color: ${({ altColor }) =>
@@ -136,7 +145,7 @@ const ItemImageIcon = styled.div`
 const ItemInfoCase = styled.div`
   display: flex;
   gap: ${spacing(2)};
-  flex-direction: column;
+  flex-flow: column;
 `;
 const ItemTitle = styled(PrimaryText)`
   font-size: ${THEME_SIZE.FONT.SMALL};
