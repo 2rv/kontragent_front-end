@@ -1,1 +1,1 @@
-export { CompanyInfoFormContainer } from './company-info-form.container';
+export { CompanyInfoFormComponent } from './company-info-form.component';

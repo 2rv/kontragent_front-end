@@ -4,7 +4,7 @@ import { IndentLayout, SectionLayout } from '../../lib/elements/layout';
 import { AccountInfoFooterContainer } from './frame/account-info-footer';
 import { AccountInfoHeaderContainer } from './frame/account-info-header';
 
-export function AuthAccoutInfoFormConmponent(props) {
+export function AuthAccoutInfoFormComponent(props) {
   const {
     isPending,
     isError,
@@ -13,6 +13,7 @@ export function AuthAccoutInfoFormConmponent(props) {
     pageLoading,
     initialValue,
     accountInfoFormFieldName,
+    initialCompanyInfoFormField,
   } = props;
 
   return (
@@ -28,6 +29,7 @@ export function AuthAccoutInfoFormConmponent(props) {
             errorMessage={errorMessage}
             pageLoading={pageLoading}
             accountInfoFormFieldName={accountInfoFormFieldName}
+            initialCompanyInfoFormField={initialCompanyInfoFormField}
           />
           <AccountInfoFooterContainer />
         </SectionLayout>
