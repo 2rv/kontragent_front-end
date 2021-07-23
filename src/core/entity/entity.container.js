@@ -10,14 +10,16 @@ import {
   isRequestSuccess,
 } from '../../main/store/store.service';
 
-import { InformationContainer } from './frames/information';
-import { RiskRatingAssessmentContainer } from './frames/risk-rating-assessment';
-import { ReviewsContainer } from './frames/reviews';
-import { VerificationsContainer } from './frames/verifications';
-import { ArbitrationCasesListContainer } from './frames/arbitration-cases-list';
-import { ParticipantsContainer } from './frames/participants';
-import { BalanceContainer } from './frames/balance';
-import { SettingsContainer } from './frames/settings';
+import {
+  BalanceContainer,
+  ParticipantsContainer,
+  ArbitrationCasesContainer,
+  InformationContainer,
+  SettingsContainer,
+  RiskRatingAssessmentContainer,
+  ReviewsContainer,
+  VerificationsContainer,
+} from './frames';
 
 export function EntityContainer() {
   const dispatch = useDispatch();
@@ -66,7 +68,7 @@ const TABS_COMPONENT_LIST = [
   { id: 2, component: <RiskRatingAssessmentContainer /> },
   { id: 3, component: <ReviewsContainer /> },
   { id: 4, component: <VerificationsContainer /> },
-  { id: 5, component: <ArbitrationCasesListContainer /> },
+  { id: 5, component: <ArbitrationCasesContainer /> },
   { id: 6, component: <ParticipantsContainer /> },
   { id: 7, component: <BalanceContainer /> },
   { id: 8, component: <SettingsContainer /> },

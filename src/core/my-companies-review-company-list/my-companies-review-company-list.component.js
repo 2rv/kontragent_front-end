@@ -42,7 +42,7 @@ export function MyCompaniesReviewCompanyListComponent(props) {
 }
 const Container = styled.div`
   display: flex;
-  width: 100%;
-  flex-direction: column;
   gap: ${spacing(4)};
+  flex: 1;
+  flex-flow: column;
 `;

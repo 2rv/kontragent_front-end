@@ -1,26 +1,25 @@
 import styled from 'styled-components';
-
 import { HeaderComponent } from '../header';
 import { ParticipantsListComponent } from './frame/participants-list';
 import { AddParticipantComponent } from './frame/add-participant';
-
-import { PARTICIPANTS_LIST } from './participants.constant';
-
 import { PrimaryBox } from '../../../../lib/elements/box';
 import { IndentLayout, SectionLayout } from '../../../../lib/elements/layout';
 
-export function ParticipantsComponent() {
+export function ParticipantsComponent(props) {
+  const { participantsListData } = props;
   return (
     <>
       <Container>
         <IndentLayout>
-          <SectionLayout>
+          <SectionLayout type="LARGE">
             <HeaderComponent
               title="ENTITY.PARTICIPANTS.HEADER.TITLE"
               companyType="ENTITY.PARTICIPANTS.HEADER.COMPANY_TYPE"
               companyName={'"Компания Гермес-Электро"'}
             />
-            <ParticipantsListComponent participantsList={PARTICIPANTS_LIST} />
+            <ParticipantsListComponent
+              participantsListData={participantsListData}
+            />
           </SectionLayout>
         </IndentLayout>
       </Container>
@@ -30,6 +29,5 @@ export function ParticipantsComponent() {
 }
 
 const Container = styled(PrimaryBox)`
-  display: flex;
   height: fit-content;
 `;

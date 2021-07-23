@@ -1,4 +1,4 @@
-export { ArbitrationCasesListContainer } from './arbitration-cases-list';
+export { ArbitrationCasesContainer } from './arbitration-cases-list';
 export { RedZoneInformationContainer } from './red-zone-information';
 export { VerificationsContainer } from './verifications';
 export { ReviewsContainer } from './reviews';

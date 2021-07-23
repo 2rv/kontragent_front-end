@@ -1,10 +1,10 @@
 import styled from 'styled-components';
 import { spacing, THEME_COLOR, THEME_VALUE } from '../../../../lib/theme';
-import { BaseList } from '../../../../lib/elements/list';
 import { PrimaryText, SecondaryText } from '../../../../lib/elements/text';
 import { CircleDivider } from '../../../../lib/elements/divider';
 import { ReactComponent as MessageIcon } from '../../../../asset/svg/message-icon.svg';
 import { SectionLayout } from '../../../../lib/elements/layout';
+import { BaseList } from '../../../../lib/elements/list';
 
 export function ArbitrationListComponent(props) {
   const {
@@ -36,13 +36,13 @@ export function ArbitrationListComponent(props) {
               <Avatar src={avatar} />
               <SectionLayout type="SMALL">
                 <TopicNameText>{topic}</TopicNameText>
-                <ContentInfoCase>
+                <Line>
                   <SecondaryText>{recipient}</SecondaryText>
                   <CircleDivider />
                   <SecondaryText>{date}</SecondaryText>
                   <CircleDivider />
                   <StatusText tid={statusTid} statusId={statusId} />
-                </ContentInfoCase>
+                </Line>
               </SectionLayout>
             </Content>
             <MessageInfoCase>
@@ -60,9 +60,10 @@ const Avatar = styled.img`
   height: 56px;
 `;
 const Container = styled.div`
-  display: grid;
-  grid-template-columns: 1fr auto;
+  display: flex;
   justify-content: space-between;
+  align-items: center;
+  flex: 1;
 `;
 const Content = styled.div`
   display: flex;
@@ -77,8 +78,9 @@ const MessageInfoCase = styled.div`
 const TopicNameText = styled(PrimaryText)`
   font-weight: ${THEME_VALUE.FONT_WEIGHT.MEDIUM};
 `;
-const ContentInfoCase = styled.div`
-  display: flex;
+const Line = styled.div`
+  display: inline-flex;
+  flex-wrap: wrap;
   gap: ${spacing(2)};
   align-items: center;
 `;

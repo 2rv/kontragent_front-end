@@ -17,17 +17,17 @@ export function ThemeArbitrationHeaderComponent(props) {
 
   return (
     <Container>
-      <LineCase>
+      <Line>
         <Title tid={theme} />
         <Role roleColor={roleColor} tid={roleText} />
-      </LineCase>
-      <LineCase>
+      </Line>
+      <Line>
         <Description tid={description} />
         <CircleDivider />
         <Time tid={time} />
         <CircleDivider />
         <Status tid={status} />
-      </LineCase>
+      </Line>
     </Container>
   );
 }
@@ -47,8 +47,9 @@ const Status = styled(SecondaryText)`
   color: ${THEME_COLOR.TEXT.SUCCESS};
   font-weight: ${THEME_VALUE.FONT_WEIGHT.MEDIUM};
 `;
-const LineCase = styled.div`
-  display: flex;
+const Line = styled.div`
+  display: inline-flex;
+  flex-wrap: wrap;
   gap: ${spacing(2)};
   align-items: center;
 `;

@@ -1,8 +1,13 @@
 import styled from 'styled-components';
-import { SectionLayout } from '../../../../lib/elements/layout';
-import { PrimaryTitleText } from '../../../../lib/elements/text';
-import { spacing, THEME_SIZE, THEME_VALUE } from '../../../../lib/theme';
-import { SupportRequestListItemComponent } from './support-requests-list-item.component';
+import {
+  spacing,
+  THEME_SIZE,
+  THEME_VALUE,
+  THEME_COLOR,
+} from '../../../../lib/theme';
+import { BaseList } from '../../../../lib/elements/list';
+import { IndentLayout, SectionLayout } from '../../../../lib/elements/layout';
+import { PrimaryText, SecondaryText } from '../../../../lib/elements/text';
 
 export function SupportRequestsListComponent(props) {
   const {
@@ -14,14 +19,57 @@ export function SupportRequestsListComponent(props) {
     mySupportRequestsListData,
   } = props;
   return (
-    <SectionLayout>
-      {mySupportRequestsListData.map((data, index) => (
-        <SupportRequestListItemComponent key={index} data={data} />
-      ))}
-    </SectionLayout>
+    <BaseList
+      listData={mySupportRequestsListData}
+      skeletonAction={pageLoading || isPending}
+    >
+      {(props) => {
+        const { problemTid, requestCause, requestStatusId, statusTid, date } =
+          props;
+        return (
+          <Content>
+            <SectionLayout type="SMALL">
+              <TItleText tid={problemTid} />
+              <SecondaryText>{requestCause}</SecondaryText>
+            </SectionLayout>
+            <Column>
+              <StatusText tid={statusTid} statusId={requestStatusId} />
+              <DateText>{date}</DateText>
+            </Column>
+          </Content>
+        );
+      }}
+    </BaseList>
   );
 }
-const Title = styled(PrimaryTitleText)`
-  font-size: ${THEME_SIZE.FONT.MEDIUM};
+const Content = styled.div`
+  display: flex;
+  justify-content: space-between;
+  flex: 1;
+  gap: ${spacing(4)};
+`;
+
+const StatusText = styled(SecondaryText)`
   font-weight: ${THEME_VALUE.FONT_WEIGHT.MEDIUM};
+  color: ${(props) =>
+    props.statusId === 0
+      ? THEME_COLOR.TEXT.SUCCESS
+      : props.statusId === 1
+      ? THEME_COLOR.TEXT.WARNING
+      : THEME_COLOR.TEXT.ERROR};
+`;
+
+const Column = styled.div`
+  display: flex;
+  flex-flow: column;
+  gap: ${spacing(2)};
+  justify-content: center;
+  align-items: flex-end;
+`;
+const TItleText = styled(PrimaryText)`
+  font-weight: ${THEME_VALUE.FONT_WEIGHT.MEDIUM};
+`;
+
+const DateText = styled(SecondaryText)`
+  color: ${THEME_COLOR.COLOR.LIGHT_GREY};
 `;

@@ -46,10 +46,10 @@ export function ThemeArbitrationComponent(props) {
         <Content type="LARGE">
           <ContentHeaderCase>
             <ContentTitle tid="THEME_ARBITRATION.REVIEWS" />
-            <LineCase>
+            <Line>
               <SecondaryText tid={companyType} />
               <NameCompany tid={`"${companyName}"`} />
-            </LineCase>
+            </Line>
           </ContentHeaderCase>
           <CommentListComponent
             dataComment={commentItem}
@@ -81,8 +81,9 @@ const Content = styled(PrimaryBox)`
   padding-right: ${spacing(2)};
   gap: ${spacing(6)};
 `;
-const LineCase = styled.div`
-  display: flex;
+const Line = styled.div`
+  display: inline-flex;
+  flex-wrap: wrap;
   gap: ${spacing(2)};
   align-items: center;
 `;
