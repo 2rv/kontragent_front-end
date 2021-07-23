@@ -1,12 +1,13 @@
 import React from 'react';
-import { SectionLayout } from '../../../../lib/elements/layout';
-import { FieldLayout } from '../../../../lib/elements/layout';
+import {
+  SectionLayout,
+  FieldLayout,
+  ButtonLayout,
+} from '../../../../lib/elements/layout';
 import { SecondaryTitleText } from '../../../../lib/elements/text';
-import { PrimarySelect } from '../../../../lib/elements/field';
-import { PrimaryField } from '../../../../lib/elements/field';
+import { PrimarySelect, PrimaryField } from '../../../../lib/elements/field';
 import { PrimaryButton } from '../../../../lib/elements/button';
-import { ErrorAlert } from '../../../../lib/elements/alert';
-import { SuccessAlert } from '../../../../lib/elements/alert';
+import { ErrorAlert, SuccessAlert } from '../../../../lib/elements/alert';
 
 export function BalanceFormDepositComponent(props) {
   const {
@@ -63,12 +64,12 @@ export function BalanceFormDepositComponent(props) {
             type="number"
           />
         </FieldLayout>
-
-        <PrimaryButton
-          tid="BALANCE.BALANCE_DEPOSIT.BUTTON"
-          disabled={isSubmitDisabled()}
-        />
-
+        <ButtonLayout type="double">
+          <PrimaryButton
+            tid="BALANCE.BALANCE_DEPOSIT.BUTTON"
+            disabled={isSubmitDisabled()}
+          />
+        </ButtonLayout>
         {(isError || errorMessage) && (
           <ErrorAlert tid={`ERROR.${errorMessage}`} />
         )}

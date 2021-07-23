@@ -74,6 +74,7 @@ export function SupportFormCreateRequestComponent(props) {
               onBlur={handleBlur}
               error={isFieldError(fieldProblemDescription)}
               row={6}
+              isFile
             />
           </SectionLayout>
         </SectionLayout>

@@ -1,8 +1,8 @@
 export const NAVMENU_ITEMS = [
   {
-    tid: 'SIDEBAR.NAV_MENU.ITEMS.PASSWORD_RECOVERY_FIRST_TAGE',
-    pathname: '/auth-recovery-account',
-    path: '/auth-recovery-account',
+    tid: 'Главная страница',
+    pathname: '/',
+    path: '/',
   },
   {
     tid: 'SIDEBAR.NAV_MENU.ITEMS.LOGIN',
@@ -25,14 +25,59 @@ export const NAVMENU_ITEMS = [
     path: '/auth/account-verification',
   },
   {
+    tid: 'SIDEBAR.NAV_MENU.ITEMS.PHONE_CONFIRMATION_PAGE',
+    pathname: '/auth/phone-verification',
+    path: '/auth/phone-verification',
+  },
+  {
+    tid: 'SIDEBAR.NAV_MENU.ITEMS.PASSWORD_RECOVERY_FIRST_TAGE',
+    pathname: '/auth-recovery-account',
+    path: '/auth-recovery-account',
+  },
+  {
+    tid: 'SIDEBAR.NAV_MENU.ITEMS.PASSWORD_RECOVERY_SECOND_TAGE',
+    pathname: '/auth/email-verification',
+    path: '/auth/email-verification',
+  },
+  {
+    tid: 'SIDEBAR.NAV_MENU.ITEMS.PASSWORD_RECOVERY_THIRS_TAGE',
+    pathname: '/auth-change-password',
+    path: '/auth-change-password',
+  },
+  {
     tid: 'SIDEBAR.NAV_MENU.ITEMS.SETTINGS',
     pathname: '/settings',
     path: '/settings',
   },
   {
+    tid: 'SIDEBAR.NAV_MENU.ITEMS.BALANCE_REPLENISHMENT',
+    pathname: '/balance-deposit',
+    path: '/balance-deposit',
+  },
+  {
+    tid: 'SIDEBAR.NAV_MENU.ITEMS.ADD_COMPANY',
+    pathname: '/my-companies-add-company',
+    path: '/my-companies-add-company',
+  },
+  {
+    tid: 'SIDEBAR.NAV_MENU.ITEMS.CREATE_SUPPORT_REQUEST',
+    pathname: '/support/create-request',
+    path: '/support/create-request',
+  },
+  {
+    tid: 'Тема арбитража',
+    pathname: '/theme-arbitration',
+    path: '/theme-arbitration',
+  },
+  {
     tid: 'SIDEBAR.NAV_MENU.ITEMS.NEWS',
     pathname: '/news-article',
     path: '/news-article',
+  },
+  {
+    tid: 'SIDEBAR.NAV_MENU.ITEMS.PRIVATE_MESSAGE_DIALOGS',
+    pathname: '/dialog-personal',
+    path: '/dialog-personal',
   },
   {
     tid: 'SIDEBAR.NAV_MENU.ITEMS.DASHBOARD',
@@ -43,11 +88,6 @@ export const NAVMENU_ITEMS = [
     tid: 'SIDEBAR.NAV_MENU.ITEMS.REFERRALS',
     pathname: '/referral',
     path: '/referral',
-  },
-  {
-    tid: 'SIDEBAR.NAV_MENU.ITEMS.TRANSACTION_HISTORY',
-    pathname: '/balance-activity',
-    path: '/balance-activity',
   },
   {
     tid: 'SIDEBAR.NAV_MENU.ITEMS.MY_COUNTERPARTIES',
@@ -65,16 +105,6 @@ export const NAVMENU_ITEMS = [
     path: '/book-review-list',
   },
   {
-    tid: 'SIDEBAR.NAV_MENU.ITEMS.ADD_COMPANY',
-    pathname: '/my-companies-add-company',
-    path: '/my-companies-add-company',
-  },
-  {
-    tid: 'SIDEBAR.NAV_MENU.ITEMS.CREATE_SUPPORT_REQUEST',
-    pathname: '/support/create-request',
-    path: '/support/create-request',
-  },
-  {
     tid: 'SIDEBAR.NAV_MENU.ITEMS.ARBITRATION',
     pathname: '/arbitration',
     path: '/arbitration',
@@ -85,11 +115,6 @@ export const NAVMENU_ITEMS = [
     path: '/company-members',
   },
   {
-    tid: 'SIDEBAR.NAV_MENU.ITEMS.FEED_AND_NOTIFICATIONS',
-    pathname: '/feed-and-notifications',
-    path: '/feed-and-notifications',
-  },
-  {
     tid: 'SIDEBAR.NAV_MENU.ITEMS.ASK_A_QUESTION_TO_A_LAWYER',
     pathname: '/lawyer-request',
     path: '/lawyer-request',
@@ -98,11 +123,6 @@ export const NAVMENU_ITEMS = [
     tid: 'SIDEBAR.NAV_MENU.ITEMS.MY_SUPPORT_REQUESTS',
     pathname: '/support/my-requests',
     path: '/support/my-requests',
-  },
-  {
-    tid: 'SIDEBAR.NAV_MENU.ITEMS.PRIVATE_MESSAGE_DIALOGS',
-    pathname: '/dialog-personal',
-    path: '/dialog-personal',
   },
   {
     tid: 'SIDEBAR.NAV_MENU.ITEMS.MY_COMPANIES',
@@ -120,29 +140,14 @@ export const NAVMENU_ITEMS = [
     path: '/my-lawyer-request',
   },
   {
-    tid: 'SIDEBAR.NAV_MENU.ITEMS.BALANCE_REPLENISHMENT',
-    pathname: '/balance-deposit',
-    path: '/balance-deposit',
+    tid: 'SIDEBAR.NAV_MENU.ITEMS.TRANSACTION_HISTORY',
+    pathname: '/balance-activity',
+    path: '/balance-activity',
   },
   {
-    tid: 'SIDEBAR.NAV_MENU.ITEMS.PHONE_CONFIRMATION_PAGE',
-    pathname: '/auth/phone-verification',
-    path: '/auth/phone-verification',
-  },
-  {
-    tid: 'SIDEBAR.NAV_MENU.ITEMS.PASSWORD_RECOVERY_SECOND_TAGE',
-    pathname: '/auth/email-verification',
-    path: '/auth/email-verification',
-  },
-  {
-    tid: 'SIDEBAR.NAV_MENU.ITEMS.PASSWORD_RECOVERY_THIRS_TAGE',
-    pathname: '/auth-change-password',
-    path: '/auth-change-password',
-  },
-  {
-    tid: 'Тема арбитража',
-    pathname: '/theme-arbitration',
-    path: '/theme-arbitration',
+    tid: 'SIDEBAR.NAV_MENU.ITEMS.FEED_AND_NOTIFICATIONS',
+    pathname: '/feed-and-notifications',
+    path: '/feed-and-notifications',
   },
   {
     tid: 'Контрагент',

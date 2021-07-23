@@ -54,6 +54,7 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   min-height: 56px;
+  flex: 1;
   gap: ${spacing(2)};
 `;
 const RelativeCase = styled.div`

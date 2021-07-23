@@ -7,7 +7,7 @@ import {
   THEME_VALUE,
 } from '../../../../lib/theme';
 import { PrimaryDivider } from '../../../../lib/elements/divider';
-import { PrimaryField } from '../../../../lib/elements/field';
+import { TextareaField } from '../../../../lib/elements/field';
 import { ReactComponent as SendIcon } from '../../../../asset/svg/send-icon.svg';
 import { ReactComponent as FileIcon } from '../../../../asset/svg/file-icon.svg';
 
@@ -17,7 +17,7 @@ export function CommentInputComponent(props) {
     <Container>
       <Avatar src={myAvatar} />
       <FieldCase>
-        <PrimaryField placeholderTid="THEME_ARBITRATION.WRITE_COMMENT" />
+        <TextareaField placeholderTid="THEME_ARBITRATION.WRITE_COMMENT" />
         <ActionsCase>
           <FileIcon />
           <SendIcon />

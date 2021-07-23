@@ -49,7 +49,7 @@ export function DialogMessageListComponent(props) {
         ))}
       </Content>
       <Footer>
-        <Field placeholderTid="Напишите сообщение" />
+        <Field isFile isSend placeholderTid="Напишите сообщение" />
       </Footer>
     </Container>
   );
