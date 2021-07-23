@@ -14,7 +14,7 @@ export function BaseList(props) {
 
   return (
     <List>
-      {skeletonAction || true ? (
+      {skeletonAction ? (
         <ListSkeleton />
       ) : (
         listData.map((data, index) => (
