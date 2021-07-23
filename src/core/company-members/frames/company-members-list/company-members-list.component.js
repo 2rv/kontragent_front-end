@@ -89,14 +89,9 @@ const Title = styled(PrimaryText)`
 `;
 const Desctiption = styled(SecondaryText)`
   font-size: ${THEME_SIZE.FONT.DEFAULT};
+  line-height: 1.5;
 `;
 const Time = styled(SecondaryText)`
   font-size: ${THEME_SIZE.FONT.TINY};
   color: ${THEME_COLOR.COLOR.LIGHT_GREY};
-`;
-
-const Container = styled(PrimaryBox)`
-  display: flex;
-  flex-direction: column;
-  gap: ${spacing(6)};
 `;

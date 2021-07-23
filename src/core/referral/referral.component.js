@@ -48,13 +48,6 @@ export function ReferralComponent(props) {
     </>
   );
 }
-const Content = styled.div`
-  padding: 0 ${spacing(5)};
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
-  min-height: 0;
-`;
 const Container = styled.div`
   position: absolute;
   top: 0px;
@@ -68,6 +61,7 @@ const Container = styled.div`
   flex-direction: column;
   flex-grow: 1;
   min-height: 0;
+  min-width: fit-content;
   background: linear-gradient(
     0deg,
     ${THEME_COLOR.COLOR.ACCENT} 55%,

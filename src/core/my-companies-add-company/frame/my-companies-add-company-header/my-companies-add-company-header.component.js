@@ -17,4 +17,5 @@ const Header = styled(PrimaryTitleText)`
 
 const Subheader = styled(PrimaryText)`
   color: ${THEME_COLOR.TEXT.SECONDARY};
+  line-height: 1.5;
 `;

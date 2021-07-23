@@ -61,7 +61,7 @@ export function AddCompanyFormComponent(props) {
             error={isFieldError(fieldInn)}
           />
         </FieldLayout>
-        <ButtonLayout type="double">
+        <ButtonLayout>
           <SecondaryButton
             tid="MY_COMPANIES.MY_COMPANIES_ADD_COMPANY.ADD_COMPANY_FORM.BUTTON"
             disabled={isSubmitDisabled()}

@@ -8,6 +8,7 @@ import { SecondaryTitleText } from '../../../../lib/elements/text';
 import { PrimarySelect, PrimaryField } from '../../../../lib/elements/field';
 import { PrimaryButton } from '../../../../lib/elements/button';
 import { ErrorAlert, SuccessAlert } from '../../../../lib/elements/alert';
+import styled from 'styled-components';
 
 export function BalanceFormDepositComponent(props) {
   const {
@@ -43,7 +44,7 @@ export function BalanceFormDepositComponent(props) {
   return (
     <form onSubmit={handleSubmit}>
       <SectionLayout>
-        <SecondaryTitleText tid="BALANCE.BALANCE_DEPOSIT.HEADER" />
+        <Title tid="BALANCE.BALANCE_DEPOSIT.HEADER" />
         <FieldLayout>
           <PrimarySelect
             titleTid="BALANCE.BALANCE_DEPOSIT.FIELD.PAYMENT_METHOD.TITLE"
@@ -64,7 +65,7 @@ export function BalanceFormDepositComponent(props) {
             type="number"
           />
         </FieldLayout>
-        <ButtonLayout type="double">
+        <ButtonLayout>
           <PrimaryButton
             tid="BALANCE.BALANCE_DEPOSIT.BUTTON"
             disabled={isSubmitDisabled()}
@@ -81,3 +82,6 @@ export function BalanceFormDepositComponent(props) {
     </form>
   );
 }
+const Title = styled(SecondaryTitleText)`
+  line-height: 1.5;
+`;

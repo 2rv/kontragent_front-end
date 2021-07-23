@@ -115,8 +115,9 @@ export function NoticeInfoComponent() {
 }
 
 const Container = styled.div`
-  display: flex;
+  display: grid;
   gap: ${spacing(8)};
+  grid-template-columns: 1fr 1fr;
 `;
 const Content = styled(SectionLayout)``;
 const Column = styled.div`

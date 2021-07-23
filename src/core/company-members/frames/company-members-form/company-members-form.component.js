@@ -30,10 +30,11 @@ export function CompanyMembersFormComponent() {
             <PrimaryField placeholderTid="COMPANY_MEMBERS.FIND_BOX.EMAIL_USER" />
             <Button tid="COMPANY_MEMBERS.FIND_BOX.INVITE" />
           </FieldCase>
-          <TinyText>
+          <div>
             <TinyText tid="COMPANY_MEMBERS.FIND_BOX.DESCRIPTION_FAQ" />
+            &nbsp;
             <TinyLink tid="COMPANY_MEMBERS.FIND_BOX.MORE_DETAILS" />
-          </TinyText>
+          </div>
         </SectionLayout>
       </IndentLayout>
     </PrimaryBox>
@@ -53,6 +54,7 @@ const Button = styled(SecondaryButton)`
 `;
 const TinyLink = styled(PrimaryLink)`
   font-size: ${THEME_SIZE.FONT.TINY};
+  line-height: 1.5;
 `;
 const TinyText = styled(SecondaryText)`
   font-size: ${THEME_SIZE.FONT.TINY};

@@ -32,19 +32,16 @@ export function BalanceHistoryListItem(props) {
         </Content>
         {sentMoney && <Price tid={`-${sentMoney}`} />}
       </Container>
-      <Divider />
+      <PrimaryDivider />
     </DividerCase>
   );
 }
-const Divider = styled(PrimaryDivider)`
-  background-color: ${THEME_COLOR.COLOR.BASE};
-`;
 const DividerCase = styled.div`
   display: grid;
   padding: 0 ${spacing(8)};
   transition: 0.2s ease-in;
   &:hover {
-    background-color: ${THEME_COLOR.COLOR.BASE};
+    background-color: ${THEME_COLOR.COLOR.SECONDARY};
   }
 `;
 const Container = styled.div`

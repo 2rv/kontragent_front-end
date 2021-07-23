@@ -75,6 +75,7 @@ const InfoCase = styled.div`
 `;
 const TopicNameText = styled(PrimaryText)`
   font-weight: ${THEME_VALUE.FONT_WEIGHT.MEDIUM};
+  line-height: 1.5;
 `;
 const Line = styled.div`
   display: inline-flex;

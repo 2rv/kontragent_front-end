@@ -1,10 +1,10 @@
 import { PrimaryBox } from '../../lib/elements/box';
 import { IndentLayout, SectionLayout } from '../../lib/elements/layout';
-import { AddCompanyHeaderContainer } from './frame/add-company-header';
 import { AddCompanyFormContainer } from './frame/add-company-form';
 import { MyCompaniesAddCompanyHeaderContainer } from './frame/my-companies-add-company-header';
 import styled from 'styled-components';
 import { PrimaryLoader } from '../../lib/elements/loader';
+import { PrimaryTitleText } from '../../lib/elements/text';
 
 export function MyCompaniesAddCompanyComponent(props) {
   const {
@@ -25,8 +25,8 @@ export function MyCompaniesAddCompanyComponent(props) {
         <MyCompaniesAddCompanyHeaderContainer />
         <PrimaryBox>
           <IndentLayout>
-            <SectionLayout>
-              <AddCompanyHeaderContainer />
+            <SectionLayout type="LARGE">
+              <Title tid="MY_COMPANIES.MY_COMPANIES_ADD_COMPANY.ADD_COMPANY_FORM.HEADER" />
               <AddCompanyFormContainer
                 initialValue={initialValue}
                 pageLoading={pageLoading}
@@ -50,4 +50,7 @@ const Container = styled(SectionLayout)`
   flex-direction: column;
   flex-grow: 1;
   min-height: 0;
+`;
+const Title = styled(PrimaryTitleText)`
+  line-height: 1.5;
 `;

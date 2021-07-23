@@ -7,6 +7,7 @@ import { SecondaryButton } from '../../../../lib/elements/button';
 import { ErrorAlert } from '../../../../lib/elements/alert';
 import { SuccessAlert } from '../../../../lib/elements/alert';
 import { PrimaryLoader } from '../../../../lib/elements/loader';
+import styled from 'styled-components';
 
 export function Settings2FAFormComponent(props) {
   const {
@@ -41,7 +42,7 @@ export function Settings2FAFormComponent(props) {
       {(isPending || pageLoading) && <PrimaryLoader />}
       <IndentLayout>
         <SectionLayout>
-          <SecondaryTitleText tid="SETTINGS.2FA.TITLE" />
+          <Title tid="SETTINGS.2FA.TITLE" />
           <form onSubmit={handleSubmit}>
             <SectionLayout>
               <SectionLayout>
@@ -55,14 +56,19 @@ export function Settings2FAFormComponent(props) {
                   error={isFieldError(fieldPhoneNumber)}
                 />
 
-                <SecondaryButton tid="SETTINGS.2FA.BUTTON" disabled={isSubmitDisabled()} />
+                <SecondaryButton
+                  tid="SETTINGS.2FA.BUTTON"
+                  disabled={isSubmitDisabled()}
+                />
               </SectionLayout>
 
               {(isError || errorMessage) && (
                 <ErrorAlert tid={`ERROR.${errorMessage}`} />
               )}
 
-              {isSuccess && <SuccessAlert tid={'SETTINGS.2FA.SUCCESS_MESSAGE'} />}
+              {isSuccess && (
+                <SuccessAlert tid={'SETTINGS.2FA.SUCCESS_MESSAGE'} />
+              )}
             </SectionLayout>
           </form>
         </SectionLayout>
@@ -70,3 +76,6 @@ export function Settings2FAFormComponent(props) {
     </React.Fragment>
   );
 }
+const Title = styled(SecondaryTitleText)`
+  line-height: 1.5;
+`;

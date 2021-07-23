@@ -129,6 +129,7 @@ const Price = styled(PrimaryText)`
 `;
 const CompanyName = styled(PrimaryText)`
   font-weight: ${THEME_VALUE.FONT_WEIGHT.MEDIUM};
+  min-width: max-content;
 `;
 const Button = styled(PrimaryButton)`
   background-color: ${(props) => props.payed && THEME_COLOR.TEXT.SECONDARY};

@@ -30,7 +30,7 @@ export function SupportRequestsListComponent(props) {
           <Content>
             <SectionLayout type="SMALL">
               <TItleText tid={problemTid} />
-              <SecondaryText>{requestCause}</SecondaryText>
+              <DescriptionText>{requestCause}</DescriptionText>
             </SectionLayout>
             <Column>
               <StatusText tid={statusTid} statusId={requestStatusId} />
@@ -68,8 +68,12 @@ const Column = styled.div`
 `;
 const TItleText = styled(PrimaryText)`
   font-weight: ${THEME_VALUE.FONT_WEIGHT.MEDIUM};
+  line-height: 1.5;
 `;
 
 const DateText = styled(SecondaryText)`
   color: ${THEME_COLOR.COLOR.LIGHT_GREY};
+`;
+const DescriptionText = styled(SecondaryText)`
+  line-height: 1.5;
 `;

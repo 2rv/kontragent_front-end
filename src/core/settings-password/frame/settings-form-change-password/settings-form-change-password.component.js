@@ -5,6 +5,7 @@ import { SecondaryButton } from '../../../../lib/elements/button';
 import { ErrorAlert } from '../../../../lib/elements/alert';
 import { SuccessAlert } from '../../../../lib/elements/alert';
 import { PrimaryLoader } from '../../../../lib/elements/loader';
+import styled from 'styled-components';
 
 export function SettingsFormChangePasswordComponent(props) {
   const {
@@ -42,7 +43,7 @@ export function SettingsFormChangePasswordComponent(props) {
       {(isPending || pageLoading) && <PrimaryLoader />}
       <IndentLayout>
         <SectionLayout>
-          <SecondaryTitleText tid="SETTINGS.PASSWORD.TITLE" />
+          <Title tid="SETTINGS.PASSWORD.TITLE" />
           <form onSubmit={handleSubmit}>
             <SectionLayout>
               <PrimaryField
@@ -97,3 +98,6 @@ export function SettingsFormChangePasswordComponent(props) {
     </div>
   );
 }
+const Title = styled(SecondaryTitleText)`
+  line-height: 1.5;
+`;

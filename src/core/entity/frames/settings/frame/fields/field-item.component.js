@@ -58,8 +58,7 @@ export function FieldItemComponent(props) {
             onBlur={handleBlur}
           />
         </FieldLayout>
-        <ButtonLayout type="double">
-          {' '}
+        <ButtonLayout>
           <SecondaryButton tid="ENTITY.SETTING.FORM.SAVE_COMPANY_INFORMATION" />
         </ButtonLayout>
       </SectionLayout>

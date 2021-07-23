@@ -24,9 +24,9 @@ export function NotificationsListComponent(props) {
       {[1, 2, 3, 4, 1, 2, 3, 4].map((item, index) => {
         const Notification = typeNotifications(item);
         return (
-          <DividerCase>
+          <DividerCase key={index}>
             <Container>
-              <Notification key={index} />
+              <Notification />
             </Container>
             <PrimaryDivider />
           </DividerCase>
