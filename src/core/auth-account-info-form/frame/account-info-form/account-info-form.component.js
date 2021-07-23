@@ -1,27 +1,16 @@
-import React, { useState } from 'react';
+import { FieldArray } from 'formik';
 
-import { CompanyInfoFormContainer } from '../company-info-form';
-
-import styled from 'styled-components';
-import { THEME_COLOR } from '../../../../lib/theme';
+import { CompanyInfoFormComponent } from '../company-info-form';
 
 import { SectionLayout } from '../../../../lib/elements/layout';
 import { PrimaryField } from '../../../../lib/elements/field';
-import { PrimaryButton } from '../../../../lib/elements/button';
+import { PrimaryButton, SecondaryButton } from '../../../../lib/elements/button';
 import { ErrorAlert } from '../../../../lib/elements/alert';
 import { PrimaryLoader } from '../../../../lib/elements/loader';
 import { SuccessAlert } from '../../../../lib/elements/alert';
 import { PrimaryDivider } from '../../../../lib/elements/divider';
 
 export function AccountInfoFormComponent(props) {
-  const [countForm, setCountForm] = useState([false, true]);
-  const deleteCurrentForm = (index) => {
-    const array = countForm.splice(index, 1, false);
-    setCountForm(array);
-  };
-  const addCurrentForm = () => {
-    setCountForm([...countForm, true]);
-  };
   const {
     handleChange,
     handleBlur,
@@ -33,6 +22,11 @@ export function AccountInfoFormComponent(props) {
     isSubmitting,
 
     fieldFullName,
+    fieldCompanyInfoFormFields,
+    fieldCompanyName,
+    fieldCompanyInn,
+    fieldPositionInCompany,
+    initialCompanyInfoFormField,
     pageLoading,
     isSuccess,
     isPending,
@@ -68,23 +62,35 @@ export function AccountInfoFormComponent(props) {
 
             <PrimaryDivider />
 
-            <CompanyInfoFormContainer
-              countForm={countForm}
-              deleteCurrentForm={deleteCurrentForm}
-            />
+            <FieldArray name={fieldCompanyInfoFormFields}>
+              {({ remove, push }) => (
+                <div>
+                  {values[fieldCompanyInfoFormFields].map((_, index) => (
+                    <CompanyInfoFormComponent
+                      key={index}
+                      index={index}
+                      fieldCompanyInfoFormFields={fieldCompanyInfoFormFields}
+                      fieldCompanyName={fieldCompanyName}
+                      fieldCompanyInn={fieldCompanyInn}
+                      fieldPositionInCompany={fieldPositionInCompany}
+                      companyInfoFormCount={values[fieldCompanyInfoFormFields].length}
+                      removeCompanyInfoForm={remove}
+                    />
+                  ))}
+                  <SecondaryButton
+                    tid="AUTH_ACCOUNT_INFO_FORM.COMPANY_INFO_FORM.BUTTON"
+                    type="button"
+                    onClick={() => push(initialCompanyInfoFormField)}
+                  />
+                </div>
+              )}
+            </FieldArray>
           </SectionLayout>
 
-          <SectionLayout type="SMALL">
-            <AddCompanyFormButton
-              tid="AUTH_ACCOUNT_INFO_FORM.COMPANY_INFO_FORM.BUTTON"
-              type="button"
-              onClick={addCurrentForm}
-            />
-            <PrimaryButton
-              tid="LOGIN.LOGIN_FORM.BUTTON"
-              disabled={isSubmitDisabled()}
-            />
-          </SectionLayout>
+          <PrimaryButton
+            tid="LOGIN.LOGIN_FORM.BUTTON"
+            disabled={isSubmitDisabled()}
+          />
           {(isError || errorMessage) && (
             <ErrorAlert tid={`ERROR.${errorMessage}`} />
           )}
@@ -97,8 +103,3 @@ export function AccountInfoFormComponent(props) {
     </>
   );
 }
-
-const AddCompanyFormButton = styled(PrimaryButton)`
-  background-color: ${THEME_COLOR.COLOR.PRIMARY};
-  color: ${THEME_COLOR.TEXT.BASE};
-`;
