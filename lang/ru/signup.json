@@ -7,11 +7,11 @@
 			},
 			"PASSWORD": {
 				"TITLE": "Пароль",
-				"PLACEHOLDER": "Password"
+				"PLACEHOLDER": "Введите пароль"
 			},
 			"PASSWORD_REPEAT": {
 				"TITLE": "Повторите пароль",
-				"PLACEHOLDER": "Password"
+				"PLACEHOLDER": "Введите пароль ещё раз"
 			},
 			"EMAIL": {
 				"TITLE": "Email",
@@ -22,8 +22,8 @@
 				"PLACEHOLDER": "Укажите номер телефона"
 			},
 			"CAPTCHA": {
-				"TITLE": "CAPTCHA",
-				"PLACEHOLDER": "CAPTCHA"
+				"TITLE": "Капча",
+				"PLACEHOLDER": "Текст с картинки"
 			}
 		},
 		"HEADER": "Создать аккаунт",

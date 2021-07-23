@@ -16,10 +16,10 @@ export function FeedAndNotificationsHeaderComponent(props) {
   return (
     <Container>
       <HeaderCase>
-        <Title tid="Лента и уведомения" />
+        <Title tid="NOTIFICATION.HEADER.TITLE" />
       </HeaderCase>
       <InputCase>
-        <SecondaryInput placeholder="Найти уведомление" />
+        <SecondaryInput placeholder="NOTIFICATION.HEADER.FIND_NOTIFICATION" />
         {feedAndNotificationsSelectOption && (
           <SecondarySelect option={feedAndNotificationsSelectOption} />
         )}

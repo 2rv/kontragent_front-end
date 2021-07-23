@@ -3,7 +3,7 @@
     "FIELD": {
       "EMAIL": {
         "TITLE": "Email",
-        "PLACEHOLDER": "Contragent@mail.com"
+        "PLACEHOLDER": "Contragent@gmail.com"
       }
     },
     "SUBTITLE": "Вы можете подписаться на рассылку важных уведомлений и новостей от компании",
@@ -41,15 +41,15 @@
     "FIELD": {
       "NEW_PASSWORD": {
         "TITLE": "Новый пароль",
-        "PLACEHOLDER": "Password"
+        "PLACEHOLDER": "Введите новый пароль"
       },
       "REPEAT_NEW_PASSWORD": {
         "TITLE": "Повторите новый пароль",
-        "PLACEHOLDER": "Password"
+        "PLACEHOLDER": "Введите новый пароль ещё раз"
       },
       "OLD_PASSWORD": {
         "TITLE": "Старый пароль",
-        "PLACEHOLDER": "Password"
+        "PLACEHOLDER": "Введите старый пароль"
       }
     },
     "TITLE": "Смена пароля",
@@ -60,11 +60,11 @@
     "FIELD": {
       "EMAIL": {
         "TITLE": "Email",
-        "PLACEHOLDER": "contragent@mail.com"
+        "PLACEHOLDER": "Contragent@gmail.com"
       },
       "PASSWORD": {
         "TITLE": "Пароль",
-        "PLACEHOLDER": "Password"
+        "PLACEHOLDER": "Введите пароль"
       }
     },
     "TITLE": "Сменить Email",
@@ -75,15 +75,22 @@
     "FIELD": {
       "PHONE_NUMBER": {
         "TITLE": "Номер телефона",
-        "PLACEHOLDER": "+380 63 792 17 30"
+        "PLACEHOLDER": "+7 000 000 00 00"
       },
       "PASSWORD": {
         "TITLE": "Пароль",
-        "PLACEHOLDER": "Password"
+        "PLACEHOLDER": "Введите пароль"
       }
     },
     "TITLE": "Смена номера телефона",
     "BUTTON": "Сменить номер телефона",
     "SUCCESS_MESSAGE": "SUCCESS_MESSAGE"
+  },
+  "MAIN_SETTINGS": {
+    "TITLE": "Настройки",
+    "CATEGORY": {
+      "OTHER": "Другое",
+      "PERSONALIZATION": "Персонализация"
+    }
   }
 }

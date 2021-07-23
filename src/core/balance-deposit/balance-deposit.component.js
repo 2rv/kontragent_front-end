@@ -25,9 +25,9 @@ export function BalanceDepositComponent(props) {
       {(isPending || pageLoading) && <PrimaryLoader />}
       <Container type="LARGE">
         <HeaderCase>
-          <Title tid="Баланс" />
+          <Title tid="BALANCE.BALANCE_DEPOSIT.HEADER" />
           <Balance tid="2500" />
-          <SecondaryText tid="руб." />
+          <SecondaryText tid="BALANCE.BALANCE_ACTIVITY.VALUTE" />
         </HeaderCase>
         <PrimaryBox>
           <IndentLayout>

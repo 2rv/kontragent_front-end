@@ -47,6 +47,17 @@ export function SettingsFormChangePasswordComponent(props) {
           <form onSubmit={handleSubmit}>
             <SectionLayout>
               <PrimaryField
+                titleTid="SETTINGS.PASSWORD.FIELD.OLD_PASSWORD.TITLE"
+                placeholderTid="SETTINGS.PASSWORD.FIELD.OLD_PASSWORD.PLACEHOLDER"
+                name={fieldOldPassword}
+                onChange={handleChange}
+                onBlur={handleBlur}
+                value={values[fieldOldPassword]}
+                error={isFieldError(fieldOldPassword)}
+                type="password"
+              />
+
+              <PrimaryField
                 titleTid="SETTINGS.PASSWORD.FIELD.NEW_PASSWORD.TITLE"
                 placeholderTid="SETTINGS.PASSWORD.FIELD.NEW_PASSWORD.PLACEHOLDER"
                 name={fieldNewPassword}
@@ -65,17 +76,6 @@ export function SettingsFormChangePasswordComponent(props) {
                 onBlur={handleBlur}
                 value={values[fieldRepeatNewPassword]}
                 error={isFieldError(fieldRepeatNewPassword)}
-                type="password"
-              />
-
-              <PrimaryField
-                titleTid="SETTINGS.PASSWORD.FIELD.OLD_PASSWORD.TITLE"
-                placeholderTid="SETTINGS.PASSWORD.FIELD.OLD_PASSWORD.PLACEHOLDER"
-                name={fieldOldPassword}
-                onChange={handleChange}
-                onBlur={handleBlur}
-                value={values[fieldOldPassword]}
-                error={isFieldError(fieldOldPassword)}
                 type="password"
               />
 

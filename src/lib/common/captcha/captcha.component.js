@@ -62,7 +62,6 @@ export const CaptchaFieldComponent = ({
     </div>
   );
 };
-
 const Captcha = styled.div`
   width: 100%;
   min-width: 100px;
@@ -72,7 +71,7 @@ const Captcha = styled.div`
   justify-content: center;
   border-radius: ${THEME_SIZE.RADIUS.DEFAULT};
   overflow: hidden;
-  align-self: flex-end;
+  margin-top: ${spacing(5.5)};
   height: 46px;
 `;
 

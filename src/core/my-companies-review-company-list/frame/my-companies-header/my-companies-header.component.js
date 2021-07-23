@@ -18,11 +18,11 @@ export function MyCompaniesHeaderComponent(props) {
   return (
     <SectionLayout>
       <HeaderCase type="SMALL">
-        <Title tid="Мои компании" />
-        <Button tid="Добавить компанию" />
+        <Title tid="MY_COMPANIES.MY_COMPANIES_REVIEW_COMPANY_LIST.HEADER.TITLE" />
+        <Button tid="MY_COMPANIES.MY_COMPANIES_REVIEW_COMPANY_LIST.HEADER.ADD_COMPANY" />
       </HeaderCase>
       <InputCase>
-        <SecondaryInput placeholder="Найти компанию" />
+        <SecondaryInput placeholder="MY_COMPANIES.MY_COMPANIES_REVIEW_COMPANY_LIST.HEADER.FIND_COMPANY" />
         {myCompaniesSelectOption && (
           <SecondarySelect option={myCompaniesSelectOption} />
         )}

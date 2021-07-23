@@ -18,11 +18,11 @@ export function BookHeaderComponent(props) {
   return (
     <SectionLayout>
       <HeaderCase>
-        <Title tid="Книги" />
-        <SecondaryButton tid="Загрузить книгу" />
+        <Title tid="BOOK_REVIEW_LIST.HEADER.TITLE" />
+        <SecondaryButton tid="BOOK_REVIEW_LIST.HEADER.DOWNLOAD_BOOK" />
       </HeaderCase>
       <InputCase>
-        <SecondaryInput placeholder="Найти книгу" />
+        <SecondaryInput placeholder="BOOK_REVIEW_LIST.HEADER.FIND_BOOK" />
         {booksListSelectOption && (
           <SecondarySelect option={booksListSelectOption} />
         )}

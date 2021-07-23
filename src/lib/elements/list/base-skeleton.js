@@ -16,6 +16,7 @@ export function ListSkeleton() {
 const Skeleton = styled.div`
   position: relative;
   display: grid;
+  overflow: hidden;
   align-items: center;
   width: 100%;
   height: 80px;
@@ -27,7 +28,7 @@ const animation = keyframes`
 		right: 0%;
   }
   50% {
-    right: calc(100% - 150px);
+    right: calc(100% - 400px);
   }
   100% {
     right: 0%;

@@ -8,13 +8,13 @@ export function BaseList(props) {
   const {
     children,
     listData,
-    skeletonAction = true,
+    skeletonAction = null,
     itemBackground = null,
   } = props;
 
   return (
     <List>
-      {skeletonAction ? (
+      {skeletonAction || true ? (
         <ListSkeleton />
       ) : (
         listData.map((data, index) => (

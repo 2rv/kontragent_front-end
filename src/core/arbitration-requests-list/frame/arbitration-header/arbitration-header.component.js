@@ -18,9 +18,9 @@ export function ArbitrationHeaderComponent(props) {
   } = props;
   return (
     <SectionLayout>
-      <Title tid="Арбитраж" />
+      <Title tid="ARBITRATION_REQUESTS_LIST.TITLE" />
       <InputCase>
-        <SecondaryInput placeholder="Найти тему" />
+        <SecondaryInput placeholder="ARBITRATION_REQUESTS_LIST.INPUT_PLACEHOLDER" />
         <SecondarySelect option={arbitrationListSelectOption} />
       </InputCase>
     </SectionLayout>

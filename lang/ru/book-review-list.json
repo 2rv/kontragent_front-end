@@ -1,4 +1,9 @@
 {
+	"HEADER": {
+		"TITLE": "Книги",
+		"DOWNLOAD_BOOK": "Загрузить книгу",
+		"FIND_BOOK": "Найти книгу"
+	},
 	"TABLE": {
 		"LOADED": "Загружена",
 		"BOOK_PERIOD": "Период книги",

@@ -19,9 +19,9 @@ export function MyLegalEntitesHeaderComponent(props) {
   } = props;
   return (
     <SectionLayout type="LARGE">
-      <Title tid="Мои юрлица" />
+      <Title tid="MY_LEGAL_ENTITIES.TITLE" />
       <InputCase>
-        <SecondaryInput placeholder="Найти юрлицо" />
+        <SecondaryInput placeholder="MY_LEGAL_ENTITIES.FIND_LEGAL_ENTITY" />
         <SecondarySelect option={myLegalEntitiesSelectOption} />
       </InputCase>
     </SectionLayout>

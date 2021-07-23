@@ -14,7 +14,7 @@ export function NewsCommentComponent(props) {
   const { newsComment, myAvatar } = props;
   return (
     <Container type="MEDIUM">
-      <Title tid="Комментарии" />
+      <Title tid="NEWS_ARTICLE.TITLE" />
       <SectionLayout type="MEDIUM">
         {newsComment.map((data, index) => (
           <NewsCommentListItemComponent key={index} data={data} />
@@ -22,7 +22,11 @@ export function NewsCommentComponent(props) {
       </SectionLayout>
       <FooterCase>
         <Avatar src={myAvatar} />
-        <TextareaField isFile isSend placeholderTid="Написать комментарий" />
+        <TextareaField
+          isFile
+          isSend
+          placeholderTid="NEWS_ARTICLE.TEXTAREA_PLACEHOLDER_WRITE_COMMENT"
+        />
       </FooterCase>
     </Container>
   );

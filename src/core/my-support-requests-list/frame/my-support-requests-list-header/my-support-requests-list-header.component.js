@@ -10,10 +10,10 @@ export function MySupportRequestsHeaderComponent(props) {
   return (
     <SectionLayout type="LARGE">
       <HeaderContainer>
-        <Title tid="Мои запросы в поддержку" />
-        <NewRequestButton tid="Новый запрос" />
+        <Title tid="SUPPORT.SUPPORT_REQUEST" />
+        <NewRequestButton tid="SUPPORT.CREATE_REQUEST.HEADER" />
       </HeaderContainer>
-      <SecondaryInput placeholder="Найти запрос" />
+      <SecondaryInput placeholder="SUPPORT.FIND_REQUEST" />
     </SectionLayout>
   );
 }

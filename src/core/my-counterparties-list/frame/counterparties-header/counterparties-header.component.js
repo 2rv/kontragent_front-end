@@ -27,7 +27,7 @@ export function CounterpartiesHeaderComponent(props) {
     <SectionLayout>
       <HeaderCase>
         <Title tid="MY_COUNTERPARTIES_LIST.TITLE" />
-        <Button tid="Заказать проверку" />
+        <Button tid="MY_COUNTERPARTIES_LIST.ORDER_CHECK" />
       </HeaderCase>
       <InputCase>
         <SecondaryInput placeholder="MY_COUNTERPARTIES_LIST.INPUT_PLACEHOLDER" />

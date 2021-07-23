@@ -17,9 +17,9 @@ export function MyVerificationHeaderComponent(props) {
   } = props;
   return (
     <SectionLayout>
-      <Title tid="Мои проверки" />
+      <Title tid="MY_VERIFICATION_REQUESTS_LIST.TITLE" />
       <InputCase>
-        <SecondaryInput placeholder="Найти тему" />
+        <SecondaryInput placeholder="MY_VERIFICATION_REQUESTS_LIST.INPUT_PLACEHOLDER" />
         {myVerificationSelectOption && (
           <SecondarySelect option={myVerificationSelectOption} />
         )}

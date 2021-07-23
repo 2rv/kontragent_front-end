@@ -16,7 +16,7 @@ import { spacing } from '../../lib/theme';
 export function SettingsComponent() {
   return (
     <SectionLayout type="LARGE">
-      <PrimaryTitleText tid="Настройки безопасности" />
+      <PrimaryTitleText tid="SETTINGS.MAIN_SETTINGS.TITLE" />
       <PrimaryBox>
         <Settings2FAContainer />
       </PrimaryBox>
@@ -29,14 +29,14 @@ export function SettingsComponent() {
       <PrimaryBox>
         <SettingsPasswordContainer />
       </PrimaryBox>
-      <PrimaryTitleText tid="Другое" />
+      <PrimaryTitleText tid="SETTINGS.MAIN_SETTINGS.CATEGORY.OTHER" />
       <PrimaryBox>
         <SettingsAdvertContainer />
       </PrimaryBox>
       <PrimaryBox>
         <SettingsNotificationContainer />
       </PrimaryBox>
-      <PrimaryTitleText tid="Персонализация" />
+      <PrimaryTitleText tid="SETTINGS.MAIN_SETTINGS.CATEGORY.PERSONALIZATION" />
       <PrimaryBox>
         <SettingsAvatarContainer />
       </PrimaryBox>
