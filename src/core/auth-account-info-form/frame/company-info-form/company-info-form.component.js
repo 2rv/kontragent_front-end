@@ -1,4 +1,3 @@
-import React from 'react';
 import { Field } from 'formik';
 import styled from 'styled-components';
 
@@ -15,7 +14,7 @@ export function CompanyInfoFormComponent(props) {
     fieldCompanyName,
     fieldCompanyInn,
     fieldPositionInCompany,
-    removeClickedCompanyInfoForm,
+    removeCompanyInfoForm,
     companyInfoFormCount,
   } = props;
 
@@ -52,7 +51,7 @@ export function CompanyInfoFormComponent(props) {
         <DeleteButton
           tid="AUTH_ACCOUNT_INFO_FORM.COMPANY_INFO_FORM.FORM_ACTION"
           type="button"
-          onClick={() => removeClickedCompanyInfoForm(index)}
+          onClick={() => removeCompanyInfoForm(index)}
         />
       )}
       <PrimaryDivider />

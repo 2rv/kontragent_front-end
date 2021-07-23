@@ -3,8 +3,8 @@ import React from 'react';
 import { AuthAccoutInfoFormComponent } from './auth-account-info-form.component';
 
 import {
-  ACCOUNT_INFO_FORM_FIELD_NAME,
   AUTH_ACCOUNT_INFO_FORM_FIELD_NAME,
+  ACCOUNT_INFO_FORM_FIELD_NAME,
 } from './auth-account-info-form.type';
 
 const INITIAL_COMPANY_INFO_FORM_FIELD = {

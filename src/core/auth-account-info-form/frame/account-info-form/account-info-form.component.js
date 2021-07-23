@@ -74,7 +74,7 @@ export function AccountInfoFormComponent(props) {
                       fieldCompanyInn={fieldCompanyInn}
                       fieldPositionInCompany={fieldPositionInCompany}
                       companyInfoFormCount={values[fieldCompanyInfoFormFields].length}
-                      removeClickedCompanyInfoForm={remove}
+                      removeCompanyInfoForm={remove}
                     />
                   ))}
                   <SecondaryButton
