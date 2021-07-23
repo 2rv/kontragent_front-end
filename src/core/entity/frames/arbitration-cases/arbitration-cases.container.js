@@ -1,8 +1,8 @@
-import { ArbitrationCasesListComponent } from './arbitration-cases-list.component';
+import { ArbitrationCasesComponent } from './arbitration-cases.component';
 
-export function ArbitrationCasesListContainer() {
+export function ArbitrationCasesContainer() {
   return (
-    <ArbitrationCasesListComponent
+    <ArbitrationCasesComponent
       arbitrationCasesListData={arbitrationCasesListData}
     />
   );

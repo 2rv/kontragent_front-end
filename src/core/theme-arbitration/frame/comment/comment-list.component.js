@@ -30,7 +30,6 @@ export function CommentListComponent(props) {
 const List = styled.div`
   display: flex;
   flex-direction: column;
-  flex-grow: 1;
   min-height: 0;
   overflow: auto;
   gap: ${spacing(4)};

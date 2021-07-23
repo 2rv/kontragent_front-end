@@ -3,20 +3,34 @@ import { spacing, THEME_COLOR, THEME_SIZE, THEME_VALUE } from '../../theme';
 import { BaseListItem } from './base-list.item';
 import { SectionLayout } from '../layout';
 import { ListSkeleton } from './base-skeleton';
+
 export function BaseList(props) {
-  const { children, listData, skeletonAction = true } = props;
+  const {
+    children,
+    listData,
+    skeletonAction = true,
+    itemBackground = null,
+  } = props;
 
   return (
-    <SectionLayout>
+    <List>
       {skeletonAction ? (
         <ListSkeleton />
       ) : (
         listData.map((data, index) => (
-          <BaseListItem key={index} data={data}>
+          <BaseListItem key={index} data={data} itemBackground={itemBackground}>
             {children}
           </BaseListItem>
         ))
       )}
-    </SectionLayout>
+    </List>
   );
 }
+const List = styled(SectionLayout)`
+  height: fit-content;
+  min-width: fit-content;
+  min-height: 0;
+  overflow: 'auto';
+  display: flex;
+  flex-flow: column;
+`;

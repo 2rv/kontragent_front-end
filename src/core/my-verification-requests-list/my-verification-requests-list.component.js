@@ -42,8 +42,8 @@ export function MyVerificationRequestsListComponent(props) {
 }
 
 const Container = styled.div`
-  width: 100%;
   display: flex;
-  flex-direction: column;
   gap: ${spacing(4)};
+  flex: 1;
+  flex-flow: column;
 `;

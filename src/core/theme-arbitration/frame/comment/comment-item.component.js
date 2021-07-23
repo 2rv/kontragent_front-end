@@ -32,7 +32,7 @@ export function CommentItemComponent(props) {
 }
 const Image = styled.img`
   height: 280px;
-  display: flex;
+  width: 100%;
   border-radius: ${THEME_SIZE.RADIUS.DEFAULT};
 `;
 

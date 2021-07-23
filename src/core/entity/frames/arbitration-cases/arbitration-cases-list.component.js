@@ -1,7 +1,5 @@
 import styled from 'styled-components';
-
-import { ReactComponent as Message } from '../../../../asset/svg/message.svg';
-
+import { ReactComponent as MessageIcon } from '../../../../asset/svg/message.svg';
 import { PrimaryBox } from '../../../../lib/elements/box';
 import { IndentLayout, SectionLayout } from '../../../../lib/elements/layout';
 import { PrimaryText, SecondaryText } from '../../../../lib/elements/text';
@@ -12,57 +10,74 @@ import {
   THEME_COLOR,
   THEME_VALUE,
 } from '../../../../lib/theme';
+import { BaseList } from '../../../../lib/elements/list';
 
-export function ArbitrationCasesListItemComponent(props) {
-  const { id, image, text, status, name, time, info, messages } = props.data;
+export function ArbitrationCasesListComponent(props) {
+  const { arbitrationCasesListData } = props;
   return (
-    <Container>
-      <Layout type="SMALL">
-        <ArbitrationCaseImage src={image} />
-        <Content>
-          <div>
-            <MessageText>{text}</MessageText>
-            &nbsp;
-            <Status tid={status.title} statusId={status.id} />
-          </div>
-          <LineCase>
-            <FullNameText>{name}</FullNameText>
-            <CircleDivider />
-            <Date>{time}</Date>
-            <CircleDivider />
-            <Info tid={info.title} infoId={info.id} />
-          </LineCase>
-        </Content>
-        <MessagesContainer>
-          <Message />
-          <Messages>{messages}</Messages>
-        </MessagesContainer>
-      </Layout>
-    </Container>
+    <BaseList
+      listData={arbitrationCasesListData}
+      skeletonAction={false}
+      itemBackground={THEME_COLOR.COLOR.SECONDARY}
+    >
+      {(props) => {
+        const { id, image, text, status, name, time, info, messages } = props;
+        return (
+          <Container>
+            <Content>
+              <Image src={image} />
+              <InfoCase>
+                <Line>
+                  <MessageText>{text}</MessageText>
+                  <Status tid={status.title} statusId={status.id} />
+                </Line>
+                <Line>
+                  <FullNameText>{name}</FullNameText>
+                  <CircleDivider />
+                  <Date>{time}</Date>
+                  <CircleDivider />
+                  <Info tid={info.title} infoId={info.id} />
+                </Line>
+              </InfoCase>
+            </Content>
+            <MessagesCase>
+              <MessageIcon />
+              <Messages>{messages}</Messages>
+            </MessagesCase>
+          </Container>
+        );
+      }}
+    </BaseList>
   );
 }
 const Content = styled.div`
   display: flex;
-  flex-direction: column;
-  gap: ${spacing(1)};
-`;
-const Container = styled(PrimaryBox)`
-  background: ${THEME_COLOR.COLOR.SECONDARY};
-  height: 80px;
-  align-items: center;
-  display: flex;
-`;
-const Layout = styled(IndentLayout)`
-  display: grid;
+  flex: 1;
   gap: ${spacing(3)};
-  grid-template-columns: auto 1fr auto;
-`;
-const LineCase = styled.div`
-  display: flex;
   align-items: center;
+`;
+const Container = styled.div`
+  align-items: center;
+  display: flex;
+  flex: 1;
+  justify-content: space-between;
+`;
+const InfoCase = styled.div`
+  display: flex;
+  flex-direction: column;
   gap: ${spacing(2)};
 `;
-
+const Line = styled.div`
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: ${spacing(2)};
+  align-items: center;
+`;
+const Image = styled.img`
+  width: 56px;
+  height: 56px;
+  border-radius: ${THEME_SIZE.RADIUS.CIRCLE};
+`;
 const Status = styled(SecondaryText)`
   font-size: ${THEME_SIZE.FONT.DEFAULT};
   font-weight: ${THEME_VALUE.FONT_WEIGHT.SEMY_BOLD};
@@ -79,7 +94,6 @@ const Status = styled(SecondaryText)`
     }
   }};
 `;
-
 const Info = styled(SecondaryText)`
   font-size: ${THEME_SIZE.FONT.TINY};
   font-weight: ${THEME_VALUE.FONT_WEIGHT.MEDIUM};
@@ -96,34 +110,23 @@ const Info = styled(SecondaryText)`
     }
   }};
 `;
-
-const ArbitrationCaseImage = styled.img`
-  width: 56px;
-  height: 56px;
-  border-radius: ${THEME_SIZE.RADIUS.CIRCLE};
-`;
-
 const MessageText = styled(PrimaryText)`
   font-weight: ${THEME_VALUE.FONT_WEIGHT.MEDIUM};
   line-height: 1.5;
 `;
-
 const FullNameText = styled(SecondaryText)`
   font-size: ${THEME_SIZE.FONT.SMALL};
   color: ${THEME_COLOR.TEXT.SECONDARY};
 `;
-
 const Date = styled(SecondaryText)`
   font-size: ${THEME_SIZE.FONT.TINY};
   color: ${THEME_COLOR.COLOR.LIGHT_GREY};
 `;
-
 const Messages = styled(SecondaryText)`
   font-size: ${THEME_SIZE.FONT.TINY};
 `;
-
-const MessagesContainer = styled.div`
+const MessagesCase = styled.div`
   display: flex;
   align-items: center;
-  gap: ${spacing(1)};
+  gap: ${spacing(2)};
 `;

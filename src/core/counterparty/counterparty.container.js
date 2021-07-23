@@ -13,7 +13,7 @@ import {
   InformationContainer,
   RiskRatingAssessmentContainer,
   ReviewsContainer,
-  ArbitrationCasesListContainer,
+  ArbitrationCasesContainer,
   RedZoneInformationContainer,
   VerificationsContainer,
 } from './frames';
@@ -63,6 +63,6 @@ const TABS_COMPONENT_LIST = [
   { id: 2, component: <RiskRatingAssessmentContainer /> },
   { id: 3, component: <ReviewsContainer /> },
   { id: 4, component: <VerificationsContainer /> },
-  { id: 5, component: <ArbitrationCasesListContainer /> },
+  { id: 5, component: <ArbitrationCasesContainer /> },
   { id: 6, component: <RedZoneInformationContainer /> },
 ];

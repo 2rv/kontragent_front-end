@@ -21,52 +21,59 @@ import {
   THEME_COLOR,
   THEME_VALUE,
 } from '../../../../../../lib/theme';
+import { BaseList } from '../../../../../../lib/elements/list';
 
 export function VerificationsListComponent(props) {
-  const { id, companyName, status, price, time, info, paid } = props.data;
+  const { verificationListData } = props;
   return (
-    <Container>
-      <Layout type="STANDART">
-        <SectionLayout type="SMALL">
-          <LineCase>
-            <MessageText>{companyName}</MessageText>
-            <Status tid={status.title} statusId={status.id} />
-          </LineCase>
-          <LineCase>
-            <PriceText>{price}</PriceText>
-            <CircleDivider />
-            <Date>{time}</Date>
-            <CircleDivider />
-            <Info tid={info.title} infoId={info.id} />
-          </LineCase>
-        </SectionLayout>
-        <ActionCase>
-          <CancelButton tid="COUNTERPARTY.VERIFICATIONS.BUTTONS.CANCEL" />
-          {paid ? (
-            <PaidButton tid="COUNTERPARTY.VERIFICATIONS.BUTTONS.PAID" />
-          ) : (
-            <PayButton tid="COUNTERPARTY.VERIFICATIONS.BUTTONS.PAY" />
-          )}
-        </ActionCase>
-      </Layout>
-    </Container>
+    <BaseList
+      itemBackground={THEME_COLOR.COLOR.SECONDARY}
+      listData={verificationListData}
+      skeletonAction={false}
+    >
+      {(props) => {
+        const { id, companyName, status, price, time, info, paid } = props;
+        return (
+          <Container>
+            <SectionLayout type="SMALL">
+              <Line>
+                <MessageText>{companyName}</MessageText>
+                <Status tid={status.title} statusId={status.id} />
+              </Line>
+              <Line>
+                <PriceText>{price}</PriceText>
+                <CircleDivider />
+                <Date>{time}</Date>
+                <CircleDivider />
+                <Info tid={info.title} infoId={info.id} />
+              </Line>
+            </SectionLayout>
+            <ActionCase>
+              <CancelButton tid="COUNTERPARTY.VERIFICATIONS.BUTTONS.CANCEL" />
+              {paid ? (
+                <PaidButton tid="COUNTERPARTY.VERIFICATIONS.BUTTONS.PAID" />
+              ) : (
+                <PayButton tid="COUNTERPARTY.VERIFICATIONS.BUTTONS.PAY" />
+              )}
+            </ActionCase>
+          </Container>
+        );
+      }}
+    </BaseList>
   );
 }
 
-const Container = styled(PrimaryBox)`
+const Container = styled.div`
   display: flex;
-  background: ${THEME_COLOR.COLOR.SECONDARY};
-  height: 80px;
-`;
-const Layout = styled(IndentLayout)`
-  display: grid;
-  grid-template-columns: 1fr 332px;
-  gap: ${spacing(4)};
-`;
-const LineCase = styled.div`
-  display: flex;
+  justify-content: space-between;
   align-items: center;
+  flex: 1;
+`;
+const Line = styled.div`
+  display: inline-flex;
+  flex-wrap: wrap;
   gap: ${spacing(2)};
+  align-items: center;
 `;
 const Status = styled(SecondaryText)`
   font-size: ${THEME_SIZE.FONT.DEFAULT};
@@ -112,6 +119,7 @@ const ActionCase = styled.div`
   display: grid;
   grid-template-columns: 160px 160px;
   gap: ${spacing(3)};
+  align-items: center;
 `;
 const CancelButton = styled(PrimaryButton)`
   background: ${THEME_COLOR.COLOR.BASE};
