@@ -11,11 +11,13 @@ export function AccountInfoComponent() {
     <AccountInfoBox>
       <IndentLayout type="SMALL">
         <AccountInfoContentLayout>
-          <Image
-            src="/static/img/tempAccountInfoProfileImage.svg"
-            width={56}
-            height={56}
-          />
+          <AvatarCase>
+            <Image
+              src="/static/img/tempAccountInfoProfileImage.svg"
+              width={56}
+              height={56}
+            />
+          </AvatarCase>
           <AccountInfoDataLayout>
             <Name>Анастасия Добро</Name>
             <div>
@@ -28,7 +30,10 @@ export function AccountInfoComponent() {
     </AccountInfoBox>
   );
 }
-
+const AvatarCase = styled.div`
+  min-width: 56px;
+  min-height: 56px;
+`;
 const AccountInfoBox = styled(PrimaryBox)`
   background-color: ${THEME_COLOR.COLOR.SECONDARY};
 `;
@@ -36,18 +41,20 @@ const AccountInfoBox = styled(PrimaryBox)`
 const AccountInfoContentLayout = styled.div`
   display: flex;
   align-items: center;
+  gap: ${spacing(3)};
 `;
 
 const AccountInfoDataLayout = styled.div`
   display: grid;
   gap: ${spacing(2)};
-  padding-left: ${spacing(3)};
 `;
 
 const Name = styled(PrimaryText)`
   font-weight: ${THEME_VALUE.FONT_WEIGHT.SEMY_BOLD};
+  white-space: nowrap;
 `;
 
 const PriceValue = styled(PrimaryText)`
   color: ${THEME_COLOR.TEXT.ACCENT};
+  white-space: nowrap;
 `;

@@ -1,5 +1,10 @@
 import styled from 'styled-components';
-import { THEME_COLOR, THEME_SIZE, THEME_VALUE } from '../../../../lib/theme';
+import {
+  spacing,
+  THEME_COLOR,
+  THEME_SIZE,
+  THEME_VALUE,
+} from '../../../../lib/theme';
 
 import { PrimaryBox } from '../../../../lib/elements/box';
 import { SecondaryText } from '../../../../lib/elements/text';
@@ -9,19 +14,23 @@ export function SidebarAdvertComponent(props) {
     backgroungImageURL = 'https://i.ytimg.com/vi/G6l368Oa6lk/maxresdefault.jpg',
   } = props;
   return (
-    <SidebaerAdvertLayout backgroungImageURL={backgroungImageURL}>
-      <AdvertInfoCardLayout>
-        <AdvertInfoCardText tid="ADVERT.ADVERT_INFO" />
-      </AdvertInfoCardLayout>
-      <AdvertText>Лушчие проверки контрагентов в мире!</AdvertText>
-    </SidebaerAdvertLayout>
+    <Container>
+      <SidebaerAdvertLayout backgroungImageURL={backgroungImageURL}>
+        <AdvertInfoCardLayout>
+          <AdvertInfoCardText tid="ADVERT.ADVERT_INFO" />
+        </AdvertInfoCardLayout>
+        <AdvertText>Лушчие проверки контрагентов в мире!</AdvertText>
+      </SidebaerAdvertLayout>
+    </Container>
   );
 }
-
+const Container = styled.div`
+  padding-right: ${spacing(5)};
+`;
 const SidebaerAdvertLayout = styled.div`
-  width: 286px;
-  height: 286px;
-  padding: 16px;
+  min-width: 286px;
+  min-height: 286px;
+  padding: ${spacing(4)};
   display: flex;
   flex-direction: column;
   justify-content: space-between;

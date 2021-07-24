@@ -1,3 +1,5 @@
+import React from 'react';
+
 import { SidebarContainer } from '../../../core/sidebar';
 import { HeaderContainer } from '../../../core/header';
 import { FooterContainer } from '../../../core/footer';
@@ -7,18 +9,25 @@ import { spacing, THEME_COLOR } from 'src/lib/theme';
 
 export function DashboardLayout(props: DashboardLayoutPropsType) {
   const { children } = props;
+  const [toggleSidebar, setToggleSidebar] = React.useState<boolean>(true);
+
+  const toggleSibearHandler = (): void => {
+    setToggleSidebar(!toggleSidebar);
+  };
+
   return (
     <Container>
       <HeaderCase>
-        <HeaderContainer />
+        <HeaderContainer
+          toggleSidebar={toggleSidebar}
+          toggleSibearHandler={toggleSibearHandler}
+        />
       </HeaderCase>
       <Content>
-        <SidebarCase>
-          <SidebarContainer />
-        </SidebarCase>
+        <SidebarContainer toggle={toggleSidebar} />
         <ContentCase>
           <MainContent>
-            <OverflowCase>{!false && children}</OverflowCase>
+            <OverflowCase>{children}</OverflowCase>
           </MainContent>
           <FooterContainer />
         </ContentCase>
@@ -37,16 +46,9 @@ const HeaderCase = styled.div`
   width: 100%;
 `;
 const Content = styled.div`
-  display: grid;
-  flex-grow: 1;
-  min-height: 0;
-  grid-template-columns: 350px auto;
-`;
-const SidebarCase = styled.div`
   display: flex;
   flex-grow: 1;
   min-height: 0;
-  width: 350px;
 `;
 const ContentCase = styled.div`
   flex-grow: 1;

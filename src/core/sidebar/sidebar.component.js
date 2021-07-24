@@ -7,35 +7,35 @@ import { SidebarAdvertContainer } from './frame/sidebar-advert';
 import { PrimaryDivider } from '../../lib/elements/divider';
 
 import styled from 'styled-components';
-import { spacing, THEME_COLOR } from '../../lib/theme';
+import { spacing, THEME_COLOR, THEME_SIZE, THEME_VALUE } from '../../lib/theme';
 
-export function SidebarComponent() {
+export function SidebarComponent(props) {
+  const { toggle } = props;
   return (
-    <Container>
-      <PaddingCase>
+    <Menu toggle={toggle}>
+      <Content>
         <AccountInfoContainer />
         <PrimaryDivider />
-      </PaddingCase>
-      <NavMenuContainer />
-      <PaddingCase>
-        <AdvertCase>
-          <SidebarAdvertContainer />
-        </AdvertCase>
-      </PaddingCase>
-    </Container>
+        <NavMenuContainer />
+        <SidebarAdvertContainer />
+      </Content>
+    </Menu>
   );
 }
-const Container = styled.div`
+const Menu = styled.div`
   display: flex;
-  flex-direction: column;
-  min-height: 0;
-  flex-grow: 1;
-  padding: 0 ${spacing(2)} ${spacing(8)} ${spacing(8)};
+  flex: 1;
+  transition: ${THEME_SIZE.TRANSACTION.DEFAULT};
+  width: 350px;
+  max-width: ${(p) => (p.toggle ? `350px` : 0)};
+`;
+const Content = styled.div`
+  display: flex;
+  width: inherit;
+  flex-flow: column;
+  overflow-x: hidden;
   gap: ${spacing(6)};
-`;
-const AdvertCase = styled.div`
-  margin-top: auto;
-`;
-const PaddingCase = styled.div`
-  padding-right: ${spacing(5)};
+  padding: 0 ${spacing(2)} ${spacing(8)} ${spacing(8)};
+  flex: 1 0;
+  height: 100%;
 `;
