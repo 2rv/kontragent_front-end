@@ -39,6 +39,7 @@ const Container = styled(SectionLayout)`
   }
 `;
 const NavMenuLink = styled(PrimaryLink)`
+  white-space: nowrap;
   color: ${(props) =>
     props.isActive ? THEME_COLOR.TEXT.PRIMARY : THEME_COLOR.TEXT.SECONDARY};
   font-size: ${THEME_SIZE.FONT.DEFAULT};
