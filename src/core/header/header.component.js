@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import styled from 'styled-components';
-import { THEME_COLOR, spacing } from '../../lib/theme';
+import { THEME_COLOR, spacing, THEME_SIZE, THEME_VALUE } from '../../lib/theme';
+import { SecondaryText } from '../../lib/elements/text';
 
 import { ReactComponent as Menu } from '../../asset/svg/menu.svg';
 import { ReactComponent as Close } from '../../asset/svg/close.svg';
@@ -14,7 +15,7 @@ export function HeaderComponent({ toggleSidebar, toggleSibearHandler }) {
         <div onClick={toggleSibearHandler}>
           {toggleSidebar ? <CloseIcon /> : <MenuIcon />}
         </div>
-        <SidebarLogo />
+        <KontragentText tid="Контрагент" />
       </Content>
       <Content>
         <NotificatiobBellIcon />
@@ -40,6 +41,12 @@ const Container = styled.div`
   height: 100px;
   width: 100%;
   background-color: ${THEME_COLOR.COLOR.BASE};
+`;
+
+const KontragentText = styled(SecondaryText)`
+  font-size: ${THEME_SIZE.FONT.HUGE};
+  font-weight: ${THEME_VALUE.FONT_WEIGHT.BOLD};
+  color: ${THEME_COLOR.TEXT.ACCENT};
 `;
 
 const ImageContainer = styled.div`
