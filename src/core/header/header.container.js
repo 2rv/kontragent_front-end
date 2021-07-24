@@ -1,4 +1,10 @@
 import { HeaderComponent } from './header.component';
-export function HeaderContainer() {
-  return <HeaderComponent />;
+
+export function HeaderContainer({ toggleSidebar, toggleSibearHandler }) {
+  return (
+    <HeaderComponent
+      toggleSidebar={toggleSidebar}
+      toggleSibearHandler={toggleSibearHandler}
+    />
+  );
 }

@@ -1,18 +1,26 @@
-import {
-  HeaderNotificationContainer,
-  HeaderProfileContainer,
-  LogotypeContainer,
-} from './frame';
+import Image from 'next/image';
 import styled from 'styled-components';
 import { THEME_COLOR, spacing } from '../../lib/theme';
 
-export function HeaderComponent() {
+import { ReactComponent as Menu } from '../../asset/svg/menu.svg';
+import { ReactComponent as Close } from '../../asset/svg/close.svg';
+import { ReactComponent as NotificatiobBellIcon } from '../../asset/svg/notificationBell.svg';
+import { ReactComponent as SidebarLogo } from '../../asset/svg/sidebarLogo.svg';
+
+export function HeaderComponent({ toggleSidebar, toggleSibearHandler }) {
   return (
     <Container>
-      <LogotypeContainer />
+      <Content girdColumns="1fr 5fr">
+        <div onClick={toggleSibearHandler}>
+          {toggleSidebar ? <CloseIcon /> : <MenuIcon />}
+        </div>
+        <SidebarLogo />
+      </Content>
       <Content>
-        <HeaderNotificationContainer />
-        <HeaderProfileContainer imageURL="/static/img/headerAvatar.svg" />
+        <NotificatiobBellIcon />
+        <ImageContainer>
+          <Image layout="fill" src="/static/img/headerAvatar.svg" priority={true} />
+        </ImageContainer>
       </Content>
     </Container>
   );
@@ -20,7 +28,7 @@ export function HeaderComponent() {
 
 const Content = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: ${(props) => props.girdColumns ?? '1fr 1fr'};
   gap: ${spacing(6)};
 `;
 
@@ -32,4 +40,18 @@ const Container = styled.div`
   height: 100px;
   width: 100%;
   background-color: ${THEME_COLOR.COLOR.BASE};
+`;
+
+const ImageContainer = styled.div`
+  width: 30px;
+  height: 30px;
+  position: relative;
+`;
+
+const MenuIcon = styled(Menu)`
+  cursor: pointer;
+`;
+
+const CloseIcon = styled(Close)`
+  cursor: pointer;
 `;
