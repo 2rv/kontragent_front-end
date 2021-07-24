@@ -1,9 +1,7 @@
 import styled from 'styled-components';
 import { THEME_COLOR } from '../../theme';
+import { BasicButton } from './basic.button';
 
-import { PrimaryButton } from './primary.button';
-
-export const SecondaryButton: typeof PrimaryButton = styled(PrimaryButton)`
-  color: ${THEME_COLOR.TEXT.BASE};
-  background-color: ${THEME_COLOR.COLOR.PRIMARY};
+export const SecondaryButton: typeof BasicButton = styled(BasicButton)`
+  background-color: ${THEME_COLOR.COLOR.ACCENT};
 `;

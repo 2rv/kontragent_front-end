@@ -6,10 +6,7 @@ import {
   THEME_VALUE,
 } from '../../../../lib/theme';
 import { PrimaryTitleText } from '../../../../lib/elements/text';
-import {
-  PrimaryButton,
-  SecondaryButton,
-} from '../../../../lib/elements/button';
+import { SecondaryButton } from '../../../../lib/elements/button';
 import { SectionLayout } from '../../../../lib/elements/layout';
 import { SecondaryInput } from '../../../../lib/elements/input';
 import { SecondarySelect } from '../../../../lib/elements/field';
@@ -50,7 +47,6 @@ const InputCase = styled.div`
   gap: ${spacing(4)};
   width: 100%;
 `;
-const Button = styled(PrimaryButton)`
-  height: 46px;
-  width: 226px;
+const Button = styled(SecondaryButton)`
+  max-width: 226px;
 `;

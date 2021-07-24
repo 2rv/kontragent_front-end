@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { HeaderComponent } from '../header';
 import { PrimaryBox } from '../../../../lib/elements/box';
 import { SectionLayout, IndentLayout } from '../../../../lib/elements/layout';
-import { PrimaryButton } from '../../../../lib/elements/button';
+import { SecondaryButton } from '../../../../lib/elements/button';
 import { PrimaryText, SecondaryText } from '../../../../lib/elements/text';
 import {
   spacing,
@@ -33,7 +33,7 @@ export function BalanceComponent(props) {
                 <SecondaryText tid="ENTITY.BALANCE.HEADER.SPENT_IN_A_MONTH" />
                 <BoldPriceText tid="25 000.00 руб." />
               </CaseCard>
-              <PrimaryButton tid="ENTITY.BALANCE.HEADER.TOP_UP_BALANCE" />
+              <Button tid="ENTITY.BALANCE.HEADER.TOP_UP_BALANCE" />
             </HeaderContent>
           </SectionLayout>
         </IndentLayout>
@@ -44,7 +44,9 @@ export function BalanceComponent(props) {
     </Container>
   );
 }
-
+const Button = styled(SecondaryButton)`
+  height: 100%;
+`;
 const Container = styled.div`
   display: flex;
   flex-flow: column;

@@ -5,7 +5,7 @@ import { FieldLayout } from '../../../../lib/elements/layout';
 import { SecondaryTitleText } from '../../../../lib/elements/text';
 import { PrimarySelect } from '../../../../lib/elements/field';
 import { TextareaField, PrimaryField } from '../../../../lib/elements/field';
-import { SecondaryButton } from '../../../../lib/elements/button';
+import { PrimaryButton } from '../../../../lib/elements/button';
 import { ErrorAlert } from '../../../../lib/elements/alert';
 import { SuccessAlert } from '../../../../lib/elements/alert';
 import styled from 'styled-components';
@@ -79,7 +79,7 @@ export function SupportFormCreateRequestComponent(props) {
           </SectionLayout>
         </SectionLayout>
 
-        <SecondaryButton
+        <PrimaryButton
           tid="SUPPORT.CREATE_REQUEST.BUTTON"
           disabled={isSubmitDisabled()}
         />

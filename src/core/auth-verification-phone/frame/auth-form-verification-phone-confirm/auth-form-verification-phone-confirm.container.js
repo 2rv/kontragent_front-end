@@ -22,6 +22,7 @@ export function AuthFormVerificationPhoneConfirmContainer(props) {
       initialValues={initialValue}
       validate={validation}
       onSubmit={onSubmitForm}
+      enablereinitialize={true}
     >
       {(props) => (
         <AuthFormVerificationPhoneConfirmComponent

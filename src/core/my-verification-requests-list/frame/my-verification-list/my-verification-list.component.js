@@ -5,7 +5,11 @@ import {
   ButtonLayout,
 } from '../../../../lib/elements/layout';
 import { PrimaryText, SecondaryText } from '../../../../lib/elements/text';
-import { PrimaryButton } from '../../../../lib/elements/button';
+import {
+  SecondaryButton,
+  BasicButton,
+  PrimaryButton,
+} from '../../../../lib/elements/button';
 import { CircleDivider } from '../../../../lib/elements/divider';
 import {
   THEME_VALUE,
@@ -65,7 +69,7 @@ export function MyVerificationListComponent(props) {
               <CancelButton tid="MY_VERIFICATION_REQUESTS_LIST.BUTTON.CANCEL" />
               <Button
                 payed={payed}
-                disabled={payed ? true : false}
+                disabled={payed}
                 tid={
                   payed
                     ? 'MY_VERIFICATION_REQUESTS_LIST.BUTTON.PAYED'
@@ -131,20 +135,12 @@ const CompanyName = styled(PrimaryText)`
   font-weight: ${THEME_VALUE.FONT_WEIGHT.MEDIUM};
   min-width: max-content;
 `;
-const Button = styled(PrimaryButton)`
-  background-color: ${(props) => props.payed && THEME_COLOR.TEXT.SECONDARY};
+const Button = styled(SecondaryButton)`
+  background-color: ${(P) => P.payed && THEME_COLOR.COLOR.PRIMARY};
   width: 160px;
-  height: 46px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 `;
-const CancelButton = styled(PrimaryButton)`
+const CancelButton = styled(BasicButton)`
   color: ${THEME_COLOR.TEXT.VALIDATION};
   background-color: ${THEME_COLOR.COLOR.SECONDARY};
   width: 160px;
-  height: 46px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 `;

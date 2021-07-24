@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { SecondaryInput } from '../../../../lib/elements/input';
-import { SecondaryButton } from '../../../../lib/elements/button';
+import { PrimaryButton } from '../../../../lib/elements/button';
 import { PrimaryTitleText } from '../../../../lib/elements/text';
 import { spacing, THEME_COLOR, THEME_SIZE } from '../../../../lib/theme';
 import { SectionLayout } from '../../../../lib/elements/layout';
@@ -25,10 +25,6 @@ const HeaderContainer = styled.div`
   justify-content: space-between;
   align-items: center;
 `;
-const NewRequestButton = styled(SecondaryButton)`
-  width: 226px;
-  height: 46px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+const NewRequestButton = styled(PrimaryButton)`
+  max-width: 226px;
 `;

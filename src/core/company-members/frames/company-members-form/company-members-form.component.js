@@ -11,7 +11,7 @@ import {
   PrimaryText,
 } from '../../../../lib/elements/text';
 import { PrimaryField } from '../../../../lib/elements/field';
-import { SecondaryButton } from '../../../../lib/elements/button';
+import { PrimaryButton } from '../../../../lib/elements/button';
 import { PrimaryLink } from '../../../../lib/elements/link';
 import {
   FieldLayout,
@@ -45,12 +45,8 @@ const FieldCase = styled.div`
   gap: ${spacing(4)};
   grid-template-columns: 1fr auto;
 `;
-const Button = styled(SecondaryButton)`
-  height: 46px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 194px;
+const Button = styled(PrimaryButton)`
+  width: 226px;
 `;
 const TinyLink = styled(PrimaryLink)`
   font-size: ${THEME_SIZE.FONT.TINY};

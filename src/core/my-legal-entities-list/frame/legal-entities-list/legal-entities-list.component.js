@@ -91,20 +91,22 @@ const Container = styled(SectionLayout)`
 `;
 const LineCase = styled.div`
   display: flex;
-  align-items: center;
-  gap: ${spacing(1)};
+  gap: ${spacing(2)};
 `;
 const Divider = styled(PrimaryDivider)`
   background-color: ${THEME_COLOR.COLOR.BASE};
 `;
 const TableCase = styled.div`
   display: grid;
-  grid-template-columns: 370px 41px 94px 120px 130px 41px 140px 70px 120px;
+  grid-template-columns:
+    minmax(370px, 9fr) minmax(41px, 1fr) minmax(94px, 2fr) minmax(130px, 3fr)
+    minmax(125px, 2.5fr) minmax(41px, 1fr) minmax(140px, 3fr) minmax(70px, 1fr) minmax(120px, 3fr);
   gap: ${spacing(4)};
   align-items: center;
+  width: 100%;
 `;
 const TableHeaderCase = styled(TableCase)`
-  padding: 0 ${spacing(4)};
+  /* padding: 0 ${spacing(4)}; */
 `;
 const Text = styled(SecondaryText)`
   font-size: ${THEME_SIZE.FONT.DEFAULT};

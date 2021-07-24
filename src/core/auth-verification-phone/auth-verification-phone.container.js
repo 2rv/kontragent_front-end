@@ -39,7 +39,7 @@ export function AuthVerificationPhoneContainer() {
   const authVerificationPhoneSendCode = () => {
     dispatch(authFormVerificationPhoneSendCode());
   };
-  useEffect(authVerificationPhoneSendCode, []);
+  //   useEffect(authVerificationPhoneSendCode, []);
 
   const authFormVerificationPhoneSendData = (values) => {
     const code = values[AUTH_VERIFICATION_PHONE_FIELD_NAME.CODE];
@@ -59,8 +59,8 @@ export function AuthVerificationPhoneContainer() {
       sendCodeError={isRequestError(state.verificationPhone)}
       sendCodeErrorMessage={getRequestErrorMessage(state.verificationPhone)}
       sendCode={authVerificationPhoneSendCode}
-      phone={user.phone}
       pageLoading={pageLoading}
+      phone={user?.phone}
       fieldName={AUTH_FORM_VERIFICATION_PHONE_CONFIRM_FIELD_NAME}
       initialValue={getInitialValue()}
       validation={authFormVerificationPhoneValidation}

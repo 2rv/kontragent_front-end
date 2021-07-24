@@ -62,7 +62,7 @@ export function PhoneVerificationInfoComponent(props) {
             error={isFieldError(fieldVerificationCode)}
           />
 
-          <Button
+          <PrimaryButton
             tid="AUTH_PHONE_VERIFICATION_INFO.BUTTON"
             disabled={isSubmitDisabled()}
           />
@@ -95,10 +95,4 @@ const Message = styled(SecondaryText)`
 const PhoneNumber = styled.span`
   font-size: ${THEME_SIZE.FONT.DEFAULT};
   font-weight: ${THEME_VALUE.FONT_WEIGHT.MEDIUM};
-`;
-
-const Button = styled(PrimaryButton)`
-  background-color: ${THEME_COLOR.COLOR.PRIMARY};
-  color: ${THEME_COLOR.TEXT.BASE};
-  width: 100%;
 `;

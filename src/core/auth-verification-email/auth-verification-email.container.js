@@ -32,7 +32,7 @@ export function AuthVerificationEmailContainer() {
     dispatch(authFormVerificationEmailSendCode(token));
   };
 
-  useEffect(authVerificationEmailSendCode, []);
+  //   useEffect(authVerificationEmailSendCode, []);
 
   return (
     <AuthVerificationEmailComponent

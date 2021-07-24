@@ -41,7 +41,7 @@ export const myLegalEntitiesSelectOption = [
 ];
 const myLegalEntitiesListData = [
   {
-    companyName: 'ООО "КАПСТРОЙЭНЕРОГОТЕХ"',
+    companyName: 'ООО "ПЕРЕИСПОДВЫПОДВЕРТАМАКСИМАЛЬНО"',
     books: '15',
     kontragent: 25,
     turnover: '56 652.40',

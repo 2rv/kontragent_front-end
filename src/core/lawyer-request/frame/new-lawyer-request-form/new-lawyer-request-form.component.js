@@ -84,8 +84,8 @@ export function NewLawyerRequestFormComponent(props) {
               </PriceText>
             </SectionLayout>
             <ButtonLayout type="double">
-              <PrimaryButton tid="LAWYER_REQUEST.FORM.FIELDS.BUTTONS.SEND_AND_PAY" />
-              <SecondaryButton tid="LAWYER_REQUEST.FORM.FIELDS.BUTTONS.WATCH_MY_QUESTIONS" />
+              <SecondaryButton tid="LAWYER_REQUEST.FORM.FIELDS.BUTTONS.SEND_AND_PAY" />
+              <PrimaryButton tid="LAWYER_REQUEST.FORM.FIELDS.BUTTONS.WATCH_MY_QUESTIONS" />
             </ButtonLayout>
           </SectionLayout>
         </IndentLayout>

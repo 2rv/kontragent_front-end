@@ -1,11 +1,18 @@
 import styled from 'styled-components';
 
 import { PrimaryBox } from '../../../../../../lib/elements/box';
-import { SectionLayout, IndentLayout } from '../../../../../../lib/elements/layout';
+import {
+  SectionLayout,
+  IndentLayout,
+} from '../../../../../../lib/elements/layout';
 import { PrimaryField } from '../../../../../../lib/elements/field';
-import { SecondaryButton } from '../../../../../../lib/elements/button';
-import { PrimaryText, SecondaryText } from '../../../../../../lib/elements/text';
+import { PrimaryButton } from '../../../../../../lib/elements/button';
+import {
+  PrimaryText,
+  SecondaryText,
+} from '../../../../../../lib/elements/text';
 import { spacing, THEME_SIZE, THEME_VALUE } from '../../../../../../lib/theme';
+import { PrimaryLink } from '../../../../../../lib/elements/link';
 
 export function AddParticipantComponent() {
   return (
@@ -15,11 +22,12 @@ export function AddParticipantComponent() {
           <AddParticipantText tid="ENTITY.PARTICIPANTS.ADD_PARTICIPANT.TITLE" />
           <FieldsContainer>
             <PrimaryField placeholderTid="ENTITY.PARTICIPANTS.ADD_PARTICIPANT.INPUT_PLACEHOLDER" />
-            <SecondaryButton tid="ENTITY.PARTICIPANTS.ADD_PARTICIPANT.INVITE" />
+            <PrimaryButton tid="ENTITY.PARTICIPANTS.ADD_PARTICIPANT.INVITE" />
           </FieldsContainer>
           <div>
-            <SecondaryText tid="ENTITY.PARTICIPANTS.ADD_PARTICIPANT.INFO_TEXT" />&nbsp;
-            <MoreDetailsText tid="ENTITY.PARTICIPANTS.ADD_PARTICIPANT.MORE_DETAILS" />
+            <TinyText tid="ENTITY.PARTICIPANTS.ADD_PARTICIPANT.INFO_TEXT" />
+            &nbsp;
+            <TynyLink tid="ENTITY.PARTICIPANTS.ADD_PARTICIPANT.MORE_DETAILS" />
           </div>
         </SectionLayout>
       </IndentLayout>
@@ -31,18 +39,16 @@ const AddParticipantText = styled(PrimaryText)`
   font-size: ${THEME_SIZE.FONT.DEFAULT};
   font-weight: ${THEME_VALUE.FONT_WEIGHT.SEMY_BOLD};
 `;
-
-const MoreDetailsText = styled(PrimaryText)`
-  font-size: ${THEME_SIZE.FONT.SMALL};
+const TinyText = styled(SecondaryText)`
+  font-size: ${THEME_SIZE.FONT.TINY};
+`;
+const TynyLink = styled(PrimaryLink)`
+  font-size: ${THEME_SIZE.FONT.TINY};
   font-weight: ${THEME_VALUE.FONT_WEIGHT.MEDIUM};
-  :hover {
-    cursor: pointer;
-    text-decoration: underline;
-  }
 `;
 
 const FieldsContainer = styled.div`
   display: grid;
-  grid-template-columns: 4fr 1fr;
+  grid-template-columns: 1fr 226px;
   gap: ${spacing(4)};
 `;

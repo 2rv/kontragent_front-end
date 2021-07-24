@@ -7,7 +7,7 @@ import {
 import { spacing, THEME_COLOR, THEME_SIZE, THEME_VALUE } from '../../lib/theme';
 import {
   CommentListComponent,
-  CommentInputComponent,
+  CommentInputContainer,
   ThemeArbitrationHeaderComponent,
 } from './frame';
 import { PrimaryBox } from '../../lib/elements/box';
@@ -16,11 +16,14 @@ import { PrimaryLoader } from '../../lib/elements/loader';
 
 export function ThemeArbitrationComponent(props) {
   const {
+    themeArbitrationData,
     isPending,
     pageLoading,
     isError,
     isSuccess,
     errorMessage,
+  } = props;
+  const {
     theme,
     role,
     description,
@@ -30,11 +33,11 @@ export function ThemeArbitrationComponent(props) {
     companyName,
     commentItem,
     myAvatar,
-  } = props;
+  } = themeArbitrationData;
 
   return (
     <>
-      {isPending || (pageLoading && <PrimaryLoader />)}
+      {(isPending || pageLoading) && <PrimaryLoader />}
       <Container>
         <ThemeArbitrationHeaderComponent
           description={description}
@@ -48,7 +51,7 @@ export function ThemeArbitrationComponent(props) {
             <ContentTitle tid="THEME_ARBITRATION.REVIEWS" />
             <Line>
               <SecondaryText tid={companyType} />
-              <NameCompany tid={`"${companyName}"`} />
+              <NameCompany tid={companyName} />
             </Line>
           </ContentHeaderCase>
           <CommentListComponent
@@ -59,12 +62,20 @@ export function ThemeArbitrationComponent(props) {
             isSuccess={isSuccess}
             errorMessage={errorMessage}
           />
-          <CommentInputComponent myAvatar={myAvatar} />
+          <CommentInputContainer
+            pageLoading={pageLoading}
+            isPending={isPending}
+            isError={isError}
+            isSuccess={isSuccess}
+            errorMessage={errorMessage}
+            myAvatar={myAvatar}
+          />
         </Content>
       </Container>
     </>
   );
 }
+
 const ContentTitle = styled(PrimaryText)`
   font-size: ${THEME_SIZE.FONT.MEDIUM};
   font-weight: ${THEME_VALUE.FONT_WEIGHT.MEDIUM};
@@ -90,7 +101,7 @@ const Line = styled.div`
 const ContentHeaderCase = styled.div`
   display: flex;
   flex-direction: column;
-  gap: ${spacing(3)};
+  gap: ${spacing(2)};
 `;
 const Container = styled.div`
   display: flex;

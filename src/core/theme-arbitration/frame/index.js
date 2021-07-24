@@ -1,3 +1,3 @@
 export { CommentListComponent } from './comment';
-export { CommentInputComponent } from './comment-input';
+export { CommentInputContainer } from './comment-input';
 export { ThemeArbitrationHeaderComponent } from './theme-arbitration-header';

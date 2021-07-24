@@ -10,7 +10,7 @@ import { PrimaryDivider } from '../../../../lib/elements/divider';
 import { SectionLayout } from '../../../../lib/elements/layout';
 
 export function CommentItemComponent(props) {
-  const { avatar, author, role, time, text, images } = props;
+  const { avatar, author, role, time, text, images } = props.data;
   const { roleColor, roleText } = RoleConverter(role);
   return (
     <Container>
@@ -31,15 +31,16 @@ export function CommentItemComponent(props) {
   );
 }
 const Image = styled.img`
-  height: 280px;
-  width: 100%;
+  min-height: 100px;
+  max-height: 300px;
+  object-fit: cover;
   border-radius: ${THEME_SIZE.RADIUS.DEFAULT};
 `;
-
 const Line = styled.div`
-  display: flex;
-  align-items: center;
+  display: inline-flex;
+  flex-wrap: wrap;
   gap: ${spacing(2)};
+  align-items: center;
 `;
 const Container = styled.div`
   display: flex;

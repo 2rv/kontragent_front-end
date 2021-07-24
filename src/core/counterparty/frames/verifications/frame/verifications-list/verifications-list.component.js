@@ -11,8 +11,8 @@ import {
   SecondaryText,
 } from '../../../../../../lib/elements/text';
 import {
-  PrimaryButton,
   SecondaryButton,
+  BasicButton,
 } from '../../../../../../lib/elements/button';
 import { CircleDivider } from '../../../../../../lib/elements/divider';
 import {
@@ -50,11 +50,15 @@ export function VerificationsListComponent(props) {
             </SectionLayout>
             <ActionCase>
               <CancelButton tid="COUNTERPARTY.VERIFICATIONS.BUTTONS.CANCEL" />
-              {paid ? (
-                <PaidButton tid="COUNTERPARTY.VERIFICATIONS.BUTTONS.PAID" />
-              ) : (
-                <PayButton tid="COUNTERPARTY.VERIFICATIONS.BUTTONS.PAY" />
-              )}
+              <Button
+                payed={paid}
+                disabled={paid}
+                tid={
+                  paid
+                    ? 'COUNTERPARTY.VERIFICATIONS.BUTTONS.PAID'
+                    : 'COUNTERPARTY.VERIFICATIONS.BUTTONS.PAY'
+                }
+              />
             </ActionCase>
           </Container>
         );
@@ -121,27 +125,10 @@ const ActionCase = styled.div`
   gap: ${spacing(3)};
   align-items: center;
 `;
-const CancelButton = styled(PrimaryButton)`
-  background: ${THEME_COLOR.COLOR.BASE};
+const Button = styled(SecondaryButton)`
+  background-color: ${(P) => P.paid && THEME_COLOR.COLOR.PRIMARY};
+`;
+const CancelButton = styled(BasicButton)`
+  background-color: ${THEME_COLOR.COLOR.BASE};
   color: ${THEME_COLOR.COLOR.VALIDATION};
-  height: 46px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 0;
-`;
-const PaidButton = styled(SecondaryButton)`
-  background-color: ${THEME_COLOR.TEXT.SECONDARY};
-  height: 46px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 0;
-`;
-const PayButton = styled(PrimaryButton)`
-  height: 46px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 0;
 `;

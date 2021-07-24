@@ -92,7 +92,7 @@ export const routes = {
   [BALANCE_ACTIVITY_ROUTE_PATH]: balanceActivityRouter,
   [DASHBOARD_ADMIN_ROUTE_PATH]: dashboardAdminRouter,
   [LAWYER_REQUEST_ROUTE_PATH]: lawyerRequestRouter,
-  [AUTH_VERIFICATION_PHONE_ROUTE_PATH]: AuthVerificationPhoneRouter,
+  //   [AUTH_VERIFICATION_PHONE_ROUTE_PATH]: AuthVerificationPhoneRouter,
   [AUTH_VERIFICATION_EMAIL_CONFIRM_ROUTE_PATH]:
     AuthVerificationEmailConfirmRouter,
 };

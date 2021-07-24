@@ -1,1 +1,1 @@
-export { CommentInputComponent } from './comment.component';
+export { CommentInputContainer } from './comment-input.container';

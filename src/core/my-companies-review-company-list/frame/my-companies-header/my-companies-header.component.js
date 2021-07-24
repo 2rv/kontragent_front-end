@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { SecondarySelect } from '../../../../lib/elements/field';
 import { SecondaryInput } from '../../../../lib/elements/input';
-import { SecondaryButton } from '../../../../lib/elements/button';
+import { PrimaryButton } from '../../../../lib/elements/button';
 import { PrimaryTitleText } from '../../../../lib/elements/text';
 import { spacing, THEME_COLOR, THEME_SIZE } from '../../../../lib/theme';
 import { SectionLayout } from '../../../../lib/elements/layout';
@@ -44,11 +44,6 @@ const InputCase = styled.div`
   gap: ${spacing(4)};
   width: 100%;
 `;
-const Button = styled(SecondaryButton)`
-  width: 226px;
-  height: 46px;
-  padding: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+const Button = styled(PrimaryButton)`
+  max-width: 226px;
 `;

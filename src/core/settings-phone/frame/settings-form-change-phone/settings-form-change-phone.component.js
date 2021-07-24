@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-
 import {
   SectionLayout,
   IndentLayout,
@@ -9,7 +8,7 @@ import {
 import { PrimaryBox } from '../../../../lib/elements/box';
 import { SecondaryTitleText } from '../../../../lib/elements/text';
 import { PrimaryField } from '../../../../lib/elements/field';
-import { SecondaryButton } from '../../../../lib/elements/button';
+import { PrimaryButton } from '../../../../lib/elements/button';
 import { ErrorAlert } from '../../../../lib/elements/alert';
 import { SuccessAlert } from '../../../../lib/elements/alert';
 import { PrimaryLoader } from '../../../../lib/elements/loader';
@@ -81,7 +80,7 @@ export function SettingsFormChangePhoneComponent(props) {
                   />
                 </FieldLayout>
 
-                <SecondaryButton
+                <PrimaryButton
                   tid="SETTINGS.PHONE.BUTTON"
                   disabled={isSubmitDisabled()}
                 />

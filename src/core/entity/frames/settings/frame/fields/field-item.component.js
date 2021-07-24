@@ -6,7 +6,10 @@ import {
   ButtonLayout,
 } from '../../../../../../lib/elements/layout';
 import { PrimaryField } from '../../../../../../lib/elements/field';
-import { SecondaryButton } from '../../../../../../lib/elements/button';
+import {
+  PrimaryButton,
+  SecondaryButton,
+} from '../../../../../../lib/elements/button';
 import { spacing } from '../../../../../../lib/theme';
 
 export function FieldItemComponent(props) {
@@ -59,7 +62,7 @@ export function FieldItemComponent(props) {
           />
         </FieldLayout>
         <ButtonLayout>
-          <SecondaryButton tid="ENTITY.SETTING.FORM.SAVE_COMPANY_INFORMATION" />
+          <PrimaryButton tid="ENTITY.SETTING.FORM.SAVE_COMPANY_INFORMATION" />
         </ButtonLayout>
       </SectionLayout>
     </form>

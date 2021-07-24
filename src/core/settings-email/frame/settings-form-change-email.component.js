@@ -7,7 +7,7 @@ import {
 } from '../../../lib/elements/layout';
 import { SecondaryTitleText } from '../../../lib/elements/text';
 import { PrimaryField } from '../../../lib/elements/field';
-import { SecondaryButton } from '../../../lib/elements/button';
+import { PrimaryButton } from '../../../lib/elements/button';
 import { ErrorAlert } from '../../../lib/elements/alert';
 import { SuccessAlert } from '../../../lib/elements/alert';
 import { PrimaryLoader } from '../../../lib/elements/loader';
@@ -79,7 +79,7 @@ export function SettingsFormChangeEmailComponent(props) {
                   />
                 </FieldLayout>
 
-                <SecondaryButton
+                <PrimaryButton
                   tid="SETTINGS.EMAIL.BUTTON"
                   disabled={isSubmitDisabled()}
                 />

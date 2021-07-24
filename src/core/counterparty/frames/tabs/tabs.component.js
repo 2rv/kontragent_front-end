@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { PrimaryButton } from '../../../../lib/elements/button';
+import { BasicButton } from '../../../../lib/elements/button';
 import { PrimaryBox } from '../../../../lib/elements/box';
 import {
   spacing,
@@ -33,16 +33,10 @@ const Container = styled(PrimaryBox)`
   width: 100%;
   justify-content: flex-start;
 `;
-const Button = styled(PrimaryButton)`
-  height: 44px;
+const Button = styled(BasicButton)`
   color: ${THEME_COLOR.TEXT.SECONDARY};
-  background-color: transparent;
-  box-sizing: border-box;
-  padding: 0 ${spacing(4)};
-  border-width: 1px;
-  width: max-content;
-  border-style: solid;
-  border-color: transparent;
+  border: 1px solid transparent;
+  min-width: max-content;
   ${(p) => {
     if (p.active)
       return `

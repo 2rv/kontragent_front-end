@@ -3,8 +3,8 @@ import styled from 'styled-components';
 import { SectionLayout, IndentLayout } from '../../../../lib/elements/layout';
 import { SecondaryTitleText } from '../../../../lib/elements/text';
 import { SecondaryText } from '../../../../lib/elements/text';
-import { SecondaryButton } from '../../../../lib/elements/button';
-import { BasicButton } from '../../../../lib/elements/button';
+import { BasicButton, PrimaryButton } from '../../../../lib/elements/button';
+import { THEME_COLOR } from '../../../../lib/theme';
 
 export function SettingsDisableAdvertComponent() {
   return (
@@ -16,14 +16,17 @@ export function SettingsDisableAdvertComponent() {
         </SectionLayout>
 
         <SectionLayout type="MEDIUM">
-          <BasicButton tid="SETTINGS.ADVERT.BUTTON.FIRST" />
-          <SecondaryButton tid="SETTINGS.ADVERT.BUTTON.SECOND" />
+          <Button tid="SETTINGS.ADVERT.BUTTON.FIRST" />
+          <PrimaryButton tid="SETTINGS.ADVERT.BUTTON.SECOND" />
         </SectionLayout>
       </SectionLayout>
     </IndentLayout>
   );
 }
-
+const Button = styled(BasicButton)`
+  color: ${THEME_COLOR.TEXT.PRIMARY};
+  background-color: ${THEME_COLOR.COLOR.SECONDARY};
+`;
 const Subtitle = styled(SecondaryText)`
   line-height: 1.5;
 `;

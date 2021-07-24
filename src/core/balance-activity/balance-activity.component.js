@@ -5,7 +5,7 @@ import {
   PrimaryTitleText,
 } from '../../lib/elements/text';
 import { spacing, THEME_COLOR, THEME_SIZE, THEME_VALUE } from '../../lib/theme';
-import { PrimaryButton } from '../../lib/elements/button';
+import { SecondaryButton } from '../../lib/elements/button';
 import { PrimaryLoader } from '../../lib/elements/loader';
 import { BalanceActivityListContainer } from './frame';
 
@@ -67,12 +67,6 @@ const Balance = styled(PrimaryTitleText)`
 const Valute = styled(SecondaryText)`
   font-size: ${THEME_SIZE.FONT.SMALL};
 `;
-const Button = styled(PrimaryButton)`
-  flex-basis: 226px;
-  min-width: max-content;
-  padding: 0 ${spacing(4)};
-  height: 46px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+const Button = styled(SecondaryButton)`
+  max-width: 226px;
 `;

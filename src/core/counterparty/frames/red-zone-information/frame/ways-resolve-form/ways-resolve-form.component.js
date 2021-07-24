@@ -8,7 +8,7 @@ import {
   PrimaryText,
   SecondaryText,
 } from '../../../../../../lib/elements/text';
-import { SecondaryButton } from '../../../../../../lib/elements/button';
+import { PrimaryButton } from '../../../../../../lib/elements/button';
 import { PrimaryDivider } from '../../../../../../lib/elements/divider';
 import {
   spacing,
@@ -73,7 +73,7 @@ export function WaysResolveFormComponent(props) {
                   <BoldValuteText tid="руб." />
                 </BlueText>
               </Case>
-              <SecondaryButton tid="COUNTERPARTY.RED_ZONE.ORDER" />
+              <PrimaryButton tid="COUNTERPARTY.RED_ZONE.ORDER" />
             </FooterCase>
           </SectionLayout>
         </IndentLayout>
@@ -84,20 +84,18 @@ export function WaysResolveFormComponent(props) {
 const DangerNoticeTitle = styled(SecondaryText)`
   color: ${THEME_COLOR.TEXT.PRIMARY};
   font-weight: ${THEME_VALUE.FONT_WEIGHT.MEDIUM};
-  line-height: 21px;
+  line-height: 1.5;
   ${(p) => p.checked && `color: ${THEME_COLOR.TEXT.ACCENT};`};
 `;
 const DangerNoticeDescription = styled(SecondaryText)`
   color: ${THEME_COLOR.TEXT.SECONDARY};
-  margin: ${spacing(4)} 0;
-  line-height: 21px;
+  line-height: 1.5;
 `;
 const DangerNoticePrice = styled(SecondaryText)`
   color: ${THEME_COLOR.COLOR.PRIMARY};
   font-size: ${THEME_SIZE.FONT.MEDIUM};
   font-weight: ${THEME_VALUE.FONT_WEIGHT.SEMY_BOLD};
-  margin-top: ${spacing(4)};
-  line-height: 21px;
+  line-height: 1.5;
 `;
 const ContentCase = styled.div`
   display: grid;
@@ -108,16 +106,20 @@ const CheckboxCase = styled.label`
   display: flex;
   cursor: pointer;
   flex-direction: column;
-  border-radius: 10px;
+  border-radius: ${THEME_SIZE.RADIUS.DEFAULT};
   padding: ${spacing(4)};
+  gap: ${spacing(4)};
   border: 2px solid transparent;
   transition: 0.2s ease-in;
   :hover {
     box-shadow: 0px 15px 75px rgba(0, 0, 0, 0.1);
-    background-color: #fff;
+    background-color: ${THEME_COLOR.COLOR.BASE};
   }
-  background-color: #f3f3f3;
-  ${(p) => p.checked && `border-color: #3AB8FF; background-color: #fff;`}
+  background-color: ${THEME_COLOR.COLOR.SECONDARY};
+  ${(p) =>
+    p.checked &&
+    `border-color: ${THEME_COLOR.COLOR.ACCENT}; 
+	background-color: ${THEME_COLOR.COLOR.BASE};`}
 `;
 const Checkbox = styled(Field)`
   display: none;

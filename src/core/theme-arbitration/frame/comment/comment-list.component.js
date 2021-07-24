@@ -21,8 +21,8 @@ export function CommentListComponent(props) {
 
   return (
     <List>
-      {dataComment.map((item, index) => (
-        <CommentItemComponent key={item?.id || index} {...item} />
+      {dataComment.map((data, index) => (
+        <CommentItemComponent key={index} data={data} />
       ))}
     </List>
   );
@@ -31,6 +31,7 @@ const List = styled.div`
   display: flex;
   flex-direction: column;
   min-height: 0;
+  flex-grow: 1;
   overflow: auto;
   gap: ${spacing(4)};
   padding-right: ${spacing(6)};

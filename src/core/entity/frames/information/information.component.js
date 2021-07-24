@@ -23,8 +23,8 @@ export function InformationComponent(props) {
           companyName={'"Компания Гермес-Электро"'}
         />
         <ActionCase>
-          <PrimaryButton tid="ENTITY.DETAIL_INFORMATION.HEADER.DOWNLOAD_INFO_IN_PDF" />
-          <SecondaryButton tid="ENTITY.DETAIL_INFORMATION.HEADER.LEGAL_ADVICE_FACE" />
+          <SecondaryButton tid="ENTITY.DETAIL_INFORMATION.HEADER.DOWNLOAD_INFO_IN_PDF" />
+          <PrimaryButton tid="ENTITY.DETAIL_INFORMATION.HEADER.LEGAL_ADVICE_FACE" />
         </ActionCase>
       </SectionLayout>
       <DangerNoticesComponent dangerNotices={dangerNotice} />

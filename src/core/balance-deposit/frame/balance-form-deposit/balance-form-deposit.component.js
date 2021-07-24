@@ -6,7 +6,7 @@ import {
 } from '../../../../lib/elements/layout';
 import { SecondaryTitleText } from '../../../../lib/elements/text';
 import { PrimarySelect, PrimaryField } from '../../../../lib/elements/field';
-import { PrimaryButton } from '../../../../lib/elements/button';
+import { SecondaryButton } from '../../../../lib/elements/button';
 import { ErrorAlert, SuccessAlert } from '../../../../lib/elements/alert';
 import styled from 'styled-components';
 
@@ -66,7 +66,7 @@ export function BalanceFormDepositComponent(props) {
           />
         </FieldLayout>
         <ButtonLayout>
-          <PrimaryButton
+          <SecondaryButton
             tid="BALANCE.BALANCE_DEPOSIT.BUTTON"
             disabled={isSubmitDisabled()}
           />

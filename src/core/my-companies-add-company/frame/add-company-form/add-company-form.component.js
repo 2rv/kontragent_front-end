@@ -3,7 +3,7 @@ import React from 'react';
 import { SectionLayout } from '../../../../lib/elements/layout';
 import { FieldLayout, ButtonLayout } from '../../../../lib/elements/layout';
 import { PrimaryField } from '../../../../lib/elements/field';
-import { SecondaryButton } from '../../../../lib/elements/button';
+import { PrimaryButton } from '../../../../lib/elements/button';
 import { ErrorAlert } from '../../../../lib/elements/alert';
 import { SuccessAlert } from '../../../../lib/elements/alert';
 
@@ -62,7 +62,7 @@ export function AddCompanyFormComponent(props) {
           />
         </FieldLayout>
         <ButtonLayout>
-          <SecondaryButton
+          <PrimaryButton
             tid="MY_COMPANIES.MY_COMPANIES_ADD_COMPANY.ADD_COMPANY_FORM.BUTTON"
             disabled={isSubmitDisabled()}
           />

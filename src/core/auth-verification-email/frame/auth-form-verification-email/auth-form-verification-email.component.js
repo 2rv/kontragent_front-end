@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { spacing, THEME_SIZE, THEME_VALUE } from '../../../../lib/theme';
 
 import { SectionLayout } from '../../../../lib/elements/layout';
-import { SecondaryButton } from '../../../../lib/elements/button';
+import { PrimaryButton } from '../../../../lib/elements/button';
 import { ErrorAlert } from '../../../../lib/elements/alert';
 import { PrimaryTitleText, PrimaryText } from '../../../../lib/elements/text';
 import { PrimaryLoader } from '../../../../lib/elements/loader';
@@ -22,7 +22,7 @@ export function AuthFormVerificationEmailComponent(props) {
         <SectionLayout type="MEDIUM">
           <Message tid="AUTH_VERIFICATION_EMAIL.MESSAGE" />
 
-          <SecondaryButton
+          <PrimaryButton
             onClick={sendCode}
             tid="AUTH_VERIFICATION_EMAIL.BUTTON"
             disabled={isSubmitDisabled()}

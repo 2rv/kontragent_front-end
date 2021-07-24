@@ -16,10 +16,7 @@ export function ArbitrationListComponent(props) {
     arbitrationListData,
   } = props;
   return (
-    <BaseList
-      listData={arbitrationListData}
-      skeletonAction={pageLoading || isPending}
-    >
+    <BaseList listData={arbitrationListData} skeletonAction={isPending}>
       {(props) => {
         const {
           statusId,

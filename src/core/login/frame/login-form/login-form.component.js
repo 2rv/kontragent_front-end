@@ -3,7 +3,7 @@ import React from 'react';
 import { SectionLayout } from '../../../../lib/elements/layout';
 import { FieldLayout } from '../../../../lib/elements/layout';
 import { PrimaryField } from '../../../../lib/elements/field';
-import { PrimaryButton } from '../../../../lib/elements/button';
+import { SecondaryButton } from '../../../../lib/elements/button';
 import { ErrorAlert } from '../../../../lib/elements/alert';
 import { SuccessAlert } from '../../../../lib/elements/alert';
 import { PrimaryLoader } from '../../../../lib/elements/loader';
@@ -77,7 +77,7 @@ export function LoginFormComponent(props) {
               error={isFieldError(fieldCaptcha)}
             />
           </FieldLayout>
-          <PrimaryButton
+          <SecondaryButton
             tid="LOGIN.LOGIN_FORM.BUTTON"
             disabled={isSubmitDisabled()}
           />

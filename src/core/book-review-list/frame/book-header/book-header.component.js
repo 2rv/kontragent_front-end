@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { SecondarySelect } from '../../../../lib/elements/field';
 import { SecondaryInput } from '../../../../lib/elements/input';
-import { SecondaryButton } from '../../../../lib/elements/button';
+import { PrimaryButton } from '../../../../lib/elements/button';
 import { PrimaryTitleText } from '../../../../lib/elements/text';
 import { spacing, THEME_COLOR, THEME_SIZE } from '../../../../lib/theme';
 import { SectionLayout } from '../../../../lib/elements/layout';
@@ -19,7 +19,7 @@ export function BookHeaderComponent(props) {
     <SectionLayout>
       <HeaderCase>
         <Title tid="BOOK_REVIEW_LIST.HEADER.TITLE" />
-        <SecondaryButton tid="BOOK_REVIEW_LIST.HEADER.DOWNLOAD_BOOK" />
+        <PrimaryButton tid="BOOK_REVIEW_LIST.HEADER.DOWNLOAD_BOOK" />
       </HeaderCase>
       <InputCase>
         <SecondaryInput placeholder="BOOK_REVIEW_LIST.HEADER.FIND_BOOK" />

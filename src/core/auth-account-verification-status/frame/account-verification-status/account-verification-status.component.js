@@ -25,7 +25,7 @@ export function AccountVerificationStatusComponent() {
             <PrimaryText tid="AUTH_ACCOUNT_VERIFICATION_STATUS.MESSAGE" />
             <VerificationErrorReason tid="AUTH_ACCOUNT_VERIFICATION_STATUS.HIGHLIGHTED_MESSAGE" />
           </MessageLayout>
-          <Button tid="AUTH_ACCOUNT_VERIFICATION_STATUS.BUTTON" />
+          <PrimaryButton tid="AUTH_ACCOUNT_VERIFICATION_STATUS.BUTTON" />
         </IndentLayout>
       </PrimaryBox>
       <ErrorAlert tid="Ошибка. Проерьте данные" />
@@ -40,12 +40,6 @@ const Header = styled(PrimaryTitleText)`
 const MessageLayout = styled.div`
   line-height: 1.5;
   padding-bottom: ${spacing(3)};
-`;
-
-const Button = styled(PrimaryButton)`
-  background-color: ${THEME_COLOR.COLOR.PRIMARY};
-  color: ${THEME_COLOR.TEXT.BASE};
-  width: 100%;
 `;
 
 const VerificationErrorReason = styled(PrimaryText)`

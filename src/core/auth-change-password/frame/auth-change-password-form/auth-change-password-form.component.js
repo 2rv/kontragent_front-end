@@ -3,7 +3,7 @@ import React from 'react';
 import { SectionLayout } from '../../../../lib/elements/layout';
 import { FieldLayout } from '../../../../lib/elements/layout';
 import { PrimaryField } from '../../../../lib/elements/field';
-import { PrimaryButton } from '../../../../lib/elements/button';
+import { SecondaryButton } from '../../../../lib/elements/button';
 import { ErrorAlert } from '../../../../lib/elements/alert';
 import { PrimaryLoader } from '../../../../lib/elements/loader';
 import { SuccessAlert } from '../../../../lib/elements/alert';
@@ -66,7 +66,7 @@ export function AuthChangePasswordFormComponent(props) {
               type="password"
             />
           </FieldLayout>
-          <PrimaryButton
+          <SecondaryButton
             tid="AUTH_CHANGE_PASSWORD.BUTTON"
             disabled={isSubmitDisabled()}
           />

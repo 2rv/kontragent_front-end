@@ -18,13 +18,13 @@ export function NewsHeader(props) {
   return (
     <SectionLayout type="SMALL">
       <Title tid={newsTitle} />
-      <DescriptionCase>
+      <Line>
         <Text tid={newsDescription} />
         <CircleDivider />
         <Time tid={newsTime} />
         <CircleDivider />
         <Author tid={newsAuthor} />
-      </DescriptionCase>
+      </Line>
     </SectionLayout>
   );
 }
@@ -44,8 +44,9 @@ const Title = styled(PrimaryTitleText)`
   font-size: ${THEME_SIZE.FONT.MEDIUM};
   line-height: 1.5;
 `;
-const DescriptionCase = styled.div`
-  align-items: center;
-  display: flex;
+const Line = styled.div`
+  display: inline-flex;
+  flex-wrap: wrap;
   gap: ${spacing(2)};
+  align-items: center;
 `;
