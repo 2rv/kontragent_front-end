@@ -11,7 +11,7 @@ export function DashboardLayout(props: DashboardLayoutPropsType) {
   const { children } = props;
   const [toggleSidebar, setToggleSidebar] = React.useState<boolean>(true);
 
-  const toggleSibearHandler = (): void => {
+  const toggleSidebarHandler = (): void => {
     setToggleSidebar(!toggleSidebar);
   };
 
@@ -20,7 +20,7 @@ export function DashboardLayout(props: DashboardLayoutPropsType) {
       <HeaderCase>
         <HeaderContainer
           toggleSidebar={toggleSidebar}
-          toggleSibearHandler={toggleSibearHandler}
+          toggleSidebarHandler={toggleSidebarHandler}
         />
       </HeaderCase>
       <Content>

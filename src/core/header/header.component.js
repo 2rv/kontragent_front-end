@@ -1,31 +1,65 @@
+import React from 'react';
 import Image from 'next/image';
+import { useRouter } from 'next/router';
 import styled from 'styled-components';
 import { THEME_COLOR, spacing, THEME_SIZE, THEME_VALUE } from '../../lib/theme';
-import { SecondaryText } from '../../lib/elements/text';
+import { SecondaryText, PrimaryText } from '../../lib/elements/text';
+import { SecondaryButton } from '../../lib/elements/button';
 
 import { ReactComponent as NotificatiobBellIcon } from '../../asset/svg/notificationBell.svg';
 import { ReactComponent as SidebarLogo } from '../../asset/svg/sidebarLogo.svg';
 
-export function HeaderComponent({ toggleSidebar, toggleSibearHandler }) {
+export function HeaderComponent({ toggleSidebar, toggleSidebarHandler }) {
+  const { pathname } = useRouter();
+  const [ isAuthenticated, setIsAuthenticated ] = React.useState(false);
+
+  React.useEffect(() => {
+    const userToken = localStorage.getItem('token');
+    setIsAuthenticated(!!userToken);
+  }, []);
+
+  if (isAuthenticated) {
+    return (
+      <Container>
+        <Content>
+          {pathname !== '/' && (
+            <Button onClick={toggleSidebarHandler}>
+              <Stick1 close={toggleSidebar} />
+              <Stick2 close={toggleSidebar} />
+              <Stick3 close={toggleSidebar} />
+            </Button>
+          )}
+          <KontragentText tid="Контрагент" />
+        </Content>
+        <Content>
+          <div onClick={() => setIsAuthenticated(false)}>
+            <HeaderText tid="Выйти" />
+          </div>
+          <NotificatiobBellIcon />
+          <ImageContainer>
+            <Image
+              layout="fill"
+              src="/static/img/headerAvatar.svg"
+              priority={true}
+            />
+          </ImageContainer>
+        </Content>
+      </Container>
+    );
+  }
+
   return (
     <Container>
       <Content>
-        <Button onClick={toggleSibearHandler}>
-          <Stick1 close={toggleSidebar} />
-          <Stick2 close={toggleSidebar} />
-          <Stick3 close={toggleSidebar} />
-        </Button>
-        <KontragentText tid="Контрагент" />
+        <HeaderText tid="Возможности" />
+        <HeaderText tid="Цены" />
+        <HeaderText tid="Зачем сверяться" />
       </Content>
       <Content>
-        <NotificatiobBellIcon />
-        <ImageContainer>
-          <Image
-            layout="fill"
-            src="/static/img/headerAvatar.svg"
-            priority={true}
-          />
-        </ImageContainer>
+        <div onClick={() => setIsAuthenticated(true)}>
+          <HeaderText tid="Войти" />
+        </div>
+        <SendRequestButton tid="Отправить заявку" />
       </Content>
     </Container>
   );
@@ -53,6 +87,7 @@ const Stick3 = styled(Stick1)`
 `;
 const Content = styled.div`
   display: flex;
+  align-items: center;
   gap: ${spacing(6)};
 `;
 
@@ -76,4 +111,16 @@ const ImageContainer = styled.div`
   width: 30px;
   height: 30px;
   position: relative;
+`;
+
+const SendRequestButton = styled(SecondaryButton)`
+  color: ${THEME_COLOR.COLOR.ACCENT};
+  background-color: transparent;
+  border-radius: 100px;
+  border: 3px solid ${THEME_COLOR.COLOR.ACCENT};
+`;
+
+const HeaderText = styled(PrimaryText)`
+  font-weight: ${THEME_VALUE.FONT_WEIGHT.SEMY_BOLD};
+  cursor: pointer;
 `;
