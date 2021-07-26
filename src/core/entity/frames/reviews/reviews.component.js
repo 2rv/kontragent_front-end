@@ -13,8 +13,8 @@ export function ReviewsComponent(props) {
   return (
     <Container>
       <HeaderComponent
-        title="COUNTERPARTY.REVIEWS.HEADER.TITLE"
-        companyType="COUNTERPARTY.REVIEWS.HEADER.COMPANY_TYPE"
+        title="ENTITY.REVIEWS.HEADER.TITLE"
+        companyType="ENTITY.REVIEWS.HEADER.COMPANY_TYPE"
         companyName={'"Компания Гермес-Электро"'}
       />
       <ReviewsListComponent reviewsList={commentListData} />

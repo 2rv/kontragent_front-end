@@ -1,6 +1,33 @@
+<<<<<<< Updated upstream
 import { ArbitrationCasesComponent } from './arbitration-cases.component';
 
 export function ArbitrationCasesContainer() {
+=======
+import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { NAVIGATION_STORE_NAME } from '../../../../lib/common/navigation/navigation.constant';
+import {
+  getRequestErrorMessage,
+  isRequestError,
+  isRequestPending,
+  isRequestSuccess,
+} from '../../../../main/store/store.service';
+// import { arbitrationCasesLoad } from './arbitration-cases.action';
+import { COUNTERPARTY_ARBITRATION_CASES_STORE_NAME } from './arbitration-cases.constant';
+import { ArbitrationCasesComponent } from './arbitration-cases.component';
+
+export function ArbitrationCasesContainer() {
+  const dispatch = useDispatch();
+  const { state, pageLoading } = useSelector((state) => ({
+    state: state[COUNTERPARTY_ARBITRATION_CASES_STORE_NAME],
+    pageLoading: state[NAVIGATION_STORE_NAME].pageLoading,
+  }));
+
+  //   React.useEffect(() => {
+  //     dispatch(arbitrationCasesLoad());
+  //   }, []);
+
+>>>>>>> Stashed changes
   return (
     <ArbitrationCasesComponent
       arbitrationCasesListData={arbitrationCasesListData}

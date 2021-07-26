@@ -49,14 +49,14 @@ export function VerificationsListComponent(props) {
               </Line>
             </SectionLayout>
             <ActionCase>
-              <CancelButton tid="COUNTERPARTY.VERIFICATIONS.BUTTONS.CANCEL" />
+              <CancelButton tid="ENTITY.VERIFICATIONS.BUTTONS.CANCEL" />
               <Button
-                paid={paid}
+                payed={paid}
                 disabled={paid}
                 tid={
                   paid
-                    ? 'COUNTERPARTY.VERIFICATIONS.BUTTONS.PAID'
-                    : 'COUNTERPARTY.VERIFICATIONS.BUTTONS.PAY'
+                    ? 'ENTITY.VERIFICATIONS.BUTTONS.PAID'
+                    : 'ENTITY.VERIFICATIONS.BUTTONS.PAY'
                 }
               />
             </ActionCase>
@@ -126,7 +126,7 @@ const ActionCase = styled.div`
   align-items: center;
 `;
 const Button = styled(SecondaryButton)`
-  background-color: ${(p) => p.paid && THEME_COLOR.COLOR.PRIMARY};
+  background-color: ${(P) => P.paid && THEME_COLOR.COLOR.PRIMARY};
 `;
 const CancelButton = styled(BasicButton)`
   background-color: ${THEME_COLOR.COLOR.BASE};

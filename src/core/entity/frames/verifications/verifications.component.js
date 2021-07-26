@@ -12,8 +12,8 @@ export function VerificationsComponent(props) {
       <IndentLayout>
         <SectionLayout type="LARGE">
           <HeaderComponent
-            title="COUNTERPARTY.VERIFICATIONS.HEADER.TITLE"
-            companyType="COUNTERPARTY.VERIFICATIONS.HEADER.COMPANY_TYPE"
+            title="ENTITY.VERIFICATIONS.HEADER.TITLE"
+            companyType="ENTITY.VERIFICATIONS.HEADER.COMPANY_TYPE"
             companyName={'"Компания Гермес-Электро"'}
           />
           <VerificationsListComponent

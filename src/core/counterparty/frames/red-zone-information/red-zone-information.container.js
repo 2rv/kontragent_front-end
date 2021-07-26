@@ -1,6 +1,33 @@
+<<<<<<< Updated upstream
 import { RedZoneInformationComponent } from './red-zone-information.component';
 
 export function RedZoneInformationContainer() {
+=======
+import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { NAVIGATION_STORE_NAME } from '../../../../lib/common/navigation/navigation.constant';
+import {
+  getRequestErrorMessage,
+  isRequestError,
+  isRequestPending,
+  isRequestSuccess,
+} from '../../../../main/store/store.service';
+// import { redZoneInformationLoad } from './red-zone-information.action';
+import { COUNTERPARTY_RED_ZONE_INFORMATION_STORE_NAME } from './red-zone-information.constant';
+import { RedZoneInformationComponent } from './red-zone-information.component';
+
+export function RedZoneInformationContainer() {
+  const dispatch = useDispatch();
+  const { state, pageLoading } = useSelector((state) => ({
+    state: state[COUNTERPARTY_RED_ZONE_INFORMATION_STORE_NAME],
+    pageLoading: state[NAVIGATION_STORE_NAME].pageLoading,
+  }));
+
+  //   React.useEffect(() => {
+  //     dispatch(redZoneInformationLoad());
+  //   }, []);
+
+>>>>>>> Stashed changes
   return (
     <RedZoneInformationComponent
       dangerNoticeData={dangerNoticeData}

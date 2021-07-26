@@ -11,7 +11,7 @@ export function ReviewsCommentComponent() {
       <TextareaField
         isFile
         isSend
-        placeholderTid="COUNTERPARTY.REVIEWS.WRITE_MESSAGE"
+        placeholderTid="ENTITY.REVIEWS.WRITE_MESSAGE"
       />
     </Container>
   );

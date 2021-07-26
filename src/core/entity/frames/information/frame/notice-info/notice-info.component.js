@@ -25,14 +25,14 @@ export function NoticeInfoComponent() {
           <Content>
             <Column>
               <Secondary>Состояние</Secondary>
-              <Primary tid="COUNTERPARTY.DETAIL_INFORMATION.INFO.ACTING" />
+              <Primary tid="ENTITY.DETAIL_INFORMATION.INFO.ACTING" />
             </Column>
             <Column>
-              <Secondary tid="COUNTERPARTY.DETAIL_INFORMATION.INFO.DATE_OF_INFORMATION" />
+              <Secondary tid="ENTITY.DETAIL_INFORMATION.INFO.DATE_OF_INFORMATION" />
               <Primary>2011-10-19</Primary>
             </Column>
             <Column>
-              <Secondary tid="COUNTERPARTY.DETAIL_INFORMATION.INFO.TELEPHONE" />
+              <Secondary tid="ENTITY.DETAIL_INFORMATION.INFO.TELEPHONE" />
               <Primary>
                 <Primary>8 (926) 435-34-77</Primary>,
                 <Primary>8 (499) 792-25-93</Primary>,
@@ -40,7 +40,7 @@ export function NoticeInfoComponent() {
               </Primary>
             </Column>
             <Column>
-              <Secondary tid="COUNTERPARTY.DETAIL_INFORMATION.INFO.AUTHORIZED_CAPITAL" />
+              <Secondary tid="ENTITY.DETAIL_INFORMATION.INFO.AUTHORIZED_CAPITAL" />
               <Primary>20 000 руб.</Primary>
               <Light>2011-10-19</Light>
             </Column>
@@ -50,14 +50,14 @@ export function NoticeInfoComponent() {
               <Light>2011-12-15</Light>
             </Column>
             <Column>
-              <Secondary tid="COUNTERPARTY.DETAIL_INFORMATION.INFO.EXECUTION_PROCEEDINGS" />
-              <Primary tid="COUNTERPARTY.DETAIL_INFORMATION.INFO.NO_ENFORCEMENT_PROCEEDINGS_FOUND" />
+              <Secondary tid="ENTITY.DETAIL_INFORMATION.INFO.EXECUTION_PROCEEDINGS" />
+              <Primary tid="ENTITY.DETAIL_INFORMATION.INFO.NO_ENFORCEMENT_PROCEEDINGS_FOUND" />
             </Column>
             <Column>
-              <Secondary tid="COUNTERPARTY.DETAIL_INFORMATION.INFO.EXTRACT_FROM_USRLE" />
+              <Secondary tid="ENTITY.DETAIL_INFORMATION.INFO.EXTRACT_FROM_USRLE" />
               <Line>
-                <LinkText tid="COUNTERPARTY.DETAIL_INFORMATION.INFO.TO_FORM" />
-                <Primary tid="COUNTERPARTY.DETAIL_INFORMATION.INFO.IN_TODAYS_DATE" />
+                <LinkText tid="ENTITY.DETAIL_INFORMATION.INFO.TO_FORM" />
+                <Primary tid="ENTITY.DETAIL_INFORMATION.INFO.IN_TODAYS_DATE" />
               </Line>
             </Column>
           </Content>
@@ -82,28 +82,28 @@ export function NoticeInfoComponent() {
             </Column>
             <Primary>119530, РФ, Москва г, ш Очаковское, дом 32</Primary>
             <Column>
-              <Secondary tid="COUNTERPARTY.DETAIL_INFORMATION.INFO.CEO" />
+              <Secondary tid="ENTITY.DETAIL_INFORMATION.INFO.CEO" />
               <Primary>Жуков Олег Юрьевич</Primary>
               <Light>2011-12-15</Light>
             </Column>
             <Column>
-              <Secondary tid="COUNTERPARTY.DETAIL_INFORMATION.INFO.FOUNDERS_INDIVIDUALS" />
+              <Secondary tid="ENTITY.DETAIL_INFORMATION.INFO.FOUNDERS_INDIVIDUALS" />
               <Primary>Василенко Владимир Николаевич</Primary>
               <Primary>10 000 руб. - 50%</Primary>
               <Light>2011-10-19</Light>
             </Column>
             <Column>
-              <Secondary tid="COUNTERPARTY.DETAIL_INFORMATION.INFO.FINANCES_AT_THE_END_OF_2020" />
+              <Secondary tid="ENTITY.DETAIL_INFORMATION.INFO.FINANCES_AT_THE_END_OF_2020" />
               <Line>
-                <Light tid="COUNTERPARTY.DETAIL_INFORMATION.INFO.BALANCE" />
+                <Light tid="ENTITY.DETAIL_INFORMATION.INFO.BALANCE" />
                 <Primary>48 928 000 руб.</Primary>
               </Line>
               <Line>
-                <Light tid="COUNTERPARTY.DETAIL_INFORMATION.INFO.REVENUE" />
+                <Light tid="ENTITY.DETAIL_INFORMATION.INFO.REVENUE" />
                 <Primary>136 653 000 руб.</Primary>
               </Line>
               <Line>
-                <Light tid="COUNTERPARTY.DETAIL_INFORMATION.INFO.NET_PROFIT" />
+                <Light tid="ENTITY.DETAIL_INFORMATION.INFO.NET_PROFIT" />
                 <Primary>7 988 000 руб.</Primary>
               </Line>
             </Column>
