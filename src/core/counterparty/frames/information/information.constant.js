@@ -1,0 +1,8 @@
+export const INFORMATION_STORE_NAME = 'INFORMATION_STORE';
+
+export const INFORMATION_API = {
+  INFORMATION_LOAD_DATA: {
+    ENDPOINT: '/',
+    TYPE: 'POST',
+  },
+};

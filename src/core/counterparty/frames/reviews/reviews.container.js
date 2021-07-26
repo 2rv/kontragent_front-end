@@ -1,7 +1,37 @@
+import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { NAVIGATION_STORE_NAME } from '../../../../lib/common/navigation/navigation.constant';
+import {
+  getRequestErrorMessage,
+  isRequestError,
+  isRequestPending,
+  isRequestSuccess,
+} from '../../../../main/store/store.service';
+// import { reviewsLoad } from './reviews.action';
+import { REVIEWS_STORE_NAME } from './reviews.constant';
 import { ReviewsComponent } from './reviews.component';
 
 export function ReviewsContainer() {
-  return <ReviewsComponent commentListData={commentListData} />;
+  const dispatch = useDispatch();
+  const { state, pageLoading } = useSelector((state) => ({
+    state: state[REVIEWS_STORE_NAME],
+    pageLoading: state[NAVIGATION_STORE_NAME].pageLoading,
+  }));
+
+  //   React.useEffect(() => {
+  //     dispatch(reviewsLoad());
+  //   }, []);
+
+  return (
+    <ReviewsComponent
+      isPending={isRequestPending(state.reviews)}
+      isError={isRequestError(state.reviews)}
+      isSuccess={isRequestSuccess(state.reviews)}
+      pageLoading={pageLoading}
+      errorMessage={getRequestErrorMessage(state.reviews)}
+      commentListData={commentListData}
+    />
+  );
 }
 export const commentListData = [
   {

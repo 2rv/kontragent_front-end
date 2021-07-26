@@ -1,7 +1,37 @@
+import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { NAVIGATION_STORE_NAME } from '../../../../lib/common/navigation/navigation.constant';
+import {
+  getRequestErrorMessage,
+  isRequestError,
+  isRequestPending,
+  isRequestSuccess,
+} from '../../../../main/store/store.service';
+// import { verificationListData } from './verifications.action';
+import { VERIFICATIONS_STORE_NAME } from './verifications.constant';
 import { VerificationsComponent } from './verifications.component';
 
 export function VerificationsContainer() {
-  return <VerificationsComponent verificationListData={verificationListData} />;
+  const dispatch = useDispatch();
+  const { state, pageLoading } = useSelector((state) => ({
+    state: state[VERIFICATIONS_STORE_NAME],
+    pageLoading: state[NAVIGATION_STORE_NAME].pageLoading,
+  }));
+
+  //   React.useEffect(() => {
+  //     dispatch(verificationListData());
+  //   }, []);
+
+  return (
+    <VerificationsComponent
+      isPending={isRequestPending(state.verifications)}
+      isError={isRequestError(state.verifications)}
+      isSuccess={isRequestSuccess(state.verifications)}
+      pageLoading={pageLoading}
+      errorMessage={getRequestErrorMessage(state.verifications)}
+      verificationListData={verificationListData}
+    />
+  );
 }
 
 export const verificationListData = [

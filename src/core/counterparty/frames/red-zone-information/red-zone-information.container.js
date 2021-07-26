@@ -1,8 +1,34 @@
+import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { NAVIGATION_STORE_NAME } from '../../../../lib/common/navigation/navigation.constant';
+import {
+  getRequestErrorMessage,
+  isRequestError,
+  isRequestPending,
+  isRequestSuccess,
+} from '../../../../main/store/store.service';
+// import { redZoneInformationLoad } from './red-zone-information.action';
+import { RED_ZONE_INFORMATION_STORE_NAME } from './red-zone-information.constant';
 import { RedZoneInformationComponent } from './red-zone-information.component';
 
 export function RedZoneInformationContainer() {
+  const dispatch = useDispatch();
+  const { state, pageLoading } = useSelector((state) => ({
+    state: state[RED_ZONE_INFORMATION_STORE_NAME],
+    pageLoading: state[NAVIGATION_STORE_NAME].pageLoading,
+  }));
+
+  //   React.useEffect(() => {
+  //     dispatch(redZoneInformationLoad());
+  //   }, []);
+
   return (
     <RedZoneInformationComponent
+      isPending={isRequestPending(state.redZoneInformation)}
+      isError={isRequestError(state.redZoneInformation)}
+      isSuccess={isRequestSuccess(state.redZoneInformation)}
+      pageLoading={pageLoading}
+      errorMessage={getRequestErrorMessage(state.redZoneInformation)}
       dangerNoticeData={dangerNoticeData}
       waysResolveData={waysResolveData}
     />

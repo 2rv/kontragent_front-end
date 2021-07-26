@@ -64,6 +64,30 @@ import {
   counterpartyStore,
   COUNTERPARTY_STORE_NAME,
 } from '../../core/counterparty';
+import {
+  informationStore,
+  INFORMATION_STORE_NAME,
+} from '../../core/counterparty/frames/information';
+import {
+  riskRatingAssesssmentStore,
+  RISK_RATING_ASSESSMENT_STORE_NAME,
+} from '../../core/counterparty/frames/risk-rating-assessment';
+import {
+  reviewsStore,
+  REVIEWS_STORE_NAME,
+} from '../../core/counterparty/frames/reviews';
+import {
+  verificationsStore,
+  VERIFICATIONS_STORE_NAME,
+} from '../../core/counterparty/frames/verifications';
+import {
+  arbitrationCasesStore,
+  ARBITRATION_CASES_STORE_NAME,
+} from '../../core/counterparty/frames/arbitration-cases-list';
+import {
+  redZoneInformationStore,
+  RED_ZONE_INFORMATION_STORE_NAME,
+} from '../../core/counterparty/frames/red-zone-information';
 import { captchaStore, CAPTCHA_STORE_NAME } from '../../lib/common/captcha';
 import {
   myCompaniesAddCompanyStore,
@@ -159,6 +183,12 @@ export const reducers = combineReducers({
   [THEME_ARBITRATION_STORE_NAME]: themeArbitrationStore,
   [MY_COMPANIES_ADD_COMPANY_STORE_NAME]: myCompaniesAddCompanyStore,
   [COUNTERPARTY_STORE_NAME]: counterpartyStore,
+  [INFORMATION_STORE_NAME]: informationStore,
+  [RISK_RATING_ASSESSMENT_STORE_NAME]: riskRatingAssesssmentStore,
+  [REVIEWS_STORE_NAME]: reviewsStore,
+  [VERIFICATIONS_STORE_NAME]: verificationsStore,
+  [ARBITRATION_CASES_STORE_NAME]: arbitrationCasesStore,
+  [RED_ZONE_INFORMATION_STORE_NAME]: redZoneInformationStore,
   [ENTITY_STORE_NAME]: entityStore,
   [BALANCE_ACTIVITY_STORE_NAME]: balanceActivityStore,
   [DASHBOARD_ADMIN_STORE_NAME]: dashboardAdminStore,
