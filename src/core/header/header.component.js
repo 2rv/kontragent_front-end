@@ -11,11 +11,12 @@ import { ReactComponent as SidebarLogo } from '../../asset/svg/sidebarLogo.svg';
 
 export function HeaderComponent({ toggleSidebar, toggleSidebarHandler }) {
   const { pathname } = useRouter();
-  const [ isAuthenticated, setIsAuthenticated ] = React.useState(false);
+  const [isAuthenticated, setIsAuthenticated] = React.useState(false);
 
   React.useEffect(() => {
     const userToken = localStorage.getItem('token');
-    setIsAuthenticated(!!userToken);
+    // setIsAuthenticated(!!userToken);
+    setIsAuthenticated(true);
   }, []);
 
   if (isAuthenticated) {
@@ -69,11 +70,12 @@ const Button = styled.button`
   flex-flow: column;
   width: 30px;
   height: 30px;
-  gap: 5px;
+  justify-content: space-between;
 `;
 const Stick1 = styled.div`
   width: 30px;
-  height: 5px;
+  min-height: 5px;
+  max-height: 5px;
   background-color: ${THEME_COLOR.COLOR.PRIMARY};
   transition: 0.4s;
   ${(p) => p.close && 'transform: rotate(-45deg) translate(-9px, 9px);'}
@@ -83,7 +85,7 @@ const Stick2 = styled(Stick1)`
   ${(p) => p.close && 'opacity: 0;'}
 `;
 const Stick3 = styled(Stick1)`
-  ${(p) => p.close && 'transform: rotate(45deg) translate(-5px, -6px);'}
+  ${(p) => p.close && 'transform: rotate(45deg) translate(-8px, -9px);'}
 `;
 const Content = styled.div`
   display: flex;
