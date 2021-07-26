@@ -1,9 +1,3 @@
-<<<<<<< Updated upstream
-import { InformationComponent } from './information.component';
-
-export function InformationContainer() {
-  return <InformationComponent dangerNoticeList={dangerNoticeList} />;
-=======
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { NAVIGATION_STORE_NAME } from '../../../../lib/common/navigation/navigation.constant';
@@ -38,7 +32,6 @@ export function InformationContainer() {
       dangerNoticeList={dangerNoticeList}
     />
   );
->>>>>>> Stashed changes
 }
 export const dangerNoticeList = [
   {

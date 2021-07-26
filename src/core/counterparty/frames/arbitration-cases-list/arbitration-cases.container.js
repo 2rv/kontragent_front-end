@@ -1,8 +1,3 @@
-<<<<<<< Updated upstream
-import { ArbitrationCasesComponent } from './arbitration-cases.component';
-
-export function ArbitrationCasesContainer() {
-=======
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { NAVIGATION_STORE_NAME } from '../../../../lib/common/navigation/navigation.constant';
@@ -27,9 +22,13 @@ export function ArbitrationCasesContainer() {
   //     dispatch(arbitrationCasesLoad());
   //   }, []);
 
->>>>>>> Stashed changes
   return (
     <ArbitrationCasesComponent
+      isPending={isRequestPending(state.arbitrationCases)}
+      isError={isRequestError(state.arbitrationCases)}
+      isSuccess={isRequestSuccess(state.arbitrationCases)}
+      pageLoading={pageLoading}
+      errorMessage={getRequestErrorMessage(state.arbitrationCases)}
       arbitrationCasesListData={arbitrationCasesListData}
     />
   );

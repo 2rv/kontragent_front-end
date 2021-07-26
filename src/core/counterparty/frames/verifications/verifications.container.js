@@ -1,9 +1,3 @@
-<<<<<<< Updated upstream:src/core/counterparty/frames/verifications/verificaitons.container.js
-import { VerificationsComponent } from './verifications.component';
-
-export function VerificationsContainer() {
-  return <VerificationsComponent verificationListData={verificationListData} />;
-=======
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { NAVIGATION_STORE_NAME } from '../../../../lib/common/navigation/navigation.constant';
@@ -38,7 +32,6 @@ export function VerificationsContainer() {
       verificationListData={verificationListData}
     />
   );
->>>>>>> Stashed changes:src/core/counterparty/frames/verifications/verifications.container.js
 }
 
 export const verificationListData = [

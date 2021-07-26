@@ -1,9 +1,3 @@
-<<<<<<< Updated upstream
-import { RiskRatingAssessmentComponent } from './risk-rating-assessment.component';
-
-export function RiskRatingAssessmentContainer() {
-  return <RiskRatingAssessmentComponent />;
-=======
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { NAVIGATION_STORE_NAME } from '../../../../lib/common/navigation/navigation.constant';
@@ -37,5 +31,4 @@ export function RiskRatingAssessmentContainer() {
       errorMessage={getRequestErrorMessage(state.riskRatingAssesssment)}
     />
   );
->>>>>>> Stashed changes
 }

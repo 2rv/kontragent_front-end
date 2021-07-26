@@ -64,8 +64,6 @@ import {
   counterpartyStore,
   COUNTERPARTY_STORE_NAME,
 } from '../../core/counterparty';
-<<<<<<< Updated upstream
-=======
 import {
   counterpartyInformationStore,
   COUNTERPARTY_INFORMATION_STORE_NAME,
@@ -90,7 +88,6 @@ import {
   counterpartyRedZoneInformationStore,
   COUNTERPARTY_RED_ZONE_INFORMATION_STORE_NAME,
 } from '../../core/counterparty/frames/red-zone-information';
->>>>>>> Stashed changes
 import { captchaStore, CAPTCHA_STORE_NAME } from '../../lib/common/captcha';
 import {
   myCompaniesAddCompanyStore,
@@ -218,15 +215,12 @@ export const reducers = combineReducers({
   [THEME_ARBITRATION_STORE_NAME]: themeArbitrationStore,
   [MY_COMPANIES_ADD_COMPANY_STORE_NAME]: myCompaniesAddCompanyStore,
   [COUNTERPARTY_STORE_NAME]: counterpartyStore,
-<<<<<<< Updated upstream
-=======
   [COUNTERPARTY_INFORMATION_STORE_NAME]: counterpartyInformationStore,
   [COUNTERPARTY_RISK_RATING_ASSESSMENT_STORE_NAME]: counterpartyRiskRatingAssesssmentStore,
   [COUNTERPARTY_REVIEWS_STORE_NAME]: counterpartyReviewsStore,
   [COUNTERPARTY_VERIFICATIONS_STORE_NAME]: counterpartyVerificationsStore,
   [COUNTERPARTY_ARBITRATION_CASES_STORE_NAME]: counterpartyArbitrationCasesStore,
   [COUNTERPARTY_RED_ZONE_INFORMATION_STORE_NAME]: counterpartyRedZoneInformationStore,
->>>>>>> Stashed changes
   [ENTITY_STORE_NAME]: entityStore,
   [ENTITY_INFORMATION_STORE_NAME]: entityInformationStore,
   [ENTITY_RISK_RATING_ASSESSMENT_STORE_NAME]: entityRiskRatingAssesssmentStore,

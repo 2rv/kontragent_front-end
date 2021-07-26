@@ -1,9 +1,3 @@
-<<<<<<< Updated upstream
-import { ReviewsComponent } from './reviews.component';
-
-export function ReviewsContainer() {
-  return <ReviewsComponent commentListData={commentListData} />;
-=======
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { NAVIGATION_STORE_NAME } from '../../../../lib/common/navigation/navigation.constant';
@@ -38,7 +32,6 @@ export function ReviewsContainer() {
       commentListData={commentListData}
     />
   );
->>>>>>> Stashed changes
 }
 export const commentListData = [
   {

@@ -1,8 +1,3 @@
-<<<<<<< Updated upstream
-import { RedZoneInformationComponent } from './red-zone-information.component';
-
-export function RedZoneInformationContainer() {
-=======
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { NAVIGATION_STORE_NAME } from '../../../../lib/common/navigation/navigation.constant';
@@ -27,9 +22,13 @@ export function RedZoneInformationContainer() {
   //     dispatch(redZoneInformationLoad());
   //   }, []);
 
->>>>>>> Stashed changes
   return (
     <RedZoneInformationComponent
+      isPending={isRequestPending(state.redZoneInformation)}
+      isError={isRequestError(state.redZoneInformation)}
+      isSuccess={isRequestSuccess(state.redZoneInformation)}
+      pageLoading={pageLoading}
+      errorMessage={getRequestErrorMessage(state.redZoneInformation)}
       dangerNoticeData={dangerNoticeData}
       waysResolveData={waysResolveData}
     />
