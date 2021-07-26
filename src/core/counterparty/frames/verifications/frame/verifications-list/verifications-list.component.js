@@ -51,7 +51,7 @@ export function VerificationsListComponent(props) {
             <ActionCase>
               <CancelButton tid="COUNTERPARTY.VERIFICATIONS.BUTTONS.CANCEL" />
               <Button
-                payed={paid}
+                paid={paid}
                 disabled={paid}
                 tid={
                   paid
