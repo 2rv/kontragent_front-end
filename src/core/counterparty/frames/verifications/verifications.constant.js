@@ -1,0 +1,8 @@
+export const VERIFICATIONS_STORE_NAME = 'VERIFICATIONS_STORE';
+
+export const VERIFICATIONS_API = {
+  VERIFICATIONS_LOAD_DATA: {
+    ENDPOINT: '/',
+    TYPE: 'POST',
+  },
+};
