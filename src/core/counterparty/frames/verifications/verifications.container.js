@@ -8,13 +8,13 @@ import {
   isRequestSuccess,
 } from '../../../../main/store/store.service';
 // import { verificationListData } from './verifications.action';
-import { VERIFICATIONS_STORE_NAME } from './verifications.constant';
+import { COUNTERPARTY_VERIFICATIONS_STORE_NAME } from './verifications.constant';
 import { VerificationsComponent } from './verifications.component';
 
 export function VerificationsContainer() {
   const dispatch = useDispatch();
   const { state, pageLoading } = useSelector((state) => ({
-    state: state[VERIFICATIONS_STORE_NAME],
+    state: state[COUNTERPARTY_VERIFICATIONS_STORE_NAME],
     pageLoading: state[NAVIGATION_STORE_NAME].pageLoading,
   }));
 

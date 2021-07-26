@@ -1,7 +1,37 @@
+import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { NAVIGATION_STORE_NAME } from '../../../../lib/common/navigation/navigation.constant';
+import {
+  getRequestErrorMessage,
+  isRequestError,
+  isRequestPending,
+  isRequestSuccess,
+} from '../../../../main/store/store.service';
+// import { participantsLoad } from './participants.action';
+import { ENTITY_PARTICIPANTS_STORE_NAME } from './participants.constant';
 import { ParticipantsComponent } from './participants.component';
 
 export function ParticipantsContainer() {
-  return <ParticipantsComponent participantsListData={participantsListData} />;
+  const dispatch = useDispatch();
+  const { state, pageLoading } = useSelector((state) => ({
+    state: state[ENTITY_PARTICIPANTS_STORE_NAME],
+    pageLoading: state[NAVIGATION_STORE_NAME].pageLoading,
+  }));
+
+  //   React.useEffect(() => {
+  //     dispatch(participantsLoad());
+  //   }, []);
+
+  return (
+    <ParticipantsComponent
+      isPending={isRequestPending(state.participants)}
+      isError={isRequestError(state.participants)}
+      isSuccess={isRequestSuccess(state.participants)}
+      pageLoading={pageLoading}
+      errorMessage={getRequestErrorMessage(state.participants)}
+      participantsListData={participantsListData}
+    />
+  );
 }
 
 export const participantsListData = [

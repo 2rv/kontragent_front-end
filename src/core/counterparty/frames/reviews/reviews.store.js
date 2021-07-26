@@ -10,7 +10,7 @@ const initialState = {
   reviews: initRequestState(),
 };
 
-export function reviewsStore(state = initialState, action) {
+export function counterpartyReviewsStore(state = initialState, action) {
   switch (action.type) {
     case REVIEWS_ACTION_TYPE.REVIEWS_LOAD_REQUEST_PENDING:
       return {
@@ -27,10 +27,7 @@ export function reviewsStore(state = initialState, action) {
     case REVIEWS_ACTION_TYPE.REVIEWS_LOAD_REQUEST_ERROR:
       return {
         ...state,
-        reviews: setRequestError(
-          state.reviews,
-          action.errorMessage,
-        ),
+        reviews: setRequestError(state.reviews, action.errorMessage),
       };
 
     default:

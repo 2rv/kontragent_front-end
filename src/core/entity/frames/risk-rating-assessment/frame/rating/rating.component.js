@@ -19,29 +19,29 @@ export function RatingComponent() {
     <Container>
       <SectionLayout>
         <Case>
-          <SecondaryText tid="COUNTERPARTY.RISK_RATING_ASSESSMENT.YOUR_MARK" />
+          <SecondaryText tid="ENTITY.RISK_RATING_ASSESSMENT.YOUR_MARK" />
           <Line>
-            {[1, 2, 3, 4, 5].map((item) => (
-              <StarIcon active={item <= 4} />
+            {[1, 2, 3, 4, 5].map((item, index) => (
+              <StarIcon key={index} active={item <= 4} />
             ))}
           </Line>
         </Case>
         <Case>
-          <SecondaryText tid="COUNTERPARTY.RISK_RATING_ASSESSMENT.TURNOVER" />
+          <SecondaryText tid="ENTITY.RISK_RATING_ASSESSMENT.TURNOVER" />
           <BoldText>310 988.65 руб.</BoldText>
         </Case>
       </SectionLayout>
       <VerticalDivider />
       <SectionLayout>
         <Case>
-          <SecondaryText tid="COUNTERPARTY.RISK_RATING_ASSESSMENT.PEOPLES_RATING" />
+          <SecondaryText tid="ENTITY.RISK_RATING_ASSESSMENT.PEOPLES_RATING" />
           <Line>
             <BoldText>3,5</BoldText>
-            <LightText tid="COUNTERPARTY.RISK_RATING_ASSESSMENT.POINTS" />
+            <LightText tid="ENTITY.RISK_RATING_ASSESSMENT.POINTS" />
           </Line>
         </Case>
         <Case>
-          <SecondaryText tid="COUNTERPARTY.RISK_RATING_ASSESSMENT.RISK_OF_ADDITIONAL_ACCRUAL" />
+          <SecondaryText tid="ENTITY.RISK_RATING_ASSESSMENT.RISK_OF_ADDITIONAL_ACCRUAL" />
           <Line>
             <RedText>47 438.93 </RedText>
             <RedText tid="руб." />

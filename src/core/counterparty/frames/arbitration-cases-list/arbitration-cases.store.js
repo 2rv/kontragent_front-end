@@ -10,7 +10,10 @@ const initialState = {
   arbitrationCases: initRequestState(),
 };
 
-export function arbitrationCasesStore(state = initialState, action) {
+export function counterpartyArbitrationCasesStore(
+  state = initialState,
+  action,
+) {
   switch (action.type) {
     case ARBITRATION_CASES_ACTION_TYPE.ARBITRATION_CASES_LOAD_REQUEST_PENDING:
       return {
@@ -21,7 +24,10 @@ export function arbitrationCasesStore(state = initialState, action) {
     case ARBITRATION_CASES_ACTION_TYPE.ARBITRATION_CASES_LOAD_REQUEST_SUCCESS:
       return {
         ...state,
-        arbitrationCases: setRequestSuccess(state.arbitrationCases, action.data),
+        arbitrationCases: setRequestSuccess(
+          state.arbitrationCases,
+          action.data,
+        ),
       };
 
     case ARBITRATION_CASES_ACTION_TYPE.ARBITRATION_CASES_LOAD_REQUEST_ERROR:

@@ -1,3 +1,3 @@
 export { InformationContainer } from './information.container';
-export { informationStore } from './information.store';
-export { INFORMATION_STORE_NAME } from './information.constant';
+export { counterpartyInformationStore } from './information.store';
+export { COUNTERPARTY_INFORMATION_STORE_NAME } from './information.constant';

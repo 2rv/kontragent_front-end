@@ -1,8 +1,34 @@
+import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { NAVIGATION_STORE_NAME } from '../../../../lib/common/navigation/navigation.constant';
+import {
+  getRequestErrorMessage,
+  isRequestError,
+  isRequestPending,
+  isRequestSuccess,
+} from '../../../../main/store/store.service';
+// import { arbitrationCasesLoad } from './arbitration-cases.action';
+import { ENTITY_ARBITRATION_CASES_STORE_NAME } from './arbitration-cases.constant';
 import { ArbitrationCasesComponent } from './arbitration-cases.component';
 
 export function ArbitrationCasesContainer() {
+  const dispatch = useDispatch();
+  const { state, pageLoading } = useSelector((state) => ({
+    state: state[ENTITY_ARBITRATION_CASES_STORE_NAME],
+    pageLoading: state[NAVIGATION_STORE_NAME].pageLoading,
+  }));
+
+  //   React.useEffect(() => {
+  //     dispatch(arbitrationCasesLoad());
+  //   }, []);
+
   return (
     <ArbitrationCasesComponent
+      isPending={isRequestPending(state.arbitrationCases)}
+      isError={isRequestError(state.arbitrationCases)}
+      isSuccess={isRequestSuccess(state.arbitrationCases)}
+      pageLoading={pageLoading}
+      errorMessage={getRequestErrorMessage(state.arbitrationCases)}
       arbitrationCasesListData={arbitrationCasesListData}
     />
   );
@@ -18,11 +44,11 @@ export const arbitrationCasesListData = [
     time: '15 минут назад',
     messages: '25',
     status: {
-      title: 'COUNTERPARTY.ARBITRATION_CASES.TYPE.KONTRAGENT',
+      title: 'ENTITY.ARBITRATION_CASES.TYPE.KONTRAGENT',
       id: 0,
     },
     info: {
-      title: 'COUNTERPARTY.ARBITRATION_CASES.STATUS.RESOLVED',
+      title: 'ENTITY.ARBITRATION_CASES.STATUS.RESOLVED',
       id: 0,
     },
   },
@@ -35,11 +61,11 @@ export const arbitrationCasesListData = [
     time: '40 минут назад',
     messages: '5',
     status: {
-      title: 'COUNTERPARTY.ARBITRATION_CASES.TYPE.COMPLAINT',
+      title: 'ENTITY.ARBITRATION_CASES.TYPE.COMPLAINT',
       id: 1,
     },
     info: {
-      title: 'COUNTERPARTY.ARBITRATION_CASES.STATUS.UNDER_CONSIDERATION',
+      title: 'ENTITY.ARBITRATION_CASES.STATUS.UNDER_CONSIDERATION',
       id: 1,
     },
   },
@@ -52,11 +78,11 @@ export const arbitrationCasesListData = [
     time: 'Вчера',
     messages: '0',
     status: {
-      title: 'COUNTERPARTY.ARBITRATION_CASES.TYPE.SUSPICION',
+      title: 'ENTITY.ARBITRATION_CASES.TYPE.SUSPICION',
       id: 2,
     },
     info: {
-      title: 'COUNTERPARTY.ARBITRATION_CASES.STATUS.REJECTED',
+      title: 'ENTITY.ARBITRATION_CASES.STATUS.REJECTED',
       id: 2,
     },
   },
@@ -69,11 +95,11 @@ export const arbitrationCasesListData = [
     time: '15 минут назад',
     messages: '25',
     status: {
-      title: 'COUNTERPARTY.ARBITRATION_CASES.TYPE.KONTRAGENT',
+      title: 'ENTITY.ARBITRATION_CASES.TYPE.KONTRAGENT',
       id: 0,
     },
     info: {
-      title: 'COUNTERPARTY.ARBITRATION_CASES.STATUS.RESOLVED',
+      title: 'ENTITY.ARBITRATION_CASES.STATUS.RESOLVED',
       id: 0,
     },
   },
@@ -86,11 +112,11 @@ export const arbitrationCasesListData = [
     time: '40 минут назад',
     messages: '5',
     status: {
-      title: 'COUNTERPARTY.ARBITRATION_CASES.TYPE.COMPLAINT',
+      title: 'ENTITY.ARBITRATION_CASES.TYPE.COMPLAINT',
       id: 1,
     },
     info: {
-      title: 'COUNTERPARTY.ARBITRATION_CASES.STATUS.UNDER_CONSIDERATION',
+      title: 'ENTITY.ARBITRATION_CASES.STATUS.UNDER_CONSIDERATION',
       id: 1,
     },
   },
@@ -103,11 +129,11 @@ export const arbitrationCasesListData = [
     time: 'Вчера',
     messages: '0',
     status: {
-      title: 'COUNTERPARTY.ARBITRATION_CASES.TYPE.SUSPICION',
+      title: 'ENTITY.ARBITRATION_CASES.TYPE.SUSPICION',
       id: 2,
     },
     info: {
-      title: 'COUNTERPARTY.ARBITRATION_CASES.STATUS.REJECTED',
+      title: 'ENTITY.ARBITRATION_CASES.STATUS.REJECTED',
       id: 2,
     },
   },
@@ -120,11 +146,11 @@ export const arbitrationCasesListData = [
     time: '15 минут назад',
     messages: '25',
     status: {
-      title: 'COUNTERPARTY.ARBITRATION_CASES.TYPE.KONTRAGENT',
+      title: 'ENTITY.ARBITRATION_CASES.TYPE.KONTRAGENT',
       id: 0,
     },
     info: {
-      title: 'COUNTERPARTY.ARBITRATION_CASES.STATUS.RESOLVED',
+      title: 'ENTITY.ARBITRATION_CASES.STATUS.RESOLVED',
       id: 0,
     },
   },
@@ -137,11 +163,11 @@ export const arbitrationCasesListData = [
     time: '40 минут назад',
     messages: '5',
     status: {
-      title: 'COUNTERPARTY.ARBITRATION_CASES.TYPE.COMPLAINT',
+      title: 'ENTITY.ARBITRATION_CASES.TYPE.COMPLAINT',
       id: 1,
     },
     info: {
-      title: 'COUNTERPARTY.ARBITRATION_CASES.STATUS.UNDER_CONSIDERATION',
+      title: 'ENTITY.ARBITRATION_CASES.STATUS.UNDER_CONSIDERATION',
       id: 1,
     },
   },
@@ -154,11 +180,11 @@ export const arbitrationCasesListData = [
     time: 'Вчера',
     messages: '0',
     status: {
-      title: 'COUNTERPARTY.ARBITRATION_CASES.TYPE.SUSPICION',
+      title: 'ENTITY.ARBITRATION_CASES.TYPE.SUSPICION',
       id: 2,
     },
     info: {
-      title: 'COUNTERPARTY.ARBITRATION_CASES.STATUS.REJECTED',
+      title: 'ENTITY.ARBITRATION_CASES.STATUS.REJECTED',
       id: 2,
     },
   },

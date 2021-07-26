@@ -8,13 +8,13 @@ import {
   isRequestSuccess,
 } from '../../../../main/store/store.service';
 // import { reviewsLoad } from './reviews.action';
-import { REVIEWS_STORE_NAME } from './reviews.constant';
+import { COUNTERPARTY_REVIEWS_STORE_NAME } from './reviews.constant';
 import { ReviewsComponent } from './reviews.component';
 
 export function ReviewsContainer() {
   const dispatch = useDispatch();
   const { state, pageLoading } = useSelector((state) => ({
-    state: state[REVIEWS_STORE_NAME],
+    state: state[COUNTERPARTY_REVIEWS_STORE_NAME],
     pageLoading: state[NAVIGATION_STORE_NAME].pageLoading,
   }));
 

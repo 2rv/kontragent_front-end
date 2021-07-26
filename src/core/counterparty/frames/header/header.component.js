@@ -15,7 +15,7 @@ export function HeaderComponent(props) {
         &nbsp;
         <Text tid={companyType} />
         &nbsp;
-        {companyName}
+        {companyName}&nbsp;
         <Text tid="находится в красной зоне. Вы можете исправить это по советам ниже" />
       </CompanyName>
     </SectionLayout>

@@ -10,7 +10,10 @@ const initialState = {
   riskRatingAssesssment: initRequestState(),
 };
 
-export function riskRatingAssesssmentStore(state = initialState, action) {
+export function counterpartyRiskRatingAssesssmentStore(
+  state = initialState,
+  action,
+) {
   switch (action.type) {
     case RISK_RATING_ASSESSMENT_ACTION_TYPE.RISK_RATING_ASSESSMENT_LOAD_REQUEST_PENDING:
       return {
@@ -21,7 +24,10 @@ export function riskRatingAssesssmentStore(state = initialState, action) {
     case RISK_RATING_ASSESSMENT_ACTION_TYPE.RISK_RATING_ASSESSMENT_LOAD_REQUEST_SUCCESS:
       return {
         ...state,
-        riskRatingAssesssment: setRequestSuccess(state.riskRatingAssesssment, action.data),
+        riskRatingAssesssment: setRequestSuccess(
+          state.riskRatingAssesssment,
+          action.data,
+        ),
       };
 
     case RISK_RATING_ASSESSMENT_ACTION_TYPE.RISK_RATING_ASSESSMENT_LOAD_REQUEST_ERROR:

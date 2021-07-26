@@ -48,9 +48,8 @@ const Container = styled.div`
 `;
 
 const ActionCase = styled.div`
-  display: flex;
+  display: grid;
+  grid-template-columns: 320px 320px;
+  height: 46px;
   gap: ${spacing(4)};
-  button {
-    width: 320px;
-  }
 `;

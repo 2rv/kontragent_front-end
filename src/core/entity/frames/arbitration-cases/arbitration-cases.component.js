@@ -12,8 +12,8 @@ export function ArbitrationCasesComponent(props) {
       <IndentLayout>
         <SectionLayout type="LARGE">
           <HeaderComponent
-            title="COUNTERPARTY.ARBITRATION_CASES.HEADER.TITLE"
-            companyType="COUNTERPARTY.ARBITRATION_CASES.HEADER.COMPANY_TYPE"
+            title="ENTITY.ARBITRATION_CASES.HEADER.TITLE"
+            companyType="ENTITY.ARBITRATION_CASES.HEADER.COMPANY_TYPE"
             companyName={'"Компания Гермес-Электро"'}
           />
           <ArbitrationCasesListComponent

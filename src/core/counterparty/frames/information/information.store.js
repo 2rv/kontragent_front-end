@@ -10,7 +10,7 @@ const initialState = {
   information: initRequestState(),
 };
 
-export function informationStore(state = initialState, action) {
+export function counterpartyInformationStore(state = initialState, action) {
   switch (action.type) {
     case INFORMATION_ACTION_TYPE.INFORMATION_LOAD_REQUEST_PENDING:
       return {
@@ -27,10 +27,7 @@ export function informationStore(state = initialState, action) {
     case INFORMATION_ACTION_TYPE.INFORMATION_LOAD_REQUEST_ERROR:
       return {
         ...state,
-        information: setRequestError(
-          state.information,
-          action.errorMessage,
-        ),
+        information: setRequestError(state.information, action.errorMessage),
       };
 
     default:

@@ -8,13 +8,13 @@ import {
   isRequestSuccess,
 } from '../../../../main/store/store.service';
 // import { redZoneInformationLoad } from './red-zone-information.action';
-import { RED_ZONE_INFORMATION_STORE_NAME } from './red-zone-information.constant';
+import { COUNTERPARTY_RED_ZONE_INFORMATION_STORE_NAME } from './red-zone-information.constant';
 import { RedZoneInformationComponent } from './red-zone-information.component';
 
 export function RedZoneInformationContainer() {
   const dispatch = useDispatch();
   const { state, pageLoading } = useSelector((state) => ({
-    state: state[RED_ZONE_INFORMATION_STORE_NAME],
+    state: state[COUNTERPARTY_RED_ZONE_INFORMATION_STORE_NAME],
     pageLoading: state[NAVIGATION_STORE_NAME].pageLoading,
   }));
 

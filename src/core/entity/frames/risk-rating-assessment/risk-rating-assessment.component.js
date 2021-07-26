@@ -12,8 +12,8 @@ export function RiskRatingAssessmentComponent() {
       <IndentLayout>
         <SectionLayout type="LARGE">
           <HeaderComponent
-            title="COUNTERPARTY.RISK_RATING_ASSESSMENT.HEADER.TITLE"
-            companyType="COUNTERPARTY.RISK_RATING_ASSESSMENT.HEADER.COMPANY_TYPE"
+            title="ENTITY.RISK_RATING_ASSESSMENT.HEADER.TITLE"
+            companyType="ENTITY.RISK_RATING_ASSESSMENT.HEADER.COMPANY_TYPE"
             companyName={'"Компания Гермес-Электро"'}
           />
           <RatingComponent />

@@ -8,13 +8,13 @@ import {
   isRequestSuccess,
 } from '../../../../main/store/store.service';
 // import { arbitrationCasesLoad } from './arbitration-cases.action';
-import { ARBITRATION_CASES_STORE_NAME } from './arbitration-cases.constant';
+import { COUNTERPARTY_ARBITRATION_CASES_STORE_NAME } from './arbitration-cases.constant';
 import { ArbitrationCasesComponent } from './arbitration-cases.component';
 
 export function ArbitrationCasesContainer() {
   const dispatch = useDispatch();
   const { state, pageLoading } = useSelector((state) => ({
-    state: state[ARBITRATION_CASES_STORE_NAME],
+    state: state[COUNTERPARTY_ARBITRATION_CASES_STORE_NAME],
     pageLoading: state[NAVIGATION_STORE_NAME].pageLoading,
   }));
 

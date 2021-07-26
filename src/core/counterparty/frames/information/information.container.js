@@ -8,13 +8,13 @@ import {
   isRequestSuccess,
 } from '../../../../main/store/store.service';
 // import { informationLoad } from './information.action';
-import { INFORMATION_STORE_NAME } from './information.constant';
+import { COUNTERPARTY_INFORMATION_STORE_NAME } from './information.constant';
 import { InformationComponent } from './information.component';
 
 export function InformationContainer() {
   const dispatch = useDispatch();
   const { state, pageLoading } = useSelector((state) => ({
-    state: state[INFORMATION_STORE_NAME],
+    state: state[COUNTERPARTY_INFORMATION_STORE_NAME],
     pageLoading: state[NAVIGATION_STORE_NAME].pageLoading,
   }));
 

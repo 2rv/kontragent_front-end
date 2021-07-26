@@ -21,8 +21,8 @@ export function RatingComponent() {
         <Case>
           <SecondaryText tid="COUNTERPARTY.RISK_RATING_ASSESSMENT.YOUR_MARK" />
           <Line>
-            {[1, 2, 3, 4, 5].map((item) => (
-              <StarIcon active={item <= 4} />
+            {[1, 2, 3, 4, 5].map((item, index) => (
+              <StarIcon key={index} active={item <= 4} />
             ))}
           </Line>
         </Case>

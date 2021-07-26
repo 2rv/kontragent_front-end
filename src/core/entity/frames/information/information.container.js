@@ -1,9 +1,38 @@
+import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { NAVIGATION_STORE_NAME } from '../../../../lib/common/navigation/navigation.constant';
+import {
+  getRequestErrorMessage,
+  isRequestError,
+  isRequestPending,
+  isRequestSuccess,
+} from '../../../../main/store/store.service';
+// import { informationLoad } from './information.action';
+import { ENTITY_INFORMATION_STORE_NAME } from './information.constant';
 import { InformationComponent } from './information.component';
 
 export function InformationContainer() {
-  return <InformationComponent dangerNotice={dangerNotice} />;
-}
+  const dispatch = useDispatch();
+  const { state, pageLoading } = useSelector((state) => ({
+    state: state[ENTITY_INFORMATION_STORE_NAME],
+    pageLoading: state[NAVIGATION_STORE_NAME].pageLoading,
+  }));
 
+  //   React.useEffect(() => {
+  //     dispatch(informationLoad());
+  //   }, []);
+
+  return (
+    <InformationComponent
+      isPending={isRequestPending(state.information)}
+      isError={isRequestError(state.information)}
+      isSuccess={isRequestSuccess(state.information)}
+      pageLoading={pageLoading}
+      errorMessage={getRequestErrorMessage(state.information)}
+      dangerNotice={dangerNotice}
+    />
+  );
+}
 export const dangerNotice = [
   {
     id: 1,

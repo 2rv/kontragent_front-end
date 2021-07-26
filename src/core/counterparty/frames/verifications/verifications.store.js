@@ -10,7 +10,7 @@ const initialState = {
   verifications: initRequestState(),
 };
 
-export function verificationsStore(state = initialState, action) {
+export function counterpartyVerificationsStore(state = initialState, action) {
   switch (action.type) {
     case VERIFICATIONS_ACTION_TYPE.VERIFICATIONS_LOAD_REQUEST_PENDING:
       return {

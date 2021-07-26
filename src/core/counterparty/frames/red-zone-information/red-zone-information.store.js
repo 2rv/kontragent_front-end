@@ -10,7 +10,10 @@ const initialState = {
   redZoneInformation: initRequestState(),
 };
 
-export function redZoneInformationStore(state = initialState, action) {
+export function counterpartyRedZoneInformationStore(
+  state = initialState,
+  action,
+) {
   switch (action.type) {
     case RED_ZONE_INFORMATION_ACTION_TYPE.RED_ZONE_INFORMATION_LOAD_REQUEST_PENDING:
       return {
@@ -21,7 +24,10 @@ export function redZoneInformationStore(state = initialState, action) {
     case RED_ZONE_INFORMATION_ACTION_TYPE.RED_ZONE_INFORMATION_LOAD_REQUEST_SUCCESS:
       return {
         ...state,
-        redZoneInformation: setRequestSuccess(state.redZoneInformation, action.data),
+        redZoneInformation: setRequestSuccess(
+          state.redZoneInformation,
+          action.data,
+        ),
       };
 
     case RED_ZONE_INFORMATION_ACTION_TYPE.RED_ZONE_INFORMATION_LOAD_REQUEST_ERROR:
