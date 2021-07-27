@@ -36,6 +36,11 @@ export interface TextAreaPropsType {
   row?: number;
   error: string;
   children: any;
-  isFile: any;
-  isSend: any;
+  isError: any;
+  isFile?: any;
+  isSend?: any;
+  iconPadding?: any;
+  ref: any;
+  event: any;
+  minHeight: number;
 }

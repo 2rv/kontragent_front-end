@@ -27,7 +27,7 @@ const Container = styled.div`
   display: flex;
   padding-right: ${spacing(6)};
   gap: ${spacing(4)};
-  height: 56px;
+  height: auto;
 `;
 const Avatar = styled.img`
   width: 56px;

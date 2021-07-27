@@ -73,7 +73,7 @@ export function SupportFormCreateRequestComponent(props) {
               onChange={handleChange}
               onBlur={handleBlur}
               error={isFieldError(fieldProblemDescription)}
-              row={6}
+              minHeight={160}
               isFile
             />
           </SectionLayout>

@@ -7,6 +7,7 @@ import { ErrorMessage } from '../error';
 import { TextAreaPropsType } from './type.field';
 import { ReactComponent as FileIcon } from 'src/asset/svg/file.svg';
 import { ReactComponent as SendIcon } from 'src/asset/svg/send.svg';
+import { AutoSize } from './autosize';
 
 export function TextareaField(props: TextAreaPropsType) {
   const {
@@ -20,18 +21,31 @@ export function TextareaField(props: TextAreaPropsType) {
     children,
     isFile,
     isSend,
+    minHeight = 56,
   } = props;
+  const paddingRight = (() => {
+    let PR = 4;
+    if (isFile) PR += 5;
+    if (isSend) PR += 6;
+    return PR;
+  })();
+  const handleChange = (event: TextAreaPropsType) => {
+    AutoSize(event, minHeight);
+    onChange && onChange(event);
+  };
   return (
     <Container>
       {titleTid && <SecondaryText tid={titleTid} />}
       <RelativeCase>
         <Textarea
+          onChange={handleChange}
           placeholder={text(placeholderTid)}
           onBlur={onBlur}
-          onChange={onChange}
           name={name}
           isError={!!error}
           rows={row}
+          iconPadding={paddingRight}
+          minHeight={minHeight}
         />
         <ActionCase>
           {isFile && <FileIcon />}
@@ -63,12 +77,14 @@ const RelativeCase = styled.div`
   align-items: center;
 `;
 const Textarea = styled.textarea`
-  min-height: 56px;
+  min-height: ${(p) => p.minHeight}px;
+  height: fit-content;
   flex-grow: 1;
   display: flex;
   line-height: 1.5;
   resize: none;
   padding: ${spacing(4)};
+  padding-right: ${(p: TextAreaPropsType) => spacing(p.iconPadding || 4)};
   border-radius: ${THEME_SIZE.RADIUS.DEFAULT};
   font-size: ${THEME_SIZE.FONT.SMALL};
   color: ${THEME_COLOR.TEXT.PRIMARY};

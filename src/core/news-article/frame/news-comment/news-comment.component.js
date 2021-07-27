@@ -40,8 +40,8 @@ const Container = styled(SectionLayout)`
 const FooterCase = styled.div`
   display: flex;
   gap: ${spacing(3)};
-  align-items: center;
   width: 100%;
+  height: auto;
 `;
 const Avatar = styled.img`
   width: 56px;
