@@ -5,7 +5,12 @@ import { FieldItemComponent } from './field-item.component';
 import { COMPANY_SETTINGS_FORM_FIELD_KEY } from './fields.type';
 
 export function FieldsComponent(props) {
-  const { initialValue, onSubmit, fieldName } = props;
+  const {
+    initialValue,
+    validation,
+    onSubmit,
+    fieldName,
+  } = props;
 
   const NAME = fieldName[COMPANY_SETTINGS_FORM_FIELD_KEY.NAME];
   const ENTITY_NAME = fieldName[COMPANY_SETTINGS_FORM_FIELD_KEY.ENTITY];
@@ -13,7 +18,11 @@ export function FieldsComponent(props) {
   const ORGANIZATION_NAME = fieldName[COMPANY_SETTINGS_FORM_FIELD_KEY.ORGANIZATION];
 
   return (
-    <Formik initialValues={initialValue} validate={null} onSubmit={onSubmit}>
+    <Formik
+      initialValues={initialValue}
+      validate={validation}
+      onSubmit={onSubmit}
+    >
       {(formProps) => (
         <FieldItemComponent
           {...formProps}

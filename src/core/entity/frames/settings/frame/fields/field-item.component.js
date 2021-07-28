@@ -22,7 +22,23 @@ export function FieldItemComponent(props) {
     handleSubmit,
     handleChange,
     handleBlur,
+    errors,
+    touched,
+    isValid,
+    isSubmitting,
+    isSuccess,
+    pageLoading,
   } = props;
+
+  const isFieldError = (name) => {
+    return errors[name] && touched[name] && errors[name];
+  };
+
+  const isSubmitDisabled = () => {
+    return JSON.stringify(touched) === '{}'
+      ? true
+      : !isValid || isSubmitting || isSuccess || pageLoading;
+  };
 
   return (
     <form onSubmit={handleSubmit}>
@@ -35,6 +51,7 @@ export function FieldItemComponent(props) {
             value={values[fieldName]}
             onChange={handleChange}
             onBlur={handleBlur}
+            error={isFieldError(fieldName)}
           />
           <PrimaryField
             titleTid="ENTITY.SETTING.FORM.ENTITY_FIELD.TITLE"
@@ -43,6 +60,7 @@ export function FieldItemComponent(props) {
             value={values[fieldEntity]}
             onChange={handleChange}
             onBlur={handleBlur}
+            error={isFieldError(fieldEntity)}
           />
           <PrimaryField
             titleTid="ENTITY.SETTING.FORM.OWNER_FIELD.TITLE"
@@ -51,6 +69,7 @@ export function FieldItemComponent(props) {
             value={values[fieldOwner]}
             onChange={handleChange}
             onBlur={handleBlur}
+            error={isFieldError(fieldOwner)}
           />
           <PrimaryField
             titleTid="ENTITY.SETTING.FORM.ORGANIZATION_FIELD.TITLE"
@@ -59,10 +78,14 @@ export function FieldItemComponent(props) {
             value={values[fieldOrganization]}
             onChange={handleChange}
             onBlur={handleBlur}
+            error={isFieldError(fieldOrganization)}
           />
         </FieldLayout>
         <ButtonLayout>
-          <PrimaryButton tid="ENTITY.SETTING.FORM.SAVE_COMPANY_INFORMATION" />
+          <PrimaryButton
+            tid="ENTITY.SETTING.FORM.SAVE_COMPANY_INFORMATION"
+            disabled={isSubmitDisabled()}
+          />
         </ButtonLayout>
       </SectionLayout>
     </form>
