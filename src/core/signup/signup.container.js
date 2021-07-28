@@ -31,7 +31,7 @@ export function SignupContainer() {
   }));
   const signupFormSendData = (values) => {
     const data = convertSignupFormData(values);
-    // dispatch(signupFormUploadData(data));
+    dispatch(signupFormUploadData(data));
   };
 
   const getInitialValue = () => {
@@ -44,7 +44,7 @@ export function SignupContainer() {
       [SIGNUP_FIELD_NAME.PHONE]: '',
     };
   };
-
+  console.log(state);
   return (
     <SignupComponent
       isPending={isRequestPending(state.signupForm)}

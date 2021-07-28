@@ -9,7 +9,7 @@ import { spacing, THEME_COLOR } from 'src/lib/theme';
 
 export function DashboardLayout(props: DashboardLayoutPropsType) {
   const { children } = props;
-  const [toggleSidebar, setToggleSidebar] = React.useState<boolean>(true);
+  const [toggleSidebar, setToggleSidebar] = React.useState<boolean>(false);
 
   const toggleSidebarHandler = (): void => {
     setToggleSidebar(!toggleSidebar);

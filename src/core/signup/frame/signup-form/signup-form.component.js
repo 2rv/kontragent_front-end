@@ -43,7 +43,6 @@ export function SignupFormComponent(props) {
       ? true
       : !isValid || isSubmitting || isSuccess || pageLoading;
   };
-
   return (
     <React.Fragment>
       {(isPending || pageLoading) && <PrimaryLoader />}
@@ -102,7 +101,7 @@ export function SignupFormComponent(props) {
               type="password"
             />
 
-            <CaptchaFieldContainer
+            {/* <CaptchaFieldContainer
               titleTid="SIGNUP.SIGNUP_FORM.FIELD.CAPTCHA.TITLE"
               placeholderTid="SIGNUP.SIGNUP_FORM.FIELD.CAPTCHA.PLACEHOLDER"
               name={fieldCaptcha}
@@ -110,7 +109,7 @@ export function SignupFormComponent(props) {
               onBlur={handleBlur}
               value={values[fieldCaptcha]}
               error={isFieldError(fieldCaptcha)}
-            />
+            /> */}
           </FieldLayout>
           <SecondaryButton
             tid="SIGNUP.SIGNUP_FORM.BUTTON"
@@ -120,7 +119,6 @@ export function SignupFormComponent(props) {
           {(isError || errorMessage) && (
             <ErrorAlert tid={`ERROR.${errorMessage}`} />
           )}
-
           {isSuccess && (
             <SuccessAlert tid={'SIGNUP.SIGNUP_FORM.SUCCESS_MESSAGE'} />
           )}

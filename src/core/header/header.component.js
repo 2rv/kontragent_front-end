@@ -1,29 +1,20 @@
 import React from 'react';
 import Image from 'next/image';
-import { useRouter } from 'next/router';
 import styled from 'styled-components';
 import { THEME_COLOR, spacing, THEME_SIZE, THEME_VALUE } from '../../lib/theme';
 import { SecondaryText, PrimaryText } from '../../lib/elements/text';
 import { SecondaryButton } from '../../lib/elements/button';
-
 import { ReactComponent as NotificatiobBellIcon } from '../../asset/svg/notificationBell.svg';
 import { ReactComponent as SidebarLogo } from '../../asset/svg/sidebarLogo.svg';
-
-export function HeaderComponent({ toggleSidebar, toggleSidebarHandler }) {
-  const { pathname } = useRouter();
-  const [isAuthenticated, setIsAuthenticated] = React.useState(false);
-
-  React.useEffect(() => {
-    const userToken = localStorage.getItem('token');
-    // setIsAuthenticated(!!userToken);
-    setIsAuthenticated(true);
-  }, []);
-
-  if (isAuthenticated) {
+import { PrimaryLink } from 'src/lib/elements/link';
+import { LOGIN_ROUTE_PATH } from '../login';
+export function HeaderComponent(props) {
+  const { toggleSidebar, toggleSidebarHandler, isAuth, isMainPage } = props;
+  if (isAuth) {
     return (
       <Container>
         <Content>
-          {pathname !== '/' && (
+          {!isMainPage && (
             <Button onClick={toggleSidebarHandler}>
               <Stick1 close={toggleSidebar} />
               <Stick2 close={toggleSidebar} />
@@ -33,9 +24,7 @@ export function HeaderComponent({ toggleSidebar, toggleSidebarHandler }) {
           <KontragentText tid="Контрагент" />
         </Content>
         <Content>
-          <div onClick={() => setIsAuthenticated(false)}>
-            <HeaderText tid="Выйти" />
-          </div>
+          <LoginLinkText tid="Выйти" pathname={'/logout'} />
           <NotificatiobBellIcon />
           <ImageContainer>
             <Image
@@ -51,20 +40,20 @@ export function HeaderComponent({ toggleSidebar, toggleSidebarHandler }) {
 
   return (
     <Container>
+      <KontragentText tid="Контрагент" />
       <Content>
-        <HeaderText tid="Возможности" />
-        <HeaderText tid="Цены" />
-        <HeaderText tid="Зачем сверяться" />
+        <LoginLinkText tid="Возможности" />
+        <LoginLinkText tid="Цены" />
+        <LoginLinkText tid="Зачем сверяться" />
       </Content>
       <Content>
-        <div onClick={() => setIsAuthenticated(true)}>
-          <HeaderText tid="Войти" />
-        </div>
+        <LoginLinkText tid="Войти" pathname={LOGIN_ROUTE_PATH} />
         <SendRequestButton tid="Отправить заявку" />
       </Content>
     </Container>
   );
 }
+
 const Button = styled.button`
   display: flex;
   flex-flow: column;
@@ -122,7 +111,6 @@ const SendRequestButton = styled(SecondaryButton)`
   border: 3px solid ${THEME_COLOR.COLOR.ACCENT};
 `;
 
-const HeaderText = styled(PrimaryText)`
+const LoginLinkText = styled(PrimaryLink)`
   font-weight: ${THEME_VALUE.FONT_WEIGHT.SEMY_BOLD};
-  cursor: pointer;
 `;

@@ -19,7 +19,6 @@ export function signupFormUploadData(data) {
         url: SIGNUP_API.SIGNUP_FORM_UPLOAD.ENDPOINT,
         data,
       });
-
       dispatch(authSetData(res.data.accessToken));
 
       dispatch({
