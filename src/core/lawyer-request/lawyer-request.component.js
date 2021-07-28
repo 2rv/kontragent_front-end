@@ -17,6 +17,7 @@ export function LawyerReqeustComponent(props) {
     initialValue,
     onSubmit,
     fieldName,
+    validation,
   } = props;
 
   return (
@@ -28,6 +29,7 @@ export function LawyerReqeustComponent(props) {
           <LawyerRequestQuestionDescription tid="LAWYER_REQUEST.DESCRIPTION" />
         </SectionLayout>
         <NewLawyerRequestFormContainer
+          validation={validation}
           pageLoading={pageLoading}
           isPending={isPending}
           isError={isError}

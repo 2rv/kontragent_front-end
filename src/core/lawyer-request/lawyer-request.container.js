@@ -10,6 +10,7 @@ import {
   isRequestSuccess,
 } from '../../main/store/store.service';
 import { LawyerReqeustComponent } from './lawyer-request.component';
+import { newLawyerRequestFormValidation } from './lawyer-request.validation';
 import {
   NEW_LAWYER_REQUEST_FIELD_NAME,
   NEW_LAWYER_REQUEST_FORM_FIELD_NAME,
@@ -38,6 +39,7 @@ export function LawyerReqeustContainer() {
 
   return (
     <LawyerReqeustComponent
+      validation={newLawyerRequestFormValidation}
       isPending={isRequestPending(state.lawyerRequest)}
       isError={isRequestError(state.lawyerRequest)}
       isSuccess={isRequestSuccess(state.lawyerRequest)}

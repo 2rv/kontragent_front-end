@@ -9,6 +9,7 @@ export function NewLawyerRequestFormContainer(props) {
     initialValue,
     onSubmit,
     fieldName,
+    validation,
     isPending,
     pageLoading,
     isError,
@@ -24,13 +25,18 @@ export function NewLawyerRequestFormContainer(props) {
     fieldName[NEW_LAWYER_REQUEST_FORM_FIELD_KEY.PROBLEM_DESCRIPTION];
 
   return (
-    <Formik initialValues={initialValue} validate={null} onSubmit={onSubmit}>
+    <Formik
+      initialValues={initialValue}
+      validate={validation}
+      onSubmit={onSubmit}
+    >
       {(formProps) => (
         <NewLawyerRequestFormComponent
-          {...formProps}
           fieldQuestionCategory={QUESTION_CATEGORY_NAME}
           fieldYourQuestion={YOUR_QUESTION_NAME}
           fieldProblemDescription={PROBLEM_DESCRIPTION_NAME}
+          {...formProps}
+          {...props}
         />
       )}
     </Formik>

@@ -39,7 +39,17 @@ export function NewLawyerRequestFormComponent(props) {
     handleSubmit,
     handleChange,
     handleBlur,
+    errors,
+    touched,
+    isValid,
+    isSubmitting,
+    isSuccess,
+    pageLoading,
   } = props;
+
+  const isFieldError = (name) => {
+    return errors[name] && touched[name] && errors[name];
+  };
 
   return (
     <form onSubmit={handleSubmit}>
@@ -53,6 +63,7 @@ export function NewLawyerRequestFormComponent(props) {
                 name={fieldQuestionCategory}
                 onChange={handleChange}
                 onBlur={handleBlur}
+                error={isFieldError(fieldQuestionCategory)}
                 option={[
                   {
                     id: 1,
@@ -67,6 +78,7 @@ export function NewLawyerRequestFormComponent(props) {
                 value={values[fieldYourQuestion]}
                 onChange={handleChange}
                 onBlur={handleBlur}
+                error={isFieldError(fieldYourQuestion)}
               />
               <TextareaField
                 titleTid="LAWYER_REQUEST.FORM.FIELDS.TITLES.PROBLEM_DESCRIPTION"
@@ -74,6 +86,7 @@ export function NewLawyerRequestFormComponent(props) {
                 name={fieldProblemDescription}
                 onChange={handleChange}
                 onBlur={handleBlur}
+                error={isFieldError(fieldProblemDescription)}
                 row={8}
               />
             </SectionLayout>
