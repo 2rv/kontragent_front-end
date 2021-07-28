@@ -8,6 +8,7 @@ import {
   isRequestSuccess,
 } from '../../../../main/store/store.service';
 // import { settingsLoad } from './settings.action';
+import { companySettingsFormValidation } from './settings.validation';
 import { ENTITY_SETTINGS_STORE_NAME } from './settings.constant';
 import { SettingsComponent } from './settings.component';
 import {
@@ -46,6 +47,7 @@ export function SettingsContainer() {
       errorMessage={getRequestErrorMessage(state.settings)}
       onSubmit={companySettingsFormSendData}
       initialValue={companySettingsFormGetInitialValue()}
+      validation={companySettingsFormValidation}
       fieldName={COMPANY_SETTINGS_FORM_FIELD_NAME}
     />
   );
