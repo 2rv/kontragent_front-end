@@ -78,6 +78,7 @@ const RelativeCase = styled.div`
 `;
 const Textarea = styled.textarea`
   min-height: ${(p) => p.minHeight}px;
+  max-height: 200px;
   height: fit-content;
   flex-grow: 1;
   display: flex;
@@ -104,5 +105,5 @@ const Textarea = styled.textarea`
   &:hover {
     opacity: ${THEME_VALUE.OPACITY.HOVER};
   }
-  overflow: hidden;
+  overflow-y: scroll;
 `;
