@@ -4,20 +4,20 @@ import { spacing, THEME_COLOR, THEME_SIZE, THEME_VALUE } from '../../theme';
 import { text } from '../../common/text';
 import { SecondaryText } from '../text';
 import { ErrorMessage } from '../error';
-import { TextAreaPropsType } from './type.field';
+import { TextAreaPropsType, TextareaElementPropsType } from './type.field';
 import { ReactComponent as FileIcon } from 'src/asset/svg/file.svg';
 import { ReactComponent as SendIcon } from 'src/asset/svg/send.svg';
 import { AutoSize } from './autosize';
 
 export function TextareaField(props: TextAreaPropsType) {
   const {
+    titleTid,
+    placeholderTid,
     onChange,
     onBlur,
-    titleTid,
     name,
-    placeholderTid,
-    error,
     row = 1,
+    error,
     children,
     isFile,
     isSend,
@@ -29,7 +29,7 @@ export function TextareaField(props: TextAreaPropsType) {
     if (isSend) PR += 6;
     return PR;
   })();
-  const handleChange = (event: TextAreaPropsType) => {
+  const handleChange = (event: any) => {
     AutoSize(event, minHeight);
     onChange && onChange(event);
   };
@@ -76,7 +76,7 @@ const RelativeCase = styled.div`
   position: relative;
   align-items: center;
 `;
-const Textarea = styled.textarea`
+const Textarea = styled.textarea<TextareaElementPropsType>`
   min-height: ${(p) => p.minHeight}px;
   max-height: 200px;
   height: fit-content;
@@ -85,18 +85,18 @@ const Textarea = styled.textarea`
   line-height: 1.5;
   resize: none;
   padding: ${spacing(4)};
-  padding-right: ${(p: TextAreaPropsType) => spacing(p.iconPadding || 4)};
+  padding-right: ${(p) => spacing(p.iconPadding || 4)};
   border-radius: ${THEME_SIZE.RADIUS.DEFAULT};
   font-size: ${THEME_SIZE.FONT.SMALL};
   color: ${THEME_COLOR.TEXT.PRIMARY};
   font-weight: ${THEME_VALUE.FONT_WEIGHT.REGULAR};
-  border: ${(props: { isError: boolean }) =>
-    props.isError
+  border: ${(p) =>
+    p.isError
       ? `1px solid ${THEME_COLOR.COLOR.VALIDATION}`
       : '1px solid transparent'};
 
-  background: ${(props) =>
-    !props.isError ? THEME_COLOR.COLOR.SECONDARY : THEME_COLOR.COLOR.BASE};
+  background: ${(p) =>
+    p.isError ? THEME_COLOR.COLOR.BASE : THEME_COLOR.COLOR.SECONDARY};
 
   &:focus {
     border: 1px solid #b5b5b5;

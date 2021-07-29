@@ -28,19 +28,20 @@ export interface SecondarySelectPropsType {
 }
 
 export interface TextAreaPropsType {
-  titleTid: string;
-  placeholderTid: string;
-  onChange: any;
-  onBlur: any;
-  name: string;
+  titleTid?: string;
+  placeholderTid?: string;
+  onChange?: any;
+  onBlur?: any;
+  name?: string;
   row?: number;
-  error: string;
-  children: any;
-  isError: any;
+  error?: string;
+  children?: any;
   isFile?: any;
   isSend?: any;
-  iconPadding?: any;
-  ref: any;
-  event: any;
+  minHeight?: number;
+}
+export interface TextareaElementPropsType {
   minHeight: number;
+  isError: boolean;
+  iconPadding: number;
 }
