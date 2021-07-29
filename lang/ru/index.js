@@ -39,6 +39,7 @@ import MY_LAWYER_REQUEST from './my-lawyer-request.json';
 import THEME_ARBITRATION from './theme-arbitration.json';
 import NOTIFICATION from './notification.json';
 import NEWS_ARTICLE from './news-article.json';
+import ERROR_PAGE from './error-page.json';
 
 export const RU = {
   translation: {
@@ -83,5 +84,6 @@ export const RU = {
     MY_LAWYER_REQUEST,
     THEME_ARBITRATION,
     NEWS_ARTICLE,
+    ERROR_PAGE,
   },
 };
