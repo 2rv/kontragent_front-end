@@ -140,6 +140,10 @@ import {
   dialogPersonalStore,
 } from '../../core/dialog-personal';
 import {
+  DIALOG_LAWYER_STORE_NAME,
+  dialogLawyerStore,
+} from '../../core/dialog-lawyer';
+import {
   BALANCE_ACTIVITY_STORE_NAME,
   balanceActivityStore,
 } from '../../core/balance-activity';
@@ -191,6 +195,7 @@ export const reducers = combineReducers({
   [FEED_AND_NOTIFICATIONS_LIST_STORE_NAME]: feedAndNotificationsListStore,
   [DASHBOARD_STORE_NAME]: dashboardStore,
   [DIALOG_PERSONAL_STORE_NAME]: dialogPersonalStore,
+  [DIALOG_LAWYER_STORE_NAME]: dialogLawyerStore,
   [REFERRAL_STORE_NAME]: referralStore,
   [NEWS_ARTICLE_STORE_NAME]: newsArticleStore,
   [COMPANY_MEMBERS_STORE_NAME]: companyMembersStore,
