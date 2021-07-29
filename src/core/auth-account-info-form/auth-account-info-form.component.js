@@ -5,32 +5,12 @@ import { AccountInfoFooterContainer } from './frame/account-info-footer';
 import { AccountInfoHeaderContainer } from './frame/account-info-header';
 
 export function AuthAccoutInfoFormComponent(props) {
-  const {
-    isPending,
-    isError,
-    isSuccess,
-    errorMessage,
-    pageLoading,
-    initialValue,
-    accountInfoFormFieldName,
-    initialCompanyInfoFormField,
-  } = props;
-
   return (
     <PrimaryBox>
       <IndentLayout>
         <SectionLayout>
           <AccountInfoHeaderContainer />
-          <AccountInfoFormContainer
-            initialValue={initialValue}
-            isPending={isPending}
-            isError={isError}
-            isSuccess={isSuccess}
-            errorMessage={errorMessage}
-            pageLoading={pageLoading}
-            accountInfoFormFieldName={accountInfoFormFieldName}
-            initialCompanyInfoFormField={initialCompanyInfoFormField}
-          />
+          <AccountInfoFormContainer {...props} />
           <AccountInfoFooterContainer />
         </SectionLayout>
       </IndentLayout>

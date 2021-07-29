@@ -15,6 +15,7 @@ export function AccountInfoFormContainer(props) {
     pageLoading,
     accountInfoFormFieldName,
     initialCompanyInfoFormField,
+    validation,
   } = props;
 
   const onSubmitForm = (values) => {
@@ -28,7 +29,11 @@ export function AccountInfoFormContainer(props) {
   const POSITION_IN_COMPANY = accountInfoFormFieldName[ACCOUNT_INFO_FORM_FIELD_KEY.POSITION_IN_COMPANY];
 
   return (
-    <Formik initialValues={initialValue} onSubmit={onSubmitForm}>
+    <Formik
+      initialValues={initialValue}
+      validate={validation}
+      onSubmit={onSubmitForm}
+    >
       {(props) => (
         <AccountInfoFormComponent
           fieldFullName={FULLNAME_NAME}

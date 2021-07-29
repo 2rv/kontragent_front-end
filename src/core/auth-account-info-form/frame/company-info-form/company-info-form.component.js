@@ -21,28 +21,31 @@ export function CompanyInfoFormComponent(props) {
   return (
     <Layout type="MEDIUM">
       <Field name={`${fieldCompanyInfoFormFields}.${index}.${fieldCompanyName}`}>
-        {({ field }) => (
+        {({ field, form, meta }) => (
           <PrimaryField
             titleTid="AUTH_ACCOUNT_INFO_FORM.COMPANY_INFO_FORM.FIELD.COMPANY_NAME.TITLE"
             placeholderTid="AUTH_ACCOUNT_INFO_FORM.COMPANY_INFO_FORM.FIELD.COMPANY_NAME.PLACEHOLDER"
+            error={(meta.touched && !meta.value) && form.errors[fieldCompanyName]}
             {...field}
           />
         )}
       </Field>
       <Field name={`${fieldCompanyInfoFormFields}.${index}.${fieldCompanyInn}`}>
-        {({ field }) => (
+        {({ field, form, meta }) => (
           <PrimaryField
             titleTid="AUTH_ACCOUNT_INFO_FORM.COMPANY_INFO_FORM.FIELD.INN.TITLE"
             placeholderTid="AUTH_ACCOUNT_INFO_FORM.COMPANY_INFO_FORM.FIELD.INN.PLACEHOLDER"
+            error={(meta.touched && !meta.value) && form.errors[fieldCompanyInn]}
             {...field}
           />
         )}
       </Field>
       <Field name={`${fieldCompanyInfoFormFields}.${index}.${fieldPositionInCompany}`}>
-        {({ field }) => (
+        {({ field, form, meta }) => (
           <PrimaryField
             titleTid="AUTH_ACCOUNT_INFO_FORM.COMPANY_INFO_FORM.FIELD.POSITION.TITLE"
             placeholderTid="AUTH_ACCOUNT_INFO_FORM.COMPANY_INFO_FORM.FIELD.POSITION.PLACEHOLDER"
+            error={(meta.touched && !meta.value) && form.errors[fieldPositionInCompany]}
             {...field}
           />
         )}
