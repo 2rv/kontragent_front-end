@@ -26,14 +26,13 @@ const Menu = styled.div`
   display: flex;
   flex: 1;
   transition: ${THEME_SIZE.TRANSACTION.DEFAULT};
-  width: 350px;
   max-width: ${(p) => (p.toggle ? `350px` : 0)};
 `;
 const Content = styled.div`
   display: flex;
-  width: inherit;
+  width: 100%;
   flex-flow: column;
-  overflow-x: hidden;
+  overflow: hidden;
   gap: ${spacing(6)};
   padding: 0 ${spacing(2)} ${spacing(8)} ${spacing(8)};
   flex: 1 0;

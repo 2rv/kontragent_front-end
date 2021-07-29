@@ -26,6 +26,9 @@ export function SidebarAdvertComponent(props) {
 }
 const Container = styled.div`
   padding-right: ${spacing(5)};
+  @media screen and (max-height: 720px) {
+    display: none;
+  }
 `;
 const SidebaerAdvertLayout = styled.div`
   min-width: 286px;

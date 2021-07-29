@@ -1,36 +1,37 @@
-import React from 'react';
 import styled from 'styled-components';
-
 import { ReactComponent as ErrorPageIcon } from '../../asset/svg/error-page.svg';
-
-import { setLinkRedirect } from '../../main/navigation';
-
-import { SecondaryButton } from '../../lib/elements/button';
+import { PrimaryLink } from '../../lib/elements/link';
 import { SecondaryText, PrimaryTitleText } from '../../lib/elements/text';
-import { spacing, THEME_SIZE, THEME_VALUE } from '../../lib/theme';
+import { spacing, THEME_COLOR, THEME_SIZE, THEME_VALUE } from '../../lib/theme';
 
 export function ErrorPageComponent() {
   return (
     <Container>
-      <ErrorPageIcon />
+      <ImageCase>
+        <ErrorPageIcon />
+      </ImageCase>
       <Title tid="ERROR_PAGE.TITLE" />
       <Description tid="ERROR_PAGE.DESCRIPTION" />
-      <ToHomeButton tid="ERROR_PAGE.TO_HOME" onClick={setLinkRedirect('/')} />
+      <LinkHome tid="ERROR_PAGE.TO_HOME" pathname={'/'} />
     </Container>
   );
 }
-
-const Container = styled.div`
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+const ImageCase = styled.div`
   display: flex;
+  height: fit-content;
+  flex: 1 0;
+  @media screen and (max-height: 590px) {
+    display: none;
+  }
+`;
+const Container = styled.div`
+  display: flex;
+  justify-content: center;
   align-items: center;
-  flex-direction: column;
+  flex: 1;
+  flex-flow: column;
   gap: ${spacing(3)};
 `;
-
 const Title = styled(PrimaryTitleText)`
   font-size: 36px;
   font-weight: ${THEME_VALUE.FONT_WEIGHT.MEDIUM};
@@ -43,6 +44,14 @@ const Description = styled(SecondaryText)`
   width: 525px;
 `;
 
-const ToHomeButton = styled(SecondaryButton)`
+const LinkHome = styled(PrimaryLink)`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: ${THEME_SIZE.FONT.DEFAULT};
   width: 226px;
+  min-height: 46px;
+  border-radius: ${THEME_SIZE.RADIUS.DEFAULT};
+  color: ${THEME_COLOR.TEXT.BASE};
+  background-color: ${THEME_COLOR.COLOR.ACCENT};
 `;

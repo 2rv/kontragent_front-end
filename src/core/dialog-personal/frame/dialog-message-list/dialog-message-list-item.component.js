@@ -139,11 +139,12 @@ const BoldText = styled(PrimaryText)`
   font-weight: ${THEME_VALUE.FONT_WEIGHT.MEDIUM};
 `;
 const Button = styled(PrimaryButton)`
-  height: 56px;
-  width: 56px;
+  min-height: 56px;
+  min-width: 56px;
   align-items: center;
   justify-content: center;
   display: flex;
+  flex: 0 0;
   background-color: ${THEME_COLOR.COLOR.BASE};
   padding: 0;
 `;
