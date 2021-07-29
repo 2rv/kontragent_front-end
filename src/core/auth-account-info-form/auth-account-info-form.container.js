@@ -7,6 +7,8 @@ import {
   ACCOUNT_INFO_FORM_FIELD_NAME,
 } from './auth-account-info-form.type';
 
+import { authAccountInfoFormValidation } from './auth-account-info-form.validation';
+
 const INITIAL_COMPANY_INFO_FORM_FIELD = {
   [AUTH_ACCOUNT_INFO_FORM_FIELD_NAME.COMPANY_NAME]: '',
   [AUTH_ACCOUNT_INFO_FORM_FIELD_NAME.COMPANY_INN]: '',
@@ -23,6 +25,7 @@ export function AuthAccountInfoForm() {
 
   return (
     <AuthAccoutInfoFormComponent
+      validation={authAccountInfoFormValidation}
       initialValue={getInitialValue()}
       pageLoading={true}
       isPending={true}

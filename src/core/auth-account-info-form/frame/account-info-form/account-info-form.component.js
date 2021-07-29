@@ -4,10 +4,7 @@ import { CompanyInfoFormComponent } from '../company-info-form';
 
 import { SectionLayout } from '../../../../lib/elements/layout';
 import { PrimaryField } from '../../../../lib/elements/field';
-import {
-  PrimaryButton,
-  SecondaryButton,
-} from '../../../../lib/elements/button';
+import { PrimaryButton, SecondaryButton } from '../../../../lib/elements/button';
 import { ErrorAlert } from '../../../../lib/elements/alert';
 import { PrimaryLoader } from '../../../../lib/elements/loader';
 import { SuccessAlert } from '../../../../lib/elements/alert';
@@ -76,10 +73,9 @@ export function AccountInfoFormComponent(props) {
                       fieldCompanyName={fieldCompanyName}
                       fieldCompanyInn={fieldCompanyInn}
                       fieldPositionInCompany={fieldPositionInCompany}
-                      companyInfoFormCount={
-                        values[fieldCompanyInfoFormFields].length
-                      }
+                      companyInfoFormCount={values[fieldCompanyInfoFormFields].length}
                       removeCompanyInfoForm={remove}
+                      isFieldError={isFieldError}
                     />
                   ))}
                   <PrimaryButton
