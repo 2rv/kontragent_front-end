@@ -1,7 +1,8 @@
 import { AuthFormVerificationEmailComponent } from './auth-form-verification-email.component';
 
 export function AuthFormVerificationEmailContainer(props) {
-  const { isPending, isError, errorMessage, pageLoading, sendCode } = props;
+  const { isPending, isError, errorMessage, pageLoading, sendCode, userEmail } =
+    props;
   return (
     <AuthFormVerificationEmailComponent
       isPending={isPending}
@@ -9,6 +10,7 @@ export function AuthFormVerificationEmailContainer(props) {
       errorMessage={errorMessage}
       pageLoading={pageLoading}
       sendCode={sendCode}
+      userEmail={userEmail}
     />
   );
 }

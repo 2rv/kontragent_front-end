@@ -44,7 +44,7 @@ export function SignupContainer() {
       [SIGNUP_FIELD_NAME.PHONE]: '',
     };
   };
-  console.log(state);
+
   return (
     <SignupComponent
       isPending={isRequestPending(state.signupForm)}

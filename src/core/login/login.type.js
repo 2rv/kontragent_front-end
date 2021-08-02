@@ -22,5 +22,5 @@ export const LOGIN_ACTION_TYPE = {
 export const LOGIN_DATA_NAME = {
   LOGIN: 'login',
   PASSWORD: 'password',
-  CAPTCHA: 'captcha',
+  CAPTCHA: 'captchaCode',
 };

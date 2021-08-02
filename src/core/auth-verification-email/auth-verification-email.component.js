@@ -4,7 +4,8 @@ import { IndentLayout } from '../../lib/elements/layout';
 import { AuthFormVerificationEmailContainer } from './frame/auth-form-verification-email';
 
 export function AuthVerificationEmailComponent(props) {
-  const { pageLoading, isPending, isError, errorMessage, sendCode } = props;
+  const { pageLoading, isPending, isError, errorMessage, sendCode, userEmail } =
+    props;
 
   return (
     <PrimaryBox>
@@ -15,6 +16,7 @@ export function AuthVerificationEmailComponent(props) {
           isError={isError}
           errorMessage={errorMessage}
           sendCode={sendCode}
+          userEmail={userEmail}
         />
       </IndentLayout>
     </PrimaryBox>

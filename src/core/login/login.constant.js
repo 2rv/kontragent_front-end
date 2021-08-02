@@ -9,7 +9,7 @@ export const LOGIN_API = {
   },
 };
 
-export const LOGIN_FORM_REDIRECT_ON_UPLOAD_PATH = '/home';
+export const LOGIN_FORM_REDIRECT_ON_UPLOAD_PATH = '/dashboard';
 
 export const SIGNUP_REDIRECT_ON_LOGGED_PATH = '/logout';
 

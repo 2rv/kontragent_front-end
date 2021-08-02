@@ -9,7 +9,8 @@ import { PrimaryTitleText, PrimaryText } from '../../../../lib/elements/text';
 import { PrimaryLoader } from '../../../../lib/elements/loader';
 
 export function AuthFormVerificationEmailComponent(props) {
-  const { pageLoading, isPending, isError, errorMessage, sendCode } = props;
+  const { pageLoading, isPending, isError, errorMessage, sendCode, userEmail } =
+    props;
 
   const isSubmitDisabled = () => {
     return pageLoading || isPending;
@@ -20,7 +21,10 @@ export function AuthFormVerificationEmailComponent(props) {
       <SectionLayout>
         <PrimaryTitleText tid="AUTH_VERIFICATION_EMAIL.HEADER" />
         <SectionLayout type="MEDIUM">
-          <Message tid="AUTH_VERIFICATION_EMAIL.MESSAGE" />
+          <Message
+            tid="AUTH_VERIFICATION_EMAIL.MESSAGE"
+            tvalue={{ email: userEmail }}
+          />
 
           <PrimaryButton
             onClick={sendCode}

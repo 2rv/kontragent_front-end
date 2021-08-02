@@ -10,7 +10,7 @@ export function authFormVerificationEmailSendCode(token) {
     });
 
     try {
-      await httpRequest({
+      const { data } = await httpRequest({
         headers: {
           Authorization: `bearer ${token}`,
         },
@@ -20,6 +20,7 @@ export function authFormVerificationEmailSendCode(token) {
 
       dispatch({
         type: AUTH_VERIFICATION_EMAIL_ACTION_TYPE.AUTH_FORM_VERIFICATION_EMAIL_UPLOAD_SUCCESS,
+        data,
       });
     } catch (error) {
       if (error) {

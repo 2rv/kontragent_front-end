@@ -8,4 +8,5 @@ export const MY_COMPANIES_REVIEW_COMPANY_LIST_API = {
     TYPE: 'GET',
   },
 };
-export const SIGNUP_REDIRECT_ON_LOGGED_PATH = '/logout';
+export const MY_COMPANIES_REVIEW_COMPANY_LIST_REDIRECT_ON_LOGGED_PATH =
+  '/logout';

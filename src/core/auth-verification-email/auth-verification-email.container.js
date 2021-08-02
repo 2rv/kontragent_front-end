@@ -32,13 +32,14 @@ export function AuthVerificationEmailContainer() {
     dispatch(authFormVerificationEmailSendCode(token));
   };
 
-  //   useEffect(authVerificationEmailSendCode, []);
+  useEffect(authVerificationEmailSendCode, []);
 
   return (
     <AuthVerificationEmailComponent
       isPending={isRequestPending(state.authFormVerificationEmail)}
       isError={isRequestError(state.authFormVerificationEmail)}
       pageLoading={pageLoading}
+      userEmail={state.authFormVerificationEmail?.data?.email}
       errorMessage={getRequestErrorMessage(state.authFormVerificationEmail)}
       sendCode={authVerificationEmailSendCode}
     />
