@@ -16,9 +16,9 @@ export function MyCompaniesReviewCompanyListContainer() {
     state: state[MY_COMPANIES_REVIEW_COMPANY_LIST_STORE_NAME].reviewCompanyList,
     pageLoading: state[NAVIGATION_STORE_NAME].pageLoading,
   }));
-  // useEffect(() => {
-  //   dispatch(myCompaniesLoadCompaniesData());
-  // }, []);
+  useEffect(() => {
+    dispatch(myCompaniesLoadCompaniesData());
+  }, []);
 
   return (
     <MyCompaniesReviewCompanyListComponent

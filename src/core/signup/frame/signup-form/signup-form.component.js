@@ -101,7 +101,7 @@ export function SignupFormComponent(props) {
               type="password"
             />
 
-            {/* <CaptchaFieldContainer
+            <CaptchaFieldContainer
               titleTid="SIGNUP.SIGNUP_FORM.FIELD.CAPTCHA.TITLE"
               placeholderTid="SIGNUP.SIGNUP_FORM.FIELD.CAPTCHA.PLACEHOLDER"
               name={fieldCaptcha}
@@ -109,7 +109,7 @@ export function SignupFormComponent(props) {
               onBlur={handleBlur}
               value={values[fieldCaptcha]}
               error={isFieldError(fieldCaptcha)}
-            /> */}
+            />
           </FieldLayout>
           <SecondaryButton
             tid="SIGNUP.SIGNUP_FORM.BUTTON"

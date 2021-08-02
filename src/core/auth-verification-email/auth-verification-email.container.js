@@ -27,18 +27,18 @@ export function AuthVerificationEmailContainer() {
     pageLoading: state[NAVIGATION_STORE_NAME].pageLoading,
     token: state[AUTH_STORE_NAME].token,
   }));
-
   const authVerificationEmailSendCode = () => {
     dispatch(authFormVerificationEmailSendCode(token));
   };
 
-  //   useEffect(authVerificationEmailSendCode, []);
+  useEffect(authVerificationEmailSendCode, []);
 
   return (
     <AuthVerificationEmailComponent
       isPending={isRequestPending(state.authFormVerificationEmail)}
       isError={isRequestError(state.authFormVerificationEmail)}
       pageLoading={pageLoading}
+      userEmail={state.authFormVerificationEmail?.data?.email}
       errorMessage={getRequestErrorMessage(state.authFormVerificationEmail)}
       sendCode={authVerificationEmailSendCode}
     />

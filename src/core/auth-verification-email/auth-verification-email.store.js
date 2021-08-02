@@ -25,6 +25,7 @@ export function authVerificationEmailStore(state = initialState, action) {
         ...state,
         authFormVerificationEmail: setRequestSuccess(
           state.authFormVerificationEmail,
+          action.data,
         ),
       };
 
