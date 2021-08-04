@@ -11,6 +11,6 @@ export const LOGIN_API = {
 
 export const LOGIN_FORM_REDIRECT_ON_UPLOAD_PATH = '/dashboard';
 
-export const SIGNUP_REDIRECT_ON_LOGGED_PATH = '/logout';
+export const SIGNUP_REDIRECT_ON_LOGGED_PATH = '/dashboard';
 
 export const LOGIN_PAGE_RESTORE_PATH = '/restore';

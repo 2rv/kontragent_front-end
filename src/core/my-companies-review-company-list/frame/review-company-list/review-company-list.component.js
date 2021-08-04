@@ -7,10 +7,11 @@ import {
   THEME_VALUE,
 } from '../../../../lib/theme';
 import { PrimaryText, SecondaryText } from '../../../../lib/elements/text';
-import { PrimaryBox } from '../../../../lib/elements/box';
-import { IndentLayout, SectionLayout } from '../../../../lib/elements/layout';
+import { SectionLayout } from '../../../../lib/elements/layout';
 import { CircleDivider } from '../../../../lib/elements/divider';
 import { ReactComponent as OptionIcon } from '../../../../asset/svg/option-icon.svg';
+import { MY_COMPANIES_REVIEW_COMPANY_LIST_DATA_NAME } from '../../my-companies-review-company-list.type';
+import { COMPANY_MEMBERS_ROUTE_PATH } from '../../../company-members/company-members.constant';
 
 export function ReviewCompanyListComponent(props) {
   const {
@@ -25,9 +26,11 @@ export function ReviewCompanyListComponent(props) {
     <BaseList
       listData={myCompaniesListData}
       skeletonAction={pageLoading || isPending}
+      pathname={COMPANY_MEMBERS_ROUTE_PATH}
+      dynamicId={MY_COMPANIES_REVIEW_COMPANY_LIST_DATA_NAME.COMPANY_ID}
     >
       {(props) => {
-        const { companyName, role, date } = props;
+        const { companyName, role, date = 'Нет сведений' } = props;
         return (
           <Container>
             <SectionLayout type="SMALL">

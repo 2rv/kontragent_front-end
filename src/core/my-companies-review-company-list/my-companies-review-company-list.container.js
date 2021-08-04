@@ -16,9 +16,10 @@ export function MyCompaniesReviewCompanyListContainer() {
     state: state[MY_COMPANIES_REVIEW_COMPANY_LIST_STORE_NAME].reviewCompanyList,
     pageLoading: state[NAVIGATION_STORE_NAME].pageLoading,
   }));
-  // useEffect(() => {
-  //   dispatch(myCompaniesLoadCompaniesData());
-  // }, []);
+
+  useEffect(() => {
+    dispatch(myCompaniesLoadCompaniesData());
+  }, []);
 
   return (
     <MyCompaniesReviewCompanyListComponent
@@ -28,7 +29,7 @@ export function MyCompaniesReviewCompanyListContainer() {
       pageLoading={pageLoading}
       errorMessage={getRequestErrorMessage(state.feedAndNotificationsListData)}
       myCompaniesSelectOption={myCompaniesSelectOption}
-      myCompaniesListData={myCompaniesListData}
+      myCompaniesListData={state?.data}
     />
   );
 }
@@ -39,16 +40,19 @@ const myCompaniesSelectOption = [
 ];
 const myCompaniesListData = [
   {
+    companyId: 1,
     companyName: `ООО "КАПСТРОЙЭНЕРГОТЕХ"`,
     role: 'Менеджер',
     date: 'с 06.08.2020',
   },
   {
+    companyId: 2,
     companyName: `ООО "КАПСТРОЙЭНЕРГОТЕХ"`,
     role: 'Менеджер',
     date: 'с 06.08.2020',
   },
   {
+    companyId: 3,
     companyName: `ООО "КАПСТРОЙЭНЕРГОТЕХ"`,
     role: 'Менеджер',
     date: 'с 06.08.2020',

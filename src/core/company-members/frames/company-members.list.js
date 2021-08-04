@@ -1,26 +1,20 @@
 import styled from 'styled-components';
-import { SecondaryText, PrimaryText } from '../../../../lib/elements/text';
-import { SectionLayout, IndentLayout } from '../../../../lib/elements/layout';
-import { BaseList } from '../../../../lib/elements/list';
 import {
   THEME_COLOR,
   spacing,
   THEME_SIZE,
   THEME_VALUE,
-} from '../../../../lib/theme';
-import { ReactComponent as OptionIcon } from '../../../../asset/svg/option-icon.svg';
-import { PrimaryBox } from '../../../../lib/elements/box';
-import { CircleDivider } from '../../../../lib/elements/divider';
+} from '../../../lib/theme';
+import { ReactComponent as OptionIcon } from '../../../asset/svg/option-icon.svg';
+import { SectionLayout, IndentLayout } from '../../../lib/elements/layout';
+import { SecondaryText, PrimaryText } from '../../../lib/elements/text';
+import { IconButton, SecondaryTextButton } from 'src/lib/elements/button';
+import { BaseList } from '../../../lib/elements/list';
+import { PrimaryBox } from '../../../lib/elements/box';
+import { CircleDivider } from '../../../lib/elements/divider';
 
-export function CompanyMembersListComponent(props) {
-  const {
-    isPending,
-    pageLoading,
-    isError,
-    isSuccess,
-    errorMessage,
-    companyMembersListData,
-  } = props;
+export function CompanyMembersList(props) {
+  const { companyMembersListData, openPopover } = props;
   return (
     <PrimaryBox>
       <IndentLayout>
@@ -32,10 +26,10 @@ export function CompanyMembersListComponent(props) {
           <BaseList
             itemBackground={THEME_COLOR.COLOR.SECONDARY}
             listData={companyMembersListData}
-            skeletonAction={pageLoading || isPending}
+            skeletonAction={false}
           >
             {(props) => {
-              const { avatar, name, role, inTheCompany } = props;
+              const { avatar, name, id, roleInfo, inTheCompany } = props;
               return (
                 <Content>
                   <InfoCase>
@@ -43,14 +37,18 @@ export function CompanyMembersListComponent(props) {
                     <SectionLayout type="SMALL">
                       <Name tid={name} />
                       <Desctiption>
-                        {role}
+                        {roleInfo.roleName}
                         &nbsp;
                         <CircleDivider />
                         <Time tid={inTheCompany} />
                       </Desctiption>
                     </SectionLayout>
                   </InfoCase>
-                  <OptionIcon />
+                  <IconButton
+                    onClick={(e) => openPopover(e, { name, id, roleInfo })}
+                  >
+                    <OptionIcon />
+                  </IconButton>
                 </Content>
               );
             }}
@@ -69,7 +67,6 @@ const Content = styled.div`
   gap: ${spacing(4)};
   min-width: max-content;
 `;
-
 const Avatar = styled.img`
   width: 56px;
   height: 56px;
