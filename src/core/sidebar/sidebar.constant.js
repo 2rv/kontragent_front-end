@@ -1,3 +1,5 @@
+import { COMPANY_MEMBERS_ROUTE_PATH } from '../company-members';
+
 export const NAVMENU_ITEMS = [
   {
     tid: 'Главная страница',
@@ -80,9 +82,24 @@ export const NAVMENU_ITEMS = [
     path: '/dialog-personal',
   },
   {
+    tid: 'Диалог с юристом',
+    pathname: '/dialog-lawyer',
+    path: '/dialog-lawyer',
+  },
+  {
+    tid: 'Панель управления главная её (нужно сделать!!!)',
+    pathname: '/home',
+    path: '/home',
+  },
+  {
     tid: 'SIDEBAR.NAV_MENU.ITEMS.DASHBOARD',
     pathname: '/dashboard',
     path: '/dashboard',
+  },
+  {
+    tid: 'Панель управления администратора',
+    pathname: '/dashboard-admin',
+    path: '/dashboard-admin',
   },
   {
     tid: 'SIDEBAR.NAV_MENU.ITEMS.REFERRALS',
@@ -111,8 +128,8 @@ export const NAVMENU_ITEMS = [
   },
   {
     tid: 'SIDEBAR.NAV_MENU.ITEMS.COMPANY_MEMBERS',
-    pathname: '/company-members',
-    path: '/company-members',
+    pathname: COMPANY_MEMBERS_ROUTE_PATH,
+    path: COMPANY_MEMBERS_ROUTE_PATH,
   },
   {
     tid: 'SIDEBAR.NAV_MENU.ITEMS.ASK_A_QUESTION_TO_A_LAWYER',
@@ -160,14 +177,3 @@ export const NAVMENU_ITEMS = [
     path: '/entity',
   },
 ];
-
-//   {
-//     tid: 'Панель управления администратора',
-//     pathname: '/dashboard-admin',
-//     path: '/dashboard-admin',
-//   },
-//   {
-//     tid: 'Панель управления главная её (нужно сделать!!!)',
-//     pathname: '/home',
-//     path: '/home',
-//   },

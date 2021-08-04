@@ -8,6 +8,7 @@ import {
 
 const initialState = {
   companyMembersListData: initRequestState(),
+  companyInfoData: initRequestState(),
 };
 
 export function companyMembersStore(state = initialState, action) {
@@ -17,7 +18,6 @@ export function companyMembersStore(state = initialState, action) {
         ...state,
         companyMembersListData: setRequestPending(state.companyMembersListData),
       };
-
     case COMPANY_MEMBERS_ACTION_TYPE.COMPANY_MEMBERS_LOAD_REQUEST_SUCCESS:
       return {
         ...state,
@@ -26,7 +26,6 @@ export function companyMembersStore(state = initialState, action) {
           action.data,
         ),
       };
-
     case COMPANY_MEMBERS_ACTION_TYPE.COMPANY_MEMBERS_LOAD_REQUEST_ERROR:
       return {
         ...state,
@@ -35,7 +34,16 @@ export function companyMembersStore(state = initialState, action) {
           action.errorMessage,
         ),
       };
-
+    case COMPANY_MEMBERS_ACTION_TYPE.COMPANY_MEMBERS_LOAD_REQUEST_SUCCESS:
+      return {
+        ...state,
+        companyInfoData: setRequestSuccess(state.companyInfoData, action.data),
+      };
+    case COMPANY_MEMBERS_ACTION_TYPE.DELETE_USER_COMPANY_REQUEST_SUCCESS:
+      return {
+        ...state,
+        companyInfoData: setRequestSuccess(state.companyInfoData, action.data),
+      };
     default:
       return state;
   }

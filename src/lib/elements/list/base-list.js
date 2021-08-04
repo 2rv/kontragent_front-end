@@ -9,16 +9,26 @@ export function BaseList(props) {
     children,
     listData,
     skeletonAction = null,
-    itemBackground = null,
+    itemBackground,
+    pathname,
+    config,
+    dynamicId,
   } = props;
 
   return (
     <List>
-      {skeletonAction ? (
+      {skeletonAction || !listData ? (
         <ListSkeleton />
       ) : (
         listData.map((data, index) => (
-          <BaseListItem key={index} data={data} itemBackground={itemBackground}>
+          <BaseListItem
+            key={index}
+            pathname={pathname}
+            dynamicId={dynamicId}
+            config={config}
+            data={data}
+            itemBackground={itemBackground}
+          >
             {children}
           </BaseListItem>
         ))

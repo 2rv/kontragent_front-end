@@ -5,6 +5,8 @@ import { PrimaryButton } from '../../../../lib/elements/button';
 import { PrimaryTitleText } from '../../../../lib/elements/text';
 import { spacing, THEME_COLOR, THEME_SIZE } from '../../../../lib/theme';
 import { SectionLayout } from '../../../../lib/elements/layout';
+import { setLinkRedirect } from '../../../../main/navigation';
+import { MY_COMPANIES_ADD_COMPANY_ROUTE_PATH } from '../../../my-companies-add-company';
 
 export function MyCompaniesHeaderComponent(props) {
   const {
@@ -19,7 +21,10 @@ export function MyCompaniesHeaderComponent(props) {
     <SectionLayout>
       <HeaderCase type="SMALL">
         <Title tid="MY_COMPANIES.MY_COMPANIES_REVIEW_COMPANY_LIST.HEADER.TITLE" />
-        <Button tid="MY_COMPANIES.MY_COMPANIES_REVIEW_COMPANY_LIST.HEADER.ADD_COMPANY" />
+        <Button
+          tid="MY_COMPANIES.MY_COMPANIES_REVIEW_COMPANY_LIST.HEADER.ADD_COMPANY"
+          onClick={setLinkRedirect(MY_COMPANIES_ADD_COMPANY_ROUTE_PATH)}
+        />
       </HeaderCase>
       <InputCase>
         <SecondaryInput placeholder="MY_COMPANIES.MY_COMPANIES_REVIEW_COMPANY_LIST.HEADER.FIND_COMPANY" />

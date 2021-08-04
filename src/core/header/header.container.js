@@ -14,7 +14,7 @@ export function HeaderContainer({ toggleSidebar, toggleSidebarHandler }) {
     <HeaderComponent
       toggleSidebar={toggleSidebar}
       toggleSidebarHandler={toggleSidebarHandler}
-      isAuth={true}
+      isAuth={isAuth}
       isMainPage={pathname === '/'}
     />
   );

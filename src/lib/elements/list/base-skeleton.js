@@ -5,9 +5,9 @@ const delay = () => Math.random() * 3;
 export function ListSkeleton() {
   return (
     <SectionLayout>
-      {[0, 1, 2, 3, 4].map((item) => (
-        <Skeleton>
-          <AnimateBlock key={item} delay={delay()} />
+      {[0, 1, 2, 3, 4].map((item, key) => (
+        <Skeleton key={key}>
+          <AnimateBlock delay={delay()} />
         </Skeleton>
       ))}
     </SectionLayout>

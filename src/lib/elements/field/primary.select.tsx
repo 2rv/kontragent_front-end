@@ -53,7 +53,9 @@ const Title: typeof SecondaryText = styled(SecondaryText)`
 const Select = styled.select`
   width: 100%;
   height: 46px;
-  padding: ${spacing(4)};
+  display: flex;
+  align-items: center;
+  padding: 0 ${spacing(4)};
   border-radius: ${THEME_SIZE.RADIUS.DEFAULT};
   border: none;
   font-size: ${THEME_SIZE.FONT.SMALL};
