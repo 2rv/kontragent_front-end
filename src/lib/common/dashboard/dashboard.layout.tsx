@@ -64,14 +64,15 @@ const MainContent = styled.div`
   flex-direction: column;
   min-height: 0;
   position: relative;
+  overflow-x: auto;
   padding: ${spacing(8)};
   padding-right: ${spacing(2)};
 `;
 const OverflowCase = styled.div`
   display: flex;
   flex-grow: 1;
+  width: fit-content;
   min-height: 0;
-  overflow-y: auto;
-  overflow-x: auto;
+  overflow: auto;
   padding-right: ${spacing(5)};
 `;

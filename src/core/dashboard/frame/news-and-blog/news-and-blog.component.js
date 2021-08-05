@@ -5,10 +5,11 @@ import {
   THEME_SIZE,
   THEME_VALUE,
 } from '../../../../lib/theme';
-import { PrimaryTitleText, SecondaryText } from '../../../../lib/elements/text';
+import { PrimaryTitleText } from '../../../../lib/elements/text';
 import { PrimaryLink } from '../../../../lib/elements/link';
 import { SectionLayout } from '../../../../lib/elements/layout';
-import { DashboardCard } from '../../../dashboard-card';
+import { Card } from '../../../cards';
+
 export function NewsAndBlogComponent() {
   return (
     <SectionLayout type="LARGE">
@@ -17,17 +18,12 @@ export function NewsAndBlogComponent() {
         <ViewAll tid="DASHBOARD.VIEW_ALL" />
       </TitleCase>
       <Content>
-        <DashboardCard type="vertical-news" />
-        <DashboardCard type="vertical-news" />
+        <Card type="vertical-news" />
+        <Card type="full-news" />
       </Content>
     </SectionLayout>
   );
 }
-const Content = styled.div`
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: ${spacing(8)};
-`;
 const TitleCase = styled.div`
   display: flex;
   justify-content: space-between;
@@ -41,4 +37,9 @@ const ViewAll = styled(PrimaryLink)`
 const Title = styled(PrimaryTitleText)`
   font-size: ${THEME_SIZE.FONT.HUGE};
   color: ${THEME_COLOR.TEXT.BASE};
+`;
+const Content = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: ${spacing(8)};
 `;
