@@ -27,6 +27,7 @@ const Container = styled.div`
   bottom: 0;
   left: 0;
   right: 0;
+  z-index: 10;
   animation: ${animation} 0.2s;
   display: ${(p) => (p.isOpen ? 'flex' : 'none')};
   align-items: center;

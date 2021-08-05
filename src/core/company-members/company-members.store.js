@@ -34,7 +34,7 @@ export function companyMembersStore(state = initialState, action) {
           action.errorMessage,
         ),
       };
-    case COMPANY_MEMBERS_ACTION_TYPE.COMPANY_MEMBERS_LOAD_REQUEST_SUCCESS:
+    case COMPANY_MEMBERS_ACTION_TYPE.COMPANY_INFO_LOAD_REQUEST_SUCCESS:
       return {
         ...state,
         companyInfoData: setRequestSuccess(state.companyInfoData, action.data),
@@ -42,7 +42,6 @@ export function companyMembersStore(state = initialState, action) {
     case COMPANY_MEMBERS_ACTION_TYPE.DELETE_USER_COMPANY_REQUEST_SUCCESS:
       return {
         ...state,
-        companyInfoData: setRequestSuccess(state.companyInfoData, action.data),
       };
     default:
       return state;

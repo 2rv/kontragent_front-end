@@ -58,6 +58,7 @@ const Container = styled.div`
   position: fixed;
   display: ${(p) => (p.open ? 'block' : 'none')};
   top: 0;
+  z-index: 9;
   left: 0;
   right: 0;
   bottom: 0;
