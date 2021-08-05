@@ -28,6 +28,7 @@ const Container = styled.div`
   width: 100%;
   display: flex;
   height: 75px;
+  z-index: 3;
   padding: ${spacing(8)};
   gap: ${spacing(6)};
   background-color: ${THEME_COLOR.COLOR.PRIMARY};

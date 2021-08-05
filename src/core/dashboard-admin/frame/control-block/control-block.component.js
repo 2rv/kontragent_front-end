@@ -6,7 +6,7 @@ import {
   THEME_VALUE,
 } from '../../../../lib/theme';
 import { PrimaryTitleText, SecondaryText } from '../../../../lib/elements/text';
-import { DashboardCard } from '../../../dashboard-card';
+import { Card } from '../../../cards';
 import { PrimaryButton } from '../../../../lib/elements/button';
 import { ReactComponent as IconPlus } from '../../../../asset/svg/plus-icon.svg';
 import { SectionLayout } from '../../../../lib/elements/layout';
@@ -16,13 +16,13 @@ export function ControlBlockComponent() {
     <SectionLayout type="LARGE">
       <Content>
         <PrimaryCase>
-          <DashboardCard type="quantitative" />
-          <DashboardCard type="service" />
-          <DashboardCard type="attendance" />
+          <Card type="quantitative" />
+          <Card type="service" />
+          <Card type="attendance" />
         </PrimaryCase>
         <SecondaryCase>
-          <DashboardCard type="application" />
-          <DashboardCard type="arbitration" />
+          <Card type="application" />
+          <Card type="arbitration" />
         </SecondaryCase>
       </Content>
       <Button>

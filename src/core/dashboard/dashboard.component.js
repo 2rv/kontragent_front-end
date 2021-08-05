@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 import { spacing, THEME_COLOR, THEME_SIZE } from '../../lib/theme';
-import { AdvertContainer } from '../advert';
 import { NewsAndBlogComponent, ControlBlockComponent } from './frame';
 import { PrimaryLoader } from '../../lib/elements/loader';
+import { Card } from '../cards';
 
 export function DashboardComponent(props) {
   const { isPending, isError, isSuccess, errorMessage, pageLoading } = props;
@@ -10,7 +10,7 @@ export function DashboardComponent(props) {
     <>
       {(isPending || pageLoading) && <PrimaryLoader />}
       <Container>
-        <AdvertContainer type="BAR" />
+        <Card type="advert-bar" />
         <NewsAndBlogComponent />
         <ControlBlockComponent />
       </Container>
@@ -30,6 +30,7 @@ const Container = styled.div`
   flex-grow: 1;
   overflow: auto;
   min-height: 0;
+  min-width: fit-content;
   background: linear-gradient(
     0deg,
     ${THEME_COLOR.COLOR.SECONDARY} 30%,

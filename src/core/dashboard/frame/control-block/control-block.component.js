@@ -6,7 +6,7 @@ import {
   THEME_VALUE,
 } from '../../../../lib/theme';
 import { PrimaryTitleText, SecondaryText } from '../../../../lib/elements/text';
-import { DashboardCard } from '../../../dashboard-card';
+import { Card } from '../../../cards';
 import { PrimaryButton } from '../../../../lib/elements/button';
 import { ReactComponent as IconPlus } from '../../../../asset/svg/plus-icon.svg';
 import { SectionLayout } from '../../../../lib/elements/layout';
@@ -16,15 +16,18 @@ export function ControlBlockComponent() {
     <SectionLayout type="LARGE">
       <Title tid="DASHBOARD.CONTROL_BLOCK_TITLE" />
       <Content>
-        <PrimaryCase>
-          <DashboardCard type="total" />
-          <DashboardCard type="my" />
-          <DashboardCard type="referal" />
-        </PrimaryCase>
-        <SecondaryCase>
-          <DashboardCard type="counterparties" />
-          <DashboardCard type="counterparties" />
-        </SecondaryCase>
+        <Card type="total" />
+        <Card type="my" />
+        <Card type="referal" />
+        <Card type="quantitative" />
+        <Card type="service" />
+        <Card type="attendance" />
+        <Card type="referral-profit" />
+        <Card type="referral-stats" />
+        <Card type="counterparties" />
+        <Card type="dialogs" />
+        <Card type="application" />
+        <Card type="arbitration" />
       </Content>
       <Button>
         <PlusIcon />
@@ -57,17 +60,9 @@ const Title = styled(PrimaryTitleText)`
   font-size: ${THEME_SIZE.FONT.HUGE};
   color: ${THEME_COLOR.TEXT.BASE};
 `;
-const PrimaryCase = styled.div`
-  display: grid;
-  gap: ${spacing(8)};
-  grid-template-columns: repeat(3, 1fr);
-`;
-const SecondaryCase = styled.div`
-  display: grid;
-  gap: ${spacing(8)};
-  grid-template-columns: repeat(2, 1fr);
-`;
 const Content = styled.div`
   display: grid;
+  min-width: fit-content;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: ${spacing(8)};
 `;
