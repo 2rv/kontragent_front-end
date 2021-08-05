@@ -188,8 +188,14 @@ import {
   MY_COMPANIES_REVIEW_COMPANY_LIST_STORE_NAME,
   myCompaniesReviewCompanyListStore,
 } from '../../core/my-companies-review-company-list';
+import {
+  settingsChangeEmailNotification,
+  SETTINGS_CHANGE_EMAIL_NOTIFICATION_STORE_NAME,
+} from '../../core/settings-notification';
 
 export const reducers = combineReducers({
+  [SETTINGS_CHANGE_EMAIL_NOTIFICATION_STORE_NAME]:
+    settingsChangeEmailNotification,
   [MY_COMPANIES_REVIEW_COMPANY_LIST_STORE_NAME]:
     myCompaniesReviewCompanyListStore,
   [FEED_AND_NOTIFICATIONS_LIST_STORE_NAME]: feedAndNotificationsListStore,

@@ -8,12 +8,10 @@ export function SettingsPhoneComponent(props) {
     initialValue,
     settingsPhoneFieldName,
     pageLoading,
-
     FormPending,
     FormError,
     FormSuccess,
     FormErrorMessage,
-
     dataPending,
     dataError,
     dataErrorMessage,

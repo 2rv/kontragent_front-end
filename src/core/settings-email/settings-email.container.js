@@ -34,9 +34,8 @@ export function SettingEmailContainer() {
 
   const getInitialValue = () => {
     return {
-      [SETTINGS_EMAIL_FIELD_NAME.EMAIL]: getRequestData(settingsEmailState, '')[
-        SETTINGS_EMAIL_DATA_NAME.EMAIL
-      ],
+      [SETTINGS_EMAIL_FIELD_NAME.EMAIL]:
+        settingsEmailState.data?.[SETTINGS_EMAIL_DATA_NAME.EMAIL] || '',
       [SETTINGS_EMAIL_FIELD_NAME.PASSWORD]: '',
     };
   };
@@ -46,9 +45,9 @@ export function SettingEmailContainer() {
     dispatch(settingsFormChangeEmailUploadForm(data));
   };
 
-  //   useEffect(() => {
-  //     dispatch(settingsEmailGetEmail());
-  //   }, []);
+  useEffect(() => {
+    dispatch(settingsEmailGetEmail());
+  }, []);
 
   return (
     <SettingEmailComponent

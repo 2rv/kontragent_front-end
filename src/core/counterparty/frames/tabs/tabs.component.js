@@ -37,6 +37,7 @@ const Button = styled(BasicButton)`
   color: ${THEME_COLOR.TEXT.SECONDARY};
   border: 1px solid transparent;
   min-width: max-content;
+  max-width: fit-content;
   ${(p) => {
     if (p.active)
       return `

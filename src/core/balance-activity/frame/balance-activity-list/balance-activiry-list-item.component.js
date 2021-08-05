@@ -55,7 +55,7 @@ const WhiteFindIcon = styled(FindIcon)`
 `;
 const Content = styled.div`
   display: flex;
-  gap: ${spacing(2)};
+  gap: ${spacing(3)};
   align-items: center;
 `;
 const ImageCase = styled.div`

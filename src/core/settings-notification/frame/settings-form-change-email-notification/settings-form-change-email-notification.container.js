@@ -6,29 +6,47 @@ import { SETTINGS_FORM_CHANGE_EMAIL_NOTIFICATION_FIELD_KEY } from './settings-fo
 export function SettingsFormChangeNotificationContainer(props) {
   const {
     pageLoading,
-    isPending,
-    isError,
-    isSuccess,
-    errorMessage,
-    initialValue,
+
+    dataPending,
+    dataError,
+    dataErrorMessage,
+
+    FormPending,
+    FormError,
+    FormSuccess,
+    FormErrorMessage,
+
     settingsNotificationFieldName,
+    enableReinitialize,
+    initialValue,
+    onSubmitForm,
+    validation,
   } = props;
 
   const EMAIL =
     settingsNotificationFieldName[
       SETTINGS_FORM_CHANGE_EMAIL_NOTIFICATION_FIELD_KEY.EMAIL
     ];
+
   return (
     <div>
-      <Formik initialValues={initialValue}>
+      <Formik
+        enableReinitialize={enableReinitialize}
+        initialValues={initialValue}
+        validate={validation}
+        onSubmit={onSubmitForm}
+      >
         {(props) => (
           <SettingsFormChangeNotificationComponent
             fieldEmail={EMAIL}
             pageLoading={pageLoading}
-            isPending={isPending}
-            isError={isError}
-            isSuccess={isSuccess}
-            errorMessage={errorMessage}
+            dataPending={dataPending}
+            dataError={dataError}
+            dataErrorMessage={dataErrorMessage}
+            FormPending={FormPending}
+            FormError={FormError}
+            FormSuccess={FormSuccess}
+            FormErrorMessage={FormErrorMessage}
             {...props}
           />
         )}

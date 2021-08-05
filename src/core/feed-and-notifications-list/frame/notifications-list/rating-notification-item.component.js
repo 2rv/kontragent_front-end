@@ -52,7 +52,7 @@ const MainCase = styled.div`
 `;
 const Content = styled.div`
   display: flex;
-  gap: ${spacing(2)};
+  gap: ${spacing(3)};
 `;
 const Title = styled(SecondaryText)`
   color: ${THEME_COLOR.TEXT.PRIMARY};

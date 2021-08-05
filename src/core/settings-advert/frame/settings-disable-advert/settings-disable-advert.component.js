@@ -5,22 +5,24 @@ import { SecondaryTitleText } from '../../../../lib/elements/text';
 import { SecondaryText } from '../../../../lib/elements/text';
 import { BasicButton, PrimaryButton } from '../../../../lib/elements/button';
 import { THEME_COLOR } from '../../../../lib/theme';
+import { PrimaryBox } from '../../../../lib/elements/box';
 
 export function SettingsDisableAdvertComponent() {
   return (
-    <IndentLayout>
-      <SectionLayout>
-        <SectionLayout type="SMALL">
-          <SecondaryTitleText tid="SETTINGS.ADVERT.TITLE" />
-          <Subtitle tid="SETTINGS.ADVERT.SUBTITLE" />
+    <PrimaryBox>
+      <IndentLayout>
+        <SectionLayout>
+          <SectionLayout type="SMALL">
+            <SecondaryTitleText tid="SETTINGS.ADVERT.TITLE" />
+            <Subtitle tid="SETTINGS.ADVERT.SUBTITLE" />
+          </SectionLayout>
+          <SectionLayout type="MEDIUM">
+            <Button tid="SETTINGS.ADVERT.BUTTON.FIRST" />
+            <PrimaryButton tid="SETTINGS.ADVERT.BUTTON.SECOND" />
+          </SectionLayout>
         </SectionLayout>
-
-        <SectionLayout type="MEDIUM">
-          <Button tid="SETTINGS.ADVERT.BUTTON.FIRST" />
-          <PrimaryButton tid="SETTINGS.ADVERT.BUTTON.SECOND" />
-        </SectionLayout>
-      </SectionLayout>
-    </IndentLayout>
+      </IndentLayout>
+    </PrimaryBox>
   );
 }
 const Button = styled(BasicButton)`

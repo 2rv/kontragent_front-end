@@ -28,5 +28,4 @@ export const SETTINGS_EMAIL_ACTION_TYPE = {
 
 export const SETTINGS_EMAIL_DATA_NAME = {
   EMAIL: 'email',
-  PASSWORD: 'password',
 };

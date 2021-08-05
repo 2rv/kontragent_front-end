@@ -1,36 +1,56 @@
 import { httpRequest } from '../../main/http';
+import { SETTINGS_FORM_CHANGE_EMAIL_NOTIFICATION_ACTION_TYPE } from './settings-notification.type';
+import { SETTINGS_CHANGE_EMAIL_NOTIFICATION_API } from './settings-notification.constant';
+import { performSettingsNotification } from './settings-notification.convert';
 
-import { SIGNUP_ACTION_TYPE } from './signup.type';
-import { SIGNUP_API } from './signup.constant';
-
-import { authSetData } from '../../lib/common/auth/auth.action';
-import { SIGNUP_FORM_REDIRECT_ON_UPLOAD_PATH } from './signup.constant';
-import { redirect } from '../../main/navigation/navigation.core';
-
-export function signupFormUploadData(data) {
+export function settingsNotificationChangeEmail(data) {
   return async (dispatch) => {
     dispatch({
-      type: SIGNUP_ACTION_TYPE.SIGNUP_FORM_UPLOAD_PENDING,
+      type: SETTINGS_FORM_CHANGE_EMAIL_NOTIFICATION_ACTION_TYPE.SETTINGS_FORM_CHANGE_EMAIL_NOTIFICATION_UPLOAD_PENDING,
     });
 
     try {
       const res = await httpRequest({
-        method: SIGNUP_API.SIGNUP_FORM_UPLOAD.TYPE,
-        url: SIGNUP_API.SIGNUP_FORM_UPLOAD.ENDPOINT,
+        method: SETTINGS_CHANGE_EMAIL_NOTIFICATION_API.CHANGE_EMAIL.TYPE,
+        url: SETTINGS_CHANGE_EMAIL_NOTIFICATION_API.CHANGE_EMAIL.ENDPOINT,
         data,
       });
 
-      dispatch(authSetData(res.data.accessToken));
-
       dispatch({
-        type: SIGNUP_ACTION_TYPE.SIGNUP_FORM_UPLOAD_SUCCESS,
+        type: SETTINGS_FORM_CHANGE_EMAIL_NOTIFICATION_ACTION_TYPE.SETTINGS_FORM_CHANGE_EMAIL_NOTIFICATION_UPLOAD_SUCCESS,
       });
-
-      redirect(SIGNUP_FORM_REDIRECT_ON_UPLOAD_PATH);
     } catch (error) {
       if (error) {
         dispatch({
-          type: SIGNUP_ACTION_TYPE.SIGNUP_FORM_UPLOAD_ERROR,
+          type: SETTINGS_FORM_CHANGE_EMAIL_NOTIFICATION_ACTION_TYPE.SETTINGS_FORM_CHANGE_EMAIL_NOTIFICATION_UPLOAD_ERROR,
+          errorMessage: error.response.data.message,
+        });
+      }
+    }
+  };
+}
+
+export function settingsNotificationGetEmail() {
+  return async (dispatch) => {
+    dispatch({
+      type: SETTINGS_FORM_CHANGE_EMAIL_NOTIFICATION_ACTION_TYPE.SETTINGS_EMAIL_GET_EMAIL_PENDING,
+    });
+
+    try {
+      const res = await httpRequest({
+        method: SETTINGS_CHANGE_EMAIL_NOTIFICATION_API.GET_EMAIL.TYPE,
+        url: SETTINGS_CHANGE_EMAIL_NOTIFICATION_API.GET_EMAIL.ENDPOINT,
+      });
+
+      const data = performSettingsNotification(res.data);
+      dispatch({
+        type: SETTINGS_FORM_CHANGE_EMAIL_NOTIFICATION_ACTION_TYPE.SETTINGS_EMAIL_GET_EMAIL_SUCCESS,
+        data: data,
+      });
+    } catch (error) {
+      if (error) {
+        dispatch({
+          type: SETTINGS_FORM_CHANGE_EMAIL_NOTIFICATION_ACTION_TYPE.SETTINGS_EMAIL_GET_EMAIL_ERROR,
           errorMessage: error.response.data.message,
         });
       }

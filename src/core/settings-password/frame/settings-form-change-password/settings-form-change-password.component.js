@@ -6,6 +6,8 @@ import { ErrorAlert } from '../../../../lib/elements/alert';
 import { SuccessAlert } from '../../../../lib/elements/alert';
 import { PrimaryLoader } from '../../../../lib/elements/loader';
 import styled from 'styled-components';
+import React from 'react';
+import { PrimaryBox } from '../../../../lib/elements/box';
 
 export function SettingsFormChangePasswordComponent(props) {
   const {
@@ -39,63 +41,65 @@ export function SettingsFormChangePasswordComponent(props) {
   };
 
   return (
-    <div>
+    <React.Fragment>
       {(isPending || pageLoading) && <PrimaryLoader />}
-      <IndentLayout>
-        <SectionLayout>
-          <Title tid="SETTINGS.PASSWORD.TITLE" />
-          <form onSubmit={handleSubmit}>
-            <SectionLayout>
-              <PrimaryField
-                titleTid="SETTINGS.PASSWORD.FIELD.OLD_PASSWORD.TITLE"
-                placeholderTid="SETTINGS.PASSWORD.FIELD.OLD_PASSWORD.PLACEHOLDER"
-                name={fieldOldPassword}
-                onChange={handleChange}
-                onBlur={handleBlur}
-                value={values[fieldOldPassword]}
-                error={isFieldError(fieldOldPassword)}
-                type="password"
-              />
+      <PrimaryBox>
+        <IndentLayout>
+          <SectionLayout>
+            <Title tid="SETTINGS.PASSWORD.TITLE" />
+            <form onSubmit={handleSubmit}>
+              <SectionLayout>
+                <PrimaryField
+                  titleTid="SETTINGS.PASSWORD.FIELD.OLD_PASSWORD.TITLE"
+                  placeholderTid="SETTINGS.PASSWORD.FIELD.OLD_PASSWORD.PLACEHOLDER"
+                  name={fieldOldPassword}
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  value={values[fieldOldPassword]}
+                  error={isFieldError(fieldOldPassword)}
+                  type="password"
+                />
 
-              <PrimaryField
-                titleTid="SETTINGS.PASSWORD.FIELD.NEW_PASSWORD.TITLE"
-                placeholderTid="SETTINGS.PASSWORD.FIELD.NEW_PASSWORD.PLACEHOLDER"
-                name={fieldNewPassword}
-                onChange={handleChange}
-                onBlur={handleBlur}
-                value={values[fieldNewPassword]}
-                error={isFieldError(fieldNewPassword)}
-                type="password"
-              />
+                <PrimaryField
+                  titleTid="SETTINGS.PASSWORD.FIELD.NEW_PASSWORD.TITLE"
+                  placeholderTid="SETTINGS.PASSWORD.FIELD.NEW_PASSWORD.PLACEHOLDER"
+                  name={fieldNewPassword}
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  value={values[fieldNewPassword]}
+                  error={isFieldError(fieldNewPassword)}
+                  type="password"
+                />
 
-              <PrimaryField
-                titleTid="SETTINGS.PASSWORD.FIELD.REPEAT_NEW_PASSWORD.TITLE"
-                placeholderTid="SETTINGS.PASSWORD.FIELD.REPEAT_NEW_PASSWORD.PLACEHOLDER"
-                name={fieldRepeatNewPassword}
-                onChange={handleChange}
-                onBlur={handleBlur}
-                value={values[fieldRepeatNewPassword]}
-                error={isFieldError(fieldRepeatNewPassword)}
-                type="password"
-              />
+                <PrimaryField
+                  titleTid="SETTINGS.PASSWORD.FIELD.REPEAT_NEW_PASSWORD.TITLE"
+                  placeholderTid="SETTINGS.PASSWORD.FIELD.REPEAT_NEW_PASSWORD.PLACEHOLDER"
+                  name={fieldRepeatNewPassword}
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  value={values[fieldRepeatNewPassword]}
+                  error={isFieldError(fieldRepeatNewPassword)}
+                  type="password"
+                />
 
-              <PrimaryButton
-                tid="SETTINGS.PASSWORD.BUTTON"
-                disabled={isSubmitDisabled()}
-              />
+                <PrimaryButton
+                  tid="SETTINGS.PASSWORD.BUTTON"
+                  disabled={isSubmitDisabled()}
+                />
 
-              {(isError || errorMessage) && (
-                <ErrorAlert tid={`ERROR.${errorMessage}`} />
-              )}
+                {(isError || errorMessage) && (
+                  <ErrorAlert tid={`ERROR.${errorMessage}`} />
+                )}
 
-              {isSuccess && (
-                <SuccessAlert tid={'SETTINGS.PASSWORD.SUCCESS_MESSAGE'} />
-              )}
-            </SectionLayout>
-          </form>
-        </SectionLayout>
-      </IndentLayout>
-    </div>
+                {isSuccess && (
+                  <SuccessAlert tid={'SETTINGS.PASSWORD.SUCCESS_MESSAGE'} />
+                )}
+              </SectionLayout>
+            </form>
+          </SectionLayout>
+        </IndentLayout>
+      </PrimaryBox>
+    </React.Fragment>
   );
 }
 const Title = styled(SecondaryTitleText)`

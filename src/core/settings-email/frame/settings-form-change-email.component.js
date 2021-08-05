@@ -1,5 +1,4 @@
 import React from 'react';
-import styled from 'styled-components';
 import {
   SectionLayout,
   IndentLayout,
@@ -49,7 +48,7 @@ export function SettingsFormChangeEmailComponent(props) {
 
   return (
     <React.Fragment>
-      {(FormPending || pageLoading) && <PrimaryLoader />}
+      {(FormPending || pageLoading || dataPending) && <PrimaryLoader />}
       <PrimaryBox>
         <IndentLayout>
           <SectionLayout>

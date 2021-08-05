@@ -34,7 +34,7 @@ const MainCase = styled.div`
 `;
 const Content = styled.div`
   display: flex;
-  gap: ${spacing(2)};
+  gap: ${spacing(3)};
 `;
 const AvatarCase = styled.div`
   background-color: ${THEME_COLOR.COLOR.ACCENT};

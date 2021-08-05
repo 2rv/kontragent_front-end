@@ -1,5 +1,3 @@
-import styled from 'styled-components';
-
 import { Settings2FAContainer } from '../settings-2fa';
 import { SettingEmailContainer } from '../settings-email';
 import { SettingsPhoneContainer } from '../settings-phone';
@@ -8,38 +6,20 @@ import { SettingsAdvertContainer } from '../settings-advert';
 import { SettingsNotificationContainer } from '../settings-notification';
 import { SettingsAvatarContainer } from '../settings-avatar';
 import { SectionLayout } from '../../lib/elements/layout';
-
-import { PrimaryBox } from '../../lib/elements/box';
 import { PrimaryTitleText } from '../../lib/elements/text';
-import { spacing } from '../../lib/theme';
-
 export function SettingsComponent() {
   return (
     <SectionLayout type="LARGE">
       <PrimaryTitleText tid="SETTINGS.MAIN_SETTINGS.TITLE" />
-      <PrimaryBox>
-        <Settings2FAContainer />
-      </PrimaryBox>
-      <PrimaryBox>
-        <SettingEmailContainer />
-      </PrimaryBox>
-      <PrimaryBox>
-        <SettingsPhoneContainer />
-      </PrimaryBox>
-      <PrimaryBox>
-        <SettingsPasswordContainer />
-      </PrimaryBox>
+      <Settings2FAContainer />
+      <SettingEmailContainer />
+      <SettingsPhoneContainer />
+      <SettingsPasswordContainer />
       <PrimaryTitleText tid="SETTINGS.MAIN_SETTINGS.CATEGORY.OTHER" />
-      <PrimaryBox>
-        <SettingsAdvertContainer />
-      </PrimaryBox>
-      <PrimaryBox>
-        <SettingsNotificationContainer />
-      </PrimaryBox>
+      <SettingsAdvertContainer />
+      <SettingsNotificationContainer />
       <PrimaryTitleText tid="SETTINGS.MAIN_SETTINGS.CATEGORY.PERSONALIZATION" />
-      <PrimaryBox>
-        <SettingsAvatarContainer />
-      </PrimaryBox>
+      <SettingsAvatarContainer />
     </SectionLayout>
   );
 }

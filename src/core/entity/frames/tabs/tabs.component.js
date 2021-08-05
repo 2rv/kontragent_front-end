@@ -33,6 +33,7 @@ const Container = styled(PrimaryBox)`
 const Button = styled(BasicButton)`
   color: ${THEME_COLOR.TEXT.SECONDARY};
   min-width: max-content;
+  max-width: fit-content;
   border: 1px solid transparent;
   ${(p) => {
     if (p.active)

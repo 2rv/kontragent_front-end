@@ -1,4 +1,3 @@
-import React from 'react';
 import { SettingsFormChangeEmailContainer } from './frame/settings-form-change-email.container';
 
 export function SettingEmailComponent(props) {
@@ -13,7 +12,6 @@ export function SettingEmailComponent(props) {
     initialValue,
     settingsEmailFieldName,
     enableReinitialize,
-
     dataPending,
     dataError,
     dataErrorMessage,

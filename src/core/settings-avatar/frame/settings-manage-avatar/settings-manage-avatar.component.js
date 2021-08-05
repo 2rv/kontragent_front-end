@@ -5,12 +5,13 @@ import { SectionLayout, IndentLayout } from '../../../../lib/elements/layout';
 import { SecondaryTitleText } from '../../../../lib/elements/text';
 import { PrimaryButton, BasicButton } from '../../../../lib/elements/button';
 import { spacing, THEME_COLOR } from '../../../../lib/theme';
+import { PrimaryBox } from '../../../../lib/elements/box';
 
 export function SettingsManageAvatarComponent(props) {
   const { imageURL = '/static/img/tempSettingsAvatarImage.svg' } = props;
 
   return (
-    <React.Fragment>
+    <PrimaryBox>
       <IndentLayout>
         <Title tid="SETTINGS.AVATAR.TITLE" />
         <Container>
@@ -21,7 +22,7 @@ export function SettingsManageAvatarComponent(props) {
           </SectionLayout>
         </Container>
       </IndentLayout>
-    </React.Fragment>
+    </PrimaryBox>
   );
 }
 const Button = styled(BasicButton)`

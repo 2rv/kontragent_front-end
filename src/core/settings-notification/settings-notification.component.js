@@ -1,29 +1,36 @@
-import React from 'react';
-import { PrimaryLoader } from '../../lib/elements/loader';
 import { SettingsFormChangeNotificationContainer } from './frame/settings-form-change-email-notification';
 
 export function SettingsNotificationComponent(props) {
   const {
     pageLoading,
-    isPending,
-    isError,
-    isSuccess,
-    errorMessage,
-    initialValue,
+    dataPending,
+    dataError,
+    dataErrorMessage,
+    FormPending,
+    FormError,
+    FormSuccess,
+    FormErrorMessage,
     settingsNotificationFieldName,
+    enableReinitialize,
+    initialValue,
+    onSubmitForm,
+    validation,
   } = props;
   return (
-    <React.Fragment>
-      {(isPending || pageLoading) && <PrimaryLoader />}
-      <SettingsFormChangeNotificationContainer
-        initialValue={initialValue}
-        settingsNotificationFieldName={settingsNotificationFieldName}
-        pageLoading={pageLoading}
-        isPending={isPending}
-        isError={isError}
-        isSuccess={isSuccess}
-        errorMessage={errorMessage}
-      />
-    </React.Fragment>
+    <SettingsFormChangeNotificationContainer
+      pageLoading={pageLoading}
+      dataPending={dataPending}
+      dataError={dataError}
+      dataErrorMessage={dataErrorMessage}
+      FormPending={FormPending}
+      FormError={FormError}
+      FormSuccess={FormSuccess}
+      FormErrorMessage={FormErrorMessage}
+      settingsNotificationFieldName={settingsNotificationFieldName}
+      enableReinitialize={enableReinitialize}
+      initialValue={initialValue}
+      onSubmitForm={onSubmitForm}
+      validation={validation}
+    />
   );
 }

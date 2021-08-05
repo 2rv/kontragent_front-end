@@ -34,10 +34,8 @@ export function SettingsPhoneContainer() {
 
   const getInitialValue = () => {
     return {
-      [SETTINGS_PHONE_FIELD_NAME.PHONE_NUMBER]: getRequestData(
-        settingsPhoneState,
-        '',
-      )[SETTINGS_PHONE_DATA_NAME.PHONE],
+      [SETTINGS_PHONE_FIELD_NAME.PHONE_NUMBER]:
+        settingsPhoneState.data?.[SETTINGS_PHONE_DATA_NAME.PHONE] || '',
       [SETTINGS_PHONE_FIELD_NAME.PASSWORD]: '',
     };
   };
@@ -47,9 +45,9 @@ export function SettingsPhoneContainer() {
     dispatch(settingsFormChangePhoneUploadForm(data, resetForm));
   };
 
-  //   useEffect(() => {
-  //     dispatch(settingsPhoneGetPhone());
-  //   }, []);
+  useEffect(() => {
+    dispatch(settingsPhoneGetPhone());
+  }, []);
 
   return (
     <SettingsPhoneComponent

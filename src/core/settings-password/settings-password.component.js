@@ -1,5 +1,3 @@
-import React from 'react';
-import { PrimaryLoader } from '../../lib/elements/loader';
 import { SettingsFormChangePasswordContainer } from './frame/settings-form-change-password';
 
 export function SettingsPasswordComponent(props) {
