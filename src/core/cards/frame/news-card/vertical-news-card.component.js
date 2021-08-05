@@ -12,22 +12,33 @@ export function VerticalNewsCardComponent() {
   return (
     <Container>
       <CardImage src="https://bgstaff.ru/upload/bgstaff/pages/startup_programmer.png" />
-      <CardInfo>
+      <Content>
         <CardTitle tid="Новая система проверки контрагентов!" />
         <CardText>
           Задача организации, в особенности же консультация с широким активом
           играет важную роль в формировании систем массового участия.
           <CardLink tid="Читать далее " />
         </CardText>
-      </CardInfo>
+      </Content>
     </Container>
   );
 }
 const Container = styled.div`
   display: flex;
-  width: 100%;
   height: 188px;
   gap: ${spacing(4)};
+`;
+const Content = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: ${spacing(2)};
+  overflow: auto;
+`;
+const CardImage = styled.img`
+  border-radius: ${THEME_SIZE.RADIUS.DEFAULT};
+  height: 100%;
+  object-fit: cover;
+  width: 188px;
 `;
 const CardText = styled(SecondaryText)`
   line-height: 1.5;
@@ -37,20 +48,6 @@ const CardLink = styled(PrimaryLink)`
   font-size: ${THEME_SIZE.FONT.SMALL};
   line-height: 1.5;
 `;
-
-const CardImage = styled.img`
-  display: flex;
-  border-radius: ${THEME_SIZE.RADIUS.DEFAULT};
-  height: 188px;
-  max-width: 188px;
-`;
-const CardInfo = styled.div`
-  display: flex;
-  flex-direction: column;
-  min-height: 0;
-  overflow: auto;
-`;
-
 const CardTitle = styled(PrimaryTitleText)`
   font-size: ${THEME_SIZE.FONT.MEDIUM};
   line-height: 1.5;

@@ -22,7 +22,8 @@ export function CardBody(props) {
 }
 const Container = styled.div`
   display: flex;
-  flex-direction: column;
+  flex: 1;
+  flex-flow: column;
   gap: ${spacing(2)};
 `;
 const Header = styled.div`

@@ -16,16 +16,10 @@ export function ApplicationCardItemComponent() {
     <CardBody
       title={<TitlePrimary tid="DASHBOARD_CARD.IMPORTANT_DIALOGUES" />}
       action={<FindIcon />}
-      content={<DialogList>Заглушка сюда нужен список диалогов</DialogList>}
+      content={null}
     />
   );
 }
-
-const DialogList = styled.div`
-  height: 266px;
-  width: 100%;
-  background-color: bisque;
-`;
 const TitlePrimary = styled(PrimaryText)`
   font-weight: ${THEME_VALUE.FONT_WEIGHT.SEMY_BOLD};
   color: ${THEME_COLOR.TEXT.PRIMARY};

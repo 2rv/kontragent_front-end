@@ -16,11 +16,10 @@ export function SidebarAdvertComponent(props) {
   );
 }
 const Container = styled.div`
-  padding-right: ${spacing(5)};
-  width: 286px;
-  min-height: 286px;
-  overflow: hidden;
+  padding-right: ${spacing(6)};
   display: flex;
+  min-height: 286px;
+  min-width: 310px;
   @media screen and (max-height: 720px) {
     display: none;
   }

@@ -53,6 +53,7 @@ const Content = styled.div`
 const ContentCase = styled.div`
   flex-grow: 1;
   display: flex;
+  z-index: 1;
   flex-direction: column;
   min-height: 0;
   overflow: hidden;
@@ -60,6 +61,7 @@ const ContentCase = styled.div`
 `;
 const MainContent = styled.div`
   flex-grow: 1;
+  width: 100%;
   display: flex;
   flex-direction: column;
   min-height: 0;
@@ -71,7 +73,7 @@ const MainContent = styled.div`
 const OverflowCase = styled.div`
   display: flex;
   flex-grow: 1;
-  width: fit-content;
+  width: 100%;
   min-height: 0;
   overflow: auto;
   padding-right: ${spacing(5)};

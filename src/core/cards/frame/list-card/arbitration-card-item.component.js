@@ -20,39 +20,10 @@ export function ArbitrationCardItemComponent() {
     <CardBody
       title={<TitlePrimary tid="DASHBOARD_CARD.ARBITRATION" />}
       action={<SecondarySelect option={options} />}
-      content={
-        <Column>
-          <ConterpartiesList>
-            <DialogList>Заглушка сюда нужен список диалогов</DialogList>
-          </ConterpartiesList>
-          <ShowMoreButton tid="DASHBOARD_CARD.SHOW_MORE" />{' '}
-        </Column>
-      }
+      content={null}
     />
   );
 }
-const Column = styled.div`
-  display: flex;
-  flex: 1;
-  flex-flow: column;
-`;
-const DialogList = styled.div`
-  height: 172px;
-  width: 100%;
-  background-color: bisque;
-`;
-const ShowMoreButton = styled(TextButton)`
-  color: ${THEME_COLOR.TEXT.SECONDARY};
-  padding: 16px;
-  display: grid;
-  width: 100%;
-  justify-content: center;
-`;
-const ConterpartiesList = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: ${spacing(3)};
-`;
 
 const TitlePrimary = styled(PrimaryText)`
   font-weight: ${THEME_VALUE.FONT_WEIGHT.SEMY_BOLD};

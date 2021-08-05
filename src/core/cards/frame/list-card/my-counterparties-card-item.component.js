@@ -95,7 +95,7 @@ export function CounterpartiesListItemComponent(props) {
         </Sum>
         <Rating>
           {[1, 2, 3, 4, 5].map((item, index) => (
-            <StarIcon key={index} fullStar={userRating >= item} />
+            <StarIcon key={index} activ={userRating >= item ? 1 : 0} />
           ))}
         </Rating>
       </CounterPartiesContent>
@@ -103,7 +103,7 @@ export function CounterpartiesListItemComponent(props) {
   );
 }
 const StarIcon = styled(IconStar)`
-  fill: ${({ fullStar }) => fullStar && THEME_COLOR.TEXT.WARNING};
+  fill: ${(p) => p.activ && THEME_COLOR.TEXT.WARNING};
 `;
 const Rating = styled.div`
   display: grid;

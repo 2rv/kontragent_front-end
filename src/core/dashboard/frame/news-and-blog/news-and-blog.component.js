@@ -18,8 +18,10 @@ export function NewsAndBlogComponent() {
         <ViewAll tid="DASHBOARD.VIEW_ALL" />
       </TitleCase>
       <Content>
+        <Card type="horizontal-news" />
         <Card type="vertical-news" />
         <Card type="full-news" />
+        <Card type="advert-card" />
       </Content>
     </SectionLayout>
   );
@@ -40,6 +42,6 @@ const Title = styled(PrimaryTitleText)`
 `;
 const Content = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: ${spacing(8)};
 `;

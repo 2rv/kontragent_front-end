@@ -9,23 +9,23 @@ import { PrimaryTitleText, SecondaryText } from '../../../../lib/elements/text';
 
 export function AdvertBlockComponent(props) {
   return (
-    <Container>
+    <>
       <CardImage src={'https://i.ytimg.com/vi/G6l368Oa6lk/maxresdefault.jpg'} />
       <CardShadow />
-      <Content>
+      <Container>
         <IsAdvertCase>
           <IsAdvertInfo tid="ADVERT.ADVERT_INFO" />
         </IsAdvertCase>
         <CardTitle tid="Лушчие проверки контрагентов в мире!" />
-      </Content>
-    </Container>
+      </Container>
+    </>
   );
 }
 const CardShadow = styled.div`
   position: absolute;
+  z-index: 0;
   height: 100%;
   width: 100%;
-  z-index: 0;
   border-radius: ${THEME_SIZE.RADIUS.DEFAULT};
   top: 0;
   left: 0;
@@ -33,25 +33,19 @@ const CardShadow = styled.div`
 `;
 const CardImage = styled.img`
   position: absolute;
-  border-radius: ${THEME_SIZE.RADIUS.DEFAULT};
+  z-index: 0;
+  object-fit: cover;
   height: 100%;
   width: 100%;
-  z-index: 0;
+  border-radius: ${THEME_SIZE.RADIUS.DEFAULT};
   top: 0;
   left: 0;
 `;
 const Container = styled.div`
-  width: 100%;
-  height: 100%;
-  border-radius: ${THEME_SIZE.RADIUS.DEFAULT};
-  display: flex;
-`;
-const Content = styled.div`
-  width: 100%;
-  height: 100%;
+  flex: 1 0;
+  z-index: 1;
   display: flex;
   flex-flow: column;
-  z-index: 1;
   justify-content: space-between;
 `;
 const CardTitle = styled(PrimaryTitleText)`

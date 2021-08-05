@@ -9,25 +9,25 @@ import { PrimaryTitleText, SecondaryText } from '../../../../lib/elements/text';
 
 export function AdvertBarComponent(props) {
   return (
-    <Container>
+    <>
       <CardImage
         src={
           'https://upload.wikimedia.org/wikipedia/commons/f/f3/Mono_Crater_closeup-1000px.jpeg'
         }
       />
       <CardShadow />
-      <Content>
+      <Container>
         <CardTitle tid="Лушчие проверки контрагентов в мире!" />
         <IsAdvertCase>
           <IsAdvertInfo tid="ADVERT.ADVERT_INFO" />
         </IsAdvertCase>
-      </Content>
-    </Container>
+      </Container>
+    </>
   );
 }
 const CardShadow = styled.div`
   position: absolute;
-  height: 68px;
+  height: 100%;
   width: 100%;
   z-index: 0;
   border-radius: ${THEME_SIZE.RADIUS.DEFAULT};
@@ -37,23 +37,18 @@ const CardShadow = styled.div`
 `;
 const CardImage = styled.img`
   position: absolute;
+  object-fit: cover;
   border-radius: ${THEME_SIZE.RADIUS.DEFAULT};
-  height: 68px;
+  height: 100%;
   width: 100%;
   z-index: 0;
   top: 0;
   left: 0;
 `;
 const Container = styled.div`
-  width: 100%;
-  height: 36px;
-  border-radius: ${THEME_SIZE.RADIUS.DEFAULT};
-  display: flex;
-`;
-const Content = styled.div`
-  width: 100%;
-  display: flex;
+  flex: 1;
   z-index: 1;
+  display: flex;
   align-items: center;
   justify-content: space-between;
 `;

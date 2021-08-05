@@ -69,18 +69,19 @@ const cardType = (type) => {
 export function DashboardCardComponent({ type, param }) {
   const Card = cardType(type);
   return (
-    <CardBox>
-      <IndentLayout type="STANDART">
-        <Card {...param} />
-      </IndentLayout>
-    </CardBox>
+    <Container>
+      <Card {...param} />
+    </Container>
   );
 }
-const CardBox = styled(PrimaryBox)`
-  position: relative;
+const Container = styled.div`
   box-shadow: 0px 15px 75px rgba(0, 0, 0, 0.1);
+  position: relative;
   display: flex;
-  width: 100%;
+  border-radius: ${THEME_SIZE.RADIUS.DEFAULT};
+  background-color: ${THEME_COLOR.COLOR.BASE};
+  padding: ${spacing(4)};
+  flex: 1 0;
   height: fit-content;
   min-height: inherit;
 `;

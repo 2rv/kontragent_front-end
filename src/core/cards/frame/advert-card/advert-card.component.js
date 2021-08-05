@@ -9,10 +9,10 @@ import { SecondaryText, PrimaryTitleText } from '../../../../lib/elements/text';
 
 export function AdvertCardComponent() {
   return (
-    <Container>
+    <>
       <CardImage src="https://bgstaff.ru/upload/bgstaff/pages/startup_programmer.png" />
       <CardShadow />
-      <Content>
+      <Container>
         <IsAdvertCase>
           <IsAdvertInfo tid="ADVERT.ADVERT_INFO" />
         </IsAdvertCase>
@@ -20,39 +20,31 @@ export function AdvertCardComponent() {
           <CardTitle tid="Личный менеджер в вашем кармане!" />
           <CardText tid="Равным образом постоянное информационно-пропагандистское обеспечение нашей деятельности позволяет оценить" />
         </CardInfo>
-      </Content>
-    </Container>
+      </Container>
+    </>
   );
 }
 const Container = styled.div`
   display: flex;
   flex-flow: column;
-  justify-content: flex-end;
-  width: 100%;
-  height: 188px;
-  gap: ${spacing(4)};
-`;
-const Content = styled.div`
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-flow: column;
-  z-index: 1;
   justify-content: space-between;
+  height: 188px;
+  z-index: 1;
 `;
 const CardShadow = styled.div`
   position: absolute;
   width: 100%;
+  height: 100%;
   bottom: 0;
   left: 0;
-  height: 100%;
   background: linear-gradient(360deg, #000000 0%, rgba(0, 0, 0, 0) 100%);
   border-radius: ${THEME_SIZE.RADIUS.DEFAULT};
 `;
 const CardImage = styled.img`
   position: absolute;
   border-radius: ${THEME_SIZE.RADIUS.DEFAULT};
-  height: 220px;
+  object-fit: cover;
+  height: 100%;
   width: 100%;
   z-index: 0;
   top: 0;
