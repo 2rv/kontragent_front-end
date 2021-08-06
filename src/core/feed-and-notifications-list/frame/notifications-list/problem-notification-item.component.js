@@ -1,13 +1,12 @@
 import styled from 'styled-components';
-import { ReactComponent as StarIcon } from '../../../../asset/svg/star-icon.svg';
+// import { ReactComponent as StarIcon } from '../../../../asset/svg/star-icon.svg';
 import {
   spacing,
   THEME_COLOR,
   THEME_SIZE,
   THEME_VALUE,
 } from '../../../../lib/theme';
-import { PrimaryText, SecondaryText } from '../../../../lib/elements/text';
-import { PrimaryDivider } from '../../../../lib/elements/divider';
+import { SecondaryText } from '../../../../lib/elements/text';
 
 export function ProblemNotificationItemComponent(props) {
   const {} = props;
@@ -15,9 +14,7 @@ export function ProblemNotificationItemComponent(props) {
   return (
     <Content>
       <AvatarCase>
-        <Icon>
-          <StarIcon />
-        </Icon>
+        <Icon>{/* <StarIcon /> */}</Icon>
       </AvatarCase>
       <MainCase>
         <HeaderCase>

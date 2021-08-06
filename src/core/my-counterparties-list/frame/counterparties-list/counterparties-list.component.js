@@ -7,9 +7,9 @@ import {
   THEME_SIZE,
   spacing,
 } from '../../../../lib/theme';
-import { ReactComponent as QuestionIcon } from '../../../../asset/svg/question-icon.svg';
-import { ReactComponent as ApprovedCompanyIcon } from '../../../../asset/svg/approvedCompanyIcon.svg';
-import { ReactComponent as IconStar } from '../../../../asset/svg/star-icon.svg';
+// import { ReactComponent as QuestionIcon } from '../../../../asset/svg/question-icon.svg';
+// import { ReactComponent as ApprovedCompanyIcon } from '../../../../asset/svg/approvedCompanyIcon.svg';
+// import { ReactComponent as IconStar } from '../../../../asset/svg/star-icon.svg';
 import { BaseList } from '../../../../lib/elements/list';
 
 export function CounterpartiesListComponent(props) {
@@ -30,7 +30,7 @@ export function CounterpartiesListComponent(props) {
         <SecondaryText tid="MY_COUNTERPARTIES_LIST.TURNOVER" />
         <LineCase>
           <SecondaryText tid="MY_COUNTERPARTIES_LIST.ADDITIONAL_ACCRUAL" />
-          <QuestionIcon />
+          {/* <QuestionIcon /> */}
         </LineCase>
         <SecondaryText tid="MY_COUNTERPARTIES_LIST.RISKS" />
         <SecondaryText tid="MY_COUNTERPARTIES_LIST.YOUR_ASSESSING" />
@@ -53,7 +53,7 @@ export function CounterpartiesListComponent(props) {
           return (
             <TableCase>
               <CheckCase>
-                {approved ? <ApprovedCompanyIcon /> : <NotApproved />}
+                {/* {approved ? <ApprovedCompanyIcon /> : <NotApproved />} */}
               </CheckCase>
               <MediumText>{company}</MediumText>
               <MediumText>{userCompany}</MediumText>
@@ -65,9 +65,9 @@ export function CounterpartiesListComponent(props) {
               </MediumText>
               <Text>{risks ? risks : 'Нет'}</Text>
               <LineCase>
-                {[1, 2, 3, 4, 5].map((item, index) => (
+                {/* {[1, 2, 3, 4, 5].map((item, index) => (
                   <StarIcon key={index} fullStar={userRating >= item} />
-                ))}
+                ))} */}
               </LineCase>
               <PrimaryText>
                 {generalRating} <Text> Баллов</Text>
@@ -95,10 +95,10 @@ const NotApproved = styled.div`
   background-color: #f3f3f3;
   border-radius: ${THEME_SIZE.RADIUS.DEFAULT};
 `;
-const StarIcon = styled(IconStar)`
-  fill: ${({ fullStar }) =>
-    fullStar ? THEME_COLOR.TEXT.WARNING : THEME_COLOR.COLOR.LIGHT_GREY};
-`;
+// const StarIcon = styled(IconStar)`
+//   fill: ${({ fullStar }) =>
+//     fullStar ? THEME_COLOR.TEXT.WARNING : THEME_COLOR.COLOR.LIGHT_GREY};
+// `;
 const LineCase = styled.div`
   display: flex;
   align-items: center;

@@ -7,8 +7,6 @@ import {
 } from '../../../../lib/theme';
 import { PrimaryTitleText } from '../../../../lib/elements/text';
 import { PrimaryBox } from '../../../../lib/elements/box';
-import { ReactComponent as OptionIcon } from '../../../../asset/svg/option-icon.svg';
-import { ReferralItemComponent } from './referral-item.component';
 import { IndentLayout, SectionLayout } from '../../../../lib/elements/layout';
 import { PrimaryText, SecondaryText } from '../../../../lib/elements/text';
 import { BaseList } from '../../../../lib/elements/list';

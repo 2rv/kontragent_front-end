@@ -9,7 +9,7 @@ import { PrimaryDivider } from '../../../../lib/elements/divider';
 import { PrimaryText } from '../../../../lib/elements/text';
 import { PrimaryBox } from '../../../../lib/elements/box';
 import { PrimaryButton } from '../../../../lib/elements/button';
-import { ReactComponent as FindIcon } from '../../../../asset/svg/find-icon.svg';
+import { ReactComponent as FindIcon } from '../../../../asset/svg/find.svg';
 import { PrimaryLink } from '../../../../lib/elements/link';
 import { CardBody } from '../card-body';
 
@@ -17,7 +17,7 @@ export function AttendanceStatsCardItemComponent() {
   return (
     <CardBody
       title={<TitlePrimary tid="DASHBOARD_CARD.STATS_ATTENDANCE" />}
-      action={<FindIcon />}
+      action={<Find />}
       content={
         <Column>
           <TextCase>
@@ -36,6 +36,9 @@ export function AttendanceStatsCardItemComponent() {
     />
   );
 }
+const Find = styled(FindIcon)`
+  fill: ${THEME_COLOR.TEXT.PRIMARY};
+`;
 const Link = styled(PrimaryLink)`
   font-size: ${THEME_SIZE.FONT.TINY};
   color: ${THEME_COLOR.TEXT.SECONDARY};

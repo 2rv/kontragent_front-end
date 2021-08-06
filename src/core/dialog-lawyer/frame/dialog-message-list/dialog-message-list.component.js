@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { DialogMessageListItemComponent } from './dialog-message-list-item.component';
-import { ReactComponent as LastSeenIcon } from '../../../../asset/svg/last-seen.svg';
+import { ReactComponent as OptionIcon } from '../../../../asset/svg/option.svg';
 import { PrimaryText, SecondaryText } from '../../../../lib/elements/text';
 import { TextareaField } from '../../../../lib/elements/field';
 import {
@@ -28,14 +28,15 @@ export function DialogMessageListComponent(props) {
             <FullName>Илья Зинченко</FullName>
             <LawyerText>Юрист</LawyerText>
           </div>
-          <LastSeenIcon />
+          <OptionIcon />
         </Line>
         <HeaderContentDescription>
           <DescriptionLightGreyText tid="Платные запросы юристам позволяют получить быстрый и понятный ответ в требуемом вопросе," />
           <PrimaryText tid=" количество сообщений юристам ограничено." />
         </HeaderContentDescription>
         <HeaderContentDescription>
-          <SecondaryText tid="Сообщений осталось" />&nbsp;
+          <SecondaryText tid="Сообщений осталось" />
+          &nbsp;
           <PrimaryText>25/10</PrimaryText>
         </HeaderContentDescription>
       </Header>

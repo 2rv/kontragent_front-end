@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { DialogMessageListItemComponent } from './dialog-message-list-item.component';
-import { ReactComponent as LastSeenIcon } from '../../../../asset/svg/last-seen.svg';
+import { ReactComponent as OptionIcon } from '../../../../asset/svg/option.svg';
 import { PrimaryText, SecondaryText } from '../../../../lib/elements/text';
 import { TextareaField } from '../../../../lib/elements/field';
 import {
@@ -9,7 +9,6 @@ import {
   THEME_COLOR,
   THEME_SIZE,
 } from '../../../../lib/theme';
-import { IndentLayout } from '../../../../lib/elements/layout';
 
 export function DialogMessageListComponent(props) {
   const {
@@ -35,7 +34,7 @@ export function DialogMessageListComponent(props) {
             tid="DIALOGS.DIALOG.LAST_SEEN"
             tvalue={{ was: genderId === 0 ? 'Была' : 'Был', time: lastseen }}
           />
-          <LastSeenIcon />
+          <OptionIcon />
         </Line>
       </Header>
       <Content>

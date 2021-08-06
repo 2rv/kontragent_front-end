@@ -1,6 +1,5 @@
 import styled from 'styled-components';
-import { ReactComponent as OptionIcon } from '../../../../../../asset/svg/option-icon.svg';
-import { IndentLayout } from '../../../../../../lib/elements/layout';
+import { ReactComponent as OptionIcon } from '../../../../../../asset/svg/option.svg';
 import {
   PrimaryText,
   SecondaryText,

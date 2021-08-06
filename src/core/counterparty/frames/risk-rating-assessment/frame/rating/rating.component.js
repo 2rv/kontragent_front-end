@@ -1,12 +1,7 @@
 import styled from 'styled-components';
-
-import { ReactComponent as IconStar } from '../../../../../../asset/svg/star-icon.svg';
-
+// import { ReactComponent as IconStar } from '../../../../../../asset/svg/star-icon.svg';
 import { SectionLayout } from '../../../../../../lib/elements/layout';
-import {
-  PrimaryText,
-  SecondaryText,
-} from '../../../../../../lib/elements/text';
+import { SecondaryText } from '../../../../../../lib/elements/text';
 import {
   spacing,
   THEME_COLOR,
@@ -21,9 +16,9 @@ export function RatingComponent() {
         <Case>
           <SecondaryText tid="COUNTERPARTY.RISK_RATING_ASSESSMENT.YOUR_MARK" />
           <Line>
-            {[1, 2, 3, 4, 5].map((item, index) => (
+            {/* {[1, 2, 3, 4, 5].map((item, index) => (
               <StarIcon key={index} active={item <= 4} />
-            ))}
+            ))} */}
           </Line>
         </Case>
         <Case>
@@ -70,10 +65,10 @@ const Case = styled.div`
   gap: ${spacing(2)};
 `;
 
-const StarIcon = styled(IconStar)`
-  fill: ${(p) =>
-    p.active ? THEME_COLOR.TEXT.WARNING : THEME_COLOR.COLOR.LIGHT_GREY};
-`;
+// const StarIcon = styled(IconStar)`
+//   fill: ${(p) =>
+//     p.active ? THEME_COLOR.TEXT.WARNING : THEME_COLOR.COLOR.LIGHT_GREY};
+// `;
 const RedText = styled(SecondaryText)`
   color: ${THEME_COLOR.COLOR.VALIDATION};
   font-weight: ${THEME_VALUE.FONT_WEIGHT.MEDIUM};

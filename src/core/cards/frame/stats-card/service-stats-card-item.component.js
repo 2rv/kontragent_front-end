@@ -8,7 +8,7 @@ import {
 import { PrimaryDivider } from '../../../../lib/elements/divider';
 import { PrimaryText } from '../../../../lib/elements/text';
 import { PrimaryButton } from '../../../../lib/elements/button';
-import { ReactComponent as FindIcon } from '../../../../asset/svg/find-icon.svg';
+import { ReactComponent as FindIcon } from '../../../../asset/svg/find.svg';
 import { CardBody } from '../card-body';
 
 export function ServiceStatsCardItemComponent() {
@@ -20,7 +20,7 @@ export function ServiceStatsCardItemComponent() {
           <TitlePrimary tid="DASHBOARD_CARD.PERIOD.24H" />{' '}
         </>
       }
-      action={<FindIcon />}
+      action={<Find />}
       content={
         <Column>
           <TextCase>
@@ -60,6 +60,9 @@ export function ServiceStatsCardItemComponent() {
     />
   );
 }
+const Find = styled(FindIcon)`
+  fill: ${THEME_COLOR.TEXT.PRIMARY};
+`;
 const TextCase = styled.span`
   display: flex;
 `;

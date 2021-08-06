@@ -1,11 +1,8 @@
 import { AlertPropsType } from './type.alert';
-
 import styled from 'styled-components';
 import { THEME_COLOR, THEME_SIZE } from '../../theme';
 import { spacing } from '../../theme';
-
 import { ReactComponent as AlertIcon } from '../../../asset/svg/alert.svg';
-
 import { text } from '../../common/text';
 
 export function ErrorAlert(props: AlertPropsType) {

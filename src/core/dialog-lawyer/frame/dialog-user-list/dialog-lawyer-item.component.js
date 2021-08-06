@@ -10,7 +10,6 @@ import {
   THEME_COLOR,
   THEME_VALUE,
 } from '../../../../lib/theme';
-import { ReactComponent as StarIcon } from '../../../../asset/svg/star-icon.svg';
 
 export function DialogLawyerItemComponent(props) {
   const { img, name, status, content } = props.data;
@@ -49,9 +48,6 @@ export function DialogLawyerItemComponent(props) {
     </Box>
   );
 }
-const FavoriteIcon = styled(StarIcon)`
-  fill: ${THEME_COLOR.COLOR.LIGHT_GREY};
-`;
 const Box = styled(PrimaryBox)`
   position: relative;
   width: 100%;

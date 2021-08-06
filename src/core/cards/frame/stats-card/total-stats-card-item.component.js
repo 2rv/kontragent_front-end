@@ -6,7 +6,7 @@ import {
   THEME_VALUE,
 } from '../../../../lib/theme';
 import { PrimaryText } from '../../../../lib/elements/text';
-import { ReactComponent as OptionIcon } from '../../../../asset/svg/option-icon.svg';
+import { ReactComponent as OptionIcon } from '../../../../asset/svg/option.svg';
 import { PrimaryLink } from '../../../../lib/elements/link';
 import { CardBody } from '../card-body';
 

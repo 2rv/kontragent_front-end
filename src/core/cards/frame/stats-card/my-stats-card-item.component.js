@@ -7,7 +7,7 @@ import {
 } from '../../../../lib/theme';
 import { PrimaryDivider } from '../../../../lib/elements/divider';
 import { PrimaryText, SecondaryText } from '../../../../lib/elements/text';
-import { ReactComponent as FindIcon } from '../../../../asset/svg/find-icon.svg';
+import { ReactComponent as FindIcon } from '../../../../asset/svg/find.svg';
 import { CardBody } from '../card-body';
 
 export function MyStatsCardItemComponent() {
@@ -20,7 +20,7 @@ export function MyStatsCardItemComponent() {
           <TitlePrimary tid="DASHBOARD_CARD.PERIOD.24H" />
         </>
       }
-      action={<FindIcon />}
+      action={<Find />}
       content={
         <Column>
           <TinyPrimaryText>
@@ -53,6 +53,10 @@ export function MyStatsCardItemComponent() {
     />
   );
 }
+
+const Find = styled(FindIcon)`
+  fill: ${THEME_COLOR.TEXT.PRIMARY};
+`;
 const Column = styled.div`
   display: flex;
   flex-direction: column;

@@ -1,7 +1,5 @@
 import styled from 'styled-components';
 import { TextareaField } from '../../../../../../lib/elements/field';
-import { ReactComponent as SendIcon } from '../../../../../../asset/svg/send-icon.svg';
-import { ReactComponent as FileIcon } from '../../../../../../asset/svg/file-icon.svg';
 import { spacing, THEME_SIZE } from '../../../../../../lib/theme';
 
 export function ReviewsCommentComponent() {

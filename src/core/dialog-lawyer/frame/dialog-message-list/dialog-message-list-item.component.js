@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-
 import { PrimaryButton } from '../../../../lib/elements/button';
 import { PrimaryText, SecondaryText } from '../../../../lib/elements/text';
 import { PrimaryBox } from '../../../../lib/elements/box';
@@ -9,7 +8,8 @@ import {
   THEME_COLOR,
   THEME_VALUE,
 } from '../../../../lib/theme';
-import { ReactComponent as BacketIcon } from '../../../../asset/svg/backet-icon.svg';
+import { ReactComponent as ArchiveIcon } from '../../../../asset/svg/archive.svg';
+
 export function DialogMessageListItemComponent(props) {
   const { img, message } = props.data;
 
@@ -39,7 +39,7 @@ export function DialogMessageListItemComponent(props) {
                   ({ filename, filetype, filesize }, index) => (
                     <FileCase key={index}>
                       <Button>
-                        <BacketIcon />
+                        <ArchiveIcon />
                       </Button>
                       <FileInfo>
                         <BoldText>

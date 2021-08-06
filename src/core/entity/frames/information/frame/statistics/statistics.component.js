@@ -1,13 +1,22 @@
 import styled from 'styled-components';
-
-import { ReactComponent as MenuIcon } from '../../../../../../asset/svg/option-icon.svg';
-import { ReactComponent as SearchIcon } from '../../../../../../asset/svg/search.svg';
-
+// import { ReactComponent as OptionIcon } from '../../../../../../asset/svg/option-icon.svg';
+// import { ReactComponent as FindIcon } from '../../../../../../asset/svg/find-icon.svg';
 import { PrimaryBox } from '../../../../../../lib/elements/box';
-import { SectionLayout, IndentLayout } from '../../../../../../lib/elements/layout';
-import { PrimaryText, SecondaryText } from '../../../../../../lib/elements/text';
+import {
+  SectionLayout,
+  IndentLayout,
+} from '../../../../../../lib/elements/layout';
+import {
+  PrimaryText,
+  SecondaryText,
+} from '../../../../../../lib/elements/text';
 import { PrimaryDivider } from '../../../../../../lib/elements/divider';
-import { spacing, THEME_COLOR, THEME_SIZE, THEME_VALUE } from '../../../../../../lib/theme';
+import {
+  spacing,
+  THEME_COLOR,
+  THEME_SIZE,
+  THEME_VALUE,
+} from '../../../../../../lib/theme';
 
 export function StatisticsComponent() {
   return (
@@ -17,27 +26,37 @@ export function StatisticsComponent() {
           <IndentLayout type="STANDART">
             <HeaderContainer>
               <div>
-                <TitlePrimary tid="ENTITY.DETAIL_INFORMATION.STATISTICS.TOTAL_STATISTICS.TITLE" />&nbsp;
+                <TitlePrimary tid="ENTITY.DETAIL_INFORMATION.STATISTICS.TOTAL_STATISTICS.TITLE" />
+                &nbsp;
                 <TitleSecondary tid="ENTITY.DETAIL_INFORMATION.STATISTICS.TOTAL_STATISTICS.DAY" />
               </div>
-              <MenuIcon />
+              {/* <OptionIcon /> */}
             </HeaderContainer>
             <Divider />
             <Content>
               <CircularProgress />
               <Column>
                 <div>
-                  <TinyTextPrimary tid="250" />&nbsp;
-                  <TinyTextSecondary tid="ENTITY.DETAIL_INFORMATION.STATISTICS.TOTAL_STATISTICS.COUNTERPARTIES_VIEWS" />:
+                  <TinyTextPrimary tid="250" />
+                  &nbsp;
+                  <TinyTextSecondary tid="ENTITY.DETAIL_INFORMATION.STATISTICS.TOTAL_STATISTICS.COUNTERPARTIES_VIEWS" />
+                  :
                 </div>
                 <div>
-                  <RedText tid="25%" />&nbsp;
-                  <RedText tid="ENTITY.DETAIL_INFORMATION.STATISTICS.TOTAL_STATISTICS.NEGATIVE" />,&nbsp;
-                  <GreenText tid="25%" />&nbsp;
-                  <GreenText tid="ENTITY.DETAIL_INFORMATION.STATISTICS.TOTAL_STATISTICS.POSITIVE" />&nbsp;
-                  <TinyTextSecondary tid="ENTITY.DETAIL_INFORMATION.STATISTICS.TOTAL_STATISTICS.AND" />&nbsp;
-                  <BlueText tid="50%" />&nbsp;
-                  <BlueText tid="ENTITY.DETAIL_INFORMATION.STATISTICS.TOTAL_STATISTICS.NOT_RATED" />.
+                  <RedText tid="25%" />
+                  &nbsp;
+                  <RedText tid="ENTITY.DETAIL_INFORMATION.STATISTICS.TOTAL_STATISTICS.NEGATIVE" />
+                  ,&nbsp;
+                  <GreenText tid="25%" />
+                  &nbsp;
+                  <GreenText tid="ENTITY.DETAIL_INFORMATION.STATISTICS.TOTAL_STATISTICS.POSITIVE" />
+                  &nbsp;
+                  <TinyTextSecondary tid="ENTITY.DETAIL_INFORMATION.STATISTICS.TOTAL_STATISTICS.AND" />
+                  &nbsp;
+                  <BlueText tid="50%" />
+                  &nbsp;
+                  <BlueText tid="ENTITY.DETAIL_INFORMATION.STATISTICS.TOTAL_STATISTICS.NOT_RATED" />
+                  .
                 </div>
                 <LinkText tid="ENTITY.DETAIL_INFORMATION.STATISTICS.TOTAL_STATISTICS.LEARN_MORE" />
               </Column>
@@ -50,26 +69,34 @@ export function StatisticsComponent() {
           <IndentLayout type="STANDART">
             <HeaderContainer>
               <TitlePrimary tid="ENTITY.DETAIL_INFORMATION.STATISTICS.STATISTICS_FOR_24H.TITLE" />
-              <SearchIcon />
+              {/* <FindIcon /> */}
             </HeaderContainer>
             <Divider />
             <Content>
               <Column>
                 <div>
-                  <GreenText tid="250" />&nbsp;
-                  <EasyBoldText tid="ENTITY.DETAIL_INFORMATION.STATISTICS.STATISTICS_FOR_24H.COUNTERPARTIES_VIEWS" />&nbsp;
+                  <GreenText tid="250" />
+                  &nbsp;
+                  <EasyBoldText tid="ENTITY.DETAIL_INFORMATION.STATISTICS.STATISTICS_FOR_24H.COUNTERPARTIES_VIEWS" />
+                  &nbsp;
                   <BottomUnderlineText tid="ENTITY.DETAIL_INFORMATION.STATISTICS.STATISTICS_FOR_24H.LEARN_MORE_ABOUT_EACH" />
                 </div>
                 <div>
-                  <RedText tid="1250" />&nbsp;
-                  <ValuteText tid="руб." />&nbsp;
-                  <EasyBoldText tid="ENTITY.DETAIL_INFORMATION.STATISTICS.STATISTICS_FOR_24H.ADDITIONAL_ACCRUALS" />&nbsp;
+                  <RedText tid="1250" />
+                  &nbsp;
+                  <ValuteText tid="руб." />
+                  &nbsp;
+                  <EasyBoldText tid="ENTITY.DETAIL_INFORMATION.STATISTICS.STATISTICS_FOR_24H.ADDITIONAL_ACCRUALS" />
+                  &nbsp;
                   <BottomUnderlineText tid="ENTITY.DETAIL_INFORMATION.STATISTICS.STATISTICS_FOR_24H.HOW_TO_REDUCE_RISK_ACCRUALS" />
                 </div>
                 <div>
-                  <BlueText tid="250 000" />&nbsp;
-                  <ValuteText tid="руб." />&nbsp;
-                  <EasyBoldText tid="ENTITY.DETAIL_INFORMATION.STATISTICS.STATISTICS_FOR_24H.TURNOVER" />&nbsp;
+                  <BlueText tid="250 000" />
+                  &nbsp;
+                  <ValuteText tid="руб." />
+                  &nbsp;
+                  <EasyBoldText tid="ENTITY.DETAIL_INFORMATION.STATISTICS.STATISTICS_FOR_24H.TURNOVER" />
+                  &nbsp;
                 </div>
               </Column>
             </Content>

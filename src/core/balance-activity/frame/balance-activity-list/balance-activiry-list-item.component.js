@@ -10,8 +10,8 @@ import {
   THEME_SIZE,
   THEME_VALUE,
 } from '../../../../lib/theme';
-import { ReactComponent as FindIcon } from '../../../../asset/svg/find-icon-15x15.svg';
-import { ReactComponent as KIcon } from '../../../../asset/svg/k-icon.svg';
+import { ReactComponent as FindIcon } from '../../../../asset/svg/find.svg';
+import { ReactComponent as KIcon } from '../../../../asset/svg/k.svg';
 import { PrimaryDivider } from '../../../../lib/elements/divider';
 
 export function BalanceActivityListItemComponent(props) {
@@ -21,7 +21,7 @@ export function BalanceActivityListItemComponent(props) {
       <Container>
         <Content>
           <ImageCase altColor={check}>
-            {check ? <WhiteFindIcon /> : <KIcon />}
+            {check ? <FindIcon /> : <KIcon />}
           </ImageCase>
           <Column>
             <Title tid={operation} />
@@ -34,6 +34,7 @@ export function BalanceActivityListItemComponent(props) {
     </DividerCase>
   );
 }
+
 const DividerCase = styled.div`
   display: grid;
   padding: 0 ${spacing(8)};
@@ -49,9 +50,6 @@ const Container = styled.div`
   align-items: center;
   gap: ${spacing(3)};
   min-width: max-content;
-`;
-const WhiteFindIcon = styled(FindIcon)`
-  fill: ${THEME_COLOR.COLOR.BASE};
 `;
 const Content = styled.div`
   display: flex;

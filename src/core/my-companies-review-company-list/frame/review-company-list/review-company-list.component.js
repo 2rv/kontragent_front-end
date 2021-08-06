@@ -9,7 +9,7 @@ import {
 import { PrimaryText, SecondaryText } from '../../../../lib/elements/text';
 import { SectionLayout } from '../../../../lib/elements/layout';
 import { CircleDivider } from '../../../../lib/elements/divider';
-import { ReactComponent as OptionIcon } from '../../../../asset/svg/option-icon.svg';
+import { ReactComponent as OptionIcon } from '../../../../asset/svg/option.svg';
 import { MY_COMPANIES_REVIEW_COMPANY_LIST_DATA_NAME } from '../../my-companies-review-company-list.type';
 import { COMPANY_MEMBERS_ROUTE_PATH } from '../../../company-members/company-members.constant';
 

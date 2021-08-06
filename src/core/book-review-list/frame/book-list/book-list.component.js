@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { SectionLayout, IndentLayout } from '../../../../lib/elements/layout';
+import { SectionLayout } from '../../../../lib/elements/layout';
 import { PrimaryDivider } from '../../../../lib/elements/divider';
 import { BaseList } from '../../../../lib/elements/list';
 import { PrimaryText, SecondaryText } from '../../../../lib/elements/text';
@@ -10,8 +10,9 @@ import {
   THEME_VALUE,
   spacing,
 } from '../../../../lib/theme';
-import { ReactComponent as DeleteBookIcon } from '../../../../asset/svg/deletebook.svg';
-import { ReactComponent as LoadBookIcon } from '../../../../asset/svg/loadbook.svg';
+import { ReactComponent as TrashIcon } from '../../../../asset/svg/trash.svg';
+import { ReactComponent as UploadIcon } from '../../../../asset/svg/upload.svg';
+import { BasicButton, PrimaryButton } from '../../../../lib/elements/button';
 
 export function BookListComponent(props) {
   const {
@@ -51,8 +52,12 @@ export function BookListComponent(props) {
               <Text>{bookType}</Text>
               <BoldText>{kontragentNumber}</BoldText>
               <ActionCase>
-                <DeleteBookIcon />
-                <LoadBookIcon />
+                <Button>
+                  <TrashIcon />
+                </Button>
+                <PrimaryButton>
+                  <UploadIcon />
+                </PrimaryButton>
               </ActionCase>
             </TableCase>
           );
@@ -61,6 +66,9 @@ export function BookListComponent(props) {
     </Container>
   );
 }
+const Button = styled(BasicButton)`
+  background-color: ${THEME_COLOR.COLOR.SECONDARY};
+`;
 const Container = styled(SectionLayout)`
   overflow: auto;
   padding-bottom: ${spacing(6)};

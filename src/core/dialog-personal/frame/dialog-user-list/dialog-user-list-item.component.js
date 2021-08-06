@@ -13,7 +13,7 @@ import {
   THEME_COLOR,
   THEME_VALUE,
 } from '../../../../lib/theme';
-import { ReactComponent as StarIcon } from '../../../../asset/svg/star-icon.svg';
+// import { ReactComponent as StarIcon } from '../../../../asset/svg/star-icon.svg';
 
 export function DialogUserListItemComponent(props) {
   const { img, name, status, statusId, content, favorite } = props.data;
@@ -47,15 +47,15 @@ export function DialogUserListItemComponent(props) {
               )}
             </Content>
           </SectionLayout>
-          {favorite && <FavoriteIcon />}
+          {/* {favorite && <FavoriteIcon />} */}
         </Container>
       </IndentLayout>
     </Box>
   );
 }
-const FavoriteIcon = styled(StarIcon)`
-  fill: ${THEME_COLOR.COLOR.LIGHT_GREY};
-`;
+// const FavoriteIcon = styled(StarIcon)`
+//   fill: ${THEME_COLOR.COLOR.LIGHT_GREY};
+// `;
 const Box = styled(PrimaryBox)`
   position: relative;
   width: 100%;

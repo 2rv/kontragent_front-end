@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { PrimaryInput } from './primary.input';
 import { SecondaryInputPropsType } from './type.input';
-import { ReactComponent as SearchIcon } from '../../../asset/svg/searchIcon.svg';
+import { ReactComponent as FindIcon } from '../../../asset/svg/find.svg';
 import { spacing, THEME_COLOR, THEME_SIZE, THEME_VALUE } from '../../theme';
 import { text } from '../../common/text';
 
@@ -14,12 +14,14 @@ export function SecondaryInput(props: SecondaryInputPropsType) {
         placeholder={text(placeholder, placeholderTvalue)}
       />
       <IconContainer>
-        <SearchIcon />
+        <Icon />
       </IconContainer>
     </Container>
   );
 }
-
+const Icon = styled(FindIcon)`
+  fill: ${THEME_COLOR.TEXT.SECONDARY};
+`;
 const Input = styled(PrimaryInput)`
   background-color: inherit;
   font-weight: ${THEME_VALUE.FONT_WEIGHT.MEDIUM};
@@ -34,12 +36,12 @@ const IconContainer = styled.div`
   display: flex;
   position: absolute;
   align-items: center;
-  align-self: flex-end;
   right: 1px;
   bottom: 1px;
+  top: 1px;
+  padding: ${spacing(3)};
+  align-self: flex-end;
   border-radius: ${THEME_SIZE.RADIUS.DEFAULT};
-  background-color: #fff;
-  padding: ${spacing(2.75)} ${spacing(2.75)};
 `;
 
 const Container = styled.div`

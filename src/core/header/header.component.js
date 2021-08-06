@@ -4,10 +4,12 @@ import styled from 'styled-components';
 import { THEME_COLOR, spacing, THEME_SIZE, THEME_VALUE } from '../../lib/theme';
 import { SecondaryText, PrimaryText } from '../../lib/elements/text';
 import { SecondaryButton } from '../../lib/elements/button';
-import { ReactComponent as NotificatiobBellIcon } from '../../asset/svg/notificationBell.svg';
-import { ReactComponent as SidebarLogo } from '../../asset/svg/sidebarLogo.svg';
+import { ReactComponent as NotificationIcon } from '../../asset/svg/notification.svg';
+import { ReactComponent as ExitIcon } from '../../asset/svg/exit.svg';
+import { ReactComponent as FindIcon } from '../../asset/svg/find.svg';
 import { PrimaryLink } from 'src/lib/elements/link';
 import { LOGIN_ROUTE_PATH } from '../login';
+
 export function HeaderComponent(props) {
   const { toggleSidebar, toggleSidebarHandler, isAuth, isMainPage } = props;
   if (isAuth) {
@@ -24,8 +26,12 @@ export function HeaderComponent(props) {
           <KontragentText tid="Контрагент" />
         </Content>
         <Content>
-          <LoginLinkText tid="Выйти" pathname={'/logout'} />
-          <NotificatiobBellIcon />
+          <LoginLinkText tid="Смотри код" pathname={'/logout'}>
+            иконка не впихивается в ссылку надо исправить
+          </LoginLinkText>
+          <ExitIcon />
+          <Find />
+          <NotificationIcon />
           <ImageContainer>
             <Image
               layout="fill"
@@ -53,7 +59,11 @@ export function HeaderComponent(props) {
     </Container>
   );
 }
-
+const Find = styled(FindIcon)`
+  height: 23px;
+  width: 23px;
+  fill: ${THEME_COLOR.TEXT.PRIMARY};
+`;
 const Button = styled.button`
   display: flex;
   flex-flow: column;
@@ -81,7 +91,6 @@ const Content = styled.div`
   align-items: center;
   gap: ${spacing(6)};
 `;
-
 const Container = styled.div`
   padding: ${spacing(8)};
   display: flex;
@@ -91,26 +100,22 @@ const Container = styled.div`
   width: 100%;
   background-color: ${THEME_COLOR.COLOR.BASE};
 `;
-
 const KontragentText = styled(SecondaryText)`
   font-size: ${THEME_SIZE.FONT.HUGE};
   font-weight: ${THEME_VALUE.FONT_WEIGHT.BOLD};
   color: ${THEME_COLOR.TEXT.ACCENT};
 `;
-
 const ImageContainer = styled.div`
   width: 30px;
   height: 30px;
   position: relative;
 `;
-
 const SendRequestButton = styled(SecondaryButton)`
   color: ${THEME_COLOR.COLOR.ACCENT};
   background-color: transparent;
   border-radius: 100px;
   border: 3px solid ${THEME_COLOR.COLOR.ACCENT};
 `;
-
 const LoginLinkText = styled(PrimaryLink)`
   font-weight: ${THEME_VALUE.FONT_WEIGHT.SEMY_BOLD};
 `;

@@ -8,18 +8,21 @@ import {
 import { PrimaryDivider } from '../../../../lib/elements/divider';
 import { PrimaryText } from '../../../../lib/elements/text';
 import { PrimaryButton } from '../../../../lib/elements/button';
-import { ReactComponent as FindIcon } from '../../../../asset/svg/find-icon.svg';
+import { ReactComponent as FindIcon } from '../../../../asset/svg/find.svg';
 import { CardBody } from '../card-body';
 
 export function ApplicationCardItemComponent() {
   return (
     <CardBody
       title={<TitlePrimary tid="DASHBOARD_CARD.IMPORTANT_DIALOGUES" />}
-      action={<FindIcon />}
+      action={<Find />}
       content={null}
     />
   );
 }
+const Find = styled(FindIcon)`
+  fill: ${THEME_COLOR.TEXT.PRIMARY};
+`;
 const TitlePrimary = styled(PrimaryText)`
   font-weight: ${THEME_VALUE.FONT_WEIGHT.SEMY_BOLD};
   color: ${THEME_COLOR.TEXT.PRIMARY};

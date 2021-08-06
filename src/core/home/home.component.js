@@ -6,10 +6,10 @@ import {
 import { spacing, THEME_COLOR, THEME_SIZE, THEME_VALUE } from 'src/lib/theme';
 import styled from 'styled-components';
 import { HeaderContainer as Header } from '../header';
-import { ReactComponent as HomeSVG } from '../../asset/svg/home.svg';
+import { ReactComponent as HomePageIcon } from '../../asset/svg/home-page.svg';
+import { ReactComponent as ArrowIcon } from '../../asset/svg/button-arrow.svg';
 import { PrimaryLink } from 'src/lib/elements/link';
-import { PrimaryButton } from 'src/lib/elements/button';
-import { ReactComponent as ArrowRight } from '../../asset/svg/arrow-right-icon.svg';
+import { BasicButton } from 'src/lib/elements/button';
 
 export function HomeComponent() {
   return (
@@ -35,19 +35,21 @@ export function HomeComponent() {
         </Content>
         <Case>
           <Background>
-            <HomeSVGCase>
-              <HomeSVG />
-            </HomeSVGCase>
+            <HomeImageCase>
+              <HomePageIcon />
+            </HomeImageCase>
           </Background>
         </Case>
       </Main>
     </Container>
   );
 }
-const ArrowIcon = styled(ArrowRight)`
-  height: 20px;
+const HomeImageCase = styled.div`
+  width: 130%;
+  right: 3%;
+  position: absolute;
 `;
-const Button = styled(PrimaryButton)`
+const Button = styled(BasicButton)`
   border-radius: 100px;
   width: 260px;
   height: 70px;
@@ -67,13 +69,12 @@ const Button = styled(PrimaryButton)`
     width: 100%;
   } ;
 `;
-const LinkButton = styled(PrimaryButton)`
+const LinkButton = styled(BasicButton)`
   align-items: center;
   justify-content: center;
-  width: max-content;
+  min-width: max-content;
   display: flex;
   gap: 10px;
-  background-color: transparent;
   @media screen and (max-width: 720px) {
     font-size: ${THEME_SIZE.FONT.SMALL};
     height: 50px;
@@ -132,12 +133,6 @@ const Title = styled(PrimaryTitleText)`
     font-size: ${THEME_SIZE.FONT.HUGE};
     line-height: 1.5;
   } ;
-`;
-
-const HomeSVGCase = styled.div`
-  width: 130%;
-  right: 3%;
-  position: absolute;
 `;
 const Background = styled.div`
   display: flex;
