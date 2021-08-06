@@ -1,13 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 import { spacing, THEME_COLOR, THEME_SIZE, THEME_VALUE } from '../../theme';
-
 import { text } from '../../common/text';
-
 import { SecondaryText } from '../text';
-
-import { ReactComponent as ArrowIcon } from '../../../asset/svg/selectArrow.svg';
-
+import { ReactComponent as ArrowIcon } from '../../../asset/svg/select-arrow.svg';
 import { PrimarySelectPropsType } from './type.field';
 
 export function PrimarySelect(props: PrimarySelectPropsType) {
@@ -23,7 +19,7 @@ export function PrimarySelect(props: PrimarySelectPropsType) {
             </option>
           ))}
         </Select>
-        <SelectArrowIcon />
+        <Icon />
       </SelectWrapper>
     </Container>
   );
@@ -33,7 +29,7 @@ const SelectWrapper = styled.div`
   position: relative;
 `;
 
-const SelectArrowIcon = styled(ArrowIcon)`
+const Icon = styled(ArrowIcon)`
   position: absolute;
   top: 0;
   bottom: 0;

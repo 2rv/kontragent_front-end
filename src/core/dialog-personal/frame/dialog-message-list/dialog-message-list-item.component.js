@@ -9,8 +9,8 @@ import {
   THEME_COLOR,
   THEME_VALUE,
 } from '../../../../lib/theme';
-import { ReactComponent as BacketIcon } from '../../../../asset/svg/backet-icon.svg';
-import { SectionLayout } from '../../../../lib/elements/layout';
+import { ReactComponent as ArchiveIcon } from '../../../../asset/svg/archive.svg';
+
 export function DialogMessageListItemComponent(props) {
   const { img, message } = props.data;
 
@@ -40,7 +40,7 @@ export function DialogMessageListItemComponent(props) {
                   ({ filename, filetype, filesize }, index) => (
                     <FileCase key={index}>
                       <Button>
-                        <BacketIcon />
+                        <ArchiveIcon />
                       </Button>
                       <FileInfo>
                         <BoldText>

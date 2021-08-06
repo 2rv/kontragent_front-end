@@ -8,7 +8,7 @@ import {
 import { PrimaryDivider } from '../../../../lib/elements/divider';
 import { PrimaryLink } from '../../../../lib/elements/link';
 import { PrimaryText, SecondaryText } from '../../../../lib/elements/text';
-import { ReactComponent as IconStar } from '../../../../asset/svg/star-icon.svg';
+// import { ReactComponent as IconStar } from '../../../../asset/svg/star-icon.svg';
 import { CardBody } from '../card-body';
 
 const myCounterpartiesListData = [
@@ -94,17 +94,17 @@ export function CounterpartiesListItemComponent(props) {
           {turnover} <Text> руб.</Text>
         </Sum>
         <Rating>
-          {[1, 2, 3, 4, 5].map((item, index) => (
+          {/* {[1, 2, 3, 4, 5].map((item, index) => (
             <StarIcon key={index} activ={userRating >= item ? 1 : 0} />
-          ))}
+          ))} */}
         </Rating>
       </CounterPartiesContent>
     </CounterPartiesCase>
   );
 }
-const StarIcon = styled(IconStar)`
-  fill: ${(p) => p.activ && THEME_COLOR.TEXT.WARNING};
-`;
+// const StarIcon = styled(IconStar)`
+//   fill: ${(p) => p.activ && THEME_COLOR.TEXT.WARNING};
+// `;
 const Rating = styled.div`
   display: grid;
   grid-template-columns: repeat(5, 1fr);

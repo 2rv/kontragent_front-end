@@ -8,7 +8,7 @@ import {
 import { PrimaryTitleText, SecondaryText } from '../../../../lib/elements/text';
 import { Card } from '../../../cards';
 import { PrimaryButton } from '../../../../lib/elements/button';
-import { ReactComponent as IconPlus } from '../../../../asset/svg/plus-icon.svg';
+import { ReactComponent as IconPlus } from '../../../../asset/svg/plus.svg';
 import { SectionLayout } from '../../../../lib/elements/layout';
 
 export function ControlBlockComponent() {
@@ -30,7 +30,7 @@ export function ControlBlockComponent() {
         <Card type="arbitration" />
       </Content>
       <Button>
-        <PlusIcon />
+        <Plus />
         <ButtonText tid="DASHBOARD.ADD_BLOCK" />
       </Button>
     </SectionLayout>
@@ -49,7 +49,7 @@ const ButtonText = styled(SecondaryText)`
   font-size: ${THEME_SIZE.FONT.DEFAULT};
   font-weight: ${THEME_VALUE.FONT_WEIGHT.MEDIUM};
 `;
-const PlusIcon = styled(IconPlus)`
+const Plus = styled(IconPlus)`
   width: 40px;
   height: 40px;
   padding: ${spacing(2.5)};

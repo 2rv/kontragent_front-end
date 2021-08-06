@@ -17,9 +17,7 @@ export function ErrorPageComponent() {
   );
 }
 const ImageCase = styled.div`
-  display: flex;
-  height: fit-content;
-  flex: 1 0;
+  height: max-content;
   @media screen and (max-height: 590px) {
     display: none;
   }
@@ -29,6 +27,7 @@ const Container = styled.div`
   justify-content: center;
   align-items: center;
   flex: 1;
+  min-height: max-content;
   flex-flow: column;
   gap: ${spacing(3)};
 `;

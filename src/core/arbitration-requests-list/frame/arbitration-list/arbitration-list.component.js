@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { spacing, THEME_COLOR, THEME_VALUE } from '../../../../lib/theme';
 import { PrimaryText, SecondaryText } from '../../../../lib/elements/text';
 import { CircleDivider } from '../../../../lib/elements/divider';
-import { ReactComponent as MessageIcon } from '../../../../asset/svg/message-icon.svg';
+import { ReactComponent as MessageIcon } from '../../../../asset/svg/message.svg';
 import { SectionLayout } from '../../../../lib/elements/layout';
 import { BaseList } from '../../../../lib/elements/list';
 

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { SectionLayout } from '../../../../lib/elements/layout';
-import { LegalEntitiesListItem } from './legal-entities-list.item';
+
 import { PrimaryText, SecondaryText } from '../../../../lib/elements/text';
 import {
   THEME_COLOR,
@@ -9,7 +9,7 @@ import {
   THEME_VALUE,
 } from '../../../../lib/theme';
 import { PrimaryDivider } from '../../../../lib/elements/divider';
-import { ReactComponent as QuestionIcon } from '../../../../asset/svg/question-icon.svg';
+import { ReactComponent as QuestionIcon } from '../../../../asset/svg/question.svg';
 import { BaseList } from '../../../../lib/elements/list';
 
 export function LegalEntitiesListComponent(props) {
@@ -100,7 +100,7 @@ const TableCase = styled.div`
   display: grid;
   grid-template-columns:
     minmax(370px, 9fr) minmax(41px, 1fr) minmax(94px, 2fr) minmax(130px, 3fr)
-    minmax(125px, 2.5fr) minmax(41px, 1fr) minmax(140px, 3fr) minmax(70px, 1fr) minmax(120px, 3fr);
+    minmax(130px, 2.5fr) minmax(41px, 1fr) minmax(140px, 3fr) minmax(70px, 1fr) minmax(120px, 3fr);
   gap: ${spacing(4)};
   align-items: center;
   width: 100%;

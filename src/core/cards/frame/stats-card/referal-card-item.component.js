@@ -7,7 +7,7 @@ import {
 } from '../../../../lib/theme';
 import { PrimaryDivider } from '../../../../lib/elements/divider';
 import { PrimaryText, SecondaryText } from '../../../../lib/elements/text';
-import { ReactComponent as FindIcon } from '../../../../asset/svg/find-icon.svg';
+import { ReactComponent as FindIcon } from '../../../../asset/svg/find.svg';
 import { PrimaryLink } from '../../../../lib/elements/link';
 import { SectionLayout } from '../../../../lib/elements/layout';
 import { CardBody } from '../card-body';
@@ -16,7 +16,7 @@ export function ReferalCardItemComponent() {
   return (
     <CardBody
       title={<TitlePrimary tid="DASHBOARD_CARD.REFERRAL_SYSTEM" />}
-      action={<FindIcon />}
+      action={<Find />}
       content={
         <Column>
           <Text>
@@ -37,6 +37,9 @@ export function ReferalCardItemComponent() {
     />
   );
 }
+const Find = styled(FindIcon)`
+  fill: ${THEME_COLOR.TEXT.PRIMARY};
+`;
 const Link = styled(PrimaryLink)`
   font-size: ${THEME_SIZE.FONT.TINY};
   color: ${THEME_COLOR.TEXT.SECONDARY};

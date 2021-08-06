@@ -1,7 +1,5 @@
 import styled from 'styled-components';
 import { ReactComponent as MessageIcon } from '../../../../asset/svg/message.svg';
-import { PrimaryBox } from '../../../../lib/elements/box';
-import { IndentLayout, SectionLayout } from '../../../../lib/elements/layout';
 import { PrimaryText, SecondaryText } from '../../../../lib/elements/text';
 import { CircleDivider } from '../../../../lib/elements/divider';
 import {

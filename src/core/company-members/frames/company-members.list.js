@@ -5,7 +5,7 @@ import {
   THEME_SIZE,
   THEME_VALUE,
 } from '../../../lib/theme';
-import { ReactComponent as OptionIcon } from '../../../asset/svg/option-icon.svg';
+import { ReactComponent as OptionIcon } from '../../../asset/svg/option.svg';
 import { SectionLayout, IndentLayout } from '../../../lib/elements/layout';
 import { SecondaryText, PrimaryText } from '../../../lib/elements/text';
 import { IconButton, SecondaryTextButton } from 'src/lib/elements/button';

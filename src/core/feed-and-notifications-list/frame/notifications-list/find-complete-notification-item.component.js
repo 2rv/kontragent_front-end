@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { ReactComponent as IconFind } from '../../../../asset/svg/find-icon-15x15.svg';
+import { ReactComponent as FindIcon } from '../../../../asset/svg/find.svg';
 import {
   spacing,
   THEME_COLOR,
@@ -23,9 +23,6 @@ export function FindCompleteNotificationItemComponent(props) {
     </Content>
   );
 }
-const FindIcon = styled(IconFind)`
-  fill: ${THEME_COLOR.COLOR.BASE};
-`;
 const MainCase = styled.div`
   display: flex;
   flex-direction: column;

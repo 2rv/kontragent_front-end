@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { spacing, THEME_COLOR, THEME_SIZE, THEME_VALUE } from '../../theme';
 import { text } from '../../common/text';
-import { ReactComponent as ArrowIcon } from '../../../asset/svg/selectArrow.svg';
+import { ReactComponent as ArrowIcon } from '../../../asset/svg/select-arrow.svg';
 import { SecondarySelectPropsType } from './type.field';
 
 export function SecondarySelect(props: SecondarySelectPropsType) {
@@ -16,7 +16,7 @@ export function SecondarySelect(props: SecondarySelectPropsType) {
           </option>
         ))}
       </Select>
-      <SelectArrowIcon />
+      <Icon />
     </Container>
   );
 }
@@ -28,8 +28,11 @@ const Container = styled.div`
   align-items: center;
 `;
 
-const SelectArrowIcon = styled(ArrowIcon)`
+const Icon = styled(ArrowIcon)`
   position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
   right: ${spacing(4)};
   pointer-events: none;
 `;

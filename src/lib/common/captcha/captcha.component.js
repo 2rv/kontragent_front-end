@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { spacing, THEME_SIZE } from '../../theme';
 import { FieldLayout } from '../../../lib/elements/layout';
-import { ReactComponent as ReplyIcon } from '../../../asset/svg/replay.svg';
+import { ReactComponent as ReplayIcon } from '../../../asset/svg/replay.svg';
 import { PrimaryField } from '../../../lib/elements/field';
 import { FieldSkeleton } from '../../elements/skeleton';
 import { ErrorMessage } from '../../../lib/elements/error';
@@ -41,7 +41,7 @@ export const CaptchaFieldComponent = ({
             <React.Fragment>
               <CaptchaImage src={captcha} />
               <Wrapper onClick={loadCaptcha}>
-                <Replay />
+                <Icon />
               </Wrapper>
             </React.Fragment>
           )}
@@ -62,6 +62,10 @@ export const CaptchaFieldComponent = ({
     </div>
   );
 };
+const Icon = styled(ReplayIcon)`
+  width: 20px;
+`;
+
 const Captcha = styled.div`
   width: 100%;
   min-width: 100px;
@@ -103,11 +107,6 @@ const Wrapper = styled.div`
     opacity: 1;
   }
 `;
-
-const Replay = styled(ReplyIcon)`
-  width: 20px;
-`;
-
 const ErrorContainer = styled.div`
   margin-top: ${spacing(1)};
 `;

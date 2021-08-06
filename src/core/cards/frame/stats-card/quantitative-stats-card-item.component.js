@@ -8,7 +8,7 @@ import {
 import { PrimaryDivider } from '../../../../lib/elements/divider';
 import { PrimaryText, SecondaryText } from '../../../../lib/elements/text';
 import { SectionLayout } from '../../../../lib/elements/layout';
-import { ReactComponent as OptionIcon } from '../../../../asset/svg/option-icon.svg';
+import { ReactComponent as OptionIcon } from '../../../../asset/svg/option.svg';
 import { PrimaryLink } from '../../../../lib/elements/link';
 import { CardBody } from '../card-body';
 
@@ -35,6 +35,7 @@ export function QuantitativeStatsCardItemComponent() {
     />
   );
 }
+
 const Link = styled(PrimaryLink)`
   color: ${THEME_COLOR.TEXT.ACCENT};
 `;

@@ -1,11 +1,10 @@
 import { BaseList } from '../../../../lib/elements/list';
 import styled from 'styled-components';
 import { spacing, THEME_COLOR, THEME_VALUE } from '../../../../lib/theme';
-import { SectionLayout, IndentLayout } from '../../../../lib/elements/layout';
-import { PrimaryBox } from '../../../../lib/elements/box';
+import { SectionLayout } from '../../../../lib/elements/layout';
 import { PrimaryText, SecondaryText } from '../../../../lib/elements/text';
 import { CircleDivider } from '../../../../lib/elements/divider';
-import { ReactComponent as MessageIcon } from '../../../../asset/svg/message-icon.svg';
+import { ReactComponent as MessageIcon } from '../../../../asset/svg/message.svg';
 import Image from 'next/image';
 
 export function LawyerRequestListComponent(props) {

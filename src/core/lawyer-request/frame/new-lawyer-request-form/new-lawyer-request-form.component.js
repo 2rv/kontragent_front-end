@@ -1,7 +1,4 @@
 import styled from 'styled-components';
-
-import { ReactComponent as FileIcon } from '../../../../asset/svg/file.svg';
-
 import {
   PrimarySelect,
   PrimaryField,
@@ -22,7 +19,6 @@ import {
   SectionLayout,
   ButtonLayout,
 } from '../../../../lib/elements/layout';
-
 import {
   spacing,
   THEME_COLOR,

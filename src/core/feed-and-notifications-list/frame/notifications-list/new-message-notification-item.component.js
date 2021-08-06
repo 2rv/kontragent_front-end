@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { ReactComponent as DotsIcon } from '../../../../asset/svg/dots-icon.svg';
+import { ReactComponent as MoreIcon } from '../../../../asset/svg/more.svg';
 import {
   spacing,
   THEME_COLOR,
@@ -7,7 +7,6 @@ import {
   THEME_VALUE,
 } from '../../../../lib/theme';
 import { PrimaryText, SecondaryText } from '../../../../lib/elements/text';
-import { PrimaryDivider } from '../../../../lib/elements/divider';
 
 export function NewMessageNotificationItemComponent(props) {
   const {} = props;
@@ -22,7 +21,7 @@ export function NewMessageNotificationItemComponent(props) {
           <SecondaryText tid="Илья зинченко ждёт вашего ответа." />
           &nbsp;
           <button>
-            <Dots />
+            <More />
           </button>
         </div>
         <Time tid="3 часа назад" />
@@ -30,7 +29,7 @@ export function NewMessageNotificationItemComponent(props) {
     </Content>
   );
 }
-const Dots = styled(DotsIcon)`
+const More = styled(MoreIcon)`
   margin-bottom: 15%;
 `;
 const Avatar = styled.img`

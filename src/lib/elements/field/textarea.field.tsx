@@ -25,7 +25,7 @@ export function TextareaField(props: TextAreaPropsType) {
   } = props;
   const paddingRight = (() => {
     let PR = 4;
-    if (isFile) PR += 5;
+    if (isFile) PR += 6;
     if (isSend) PR += 6;
     return PR;
   })();
@@ -60,6 +60,7 @@ export function TextareaField(props: TextAreaPropsType) {
 const ActionCase = styled.div`
   position: absolute;
   display: flex;
+  gap: ${spacing(2)};
   top: ${spacing(4)};
   right: ${spacing(4)};
   align-items: center;

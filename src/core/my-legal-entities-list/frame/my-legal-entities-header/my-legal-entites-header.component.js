@@ -1,7 +1,4 @@
 import styled from 'styled-components';
-
-import { ReactComponent as Search } from '../../../../asset/svg/search.svg';
-
 import { SecondarySelect } from '../../../../lib/elements/field';
 import { SecondaryInput } from '../../../../lib/elements/input';
 import { SectionLayout } from '../../../../lib/elements/layout';
