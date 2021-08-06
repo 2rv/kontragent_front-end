@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import { SecondaryText } from '../../../../lib/elements/text';
 import { PrimaryLink } from '../../../../lib/elements/link';
 import { SectionLayout } from '../../../../lib/elements/layout';
-import { LOGIN_PAGE_RESTORE_PATH } from '../../login.constant';
+import { AUTH_RECOVERY_ACCOUNT_ROUTE_PATH } from '../../../auth-recovery-account';
 import { SIGNUP_ROUTE_PATH } from '../../../signup';
 import { spacing } from '../../../../lib/theme';
 
@@ -16,7 +16,7 @@ export function LoginFooterComponent() {
         <SecondaryText tid="LOGIN.LOGIN_FORM.RESTORE_PROPOSAL" />
         <PrimaryLink
           tid="LOGIN.LOGIN_FORM.LINK_TO_RESTORE_PASSWORD"
-          pathname={LOGIN_PAGE_RESTORE_PATH}
+          pathname={AUTH_RECOVERY_ACCOUNT_ROUTE_PATH}
         />
       </Line>
       <Line>

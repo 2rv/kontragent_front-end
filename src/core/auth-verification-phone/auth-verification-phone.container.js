@@ -39,7 +39,7 @@ export function AuthVerificationPhoneContainer() {
   const authVerificationPhoneSendCode = () => {
     dispatch(authFormVerificationPhoneSendCode());
   };
-  //   useEffect(authVerificationPhoneSendCode, []);
+  useEffect(authVerificationPhoneSendCode, []);
 
   const authFormVerificationPhoneSendData = (values) => {
     const code = values[AUTH_VERIFICATION_PHONE_FIELD_NAME.CODE];

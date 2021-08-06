@@ -42,12 +42,12 @@ export function settingsFormChangeEmailUploadForm(data) {
     });
 
     try {
-      await httpRequest({
+      const res = await httpRequest({
         method: SETTINGS_FORM_CHANGE_EMAIL_API.TYPE,
         url: SETTINGS_FORM_CHANGE_EMAIL_API.ENDPOINT,
         data,
       });
-
+      console.log(res);
       dispatch({
         type: SETTINGS_EMAIL_ACTION_TYPE.SETTINGS_FORM_CHANGE_EMAIL_UPLOAD_SUCCESS,
       });

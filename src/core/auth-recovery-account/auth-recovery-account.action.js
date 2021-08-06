@@ -3,7 +3,7 @@ import { httpRequest } from '../../main/http';
 import { AUTH_RECOVERY_ACCOUNT_ACTION_TYPE } from './auth-recovery-account.type';
 import {
   AUTH_RECOVERY_ACCOUNT_API,
-  AUTH_RECOVERY_ACCOUNT_REDIRECT_ON_UPLOAD_PATH,
+  AUTH_RECOVERY_ACCOUNT_REDIRECT_ON_NEXT_STEP,
 } from './auth-recovery-account.constant';
 
 import { redirect } from '../../main/navigation/navigation.core';
@@ -22,10 +22,10 @@ export function authFormRecoveryAccountUploadData(data) {
           .ENDPOINT,
         data,
       });
-
       dispatch({
         type: AUTH_RECOVERY_ACCOUNT_ACTION_TYPE.AUTH_FORM_RECOVERY_ACCOUNT_UPLOAD_SUCCESS,
       });
+      redirect(AUTH_RECOVERY_ACCOUNT_REDIRECT_ON_NEXT_STEP);
     } catch (error) {
       if (error) {
         dispatch({

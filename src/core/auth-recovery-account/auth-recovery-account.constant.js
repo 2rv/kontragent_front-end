@@ -11,5 +11,5 @@ export const AUTH_RECOVERY_ACCOUNT_API = {
   },
 };
 
-export const AUTH_RECOVERY_ACCOUNT_REDIRECT_ON_UPLOAD_PATH =
-  '/auth-change-password';
+export const AUTH_RECOVERY_ACCOUNT_REDIRECT_ON_NEXT_STEP =
+  '/auth/email-verification';
