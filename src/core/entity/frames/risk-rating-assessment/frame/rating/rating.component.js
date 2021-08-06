@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-// import { ReactComponent as IconStar } from '../../../../../../asset/svg/star-icon.svg';
 import { SectionLayout } from '../../../../../../lib/elements/layout';
 import {
   PrimaryText,
@@ -11,6 +10,7 @@ import {
   THEME_SIZE,
   THEME_VALUE,
 } from '../../../../../../lib/theme';
+import { Rating } from '../../../../../../lib/elements/stars-rating';
 
 export function RatingComponent() {
   return (
@@ -18,11 +18,8 @@ export function RatingComponent() {
       <SectionLayout>
         <Case>
           <SecondaryText tid="ENTITY.RISK_RATING_ASSESSMENT.YOUR_MARK" />
-          <Line>
-            {/* {[1, 2, 3, 4, 5].map((item, index) => (
-              <StarIcon key={index} active={item <= 4} />
-            ))} */}
-          </Line>
+
+          <Rating value={3} />
         </Case>
         <Case>
           <SecondaryText tid="ENTITY.RISK_RATING_ASSESSMENT.TURNOVER" />
@@ -67,11 +64,6 @@ const Case = styled.div`
   flex-direction: column;
   gap: ${spacing(2)};
 `;
-
-// const StarIcon = styled(IconStar)`
-//   fill: ${(p) =>
-//     p.active ? THEME_COLOR.TEXT.WARNING : THEME_COLOR.COLOR.LIGHT_GREY};
-// `;
 const RedText = styled(SecondaryText)`
   color: ${THEME_COLOR.COLOR.VALIDATION};
   font-weight: ${THEME_VALUE.FONT_WEIGHT.MEDIUM};

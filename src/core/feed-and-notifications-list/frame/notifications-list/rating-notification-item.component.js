@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-// import { ReactComponent as StarIcon } from '../../../../asset/svg/star-icon.svg';
+import { ReactComponent as StarFull } from '../../../../asset/svg/star-full.svg';
 import {
   spacing,
   THEME_COLOR,
@@ -13,7 +13,9 @@ export function RatingNotificationItemComponent(props) {
 
   return (
     <Content>
-      <AvatarCase>{/* <StarIcon /> */}</AvatarCase>
+      <AvatarCase>
+        <StarIcon />
+      </AvatarCase>
       <MainCase>
         <HeaderCase>
           <Title>
@@ -26,6 +28,9 @@ export function RatingNotificationItemComponent(props) {
     </Content>
   );
 }
+const StarIcon = styled(StarFull)`
+  fill: ${THEME_COLOR.COLOR.BASE};
+`;
 const HeaderCase = styled.div`
   display: flex;
   align-items: center;

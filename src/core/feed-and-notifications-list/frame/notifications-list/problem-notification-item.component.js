@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-// import { ReactComponent as StarIcon } from '../../../../asset/svg/star-icon.svg';
+import { ReactComponent as AttentionIcon } from '../../../../asset/svg/attention.svg';
 import {
   spacing,
   THEME_COLOR,
@@ -14,7 +14,7 @@ export function ProblemNotificationItemComponent(props) {
   return (
     <Content>
       <AvatarCase>
-        <Icon>{/* <StarIcon /> */}</Icon>
+        <AttentionIcon />
       </AvatarCase>
       <MainCase>
         <HeaderCase>
@@ -30,23 +30,21 @@ export function ProblemNotificationItemComponent(props) {
     </Content>
   );
 }
-const Icon = styled.div`
+
+const AvatarCase = styled.div`
+  background-color: ${THEME_COLOR.TEXT.ERROR};
+  min-width: 40px;
+  width: 40px;
+  height: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
-  min-width: 40px;
-  min-height: 40px;
+  border-radius: ${THEME_SIZE.RADIUS.CIRCLE};
 `;
 const HeaderCase = styled.div`
   display: flex;
   align-items: center;
   gap: ${spacing(3)};
-`;
-const AvatarCase = styled.div`
-  background-color: ${THEME_COLOR.TEXT.ERROR};
-  width: 40px;
-  height: 40px;
-  border-radius: ${THEME_SIZE.RADIUS.CIRCLE};
 `;
 const MainCase = styled.div`
   display: flex;

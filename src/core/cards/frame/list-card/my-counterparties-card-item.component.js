@@ -8,8 +8,8 @@ import {
 import { PrimaryDivider } from '../../../../lib/elements/divider';
 import { PrimaryLink } from '../../../../lib/elements/link';
 import { PrimaryText, SecondaryText } from '../../../../lib/elements/text';
-// import { ReactComponent as IconStar } from '../../../../asset/svg/star-icon.svg';
 import { CardBody } from '../card-body';
+import { Rating } from '../../../../lib/elements/stars-rating';
 
 const myCounterpartiesListData = [
   {
@@ -93,23 +93,11 @@ export function CounterpartiesListItemComponent(props) {
         <Sum>
           {turnover} <Text> руб.</Text>
         </Sum>
-        <Rating>
-          {/* {[1, 2, 3, 4, 5].map((item, index) => (
-            <StarIcon key={index} activ={userRating >= item ? 1 : 0} />
-          ))} */}
-        </Rating>
+        <Rating value={userRating} />
       </CounterPartiesContent>
     </CounterPartiesCase>
   );
 }
-// const StarIcon = styled(IconStar)`
-//   fill: ${(p) => p.activ && THEME_COLOR.TEXT.WARNING};
-// `;
-const Rating = styled.div`
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-column-gap: ${spacing(1)};
-`;
 
 const Text = styled(SecondaryText)`
   font-size: ${THEME_SIZE.FONT.DEFAULT};
@@ -131,7 +119,6 @@ const CounterPartiesContent = styled.div`
 const Sum = styled(PrimaryText)`
   font-weight: ${THEME_VALUE.FONT_WEIGHT.MEDIUM};
 `;
-
 const CompanyName = styled(PrimaryText)`
   font-weight: ${THEME_VALUE.FONT_WEIGHT.MEDIUM};
 `;

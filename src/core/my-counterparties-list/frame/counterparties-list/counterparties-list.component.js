@@ -7,10 +7,10 @@ import {
   THEME_SIZE,
   spacing,
 } from '../../../../lib/theme';
-// import { ReactComponent as QuestionIcon } from '../../../../asset/svg/question-icon.svg';
-// import { ReactComponent as ApprovedCompanyIcon } from '../../../../asset/svg/approvedCompanyIcon.svg';
-// import { ReactComponent as IconStar } from '../../../../asset/svg/star-icon.svg';
+import { ReactComponent as QuestionIcon } from '../../../../asset/svg/question.svg';
+import { ReactComponent as CheckIcon } from '../../../../asset/svg/check.svg';
 import { BaseList } from '../../../../lib/elements/list';
+import { Rating } from '../../../../lib/elements/stars-rating';
 
 export function CounterpartiesListComponent(props) {
   const {
@@ -30,7 +30,7 @@ export function CounterpartiesListComponent(props) {
         <SecondaryText tid="MY_COUNTERPARTIES_LIST.TURNOVER" />
         <LineCase>
           <SecondaryText tid="MY_COUNTERPARTIES_LIST.ADDITIONAL_ACCRUAL" />
-          {/* <QuestionIcon /> */}
+          <QuestionIcon />
         </LineCase>
         <SecondaryText tid="MY_COUNTERPARTIES_LIST.RISKS" />
         <SecondaryText tid="MY_COUNTERPARTIES_LIST.YOUR_ASSESSING" />
@@ -52,9 +52,9 @@ export function CounterpartiesListComponent(props) {
         }) => {
           return (
             <TableCase>
-              <CheckCase>
-                {/* {approved ? <ApprovedCompanyIcon /> : <NotApproved />} */}
-              </CheckCase>
+              <Verify approved={approved ? 1 : 0}>
+                {approved && <CheckIcon />}
+              </Verify>
               <MediumText>{company}</MediumText>
               <MediumText>{userCompany}</MediumText>
               <MediumText>
@@ -64,11 +64,7 @@ export function CounterpartiesListComponent(props) {
                 {addCharges} <Text> руб.</Text>
               </MediumText>
               <Text>{risks ? risks : 'Нет'}</Text>
-              <LineCase>
-                {/* {[1, 2, 3, 4, 5].map((item, index) => (
-                  <StarIcon key={index} fullStar={userRating >= item} />
-                ))} */}
-              </LineCase>
+              <Rating value={userRating} />
               <PrimaryText>
                 {generalRating} <Text> Баллов</Text>
               </PrimaryText>
@@ -80,6 +76,17 @@ export function CounterpartiesListComponent(props) {
   );
 }
 
+const Verify = styled.div`
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: ${(p) =>
+    p.approved ? THEME_COLOR.TEXT.PRIMARY : THEME_COLOR.COLOR.SECONDARY};
+  border-radius: ${THEME_SIZE.RADIUS.DEFAULT};
+  margin-left: ${spacing(4)};
+`;
 const Text = styled(SecondaryText)`
   font-size: ${THEME_SIZE.FONT.DEFAULT};
   line-height: 1.5;
@@ -88,17 +95,6 @@ const MediumText = styled(PrimaryText)`
   font-weight: ${THEME_VALUE.FONT_WEIGHT.MEDIUM};
   line-height: 1.5;
 `;
-
-const NotApproved = styled.div`
-  width: 30px;
-  height: 30px;
-  background-color: #f3f3f3;
-  border-radius: ${THEME_SIZE.RADIUS.DEFAULT};
-`;
-// const StarIcon = styled(IconStar)`
-//   fill: ${({ fullStar }) =>
-//     fullStar ? THEME_COLOR.TEXT.WARNING : THEME_COLOR.COLOR.LIGHT_GREY};
-// `;
 const LineCase = styled.div`
   display: flex;
   align-items: center;
@@ -116,7 +112,4 @@ const TableHeaderCase = styled(TableCase)`
 const Container = styled(SectionLayout)`
   overflow: auto;
   padding-bottom: ${spacing(6)};
-`;
-const CheckCase = styled.div`
-  padding-left: ${spacing(4)};
 `;

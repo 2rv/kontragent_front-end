@@ -3,17 +3,14 @@ import styled from 'styled-components';
 import { IndentLayout, SectionLayout } from '../../../../lib/elements/layout';
 import { PrimaryBox } from '../../../../lib/elements/box';
 import { PrimaryText, SecondaryText } from '../../../../lib/elements/text';
-import {
-  CircleDivider,
-  PrimaryDivider,
-} from '../../../../lib/elements/divider';
+import { CircleDivider } from '../../../../lib/elements/divider';
 import {
   spacing,
   THEME_SIZE,
   THEME_COLOR,
   THEME_VALUE,
 } from '../../../../lib/theme';
-// import { ReactComponent as StarIcon } from '../../../../asset/svg/star-icon.svg';
+import { ReactComponent as StarFull } from '../../../../asset/svg/star-full.svg';
 
 export function DialogUserListItemComponent(props) {
   const { img, name, status, statusId, content, favorite } = props.data;
@@ -47,15 +44,15 @@ export function DialogUserListItemComponent(props) {
               )}
             </Content>
           </SectionLayout>
-          {/* {favorite && <FavoriteIcon />} */}
+          {favorite && <StarIcon />}
         </Container>
       </IndentLayout>
     </Box>
   );
 }
-// const FavoriteIcon = styled(StarIcon)`
-//   fill: ${THEME_COLOR.COLOR.LIGHT_GREY};
-// `;
+const StarIcon = styled(StarFull)`
+  fill: ${THEME_COLOR.COLOR.LIGHT_GREY};
+`;
 const Box = styled(PrimaryBox)`
   position: relative;
   width: 100%;

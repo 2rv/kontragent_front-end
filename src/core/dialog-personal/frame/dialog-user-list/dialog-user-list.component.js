@@ -1,8 +1,7 @@
 import styled from 'styled-components';
 
 import { DialogUserListItemComponent } from './dialog-user-list-item.component';
-import { IndentLayout, SectionLayout } from '../../../../lib/elements/layout';
-import { PrimaryText, PrimaryTitleText } from '../../../../lib/elements/text';
+import { PrimaryTitleText } from '../../../../lib/elements/text';
 import {
   spacing,
   THEME_SIZE,
