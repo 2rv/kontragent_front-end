@@ -10,7 +10,7 @@ import {
   THEME_COLOR,
   THEME_VALUE,
 } from '../../../../lib/theme';
-import { ReactComponent as StarFull } from '../../../../asset/svg/star-full.svg';
+import { ReactComponent as StarFull } from '../../../../asset/svg/star.svg';
 
 export function DialogUserListItemComponent(props) {
   const { img, name, status, statusId, content, favorite } = props.data;

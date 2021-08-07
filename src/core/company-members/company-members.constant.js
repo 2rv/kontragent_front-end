@@ -1,5 +1,6 @@
 export const COMPANY_MEMBERS_ROUTE_PATH = '/company-members';
-export const DYNAMIC_QUERY = 'companyId';
+export const COMPANY_MEMBERS_QUERY_PATH = 'companyId';
+export const COMPANY_MEMBERS_REDIRECT_PATH = '/my-companies' || '/login';
 
 export const COMPANY_MEMBERS_STORE_NAME = 'COMPANY_MEMBERS_STORE';
 
@@ -22,5 +23,3 @@ export const COMPANY_MEMBERS_API = {
     TYPE: 'POST',
   },
 };
-
-export const REDIRECT_ON_MAIN_PAGE = '/';

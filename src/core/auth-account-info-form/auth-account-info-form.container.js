@@ -19,7 +19,9 @@ export function AuthAccountInfoForm() {
   const getInitialValue = () => {
     return {
       [AUTH_ACCOUNT_INFO_FORM_FIELD_NAME.FULLNAME_NAME]: '',
-      [AUTH_ACCOUNT_INFO_FORM_FIELD_NAME.COMPANY_INFO_FORM_FIELDS]: [INITIAL_COMPANY_INFO_FORM_FIELD],
+      [AUTH_ACCOUNT_INFO_FORM_FIELD_NAME.COMPANY_INFO_FORM_FIELDS]: [
+        INITIAL_COMPANY_INFO_FORM_FIELD,
+      ],
     };
   };
 
@@ -31,7 +33,7 @@ export function AuthAccountInfoForm() {
       isPending={true}
       isError={true}
       isSuccess={true}
-      errorMessage={null}
+      errorMessage={'Всё сделано на true'}
       accountInfoFormFieldName={ACCOUNT_INFO_FORM_FIELD_NAME}
       initialCompanyInfoFormField={INITIAL_COMPANY_INFO_FORM_FIELD}
     />

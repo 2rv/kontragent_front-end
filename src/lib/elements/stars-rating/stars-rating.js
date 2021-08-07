@@ -1,6 +1,5 @@
 import styled from 'styled-components';
-import { ReactComponent as StarEmpty } from '../../../asset/svg/star-empty.svg';
-import { ReactComponent as StarFull } from '../../../asset/svg/star-full.svg';
+import { ReactComponent as StarIcon } from '../../../asset/svg/star.svg';
 import { THEME_COLOR, spacing, THEME_SIZE, THEME_VALUE } from '../../theme';
 
 export function Rating(props) {
@@ -11,17 +10,19 @@ export function Rating(props) {
         value === 0 ? (
           <StarEmpty key={index} />
         ) : (
-          <Star key={index} rating={value >= item ? 1 : 0} />
+          <StarFull key={index} rating={value >= item ? 1 : 0} />
         ),
       )}
     </Container>
   );
 }
-
-const Star = styled(StarFull)`
+const StarFull = styled(StarIcon)`
   fill: ${(p) => p.rating && THEME_COLOR.TEXT.WARNING};
 `;
-
+const StarEmpty = styled(StarIcon)`
+  fill: none;
+  stroke: #b5b5b5;
+`;
 const Container = styled.div`
   display: grid;
   grid-template-columns: repeat(5, 1fr);

@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { ReactComponent as StarFull } from '../../../../asset/svg/star-full.svg';
+import { ReactComponent as StarFull } from '../../../../asset/svg/star.svg';
 import {
   spacing,
   THEME_COLOR,

@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { NAVIGATION_STORE_NAME } from '../../lib/common/navigation/navigation.constant';
 import {
   COMPANY_MEMBERS_STORE_NAME,
-  DYNAMIC_QUERY,
+  COMPANY_MEMBERS_QUERY_PATH,
 } from './company-members.constant';
 import {
   getRequestErrorMessage,
@@ -23,7 +23,7 @@ import { COMPANY_MEMBERS_FORM_FIELD_NAME } from './company-members.type';
 
 export function CompanyMembersContainer() {
   const dispatch = useDispatch();
-  const QueryCompanyId = getQuery(DYNAMIC_QUERY);
+  const QueryCompanyId = getQuery(COMPANY_MEMBERS_QUERY_PATH);
   const [modalState, setModal] = useState(modalInitialState);
   const [popoverState, setPopover] = useState(popoverInitialState);
   useEffect(() => {

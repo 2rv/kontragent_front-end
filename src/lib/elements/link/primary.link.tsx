@@ -8,10 +8,10 @@ import { THEME_SIZE, THEME_COLOR, THEME_VALUE } from '../../theme';
 import { text } from '../../common/text';
 
 export function PrimaryLink(props: PrimaryLinkPropsType) {
-  const { tid, tvalue, pathname, config, className } = props;
+  const { tid, tvalue, pathname, config, className, children } = props;
   return (
     <Link className={className} onClick={setLinkRedirect(pathname, config)}>
-      {text(tid, tvalue)}
+      {children || text(tid, tvalue)}
     </Link>
   );
 }

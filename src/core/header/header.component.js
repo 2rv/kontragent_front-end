@@ -26,10 +26,9 @@ export function HeaderComponent(props) {
           <KontragentText tid="Контрагент" />
         </Content>
         <Content>
-          <LoginLinkText tid="Смотри код" pathname={'/logout'}>
-            иконка не впихивается в ссылку надо исправить
+          <LoginLinkText tid="Выход" pathname={'/logout'}>
+            <ExitIcon />
           </LoginLinkText>
-          <ExitIcon />
           <Find />
           <NotificationIcon />
           <ImageContainer>
