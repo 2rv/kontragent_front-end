@@ -3,17 +3,12 @@ import { spacing, THEME_COLOR, THEME_SIZE, THEME_VALUE } from '../../lib/theme';
 import { IndentLayout } from '../../lib/elements/layout';
 import { PrimaryBox } from '../../lib/elements/box';
 import {
-  ApplicationCardItemComponent,
-  ArbitrationCardItemComponent,
-  DialogsCardItemComponent,
-  AttendanceStatsCardItemComponent,
-  MyStatsCardItemComponent,
-  QuantitativeStatsCardItemComponent,
+  DialogListCardItem,
+  ArbitrationListCardItem,
+  SupportRequestListCardItem,
+  CounterpartiesListCardItem,
   ReferalCardItemComponent,
-  ServiceStatsCardItemComponent,
-  TotalStatsCardItemComponent,
   VerticalNewsCardComponent,
-  MyCounterpartiesCardItemComponent,
   ReferalProfitCardItemComponent,
   ReferalStaticsCardItemComponent,
   FullScreenNewsCardComponent,
@@ -21,40 +16,46 @@ import {
   AdvertCardComponent,
   AdvertBlockComponent,
   AdvertBarComponent,
+  VisitStatsCardItem,
+  UserStatsCardItem,
+  ServiceStatsCardItem,
+  TotalStatsCardItem,
 } from './frame';
 
 const cardType = (type) => {
   switch (type) {
-    case 'total':
-      return TotalStatsCardItemComponent;
-    case 'my':
-      return MyStatsCardItemComponent;
+    case 'dialog-list':
+      return DialogListCardItem;
+    case 'arbitration-list':
+      return ArbitrationListCardItem;
+    case 'counterparties-list':
+      return CounterpartiesListCardItem;
+    case 'support-list':
+      return SupportRequestListCardItem;
+
+    case 'total-stats':
+      return TotalStatsCardItem;
+    case 'user-stats':
+      return UserStatsCardItem;
+    case 'service-stats':
+      return ServiceStatsCardItem;
+    case 'visit-stats':
+      return VisitStatsCardItem;
     case 'referal':
       return ReferalCardItemComponent;
-    case 'dialogs':
-      return DialogsCardItemComponent;
-    case 'quantitative':
-      return QuantitativeStatsCardItemComponent;
-    case 'service':
-      return ServiceStatsCardItemComponent;
-    case 'attendance':
-      return AttendanceStatsCardItemComponent;
-    case 'application':
-      return ApplicationCardItemComponent;
-    case 'arbitration':
-      return ArbitrationCardItemComponent;
+
+    case 'referral-profit':
+      return ReferalProfitCardItemComponent;
+    case 'referral-stats':
+      return ReferalStaticsCardItemComponent;
+
     case 'vertical-news':
       return VerticalNewsCardComponent;
     case 'horizontal-news':
       return HorizontalNewsCardComponent;
     case 'full-news':
       return FullScreenNewsCardComponent;
-    case 'counterparties':
-      return MyCounterpartiesCardItemComponent;
-    case 'referral-profit':
-      return ReferalProfitCardItemComponent;
-    case 'referral-stats':
-      return ReferalStaticsCardItemComponent;
+
     case 'advert-card':
       return AdvertCardComponent;
     case 'advert-block':

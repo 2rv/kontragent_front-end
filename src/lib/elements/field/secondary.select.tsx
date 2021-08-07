@@ -6,9 +6,9 @@ import { ReactComponent as ArrowIcon } from '../../../asset/svg/select-arrow.svg
 import { SecondarySelectPropsType } from './type.field';
 
 export function SecondarySelect(props: SecondarySelectPropsType) {
-  const { option } = props;
+  const { option, dense = false } = props;
   return (
-    <Container>
+    <Container dense={dense}>
       <Select>
         {option.map((e, index) => (
           <option key={e.tid + index} value={e.id}>
@@ -20,14 +20,12 @@ export function SecondarySelect(props: SecondarySelectPropsType) {
     </Container>
   );
 }
-
 const Container = styled.div`
-  height: 46px;
+  ${(p: { dense: boolean }) => !p.dense && 'height: 46px;'}
   position: relative;
   display: grid;
   align-items: center;
 `;
-
 const Icon = styled(ArrowIcon)`
   position: absolute;
   top: 0;
@@ -36,7 +34,6 @@ const Icon = styled(ArrowIcon)`
   right: ${spacing(4)};
   pointer-events: none;
 `;
-
 const Select = styled.select`
   background-color: ${THEME_COLOR.COLOR.BASE};
   height: inherit;

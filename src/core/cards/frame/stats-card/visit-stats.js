@@ -13,7 +13,7 @@ import { ReactComponent as FindIcon } from '../../../../asset/svg/find.svg';
 import { PrimaryLink } from '../../../../lib/elements/link';
 import { CardBody } from '../card-body';
 
-export function AttendanceStatsCardItemComponent() {
+export function VisitStatsCardItem() {
   return (
     <CardBody
       title={<TitlePrimary tid="DASHBOARD_CARD.STATS_ATTENDANCE" />}
@@ -49,10 +49,8 @@ const TextCase = styled.span`
 const Column = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
   gap: ${spacing(2)};
 `;
-
 const TitlePrimary = styled(PrimaryText)`
   font-weight: ${THEME_VALUE.FONT_WEIGHT.SEMY_BOLD};
 `;

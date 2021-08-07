@@ -24,7 +24,7 @@ const Container = styled.div`
   display: flex;
   flex: 1;
   flex-flow: column;
-  gap: ${spacing(2)};
+  gap: ${spacing(3)};
 `;
 const Header = styled.div`
   display: flex;

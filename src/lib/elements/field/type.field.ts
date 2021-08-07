@@ -25,8 +25,8 @@ export interface SecondarySelectPropsType {
   onBlur: any;
   name: string;
   className: string;
+  dense: boolean;
 }
-
 export interface TextAreaPropsType {
   titleTid?: string;
   placeholderTid?: string;

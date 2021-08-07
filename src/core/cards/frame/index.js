@@ -1,8 +1,8 @@
 export {
-  ApplicationCardItemComponent,
-  ArbitrationCardItemComponent,
-  DialogsCardItemComponent,
-  MyCounterpartiesCardItemComponent,
+  DialogListCardItem,
+  ArbitrationListCardItem,
+  CounterpartiesListCardItem,
+  SupportRequestListCardItem,
 } from './list-card';
 
 export {
@@ -12,12 +12,11 @@ export {
 } from './news-card';
 
 export {
-  AttendanceStatsCardItemComponent,
-  MyStatsCardItemComponent,
-  QuantitativeStatsCardItemComponent,
+  VisitStatsCardItem,
+  UserStatsCardItem,
+  ServiceStatsCardItem,
+  TotalStatsCardItem,
   ReferalCardItemComponent,
-  ServiceStatsCardItemComponent,
-  TotalStatsCardItemComponent,
   ReferalProfitCardItemComponent,
   ReferalStaticsCardItemComponent,
 } from './stats-card';

@@ -42,5 +42,6 @@ const List = styled(SectionLayout)`
   min-height: 0;
   overflow: 'auto';
   display: flex;
+  width: 100%;
   flex-flow: column;
 `;

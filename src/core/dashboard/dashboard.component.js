@@ -10,10 +10,10 @@ export function DashboardComponent(props) {
     <>
       {(isPending || pageLoading) && <PrimaryLoader />}
       <Container>
-        <div>
+        {/* <div>
           <Card type="advert-bar" />
         </div>
-        <NewsAndBlogComponent />
+        <NewsAndBlogComponent /> */}
         <ControlBlockComponent />
       </Container>
     </>
