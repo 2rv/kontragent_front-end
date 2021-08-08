@@ -1,23 +1,19 @@
 import styled from 'styled-components';
 import { THEME_COLOR, THEME_VALUE, spacing } from '../../../../lib/theme';
-
 import { PrimaryBox } from '../../../../lib/elements/box';
 import { IndentLayout } from '../../../../lib/elements/layout';
-import Image from 'next/image';
 import { PrimaryText, SecondaryText } from '../../../../lib/elements/text';
 
 export function AccountInfoComponent() {
   return (
-    <AccountInfoBox>
+    <Container>
       <IndentLayout type="SMALL">
-        <AccountInfoContentLayout>
-          <AvatarCase>
-            <Image
-              src="/static/img/tempAccountInfoProfileImage.svg"
-              width={56}
-              height={56}
-            />
-          </AvatarCase>
+        <Content>
+          <Avatar
+            src="/static/img/tempAccountInfoProfileImage.svg"
+            width={56}
+            height={56}
+          />
           <AccountInfoDataLayout>
             <Name>Анастасия Добро</Name>
             <div>
@@ -25,25 +21,25 @@ export function AccountInfoComponent() {
               <SecondaryText tid="SIDEBAR.ACCOUNT_INFO_CURRENCY" />
             </div>
           </AccountInfoDataLayout>
-        </AccountInfoContentLayout>
+        </Content>
       </IndentLayout>
-    </AccountInfoBox>
+    </Container>
   );
 }
-const AvatarCase = styled.div`
+const Avatar = styled.img`
   min-width: 56px;
-  min-height: 56px;
+  width: 56px;
+  height: 56px;
 `;
-const AccountInfoBox = styled(PrimaryBox)`
+const Container = styled(PrimaryBox)`
   background-color: ${THEME_COLOR.COLOR.SECONDARY};
+  margin-right: ${spacing(6)};
 `;
-
-const AccountInfoContentLayout = styled.div`
+const Content = styled.div`
   display: flex;
   align-items: center;
   gap: ${spacing(3)};
 `;
-
 const AccountInfoDataLayout = styled.div`
   display: grid;
   gap: ${spacing(2)};

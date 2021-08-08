@@ -18,5 +18,6 @@ export function ReferralDashboardComponent(props) {
 }
 const CardCase = styled.div`
   display: flex;
+  width: fit-content;
   gap: ${spacing(8)};
 `;
