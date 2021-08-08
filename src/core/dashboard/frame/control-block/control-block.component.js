@@ -16,14 +16,14 @@ export function ControlBlockComponent() {
     <SectionLayout type="LARGE">
       <Title tid="DASHBOARD.CONTROL_BLOCK_TITLE" />
       <Content>
-        {/* <Card type="arbitration-list" />
-        <Card type="counterparties-list" />
+        <Card type="arbitration-list" />
+        {/* <Card type="counterparties-list" />
         <Card type="dialog-list" />
-        <Card type="support-list" /> */}
-        <Card type="total-stats" />
+        <Card type="support-list" /> 
+         <Card type="total-stats" />
         <Card type="user-stats" />
         <Card type="service-stats" />
-        <Card type="visit-stats" />
+        <Card type="visit-stats" /> */}
         <Card type="referal" />
         <Card type="referral-profit" />
         <Card type="referral-stats" />

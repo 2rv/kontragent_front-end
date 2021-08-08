@@ -9,4 +9,4 @@ export const DASHBOARD_API = {
   },
 };
 
-export const SIGNUP_REDIRECT_ON_LOGGED_PATH = '/logout';
+export const DASHBOARD_ROUTE_PRIVATE_PATH = '/login';
