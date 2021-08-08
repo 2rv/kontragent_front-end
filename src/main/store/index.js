@@ -196,8 +196,10 @@ import {
   companyInviteStore,
   COMPANY_INVITE_STORE_NAME,
 } from '../../core/company-invite';
+import { headerStore, HEADER_STORE_NAME } from '../../core/header';
 
 export const reducers = combineReducers({
+  [HEADER_STORE_NAME]: headerStore,
   [COMPANY_INVITE_STORE_NAME]: companyInviteStore,
   [SETTINGS_CHANGE_EMAIL_NOTIFICATION_STORE_NAME]:
     settingsChangeEmailNotification,

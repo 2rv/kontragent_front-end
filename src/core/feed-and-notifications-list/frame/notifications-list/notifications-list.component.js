@@ -16,12 +16,12 @@ export function NotificationsListComponent(props) {
     isError,
     isSuccess,
     errorMessage,
-    feedAndNotificationsListData,
+    feedAndNotificationsListData = [1, 2, 3, 4, 1, 2, 3, 4],
   } = props;
 
   return (
     <List>
-      {[1, 2, 3, 4, 1, 2, 3, 4].map((item, index) => {
+      {feedAndNotificationsListData.map((item, index) => {
         const Notification = typeNotifications(item);
         return (
           <DividerCase key={index}>

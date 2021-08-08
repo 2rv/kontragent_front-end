@@ -14,6 +14,7 @@ const Content = styled.div`
   display: flex;
 `;
 const Button = styled.button`
+  position: relative;
   background-color: none;
   ${(props) =>
     props.disabled
