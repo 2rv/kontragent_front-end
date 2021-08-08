@@ -1,69 +1,101 @@
 import React from 'react';
-import Image from 'next/image';
 import styled from 'styled-components';
 import { THEME_COLOR, spacing, THEME_SIZE, THEME_VALUE } from '../../lib/theme';
-import { SecondaryText, PrimaryText } from '../../lib/elements/text';
-import { SecondaryButton } from '../../lib/elements/button';
-import { ReactComponent as NotificationIcon } from '../../asset/svg/notification.svg';
+import {
+  SecondaryText,
+  PrimaryText,
+  PrimaryTitleText,
+} from '../../lib/elements/text';
+import {
+  BasicButton,
+  IconButton,
+  SecondaryButton,
+} from '../../lib/elements/button';
 import { ReactComponent as ExitIcon } from '../../asset/svg/exit.svg';
 import { ReactComponent as FindIcon } from '../../asset/svg/find.svg';
 import { PrimaryLink } from 'src/lib/elements/link';
 import { LOGIN_ROUTE_PATH } from '../login';
+import { Notification } from './frame';
 
 export function HeaderComponent(props) {
-  const { toggleSidebar, toggleSidebarHandler, isAuth, isMainPage } = props;
-  if (isAuth) {
-    return (
-      <Container>
-        <Content>
-          {!isMainPage && (
-            <Button onClick={toggleSidebarHandler}>
-              <Stick1 close={toggleSidebar} />
-              <Stick2 close={toggleSidebar} />
-              <Stick3 close={toggleSidebar} />
-            </Button>
-          )}
-          <KontragentText tid="Контрагент" />
-        </Content>
-        <Content>
-          <LoginLinkText tid="Выход" pathname={'/logout'}>
-            <ExitIcon />
-          </LoginLinkText>
-          <Find />
-          <NotificationIcon />
-          <ImageContainer>
-            <Image
-              layout="fill"
-              src="/static/img/headerAvatar.svg"
-              priority={true}
-            />
-          </ImageContainer>
-        </Content>
-      </Container>
-    );
-  }
-
+  const {
+    toggleSidebar,
+    toggleSidebarHandler,
+    isAuth,
+    isMainPage,
+    isPending,
+    isError,
+    isSuccess,
+    errorMessage,
+    notificationListData,
+  } = props;
   return (
     <Container>
-      <KontragentText tid="Контрагент" />
-      <Content>
-        <LoginLinkText tid="Возможности" />
-        <LoginLinkText tid="Цены" />
-        <LoginLinkText tid="Зачем сверяться" />
-      </Content>
-      <Content>
-        <LoginLinkText tid="Войти" pathname={LOGIN_ROUTE_PATH} />
-        <SendRequestButton tid="Отправить заявку" />
-      </Content>
+      {isAuth ? (
+        <Content>
+          <Case>
+            {!isMainPage && (
+              <MenuButton onClick={toggleSidebarHandler}>
+                <Stick1 close={toggleSidebar} />
+                <Stick2 close={toggleSidebar} />
+                <Stick3 close={toggleSidebar} />
+              </MenuButton>
+            )}
+            <LogoText tid="Контрагент" />
+          </Case>
+          <Case>
+            <PrimaryLink tid="Выход" pathname={'/logout'}>
+              <ExitIcon />
+            </PrimaryLink>
+            <Notification notificationListData={notificationListData} />
+            <Find />
+            <Avatar src="/static/img/headerAvatar.svg" />
+          </Case>
+        </Content>
+      ) : (
+        <Content>
+          <Case>
+            <LogoText tid="Контрагент" />
+            <HeaderLink tid="Возможности" />
+            <HeaderLink tid="Цены" />
+            <HeaderLink tid="Зачем сверяться" />
+          </Case>
+          <Case>
+            <HeaderLink tid="Войти" pathname={LOGIN_ROUTE_PATH} />
+            <RequestButton tid="Отправить заявку" />
+          </Case>
+        </Content>
+      )}
     </Container>
   );
 }
+
+const RequestButton = styled(BasicButton)`
+  color: ${THEME_COLOR.COLOR.ACCENT};
+  border-radius: 100px;
+  border: 3px solid ${THEME_COLOR.COLOR.ACCENT};
+`;
+const HeaderLink = styled(PrimaryLink)`
+  font-weight: ${THEME_VALUE.FONT_WEIGHT.SEMY_BOLD};
+`;
+
 const Find = styled(FindIcon)`
   height: 23px;
   width: 23px;
   fill: ${THEME_COLOR.TEXT.PRIMARY};
 `;
-const Button = styled.button`
+
+const Avatar = styled.img`
+  min-width: 30px;
+  width: 30px;
+  height: 30px;
+`;
+
+const LogoText = styled(PrimaryTitleText)`
+  color: ${THEME_COLOR.TEXT.ACCENT};
+`;
+
+const MenuButton = styled.button`
   display: flex;
   flex-flow: column;
   width: 30px;
@@ -85,36 +117,21 @@ const Stick2 = styled(Stick1)`
 const Stick3 = styled(Stick1)`
   ${(p) => p.close && 'transform: rotate(45deg) translate(-8px, -9px);'}
 `;
+
+const Case = styled.div`
+  display: flex;
+  align-items: center;
+  gap: ${spacing(8)};
+`;
 const Content = styled.div`
   display: flex;
   align-items: center;
-  gap: ${spacing(6)};
+  gap: ${spacing(8)};
+  justify-content: space-between;
 `;
 const Container = styled.div`
   padding: ${spacing(8)};
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   height: 100px;
   width: 100%;
   background-color: ${THEME_COLOR.COLOR.BASE};
-`;
-const KontragentText = styled(SecondaryText)`
-  font-size: ${THEME_SIZE.FONT.HUGE};
-  font-weight: ${THEME_VALUE.FONT_WEIGHT.BOLD};
-  color: ${THEME_COLOR.TEXT.ACCENT};
-`;
-const ImageContainer = styled.div`
-  width: 30px;
-  height: 30px;
-  position: relative;
-`;
-const SendRequestButton = styled(SecondaryButton)`
-  color: ${THEME_COLOR.COLOR.ACCENT};
-  background-color: transparent;
-  border-radius: 100px;
-  border: 3px solid ${THEME_COLOR.COLOR.ACCENT};
-`;
-const LoginLinkText = styled(PrimaryLink)`
-  font-weight: ${THEME_VALUE.FONT_WEIGHT.SEMY_BOLD};
 `;

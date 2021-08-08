@@ -3,8 +3,7 @@ import { THEME_COLOR, THEME_SIZE } from 'src/lib/theme';
 import styled, { keyframes } from 'styled-components';
 
 export const Popover = (props) => {
-  const { children, anchorEl = null, onClose } = props;
-
+  const { children, anchorEl = null, onClose, dense = false } = props;
   if (!anchorEl) return null;
 
   const elementRef = React.createRef();
@@ -25,6 +24,7 @@ export const Popover = (props) => {
         xPos={position.x}
         yPos={position.y}
         ref={elementRef}
+        dense={dense}
         onClick={(e) => e.stopPropagation()}
       >
         {children}
@@ -47,9 +47,9 @@ const Content = styled.div`
   left: ${(p) => p.xPos + 'px'};
   box-shadow: 0px 15px 50px rgba(0, 0, 0, 0.2);
   display: flex;
-  width: 250px;
+  min-width: 250px;
   background-color: ${THEME_COLOR.COLOR.BASE};
-  padding: ${THEME_SIZE.INDENT.STANDART};
+  ${(p) => !p.dense && `padding: ${THEME_SIZE.INDENT.STANDART};`}
   border-radius: ${THEME_SIZE.RADIUS.DEFAULT};
   animation: ${animation} 0.2s;
 `;
