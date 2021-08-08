@@ -142,6 +142,11 @@ export const NAVMENU_ITEMS = [
     path: '/support/my-requests',
   },
   {
+    tid: 'Мои приглашения в компании',
+    pathname: '/company-invite',
+    path: '/company-invite',
+  },
+  {
     tid: 'SIDEBAR.NAV_MENU.ITEMS.MY_COMPANIES',
     pathname: '/my-companies',
     path: '/my-companies',

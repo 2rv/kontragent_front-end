@@ -192,8 +192,13 @@ import {
   settingsChangeEmailNotification,
   SETTINGS_CHANGE_EMAIL_NOTIFICATION_STORE_NAME,
 } from '../../core/settings-notification';
+import {
+  companyInviteStore,
+  COMPANY_INVITE_STORE_NAME,
+} from '../../core/company-invite';
 
 export const reducers = combineReducers({
+  [COMPANY_INVITE_STORE_NAME]: companyInviteStore,
   [SETTINGS_CHANGE_EMAIL_NOTIFICATION_STORE_NAME]:
     settingsChangeEmailNotification,
   [MY_COMPANIES_REVIEW_COMPANY_LIST_STORE_NAME]:
