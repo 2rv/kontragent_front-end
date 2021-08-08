@@ -7,25 +7,42 @@ import {
   THEME_VALUE,
 } from '../../../../lib/theme';
 import { PrimaryText, SecondaryText } from '../../../../lib/elements/text';
+import { useState } from 'react';
+import { Popover } from 'src/lib/elements/modal';
+import { PrimaryLink } from 'src/lib/elements/link';
+import { SecondaryTextButton, TextButton } from 'src/lib/elements/button';
 
-export function NewMessageNotificationItemComponent(props) {
+export function MessageNotification(props) {
   const {} = props;
+  const [popover, setPopover] = useState(null);
+  const openPopover = (e) => setPopover(e.currentTarget);
+  const closePopover = () => setPopover(null);
 
   return (
     <Content>
       <Avatar src="https://www.psyh.ru/wp-content/uploads/2018/01/6f36b7c998812ad5a43a934e3c81a51f.jpg" />
-      <MainCase>
+      <Column>
         <div>
           <Title tid="Новое сообщение от" />
           <ColoredText tid="вашего менеджера " />
           <SecondaryText tid="Илья зинченко ждёт вашего ответа." />
           &nbsp;
-          <button>
+          <button onClick={openPopover}>
             <More />
           </button>
         </div>
         <Time tid="3 часа назад" />
-      </MainCase>
+        <Popover anchorEl={popover} onClose={closePopover}>
+          <Column>
+            <SecondaryTextButton tid="Удалить" onClick={closePopover} />
+            <SecondaryTextButton tid="Заблокировать" onClick={closePopover} />
+            <SecondaryTextButton
+              tid="Написать в личные сообщения"
+              onClick={closePopover}
+            />
+          </Column>
+        </Popover>
+      </Column>
     </Content>
   );
 }
@@ -37,10 +54,9 @@ const Avatar = styled.img`
   height: 40px;
   border-radius: ${THEME_SIZE.RADIUS.CIRCLE};
 `;
-const MainCase = styled.div`
+const Column = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
   gap: ${spacing(2)};
 `;
 const Content = styled.div`

@@ -8,7 +8,7 @@ import {
 } from '../../../../lib/theme';
 import { PrimaryText, SecondaryText } from '../../../../lib/elements/text';
 
-export function FindCompleteNotificationItemComponent(props) {
+export function FindCompleteNotification(props) {
   const {} = props;
 
   return (
@@ -16,14 +16,14 @@ export function FindCompleteNotificationItemComponent(props) {
       <AvatarCase>
         <FindIcon />
       </AvatarCase>
-      <MainCase>
+      <Column>
         <Title tid="Ваш поиск был выполнен!" />
         <Time tid="25 минут назад" />
-      </MainCase>
+      </Column>
     </Content>
   );
 }
-const MainCase = styled.div`
+const Column = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;

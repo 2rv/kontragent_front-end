@@ -30,7 +30,7 @@ export function FeedAndNotificationsListContainer() {
       pageLoading={pageLoading}
       errorMessage={getRequestErrorMessage(state.feedAndNotificationsListData)}
       feedAndNotificationsSelectOption={feedAndNotificationsSelectOption}
-      feedAndNotificationsListData={feedAndNotificationsListData}
+      feedAndNotificationsListData={[1, 2, 3, 4, 5, 6, 7]}
     />
   );
 }

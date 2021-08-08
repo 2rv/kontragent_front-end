@@ -8,7 +8,7 @@ import {
 } from '../../../../lib/theme';
 import { SecondaryText } from '../../../../lib/elements/text';
 
-export function RatingNotificationItemComponent(props) {
+export function RatingNotification(props) {
   const {} = props;
 
   return (
@@ -16,7 +16,7 @@ export function RatingNotificationItemComponent(props) {
       <AvatarCase>
         <StarIcon />
       </AvatarCase>
-      <MainCase>
+      <Column>
         <HeaderCase>
           <Title>
             Рейтинг компании <BoldText tid={`ООО "Dobro Motion" `} />
@@ -24,7 +24,7 @@ export function RatingNotificationItemComponent(props) {
           </Title>
         </HeaderCase>
         <Time>Сегодня, в 11:25</Time>
-      </MainCase>
+      </Column>
     </Content>
   );
 }
@@ -46,10 +46,9 @@ const AvatarCase = styled.div`
   flex: 1 0;
   border-radius: ${THEME_SIZE.RADIUS.CIRCLE};
 `;
-const MainCase = styled.div`
+const Column = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
   gap: ${spacing(2)};
 `;
 const Content = styled.div`

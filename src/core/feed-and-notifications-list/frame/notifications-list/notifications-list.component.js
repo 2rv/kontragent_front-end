@@ -1,13 +1,16 @@
 import React from 'react';
 import styled from 'styled-components';
 import { spacing, THEME_COLOR, THEME_SIZE } from '../../../../lib/theme';
-import { FindCompleteNotificationItemComponent } from './find-complete-notification-item.component';
-import { NewMessageNotificationItemComponent } from './new-message-notification-item.component';
-import { RatingNotificationItemComponent } from './rating-notification-item.component';
-import { ProblemNotificationItemComponent } from './problem-notification-item.component';
 import { PrimaryBox } from '../../../../lib/elements/box';
 import { PrimaryDivider } from '../../../../lib/elements/divider';
 import { PrimaryText } from '../../../../lib/elements/text';
+
+import { CompanyInviteNotification } from './company-invite-notification';
+import { FindCompleteNotification } from './find-complete-notification';
+import { MessageNotification } from './message-notification';
+import { RatingNotification } from './rating-notification';
+import { AttentionNotification } from './attention-notification';
+import { SessionNotification } from './session-notification';
 
 export function NotificationsListComponent(props) {
   const {
@@ -16,7 +19,7 @@ export function NotificationsListComponent(props) {
     isError,
     isSuccess,
     errorMessage,
-    feedAndNotificationsListData = [1, 2, 3, 4, 1, 2, 3, 4],
+    feedAndNotificationsListData,
   } = props;
 
   return (
@@ -38,13 +41,17 @@ export function NotificationsListComponent(props) {
 const typeNotifications = (type) => {
   switch (type) {
     case 1:
-      return RatingNotificationItemComponent;
+      return RatingNotification;
     case 2:
-      return FindCompleteNotificationItemComponent;
+      return FindCompleteNotification;
     case 3:
-      return NewMessageNotificationItemComponent;
+      return MessageNotification;
     case 4:
-      return ProblemNotificationItemComponent;
+      return AttentionNotification;
+    case 5:
+      return CompanyInviteNotification;
+    case 6:
+      return SessionNotification;
     default:
       return () => <PrimaryText>Не определен тип уведомления</PrimaryText>;
   }
@@ -73,5 +80,4 @@ const Container = styled.div`
   align-items: center;
   gap: ${spacing(3)};
   min-width: 0;
-  width: fit-content;
 `;

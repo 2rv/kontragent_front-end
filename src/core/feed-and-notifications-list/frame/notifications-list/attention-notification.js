@@ -8,7 +8,7 @@ import {
 } from '../../../../lib/theme';
 import { SecondaryText } from '../../../../lib/elements/text';
 
-export function ProblemNotificationItemComponent(props) {
+export function AttentionNotification(props) {
   const {} = props;
 
   return (
@@ -16,17 +16,15 @@ export function ProblemNotificationItemComponent(props) {
       <AvatarCase>
         <AttentionIcon />
       </AvatarCase>
-      <MainCase>
-        <HeaderCase>
-          <Title>
-            Указаны новые проблемы <BoldText tid={`ООО “УМК”`} />: контрагент
-            исчез, по нашей информации компания состоит в базе однодневок,
-            большой объём просроченной кредиторской задолженности. Компания
-            может нести риск доначислений!
-          </Title>
-        </HeaderCase>
+      <Column>
+        <Title>
+          Указаны новые проблемы <BoldText tid={`ООО “УМК”`} />: контрагент
+          исчез, по нашей информации компания состоит в базе однодневок, большой
+          объём просроченной кредиторской задолженности. Компания может нести
+          риск доначислений!
+        </Title>
         <Time>Вчера, в 15:30</Time>
-      </MainCase>
+      </Column>
     </Content>
   );
 }
@@ -46,7 +44,7 @@ const HeaderCase = styled.div`
   align-items: center;
   gap: ${spacing(3)};
 `;
-const MainCase = styled.div`
+const Column = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;

@@ -16,7 +16,7 @@ export function headerNotificationLoadData() {
       //   const data = performConvertNotificationData(res.data);
       dispatch({
         type: HEADER_ACTION_TYPE.HEADER_NOTIFICATION_LOAD_REQUEST_SUCCESS,
-        data: [1, 2, 3],
+        data: [1, 2, 3, 4, 5, 6, 7],
       });
     } catch (error) {
       if (error) {

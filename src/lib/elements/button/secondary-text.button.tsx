@@ -15,6 +15,7 @@ export function SecondaryTextButton(props: ButtonPropsType) {
 
 const Button = styled.button`
   display: flex;
+  box-sizing: border-box;
   background-color: none;
   color: ${THEME_COLOR.TEXT.SECONDARY};
   font-size: ${THEME_SIZE.FONT.SMALL};

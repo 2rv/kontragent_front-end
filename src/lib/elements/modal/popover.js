@@ -18,6 +18,10 @@ export const Popover = (props) => {
     anchorEl && setPosition({ x, y });
   }, [anchorEl]); // отслеживание изменения привязанного элемента
 
+  //   const actionClose = (fn, ...args) => {  хочется сделать функцию которую будет принимать children для закрытия модалки
+  //     fn(args);
+  //     onClose();
+  //   };
   return (
     <Container open={!!anchorEl} onClick={onClose}>
       <Content
@@ -47,7 +51,7 @@ const Content = styled.div`
   left: ${(p) => p.xPos + 'px'};
   box-shadow: 0px 15px 50px rgba(0, 0, 0, 0.2);
   display: flex;
-  min-width: 250px;
+  min-width: 255px;
   background-color: ${THEME_COLOR.COLOR.BASE};
   ${(p) => !p.dense && `padding: ${THEME_SIZE.INDENT.STANDART};`}
   border-radius: ${THEME_SIZE.RADIUS.DEFAULT};
