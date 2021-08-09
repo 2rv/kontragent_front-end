@@ -27,7 +27,7 @@ export const SUPPORT_CREATE_REQUEST_ACTION_TYPE = {
 };
 
 export const SUPPORT_CREATE_REQUEST_DATA_NAME = {
-  CATEGORY: 'category',
+  CATEGORY: 'categoryId',
   BRIEF: 'brief',
   EXPLICITLY: 'explicitly',
 };

@@ -1,6 +1,5 @@
 import React from 'react';
 import { SupportCreateRequestComponent } from './support-create-request.component';
-import { SUPPORT_CREATE_REQUEST_PROBLEM_CATEGORY } from './support-create-request.constant';
 import {
   SUPPORT_CREATE_REQUEST_FIELD_NAME,
   SUPPORT_FORM_CREATE_REQUEST_FIELD_NAME,
@@ -48,7 +47,13 @@ export function SupportCreateRequestContainer() {
       fieldName={SUPPORT_FORM_CREATE_REQUEST_FIELD_NAME}
       pageLoading={pageLoading}
       errorMessage={getRequestErrorMessage(state.supportCreateRequestForm)}
-      problemCategory={SUPPORT_CREATE_REQUEST_PROBLEM_CATEGORY}
+      problemCategory={SelectProblemCategory}
     />
   );
 }
+
+export const SelectProblemCategory = [
+  { id: 0, tid: 'Проблема с доступом к аккаунту' },
+  { id: 1, tid: 'Тест 2' },
+  { id: 2, tid: 'DATA.PROBLEM_CATEGORY.3' },
+];

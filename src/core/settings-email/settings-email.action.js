@@ -18,7 +18,7 @@ export function settingsEmailGetEmail() {
         method: SETTINGS_EMAIL_API.TYPE,
         url: SETTINGS_EMAIL_API.ENDPOINT,
       });
-
+      console.log(res);
       const data = performSettingsEmail(res.data);
       dispatch({
         type: SETTINGS_EMAIL_ACTION_TYPE.SETTINGS_EMAIL_GET_EMAIL_SUCCESS,
