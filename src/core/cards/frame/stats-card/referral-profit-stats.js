@@ -8,43 +8,45 @@ import {
 import { PrimaryText } from '../../../../lib/elements/text';
 import { PrimaryLink } from 'src/lib/elements/link';
 
-export function ReferalStaticsCardItemComponent() {
+export function ReferralProfitStats() {
   return (
     <Container>
-      <Content>
+      <Column>
         <Title tid="REFERRAL.BONUS_BALANCE" />
-        <Line>
+        <div>
           <BoldText tid="500" />
+          &nbsp;
           <ValuteText tid="REFERRAL.VALUTE" />
-        </Line>
+        </div>
         <Link tid="REFERRAL.VIEW_HISTORY" />
-      </Content>
+      </Column>
       <VerticalDivider />
-      <Content>
+      <Column>
         <Title tid="REFERRAL.RECEIVED_PERCENTAGE" />
-        <Line>
+        <div>
           <BoldText tid="25% " />
+          &nbsp;
           <RegularText tid="(15 чел.)" />
-        </Line>
+        </div>
         <Link tid="REFERRAL.VIEW_USERS" />
-      </Content>
+      </Column>
     </Container>
   );
 }
-const Line = styled.div`
-  display: inline-flex;
+const Container = styled.div`
+  display: flex;
+  gap: ${spacing(4)};
+`;
+const Column = styled.div`
+  display: flex;
+  flex-direction: column;
   gap: ${spacing(2)};
-  align-items: center;
+  justify-content: space-between;
 `;
 const VerticalDivider = styled.div`
   min-width: 2px;
   display: flex;
   border: 1px solid ${THEME_COLOR.COLOR.SECONDARY};
-`;
-const Content = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: ${spacing(3)};
 `;
 const Title = styled(PrimaryText)`
   font-weight: ${THEME_VALUE.FONT_WEIGHT.SEMY_BOLD};
@@ -68,8 +70,4 @@ const ValuteText = styled(PrimaryText)`
   font-size: ${THEME_SIZE.FONT.STANDART};
   color: ${THEME_COLOR.COLOR.LIGHT_GREY};
   line-height: 1.5;
-`;
-const Container = styled.div`
-  display: flex;
-  gap: ${spacing(4)};
 `;

@@ -7,10 +7,10 @@ import {
   ArbitrationListCardItem,
   SupportRequestListCardItem,
   CounterpartiesListCardItem,
-  ReferalCardItemComponent,
+  ReferralSystemStats,
+  ReferralAccountStats,
+  ReferralProfitStats,
   VerticalNewsCardComponent,
-  ReferalProfitCardItemComponent,
-  ReferalStaticsCardItemComponent,
   FullScreenNewsCardComponent,
   HorizontalNewsCardComponent,
   AdvertCardComponent,
@@ -41,13 +41,13 @@ const cardType = (type) => {
       return ServiceStatsCardItem;
     case 'visit-stats':
       return VisitStatsCardItem;
-    case 'referal':
-      return ReferalCardItemComponent;
 
-    case 'referral-profit':
-      return ReferalProfitCardItemComponent;
-    case 'referral-stats':
-      return ReferalStaticsCardItemComponent;
+    case 'referal-system-stats':
+      return ReferralSystemStats;
+    case 'referral-account-stats':
+      return ReferralAccountStats;
+    case 'referral-profit-stats':
+      return ReferralProfitStats;
 
     case 'vertical-news':
       return VerticalNewsCardComponent;
@@ -82,7 +82,8 @@ const Container = styled.div`
   border-radius: ${THEME_SIZE.RADIUS.DEFAULT};
   background-color: ${THEME_COLOR.COLOR.BASE};
   padding: ${spacing(4)};
-  flex: 1 0;
+  flex: 1;
   height: fit-content;
+  min-width: fit-content;
   min-height: inherit;
 `;

@@ -16,9 +16,9 @@ export {
   UserStatsCardItem,
   ServiceStatsCardItem,
   TotalStatsCardItem,
-  ReferalCardItemComponent,
-  ReferalProfitCardItemComponent,
-  ReferalStaticsCardItemComponent,
+  ReferralSystemStats,
+  ReferralAccountStats,
+  ReferralProfitStats,
 } from './stats-card';
 
 export {

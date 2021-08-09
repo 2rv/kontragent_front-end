@@ -54,34 +54,47 @@ export function ArbitrationListCardItem() {
       title={<TitlePrimary tid="DASHBOARD_CARD.ARBITRATION" />}
       action={<SecondarySelect dense option={options} />}
       content={
-        <BaseList
-          listData={ArbitrationListData}
-          itemBackground={THEME_COLOR.COLOR.SECONDARY}
-        >
-          {(props) => {
-            const { id, avatar, title, author, time, status } = props;
-            return (
-              <Content>
-                <Avatar src={avatar} />
-                <Column>
-                  <Title tid={title} />
-                  <Line>
-                    <SecondaryText tid={author} />
-                    <CircleDivider />
-                    <Time tid={time} />
-                    <CircleDivider />
-                    <Status tid={status} />
-                  </Line>
-                </Column>
-              </Content>
-            );
-          }}
-        </BaseList>
+        <Container>
+          <BaseList
+            listData={ArbitrationListData}
+            itemBackground={THEME_COLOR.COLOR.SECONDARY}
+          >
+            {(props) => {
+              const { id, avatar, title, author, time, status } = props;
+              return (
+                <Content>
+                  <Avatar src={avatar} />
+                  <Column>
+                    <Title tid={title} />
+                    <Line>
+                      <SecondaryText tid={author} />
+                      <CircleDivider />
+                      <Time tid={time} />
+                      <CircleDivider />
+                      <Status tid={status} />
+                    </Line>
+                  </Column>
+                </Content>
+              );
+            }}
+          </BaseList>
+          <ShowMore tid="DASHBOARD_CARD.SHOW_MORE" />
+        </Container>
       }
     />
   );
 }
-
+const Container = styled.div`
+  display: flex;
+  flex: 1;
+  flex-flow: column;
+  gap: ${spacing(4)};
+  align-items: center;
+`;
+const ShowMore = styled(PrimaryLink)`
+  color: ${THEME_COLOR.TEXT.SECONDARY};
+  padding: ${spacing(4)};
+`;
 const TitlePrimary = styled(PrimaryText)`
   font-weight: ${THEME_VALUE.FONT_WEIGHT.SEMY_BOLD};
 `;
@@ -98,17 +111,13 @@ const Column = styled.div`
 const Line = styled.div`
   display: inline-flex;
   flex-wrap: wrap;
-  gap: ${spacing(2)};
+  gap: ${spacing(1)};
   align-items: center;
 `;
 const Avatar = styled.img`
   width: 56px;
   height: 56px;
   border-radius: ${THEME_SIZE.RADIUS.CIRCLE};
-`;
-const ShowMore = styled(PrimaryLink)`
-  color: ${THEME_COLOR.TEXT.SECONDARY};
-  padding: ${spacing(4)};
 `;
 const Title = styled(PrimaryText)`
   white-space: nowrap;

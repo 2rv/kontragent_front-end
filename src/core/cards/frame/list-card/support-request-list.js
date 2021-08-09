@@ -47,38 +47,51 @@ export function SupportRequestListCardItem() {
       title={<TitlePrimary tid="Мои запросы в поддержку" />}
       action={<Find />}
       content={
-        <BaseList
-          listData={arbitrationListData}
-          itemBackground={THEME_COLOR.COLOR.SECONDARY}
-        >
-          {(props) => {
-            const { id, title, status, text, time } = props;
-            return (
-              <Container>
-                <Content>
-                  <Title tid={title} />
-                  <Status tid={status} />
-                </Content>
-                <Content>
-                  <Message tid={text} />
-                  <Line>
-                    <CircleDivider />
-                    <Time tid={time} />
-                  </Line>
-                </Content>
-              </Container>
-            );
-          }}
-        </BaseList>
+        <Container>
+          <BaseList
+            listData={arbitrationListData}
+            itemBackground={THEME_COLOR.COLOR.SECONDARY}
+          >
+            {(props) => {
+              const { id, title, status, text, time } = props;
+              return (
+                <Column>
+                  <Content>
+                    <Title tid={title} />
+                    <Status tid={status} />
+                  </Content>
+                  <Content>
+                    <Message tid={text} />
+                    <Line>
+                      <CircleDivider />
+                      <Time tid={time} />
+                    </Line>
+                  </Content>
+                </Column>
+              );
+            }}
+          </BaseList>
+          <ShowMore tid="DASHBOARD_CARD.SHOW_MORE" />
+        </Container>
       }
     />
   );
 }
-
+const Container = styled.div`
+  display: flex;
+  flex: 1;
+  flex-flow: column;
+  gap: ${spacing(4)};
+  align-items: center;
+`;
+const ShowMore = styled(PrimaryLink)`
+  color: ${THEME_COLOR.TEXT.SECONDARY};
+  padding: ${spacing(4)};
+`;
 const TitlePrimary = styled(PrimaryText)`
   font-weight: ${THEME_VALUE.FONT_WEIGHT.SEMY_BOLD};
 `;
-const Container = styled.div`
+const Column = styled.div`
   display: grid;
   width: 100%;
   align-items: center;

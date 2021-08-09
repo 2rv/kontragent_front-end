@@ -17,16 +17,16 @@ export function ControlBlockComponent() {
       <Title tid="DASHBOARD.CONTROL_BLOCK_TITLE" />
       <Content>
         <Card type="arbitration-list" />
-        {/* <Card type="counterparties-list" />
+        <Card type="counterparties-list" />
         <Card type="dialog-list" />
-        <Card type="support-list" /> 
-         <Card type="total-stats" />
+        <Card type="support-list" />
+        <Card type="total-stats" />
         <Card type="user-stats" />
         <Card type="service-stats" />
-        <Card type="visit-stats" /> */}
-        <Card type="referal" />
-        <Card type="referral-profit" />
-        <Card type="referral-stats" />
+        <Card type="visit-stats" />
+        <Card type="referal-system-stats" />
+        <Card type="referral-account-stats" />
+        <Card type="referral-profit-stats" />
       </Content>
       <Button>
         <Plus />
@@ -35,6 +35,7 @@ export function ControlBlockComponent() {
     </SectionLayout>
   );
 }
+
 const Button = styled(PrimaryButton)`
   height: 40px;
   gap: ${spacing(3)};
@@ -61,7 +62,10 @@ const Title = styled(PrimaryTitleText)`
 `;
 const Content = styled.div`
   display: grid;
-  min-width: fit-content;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(390px, 1fr));
+  /* display: flex; это работает ещё хуже
+  flex-wrap: wrap;
+  flex: 1;
+  flex-direction: row; */
   gap: ${spacing(8)};
 `;

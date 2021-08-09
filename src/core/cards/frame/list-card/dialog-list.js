@@ -60,45 +60,63 @@ export function DialogListCardItem() {
   return (
     <CardBody
       title={<TitlePrimary tid="DASHBOARD_CARD.IMPORTANT_DIALOGUES" />}
-      action={<FindIcon />}
+      action={<Find />}
       content={
-        <BaseList
-          listData={dialogListData}
-          itemBackground={THEME_COLOR.COLOR.SECONDARY}
-        >
-          {(props) => {
-            const {
-              id,
-              avatar,
-              username,
-              role,
-              message: { my, text },
-              time,
-            } = props;
-            return (
-              <Content>
-                <Avatar src={avatar} />
-                <Column>
-                  <Line>
-                    <Title tid={username} />
-                    <Role tid={role} />
-                  </Line>
-                  <Line>
-                    {my && <ColoredText>Вы:</ColoredText>}
-                    <Message tid={text} />
-                    <CircleDivider />
-                    <Time tid={time} />
-                  </Line>
-                </Column>
-              </Content>
-            );
-          }}
-        </BaseList>
+        <Container>
+          <BaseList
+            listData={dialogListData}
+            itemBackground={THEME_COLOR.COLOR.SECONDARY}
+          >
+            {(props) => {
+              const {
+                id,
+                avatar,
+                username,
+                role,
+                message: { my, text },
+                time,
+              } = props;
+              return (
+                <Content>
+                  <Avatar src={avatar} />
+                  <Column>
+                    <Line>
+                      <Title tid={username} />
+                      <Role tid={role} />
+                    </Line>
+                    <Line>
+                      {my && <ColoredText>Вы:</ColoredText>}
+                      <Message tid={text} />
+                      <CircleDivider />
+                      <Time tid={time} />
+                    </Line>
+                  </Column>
+                </Content>
+              );
+            }}
+          </BaseList>
+          <ShowMore tid="DASHBOARD_CARD.SHOW_MORE" />
+        </Container>
       }
     />
   );
 }
 
+const Find = styled(FindIcon)`
+  fill: ${THEME_COLOR.TEXT.PRIMARY};
+`;
+
+const Container = styled.div`
+  display: flex;
+  flex: 1;
+  flex-flow: column;
+  gap: ${spacing(4)};
+  align-items: center;
+`;
+const ShowMore = styled(PrimaryLink)`
+  color: ${THEME_COLOR.TEXT.SECONDARY};
+  padding: ${spacing(4)};
+`;
 const TitlePrimary = styled(PrimaryText)`
   font-weight: ${THEME_VALUE.FONT_WEIGHT.SEMY_BOLD};
 `;
