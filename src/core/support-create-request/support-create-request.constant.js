@@ -1,18 +1,12 @@
-export const SUPPORT_CREATE_REQUEST_PROBLEM_CATEGORY = [
-  { id: 0, tid: 'DATA.PROBLEM_CATEGORY.1' },
-  { id: 1, tid: 'DATA.PROBLEM_CATEGORY.2' },
-  { id: 2, tid: 'DATA.PROBLEM_CATEGORY.3' },
-];
-
 export const SUPPORT_CREATE_REQUEST_ROUTE_PATH = '/support/create-request';
 
 export const SUPPORT_CREATE_REQUEST_STORE_NAME = 'SUPPORT_CREATE_REQUEST';
 
 export const SUPPORT_CREATE_REQUEST_API = {
   SUPPORT_CREATE_REQUEST_FORM_UPLOAD: {
-    ENDPOINT: '',
+    ENDPOINT: '/support/create',
     TYPE: 'POST',
   },
 };
 
-export const SUPPORT_CREATE_REQUEST_FORM_REDIRECT_ON_UPLOAD_PATH = '/';
+export const SUPPORT_CREATE_REQUEST_FORM_REDIRECT_ON_UPLOAD_PATH = '/login';

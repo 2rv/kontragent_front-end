@@ -12,6 +12,13 @@ export function supportCreateRequestFormUploadData(data) {
     });
 
     try {
+      await httpRequest({
+        method:
+          SUPPORT_CREATE_REQUEST_API.SUPPORT_CREATE_REQUEST_FORM_UPLOAD.TYPE,
+        url: SUPPORT_CREATE_REQUEST_API.SUPPORT_CREATE_REQUEST_FORM_UPLOAD
+          .ENDPOINT,
+        data,
+      });
       dispatch({
         type: SUPPORT_CREATE_REQUEST_ACTION_TYPE.SUPPORT_FORM_CREATE_REQUEST_UPLOAD_SUCCESS,
       });
