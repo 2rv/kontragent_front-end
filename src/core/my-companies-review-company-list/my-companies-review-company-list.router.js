@@ -9,5 +9,5 @@ export function myCompaniesReviewCompanyListRouter(ctx) {
   ctx.store.dispatch(
     setActivePath(MY_COMPANIES_REVIEW_COMPANY_LIST_ROUTE_PATH),
   );
-  authRedirectPrivated(ctx, REDIRECT_ON_MAIN_PAGE);
+  //   authRedirectPrivated(ctx, REDIRECT_ON_MAIN_PAGE);
 }

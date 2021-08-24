@@ -37,7 +37,7 @@ export function SettingsNotificationContainer() {
     // settingsNotificationChangeEmail()
   };
   useEffect(() => {
-    dispatch(settingsNotificationGetEmail());
+    // dispatch(settingsNotificationGetEmail());
   }, []);
 
   const getInitialValue = () => {

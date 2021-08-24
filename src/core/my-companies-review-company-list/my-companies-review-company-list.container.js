@@ -18,7 +18,7 @@ export function MyCompaniesReviewCompanyListContainer() {
   }));
 
   useEffect(() => {
-    dispatch(myCompaniesLoadCompaniesData());
+    // dispatch(myCompaniesLoadCompaniesData());
   }, []);
 
   return (
@@ -29,7 +29,7 @@ export function MyCompaniesReviewCompanyListContainer() {
       pageLoading={pageLoading}
       errorMessage={getRequestErrorMessage(state.feedAndNotificationsListData)}
       myCompaniesSelectOption={myCompaniesSelectOption}
-      myCompaniesListData={state?.data}
+      myCompaniesListData={myCompaniesListData || state?.data}
     />
   );
 }

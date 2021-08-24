@@ -7,5 +7,5 @@ import {
 
 export function myCompaniesAddCompanyRouter(ctx) {
   ctx.store.dispatch(setActivePath(MY_COMPANIES_ADD_COMPANY_ROUTE_PATH));
-  authRedirectPrivated(ctx, MY_COMPANIES_ADD_COMPANY_PRIVATED_REDIRECT_PATH);
+  //   authRedirectPrivated(ctx, MY_COMPANIES_ADD_COMPANY_PRIVATED_REDIRECT_PATH);
 }

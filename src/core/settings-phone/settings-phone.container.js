@@ -46,7 +46,7 @@ export function SettingsPhoneContainer() {
   };
 
   useEffect(() => {
-    dispatch(settingsPhoneGetPhone());
+    // dispatch(settingsPhoneGetPhone());
   }, []);
 
   return (

@@ -21,13 +21,14 @@ export function HeaderContainer(props) {
     notificationState: state[HEADER_STORE_NAME].notification,
   }));
   useEffect(() => {
-    dispatch(headerNotificationLoadData());
+    // dispatch(headerNotificationLoadData());
   }, []);
   return (
     <HeaderComponent
       toggleSidebar={toggleSidebar}
       toggleSidebarHandler={toggleSidebarHandler}
-      isAuth={isAuth}
+      //   isAuth={isAuth} для показа клиенту
+      isAuth={pathname !== '/'}
       isMainPage={pathname === '/'}
       isPending={isRequestPending(notificationState)}
       isError={isRequestError(notificationState)}

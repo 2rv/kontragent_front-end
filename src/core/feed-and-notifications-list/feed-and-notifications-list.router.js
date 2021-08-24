@@ -7,5 +7,5 @@ import {
 
 export function feedAndNotificationsListRouter(ctx) {
   ctx.store.dispatch(setActivePath(FEED_AND_NOTIFICATIONS_LIST_ROUTE_PATH));
-  authRedirectPrivated(ctx, SIGNUP_REDIRECT_ON_LOGGED_PATH);
+  //   authRedirectPrivated(ctx, SIGNUP_REDIRECT_ON_LOGGED_PATH);
 }

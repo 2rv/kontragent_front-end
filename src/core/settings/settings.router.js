@@ -7,5 +7,5 @@ import {
 
 export function settingsRouter(ctx) {
   ctx.store.dispatch(setActivePath(SETTINGS_ROUTE_PATH));
-  authRedirectPrivated(ctx, SETTINGS_PRIVATE_REDIRECT);
+  //   authRedirectPrivated(ctx, SETTINGS_PRIVATE_REDIRECT);
 }

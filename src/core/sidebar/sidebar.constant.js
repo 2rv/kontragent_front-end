@@ -86,21 +86,21 @@ export const NAVMENU_ITEMS = [
     pathname: '/dialog-lawyer',
     path: '/dialog-lawyer',
   },
-  {
-    tid: 'Панель управления главная её (нужно сделать!!!)',
-    pathname: '/home',
-    path: '/home',
-  },
+  //   {
+  //     tid: 'Панель управления главная её (нужно сделать!!!)',
+  //     pathname: '/home',
+  //     path: '/home',
+  //   },
   {
     tid: 'SIDEBAR.NAV_MENU.ITEMS.DASHBOARD',
     pathname: '/dashboard',
     path: '/dashboard',
   },
-  {
-    tid: 'Панель управления администратора',
-    pathname: '/dashboard-admin',
-    path: '/dashboard-admin',
-  },
+  //   {
+  //     tid: 'Панель управления администратора',
+  //     pathname: '/dashboard-admin',
+  //     path: '/dashboard-admin',
+  //   },
   {
     tid: 'SIDEBAR.NAV_MENU.ITEMS.REFERRALS',
     pathname: '/referral',

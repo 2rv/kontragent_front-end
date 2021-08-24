@@ -7,8 +7,8 @@ import {
 
 export function SupportCreateRequestRouter(ctx) {
   ctx.store.dispatch(setActivePath(SUPPORT_CREATE_REQUEST_ROUTE_PATH));
-  authRedirectPrivated(
-    ctx,
-    SUPPORT_CREATE_REQUEST_FORM_REDIRECT_ON_UPLOAD_PATH,
-  );
+  //   authRedirectPrivated(
+  //     ctx,
+  //     SUPPORT_CREATE_REQUEST_FORM_REDIRECT_ON_UPLOAD_PATH,
+  //   );
 }

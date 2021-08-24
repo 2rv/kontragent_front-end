@@ -7,5 +7,5 @@ import {
 
 export function dashboardRouter(ctx) {
   ctx.store.dispatch(setActivePath(DASHBOARD_ROUTE_PATH));
-  authRedirectPrivated(ctx, DASHBOARD_ROUTE_PRIVATE_PATH);
+  //   authRedirectPrivated(ctx, DASHBOARD_ROUTE_PRIVATE_PATH);
 }

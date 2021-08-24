@@ -19,7 +19,7 @@ export function CompanyInviteContainer() {
   }));
 
   useEffect(() => {
-    dispatch(companyInviteLoadDataAction());
+    // dispatch(companyInviteLoadDataAction());
   }, []);
 
   return (

@@ -46,7 +46,7 @@ export function SettingEmailContainer() {
   };
 
   useEffect(() => {
-    dispatch(settingsEmailGetEmail());
+    // dispatch(settingsEmailGetEmail());
   }, []);
 
   return (

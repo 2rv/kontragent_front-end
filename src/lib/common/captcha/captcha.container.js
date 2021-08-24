@@ -22,7 +22,7 @@ export function CaptchaFieldContainer(props) {
     dispatch(captchaLoadCaptcha());
   };
   useEffect(() => {
-    captchaLoadCaptchaImage();
+    // captchaLoadCaptchaImage();
   }, []);
 
   const captchaData = state.captchaGetImage.data?.[CAPTCHA_DATA_NAME.CAPTCHA];

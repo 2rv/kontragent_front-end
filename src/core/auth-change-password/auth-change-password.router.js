@@ -8,8 +8,8 @@ import { codeVerificationRedirectNoCode } from '../../lib/common/code-verificati
 
 export function AuthChangePasswordRouter(ctx) {
   ctx.store.dispatch(setActivePath(AUTH_CHANGE_PASSWORD_ROUTE_PATH));
-  codeVerificationRedirectNoCode(
-    ctx,
-    AUTH_CHANGE_PASSWORD_REDIRECT_NO_CODE_PATH,
-  );
+  //   codeVerificationRedirectNoCode(
+  //     ctx,
+  //     AUTH_CHANGE_PASSWORD_REDIRECT_NO_CODE_PATH,
+  //   );
 }

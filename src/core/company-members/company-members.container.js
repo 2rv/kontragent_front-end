@@ -99,7 +99,7 @@ export function CompanyMembersContainer() {
       isSuccess={isRequestSuccess(state)}
       errorMessage={getRequestErrorMessage(state)}
       companyInfo={companyInfo.data}
-      companyMembersListData={state.data}
+      companyMembersListData={companyMembersListData || state.data}
       userRemove={userRemove}
       userChangeRole={userChangeRole}
       userComplain={userComplain}
@@ -136,17 +136,10 @@ const userRoleSelectOption = [
 const companyMembersListData = [
   {
     id: 1,
-    avatar: 'https://klike.net/uploads/posts/2019-03/1551511784_4.jpg',
-    name: 'Иван Иванов',
-    role: 'Менеджер',
-    inTheCompany: 'С марта 2020',
-  },
-  {
-    id: 1,
     avatar:
       'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkNClHcBngc-qOfx6OQ-rCm6L-xHp-t6R2QA&usqp=CAU',
     name: 'Иван Иванов',
-    role: 'Менеджер',
+    roleInfo: { roleName: 'Менеджер' },
     inTheCompany: 'С марта 2020',
   },
   {
@@ -154,53 +147,7 @@ const companyMembersListData = [
     avatar:
       'https://whatsism.com/uploads/posts/2018-07/1530546770_rmk_vdjbx10.jpg',
     name: 'Иван Иванов',
-    role: 'Менеджер',
-    inTheCompany: 'С марта 2020',
-  },
-  {
-    id: 1,
-    avatar: 'https://klike.net/uploads/posts/2019-03/1551511784_4.jpg',
-    name: 'Иван Иванов',
-    role: 'Менеджер',
-    inTheCompany: 'С марта 2020',
-  },
-  {
-    id: 1,
-    avatar:
-      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkNClHcBngc-qOfx6OQ-rCm6L-xHp-t6R2QA&usqp=CAU',
-    name: 'Иван Иванов',
-    role: 'Менеджер',
-    inTheCompany: 'С марта 2020',
-  },
-  {
-    id: 1,
-    avatar:
-      'https://whatsism.com/uploads/posts/2018-07/1530546770_rmk_vdjbx10.jpg',
-    name: 'Иван Иванов',
-    role: 'Менеджер',
-    inTheCompany: 'С марта 2020',
-  },
-  {
-    id: 1,
-    avatar: 'https://klike.net/uploads/posts/2019-03/1551511784_4.jpg',
-    name: 'Иван Иванов',
-    role: 'Менеджер',
-    inTheCompany: 'С марта 2020',
-  },
-  {
-    id: 1,
-    avatar:
-      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkNClHcBngc-qOfx6OQ-rCm6L-xHp-t6R2QA&usqp=CAU',
-    name: 'Иван Иванов',
-    role: 'Менеджер',
-    inTheCompany: 'С марта 2020',
-  },
-  {
-    id: 1,
-    avatar:
-      'https://whatsism.com/uploads/posts/2018-07/1530546770_rmk_vdjbx10.jpg',
-    name: 'Иван Иванов',
-    role: 'Менеджер',
+    roleInfo: { roleName: 'Менеджер' },
     inTheCompany: 'С марта 2020',
   },
 ];

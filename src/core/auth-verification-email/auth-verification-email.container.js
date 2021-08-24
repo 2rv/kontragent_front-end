@@ -29,7 +29,7 @@ export function AuthVerificationEmailContainer() {
   }));
 
   const authVerificationEmailSendCode = () => {
-    dispatch(authFormVerificationEmailSendCode(token));
+    // dispatch(authFormVerificationEmailSendCode(token));
   };
 
   useEffect(authVerificationEmailSendCode, []);

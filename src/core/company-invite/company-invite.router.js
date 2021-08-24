@@ -7,5 +7,5 @@ import {
 
 export function companyInviteRouter(ctx) {
   ctx.store.dispatch(setActivePath(COMPANY_INVITE_ROUTE_PATH));
-  authRedirectPrivated(ctx, REDIRECT_ON_LOGIN);
+  //   authRedirectPrivated(ctx, REDIRECT_ON_LOGIN);
 }
