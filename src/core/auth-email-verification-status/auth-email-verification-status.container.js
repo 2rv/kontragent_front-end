@@ -1,5 +1,5 @@
-import { EmailVerificationStatusContainer } from './frame/email-verification-status';
+import { AuthEmailVerificationStatusComponent } from './auth-email-verification-status.component';
 
 export function AuthEmailVerificationStatusContainer() {
-  return <EmailVerificationStatusContainer />;
+  return <AuthEmailVerificationStatusComponent />;
 }

@@ -1,0 +1,10 @@
+export const MY_LEGAL_ENTITIES_LIST_ROUTE_PATH = '/my-legal-entities';
+
+export const MY_LEGAL_ENTITIES_LIST_STORE_NAME = 'MY_LEGAL_ENTITIES_LIST';
+
+export const MY_LEGAL_ENTITIES_LIST_API = {
+  MY_LEGAL_ENTITIES_LIST_UPLOAD_DATA: {
+    ENDPOINT: null,
+    TYPE: 'POST',
+  },
+};

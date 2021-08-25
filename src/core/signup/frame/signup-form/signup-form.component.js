@@ -1,36 +1,37 @@
 import React from 'react';
 
-import styled from 'styled-components';
-
-import { PrimaryField } from '../../../../lib/elements/field';
+import { SectionLayout } from '../../../../lib/elements/layout';
 import { FieldLayout } from '../../../../lib/elements/layout';
-import { PrimaryButton } from '../../../../lib/elements/button';
-import { CommonLoader } from '../../../../lib/elements/loader';
-import { CommonError } from '../../../../lib/elements/error';
-
-import { spacing } from '../../../../lib/theme';
+import { PrimaryField } from '../../../../lib/elements/field';
+import { SecondaryButton } from '../../../../lib/elements/button';
+import { ErrorAlert } from '../../../../lib/elements/alert';
+import { PrimaryLoader } from '../../../../lib/elements/loader';
+import { SuccessAlert } from '../../../../lib/elements/alert';
+import { CaptchaFieldContainer } from '../../../../lib/common/captcha';
 
 export function SignupFormComponent(props) {
   const {
+    handleChange,
+    handleBlur,
+    handleSubmit,
+    values,
+    errors,
+    touched,
+    isValid,
+    isSubmitting,
+
     fieldLogin,
     fieldPassword,
     fieldPasswordRepeat,
     fieldEmail,
+    fieldCaptcha,
 
-    values,
-    errors,
-    touched,
-    handleChange,
-    handleBlur,
-    handleSubmit,
-    isValid,
-    isSubmitting,
-
+    fieldPhone,
+    pageLoading,
+    isSuccess,
     isPending,
     isError,
-    isSuccess,
     errorMessage,
-    pageLoading,
   } = props;
 
   const isFieldError = (name) => {
@@ -38,77 +39,91 @@ export function SignupFormComponent(props) {
   };
 
   const isSubmitDisabled = () => {
-    return JSON.stringify(touched) === '{}' ? true : !isValid;
+    return JSON.stringify(touched) === '{}'
+      ? true
+      : !isValid || isSubmitting || isSuccess || pageLoading;
   };
-
   return (
-    <form onSubmit={handleSubmit}>
-      <Container>
-        <FieldLayout>
-          <PrimaryField
-            titleTid="SIGNUP.SIGNUP_FORM.FIELD.LOGIN.TITLE"
-            placeholderTid="SIGNUP.SIGNUP_FORM.FIELD.LOGIN.PLACEHOLDER"
-            name={fieldLogin}
-            onChange={handleChange}
-            onBlur={handleBlur}
-            value={values[fieldLogin]}
-            error={isFieldError(fieldLogin)}
+    <React.Fragment>
+      {(isPending || pageLoading) && <PrimaryLoader />}
+      <form onSubmit={handleSubmit}>
+        <SectionLayout>
+          <FieldLayout>
+            <PrimaryField
+              titleTid="SIGNUP.SIGNUP_FORM.FIELD.LOGIN.TITLE"
+              placeholderTid="SIGNUP.SIGNUP_FORM.FIELD.LOGIN.PLACEHOLDER"
+              name={fieldLogin}
+              onChange={handleChange}
+              onBlur={handleBlur}
+              value={values[fieldLogin]}
+              error={isFieldError(fieldLogin)}
+            />
+
+            <PrimaryField
+              titleTid="SIGNUP.SIGNUP_FORM.FIELD.EMAIL.TITLE"
+              placeholderTid="SIGNUP.SIGNUP_FORM.FIELD.EMAIL.PLACEHOLDER"
+              name={fieldEmail}
+              onChange={handleChange}
+              onBlur={handleBlur}
+              value={values[fieldEmail]}
+              error={isFieldError(fieldEmail)}
+            />
+
+            <PrimaryField
+              titleTid="SIGNUP.SIGNUP_FORM.FIELD.PHONE.TITLE"
+              placeholderTid="SIGNUP.SIGNUP_FORM.FIELD.PHONE.PLACEHOLDER"
+              name={fieldPhone}
+              onChange={handleChange}
+              onBlur={handleBlur}
+              value={values[fieldPhone]}
+              error={isFieldError(fieldPhone)}
+            />
+
+            <PrimaryField
+              titleTid="SIGNUP.SIGNUP_FORM.FIELD.PASSWORD.TITLE"
+              placeholderTid="SIGNUP.SIGNUP_FORM.FIELD.PASSWORD.PLACEHOLDER"
+              name={fieldPassword}
+              onChange={handleChange}
+              onBlur={handleBlur}
+              value={values[fieldPassword]}
+              error={isFieldError(fieldPassword)}
+              type="password"
+            />
+
+            <PrimaryField
+              titleTid="SIGNUP.SIGNUP_FORM.FIELD.PASSWORD_REPEAT.TITLE"
+              placeholderTid="SIGNUP.SIGNUP_FORM.FIELD.PASSWORD_REPEAT.PLACEHOLDER"
+              name={fieldPasswordRepeat}
+              onChange={handleChange}
+              onBlur={handleBlur}
+              value={values[fieldPasswordRepeat]}
+              error={isFieldError(fieldPasswordRepeat)}
+              type="password"
+            />
+
+            <CaptchaFieldContainer
+              titleTid="SIGNUP.SIGNUP_FORM.FIELD.CAPTCHA.TITLE"
+              placeholderTid="SIGNUP.SIGNUP_FORM.FIELD.CAPTCHA.PLACEHOLDER"
+              name={fieldCaptcha}
+              onChange={handleChange}
+              onBlur={handleBlur}
+              value={values[fieldCaptcha]}
+              error={isFieldError(fieldCaptcha)}
+            />
+          </FieldLayout>
+          <SecondaryButton
+            tid="SIGNUP.SIGNUP_FORM.BUTTON"
+            disabled={isSubmitDisabled()}
           />
 
-          <PrimaryField
-            titleTid="SIGNUP.SIGNUP_FORM.FIELD.EMAIL.TITLE"
-            placeholderTid="SIGNUP.SIGNUP_FORM.FIELD.EMAIL.PLACEHOLDER"
-            name={fieldEmail}
-            onChange={handleChange}
-            onBlur={handleBlur}
-            value={values[fieldEmail]}
-            error={isFieldError(fieldEmail)}
-          />
-
-          <PrimaryField
-            titleTid="SIGNUP.SIGNUP_FORM.FIELD.PASSWORD.TITLE"
-            placeholderTid="SIGNUP.SIGNUP_FORM.FIELD.PASSWORD.PLACEHOLDER"
-            name={fieldPassword}
-            onChange={handleChange}
-            onBlur={handleBlur}
-            value={values[fieldPassword]}
-            error={isFieldError(fieldPassword)}
-            type="password"
-          />
-
-          <PrimaryField
-            titleTid="SIGNUP.SIGNUP_FORM.FIELD.PASSWORD_REPEAT.TITLE"
-            placeholderTid="SIGNUP.SIGNUP_FORM.FIELD.PASSWORD_REPEAT.PLACEHOLDER"
-            name={fieldPasswordRepeat}
-            onChange={handleChange}
-            onBlur={handleBlur}
-            value={values[fieldPasswordRepeat]}
-            error={isFieldError(fieldPasswordRepeat)}
-            type="password"
-          />
-        </FieldLayout>
-        <PrimaryButton
-          tid="SIGNUP.SIGNUP_FORM.BUTTON"
-          disabled={isSubmitDisabled()}
-        />
-
-        {errorMessage && <CommonError tid={`ERROR.${errorMessage}`} />}
-        {isPending && (
-          <LoaderLayout>
-            <CommonLoader width={17} height={17} />
-          </LoaderLayout>
-        )}
-      </Container>
-    </form>
+          {(isError || errorMessage) && (
+            <ErrorAlert tid={`ERROR.${errorMessage}`} />
+          )}
+          {isSuccess && (
+            <SuccessAlert tid={'SIGNUP.SIGNUP_FORM.SUCCESS_MESSAGE'} />
+          )}
+        </SectionLayout>
+      </form>
+    </React.Fragment>
   );
 }
-
-const LoaderLayout = styled.div`
-  display: flex;
-  justify-content: center;
-`;
-
-const Container = styled.div`
-  display: grid;
-  gap: ${spacing(4)};
-`;

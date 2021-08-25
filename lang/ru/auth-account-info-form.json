@@ -1,0 +1,33 @@
+{
+	"HEADER": "Заполнение данных",
+	"BUTTON": "Зарегистрироваться",
+	"PROPOSAL": "Не смогли зарегистрироваться?",
+	"PROPOSAL_ACTION": "Помощь",
+	"SUCCESS_MESSAGE": "SUCCESS_MESSAGE",
+	"ACCOUNT_INFO_FORM": {
+		"FIELD": {
+			"FULLNAME": {
+				"TITLE": "Ваше ФИО",
+				"PLACEHOLDER": "Иванов Иван Иванович"
+			}
+		}
+	},
+	"COMPANY_INFO_FORM": {
+		"FIELD": {
+			"COMPANY_NAME": {
+				"TITLE": "Название компании",
+				"PLACEHOLDER": "ООО КОНТРАГЕНТ"
+			},
+			"INN": {
+				"TITLE": "ИНН",
+				"PLACEHOLDER": "000 000 000 000"
+			},
+			"POSITION": {
+				"TITLE": "Должность в компании",
+				"PLACEHOLDER": "Менеджер"
+			}
+		},
+		"BUTTON": "Добавить компанию",
+		"FORM_ACTION": "Удалить компанию"
+	}
+}

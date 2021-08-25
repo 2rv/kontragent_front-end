@@ -1,1 +1,1 @@
-export { LoginHeaderComponent } from './login-header.component'
+export { LoginHeaderContainer } from './login-header.container';

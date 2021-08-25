@@ -1,0 +1,96 @@
+{
+  "NOTIFICATION": {
+    "FIELD": {
+      "EMAIL": {
+        "TITLE": "Email",
+        "PLACEHOLDER": "Contragent@gmail.com"
+      }
+    },
+    "SUBTITLE": "Вы можете подписаться на рассылку важных уведомлений и новостей от компании",
+    "TITLE": "Важные уведомления",
+    "BUTTON": "Подписаться",
+    "SUCCESS_MESSAGE": "SUCCESS_MESSAGE"
+  },
+  "ADVERT": {
+    "SUBTITLE": "Рекламу по желанию можно отключить преобретая подписку за деньги с вашего счёта",
+    "TITLE": "Реклама",
+    "BUTTON": {
+      "FIRST": "Убрать рекламу в диалогах",
+      "SECOND": "Убрать рекламные баннеры"
+    }
+  },
+  "AVATAR": {
+    "TITLE": "Аватар профиля",
+    "BUTTON": {
+      "FIRST": "Сменить аватар",
+      "SECOND": "Удалить аватар"
+    }
+  },
+  "2FA": {
+    "FIELD": {
+      "PHONE_NUMBER": {
+        "TITLE": "Номер телефона",
+        "PLACEHOLDER": "+7 000 000 00 00"
+      }
+    },
+    "TITLE": "Двухэтапная аутентификация",
+    "BUTTON": "Включить аутентефикацию",
+    "SUCCESS_MESSAGE": "SUCCESS_MESSAGE"
+  },
+  "PASSWORD": {
+    "FIELD": {
+      "NEW_PASSWORD": {
+        "TITLE": "Новый пароль",
+        "PLACEHOLDER": "Введите новый пароль"
+      },
+      "REPEAT_NEW_PASSWORD": {
+        "TITLE": "Повторите новый пароль",
+        "PLACEHOLDER": "Введите новый пароль ещё раз"
+      },
+      "OLD_PASSWORD": {
+        "TITLE": "Старый пароль",
+        "PLACEHOLDER": "Введите старый пароль"
+      }
+    },
+    "TITLE": "Смена пароля",
+    "BUTTON": "Сменить пароль",
+    "SUCCESS_MESSAGE": "SUCCESS_MESSAGE"
+  },
+  "EMAIL": {
+    "FIELD": {
+      "EMAIL": {
+        "TITLE": "Email",
+        "PLACEHOLDER": "Contragent@gmail.com"
+      },
+      "PASSWORD": {
+        "TITLE": "Пароль",
+        "PLACEHOLDER": "Введите пароль"
+      }
+    },
+    "TITLE": "Сменить Email",
+    "BUTTON": "Сменить Email",
+    "SUCCESS_MESSAGE": "SUCCESS_MESSAGE"
+  },
+  "PHONE": {
+    "FIELD": {
+      "PHONE_NUMBER": {
+        "TITLE": "Номер телефона",
+        "PLACEHOLDER": "+7 000 000 00 00"
+      },
+      "PASSWORD": {
+        "TITLE": "Пароль",
+        "PLACEHOLDER": "Введите пароль"
+      }
+    },
+    "TITLE": "Смена номера телефона",
+    "BUTTON": "Сменить номер телефона",
+    "SUCCESS_MESSAGE": "SUCCESS_MESSAGE"
+  },
+  "MAIN_SETTINGS": {
+    "TITLE": "Настройки",
+    "CATEGORY": {
+      "OTHER": "Другое",
+      "PERSONALIZATION": "Персонализация"
+    }
+  }
+}

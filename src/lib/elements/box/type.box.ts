@@ -1,3 +1,4 @@
 export interface PrimaryBoxPropsType {
-  children: React.ReactNode
+  className?: string;
+  children: React.ReactElement<any> | null;
 }

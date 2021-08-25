@@ -1,0 +1,17 @@
+{
+	"TITLE": "Мои юрлица",
+	"INPUT_PLACEHOLDER": "Мои юрлица",
+	"FIND_LEGAL_ENTITY": "Найти юрлицо",
+	"SELECT_OPTION": {
+		"BY_TURNOVER": "По обороту"
+	},
+	"LEGAL_ENTITY": "Юрлицо",
+	"BOOKS": "Книги",
+	"COUNTERPARTIES": "Контрагентов",
+	"TURNOVER": "Оборот",
+	"ADDITIONAL_ACCRUAL": "Доначисления",
+	"RISKS": "Риски",
+	"PEOPLES_RATING": "Народный рейтинг",
+	"PENALTIES": "Пени",
+	"FINES": "Штрафы"
+}

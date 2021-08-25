@@ -4,9 +4,19 @@ import { THEME_COLOR, THEME_VALUE, THEME_SIZE } from '../../theme';
 import { spacing } from '../../theme';
 
 export function PrimaryInput(props: InputCommonPropsType) {
-  const { onChange, onBlur, value, name, placeholder, isError, type } = props;
+  const {
+    onChange,
+    onBlur,
+    value,
+    name,
+    placeholder,
+    isError,
+    type,
+    className,
+  } = props;
   return (
     <Input
+      className={className}
       onChange={onChange}
       onBlur={onBlur}
       value={value}
@@ -19,10 +29,11 @@ export function PrimaryInput(props: InputCommonPropsType) {
 }
 
 const Input = styled.input`
+  height: 46px;
   background: ${(props: InputCommonPropsType) =>
     !props.isError ? THEME_COLOR.COLOR.SECONDARY : THEME_COLOR.COLOR.BASE};
-  border-radius: ${THEME_SIZE.RADIUS.FIELD};
-  padding: ${spacing(3)};
+  border-radius: ${THEME_SIZE.RADIUS.DEFAULT};
+  padding: ${spacing(4)};
   font-size: ${THEME_SIZE.FONT.SMALL};
 
   border: ${(props: InputCommonPropsType) =>
@@ -39,10 +50,16 @@ const Input = styled.input`
   }
 
   &:-webkit-autofill {
-    border: 1px solid transparent;
+    border: ${(props: InputCommonPropsType) =>
+      props.isError
+        ? `1px solid ${THEME_COLOR.COLOR.VALIDATION}`
+        : '1px solid transparent'};
   }
   &:-webkit-autofill:hover {
-    border: 1px solid transparent;
+    border: ${(props: InputCommonPropsType) =>
+      props.isError
+        ? `1px solid ${THEME_COLOR.COLOR.VALIDATION}`
+        : '1px solid transparent'};
     opacity: ${THEME_VALUE.OPACITY.HOVER};
   }
   &:-webkit-autofill:focus {

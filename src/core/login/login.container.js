@@ -1,11 +1,6 @@
 import React from 'react';
 
-import styled from 'styled-components';
-
-import { LoginFormContainer } from '../login/frame/login-form';
-import { LoginHeaderComponent } from './frame/login-header';
-import { LoginFooterComponent } from './frame/login-footer';
-import { PrimaryBox } from '../../lib/elements/box';
+import { LoginComponent } from './login.component';
 
 import { useDispatch, useSelector } from 'react-redux';
 
@@ -27,7 +22,6 @@ import {
   isRequestPending,
   isRequestSuccess,
 } from '../../main/store/store.service';
-import { spacing } from '../../lib/theme';
 
 export function LoginContainer() {
   const dispatch = useDispatch();
@@ -40,35 +34,25 @@ export function LoginContainer() {
     dispatch(loginFormUploadData(data));
   };
 
-  const loginFormGetInitialValue = () => {
+  const getInitialValue = () => {
     return {
       [LOGIN_FIELD_NAME.LOGIN]: '',
       [LOGIN_FIELD_NAME.PASSWORD]: '',
+      [LOGIN_FIELD_NAME.CAPTCHA]: '',
     };
   };
 
   return (
-    <PrimaryBox>
-      <LoginContainerLayout>
-        <LoginHeaderComponent />
-        <LoginFormContainer
-          isPending={isRequestPending(state.loginForm)}
-          isError={isRequestError(state.loginForm)}
-          isSuccess={isRequestSuccess(state.loginForm)}
-          initialValue={loginFormGetInitialValue()}
-          validation={loginFormValidation}
-          onSubmitForm={loginFormSendData}
-          fieldName={LOGIN_FORM_FIELD_NAME}
-          pageLoading={pageLoading}
-          errorMessage={getRequestErrorMessage(state.loginForm)}
-        />
-        <LoginFooterComponent />
-      </LoginContainerLayout>
-    </PrimaryBox>
+    <LoginComponent
+      isPending={isRequestPending(state.loginForm)}
+      isError={isRequestError(state.loginForm)}
+      isSuccess={isRequestSuccess(state.loginForm)}
+      initialValue={getInitialValue()}
+      validation={loginFormValidation}
+      onSubmitForm={loginFormSendData}
+      fieldName={LOGIN_FORM_FIELD_NAME}
+      pageLoading={pageLoading}
+      errorMessage={getRequestErrorMessage(state.loginForm)}
+    />
   );
 }
-
-const LoginContainerLayout = styled.div`
-  display: grid;
-  gap: ${spacing(4)};
-`;

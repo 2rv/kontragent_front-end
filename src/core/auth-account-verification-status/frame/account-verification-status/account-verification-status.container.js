@@ -5,5 +5,3 @@ import { AccountVerificationStatusComponent } from './account-verification-statu
 export function AccountVerificationStatusContainer() {
   return <AccountVerificationStatusComponent />;
 }
-
-export default AccountVerificationStatusContainer;

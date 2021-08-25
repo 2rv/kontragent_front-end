@@ -6,7 +6,11 @@ import { THEME_SIZE, THEME_COLOR, THEME_VALUE } from '../../theme';
 import { TextPropsType } from './type.text';
 
 export function SecondaryText(props: TextPropsType) {
-  return <Text className={props.className}>{text(props.tid)}</Text>;
+  const { tid, tvalue, children, className } = props;
+
+  return (
+    <Text className={className}>{children ? children : text(tid, tvalue)}</Text>
+  );
 }
 
 const Text = styled.span`

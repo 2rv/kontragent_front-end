@@ -1,0 +1,56 @@
+import styled from 'styled-components';
+import { THEME_COLOR, THEME_VALUE, spacing } from '../../../../lib/theme';
+import { PrimaryBox } from '../../../../lib/elements/box';
+import { IndentLayout } from '../../../../lib/elements/layout';
+import { PrimaryText, SecondaryText } from '../../../../lib/elements/text';
+
+export function AccountInfoComponent() {
+  return (
+    <Container>
+      <IndentLayout type="SMALL">
+        <Content>
+          <Avatar
+            src="/static/img/tempAccountInfoProfileImage.svg"
+            width={56}
+            height={56}
+          />
+          <AccountInfoDataLayout>
+            <Name>Анастасия Добро</Name>
+            <div>
+              <PriceValue>1550</PriceValue>
+              <SecondaryText tid="SIDEBAR.ACCOUNT_INFO_CURRENCY" />
+            </div>
+          </AccountInfoDataLayout>
+        </Content>
+      </IndentLayout>
+    </Container>
+  );
+}
+const Avatar = styled.img`
+  min-width: 56px;
+  width: 56px;
+  height: 56px;
+`;
+const Container = styled(PrimaryBox)`
+  background-color: ${THEME_COLOR.COLOR.SECONDARY};
+  margin-right: ${spacing(6)};
+`;
+const Content = styled.div`
+  display: flex;
+  align-items: center;
+  gap: ${spacing(3)};
+`;
+const AccountInfoDataLayout = styled.div`
+  display: grid;
+  gap: ${spacing(2)};
+`;
+
+const Name = styled(PrimaryText)`
+  font-weight: ${THEME_VALUE.FONT_WEIGHT.SEMY_BOLD};
+  white-space: nowrap;
+`;
+
+const PriceValue = styled(PrimaryText)`
+  color: ${THEME_COLOR.TEXT.ACCENT};
+  white-space: nowrap;
+`;

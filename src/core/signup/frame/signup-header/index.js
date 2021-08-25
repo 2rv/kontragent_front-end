@@ -1,1 +1,1 @@
-export { SignupHeaderComponent } from './signup-header.component'
+export { SignupHeaderContainer } from './signup-header.container';

@@ -3,9 +3,9 @@ import { httpRequest } from '../../main/http';
 import { SIGNUP_ACTION_TYPE } from './signup.type';
 import { SIGNUP_API } from './signup.constant';
 
-import { authSetData } from '../../lib/common/auth/auth.action'
-import { SIGNUP_FORM_REDIRECT_ON_UPLOAD_PATH } from './signup.constant'
-import { redirect } from '../../main/navigation/navigation.core'
+import { authSetData } from '../../lib/common/auth/auth.action';
+import { SIGNUP_FORM_REDIRECT_ON_UPLOAD_PATH } from './signup.constant';
+import { redirect } from '../../main/navigation/navigation.core';
 
 export function signupFormUploadData(data) {
   return async (dispatch) => {
@@ -19,7 +19,6 @@ export function signupFormUploadData(data) {
         url: SIGNUP_API.SIGNUP_FORM_UPLOAD.ENDPOINT,
         data,
       });
-
       dispatch(authSetData(res.data.accessToken));
 
       dispatch({

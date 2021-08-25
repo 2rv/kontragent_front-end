@@ -1,0 +1,13 @@
+export const FEED_AND_NOTIFICATIONS_LIST_ROUTE_PATH = '/feed-and-notifications';
+
+export const FEED_AND_NOTIFICATIONS_LIST_STORE_NAME =
+  'FEED_AND_NOTIFICATIONS_LIST';
+
+export const FEED_AND_NOTIFICATIONS_LIST_API = {
+  FEED_AND_NOTIFICATIONS_LIST_GET_DATA: {
+    ENDPOINT: null,
+    TYPE: 'POST',
+  },
+};
+
+export const SIGNUP_REDIRECT_ON_LOGGED_PATH = '/logout';

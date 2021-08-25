@@ -8,5 +8,6 @@
   },
   "BUTTON": "Подтвердить",
   "PROPOSAL": "Не пришёл код? ",
-  "PROPOSAL_ACTION": "Отправить повторно"
+  "PROPOSAL_ACTION": "Отправить повторно",
+  "SUCCESS_MESSAGE": "SUCCESS_MESSAGE"
 }

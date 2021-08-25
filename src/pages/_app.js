@@ -1,10 +1,11 @@
 import App from 'next/app';
+import Head from 'next/head';
 import React from 'react';
 import { Provider as ReduxProvider } from 'react-redux';
 import withRedux from 'next-redux-wrapper';
 
 import { initStore } from '../main/store';
-import { setAutorization } from '../main/auth';
+import { setAutorization, setCurrentAuthCookie } from '../main/auth';
 import { Router } from '../main/router';
 
 import { langServerDetection, langBrowserDetection } from '../lib/common/lang';
@@ -17,6 +18,7 @@ import '../asset/css/main.css';
 class MyApp extends App {
   componentDidMount() {
     langBrowserDetection();
+    setCurrentAuthCookie();
   }
 
   static async getInitialProps({ Component, ctx }) {

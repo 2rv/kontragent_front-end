@@ -1,0 +1,11 @@
+import {
+  BALANCE_DEPOSIT_DATA_NAME,
+  BALANCE_DEPOSIT_FIELD_NAME,
+} from './balance-deposit.type';
+
+export const convertBalanceDepositFormData = (data) => ({
+  [BALANCE_DEPOSIT_DATA_NAME.PAYMENT_METHOD]:
+    data[BALANCE_DEPOSIT_FIELD_NAME.PAYMENT_METHOD],
+  [BALANCE_DEPOSIT_DATA_NAME.DEPOSIT]:
+    data[BALANCE_DEPOSIT_FIELD_NAME.DEPOSIT_AMOUNT],
+});

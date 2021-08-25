@@ -1,0 +1,13 @@
+{
+	"HEADER": "Восстановление пароля",
+	"BUTTON": "Восстановить",
+	"SUCCESS_MESSAGE": "SUCCESS_MESSAGE",
+	"FORM_FIELD": {
+		"EMAIL": {
+			"TITLE": "Почта",
+			"PLACEHOLDER": "Contragent@gmail.com"
+		}
+	},
+	"PROPOSAL": "Вспомнили пароль?",
+	"PROPOSAL_LINK": "Войти"
+}

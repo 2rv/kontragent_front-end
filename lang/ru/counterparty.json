@@ -1,0 +1,103 @@
+{
+	"TITLE": "Контрагент",
+	"TABS": {
+		"DETAIL_INFORMATION": "Детальная информация",
+		"RATING": "Рейтинг",
+		"TESTIMONIALS": "Отзывы",
+		"VERIFICATIONS": "Проверки",
+		"ARBITRATION_CASES": "Арбитражные дела",
+		"RED_ZONE": "Красная зона"
+	},
+	"DETAIL_INFORMATION": {
+		"HEADER": {
+			"TITLE": "Детальная информация",
+			"COMPANY_TYPE": "Общество с ограниченной ответственностью",
+			"DOWNLOAD_INFO_IN_PDF": "Скачать информацию в PDF",
+			"LEGAL_ADVICE_FACE": "Консультация по юр. лицу"
+		},
+		"DANGER_NOTICE_TITLE": "Уведомления об опасности",
+		"INFO": {
+			"ACTING": "Действующее",
+			"DATE_OF_INFORMATION": "Дата образования",
+			"TELEPHONE": "Телефон",
+			"AUTHORIZED_CAPITAL": "Уставный капитал",
+			"EXECUTION_PROCEEDINGS": "Исполнительные производства",
+			"NO_ENFORCEMENT_PROCEEDINGS_FOUND": "Не найдено исполнительных производств",
+			"EXTRACT_FROM_USRLE": "Выписка из ЕГРЮЛ",
+			"TO_FORM": "Сформировать",
+			"IN_TODAYS_DATE": "по состоянию на сегодня",
+			"CEO": "Генеральный директор",
+			"FOUNDERS_INDIVIDUALS": "Учредители - физические лица:",
+			"FINANCES_AT_THE_END_OF_2020": "Финансы на конец 2020 года",
+			"BALANCE": "Баланс:",
+			"REVENUE": "Выручка:",
+			"NET_PROFIT": "Чистая прибыль:"
+		}
+	},
+	"RISK_RATING_ASSESSMENT": {
+		"HEADER": {
+			"TITLE": "Рейтинг и оценка рисков",
+			"COMPANY_TYPE": "Общество с ограниченной ответственностью"
+		},
+		"YOUR_MARK": "Ваша оценка",
+		"PEOPLES_RATING": "Народный рейтинг",
+		"POINTS": "Баллов",
+		"TURNOVER": "Оборот",
+		"RISK_OF_ADDITIONAL_ACCRUAL": "Риск доначисления"
+	},
+	"REVIEWS": {
+		"HEADER": {
+			"TITLE": "Отзывы",
+			"COMPANY_TYPE": "Общество с ограниченной ответственностью"
+		},
+		"TYPE": {
+			"PLAINTIFF": "Истец",
+			"DEFENDANT": "Ответчик"
+		},
+		"WRITE_MESSAGE": "Сообщение от своего имени"
+	},
+	"VERIFICATIONS": {
+		"HEADER": {
+			"TITLE": "Проверки",
+			"COMPANY_TYPE": "Общество с ограниченной ответственностью"
+		},
+		"STATUS": {
+			"STANDART": "Стандартная",
+			"EXTENDED": "Расширенная"
+		},
+		"TYPE": {
+			"DONE": "Выполнено",
+			"AWAITING_PAYMENT": "Ожидает оплаты",
+			"PERFORMED": "Выполняется"
+		},
+		"BUTTONS": {
+			"CANCEL": "Отменить",
+			"PAID": "Оплачена",
+			"PAY": "Оплатить"
+		}
+	},
+	"ARBITRATION_CASES": {
+		"HEADER": {
+			"TITLE": "Арбитражные дела",
+			"COMPANY_TYPE": "Общество с ограниченной ответственностью"
+		},
+		"STATUS": {
+			"RESOLVED": "Решено",
+			"UNDER_CONSIDERATION": "На рассмотрении",
+			"REJECTED": "Отклонено"
+		},
+		"TYPE": {
+			"KONTRAGENT": "Контрагент",
+			"COMPLAINT": "Жалоба",
+			"SUSPICION": "Подозрение"
+		}
+	},
+	"RED_ZONE": {
+		"HEADER": {
+			"TITLE": "Красная зона",
+			"COMPANY_TYPE": "Общество с ограниченной ответственностью"
+		},
+		"PRICE_OF_RESOLVING_ISSUE": "Цена решения вопроса",
+		"ORDER": "Заказать"
+	}
+}

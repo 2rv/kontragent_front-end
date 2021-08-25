@@ -1,0 +1,52 @@
+import styled from 'styled-components';
+import { ReactComponent as FindIcon } from '../../../../asset/svg/find.svg';
+import {
+  spacing,
+  THEME_COLOR,
+  THEME_SIZE,
+  THEME_VALUE,
+} from '../../../../lib/theme';
+import { PrimaryText, SecondaryText } from '../../../../lib/elements/text';
+
+export function FindCompleteNotification(props) {
+  const {} = props;
+
+  return (
+    <Content>
+      <AvatarCase>
+        <FindIcon />
+      </AvatarCase>
+      <Column>
+        <Title tid="Ваш поиск был выполнен!" />
+        <Time tid="25 минут назад" />
+      </Column>
+    </Content>
+  );
+}
+const Column = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: ${spacing(2)};
+`;
+const Content = styled.div`
+  display: flex;
+  gap: ${spacing(3)};
+`;
+const AvatarCase = styled.div`
+  background-color: ${THEME_COLOR.COLOR.ACCENT};
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 40px;
+  height: 40px;
+  border-radius: ${THEME_SIZE.RADIUS.CIRCLE};
+`;
+const Title = styled(SecondaryText)`
+  color: ${THEME_COLOR.TEXT.PRIMARY};
+  line-height: 21px;
+`;
+const Time = styled(SecondaryText)`
+  color: ${THEME_COLOR.COLOR.LIGHT_GREY};
+  font-size: ${THEME_SIZE.FONT.TINY};
+`;
