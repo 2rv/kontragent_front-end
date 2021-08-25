@@ -44,9 +44,9 @@ export function HeaderComponent(props) {
             <LogoText tid="Контрагент" />
           </Case>
           <Case>
-            <PrimaryLink tid="Выход" pathname={'/logout'}>
+            {/* <PrimaryLink tid="Выход" pathname={'/logout'}>
               <ExitIcon />
-            </PrimaryLink>
+            </PrimaryLink> */}
             <Notification notificationListData={notificationListData} />
             <Find />
             <Avatar src="/static/img/headerAvatar.svg" />
@@ -89,6 +89,9 @@ const Avatar = styled.img`
   min-width: 30px;
   width: 30px;
   height: 30px;
+  @media screen and (max-width: 500px) {
+    display: none;
+  }
 `;
 
 const LogoText = styled(PrimaryTitleText)`

@@ -33,4 +33,7 @@ const Container = styled.div`
   gap: ${spacing(6)};
   background-color: ${THEME_COLOR.COLOR.PRIMARY};
   border-radius: ${THEME_SIZE.RADIUS.DEFAULT};
+  @media screen and (max-width: 750px) {
+    display: none;
+  }
 `;

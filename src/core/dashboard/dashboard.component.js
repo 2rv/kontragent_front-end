@@ -38,4 +38,7 @@ const Container = styled.div`
     ${THEME_COLOR.COLOR.SECONDARY} 30%,
     ${THEME_COLOR.COLOR.ACCENT} 30%
   );
+  @media screen and (max-width: 500px) {
+    padding: ${spacing(2)};
+  }
 `;
