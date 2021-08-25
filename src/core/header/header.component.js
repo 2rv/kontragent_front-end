@@ -73,10 +73,12 @@ export function HeaderComponent(props) {
 const RequestButton = styled(BasicButton)`
   color: ${THEME_COLOR.COLOR.ACCENT};
   border-radius: 100px;
+  width: max-content;
   border: 3px solid ${THEME_COLOR.COLOR.ACCENT};
 `;
 const HeaderLink = styled(PrimaryLink)`
   font-weight: ${THEME_VALUE.FONT_WEIGHT.SEMY_BOLD};
+  width: max-content;
 `;
 
 const Find = styled(FindIcon)`
@@ -131,6 +133,7 @@ const Content = styled.div`
   align-items: center;
   gap: ${spacing(8)};
   justify-content: space-between;
+  overflow: auto;
 `;
 const Container = styled.div`
   padding: ${spacing(8)};
