@@ -1,3 +1,0 @@
-export const SETTINGS_2FA_FORM_FIELD_KEY = {
-  PHONE_NUMBER: 'PHONE_NUMBER',
-};

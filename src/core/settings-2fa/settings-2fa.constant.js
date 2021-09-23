@@ -1,8 +1,0 @@
-export const SETTINGS_2FA_STORE_NAME = 'SETTINGS_2FA_STORE_NAME';
-
-export const SETTINGS_2FA_API = {
-  SETTINGS_2FA_FORM_UPLOAD: {
-    ENDPOINT: '',
-    TYPE: 'POST',
-  },
-};

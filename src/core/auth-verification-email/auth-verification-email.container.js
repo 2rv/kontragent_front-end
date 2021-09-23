@@ -1,47 +1,98 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 
 import { AuthVerificationEmailComponent } from './auth-verification-email.component';
 
 import { useDispatch, useSelector } from 'react-redux';
 
-import { authFormVerificationEmailSendCode } from './auth-verification-email.action';
+import { authVerificationEmailFormValidation } from './auth-verification-email.validation';
 
-import { AUTH_VERIFICATION_EMAIL_STORE_NAME } from './auth-verification-email.constant';
+import { AUTH_VERIFICATION_EMAIL_DATA_NAME } from './auth-verification-email.constant';
 
 import { NAVIGATION_STORE_NAME } from '../../lib/common/navigation/navigation.constant';
 
-import { AUTH_STORE_NAME } from '../../lib/common/auth';
+import { httpRequest } from '../../main/http';
 
-import {
-  getRequestErrorMessage,
-  isRequestError,
-  isRequestPending,
-  isRequestSuccess,
-} from '../../main/store/store.service';
+import { redirect } from '../../main/navigation/navigation.core';
 
 export function AuthVerificationEmailContainer() {
-  const dispatch = useDispatch();
-
-  const { state, pageLoading, token } = useSelector((state) => ({
-    state: state[AUTH_VERIFICATION_EMAIL_STORE_NAME],
+  const { pageLoading } = useSelector((state) => ({
     pageLoading: state[NAVIGATION_STORE_NAME].pageLoading,
-    token: state[AUTH_STORE_NAME].token,
   }));
 
-  const authVerificationEmailSendCode = () => {
-    // dispatch(authFormVerificationEmailSendCode(token));
+  React.useEffect(() => {
+    verificationEmailFormGetCode();
+  }, []);
+
+  const verificationEmailFormSendData = async (data) => {
+    setRequestPending(true);
+    setRequestSuccess(false);
+    setRequestError(false);
+    setRequestErrorMessage(null);
+
+    try {
+      const res = await httpRequest({
+        method: 'POST',
+        url: `/user-verification/email/${
+          data[AUTH_VERIFICATION_EMAIL_DATA_NAME.CODE]
+        }`,
+        data,
+      });
+
+      await redirect('/auth/verification/phone');
+
+      setRequestPending(false);
+      setRequestSuccess(true);
+    } catch (error) {
+      if (error) {
+        setRequestError(true);
+        setRequestPending(false);
+        setRequestErrorMessage(error.response.data.message);
+      }
+    }
   };
 
-  useEffect(authVerificationEmailSendCode, []);
+  const verificationEmailFormGetCode = async (data) => {
+    setRequestPending(true);
+    setRequestError(false);
+    setRequestErrorMessage(null);
+
+    try {
+      const res = await httpRequest({
+        method: 'GET',
+        url: '/user-verification/email',
+      });
+
+      setRequestPending(false);
+    } catch (error) {
+      // if (error) {
+      //   setRequestError(true);
+      //   setRequestPending(false);
+      //   setRequestErrorMessage(error.response.data.message);
+      // }
+    }
+  };
+
+  const getInitialValue = () => {
+    return {
+      [AUTH_VERIFICATION_EMAIL_DATA_NAME.CODE]: '',
+    };
+  };
+
+  const [isRequestPending, setRequestPending] = React.useState(null);
+  const [isRequestError, setRequestError] = React.useState(null);
+  const [isRequestSuccess, setRequestSuccess] = React.useState(null);
+  const [getRequestErrorMessage, setRequestErrorMessage] = React.useState(null);
 
   return (
     <AuthVerificationEmailComponent
-      isPending={isRequestPending(state.authFormVerificationEmail)}
-      isError={isRequestError(state.authFormVerificationEmail)}
+      isPending={isRequestPending}
+      isError={isRequestError}
+      isSuccess={isRequestSuccess}
+      initialValue={getInitialValue()}
+      validation={authVerificationEmailFormValidation}
+      onSubmitForm={verificationEmailFormSendData}
       pageLoading={pageLoading}
-      userEmail={state.authFormVerificationEmail?.data?.email}
-      errorMessage={getRequestErrorMessage(state.authFormVerificationEmail)}
-      sendCode={authVerificationEmailSendCode}
+      errorMessage={getRequestErrorMessage}
     />
   );
 }

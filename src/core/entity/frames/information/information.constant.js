@@ -1,8 +1,0 @@
-export const ENTITY_INFORMATION_STORE_NAME = 'ENTITY_INFORMATION_STORE';
-
-export const INFORMATION_API = {
-  INFORMATION_LOAD_DATA: {
-    ENDPOINT: '/',
-    TYPE: 'POST',
-  },
-};

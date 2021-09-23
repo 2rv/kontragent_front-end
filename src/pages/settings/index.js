@@ -1,2 +1,2 @@
-import { SettingsPage } from '../../core/settings';
+import { SettingsPage } from '../../core/settings/settings.page';
 export default SettingsPage;
