@@ -9,7 +9,7 @@ import { shape } from './shape.theme';
 import { transitions } from './transitions.theme';
 import { typography } from './typography.theme';
 import { spacing } from './spacing.theme';
-import { zIndex } from './zindex.theme';
+import { zIndex } from './zIndex.theme';
 
 export const THEME_CONFIG = {
   breakpoints,
