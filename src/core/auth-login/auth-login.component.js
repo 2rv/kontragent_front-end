@@ -2,7 +2,7 @@ import Paper from '@mui/material/Paper';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Divider from '@mui/material/Divider';
-import TextField from '@mui/material/TextField';
+import { TextFieldElement } from '../../lib/element/text-field.element.js';
 import Grid from '@mui/material/Grid';
 import Button from '@mui/material/Button';
 import Link from '@mui/material/Link';
@@ -34,7 +34,7 @@ export function AuthLoginComponent(props) {
           src="/static/img/logo.svg"
         />
       </Box>
-      <Paper variant="outlined">
+      <Paper>
         <Box>
           <Box sx={{ pb: 4 }}>
             <Typography variant="heading" gutterBottom component="div">
@@ -74,7 +74,7 @@ export function AuthLoginComponent(props) {
                     redirect('/auth/signup');
                   }}
                 >
-                  Войти в аккаунт
+                  Создать аккаунт
                 </Link>
               </Typography>
               <Typography variant="subtext" component="div">
@@ -83,7 +83,7 @@ export function AuthLoginComponent(props) {
                   component="button"
                   variant="body2"
                   onClick={() => {
-                    redirect('/auth/recovery');
+                    redirect('/auth/recovery-account');
                   }}
                 >
                   Восстановить доступ
@@ -148,7 +148,7 @@ export const Form = (props) => {
       <Box sx={{ py: 4 }}>
         <Grid spacing={3} container>
           <Grid item>
-            <TextField
+            <TextFieldElement
               label="Логин"
               name={AUTH_LOGIN_DATA_NAME.LOGIN}
               onChange={handleChange}
@@ -156,11 +156,11 @@ export const Form = (props) => {
               value={values[AUTH_LOGIN_DATA_NAME.LOGIN]}
               error={isFieldError(AUTH_LOGIN_DATA_NAME.LOGIN)}
               fullWidth
-              helperText={getFieldError(AUTH_LOGIN_DATA_NAME.LOGIN)}
+              errorText={getFieldError(AUTH_LOGIN_DATA_NAME.LOGIN)}
             />
           </Grid>
           <Grid item>
-            <TextField
+            <TextFieldElement
               label="Ваш пароль"
               name={AUTH_LOGIN_DATA_NAME.PASSWORD}
               onChange={handleChange}
@@ -168,7 +168,7 @@ export const Form = (props) => {
               value={values[AUTH_LOGIN_DATA_NAME.PASSWORD]}
               error={isFieldError(AUTH_LOGIN_DATA_NAME.PASSWORD)}
               fullWidth
-              helperText={getFieldError(AUTH_LOGIN_DATA_NAME.PASSWORD)}
+              errorText={getFieldError(AUTH_LOGIN_DATA_NAME.PASSWORD)}
             />
           </Grid>
           <Grid item>

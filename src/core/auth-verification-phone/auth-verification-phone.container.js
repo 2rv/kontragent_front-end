@@ -11,6 +11,7 @@ import { AUTH_VERIFICATION_PHONE_DATA_NAME } from './auth-verification-phone.con
 import { NAVIGATION_STORE_NAME } from '../../lib/common/navigation/navigation.constant';
 
 import { httpRequest } from '../../main/http';
+import { authUpdateUserData } from '../../lib/common/auth/auth.action';
 
 import { redirect } from '../../main/navigation/navigation.core';
 
@@ -18,6 +19,8 @@ export function AuthVerificationPhoneContainer() {
   const { pageLoading } = useSelector((state) => ({
     pageLoading: state[NAVIGATION_STORE_NAME].pageLoading,
   }));
+
+  const dispatch = useDispatch();
 
   React.useEffect(() => {
     VerificationPhoneFormGetCode();
@@ -38,7 +41,9 @@ export function AuthVerificationPhoneContainer() {
         data,
       });
 
-      await redirect('/auth/verification/phone');
+      await authUpdateUserData()(dispatch);
+
+      await redirect('/');
 
       setRequestPending(false);
       setRequestSuccess(true);

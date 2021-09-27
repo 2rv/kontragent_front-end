@@ -9,6 +9,7 @@ import { authVerificationEmailFormValidation } from './auth-verification-email.v
 import { AUTH_VERIFICATION_EMAIL_DATA_NAME } from './auth-verification-email.constant';
 
 import { NAVIGATION_STORE_NAME } from '../../lib/common/navigation/navigation.constant';
+import { authUpdateUserData } from '../../lib/common/auth/auth.action';
 
 import { httpRequest } from '../../main/http';
 
@@ -18,6 +19,8 @@ export function AuthVerificationEmailContainer() {
   const { pageLoading } = useSelector((state) => ({
     pageLoading: state[NAVIGATION_STORE_NAME].pageLoading,
   }));
+
+  const dispatch = useDispatch();
 
   React.useEffect(() => {
     verificationEmailFormGetCode();
@@ -38,12 +41,15 @@ export function AuthVerificationEmailContainer() {
         data,
       });
 
+      await authUpdateUserData()(dispatch);
+
       await redirect('/auth/verification/phone');
 
       setRequestPending(false);
       setRequestSuccess(true);
     } catch (error) {
-      if (error) {
+      console.log(error);
+      if (error.response) {
         setRequestError(true);
         setRequestPending(false);
         setRequestErrorMessage(error.response.data.message);

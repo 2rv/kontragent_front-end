@@ -2,7 +2,7 @@ import Paper from '@mui/material/Paper';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Divider from '@mui/material/Divider';
-import TextField from '@mui/material/TextField';
+import { TextFieldElement } from '../../lib/element/text-field.element.js';
 import Grid from '@mui/material/Grid';
 import Button from '@mui/material/Button';
 import Alert from '@mui/material/Alert';
@@ -25,7 +25,7 @@ export function AuthRecoveryAccountUpdatePasswordComponent(props) {
   } = props;
   return (
     <Box>
-      <Paper variant="outlined">
+      <Paper>
         <Box>
           <Box sx={{ pb: 4 }}>
             <Typography variant="heading" gutterBottom component="div">
@@ -110,7 +110,7 @@ export const Form = (props) => {
       <Box sx={{ py: 4 }}>
         <Grid spacing={3} container>
           <Grid item>
-            <TextField
+            <TextFieldElement
               label="Код"
               name={AUTH_RECOVERY_ACCOUNT_UPDATE_PASSWORD_DATA_NAME.CODE}
               onChange={handleChange}
@@ -122,13 +122,13 @@ export const Form = (props) => {
                 AUTH_RECOVERY_ACCOUNT_UPDATE_PASSWORD_DATA_NAME.CODE,
               )}
               fullWidth
-              helperText={getFieldError(
+              errorText={getFieldError(
                 AUTH_RECOVERY_ACCOUNT_UPDATE_PASSWORD_DATA_NAME.CODE,
               )}
             />
           </Grid>
           <Grid item>
-            <TextField
+            <TextFieldElement
               label="Новый пароль"
               name={AUTH_RECOVERY_ACCOUNT_UPDATE_PASSWORD_DATA_NAME.PASSWORD}
               onChange={handleChange}
@@ -140,13 +140,13 @@ export const Form = (props) => {
                 AUTH_RECOVERY_ACCOUNT_UPDATE_PASSWORD_DATA_NAME.PASSWORD,
               )}
               fullWidth
-              helperText={getFieldError(
+              errorText={getFieldError(
                 AUTH_RECOVERY_ACCOUNT_UPDATE_PASSWORD_DATA_NAME.PASSWORD,
               )}
             />
           </Grid>
           <Grid item>
-            <TextField
+            <TextFieldElement
               label="Повторите пароль"
               name={
                 AUTH_RECOVERY_ACCOUNT_UPDATE_PASSWORD_DATA_NAME.PASSWORD_REPEAT
@@ -163,7 +163,7 @@ export const Form = (props) => {
                 AUTH_RECOVERY_ACCOUNT_UPDATE_PASSWORD_DATA_NAME.PASSWORD_REPEAT,
               )}
               fullWidth
-              helperText={getFieldError(
+              errorText={getFieldError(
                 AUTH_RECOVERY_ACCOUNT_UPDATE_PASSWORD_DATA_NAME.PASSWORD_REPEAT,
               )}
             />

@@ -2,7 +2,7 @@ import Paper from '@mui/material/Paper';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Divider from '@mui/material/Divider';
-import TextField from '@mui/material/TextField';
+import { TextFieldElement } from '../../lib/element/text-field.element.js';
 import Grid from '@mui/material/Grid';
 import Button from '@mui/material/Button';
 import Alert from '@mui/material/Alert';
@@ -25,7 +25,7 @@ export function AuthRecoveryAccountComponent(props) {
   } = props;
   return (
     <Box>
-      <Paper variant="outlined">
+      <Paper>
         <Box>
           <Box sx={{ pb: 4 }}>
             <Typography variant="heading" gutterBottom component="div">
@@ -110,7 +110,7 @@ export const Form = (props) => {
       <Box sx={{ py: 4 }}>
         <Grid spacing={3} container>
           <Grid item>
-            <TextField
+            <TextFieldElement
               label="Ваш е-майл"
               name={AUTH_RECOVERY_ACCOUNT_DATA_NAME.EMAIL}
               onChange={handleChange}
@@ -118,7 +118,7 @@ export const Form = (props) => {
               value={values[AUTH_RECOVERY_ACCOUNT_DATA_NAME.EMAIL]}
               error={isFieldError(AUTH_RECOVERY_ACCOUNT_DATA_NAME.EMAIL)}
               fullWidth
-              helperText={getFieldError(AUTH_RECOVERY_ACCOUNT_DATA_NAME.EMAIL)}
+              errorText={getFieldError(AUTH_RECOVERY_ACCOUNT_DATA_NAME.EMAIL)}
             />
           </Grid>
           <Grid item>

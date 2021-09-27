@@ -22,10 +22,10 @@ export function uploadAuthSignupForm(data) {
       });
       dispatch(authSetData(res.data.accessToken));
 
-      await redirect('/auth/verification/email');
-
-      dispatch({
-        type: AUTH_SIGNUP_ACTION_TYPE.FORM_SUCCESS,
+      await redirect('/auth/verification/email').then(() => {
+        dispatch({
+          type: AUTH_SIGNUP_ACTION_TYPE.FORM_SUCCESS,
+        });
       });
     } catch (error) {
       if (error) {

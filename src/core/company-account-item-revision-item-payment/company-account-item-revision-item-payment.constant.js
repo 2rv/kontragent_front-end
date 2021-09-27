@@ -1,0 +1,3 @@
+export const COMPANY_ACCOUNT_ITEM_PAYMENT_LINK_DATA_NAME = {
+  AMOUNT: 'amount',
+};

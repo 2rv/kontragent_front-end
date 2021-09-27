@@ -3,9 +3,11 @@ import { AuthUserDto } from './auth.type';
 import { AUTH_STORE_NAME } from './auth.constant';
 
 export const authRedirectLogged = (ctx: any, pathToRedirect: string) => {
-  const { res, token = null } = ctx;
+  const { res, store } = ctx;
 
-  if (token) {
+  const user = store.getState()[AUTH_STORE_NAME];
+
+  if (user.logged) {
     if (res) {
       res.writeHead(302, {
         Location: pathToRedirect,
@@ -18,9 +20,11 @@ export const authRedirectLogged = (ctx: any, pathToRedirect: string) => {
 };
 
 export const authRedirectPrivated = (ctx: any, pathToRedirect: string) => {
-  const { res, token = null } = ctx;
+  const { res, store } = ctx;
 
-  if (!token) {
+  const user = store.getState()[AUTH_STORE_NAME];
+
+  if (!user.logged) {
     if (res) {
       res.writeHead(301, {
         Location: pathToRedirect,
@@ -40,6 +44,8 @@ export const authRedirectVerification = (
   const { res, store = null } = ctx;
 
   const user: AuthUserDto = store.getState()[AUTH_STORE_NAME].user;
+
+  console.log('#####', user);
 
   if (!user.confirmEmail) {
     if (res) {

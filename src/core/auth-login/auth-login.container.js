@@ -36,10 +36,10 @@ export function AuthLoginContainer() {
 
       dispatch(authSetData(res.data.accessToken));
 
-      await redirect('/company');
-
-      setRequestPending(false);
-      setRequestSuccess(true);
+      redirect('/').then(() => {
+        setRequestPending(false);
+        setRequestSuccess(true);
+      });
     } catch (error) {
       if (error) {
         setRequestError(true);
