@@ -1,3 +1,0 @@
-export const AUTH_ACCOUNT_INFO_FORM_ROUTE_PATH = '/auth/account-info';
-export const AUTH_ACCOUNT_INFO_FORM_HELP_PATH =
-  '/AUTH_ACCOUNT_INFO_FORM_HELP_PATH';

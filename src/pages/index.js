@@ -1,2 +1,1 @@
-import { HomePage } from '../core/home';
-export default HomePage;
+export default () => null;

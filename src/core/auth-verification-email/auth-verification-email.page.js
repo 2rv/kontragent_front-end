@@ -1,18 +1,16 @@
-import {
-  ContentLayout,
-  IndentLayout,
-  PageLayout,
-} from '../../lib/elements/layout/index';
 import { AuthVerificationEmailContainer } from './auth-verification-email.container';
+
+import Container from '@mui/material/Container';
+import Grid from '@mui/material/Grid';
 
 export function AuthVerificationEmailPage() {
   return (
-    <PageLayout align="CENTER">
-      <IndentLayout>
-        <ContentLayout type="SMALL">
+    <Container maxWidth="xs">
+      <Grid sx={{ py: 6, minHeight: '100vh' }} container>
+        <Grid item>
           <AuthVerificationEmailContainer />
-        </ContentLayout>
-      </IndentLayout>
-    </PageLayout>
+        </Grid>
+      </Grid>
+    </Container>
   );
 }

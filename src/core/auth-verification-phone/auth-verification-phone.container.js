@@ -1,23 +1,18 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 
 import { AuthVerificationPhoneComponent } from './auth-verification-phone.component';
 
 import { useDispatch, useSelector } from 'react-redux';
 
-import {
-  authFormVerificationPhoneSendCode,
-  authFormVerificationPhoneConfirmCode,
-} from './auth-verification-phone.action';
+import { authVerificationPhoneFormValidation } from './auth-verification-phone.validation';
 
-import { AUTH_VERIFICATION_PHONE_STORE_NAME } from './auth-verification-phone.constant';
+import { verificationPhoneFormFetchData, verificationPhoneFormGetCode } from './auth-verification-phone.action';
+
+import { convertAuthVerificationPhoneFormData } from './auth-verification-phone.convert';
+
+import { AUTH_VERIFICATION_PHONE_DATA_NAME, AUTH_VERIFICATION_PHONE_STORE_NAME } from './auth-verification-phone.constant';
 
 import { NAVIGATION_STORE_NAME } from '../../lib/common/navigation/navigation.constant';
-import { AUTH_STORE_NAME } from '../../lib/common/auth';
-
-import {
-  AUTH_FORM_VERIFICATION_PHONE_CONFIRM_FIELD_NAME,
-  AUTH_VERIFICATION_PHONE_FIELD_NAME,
-} from './auth-verification-phone.type';
 
 import {
   getRequestErrorMessage,
@@ -26,51 +21,39 @@ import {
   isRequestSuccess,
 } from '../../main/store/store.service';
 
-import { authFormVerificationPhoneValidation } from './auth-verification-phone.validation';
-
 export function AuthVerificationPhoneContainer() {
-  const dispatch = useDispatch();
-  const { state, pageLoading, user } = useSelector((state) => ({
+  const { state, pageLoading } = useSelector((state) => ({
     state: state[AUTH_VERIFICATION_PHONE_STORE_NAME],
     pageLoading: state[NAVIGATION_STORE_NAME].pageLoading,
-    user: state[AUTH_STORE_NAME].user,
   }));
 
-  const authVerificationPhoneSendCode = () => {
-    dispatch(authFormVerificationPhoneSendCode());
-  };
-  //   useEffect(authVerificationPhoneSendCode, []);
+  const dispatch = useDispatch();
 
-  const authFormVerificationPhoneSendData = (values) => {
-    const code = values[AUTH_VERIFICATION_PHONE_FIELD_NAME.CODE];
-    dispatch(authFormVerificationPhoneConfirmCode(code));
+  React.useEffect(() => {
+    dispatch(verificationPhoneFormGetCode());
+  }, []);
+
+  const VerificationPhoneFormSendData = (values) => {
+    const data = convertAuthVerificationPhoneFormData(values);
+    dispatch(verificationPhoneFormFetchData(data, data[AUTH_VERIFICATION_PHONE_DATA_NAME.CODE]));
   };
 
   const getInitialValue = () => {
     return {
-      [AUTH_VERIFICATION_PHONE_FIELD_NAME.CODE]: '',
+      [AUTH_VERIFICATION_PHONE_DATA_NAME.CODE]: '',
     };
   };
 
   return (
     <AuthVerificationPhoneComponent
-      sendCodePending={isRequestPending(state.verificationPhone)}
-      sendCodeSuccess={isRequestSuccess(state.verificationPhone)}
-      sendCodeError={isRequestError(state.verificationPhone)}
-      sendCodeErrorMessage={getRequestErrorMessage(state.verificationPhone)}
-      sendCode={authVerificationPhoneSendCode}
-      pageLoading={pageLoading}
-      phone={user?.phone}
-      fieldName={AUTH_FORM_VERIFICATION_PHONE_CONFIRM_FIELD_NAME}
+      isPending={isRequestPending(state.form)}
+      isError={isRequestError(state.form)}
+      isSuccess={isRequestSuccess(state.form)}
       initialValue={getInitialValue()}
-      validation={authFormVerificationPhoneValidation}
-      onSubmitForm={authFormVerificationPhoneSendData}
-      confirmCodePending={isRequestPending(state.verificationPhoneConfirm)}
-      confirmCodeSuccess={isRequestSuccess(state.verificationPhoneConfirm)}
-      confirmCodeError={isRequestError(state.verificationPhoneConfirm)}
-      confirmCodeErrorMessage={getRequestErrorMessage(
-        state.verificationPhoneConfirm,
-      )}
+      validation={authVerificationPhoneFormValidation}
+      onSubmitForm={VerificationPhoneFormSendData}
+      pageLoading={pageLoading}
+      errorMessage={getRequestErrorMessage(state.form)}
     />
   );
 }

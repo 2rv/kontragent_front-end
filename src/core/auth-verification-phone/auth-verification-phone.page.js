@@ -1,18 +1,16 @@
-import {
-  ContentLayout,
-  IndentLayout,
-  PageLayout,
-} from '../../lib/elements/layout/index';
 import { AuthVerificationPhoneContainer } from './auth-verification-phone.container';
+
+import Container from '@mui/material/Container';
+import Grid from '@mui/material/Grid';
 
 export function AuthVerificationPhonePage() {
   return (
-    <PageLayout align="CENTER">
-      <IndentLayout>
-        <ContentLayout type="SMALL">
+    <Container maxWidth="xs">
+      <Grid sx={{ py: 6, minHeight: '100vh' }} container>
+        <Grid item>
           <AuthVerificationPhoneContainer />
-        </ContentLayout>
-      </IndentLayout>
-    </PageLayout>
+        </Grid>
+      </Grid>
+    </Container>
   );
 }

@@ -494,8 +494,8 @@ input[type='number'] {
 }
 body,
 html {
-  height: 100vh;
-  width: 100vw;
+  min-height: 100vh;
+  height: auto;
 }
 * {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
@@ -509,6 +509,7 @@ textarea::placeholder {
   opacity: 1;
 }
 a:hover {
+  color: inherit !important;
   text-decoration: inherit !important;
 }
 input:-webkit-autofill {
@@ -518,15 +519,15 @@ input:-webkit-autofill {
 :root,
 body,
 html {
-  background-color: #fafafa;
+  background-color: #f3f3f3;
 }
 
 html {
-  overflow: auto;
+  overflow-y: scroll;
 }
 html,
 body {
-  min-height: 100vh;
+  height: 100%;
 }
 body,
 * {
@@ -551,18 +552,4 @@ select:-webkit-autofill:hover,
 textarea:-webkit-autofill,
 textarea:-webkit-autofill:hover textarea:-webkit-autofill:focus {
   -webkit-text-fill-color: inherit;
-}
-*::-webkit-scrollbar {
-  width: 4px;
-  height: 4px;
-}
-*::-webkit-scrollbar-thumb {
-  background: rgba(181, 181, 181, 0.2);
-  width: 4px;
-  height: 4px;
-  background-clip: padding-box;
-  border-radius: 10px;
-}
-*::-webkit-scrollbar-thumb:hover {
-  background: rgba(181, 181, 181, 1);
 }

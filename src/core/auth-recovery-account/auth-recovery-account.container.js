@@ -4,18 +4,13 @@ import { AuthRecoveryAccountComponent } from './auth-recovery-account.component'
 
 import { useDispatch, useSelector } from 'react-redux';
 
-import { authFormRecoveryValidation } from './auth-recovery-account.validation';
+import { authRecoveryAccountFormValidation } from './auth-recovery-account.validation';
 
-import {
-  AUTH_FORM_RECOVERY_ACCOUNT_FIELD_NAME,
-  AUTH_RECOVERY_ACCOUNT_FIELD_NAME,
-} from './auth-recovery-account.type';
+import { AUTH_RECOVERY_ACCOUNT_DATA_NAME, AUTH_RECOVERY_ACCOUNT_STORE_NAME } from './auth-recovery-account.constant';
 
-import { convertAuthFormRecoveryAccountData } from './auth-recovery-account.convert';
+import { convertAuthRecoveryAccountFormData } from './auth-recovery-account.convert';
 
-import { authFormRecoveryAccountUploadData } from './auth-recovery-account.action';
-
-import { AUTH_RECOVERY_ACCOUNT_STORE_NAME } from './auth-recovery-account.constant';
+import { authRecoveryAccountFormSendData } from './auth-recovery-account.action';
 
 import { NAVIGATION_STORE_NAME } from '../../lib/common/navigation/navigation.constant';
 
@@ -33,28 +28,27 @@ export function AuthRecoveryAccountContainer() {
     pageLoading: state[NAVIGATION_STORE_NAME].pageLoading,
   }));
 
-  const authFormRecoveryAccountSendData = (values) => {
-    const data = convertAuthFormRecoveryAccountData(values);
-    dispatch(authFormRecoveryAccountUploadData(data));
+  const RecoveryAccountFormSendData = (values) => {
+    const data = convertAuthRecoveryAccountFormData(values);
+    dispatch(authRecoveryAccountFormSendData(data));
   };
 
   const getInitialValue = () => {
     return {
-      [AUTH_RECOVERY_ACCOUNT_FIELD_NAME.EMAIL]: '',
+      [AUTH_RECOVERY_ACCOUNT_DATA_NAME.EMAIL]: '',
     };
   };
 
   return (
     <AuthRecoveryAccountComponent
-      isPending={isRequestPending(state.authFormRecoveryAccount)}
-      isError={isRequestError(state.authFormRecoveryAccount)}
-      isSuccess={isRequestSuccess(state.authFormRecoveryAccount)}
+      isPending={isRequestPending(state.form)}
+      isError={isRequestError(state.form)}
+      isSuccess={isRequestSuccess(state.form)}
       initialValue={getInitialValue()}
-      validation={authFormRecoveryValidation}
-      onSubmitForm={authFormRecoveryAccountSendData}
-      fieldName={AUTH_FORM_RECOVERY_ACCOUNT_FIELD_NAME}
+      validation={authRecoveryAccountFormValidation}
+      onSubmitForm={RecoveryAccountFormSendData}
       pageLoading={pageLoading}
-      errorMessage={getRequestErrorMessage(state.authFormRecoveryAccount)}
+      errorMessage={getRequestErrorMessage(state.form)}
     />
   );
 }

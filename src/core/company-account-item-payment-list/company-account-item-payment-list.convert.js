@@ -1,0 +1,10 @@
+import { COMPANY_ACCOUNT_ITEM_PAYMENT_LIST_DATA_NAME } from './company-account-item-payment-list.constant';
+
+export const performCompanyAccountItemPaymentListData = (row) => {
+  row[COMPANY_ACCOUNT_ITEM_PAYMENT_LIST_DATA_NAME.LIST].map((payment) => ({
+    [COMPANY_ACCOUNT_ITEM_PAYMENT_LIST_DATA_NAME.AMOUNT]:
+      payment[COMPANY_ACCOUNT_ITEM_PAYMENT_LIST_DATA_NAME.AMOUNT],
+    [COMPANY_ACCOUNT_ITEM_PAYMENT_LIST_DATA_NAME.CREATE_DATE]:
+      payment[COMPANY_ACCOUNT_ITEM_PAYMENT_LIST_DATA_NAME.CREATE_DATE],
+  }));
+};

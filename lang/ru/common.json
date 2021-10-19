@@ -1,0 +1,36 @@
+{
+  "REQUEST_SENT_SUCCESSFULLY": "Запрос успешно отправлен",
+  "SUMM": "Сумма",
+  "COMPANY_MEMBER_ROLE": {
+    "OWNER": "Владелец",
+    "EMPLOYEE": "Сотрудник"
+  },
+  "USER": {
+    "EMAIL": "Почта:",
+    "PHONE": "Телефон:",
+    "ID": "ID пользователя:",
+    "LOGIN": "Логин:",
+    "FISRT_NAME": "Имя:",
+    "LAST_NAME": "Фамилия:",
+    "CONFIRM_EMAIL": "Верификация почты:",
+    "CONFIRM_PHONE": "Верификация номера телефона:",
+    "VERIFIED": "Верифицировано",
+    "NOT_VERIFIED": "Не верифицировано"
+  },
+  "REVISION": {
+    "PRICE": "Стоимость:",
+    "ID": "ID в системе:",
+    "TITLE": "Название:"
+  },
+  "COMPANY": {
+    "COMPANY_NAME": "Название компании:",
+    "ID": "ID в системе:",
+    "INN": "INN компании:",
+    "DATA_VERIFICATION": "Верификация данных:",
+    "BALANCE_VERIFICATION": "Верификация баланса:",
+    "BALANCE": "Баланс:",
+    "VERIFIED": "Верифицировано",
+    "NOT_VERIFIED": "Не верифицировано",
+    "ROLE": "Роль:"
+  }
+}

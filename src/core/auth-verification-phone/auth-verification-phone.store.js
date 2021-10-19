@@ -1,4 +1,4 @@
-import { AUTH_VERIFICATION_PHONE_ACTION_TYPE } from './auth-verification-phone.type';
+import { AUTH_VERIFICATION_PHONE_ACTION_TYPE } from './auth-verification-phone.constant';
 import {
   initRequestState,
   setRequestPending,
@@ -7,58 +7,27 @@ import {
 } from '../../main/store/store.service';
 
 const initialState = {
-  verificationPhone: initRequestState(),
-  verificationPhoneConfirm: initRequestState(),
+  form: initRequestState(),
 };
 
 export function authVerificationPhoneStore(state = initialState, action) {
   switch (action.type) {
-    //REDUCERS OF SENDING VERIFICATION CODE
-    case AUTH_VERIFICATION_PHONE_ACTION_TYPE.AUTH_FORM_VERIFICATION_PHONE_UPLOAD_PENDING:
+    case AUTH_VERIFICATION_PHONE_ACTION_TYPE.FORM_PENDING:
       return {
         ...state,
-        verificationPhone: setRequestPending(state.verificationPhone),
+        form: setRequestPending(state.form),
       };
 
-    case AUTH_VERIFICATION_PHONE_ACTION_TYPE.AUTH_FORM_VERIFICATION_PHONE_UPLOAD_SUCCESS:
+    case AUTH_VERIFICATION_PHONE_ACTION_TYPE.FORM_SUCCESS:
       return {
         ...state,
-        verificationPhone: setRequestSuccess(state.verificationPhone),
+        form: setRequestSuccess(state.form),
       };
 
-    case AUTH_VERIFICATION_PHONE_ACTION_TYPE.AUTH_FORM_VERIFICATION_PHONE_UPLOAD_ERROR:
+    case AUTH_VERIFICATION_PHONE_ACTION_TYPE.FORM_ERROR:
       return {
         ...state,
-        verificationPhone: setRequestError(
-          state.verificationPhone,
-          action.errorMessage,
-        ),
-      };
-
-    //REDUCERS OF CONFIRMING ENTERED VERIFICATION CODE
-    case AUTH_VERIFICATION_PHONE_ACTION_TYPE.AUTH_FORM_VERIFICATION_PHONE_CONFIRM_UPLOAD_PENDING:
-      return {
-        ...state,
-        verificationPhoneConfirm: setRequestPending(
-          state.verificationPhoneConfirm,
-        ),
-      };
-
-    case AUTH_VERIFICATION_PHONE_ACTION_TYPE.AUTH_FORM_VERIFICATION_PHONE_CONFIRM_UPLOAD_SUCCESS:
-      return {
-        ...state,
-        verificationPhoneConfirm: setRequestSuccess(
-          state.verificationPhoneConfirm,
-        ),
-      };
-
-    case AUTH_VERIFICATION_PHONE_ACTION_TYPE.AUTH_FORM_VERIFICATION_PHONE_CONFIRM_UPLOAD_ERROR:
-      return {
-        ...state,
-        verificationPhoneConfirm: setRequestError(
-          state.verificationPhoneConfirm,
-          action.errorMessage,
-        ),
+        form: setRequestError(state.form, action.errorMessage),
       };
 
     default:
