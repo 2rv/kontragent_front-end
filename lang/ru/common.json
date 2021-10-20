@@ -15,7 +15,14 @@
     "CONFIRM_EMAIL": "Верификация почты:",
     "CONFIRM_PHONE": "Верификация номера телефона:",
     "VERIFIED": "Верифицировано",
-    "NOT_VERIFIED": "Не верифицировано"
+    "NOT_VERIFIED": "Не верифицировано",
+    "ROLE": "Роль: ",
+    "USER_ROLE": {
+      "ADMIN": "ADMIN",
+      "USER": "USER",
+      "BLOCKED": "BLOCKED"
+
+    }
   },
   "REVISION": {
     "PRICE": "Стоимость:",
