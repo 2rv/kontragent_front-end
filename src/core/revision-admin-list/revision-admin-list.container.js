@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux';
 import { NAVIGATION_STORE_NAME } from '../../lib/common/navigation/navigation.constant';
 import { httpRequest } from '../../main/http';
 import { REVISION_ADMIN_LIST_API } from './revision-admin-list.constant';
+import { performRevisionAdminListRowData } from './revision-admin-list.convert';
 export { performRevisionAdminListRowData } from './revision-admin-list.convert';
 
 export function RevisionAdminListContainer() {
@@ -27,7 +28,7 @@ export function RevisionAdminListContainer() {
         method: REVISION_ADMIN_LIST_API.GET_REVISION_ADMIN_LIST.TYPE,
         url: REVISION_ADMIN_LIST_API.GET_REVISION_ADMIN_LIST.ENDPOINT,
       });
-      const data = res.data;
+      const data = performRevisionAdminListRowData(res.data);
       console.log(`PERFORMED DATA: ${JSON.stringify(data)}`);
 
       setRequestPending(false);
