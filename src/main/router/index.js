@@ -55,6 +55,10 @@ import {
   CompanyAdminListRouter,
   COMPANY_ADMIN_LIST_ROUTE_PATH,
 } from '../../core/company-admin-list';
+import {
+  RevisionAdminListRouter,
+  REVISION_ADMIN_LIST_ROUTE_PATH,
+} from '../../core/revision-admin-list';
 
 export const routes = {
   '/': IndexRouter,
@@ -80,6 +84,7 @@ export const routes = {
 
   [COMPANY_ADMIN_ITEM_ROUTE_PATH]: CompanyAdminItemRouter,
   [COMPANY_ADMIN_LIST_ROUTE_PATH]: CompanyAdminListRouter,
+  [REVISION_ADMIN_LIST_ROUTE_PATH]: RevisionAdminListRouter,
 };
 
 export const Router = routesInit(routes);
