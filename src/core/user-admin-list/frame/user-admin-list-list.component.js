@@ -51,17 +51,16 @@ export const UserAdminListListComponent = ({ list }) => {
                     : text('COMMON.USER.USER_ROLE.ADMIN')
                 }
 
-                ${
-                  (text('COMMON.USER.CONFIRM_EMAIL'),
+                ${text('COMMON.USER.CONFIRM_EMAIL')} ${
                   items[USER_ADMIN_LIST_DATA_NAME.CONFIRM_EMAIL]
                     ? text('COMMON.USER.VERIFIED')
-                    : text('COMMIN.USER.NOT_VERIFIED'))
+                    : text('COMMON.USER.NOT_VERIFIED')
                 }
 
                 ${text('COMMON.USER.CONFIRM_PHONE')} ${
                   items[USER_ADMIN_LIST_DATA_NAME.CONFIRM_PHONE]
                     ? text('COMMON.USER.VERIFIED')
-                    : text('COMMIN.USER.NOT_VERIFIED')
+                    : text('COMMON.USER.NOT_VERIFIED')
                 }
               
             `}</span>
