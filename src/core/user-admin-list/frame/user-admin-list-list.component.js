@@ -7,6 +7,7 @@ import Box from '@mui/material/Box';
 import Divider from '@mui/material/Divider';
 import { text } from '../../../lib/common/text';
 import { USER_ADMIN_LIST_DATA_NAME } from '../user-admin-list.constant';
+import Typography from '@mui/material/Typography';
 
 export const UserAdminListListComponent = ({ list }) => {
   if (!list || list.length === 0) {
@@ -40,30 +41,64 @@ export const UserAdminListListComponent = ({ list }) => {
            `}</span>
               }
               secondary={
-                <span>{`${text('COMMON.USER.EMAIL')}
+                <span>
+                  {`${text('COMMON.USER.EMAIL')}
                 ${items[USER_ADMIN_LIST_DATA_NAME.EMAIL]}
                 ${text('COMMON.USER.PHONE')} ${
-                  items[USER_ADMIN_LIST_DATA_NAME.PHONE]
-                } 
-                ${text('COMMON.USER.ROLE')} ${
-                  items[USER_ADMIN_LIST_DATA_NAME.ROLE] === 1
-                    ? text('COMMON.USER.USER_ROLE.USER')
-                    : text('COMMON.USER.USER_ROLE.ADMIN')
-                }
-
-                ${text('COMMON.USER.CONFIRM_EMAIL')} ${
-                  items[USER_ADMIN_LIST_DATA_NAME.CONFIRM_EMAIL]
-                    ? text('COMMON.USER.VERIFIED')
-                    : text('COMMON.USER.NOT_VERIFIED')
-                }
-
-                ${text('COMMON.USER.CONFIRM_PHONE')} ${
-                  items[USER_ADMIN_LIST_DATA_NAME.CONFIRM_PHONE]
-                    ? text('COMMON.USER.VERIFIED')
-                    : text('COMMON.USER.NOT_VERIFIED')
-                }
-              
-            `}</span>
+                    items[USER_ADMIN_LIST_DATA_NAME.PHONE]
+                  } 
+                
+            `}{' '}
+                  <>
+                    {items[USER_ADMIN_LIST_DATA_NAME.ROLE] === 0 ? (
+                      <>
+                        {text('COMMON.USER.ROLE')}
+                        <Typography
+                          sx={{
+                            color: '#EB5757',
+                          }}
+                          variant="listContent"
+                        >
+                          {text('COMMON.USER.USER_ROLE.BLOCKED')}
+                        </Typography>
+                      </>
+                    ) : (
+                      ''
+                    )}
+                  </>
+                  <>
+                    {text('COMMON.USER.CONFIRM_EMAIL')}
+                    {items[USER_ADMIN_LIST_DATA_NAME.CONFIRM_EMAIL] ? (
+                      text('COMMON.USER.VERIFIED')
+                    ) : (
+                      <Typography
+                        sx={{
+                          color: '#F2994A',
+                        }}
+                        variant="listContent"
+                      >
+                        {' '}
+                        {text('COMMON.USER.NOT_VERIFIED')}
+                      </Typography>
+                    )}{' '}
+                  </>
+                  <>
+                    {text('COMMON.USER.CONFIRM_PHONE')}{' '}
+                    {items[USER_ADMIN_LIST_DATA_NAME.CONFIRM_PHONE] ? (
+                      text('COMMON.USER.VERIFIED')
+                    ) : (
+                      <Typography
+                        sx={{
+                          color: '#F2994A',
+                        }}
+                        variant="listContent"
+                      >
+                        {' '}
+                        {text('COMMON.USER.NOT_VERIFIED')}
+                      </Typography>
+                    )}
+                  </>
+                </span>
               }
             />
           </ListItem>

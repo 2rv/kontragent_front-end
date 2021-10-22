@@ -18,9 +18,8 @@
     "NOT_VERIFIED": "Не верифицировано",
     "ROLE": "Роль: ",
     "USER_ROLE": {
-      "ADMIN": "ADMIN",
-      "USER": "USER",
-      "BLOCKED": "BLOCKED"
+   
+      "BLOCKED": "Заблокирован "
 
     }
   },
