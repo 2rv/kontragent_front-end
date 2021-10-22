@@ -1,4 +1,4 @@
-export const USER_ADMIN_LIST_ROUTE_PATH = './admin/user-list';
+export const USER_ADMIN_LIST_ROUTE_PATH = '/admin/user-list';
 
 export const USER_ADMIN_LIST_DATA_NAME = {
   LIST: 'list',
