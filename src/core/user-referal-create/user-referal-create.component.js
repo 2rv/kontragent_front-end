@@ -27,10 +27,10 @@ export function UserReferalCreateComponent(props) {
         <Box>
           <Box sx={{ pb: 4 }}>
             <Typography variant="title" component="div">
-              {text('USER_REFERAL_CREATE.TITLE')}
+              {text('USER_REFERAL.USER_REFERAL_CREATE.TITLE')}
             </Typography>
             <Typography variant="subTitle" component="div">
-              {text('USER_REFERAL_CREATE.INFO')}
+              {text('USER_REFERAL.USER_REFERAL_CREATE.INFO')}
             </Typography>
           </Box>
 

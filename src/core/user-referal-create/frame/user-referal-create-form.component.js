@@ -45,7 +45,9 @@ export const UserReferalCreateFormComponent = (props) => {
         >
           <Grid md={8} xs={6} item>
             <TextFieldElement
-              placeholder={text('USER_REFERAL_CREATE.FORM.PLACEHOLDER')}
+              placeholder={text(
+                'USER_REFERAL.USER_REFERAL_CREATE.FORM.PLACEHOLDER',
+              )}
               name={USER_REFERAL_CREATE_DATA_NAME.EMAIL}
               onChange={handleChange}
               onBlur={handleBlur}
@@ -57,7 +59,7 @@ export const UserReferalCreateFormComponent = (props) => {
 
           <Grid xs={6} md={4} item>
             <Button type="sumbit" disabled={isSubmitDisabled()}>
-              {text('USER_REFERAL_CREATE.BUTTON.TITLE')}
+              {text('USER_REFERAL.USER_REFERAL_CREATE.BUTTON.TITLE')}
             </Button>
           </Grid>
         </Grid>
