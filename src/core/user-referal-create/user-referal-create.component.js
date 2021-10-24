@@ -3,6 +3,7 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Alert from '@mui/material/Alert';
 import LinearProgress from '@mui/material/LinearProgress';
+import Divider from '@mui/material/Divider';
 
 import { Formik } from 'formik';
 
@@ -26,13 +27,14 @@ export function UserReferalCreateComponent(props) {
       <Paper>
         <Box>
           <Box sx={{ pb: 4 }}>
-            <Typography variant="title" component="div">
+            <Typography variant="title" gutterBottom component="div">
               {text('USER_REFERAL_CREATE.TITLE')}
             </Typography>
             <Typography variant="subTitle" component="div">
               {text('USER_REFERAL_CREATE.INFO')}
             </Typography>
           </Box>
+          <Divider />
 
           <Formik
             initialValues={initialValue}
