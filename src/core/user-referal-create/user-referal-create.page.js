@@ -4,7 +4,7 @@ import { NavigationComponent } from '../navigation/navigation.component';
 import Grid from '@mui/material/Grid';
 import { UserReferalListContainer } from '../user-referal-list/user-referal-list.container';
 import { UserReferalInfoContainer } from '../user-referal-info/user-referal-info.container';
-
+import { UserReferalAchievementListContainer } from '../user-referal-achievement-list/user-referal-achievement-list.container';
 export function UserReferalCreatePage() {
   return (
     <NavigationComponent>
@@ -17,6 +17,9 @@ export function UserReferalCreatePage() {
         </Grid>
         <Grid item>
           <UserReferalInfoContainer />
+        </Grid>
+        <Grid item>
+          <UserReferalAchievementListContainer />
         </Grid>
       </Grid>
     </NavigationComponent>
