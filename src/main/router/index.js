@@ -55,6 +55,10 @@ import {
   CompanyAdminListRouter,
   COMPANY_ADMIN_LIST_ROUTE_PATH,
 } from '../../core/company-admin-list';
+import {
+  AccountAddToReferalRouter,
+  ACCOUNT_ADD_TO_REFERAL_ROUTE_PATH,
+} from '../../core/account-add-to-referal';
 
 export const routes = {
   '/': IndexRouter,
@@ -80,6 +84,8 @@ export const routes = {
 
   [COMPANY_ADMIN_ITEM_ROUTE_PATH]: CompanyAdminItemRouter,
   [COMPANY_ADMIN_LIST_ROUTE_PATH]: CompanyAdminListRouter,
+
+  [ACCOUNT_ADD_TO_REFERAL_ROUTE_PATH]: AccountAddToReferalRouter,
 };
 
 export const Router = routesInit(routes);

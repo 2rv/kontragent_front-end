@@ -15,7 +15,10 @@ import {
   companyAdminItemInfoVerificateStore,
   COMPANY_ADMIN_ITEM_INFO_VERIFICATE_STORE_NAME,
 } from '../../core/company-admin-item-info-verificate';
-
+import {
+  ACCOUNT_ADD_TO_REFERAL_STORE_NAME,
+  accountAddToReferalStore,
+} from '../../core/account-add-to-referal';
 import { authStore, AUTH_STORE_NAME } from '../../lib/common/auth';
 import { langStore, LANG_STORE_NAME } from '../../lib/common/lang';
 import {
@@ -34,7 +37,9 @@ export const reducers = combineReducers({
     authRecoveryAccountUpdatePasswordStore,
   [AUTH_VERIFICATION_EMAIL_STORE_NAME]: authVerificationEmailStore,
   [AUTH_VERIFICATION_PHONE_STORE_NAME]: authVerificationPhoneStore,
-  [COMPANY_ADMIN_ITEM_INFO_VERIFICATE_STORE_NAME]: companyAdminItemInfoVerificateStore,
+  [COMPANY_ADMIN_ITEM_INFO_VERIFICATE_STORE_NAME]:
+    companyAdminItemInfoVerificateStore,
+  [ACCOUNT_ADD_TO_REFERAL_STORE_NAME]: accountAddToReferalStore,
 });
 
 export { initStore } from './store.core';

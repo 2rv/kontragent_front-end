@@ -5,6 +5,7 @@ import CURRENCY from './currency.json';
 import NAVIGATION from './navigation.json';
 
 import AUTH from './auth.json';
+import ACCOUNT_ADD_TO_REFERAL from './account-add-to-referal.json';
 import SETTINGS from './settings.json';
 import COMPANY_ACCOUNT_LIST from './company-account-list.json';
 import COMPANY_ACCOUNT_CREATE from './company-account-create.json';
@@ -31,6 +32,7 @@ export const RU = {
     NAVIGATION,
 
     AUTH,
+    ACCOUNT_ADD_TO_REFERAL,
     SETTINGS,
     COMPANY_ACCOUNT_LIST,
     COMPANY_ACCOUNT_CREATE,
