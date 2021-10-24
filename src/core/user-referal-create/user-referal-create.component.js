@@ -27,10 +27,10 @@ export function UserReferalCreateComponent(props) {
         <Box>
           <Box sx={{ pb: 4 }}>
             <Typography variant="title" component="div">
-              {text('USER_REFERAL_CREATE.TITLE')}
+              {text('USER_REFERAL.USER_REFERAL_CREATE.TITLE')}
             </Typography>
-            <Typography variant="subTitle" component="div">
-              {text('USER_REFERAL_CREATE.INFO')}
+            <Typography sx={{ py: 1 }} variant="subTitle" component="div">
+              {text('USER_REFERAL.USER_REFERAL_CREATE.INFO')}
             </Typography>
           </Box>
 
@@ -59,7 +59,7 @@ export function UserReferalCreateComponent(props) {
           {isSuccess && (
             <Box sx={{ pt: 4 }}>
               <Alert severity="success">
-                {text('COMMON.REQUEST_SENT_SUCCESSFULLY')}
+                {text('USER_REFERAL.USER_REFERAL_CREATE.LETTER_TO_INVITE')}
               </Alert>
             </Box>
           )}
