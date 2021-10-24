@@ -8,13 +8,11 @@ import {
 } from './user-referal-create.constant';
 import { convertUserReferalCreateFormData } from './user-referal-create.convert';
 import { NAVIGATION_STORE_NAME } from '../../lib/common/navigation/navigation.constant';
-import { AUTH_STORE_NAME } from '../../lib/common/auth/auth.constant';
 import { httpRequest } from '../../main/http';
 
 export function UserReferalCreateContainer() {
-  const { pageLoading, user } = useSelector((state) => ({
+  const { pageLoading } = useSelector((state) => ({
     pageLoading: state[NAVIGATION_STORE_NAME].pageLoading,
-    user: state[AUTH_STORE_NAME].user,
   }));
 
   const UserReferalCreateFormSendData = async (values) => {
@@ -25,7 +23,7 @@ export function UserReferalCreateContainer() {
     setRequestErrorMessage(null);
 
     try {
-      const res = await httpRequest({
+      await httpRequest({
         method: USER_REFERAL_CREATE_API.USER_REFERAL_CREATE.TYPE,
         url: USER_REFERAL_CREATE_API.USER_REFERAL_CREATE.ENDPOINT,
         data,
