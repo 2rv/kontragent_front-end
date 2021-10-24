@@ -61,7 +61,7 @@ export function UserReferalCreateComponent(props) {
           {isSuccess && (
             <Box sx={{ pt: 4 }}>
               <Alert severity="success">
-                {text('USER_REFERAL.USER_REFERAL_CREATE.LETTER_TO_INVITE')}
+                {text('USER_REFERAL.USER_REFERAL_CREATE.SUCCESS')}
               </Alert>
             </Box>
           )}
