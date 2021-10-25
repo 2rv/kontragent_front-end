@@ -1,11 +1,13 @@
 import React from 'react';
-
+import { useSelector } from 'react-redux';
 import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 
+import { NAVIGATION_STORE_NAME } from '../../../lib/common/navigation/navigation.constant';
 import { text } from '../../../lib/common/text';
+import { redirect } from '../../../main/navigation/navigation.core';
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -31,10 +33,18 @@ export function CompanyAccountItemTabComponent({ tab }) {
     };
   }
 
+  const { activePath } = useSelector((state) => ({
+    activePath: state[NAVIGATION_STORE_NAME].activePath,
+  }));
+
   const [value, setValue] = React.useState(0);
 
-  const handleChange = (event, newValue) => {
-    setValue(newValue);
+  React.useEffect(() => {
+    setValue(activePath);
+  }, [activePath]);
+
+  const handleChange = (e, newValue) => {
+    redirect(newValue);
   };
 
   return (
@@ -46,24 +56,27 @@ export function CompanyAccountItemTabComponent({ tab }) {
             onChange={handleChange}
             aria-label="basic tabs example"
           >
-            {tab.map((tabItem) => (
-              <Tab
-                key={tabItem.id}
-                sx={{ p: 4 }}
-                label={text(tabItem.label)}
-                {...a11yProps(tabItem.id)}
-              />
-            ))}
+            {tab
+              ? tab.map((tabItem) => (
+                  <Tab
+                    value={tabItem.path}
+                    key={tabItem.id}
+                    sx={{ p: 4 }}
+                    label={text(tabItem.label)}
+                    {...a11yProps(tabItem.id)}
+                  />
+                ))
+              : null}
           </Tabs>
         </Paper>
       </Grid>
-      <Grid item>
+      {/* <Grid item>
         {tab.map(({ component: Component, ...tabItem }) => (
           <TabPanel key={tabItem.id} value={value} index={tabItem.id}>
             <Component />
           </TabPanel>
         ))}
-      </Grid>
+      </Grid> */}
     </Grid>
   );
 }
