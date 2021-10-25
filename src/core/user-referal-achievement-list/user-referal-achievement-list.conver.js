@@ -20,6 +20,6 @@ export const performUserReferalAchievementListRowData = (row) => {
     [USER_REFERAL_ACHIEVEMENT_LIST_DATA_NAME.TYPE]:
       convertReferalAchievementStatus(
         referalAchievement[USER_REFERAL_ACHIEVEMENT_LIST_DATA_NAME.TYPE],
-      ),
+      ).text,
   }));
 };

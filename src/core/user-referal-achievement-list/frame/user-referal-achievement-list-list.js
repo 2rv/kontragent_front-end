@@ -51,6 +51,7 @@ export const UserReferalAchievementListListComponent = ({ list }) => {
                       <Typography
                         sx={{
                           color: '#252525',
+                          py: 2,
                         }}
                       >
                         {items[USER_REFERAL_ACHIEVEMENT_LIST_DATA_NAME.TYPE]}
@@ -60,7 +61,7 @@ export const UserReferalAchievementListListComponent = ({ list }) => {
                 }
               />
             </ListItem>
-            <ListItem alignItems="flex-end" sx={{ py: 3, marginLeft: '250px' }}>
+            <ListItem alignItems="flex-end" sx={{ py: 3, marginLeft: '500px' }}>
               <ListItemText
                 primary={
                   <span>
