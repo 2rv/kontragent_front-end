@@ -8,7 +8,7 @@ import {
 import { authUpdateUserData } from '../../lib/common/auth/auth.action';
 import { redirect } from '../../main/navigation/navigation.core';
 
-export function verificationPhoneFormFetchData(data, code) {
+export function verificationPhoneFormFetchData(data, code, referalIdData) {
   return async (dispatch) => {
     dispatch({
       type: AUTH_VERIFICATION_PHONE_ACTION_TYPE.FORM_PENDING,
@@ -21,6 +21,16 @@ export function verificationPhoneFormFetchData(data, code) {
         data,
       });
       await authUpdateUserData()(dispatch);
+
+      if (referalIdData) {
+        await httpRequest({
+          method:
+            AUTH_VERIFICATION_PHONE_API.AUTH_VERIFICATION_PHONE_REFERAL.TYPE,
+          url: AUTH_VERIFICATION_PHONE_API.AUTH_VERIFICATION_PHONE_REFERAL.ENDPOINT(
+            referalIdData,
+          ),
+        });
+      }
 
       await redirect('/').then(() => {
         dispatch({
@@ -46,8 +56,10 @@ export function verificationPhoneFormGetCode() {
 
     try {
       await httpRequest({
-        method: AUTH_VERIFICATION_PHONE_API.AUTH_VERIFICATION_PHONE_GET_CODE.TYPE,
-        url: AUTH_VERIFICATION_PHONE_API.AUTH_VERIFICATION_PHONE_GET_CODE.ENDPOINT,
+        method:
+          AUTH_VERIFICATION_PHONE_API.AUTH_VERIFICATION_PHONE_GET_CODE.TYPE,
+        url: AUTH_VERIFICATION_PHONE_API.AUTH_VERIFICATION_PHONE_GET_CODE
+          .ENDPOINT,
       });
 
       dispatch({
