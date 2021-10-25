@@ -13,7 +13,7 @@ export const RevisionAdminListListComponent = ({ list }) => {
     return (
       <Box sx={{ pt: 4, px: 8, pb: 8 }}>
         <Alert severity="info">
-          {text('REVISION_ADMIN_LIST.REVISION_LIST.EMPTY')}
+          {text('REVISION_ADMIN_LIST.EMPTY')}
         </Alert>
       </Box>
     );

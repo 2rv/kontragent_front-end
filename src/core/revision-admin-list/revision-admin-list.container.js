@@ -3,7 +3,6 @@ import { RevisionAdminListComponent } from './revision-admin-list.component';
 import { httpRequest } from '../../main/http';
 import { REVISION_ADMIN_LIST_API } from './revision-admin-list.constant';
 import { performRevisionAdminListRowData } from './revision-admin-list.convert';
-export { performRevisionAdminListRowData } from './revision-admin-list.convert';
 
 export function RevisionAdminListContainer() {
 
