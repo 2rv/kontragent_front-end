@@ -20,7 +20,12 @@ import COMPANY_ADMIN_LIST from './company-admin-list.json';
 import USER_ADMIN_ITEM from './user-admin-item.json';
 import USER_ADMIN_ITEM_INFO from './user-admin-item-info.json';
 import USER_ADMIN_ITEM_COMPANY_LIST from './user-admin-item-company-list.json';
+<<<<<<< HEAD
 import REVISION_ADMIN_LIST from './revision-admin-list.json'
+=======
+import USER_ADMIN_LIST from './user-admin-list.json';
+import USER_REFERAL from './user-referal.json';
+>>>>>>> 21715b4ed9057c6dcb0f6b89744028a66c7b7468
 
 export const RU = {
   translation: {
@@ -46,6 +51,11 @@ export const RU = {
     USER_ADMIN_ITEM,
     USER_ADMIN_ITEM_INFO,
     USER_ADMIN_ITEM_COMPANY_LIST,
+<<<<<<< HEAD
     REVISION_ADMIN_LIST
+=======
+    USER_ADMIN_LIST,
+    USER_REFERAL,
+>>>>>>> 21715b4ed9057c6dcb0f6b89744028a66c7b7468
   },
 };

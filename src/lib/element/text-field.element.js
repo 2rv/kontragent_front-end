@@ -6,9 +6,11 @@ import Typography from '@mui/material/Typography';
 export const TextFieldElement = ({ errorText, error, label, ...props }) => {
   return (
     <Grid container spacing={2}>
-      <Grid item>
-        <Typography variant="fieldLabel">{label}</Typography>
-      </Grid>
+      {label && (
+        <Grid item>
+          <Typography variant="fieldLabel">{label}</Typography>
+        </Grid>
+      )}
       <Grid item>
         <TextField error={error} {...props} />
       </Grid>

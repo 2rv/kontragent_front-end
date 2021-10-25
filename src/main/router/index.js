@@ -56,9 +56,15 @@ import {
   COMPANY_ADMIN_LIST_ROUTE_PATH,
 } from '../../core/company-admin-list';
 import {
+<<<<<<< HEAD
   RevisionAdminListRouter,
   REVISION_ADMIN_LIST_ROUTE_PATH,
 } from '../../core/revision-admin-list';
+=======
+  AuthReferalRouter,
+  AUTH_REFERAL_ROUTE_PATH,
+} from '../../core/auth-referal';
+>>>>>>> 21715b4ed9057c6dcb0f6b89744028a66c7b7468
 
 export const routes = {
   '/': IndexRouter,
@@ -84,7 +90,11 @@ export const routes = {
 
   [COMPANY_ADMIN_ITEM_ROUTE_PATH]: CompanyAdminItemRouter,
   [COMPANY_ADMIN_LIST_ROUTE_PATH]: CompanyAdminListRouter,
+<<<<<<< HEAD
   [REVISION_ADMIN_LIST_ROUTE_PATH]: RevisionAdminListRouter,
+=======
+  [AUTH_REFERAL_ROUTE_PATH]: AuthReferalRouter,
+>>>>>>> 21715b4ed9057c6dcb0f6b89744028a66c7b7468
 };
 
 export const Router = routesInit(routes);
