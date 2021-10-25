@@ -1,5 +1,5 @@
 import { USER_REFERAL_ACHIEVEMENT_LIST_DATA_NAME } from './user-referal-achievement-list.constant';
-import { text } from '../../lib/common/text';
+import { convertReferalAchievementStatus } from '../../lib/common/convert/convert.core';
 
 export const performUserReferalAchievementListRowData = (row) => {
   return row.map((referalAchievement) => ({
