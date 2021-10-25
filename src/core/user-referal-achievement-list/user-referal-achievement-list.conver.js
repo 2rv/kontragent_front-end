@@ -18,8 +18,8 @@ export const performUserReferalAchievementListRowData = (row) => {
         USER_REFERAL_ACHIEVEMENT_LIST_DATA_NAME.LASTNAME
       ],
     [USER_REFERAL_ACHIEVEMENT_LIST_DATA_NAME.TYPE]:
-      referalAchievement[USER_REFERAL_ACHIEVEMENT_LIST_DATA_NAME.TYPE] === 1
-        ? text('USER_REFERAL.USER_REFERAL_ACHIEVEMENT_LIST.TYPE.PAYMENT')
-        : text('USER_REFERAL.USER_REFERAL_ACHIEVEMENT_LIST.TYPE.SIGNUP'),
+      convertReferalAchievementStatus(
+        referalAchievement[USER_REFERAL_ACHIEVEMENT_LIST_DATA_NAME.TYPE],
+      ),
   }));
 };
