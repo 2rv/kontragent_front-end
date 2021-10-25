@@ -4,3 +4,8 @@ export const revisionStatusType = {
   3: 'COMMON.REVISION.STATUS.DONE',
   4: 'COMMON.REVISION.STATUS.PAYMENT',
 };
+
+export const referalAchieventStatusType = {
+  0: 'COMMON.REFERAL.STATUS.SIGNUP',
+  1: 'COMMON.REFERAL.STATUS.PAYMENT',
+};
