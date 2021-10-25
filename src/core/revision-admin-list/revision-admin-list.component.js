@@ -6,7 +6,6 @@ import Alert from '@mui/material/Alert';
 import { RevisionAdminListListComponent } from './frame/revision-admin-list-list.component';
 import { SkeletonListComponent } from '../../lib/common/skeleton/skeleton-list.component';
 import { text } from '../../lib/common/text';
-import { REVISION_ADMIN_LIST_DATA_NAME } from './revision-admin-list.constant';
 
 export function RevisionAdminListComponent({
   data,
@@ -23,7 +22,7 @@ export function RevisionAdminListComponent({
           sx={{ px: 8, pt: 8, pb: 4 }}
           component="div"
         >
-          {text(REVISION_ADMIN_LIST_DATA_NAME.LIST)}
+          {text('REVISION_ADMIN_LIST.TITLE')}
         </Typography>
         <Divider sx={{ mx: 8 }} />
         {isSuccess && <RevisionAdminListListComponent list={data} />}

@@ -28,9 +28,9 @@ export const RevisionAdminListListComponent = ({ list }) => {
               primary={
                 <span>
                   {`
-                    ${text(REVISION_ADMIN_LIST_DATA_NAME.ID)}:
+                    ${text("COMMON.REVISION.ID")}
                         ${items[REVISION_ADMIN_LIST_DATA_NAME.ID]}
-                    ${text(REVISION_ADMIN_LIST_DATA_NAME.TITLE)}:
+                    ${text("COMMON.REVISION.TITLE")}
                         ${items[REVISION_ADMIN_LIST_DATA_NAME.TITLE]}
                     `}
                 </span>
@@ -38,9 +38,9 @@ export const RevisionAdminListListComponent = ({ list }) => {
               secondary={
                 <span>
                   {`
-                    ${text(REVISION_ADMIN_LIST_DATA_NAME.STATUS)}:
+                    ${text("COMMON.REVISION.STATUS")}
                         ${items[REVISION_ADMIN_LIST_DATA_NAME.STATUS]}
-                    ${text(REVISION_ADMIN_LIST_DATA_NAME.PRICE)}: 
+                    ${text("COMMON.REVISION.PRICE")} 
                         ${items[REVISION_ADMIN_LIST_DATA_NAME.PRICE]} 
                     `}
                 </span>

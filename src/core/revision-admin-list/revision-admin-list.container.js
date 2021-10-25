@@ -1,16 +1,11 @@
 import React from 'react';
 import { RevisionAdminListComponent } from './revision-admin-list.component';
-import { useSelector } from 'react-redux';
-import { NAVIGATION_STORE_NAME } from '../../lib/common/navigation/navigation.constant';
 import { httpRequest } from '../../main/http';
 import { REVISION_ADMIN_LIST_API } from './revision-admin-list.constant';
 import { performRevisionAdminListRowData } from './revision-admin-list.convert';
 export { performRevisionAdminListRowData } from './revision-admin-list.convert';
 
 export function RevisionAdminListContainer() {
-  const { pageLoading } = useSelector((state) => ({
-    pageLoading: state[NAVIGATION_STORE_NAME].pageLoading,
-  }));
 
   React.useEffect(() => {
     getRevisionAdminList();
@@ -29,7 +24,6 @@ export function RevisionAdminListContainer() {
         url: REVISION_ADMIN_LIST_API.GET_REVISION_ADMIN_LIST.ENDPOINT,
       });
       const data = performRevisionAdminListRowData(res.data);
-      console.log(`PERFORMED DATA: ${JSON.stringify(data)}`);
 
       setRequestPending(false);
       setRequestSuccess(true);
@@ -52,11 +46,10 @@ export function RevisionAdminListContainer() {
 
   return (
     <RevisionAdminListComponent
-      isPending={isRequestPending || (!isRequestSuccess && pageLoading)}
+      isPending={isRequestPending || !isRequestSuccess}
       isError={isRequestError}
       isSuccess={isRequestSuccess}
       data={getData}
-      pageLoading={pageLoading}
       errorMessage={getRequestErrorMessage}
     />
   );
