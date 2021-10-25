@@ -9,7 +9,7 @@ export const performRevisionAdminListRowData = (row) => {
       revision[REVISION_ADMIN_LIST_DATA_NAME.TITLE],
     [REVISION_ADMIN_LIST_DATA_NAME.STATUS]: convertRevisionStatus(
       revision[REVISION_ADMIN_LIST_DATA_NAME.STATUS],
-    ),
+    ).text,
     [REVISION_ADMIN_LIST_DATA_NAME.PRICE]:
       revision[REVISION_ADMIN_LIST_DATA_NAME.PRICE],
   }));
