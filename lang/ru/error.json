@@ -24,5 +24,6 @@
   "USER_USER_VERIFICATION_PHONE_ALLREADY_CONFIRM": "Номер телефона уже был подтверждён",
   "USER_USER_VERIFICATION_PHONE_UNCORRECT_CODE": "Неправильный код подтверждения номера телефона",
 
-  "COMPANY_CANT_VERIFICATE_COMPANY_INFO": "Не удалось верифицировать данные компании"
+  "COMPANY_CANT_VERIFICATE_COMPANY_INFO": "Не удалось верифицировать данные компании",
+  "REFERAL_MEMBER_ERROR.USER_ALREADY_REFERAL_MEMBER": "Такой пользователь уже существует и был приглашен"
 }
