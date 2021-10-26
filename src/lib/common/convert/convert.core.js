@@ -14,3 +14,7 @@ export function convertReferalAchievementStatus(status) {
     text: text(referalAchieventStatusType[status]),
   };
 }
+
+export function convertFormatDate(timestamp) {
+  return new Date(timestamp).toLocaleDateString();
+}
