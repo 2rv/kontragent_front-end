@@ -66,9 +66,7 @@ export const UserReferalAchievementListListComponent = ({ list }) => {
                 primary={
                   <span>
                     {`${items[USER_REFERAL_ACHIEVEMENT_LIST_DATA_NAME.AWARD]}
-                        ${text(
-                          'USER_REFERAL.USER_REFERAL_ACHIEVEMENT_LIST.RUB',
-                        )}
+                        ${text('COMMON.CURRENCY.RUB')}
                     `}
                   </span>
                 }

@@ -19,16 +19,14 @@
           "TITLE_BALANCE": "Реферальный баланс", 
           "TITLE_REFERAL_MEMBER_COUNT": "Количество рефералов"
       },
-      "RUB": "₽",
+    
       "DESCRIPTION": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Gravida leo ultricies habitant mauris nunc sit. Enim at odio mollis montes, a, feugiat feugiat massa. Congue odio venenatis rutrum ut at vestibulum nulla. Amet eu consequat amet non tortor iaculis natoque in condimentum."
   },
 
   "USER_REFERAL_ACHIEVEMENT_LIST":{
       
     "TITLE": "Бонусные начисления за рефералов",
-    "EMPTY": "У вас нет бонусных начислений за рефералов",
-    "RUB": "РУБ"
-    
+    "EMPTY": "У вас нет бонусных начислений за рефералов" 
 }
 
 }

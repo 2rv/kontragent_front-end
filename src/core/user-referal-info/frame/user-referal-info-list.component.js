@@ -36,7 +36,7 @@ export const UserReferalInfoListComponent = ({ list }) => {
                       }}
                     >
                       {list[USER_REFERAL_INFO_DATA_NAME.BALANCE]}
-                      {text('USER_REFERAL.USER_REFERAL_INFO.RUB')}
+                      {text('COMMON.CURRENCY.RUB')}
                     </Typography>{' '}
                   </>{' '}
                 </span>
