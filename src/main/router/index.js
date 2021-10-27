@@ -60,6 +60,12 @@ import {
   COMPANY_ACCOUNT_ITEM_BALANCE_ROUTE_PATH,
 } from '../../core/company-account-item-balance';
 
+import {
+  RevisionAdminListRouter,
+  REVISION_ADMIN_LIST_ROUTE_PATH,
+} from '../../core/revision-admin-list';
+
+
 export const routes = {
   '/': IndexRouter,
   [AUTH_LOGIN_ROUTE_PATH]: AuthLoginRouter,
@@ -84,6 +90,7 @@ export const routes = {
 
   [COMPANY_ADMIN_ITEM_ROUTE_PATH]: CompanyAdminItemRouter,
   [COMPANY_ADMIN_LIST_ROUTE_PATH]: CompanyAdminListRouter,
+  [REVISION_ADMIN_LIST_ROUTE_PATH]: RevisionAdminListRouter,
   [AUTH_REFERAL_ROUTE_PATH]: AuthReferalRouter,
 };
 
