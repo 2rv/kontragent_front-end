@@ -1,24 +1,21 @@
 import * as React from 'react';
 import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
-import List from '@mui/material/List';
 import Divider from '@mui/material/Divider';
-import ListItem from '@mui/material/ListItem';
-import ListItemText from '@mui/material/ListItemText';
-import { redirect } from '../../main/navigation/navigation.core';
-import { useDispatch, useSelector } from 'react-redux';
+
+import { useSelector } from 'react-redux';
 import { NAVIGATION_STORE_NAME } from '../../lib/common/navigation/navigation.constant';
+import { AUTH_STORE_NAME } from '../../lib/common/auth';
 
-import { text } from '../../lib/common/text';
-
-import { SETTINGS_ROUTE_PATH } from '../settings';
-import { COMPANY_ACCOUNT_LIST_ROUTE_PATH } from '../company-account-list';
-
+import { NavigationListAdmin } from './frame/navigation-list-admin.component';
+import { NavigationListUser } from './frame/navigation-list-user.component';
+import { USER_ROLE } from '../../lib/common/auth/auth.constant';
 const drawerWidth = 240;
 
 export function NavigationComponent(props) {
-  const { activePath } = useSelector((state) => ({
+  const { activePath, userRole } = useSelector((state) => ({
     activePath: state[NAVIGATION_STORE_NAME].activePath,
+    userRole: state[AUTH_STORE_NAME].user.role,
   }));
 
   return (
@@ -46,38 +43,11 @@ export function NavigationComponent(props) {
           <Divider />
         </Box>
         <Box sx={{ overflow: 'auto', pt: 2 }}>
-          <List disablePadding>
-            <ListItem
-              disablePadding
-              sx={{ px: 8, py: 3 }}
-              selected={activePath === COMPANY_ACCOUNT_LIST_ROUTE_PATH}
-              button
-              key={1}
-              onClick={() => {
-                redirect(COMPANY_ACCOUNT_LIST_ROUTE_PATH);
-              }}
-            >
-              <ListItemText
-                disablePadding
-                primary={text('NAVIGATION.MY_COMPANIES')}
-              />
-            </ListItem>
-            <ListItem
-              disablePadding
-              sx={{ px: 8, py: 3 }}
-              button
-              selected={activePath === SETTINGS_ROUTE_PATH}
-              key={2}
-              onClick={() => {
-                redirect(SETTINGS_ROUTE_PATH);
-              }}
-            >
-              <ListItemText
-                disablePadding
-                primary={text('NAVIGATION.SETITNGS')}
-              />
-            </ListItem>
-          </List>
+          {userRole !== USER_ROLE.USER ? (
+            <NavigationListUser activePath={activePath} />
+          ) : (
+            <NavigationListAdmin activePath={activePath} />
+          )}
         </Box>
       </Drawer>
       <Box
