@@ -11,16 +11,18 @@ import { getQuery } from '../../main/navigation/navigation.core';
 
 import { performCompanyAccountItemMemberListData } from './company-account-item-member-list.convert';
 import { COMPANY_ACCOUNT_ITEM_MEMBER_DELETE_STORE_NAME } from '../company-account-item-member-delete/company-account-item-member-delete.constant'
+import { COMPANY_ACCOUNT_ITEM_MEMBER_ADD_STORE_NAME } from '../company-account-item-member-add/company-account-item-member-add.constant'
 
 export function CompanyAccountItemMemberListContainer() {
-  const { pageLoading, deleteState } = useSelector((state) => ({
+  const { pageLoading, deleteState, addState } = useSelector((state) => ({
+    addState: state[COMPANY_ACCOUNT_ITEM_MEMBER_ADD_STORE_NAME],
     deleteState: state[COMPANY_ACCOUNT_ITEM_MEMBER_DELETE_STORE_NAME],
     pageLoading: state[NAVIGATION_STORE_NAME].pageLoading,
   }));
 
   React.useEffect(() => {
     getCompanyAccountItemPaymentList();
-  }, []);
+  }, [addState.form.success]);
 
   React.useEffect(() => {
     deleteState.deletedItemIndex && setData(getData.splice(deleteState.deletedItemIndex, 1))
