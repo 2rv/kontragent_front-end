@@ -22,12 +22,31 @@ export function AuthReferalComponent() {
       <Paper>
         <Box>
           <Box sx={{ pb: 4 }}>
-            <Typography variant="heading" gutterBottom component="div">
+            <Typography
+              sx={{
+                pb: 2,
+                fontSize: '20px',
+                fontWeight: 'bold',
+                textAlign: 'left',
+              }}
+            >
               {text('AUTH.REFERAL.TITLE')}
+            </Typography>
+
+            <Typography
+              sx={{
+                color: '#707070',
+                fontSize: '14px',
+                textAlign: 'left',
+                pb: 4,
+              }}
+            >
+              {text('AUTH.REFERAL.DESCRIPTION')}
             </Typography>
 
             <Grid item>
               <Button
+                fullWidth
                 type="button"
                 onClick={() => {
                   redirect(AUTH_SIGNUP_ROUTE_PATH);
