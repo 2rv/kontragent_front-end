@@ -59,6 +59,14 @@ import {
   CompanyAccountItemBalanceRouter,
   COMPANY_ACCOUNT_ITEM_BALANCE_ROUTE_PATH,
 } from '../../core/company-account-item-balance';
+import {
+  CompanyAccountItemInfoRouter,
+  COMPANY_ACCOUNT_ITEM_INFO_ROUTE_PATH,
+} from '../../core/company-account-item-info';
+import {
+  COMPANY_ACCOUNT_ITEM_MEMBER_ROUTE_PATH,
+  CompanyAccountItemMemberRouter,
+} from '../../core/company-account-item-member';
 
 export const routes = {
   '/': IndexRouter,
@@ -82,6 +90,8 @@ export const routes = {
     CompanyAccountItemRevisionListRouter,
   [COMPANY_ACCOUNT_ITEM_BALANCE_ROUTE_PATH]: CompanyAccountItemBalanceRouter,
 
+  [COMPANY_ACCOUNT_ITEM_INFO_ROUTE_PATH]: CompanyAccountItemInfoRouter,
+  [COMPANY_ACCOUNT_ITEM_MEMBER_ROUTE_PATH]: CompanyAccountItemMemberRouter,
   [COMPANY_ADMIN_ITEM_ROUTE_PATH]: CompanyAdminItemRouter,
   [COMPANY_ADMIN_LIST_ROUTE_PATH]: CompanyAdminListRouter,
   [AUTH_REFERAL_ROUTE_PATH]: AuthReferalRouter,

@@ -3,14 +3,26 @@ import {
   COMPANY_ACCOUNT_ITEM_BALANCE_ROUTE_PATH_DYNAMIC,
   COMPANY_ACCOUNT_ITEM_BALANCE_ROUTE_PATH,
 } from '../company-account-item-balance';
-import { COMPANY_ACCOUNT_LIST_ROUTE_PATH } from '../company-account-list';
+import {
+  COMPANY_ACCOUNT_ITEM_INFO_ROUTE_PATH,
+  COMPANY_ACCOUNT_ITEM_INFO_ROUTE_PATH_DYNAMIC,
+} from '../company-account-item-info';
+import {
+  COMPANY_ACCOUNT_ITEM_MEMBER_ROUTE_PATH,
+  COMPANY_ACCOUNT_ITEM_MEMBER_ROUTE_PATH_DYNAMIC,
+} from '../company-account-item-member';
+import {
+  COMPANY_ACCOUNT_ITEM_REVISION_LIST_ROUTE_PATH,
+  COMPANY_ACCOUNT_ITEM_REVISION_LIST_ROUTE_PATH_DYNAMIC,
+} from '../company-account-item-revision-list';
 
 export const COMPANY_ACCOUNT_ITEM_NAVIGATION = [
   {
     id: 0,
     label: 'NAVIGATION.TABS.COMPANY_ACCOUNT_ITEM.BALANCE',
+
     path: () => {
-      COMPANY_ACCOUNT_ITEM_BALANCE_ROUTE_PATH_DYNAMIC({
+      return COMPANY_ACCOUNT_ITEM_BALANCE_ROUTE_PATH_DYNAMIC({
         companyId: getQuery('companyId'),
       });
     },
@@ -18,10 +30,32 @@ export const COMPANY_ACCOUNT_ITEM_NAVIGATION = [
   },
   {
     id: 1,
-    label: 'NAVIGATION.TABS.COMPANY_ACCOUNT_ITEM.BALANCE',
+    label: 'NAVIGATION.TABS.COMPANY_ACCOUNT_ITEM.INFO',
     path: () => {
-      COMPANY_ACCOUNT_LIST_ROUTE_PATH;
+      return COMPANY_ACCOUNT_ITEM_INFO_ROUTE_PATH_DYNAMIC({
+        companyId: getQuery('companyId'),
+      });
     },
-    pathname: COMPANY_ACCOUNT_LIST_ROUTE_PATH,
+    pathname: COMPANY_ACCOUNT_ITEM_INFO_ROUTE_PATH,
+  },
+  {
+    id: 2,
+    label: 'NAVIGATION.TABS.COMPANY_ACCOUNT_ITEM.MEMBERS',
+    path: () => {
+      return COMPANY_ACCOUNT_ITEM_MEMBER_ROUTE_PATH_DYNAMIC({
+        companyId: getQuery('companyId'),
+      });
+    },
+    pathname: COMPANY_ACCOUNT_ITEM_MEMBER_ROUTE_PATH,
+  },
+  {
+    id: 3,
+    label: 'NAVIGATION.TABS.COMPANY_ACCOUNT_ITEM.REVISION',
+    path: () => {
+      return COMPANY_ACCOUNT_ITEM_REVISION_LIST_ROUTE_PATH_DYNAMIC({
+        companyId: getQuery('companyId'),
+      });
+    },
+    pathname: COMPANY_ACCOUNT_ITEM_REVISION_LIST_ROUTE_PATH,
   },
 ];
