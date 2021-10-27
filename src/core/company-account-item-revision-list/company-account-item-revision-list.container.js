@@ -25,7 +25,7 @@ export function CompanyAccountItemRevisionListContainer() {
     setRequestSuccess(false);
     setRequestError(false);
     setRequestErrorMessage(null);
-    setData({});
+    setData([]);
 
     try {
       const res = await httpRequest({
@@ -41,7 +41,7 @@ export function CompanyAccountItemRevisionListContainer() {
     } catch (error) {
       if (error.response) {
         setRequestError(true);
-        setData({});
+        setData([]);
         setRequestPending(false);
         setRequestErrorMessage(error.response.data.message);
       }
@@ -49,7 +49,7 @@ export function CompanyAccountItemRevisionListContainer() {
   };
 
   const [isRequestPending, setRequestPending] = React.useState(null);
-  const [getData, setData] = React.useState({});
+  const [getData, setData] = React.useState([]);
   const [isRequestError, setRequestError] = React.useState(null);
   const [isRequestSuccess, setRequestSuccess] = React.useState(null);
   const [getRequestErrorMessage, setRequestErrorMessage] = React.useState(null);

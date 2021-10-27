@@ -7,10 +7,6 @@ import {
   COMPANY_ACCOUNT_LIST_ROUTE_PATH,
 } from '../../core/company-account-list';
 import {
-  CompanyAccountItemRouter,
-  COMPANY_ACCOUNT_ITEM_ROUTE_PATH,
-} from '../../core/company-account-item';
-import {
   CompanyAccountCreateRouter,
   COMPANY_ACCOUNT_CREATE_ROUTE_PATH,
 } from '../../core/company-account-create';
@@ -59,6 +55,14 @@ import {
   RevisionAdminListRouter,
   REVISION_ADMIN_LIST_ROUTE_PATH,
 } from '../../core/revision-admin-list';
+import {
+  AuthReferalRouter,
+  AUTH_REFERAL_ROUTE_PATH,
+} from '../../core/auth-referal';
+import {
+  CompanyAccountItemBalanceRouter,
+  COMPANY_ACCOUNT_ITEM_BALANCE_ROUTE_PATH,
+} from '../../core/company-account-item-balance';
 
 export const routes = {
   '/': IndexRouter,
@@ -73,7 +77,6 @@ export const routes = {
   [SETTINGS_ROUTE_PATH]: SettingsRouter,
 
   [COMPANY_ACCOUNT_LIST_ROUTE_PATH]: CompanyAccountListRouter,
-  [COMPANY_ACCOUNT_ITEM_ROUTE_PATH]: CompanyAccountItemRouter,
   [COMPANY_ACCOUNT_CREATE_ROUTE_PATH]: CompanyAccountCreateRouter,
   [COMPANY_ACCOUNT_ITEM_REVISION_CREATE_ROUTE_PATH]:
     CompanyAccountItemRevisionCreateRouter,
@@ -81,10 +84,12 @@ export const routes = {
     CompanyAccountItemRevisionItemRouter,
   [COMPANY_ACCOUNT_ITEM_REVISION_LIST_ROUTE_PATH]:
     CompanyAccountItemRevisionListRouter,
+  [COMPANY_ACCOUNT_ITEM_BALANCE_ROUTE_PATH]: CompanyAccountItemBalanceRouter,
 
   [COMPANY_ADMIN_ITEM_ROUTE_PATH]: CompanyAdminItemRouter,
   [COMPANY_ADMIN_LIST_ROUTE_PATH]: CompanyAdminListRouter,
   [REVISION_ADMIN_LIST_ROUTE_PATH]: RevisionAdminListRouter,
+  [AUTH_REFERAL_ROUTE_PATH]: AuthReferalRouter,
 };
 
 export const Router = routesInit(routes);

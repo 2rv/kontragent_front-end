@@ -7,6 +7,10 @@ export const AUTH_VERIFICATION_PHONE_API = {
     ENDPOINT: (code) => `/user-verification/phone/${code}`,
     TYPE: 'POST',
   },
+  AUTH_VERIFICATION_PHONE_REFERAL: {
+    ENDPOINT: (referalId) => `/referal-member/create/${referalId}`,
+    TYPE: 'POST',
+  },
   AUTH_VERIFICATION_PHONE_GET_CODE: {
     ENDPOINT: '/user-verification/phone',
     TYPE: 'GET',
