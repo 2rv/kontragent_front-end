@@ -59,6 +59,22 @@ import {
   CompanyAccountItemBalanceRouter,
   COMPANY_ACCOUNT_ITEM_BALANCE_ROUTE_PATH,
 } from '../../core/company-account-item-balance';
+import {
+  CompanyAccountItemInfoRouter,
+  COMPANY_ACCOUNT_ITEM_INFO_ROUTE_PATH,
+} from '../../core/company-account-item-info';
+import {
+  COMPANY_ACCOUNT_ITEM_MEMBER_ROUTE_PATH,
+  CompanyAccountItemMemberRouter,
+} from '../../core/company-account-item-member';
+import {
+  UserReferalSystemRouter,
+  USER_REFERAL_SYSTEM_ROUTE_PATH,
+} from '../../core/user-referal-system';
+import {
+  UserReferalBalanceRouter,
+  USER_REFERAL_BALANCE_ROUTE_PATH,
+} from '../../core/user-referal-balance';
 
 import {
   RevisionAdminListRouter,
@@ -88,10 +104,14 @@ export const routes = {
     CompanyAccountItemRevisionListRouter,
   [COMPANY_ACCOUNT_ITEM_BALANCE_ROUTE_PATH]: CompanyAccountItemBalanceRouter,
 
+  [COMPANY_ACCOUNT_ITEM_INFO_ROUTE_PATH]: CompanyAccountItemInfoRouter,
+  [COMPANY_ACCOUNT_ITEM_MEMBER_ROUTE_PATH]: CompanyAccountItemMemberRouter,
   [COMPANY_ADMIN_ITEM_ROUTE_PATH]: CompanyAdminItemRouter,
   [COMPANY_ADMIN_LIST_ROUTE_PATH]: CompanyAdminListRouter,
   [REVISION_ADMIN_LIST_ROUTE_PATH]: RevisionAdminListRouter,
   [AUTH_REFERAL_ROUTE_PATH]: AuthReferalRouter,
+  [USER_REFERAL_SYSTEM_ROUTE_PATH]: UserReferalSystemRouter,
+  [USER_REFERAL_BALANCE_ROUTE_PATH]: UserReferalBalanceRouter,
 };
 
 export const Router = routesInit(routes);

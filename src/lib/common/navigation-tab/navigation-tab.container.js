@@ -32,7 +32,7 @@ export function TabContainer({ TAB_LIST }) {
   }, []);
 
   const handleChange = (e, newValue) => {
-    redirect(newValue(TAB_LIST[newValue].path()));
+    redirect(TAB_LIST[newValue].path());
   };
 
   return (
