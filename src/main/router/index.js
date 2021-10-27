@@ -67,6 +67,14 @@ import {
   COMPANY_ACCOUNT_ITEM_MEMBER_ROUTE_PATH,
   CompanyAccountItemMemberRouter,
 } from '../../core/company-account-item-member';
+import {
+  UserReferalSystemRouter,
+  USER_REFERAL_SYSTEM_ROUTE_PATH,
+} from '../../core/user-referal-system';
+import {
+  UserReferalBalanceRouter,
+  USER_REFERAL_BALANCE_ROUTE_PATH,
+} from '../../core/user-referal-balance';
 
 export const routes = {
   '/': IndexRouter,
@@ -95,6 +103,8 @@ export const routes = {
   [COMPANY_ADMIN_ITEM_ROUTE_PATH]: CompanyAdminItemRouter,
   [COMPANY_ADMIN_LIST_ROUTE_PATH]: CompanyAdminListRouter,
   [AUTH_REFERAL_ROUTE_PATH]: AuthReferalRouter,
+  [USER_REFERAL_SYSTEM_ROUTE_PATH]: UserReferalSystemRouter,
+  [USER_REFERAL_BALANCE_ROUTE_PATH]: UserReferalBalanceRouter,
 };
 
 export const Router = routesInit(routes);
