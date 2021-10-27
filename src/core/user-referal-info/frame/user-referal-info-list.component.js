@@ -59,7 +59,7 @@ export const UserReferalInfoListComponent = ({ list }) => {
               }
             />
           </ListItem>
-          <ListItem sx={{ marginRight: '350px' }}>
+          <ListItem sx={{ marginRight: '900px' }}>
             <ListItemText
               secondary={
                 <span>

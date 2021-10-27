@@ -61,7 +61,10 @@ export const UserReferalAchievementListListComponent = ({ list }) => {
                 }
               />
             </ListItem>
-            <ListItem alignItems="flex-end" sx={{ py: 3, marginLeft: '500px' }}>
+            <ListItem
+              alignItems="flex-end"
+              sx={{ py: 3, marginLeft: '1000px' }}
+            >
               <ListItemText
                 primary={
                   <span>
