@@ -7,4 +7,5 @@ export {
   authRedirectPrivated,
   authRedirectVerification,
   authRedirectNotAdmin,
+  authRedirectAdmin,
 } from './auth.redirect';

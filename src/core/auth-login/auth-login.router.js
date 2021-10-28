@@ -1,7 +1,8 @@
 import { setActivePath } from '../../lib/common/navigation/navigation.action';
-import { authRedirectLogged } from '../../lib/common/auth';
+import { authRedirectLogged, authRedirectAdmin } from '../../lib/common/auth';
 import { AUTH_LOGIN_ROUTE_PATH } from './auth-login.constant';
 export function AuthLoginRouter(ctx) {
   ctx.store.dispatch(setActivePath(AUTH_LOGIN_ROUTE_PATH));
+  authRedirectAdmin(ctx, '/')
   authRedirectLogged(ctx, '/');
 }

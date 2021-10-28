@@ -84,3 +84,20 @@ export const authRedirectNotAdmin = (ctx: any, pathToRedirect: string) => {
     }
   }
 };
+
+export const authRedirectAdmin = (ctx: any, pathToRedirect: string) => {
+  const { res, store } = ctx;
+
+  const userStore = store.getState()[AUTH_STORE_NAME];
+
+  if (userStore.user.role === USER_ROLE.ADMIN) {
+    if (res) {
+      res.writeHead(301, {
+        Location: pathToRedirect,
+      });
+      res.end();
+    } else {
+      redirect(pathToRedirect);
+    }
+  }
+};
