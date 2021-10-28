@@ -21,7 +21,7 @@ export function AccountReferalComponent(props) {
             <Typography
               sx={{
                 pb: 2,
-                fontSize: '20px',
+                fontSize: '22px',
                 fontWeight: 'bold',
                 textAlign: 'left',
               }}
@@ -32,7 +32,7 @@ export function AccountReferalComponent(props) {
             <Typography
               sx={{
                 color: '#707070',
-                fontSize: '14px',
+                fontSize: '16px',
                 textAlign: 'left',
                 pb: 4,
               }}
