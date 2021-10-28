@@ -7,9 +7,12 @@ import { useSelector } from 'react-redux';
 import { NAVIGATION_STORE_NAME } from '../../lib/common/navigation/navigation.constant';
 import { AUTH_STORE_NAME } from '../../lib/common/auth';
 
-import { NavigationListAdmin } from './frame/navigation-list-admin.component';
-import { NavigationListUser } from './frame/navigation-list-user.component';
+import { NavigationListComponent } from './frame/navigation-list.component';
 import { USER_ROLE } from '../../lib/common/auth/auth.constant';
+import {
+  USER_MENU_ITEM,
+  ADMIN_MENU_ITEM,
+} from './frame/navigation-list.constant';
 const drawerWidth = 240;
 
 export function NavigationComponent(props) {
@@ -43,11 +46,12 @@ export function NavigationComponent(props) {
           <Divider />
         </Box>
         <Box sx={{ overflow: 'auto', pt: 2 }}>
-          {userRole !== USER_ROLE.USER ? (
-            <NavigationListUser activePath={activePath} />
-          ) : (
-            <NavigationListAdmin activePath={activePath} />
-          )}
+          <NavigationListComponent
+            activePath={activePath}
+            menuListItems={
+              userRole === USER_ROLE.USER ? USER_MENU_ITEM : ADMIN_MENU_ITEM
+            }
+          />
         </Box>
       </Drawer>
       <Box

@@ -10,21 +10,11 @@ import { COMPANY_ACCOUNT_LIST_ROUTE_PATH } from '../../company-account-list';
 import { USER_REFERAL_BALANCE_ROUTE_PATH } from '../../user-referal-balance';
 import { USER_REFERAL_SYSTEM_ROUTE_PATH } from '../../user-referal-system';
 
-export function NavigationListUser({ activePath }) {
-  const userMenuItems = [
-    { [COMPANY_ACCOUNT_LIST_ROUTE_PATH]: text('NAVIGATION.USER.MY_COMPANIES') },
-    {
-      [USER_REFERAL_BALANCE_ROUTE_PATH]: text('NAVIGATION.USER.BALANCE'),
-    },
-    {
-      [USER_REFERAL_SYSTEM_ROUTE_PATH]: text('NAVIGATION.USER.SYSTEM'),
-    },
-    { [SETTINGS_ROUTE_PATH]: text('NAVIGATION.USER.SETITNGS') },
-  ];
+export function NavigationListComponent({ activePath, menuListItems }) {
 
   return (
     <List disablePadding>
-      {userMenuItems.map((item, i) => {
+      {menuListItems.map((item, i) => {
         return (
           <ListItem
             disablePadding
