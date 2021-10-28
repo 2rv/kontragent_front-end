@@ -1,5 +1,6 @@
 import {
   authRedirectLogged,
+  authRedirectNotAdmin,
   authRedirectPrivated,
   authRedirectVerification,
 } from '../../lib/common/auth';
@@ -15,6 +16,6 @@ export function IndexRouter(ctx) {
     AUTH_VERIFICATION_EMAIL_ROUTE_PATH,
     AUTH_VERIFICATION_PHONE_ROUTE_PATH,
   );
-
+  // authRedirectNotAdmin(ctx, Черезе конст)
   authRedirectLogged(ctx, '/company');
 }
