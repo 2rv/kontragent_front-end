@@ -26,6 +26,7 @@ export function CompanyAccountItemMemberAddContainer() {
   }));
 
   const loginFormSendData = async (data) => {
+    console.log(data)
     dispatch(CompanyAccountItemMemberAdd(data))
   };
 

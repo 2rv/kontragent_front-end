@@ -25,7 +25,7 @@ export function CompanyAccountItemMemberListContainer() {
   }, [addState.form.success]);
 
   React.useEffect(() => {
-    deleteState.deletedItemIndex && setData(getData.splice(deleteState.deletedItemIndex, 1))
+    getCompanyAccountItemPaymentList();
   }, [deleteState.form.success]);
 
   const getCompanyAccountItemPaymentList = async (data) => {

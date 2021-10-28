@@ -29,7 +29,7 @@ export const CompanyAccountItemPaymentListListComponent = ({ list }) => {
         <React.Fragment key={key}>
           <ListItem sx={{ py: 3, px: 3 }}
             secondaryAction={
-              <CompanyAccountItemMemberDeleteContainer itemIndex={key} companyMemberId={item[COMPANY_ACCOUNT_ITEM_MEMBER_LIST_DATA_NAME.ID]} />
+              <CompanyAccountItemMemberDeleteContainer companyMemberId={item[COMPANY_ACCOUNT_ITEM_MEMBER_LIST_DATA_NAME.ID]} />
             }
           >
             <ListItemText
