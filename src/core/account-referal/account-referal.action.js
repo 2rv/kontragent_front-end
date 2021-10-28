@@ -15,7 +15,6 @@ export function uploadAccountReferalId(id) {
       await httpRequest({
         method: ACCOUNT_REFERAL_API.ACCOUNT_REFERAL.TYPE,
         url: ACCOUNT_REFERAL_API.ACCOUNT_REFERAL.ENDPOINT(id),
-        data: id,
       });
 
       await redirect('/').then(() => {
