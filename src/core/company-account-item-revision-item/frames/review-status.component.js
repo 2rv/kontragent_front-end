@@ -18,8 +18,6 @@ export const ReviewStatus = ({ status }) => {
     ),
   ][status];
 
-  console.log(status);
-
   switch (status) {
     case 1:
       return (
