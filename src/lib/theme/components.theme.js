@@ -133,4 +133,9 @@ export const components = {
       },
     },
   },
+  MuiAlert: {
+    defaultProps: {
+      variant: 'standard',
+    },
+  },
 };

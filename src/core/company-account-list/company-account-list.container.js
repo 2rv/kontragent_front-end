@@ -34,7 +34,6 @@ export function CompanyAccountListContainer() {
         url: COMPANY_ACCOUNT_LIST_API.GET_COMPANY_ACCOUNT_LIST.ENDPOINT,
       });
       const data = performCompanyAccountListRowData(res.data);
-      console.log(`PERFORMED DATA: ${JSON.stringify(data)}`);
 
       setRequestPending(false);
       setRequestSuccess(true);
