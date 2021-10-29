@@ -26,10 +26,10 @@ export function AccountReferalContainer() {
   return (
     <AccountReferalComponent
       handleClickAccept={handleClickAccept}
-      isPending={isRequestPending(state.addToReferalInfo)}
-      isSuccess={isRequestSuccess(state.addToReferalInfo)}
-      isError={isRequestError(state.addToReferalInfo)}
-      errorMessage={getRequestErrorMessage(state.addToReferalInfo)}
+      isPending={isRequestPending(state.accountReferalInfo)}
+      isSuccess={isRequestSuccess(state.accountReferalInfo)}
+      isError={isRequestError(state.accountReferalInfo)}
+      errorMessage={getRequestErrorMessage(state.accountReferalInfo)}
       pageLoading={pageLoading}
     />
   );

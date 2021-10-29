@@ -1,5 +1,6 @@
 import {
   authRedirectLogged,
+  authRedirectNotAdmin,
   authRedirectPrivated,
   authRedirectVerification,
   authRedirectAdmin,
