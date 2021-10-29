@@ -26,6 +26,10 @@ import {
   navigationStore,
   NAVIGATION_STORE_NAME,
 } from '../../lib/common/navigation';
+import {
+  ACCOUNT_REFERAL_STORE_NAME,
+  accountReferalStore,
+} from '../../core/account-referal';
 
 export const reducers = combineReducers({
   [AUTH_STORE_NAME]: authStore,
@@ -41,6 +45,7 @@ export const reducers = combineReducers({
   [COMPANY_ADMIN_ITEM_INFO_VERIFICATE_STORE_NAME]: companyAdminItemInfoVerificateStore,
   [COMPANY_ACCOUNT_ITEM_MEMBER_DELETE_STORE_NAME]: companyAccountItemMemberDeleteStore,
   [COMPANY_ACCOUNT_ITEM_MEMBER_ADD_STORE_NAME]: companyAccountItemMemberAddStore,
+  [ACCOUNT_REFERAL_STORE_NAME]: accountReferalStore,
 });
 
 export { initStore } from './store.core';

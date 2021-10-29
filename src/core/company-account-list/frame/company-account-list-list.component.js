@@ -12,7 +12,7 @@ import Divider from '@mui/material/Divider';
 
 import { redirect } from '../../../main/navigation';
 
-import { COMPANY_ACCOUNT_ITEM_ROUTE_PATH_DYNAMIC } from '../../company-account-item';
+import { COMPANY_ACCOUNT_ITEM_BALANCE_ROUTE_PATH_DYNAMIC } from '../../company-account-item-balance';
 
 import { text } from '../../../lib/common/text';
 
@@ -35,7 +35,7 @@ export const CompanyAccountListListComponent = ({ list }) => {
         <React.Fragment>
           <ListItem
             onClick={() => {
-              return redirect(COMPANY_ACCOUNT_ITEM_ROUTE_PATH_DYNAMIC, {
+              return redirect(COMPANY_ACCOUNT_ITEM_BALANCE_ROUTE_PATH_DYNAMIC, {
                 dynamic: true,
                 params: {
                   companyId: item[COMPANY_ACCOUNT_LIST_DATA_NAME.ID],
