@@ -46,7 +46,6 @@ export function AuthVerificationEmailComponent(props) {
                 {...props}
                 isPending={isPending}
                 isError={isError}
-                isSuccess={isSuccess}
                 errorMessage={errorMessage}
                 pageLoading={pageLoading}
               />
