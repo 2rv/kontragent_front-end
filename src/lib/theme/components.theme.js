@@ -132,5 +132,16 @@ export const components = {
         color: '#252525',
       },
     },
-  }
+  },
+  MuiAlert: {
+    defaultProps: {},
+    styleOverrides: {
+      root: {
+        disply: 'flex',
+        flexDirction: 'row',
+        justifyContent: 'center',
+        alignItems: 'center',
+      },
+    },
+  },
 };
