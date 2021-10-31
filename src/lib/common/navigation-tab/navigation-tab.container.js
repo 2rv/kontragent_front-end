@@ -9,7 +9,7 @@ import { NAVIGATION_STORE_NAME } from '../navigation/navigation.constant';
 import { text } from '../text';
 import { redirect } from '../../../main/navigation/navigation.core';
 
-export function TabContainer({ TAB_LIST }) {
+export function TabContainer({ config }) {
   function a11yProps(index) {
     return {
       id: `simple-tab-${index}`,
@@ -25,14 +25,14 @@ export function TabContainer({ TAB_LIST }) {
 
   React.useEffect(() => {
     setValue(
-      TAB_LIST.findIndex((e) => {
+      config.findIndex((e) => {
         if (e.pathname === activePath) return true;
       }),
     );
   }, []);
 
   const handleChange = (e, newValue) => {
-    redirect(TAB_LIST[newValue].path());
+    redirect(config[newValue].path());
   };
 
   return (
@@ -44,7 +44,7 @@ export function TabContainer({ TAB_LIST }) {
             onChange={handleChange}
             aria-label="basic tabs example"
           >
-            {TAB_LIST.map((item) => (
+            {config.map((item) => (
               <Tab
                 key={item.id}
                 sx={{ p: 4 }}

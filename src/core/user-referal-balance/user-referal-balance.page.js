@@ -10,7 +10,7 @@ export function UserReferalBalancePage() {
     <NavigationComponent>
       <Grid spacing={6} container>
         <Grid item>
-          <TabContainer TAB_LIST={USER_REFERAL_NAVIGATION} />
+          <TabContainer config={USER_REFERAL_NAVIGATION} />
         </Grid>
         <Grid item>
           <UserReferalInfoContainer />
