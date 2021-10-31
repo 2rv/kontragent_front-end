@@ -7,4 +7,5 @@ export {
   authRedirectPrivated,
   authRedirectVerification,
   authRedirectNotAdmin,
+  redirectUnavailableCompanyPage,
 } from './auth.redirect';
