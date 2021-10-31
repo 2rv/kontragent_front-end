@@ -139,7 +139,6 @@ export const components = {
       root: {
         disply: 'flex',
         flexDirction: 'row',
-        justifyContent: 'center',
         alignItems: 'center',
       },
     },
