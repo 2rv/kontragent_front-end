@@ -21,12 +21,11 @@ import { NavigationObserver } from '../../lib/common/navigation';
 
 import { setCurrentAuthCookie } from '../auth';
 import { authRedirectVerification } from '../../lib/common/auth/auth.redirect'
-import { AUTH_STORE_NAME } from "../../lib/common/auth/auth.constant"
 
 import CssBaseline from '@material-ui/core/CssBaseline';
 import { AUTH_VERIFICATION_EMAIL_ROUTE_PATH } from '../../core/auth-verification-email'
 import { AUTH_VERIFICATION_PHONE_ROUTE_PATH } from '../../core/auth-verification-phone'
-import { redirect } from '../../main/navigation/navigation.core'
+import { AUTH_SIGNUP_ROUTE_PATH } from '../../core/auth-signup/auth-signup.constant'
 
 class MyApp extends App {
   componentDidMount() {
@@ -57,11 +56,11 @@ class MyApp extends App {
       : { token };
 
     if (token) {
-      if (ctx.pathname !== AUTH_VERIFICATION_EMAIL_ROUTE_PATH && ctx.pathname !== AUTH_VERIFICATION_PHONE_ROUTE_PATH && ctx.pathname !== '/auth/signup') {
+      if (ctx.pathname !== AUTH_VERIFICATION_EMAIL_ROUTE_PATH && ctx.pathname !== AUTH_VERIFICATION_PHONE_ROUTE_PATH && ctx.pathname !== AUTH_SIGNUP_ROUTE_PATH) {
         authRedirectVerification(ctx, AUTH_VERIFICATION_EMAIL_ROUTE_PATH, AUTH_VERIFICATION_PHONE_ROUTE_PATH)
       }
     }
-    
+
     return { pageProps };
   }
 
