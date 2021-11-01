@@ -5,7 +5,15 @@ import { AuthReferalContainer } from './auth-referal.container';
 export function AuthReferalPage() {
   return (
     <Container maxWidth="xs">
-      <Grid sx={{ py: 6, minHeight: '100vh' }} container>
+      <Grid
+        sx={{
+          py: 6,
+          minHeight: '100vh',
+          alignItems: 'center',
+          justifyContent: 'center',
+        }}
+        container
+      >
         <Grid item>
           <AuthReferalContainer />
         </Grid>

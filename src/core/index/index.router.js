@@ -1,5 +1,6 @@
 import {
   authRedirectLogged,
+  authRedirectNotAdmin,
   authRedirectPrivated,
   authRedirectVerification,
   authRedirectAdmin
@@ -20,5 +21,6 @@ export function IndexRouter(ctx) {
   );
   authRedirectAdmin(ctx,
     USER_ADMIN_LIST_ROUTE_PATH)
+  // authRedirectNotAdmin(ctx, Черезе конст)
   authRedirectLogged(ctx, '/company');
 }

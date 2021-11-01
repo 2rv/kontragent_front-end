@@ -132,5 +132,5 @@ export const components = {
         color: '#252525',
       },
     },
-  },
+  }
 };

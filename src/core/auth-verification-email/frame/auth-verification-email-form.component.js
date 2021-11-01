@@ -1,9 +1,11 @@
 import Box from '@mui/material/Box';
-import { TextFieldElement } from '../../../lib/element/text-field.element.js';
 import Grid from '@mui/material/Grid';
 import Button from '@mui/material/Button';
 
+import { TextFieldElement } from '../../../lib/element/text-field.element.js';
+
 import { AUTH_VERIFICATION_EMAIL_DATA_NAME } from '../auth-verification-email.constant';
+
 import { text } from '../../../lib/common/text';
 
 export const AuthVerificationEmailFormComponent = (props) => {
@@ -16,9 +18,10 @@ export const AuthVerificationEmailFormComponent = (props) => {
     touched,
     isValid,
     isSubmitting,
+    isError,
+    isPending,
 
     pageLoading,
-    isSuccess,
   } = props;
 
   const isFieldError = (name) => {
@@ -30,7 +33,7 @@ export const AuthVerificationEmailFormComponent = (props) => {
   const isSubmitDisabled = () => {
     return JSON.stringify(touched) === '{}'
       ? true
-      : !isValid || isSubmitting || isSuccess || pageLoading;
+      : !isValid || isSubmitting || isError || isPending || pageLoading;
   };
 
   return (

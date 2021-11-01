@@ -1,5 +1,5 @@
 import React from 'react';
-import { Paper, Box, Typography, Button, Grid } from '@material-ui/core';
+import { Paper, Box, Typography, Button, Grid, Alert } from '@material-ui/core';
 import { text } from '../../lib/common/text';
 
 export function AccountReferalComponent(props) {
@@ -15,7 +15,7 @@ export function AccountReferalComponent(props) {
           src="/static/img/logo.svg"
         />
       </Box>
-      <Paper sx={{ textAlign: 'center' }}>
+      <Paper sx={{ textAlign: 'center', width: '480px' }}>
         <Box>
           <Box sx={{ p: 6 }}>
             <Typography
@@ -51,9 +51,11 @@ export function AccountReferalComponent(props) {
               </Button>
             </Grid>
             {isError && (
-              <Typography xs={{ color: 'red' }} variant="title" component="div">
-                {errorMessage}
-              </Typography>
+              <Box sx={{ pt: 2 }}>
+                <Alert sx={{ textAlign: 'left' }} severity="error">
+                  {text(`ERROR.${errorMessage}`)}
+                </Alert>
+              </Box>
             )}
           </Box>
         </Box>

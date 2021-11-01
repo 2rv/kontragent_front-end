@@ -7,6 +7,7 @@ export enum AUTH_USER_DATA {
   CONFIRM_PHONE = 'confirmPhone',
   FIRST_NAME = 'firstname',
   LAST_NAME = 'lastname',
+  COMPANY_ID_ARRAY = 'companyIdArray',
 }
 
 export interface AuthUserDto {
@@ -18,6 +19,7 @@ export interface AuthUserDto {
   email: string;
   confirmPhone: boolean;
   confirmEmail: boolean;
+  companyIdArray: number[];
 }
 
 export interface AuthStoreState {
