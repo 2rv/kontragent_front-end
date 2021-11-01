@@ -22,7 +22,6 @@ export function NavigationListComponent({ activePath, menuListItems }) {
             button
             key={i}
             onClick={() => {
-              console.log(`HUETA ${JSON.stringify(item)}`);
               redirect(Object.keys(item)[0]);
             }}
           >
