@@ -7,9 +7,9 @@
   },
   "ADMIN": {
     "SETITNGS": "Настройки",
-    "MY_COMPANIES": "Мои компании",
-    "REVISION": "Проверка контрагентов",
-    "MEMBERS": "Сотрудники компании"
+    "COMPANIES": "Список компаний",
+    "REVISION": "Список проверок",
+    "USERS": "Список пользователей"
   },
   "TABS": {
     "COMPANY_ACCOUNT_ITEM": {

@@ -12,9 +12,7 @@ export const RevisionAdminListListComponent = ({ list }) => {
   if (!list || list.length === 0) {
     return (
       <Box sx={{ pt: 4, px: 8, pb: 8 }}>
-        <Alert severity="info">
-          {text('REVISION_ADMIN_LIST.EMPTY')}
-        </Alert>
+        <Alert severity="info">{text('REVISION_ADMIN_LIST.EMPTY')}</Alert>
       </Box>
     );
   }
@@ -28,9 +26,9 @@ export const RevisionAdminListListComponent = ({ list }) => {
               primary={
                 <span>
                   {`
-                    ${text("COMMON.REVISION.ID")}
+                    ${text('COMMON.REVISION.ID')}
                         ${items[REVISION_ADMIN_LIST_DATA_NAME.ID]}
-                    ${text("COMMON.REVISION.TITLE")}
+                    ${text('COMMON.REVISION.TITLE')}
                         ${items[REVISION_ADMIN_LIST_DATA_NAME.TITLE]}
                     `}
                 </span>
@@ -38,9 +36,9 @@ export const RevisionAdminListListComponent = ({ list }) => {
               secondary={
                 <span>
                   {`
-                    ${text("COMMON.REVISION.STATUS")}
+                    ${text('COMMON.REVISION.STATUS')}
                         ${items[REVISION_ADMIN_LIST_DATA_NAME.STATUS]}
-                    ${text("COMMON.REVISION.PRICE")} 
+                    ${text('COMMON.REVISION.PRICE')} 
                         ${items[REVISION_ADMIN_LIST_DATA_NAME.PRICE]} 
                     `}
                 </span>

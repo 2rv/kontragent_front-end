@@ -11,7 +11,6 @@ import { USER_REFERAL_BALANCE_ROUTE_PATH } from '../../user-referal-balance';
 import { USER_REFERAL_SYSTEM_ROUTE_PATH } from '../../user-referal-system';
 
 export function NavigationListComponent({ activePath, menuListItems }) {
-
   return (
     <List disablePadding>
       {menuListItems.map((item, i) => {
@@ -23,6 +22,7 @@ export function NavigationListComponent({ activePath, menuListItems }) {
             button
             key={i}
             onClick={() => {
+              console.log(`HUETA ${JSON.stringify(item)}`);
               redirect(Object.keys(item)[0]);
             }}
           >
