@@ -2,7 +2,7 @@ import React from 'react';
 
 import { CompanyAccountListComponent } from './company-account-list.component';
 
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 
 import { NAVIGATION_STORE_NAME } from '../../lib/common/navigation/navigation.constant';
 
@@ -11,11 +11,14 @@ import { httpRequest } from '../../main/http';
 import { COMPANY_ACCOUNT_LIST_API } from './company-account-list.constant';
 
 import { performCompanyAccountListRowData } from './company-account-list.convert';
+import { authUpdateUserData } from '../../lib/common/auth/auth.action';
 
 export function CompanyAccountListContainer() {
   const { pageLoading } = useSelector((state) => ({
     pageLoading: state[NAVIGATION_STORE_NAME].pageLoading,
   }));
+
+  const dispatch = useDispatch();
 
   React.useEffect(() => {
     getCompanyAccountList();
@@ -34,6 +37,8 @@ export function CompanyAccountListContainer() {
         url: COMPANY_ACCOUNT_LIST_API.GET_COMPANY_ACCOUNT_LIST.ENDPOINT,
       });
       const data = performCompanyAccountListRowData(res.data);
+
+      dispatch(authUpdateUserData());
 
       setRequestPending(false);
       setRequestSuccess(true);
