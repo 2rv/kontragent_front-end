@@ -12,19 +12,19 @@ const initialState = {
 
 export function authSignupStore(state = initialState, action) {
   switch (action.type) {
-    case AUTH_SIGNUP_ACTION_TYPE.SIGNUP_FORM_UPLOAD_PENDING:
+    case AUTH_SIGNUP_ACTION_TYPE.FORM_PENDING:
       return {
         ...state,
         form: setRequestPending(state.form),
       };
 
-    case AUTH_SIGNUP_ACTION_TYPE.SIGNUP_FORM_UPLOAD_SUCCESS:
+    case AUTH_SIGNUP_ACTION_TYPE.FORM_SUCCESS:
       return {
         ...state,
         form: setRequestSuccess(state.form),
       };
 
-    case AUTH_SIGNUP_ACTION_TYPE.SIGNUP_FORM_UPLOAD_ERROR:
+    case AUTH_SIGNUP_ACTION_TYPE.FORM_ERROR:
       return {
         ...state,
         form: setRequestError(state.form, action.errorMessage),
