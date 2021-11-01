@@ -11,6 +11,10 @@ import { AUTH_VERIFICATION_EMAIL_STORE_NAME } from '../../core/auth-verification
 import { authVerificationEmailStore } from '../../core/auth-verification-email/auth-verification-email.store';
 import { AUTH_VERIFICATION_PHONE_STORE_NAME } from '../../core/auth-verification-phone/auth-verification-phone.constant';
 import { authVerificationPhoneStore } from '../../core/auth-verification-phone/auth-verification-phone.store';
+import { companyAccountItemMemberDeleteStore } from '../../core/company-account-item-member-delete/company-account-item-member-delete.store'
+import { COMPANY_ACCOUNT_ITEM_MEMBER_DELETE_STORE_NAME } from '../../core/company-account-item-member-delete/company-account-item-member-delete.constant'
+import { companyAccountItemMemberAddStore } from '../../core/company-account-item-member-add/company-account-item-member-add.store'
+import { COMPANY_ACCOUNT_ITEM_MEMBER_ADD_STORE_NAME } from '../../core/company-account-item-member-add/company-account-item-member-add.constant'
 import {
   companyAdminItemInfoVerificateStore,
   COMPANY_ADMIN_ITEM_INFO_VERIFICATE_STORE_NAME,
@@ -22,6 +26,10 @@ import {
   navigationStore,
   NAVIGATION_STORE_NAME,
 } from '../../lib/common/navigation';
+import {
+  ACCOUNT_REFERAL_STORE_NAME,
+  accountReferalStore,
+} from '../../core/account-referal';
 
 export const reducers = combineReducers({
   [AUTH_STORE_NAME]: authStore,
@@ -35,6 +43,9 @@ export const reducers = combineReducers({
   [AUTH_VERIFICATION_EMAIL_STORE_NAME]: authVerificationEmailStore,
   [AUTH_VERIFICATION_PHONE_STORE_NAME]: authVerificationPhoneStore,
   [COMPANY_ADMIN_ITEM_INFO_VERIFICATE_STORE_NAME]: companyAdminItemInfoVerificateStore,
+  [COMPANY_ACCOUNT_ITEM_MEMBER_DELETE_STORE_NAME]: companyAccountItemMemberDeleteStore,
+  [COMPANY_ACCOUNT_ITEM_MEMBER_ADD_STORE_NAME]: companyAccountItemMemberAddStore,
+  [ACCOUNT_REFERAL_STORE_NAME]: accountReferalStore,
 });
 
 export { initStore } from './store.core';

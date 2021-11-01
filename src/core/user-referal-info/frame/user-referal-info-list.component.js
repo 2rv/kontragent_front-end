@@ -20,85 +20,91 @@ export const UserReferalInfoListComponent = ({ list }) => {
   }
 
   return (
-    <List sx={{ px: 3, pb: 4 }} disablePadding>
-      <React.Fragment>
-        <ListItem alignItems="flex-start">
-          <ListItem>
-            <ListItemText
-              secondary={
-                <span>
-                  <>
-                    <Typography
-                      variant="listContent"
-                      sx={{
-                        color: '#252525',
-                        py: 1,
-                      }}
-                    >
-                      {list[USER_REFERAL_INFO_DATA_NAME.BALANCE]}
-                      {text('COMMON.CURRENCY.RUB')}
-                    </Typography>{' '}
-                  </>{' '}
-                </span>
-              }
-              primary={
-                <span>
-                  <>
-                    <Typography
-                      sx={{
-                        color: '#707070',
-                      }}
-                    >
-                      {' '}
-                      {text(
-                        'USER_REFERAL.USER_REFERAL_INFO.TITLE_INFO.TITLE_BALANCE',
-                      )}
-                    </Typography>
-                  </>
-                </span>
-              }
-            />
-          </ListItem>
-          <ListItem sx={{ marginRight: '900px' }}>
-            <ListItemText
-              secondary={
-                <span>
-                  <>
-                    <Typography
-                      variant="listContent"
-                      sx={{
-                        color: '#252525',
-                        py: 1,
-                      }}
-                    >
-                      {list[USER_REFERAL_INFO_DATA_NAME.REFERAL_MEMBER_COUNT]}
-                    </Typography>
-                  </>{' '}
-                </span>
-              }
-              primary={
-                <span>
-                  <>
-                    <Typography
-                      sx={{
-                        color: '#707070',
-                      }}
-                    >
-                      {text(
-                        'USER_REFERAL.USER_REFERAL_INFO.TITLE_INFO.TITLE_REFERAL_MEMBER_COUNT',
-                      )}
-                    </Typography>
-                  </>{' '}
-                </span>
-              }
-            />
-          </ListItem>
+    <Box sx={{ py: 4, px: 8 }}>
+      <List
+        sx={{
+          pb: 4,
+          display: 'inline-flex',
+          alignItems: 'flex-start',
+          width: 'min-content',
+        }}
+        disablePadding
+      >
+        <ListItem sx={{ pr: 4 }} disablePadding>
+          <ListItemText
+            secondary={
+              <span>
+                <>
+                  <Typography
+                    variant="listContent"
+                    sx={{
+                      color: '#252525',
+                      py: 1,
+                    }}
+                  >
+                    {list[USER_REFERAL_INFO_DATA_NAME.BALANCE]}
+                    {text('COMMON.CURRENCY.RUB')}
+                  </Typography>{' '}
+                </>{' '}
+              </span>
+            }
+            primary={
+              <span>
+                <>
+                  <Typography
+                    sx={{
+                      color: '#707070',
+                    }}
+                  >
+                    {' '}
+                    {text(
+                      'USER_REFERAL.USER_REFERAL_INFO.TITLE_INFO.TITLE_BALANCE',
+                    )}
+                  </Typography>
+                </>
+              </span>
+            }
+          />
         </ListItem>
-        <Typography color="#707070" sx={{ px: 8 }}>
-          {' '}
-          {text('USER_REFERAL.USER_REFERAL_INFO.DESCRIPTION')}{' '}
-        </Typography>
-      </React.Fragment>
-    </List>
+        <ListItem sx={{ pr: 4 }} disablePadding>
+          <ListItemText
+            secondary={
+              <span>
+                <>
+                  <Typography
+                    variant="listContent"
+                    sx={{
+                      color: '#252525',
+                      py: 1,
+                    }}
+                  >
+                    {list[USER_REFERAL_INFO_DATA_NAME.REFERAL_MEMBER_COUNT]}
+                  </Typography>
+                </>{' '}
+              </span>
+            }
+            primary={
+              <span>
+                <>
+                  <Typography
+                    sx={{
+                      color: '#707070',
+                    }}
+                  >
+                    {text(
+                      'USER_REFERAL.USER_REFERAL_INFO.TITLE_INFO.TITLE_REFERAL_MEMBER_COUNT',
+                    )}
+                  </Typography>
+                </>{' '}
+              </span>
+            }
+          />
+        </ListItem>
+      </List>
+      <Typography color="#707070">
+        {' '}
+        {text('USER_REFERAL.USER_REFERAL_INFO.DESCRIPTION')}{' '}
+      </Typography>
+    </Box>
   );
 };

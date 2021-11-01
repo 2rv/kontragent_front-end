@@ -84,6 +84,10 @@ import {
   UserAdminListRouter,
   USER_ADMIN_LIST_ROUTE_PATH,
 } from '../../core/user-admin-list';
+import {
+  AccountReferalRouter,
+  ACCOUNT_REFERAL_ROUTE_PATH,
+} from '../../core/account-referal';
 
 export const routes = {
   '/': IndexRouter,
@@ -116,6 +120,7 @@ export const routes = {
   [AUTH_REFERAL_ROUTE_PATH]: AuthReferalRouter,
   [USER_REFERAL_SYSTEM_ROUTE_PATH]: UserReferalSystemRouter,
   [USER_REFERAL_BALANCE_ROUTE_PATH]: UserReferalBalanceRouter,
+  [ACCOUNT_REFERAL_ROUTE_PATH]: AccountReferalRouter,
 };
 
 export const Router = routesInit(routes);

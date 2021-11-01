@@ -14,7 +14,6 @@ const onResponseSuccess = (response) => {
 };
 
 const onResponseError = (error) => {
-  console.log(error);
   // if (!error.response) {
   //   return redirect(HTTP_ERROR_ROUTER.INTERNAL_SERVER_ERROR);
   // }

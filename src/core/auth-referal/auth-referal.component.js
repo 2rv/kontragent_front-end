@@ -19,15 +19,35 @@ export function AuthReferalComponent() {
           src="/static/img/logo.svg"
         />
       </Box>
-      <Paper>
+      <Paper sx={{ textAlign: 'center', width: '480px', p: 6 }}>
         <Box>
-          <Box sx={{ pb: 4 }}>
-            <Typography variant="heading" gutterBottom component="div">
+          <Box sx={{ pb: 6 }}>
+            <Typography
+              sx={{
+                pb: 2,
+                fontSize: '22px',
+                fontWeight: 'bold',
+                textAlign: 'left',
+              }}
+            >
               {text('AUTH.REFERAL.TITLE')}
             </Typography>
 
-            <Grid item>
+            <Typography
+              sx={{
+                color: '#707070',
+                fontSize: '16px',
+                textAlign: 'left',
+                pb: 4,
+              }}
+            >
+              {text('AUTH.REFERAL.DESCRIPTION')}
+            </Typography>
+
+            <Grid sx={{ p: 0 }} item>
               <Button
+                fullWidth
+                variant="contained"
                 type="button"
                 onClick={() => {
                   redirect(AUTH_SIGNUP_ROUTE_PATH);

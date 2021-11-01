@@ -16,9 +16,9 @@ export const AuthVerificationFormComponent = (props) => {
     touched,
     isValid,
     isSubmitting,
-
+    isError,
     pageLoading,
-    isSuccess,
+    isPending,
   } = props;
 
   const isFieldError = (name) => {
@@ -30,7 +30,7 @@ export const AuthVerificationFormComponent = (props) => {
   const isSubmitDisabled = () => {
     return JSON.stringify(touched) === '{}'
       ? true
-      : !isValid || isSubmitting || isSuccess || pageLoading;
+      : !isValid || isSubmitting || isError || isPending || pageLoading;
   };
 
   return (

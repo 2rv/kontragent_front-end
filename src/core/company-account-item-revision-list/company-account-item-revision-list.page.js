@@ -11,7 +11,7 @@ export function CompanyAccountItemRevisionListPage() {
     <NavigationComponent>
       <Grid spacing={6} container>
         <Grid item>
-          <TabContainer TAB_LIST={COMPANY_ACCOUNT_ITEM_NAVIGATION} />
+          <TabContainer config={COMPANY_ACCOUNT_ITEM_NAVIGATION} />
         </Grid>
         <Grid item>
           <CompanyAccountItemRevisionCreateInfo />
