@@ -3,9 +3,12 @@ import {
   authRedirectPrivated,
   authRedirectAdmin,
   redirectUnavailableCompanyPage,
+  authRedirectVerification
 } from '../../lib/common/auth';
 
 import { COMPANY_ACCOUNT_ITEM_REVISION_LIST_ROUTE_PATH } from './company-account-item-revision-list.constant';
+import { AUTH_VERIFICATION_EMAIL_ROUTE_PATH } from '../auth-verification-email/auth-verification-email.constant'
+import { AUTH_VERIFICATION_PHONE_ROUTE_PATH } from '../auth-verification-phone/auth-verification-phone.constant'
 
 export function CompanyAccountItemRevisionListRouter(ctx) {
   ctx.store.dispatch(
@@ -14,4 +17,5 @@ export function CompanyAccountItemRevisionListRouter(ctx) {
   authRedirectAdmin(ctx, '/');
   authRedirectPrivated(ctx, '/');
   redirectUnavailableCompanyPage(ctx, '/');
+  authRedirectVerification(ctx, AUTH_VERIFICATION_EMAIL_ROUTE_PATH, AUTH_VERIFICATION_PHONE_ROUTE_PATH)
 }
