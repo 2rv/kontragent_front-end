@@ -15,8 +15,6 @@ export function FileUploadFieldContainer(props) {
     setRequestError(false);
     setRequestErrorMessage(null);
 
-    console.log(data);
-
     try {
       const res = await httpRequest.post('/file', data, {
         headers: {
@@ -29,7 +27,6 @@ export function FileUploadFieldContainer(props) {
 
       return res.data;
     } catch (error) {
-      console.log(error);
       if (error.response) {
         setRequestError(true);
         setRequestPending(false);
@@ -62,8 +59,6 @@ export function FileUploadFieldContainer(props) {
   const [isRequestSuccess, setRequestSuccess] = React.useState(null);
   const [getRequestErrorMessage, setRequestErrorMessage] = React.useState(null);
   const [getData, setData] = React.useState([]);
-
-  console.log(getData);
 
   return (
     <FileUploadFieldComponent
