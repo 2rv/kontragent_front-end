@@ -81,6 +81,10 @@ import {
   REVISION_ADMIN_LIST_ROUTE_PATH,
 } from '../../core/revision-admin-list';
 import {
+  UserAdminListRouter,
+  USER_ADMIN_LIST_ROUTE_PATH,
+} from '../../core/user-admin-list';
+import {
   AccountReferalRouter,
   ACCOUNT_REFERAL_ROUTE_PATH,
 } from '../../core/account-referal';
@@ -110,6 +114,7 @@ export const routes = {
   [COMPANY_ACCOUNT_ITEM_INFO_ROUTE_PATH]: CompanyAccountItemInfoRouter,
   [COMPANY_ACCOUNT_ITEM_MEMBER_ROUTE_PATH]: CompanyAccountItemMemberRouter,
   [COMPANY_ADMIN_ITEM_ROUTE_PATH]: CompanyAdminItemRouter,
+  [USER_ADMIN_LIST_ROUTE_PATH]: UserAdminListRouter,
   [COMPANY_ADMIN_LIST_ROUTE_PATH]: CompanyAdminListRouter,
   [REVISION_ADMIN_LIST_ROUTE_PATH]: RevisionAdminListRouter,
   [AUTH_REFERAL_ROUTE_PATH]: AuthReferalRouter,
