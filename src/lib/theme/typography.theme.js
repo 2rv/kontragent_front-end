@@ -103,7 +103,7 @@ export const typography = {
     fontFamily:
       '"IBM Plex Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"',
     fontSize: '0.875rem',
-    lineHeight: 1.75,
+    lineHeight: 1.5,
   },
   subtitle1: {
     fontSize: '1.125rem',

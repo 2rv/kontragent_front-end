@@ -43,6 +43,8 @@ export function TabContainer({ config }) {
             value={value}
             onChange={handleChange}
             aria-label="basic tabs example"
+            scrollButtons="auto"
+            variant="scrollable"
           >
             {config.map((item) => (
               <Tab
