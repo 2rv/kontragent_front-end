@@ -1,0 +1,42 @@
+{
+  "REVISION_CREATE_PAGE_TITLE": "Проверка компании",
+  "REVISON_CREATE_COMPANY_INFO": {
+    "TITLE": "Основная информация",
+    "FORM": {
+      "FIELD": {
+        "LABELS": {
+          "COMPANY_NAME": "Название компании контрагента",
+          "COMPANY_INFO": "Уточнения, описание пунктов на которые стоит обратить внимание",
+          "INN": "ИНН Компании"
+        }
+      }
+    }
+  },
+  "REVISON_CREATE_PERIOD_LIST": {
+    "TITLE": "Периоды проверки",
+    "BUTTON": "Добавить период",
+    "EMPTY": "Добавьте период проверки"
+  },
+  "REVISON_CREATE_COMPANY_ITEM": {
+    "BUTTON": "Удалить компанию"
+  },
+  "REVISON_CREATE_COMPANY_LIST": {
+    "TITLE": "Запрос на проверку",
+    "SUBTITLE": "Форма составления запроса на проверку компании",
+    "BUTTON": "Добавить компанию"
+  },
+  "REVISON_CREATE_PERIOD_ITEM": {
+    "FORM": {
+      "FIELD": {
+        "LABELS": {
+          "YEAR": "Год проверки",
+          "FIRST_QUARTER": "Первый квартал",
+          "SECOND_QUARTER": "Второй квартал",
+          "THIRD_QUARTER": "Третий квартал",
+          "FOURTH_QUARTER": "Четвертый квартал"
+        }
+      },
+      "DELETE_YEAR": "Удалить период"
+    }
+  }
+}

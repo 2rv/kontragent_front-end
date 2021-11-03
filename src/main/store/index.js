@@ -22,6 +22,10 @@ import {
   navigationStore,
   NAVIGATION_STORE_NAME,
 } from '../../lib/common/navigation';
+import {
+  COMPANY_ACCOUNT_ITEM_REVISION_CREATE_STORE_NAME,
+  companyAccountItemRevisionCreateStore,
+} from '../../core/company-account-item-revision-create';
 
 export const reducers = combineReducers({
   [AUTH_STORE_NAME]: authStore,
@@ -34,7 +38,10 @@ export const reducers = combineReducers({
     authRecoveryAccountUpdatePasswordStore,
   [AUTH_VERIFICATION_EMAIL_STORE_NAME]: authVerificationEmailStore,
   [AUTH_VERIFICATION_PHONE_STORE_NAME]: authVerificationPhoneStore,
-  [COMPANY_ADMIN_ITEM_INFO_VERIFICATE_STORE_NAME]: companyAdminItemInfoVerificateStore,
+  [COMPANY_ADMIN_ITEM_INFO_VERIFICATE_STORE_NAME]:
+    companyAdminItemInfoVerificateStore,
+  [COMPANY_ACCOUNT_ITEM_REVISION_CREATE_STORE_NAME]:
+    companyAccountItemRevisionCreateStore,
 });
 
 export { initStore } from './store.core';

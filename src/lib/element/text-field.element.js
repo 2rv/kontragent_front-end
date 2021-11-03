@@ -3,7 +3,21 @@ import Grid from '@mui/material/Grid';
 import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
 
-export const TextFieldElement = ({ errorText, error, label, ...props }) => {
+import { useDispatch } from 'react-redux';
+
+export const TextFieldElement = ({
+  errorText,
+  error,
+  label,
+  storeOnChange,
+  ...props
+}) => {
+  const dispatch = useDispatch();
+  const handleChange = (e) => {
+    props.onChange(e);
+    storeOnChange && dispatch(storeOnChange(e.target.value));
+  };
+
   return (
     <Grid container spacing={2}>
       {label && (
@@ -12,7 +26,7 @@ export const TextFieldElement = ({ errorText, error, label, ...props }) => {
         </Grid>
       )}
       <Grid item>
-        <TextField error={error} {...props} />
+        <TextField {...props} error={error} onChange={(e) => handleChange(e)} />
       </Grid>
       {error && (
         <Grid item>

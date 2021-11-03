@@ -18,7 +18,7 @@ export function CompanyAccountItemMemberAddContainer() {
     pageLoading: state[NAVIGATION_STORE_NAME].pageLoading,
   }));
 
-  const loginFormSendData = async (data) => {
+  const loginFormSendData = async (data, { setSubmitting }) => {
     setRequestPending(true);
     setRequestSuccess(false);
     setRequestError(false);
@@ -34,6 +34,7 @@ export function CompanyAccountItemMemberAddContainer() {
 
       setRequestPending(false);
       setRequestSuccess(true);
+      setSubmitting(false);
     } catch (error) {
       if (error) {
         setRequestError(true);

@@ -13,6 +13,7 @@ import COMPANY_ACCOUNT_ITEM_BALANCE from './company-account-item-balance.json';
 import COMPANY_ACCOUNT_ITEM_INFO from './company-account-item-info.json';
 import COMPANY_ACCOUNT_ITEM_MEMBER from './company-account-item-member.json';
 import COMPANY_ACCOUNT_ITEM_PAYMENT from './company-account-item-payment.json';
+import COMPANY_ACCOUNT_ITEM_REVISION_CREATE from './company-account-item-revision-create.json';
 import COMPANY_ADMIN_ITEM_INFO from './company-admin-item-info.json';
 import COMPANY_ADMIN_ITEM_MEMBER from './company-admin-item-member.json';
 import COMPANY_ADMIN_ITEM_REVISION from './company-admin-item-revision.json';
@@ -40,6 +41,7 @@ export const RU = {
     COMPANY_ACCOUNT_ITEM_INFO,
     COMPANY_ACCOUNT_ITEM_MEMBER,
     COMPANY_ACCOUNT_ITEM_PAYMENT,
+    COMPANY_ACCOUNT_ITEM_REVISION_CREATE,
     COMPANY_ADMIN_ITEM_INFO,
     COMPANY_ADMIN_ITEM_MEMBER,
     COMPANY_ADMIN_ITEM_REVISION,
