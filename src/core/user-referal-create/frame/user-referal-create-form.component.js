@@ -32,8 +32,6 @@ export const UserReferalCreateFormComponent = (props) => {
       : !isValid || isSubmitting || pageLoading;
   };
 
-  console.log(isSubmitting)
-
   return (
     <form onSubmit={handleSubmit}>
       <Box sx={{ py: 4 }}>
