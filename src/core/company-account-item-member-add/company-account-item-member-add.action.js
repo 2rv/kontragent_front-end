@@ -18,11 +18,8 @@ export function CompanyAccountItemMemberAdd(data) {
                 type: COMPANY_ACCOUNT_ITEM_MEMBER_ADD_ACTION_TYPE.ADD_SUCCESS,
             })
 
-
-
         } catch (error) {
             if (error) {
-                console.log(error)
                 dispatch({
                     type: COMPANY_ACCOUNT_ITEM_MEMBER_ADD_ACTION_TYPE.ADD_ERROR,
                     errorMessage: error.response.data.message,
