@@ -18,12 +18,7 @@ export const CompanyAccountItemMemberAddFormComponent = (props) => {
     touched,
     isValid,
     isSubmitting,
-
     pageLoading,
-    isSuccess,
-    isPending,
-    isError,
-    errorMessage,
   } = props;
 
   const isFieldError = (name) => {
@@ -35,8 +30,10 @@ export const CompanyAccountItemMemberAddFormComponent = (props) => {
   const isSubmitDisabled = () => {
     return JSON.stringify(touched) === '{}'
       ? true
-      : !isValid || isSubmitting || isSuccess || pageLoading;
+      : !isValid || isSubmitting || pageLoading;
   };
+
+  console.log(isSubmitting)
 
   return (
     <form onSubmit={handleSubmit}>

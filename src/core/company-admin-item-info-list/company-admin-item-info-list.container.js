@@ -35,7 +35,7 @@ export function CompanyAdminItemInfoListContainer() {
     try {
       const res = await httpRequest({
         method: 'GET',
-        url: `/company/${getQuery('companyId')}/`,
+        url: `/company/get/${getQuery('companyId')}`,
       });
 
       const data = performCompanyAdminItemInfoData(res.data);
