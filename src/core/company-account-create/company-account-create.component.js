@@ -27,7 +27,7 @@ export function CompanyAccountCreateComponent(props) {
       <Paper>
         <Box>
           <Box sx={{ pb: 4 }}>
-            <Typography variant="title" component="div">
+            <Typography sx={{ pb: 1 }} variant="title" component="div">
               {text('COMPANY_ACCOUNT_CREATE.TITLE')}
             </Typography>
             <Typography variant="subTitle" component="div">

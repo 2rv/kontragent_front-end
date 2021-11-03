@@ -50,6 +50,7 @@ export const AuthLoginFormComponent = (props) => {
           </Grid>
           <Grid item>
             <TextFieldElement
+              type='password'
               label={text('AUTH.LOGIN.FORM.FIELD.LABELS.PASSWORD')}
               name={AUTH_LOGIN_DATA_NAME.PASSWORD}
               onChange={handleChange}

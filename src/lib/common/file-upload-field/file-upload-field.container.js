@@ -31,7 +31,6 @@ export function FileUploadFieldContainer(props) {
 
       return res.data;
     } catch (error) {
-      console.log(error);
       if (error.response) {
         setRequestError(true);
         setRequestPending(false);

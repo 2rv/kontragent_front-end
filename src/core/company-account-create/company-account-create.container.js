@@ -16,7 +16,7 @@ import { redirect } from '../../main/navigation/navigation.core';
 
 import { httpRequest } from '../../main/http';
 
-import { COMPANY_ACCOUNT_ITEM_ROUTE_PATH_DYNAMIC } from '../company-account-item';
+import { COMPANY_ACCOUNT_ITEM_BALANCE_ROUTE_PATH_DYNAMIC } from '../company-account-item-balance';
 
 export function CompanyAccountCreateContainer() {
   const { pageLoading, user } = useSelector((state) => ({
@@ -38,7 +38,7 @@ export function CompanyAccountCreateContainer() {
         data,
       });
 
-      await redirect(COMPANY_ACCOUNT_ITEM_ROUTE_PATH_DYNAMIC, {
+      await redirect(COMPANY_ACCOUNT_ITEM_BALANCE_ROUTE_PATH_DYNAMIC, {
         dynamic: true,
         params: { companyId: res.data.id },
       });

@@ -29,7 +29,7 @@ export const UserReferalCreateFormComponent = (props) => {
   const isSubmitDisabled = () => {
     return JSON.stringify(touched) === '{}'
       ? true
-      : !isValid || isSubmitting || isSuccess || pageLoading;
+      : !isValid || isSubmitting || pageLoading;
   };
 
   return (
@@ -43,7 +43,7 @@ export const UserReferalCreateFormComponent = (props) => {
           alignItems="flex-start"
           flexWrap="wrap"
         >
-          <Grid md={8} xs={6} item>
+          <Grid md={8} xs={12} item>
             <TextFieldElement
               placeholder={text(
                 'USER_REFERAL.USER_REFERAL_CREATE.FORM.PLACEHOLDER',
@@ -57,8 +57,12 @@ export const UserReferalCreateFormComponent = (props) => {
             />
           </Grid>
 
-          <Grid xs={6} md={4} item>
-            <Button type="sumbit" disabled={isSubmitDisabled()}>
+          <Grid xs={12} md={4} item>
+            <Button
+              sx={{ width: '100%' }}
+              type="sumbit"
+              disabled={isSubmitDisabled()}
+            >
               {text('USER_REFERAL.USER_REFERAL_CREATE.BUTTON.TITLE')}
             </Button>
           </Grid>

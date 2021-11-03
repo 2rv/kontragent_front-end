@@ -9,4 +9,5 @@ export const parseUserAuthData = (raw: any): AuthUserDto => ({
   confirmPhone: raw[AUTH_USER_DATA.CONFIRM_PHONE],
   firstname: raw[AUTH_USER_DATA.FIRST_NAME],
   lastname: raw[AUTH_USER_DATA.LAST_NAME],
+  companyIdArray: raw[AUTH_USER_DATA.COMPANY_ID_ARRAY],
 });

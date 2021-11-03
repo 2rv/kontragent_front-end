@@ -180,4 +180,14 @@ export const components = {
       },
     },
   },
+  MuiAlert: {
+    defaultProps: {},
+    styleOverrides: {
+      root: {
+        disply: 'flex',
+        flexDirction: 'row',
+        alignItems: 'center',
+      },
+    },
+  },
 };
