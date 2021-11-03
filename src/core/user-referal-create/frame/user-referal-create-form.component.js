@@ -29,7 +29,7 @@ export const UserReferalCreateFormComponent = (props) => {
   const isSubmitDisabled = () => {
     return JSON.stringify(touched) === '{}'
       ? true
-      : !isValid || isSubmitting || isSuccess || pageLoading;
+      : !isValid || isSubmitting || pageLoading;
   };
 
   return (
