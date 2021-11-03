@@ -26,27 +26,29 @@ export const authRedirectRole = (
 ) => {
   const { res, store } = ctx;
 
-  const userStore = store.getState()[AUTH_STORE_NAME];
+  const user = store.getState()[AUTH_STORE_NAME].user;
 
-  if (userStore.user.role === USER_ROLE.USER) {
-    if (res) {
-      res.writeHead(301, {
-        Location: pathToRedirect1,
-      });
-      res.end();
-    } else {
-      redirect(pathToRedirect1);
+  if (user) {
+    if (user.role === USER_ROLE.USER) {
+      if (res) {
+        res.writeHead(301, {
+          Location: pathToRedirect1,
+        });
+        res.end();
+      } else {
+        redirect(pathToRedirect1);
+      }
     }
-  }
 
-  if (userStore.user.role === USER_ROLE.ADMIN) {
-    if (res) {
-      res.writeHead(301, {
-        Location: pathToRedirect2,
-      });
-      res.end();
-    } else {
-      redirect(pathToRedirect2);
+    if (user.role === USER_ROLE.ADMIN) {
+      if (res) {
+        res.writeHead(301, {
+          Location: pathToRedirect2,
+        });
+        res.end();
+      } else {
+        redirect(pathToRedirect2);
+      }
     }
   }
 };
@@ -77,25 +79,27 @@ export const authRedirectVerification = (
 
   const user: AuthUserDto = store.getState()[AUTH_STORE_NAME].user;
 
-  if (!user.confirmEmail) {
-    if (res) {
-      res.writeHead(301, {
-        Location: pathToRedirect1,
-      });
-      return res.end();
-    } else {
-      return redirect(pathToRedirect1);
+  if (user) {
+    if (!user.confirmEmail) {
+      if (res) {
+        res.writeHead(301, {
+          Location: pathToRedirect1,
+        });
+        return res.end();
+      } else {
+        return redirect(pathToRedirect1);
+      }
     }
-  }
 
-  if (!user.confirmPhone) {
-    if (res) {
-      res.writeHead(301, {
-        Location: pathToRedirect2,
-      });
-      return res.end();
-    } else {
-      return redirect(pathToRedirect2);
+    if (!user.confirmPhone) {
+      if (res) {
+        res.writeHead(301, {
+          Location: pathToRedirect2,
+        });
+        return res.end();
+      } else {
+        return redirect(pathToRedirect2);
+      }
     }
   }
 };
