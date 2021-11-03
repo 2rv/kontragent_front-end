@@ -20,9 +20,9 @@ import {
 const drawerWidth = 240;
 
 export function NavigationComponent(props) {
-  const { activePath, userRole } = useSelector((state) => ({
+  const { activePath, user } = useSelector((state) => ({
     activePath: state[NAVIGATION_STORE_NAME].activePath,
-    userRole: state[AUTH_STORE_NAME].user.role,
+    user: state[AUTH_STORE_NAME].user,
   }));
 
   const { window } = props;
@@ -100,7 +100,9 @@ export function NavigationComponent(props) {
             <NavigationListComponent
               activePath={activePath}
               menuListItems={
-                userRole === USER_ROLE.USER ? USER_MENU_ITEM : ADMIN_MENU_ITEM
+                user ?  
+                user.role  === USER_ROLE.USER ? USER_MENU_ITEM : ADMIN_MENU_ITEM
+                : []
               }
             />
           </Box>
@@ -131,7 +133,9 @@ export function NavigationComponent(props) {
             <NavigationListComponent
               activePath={activePath}
               menuListItems={
-                userRole === USER_ROLE.USER ? USER_MENU_ITEM : ADMIN_MENU_ITEM
+                user ?  
+                user.role  === USER_ROLE.USER ? USER_MENU_ITEM : ADMIN_MENU_ITEM
+                : []
               }
             />
           </Box>
