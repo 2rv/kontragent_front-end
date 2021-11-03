@@ -26,7 +26,7 @@
   "COMPANY_CANT_VERIFICATE_COMPANY_INFO": "Не удалось верифицировать данные компании",
   "REFERAL_MEMBER_ERROR_USER_ALREADY_REFERAL_MEMBER": "Такой пользователь уже существует и был приглашен",
   "REFERAL_MEMBER_ERROR_USER_IS_MEMBER_OF_YOUR_COMPANY": "Пользователь состоит в вашей компании",
-  "REFERAL_MEMBER_ERROR_CANNOT_ADD_YOURSELF_AS_REFERAL_MEMEBER":"Вы не можете присоединиться по своей реферальной ссылке"
-  
+  "REFERAL_MEMBER_ERROR_CANNOT_ADD_YOURSELF_AS_REFERAL_MEMEBER":"Вы не можете присоединиться по своей реферальной ссылке",
+  "REFERAL_MEMBER_ERROR_CANNOT_ADD_ROLE_ADMIN": "Вы не можете пригласить этого пользователя"
   
 }
