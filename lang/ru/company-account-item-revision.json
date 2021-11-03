@@ -31,5 +31,10 @@
     "IN_PROGRESS": "В процессе",
     "DONE": "Выполнено",
     "ADDITION_PAYMENT_IS_REQUIRED": "Требуется доплата"
+  },
+  "REVISION_CREATE_INFO": {
+    "TITLE": "Проверка контрагентов",
+    "INFO": "Создайте проверку контрагентов",
+    "BUTTON_TEXT": "Создать проверку"
   }
 }
