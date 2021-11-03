@@ -6,8 +6,8 @@ import { AUTH_VERIFICATION_PHONE_ROUTE_PATH } from '../auth-verification-phone/a
 
 export function CompanyAdminListRouter(ctx) {
   ctx.store.dispatch(setActivePath(COMPANY_ADMIN_LIST_ROUTE_PATH));
-  authRedirectNotAdmin(ctx, '/');
   authRedirectPrivated(ctx, '/')
   authRedirectVerification(ctx, AUTH_VERIFICATION_EMAIL_ROUTE_PATH, AUTH_VERIFICATION_PHONE_ROUTE_PATH)
+  authRedirectNotAdmin(ctx, '/');
 
 }

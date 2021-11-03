@@ -55,11 +55,11 @@ class MyApp extends App {
       ? await Component.getInitialProps({ ...ctx, token })
       : { token };
 
-    if (token) {
-      if (ctx.pathname !== AUTH_VERIFICATION_EMAIL_ROUTE_PATH && ctx.pathname !== AUTH_VERIFICATION_PHONE_ROUTE_PATH && ctx.pathname !== AUTH_SIGNUP_ROUTE_PATH) {
-        authRedirectVerification(ctx, AUTH_VERIFICATION_EMAIL_ROUTE_PATH, AUTH_VERIFICATION_PHONE_ROUTE_PATH)
-      }
-    }
+    // if (token) {
+    //   if (ctx.pathname !== AUTH_VERIFICATION_EMAIL_ROUTE_PATH && ctx.pathname !== AUTH_VERIFICATION_PHONE_ROUTE_PATH && ctx.pathname !== AUTH_SIGNUP_ROUTE_PATH) {
+    //     authRedirectVerification(ctx, AUTH_VERIFICATION_EMAIL_ROUTE_PATH, AUTH_VERIFICATION_PHONE_ROUTE_PATH)
+    //   }
+    // }
 
     return { pageProps };
   }
