@@ -89,14 +89,10 @@ export const SettingsChangeEmailFormComponent = (props) => {
             />
           </Grid>
 
-          <Grid item xs={12}>
-            <Grid container>
-              <Grid xs={4}>
-                <Button fullWidth type="sumbit" disabled={isSubmitDisabled()}>
-                  {text('SETTINGS.CHANGE_EMAIL.FORM.BUTTON.TITLE')}
-                </Button>
-              </Grid>
-            </Grid>
+          <Grid item md={4}   xs={12}>
+            <Button fullWidth type="sumbit" disabled={isSubmitDisabled()}>
+              {text('SETTINGS.CHANGE_EMAIL.FORM.BUTTON.TITLE')}
+            </Button>
           </Grid>
         </Grid>
       </Box>
