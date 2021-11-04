@@ -1,6 +1,8 @@
 import { redirect } from '../../../main/navigation/navigation.core';
 import { AuthUserDto } from './auth.type';
 import { AUTH_STORE_NAME, USER_ROLE } from './auth.constant';
+import { AUTH_VERIFICATION_EMAIL_ROUTE_PATH } from '../../../core/auth-verification-email/auth-verification-email.constant';
+import { AUTH_VERIFICATION_PHONE_ROUTE_PATH } from '../../../core/auth-verification-phone/auth-verification-phone.constant';
 
 export const authRedirectLogged = (ctx: any, pathToRedirect: string) => {
   const { res, store } = ctx;
@@ -36,11 +38,7 @@ export const authRedirectPrivated = (ctx: any, pathToRedirect: string) => {
   }
 };
 
-export const authRedirectVerification = (
-  ctx: any,
-  pathToRedirect1: string,
-  pathToRedirect2: string,
-) => {
+export const authRedirectVerification = (ctx: any) => {
   const { res, store = null } = ctx;
 
   const user: AuthUserDto = store.getState()[AUTH_STORE_NAME].user;
@@ -49,22 +47,22 @@ export const authRedirectVerification = (
     if (!user.confirmEmail) {
       if (res) {
         res.writeHead(301, {
-          Location: pathToRedirect1,
+          Location: AUTH_VERIFICATION_EMAIL_ROUTE_PATH,
         });
         return res.end();
       } else {
-        return redirect(pathToRedirect1);
+        return redirect(AUTH_VERIFICATION_EMAIL_ROUTE_PATH);
       }
     }
 
     if (!user.confirmPhone) {
       if (res) {
         res.writeHead(301, {
-          Location: pathToRedirect2,
+          Location: AUTH_VERIFICATION_PHONE_ROUTE_PATH,
         });
         return res.end();
       } else {
-        return redirect(pathToRedirect2);
+        return redirect(AUTH_VERIFICATION_PHONE_ROUTE_PATH);
       }
     }
   }
@@ -102,29 +100,6 @@ export const authRedirectAdmin = (ctx: any, pathToRedirect: string) => {
       } else {
         redirect(pathToRedirect);
       }
-    }
-  }
-};
-
-export const redirectUnavailableCompanyPage = (
-  ctx: any,
-  pathToRedirect: string,
-) => {
-  const { res, store } = ctx;
-
-  const userStore = store.getState()[AUTH_STORE_NAME];
-
-  const compnayId = Number(ctx.query.companyId);
-  const available = userStore.user.companyIdArray.includes(compnayId);
-
-  if (!available) {
-    if (res) {
-      res.writeHead(301, {
-        Location: pathToRedirect,
-      });
-      res.end();
-    } else {
-      redirect(pathToRedirect);
     }
   }
 };
