@@ -37,6 +37,7 @@ export const palette = {
     disabled: 'rgba(0, 0, 0, 0.38)',
   },
   grey: {
+    10: '#F3F3F3',
     50: '#F3F6F9',
     100: '#EAEEF3',
     200: '#E5E8EC',
@@ -67,6 +68,7 @@ export const palette = {
     light: '#FF99A2',
     dark: '#C70011',
     contrastText: '#fff',
+    button: '#EB5757',
   },
   success: {
     50: '#E9FBF0',

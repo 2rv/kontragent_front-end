@@ -1,3 +1,4 @@
+import { palette } from './palette.theme';
 export const components = {
   MuiPaper: {
     defaultProps: {
@@ -100,6 +101,52 @@ export const components = {
       size: 'large',
       disableElevation: true,
     },
+    variants: [
+      {
+        props: { variant: 'grey', color: 'black' },
+        style: {
+          '&:hover': {
+            backgroundColor: palette.grey[10],
+            opacity: 0.9,
+          },
+          backgroundColor: palette.grey[10],
+          color: palette.primaryDark[900],
+        },
+      },
+      {
+        props: { variant: 'grey', color: 'red' },
+        style: {
+          '&:hover': {
+            backgroundColor: palette.grey[10],
+            opacity: 0.9,
+          },
+          backgroundColor: palette.grey[10],
+          color: palette.error.button,
+        },
+      },
+      {
+        props: { variant: 'black' },
+        style: {
+          '&:hover': {
+            backgroundColor: palette.primaryDark[900],
+            opacity: 0.9,
+          },
+          backgroundColor: palette.primaryDark[900],
+          color: palette.primary.contrastText,
+        },
+      },
+      {
+        props: { variant: 'red' },
+        style: {
+          '&:hover': {
+            backgroundColor: palette.error.button,
+            opacity: 0.9,
+          },
+          backgroundColor: palette.error.button,
+          color: palette.primary.contrastText,
+        },
+      },
+    ],
     styleOverrides: {
       root: {
         fontSize: '16px',

@@ -14,25 +14,25 @@ const onResponseSuccess = (response) => {
 };
 
 const onResponseError = (error) => {
-  // if (!error.response) {
-  //   return redirect(HTTP_ERROR_ROUTER.INTERNAL_SERVER_ERROR);
-  // }
+  if (!error.response) {
+    return redirect(HTTP_ERROR_ROUTER.INTERNAL_SERVER_ERROR);
+  }
   if (error.response) {
-    // if (error.response.status === 401) {
-    //   return redirect(HTTP_ERROR_ROUTER.UNAUTHORIZED_ERROR);
-    // }
+    if (error.response.status === 401) {
+      return redirect(HTTP_ERROR_ROUTER.UNAUTHORIZED_ERROR);
+    }
 
-    // if (error.response.status === 403) {
-    //   return redirect(HTTP_ERROR_ROUTER.ACCESS_DENIED);
-    // }
+    if (error.response.status === 403) {
+      return redirect(HTTP_ERROR_ROUTER.ACCESS_DENIED);
+    }
 
-    // if (error.response.status === 500) {
-    //   return redirect(HTTP_ERROR_ROUTER.SERVER_ERROR);
-    // }
+    if (error.response.status === 500) {
+      return redirect(HTTP_ERROR_ROUTER.SERVER_ERROR);
+    }
 
-    // if (error.response.status === 404) {
-    //   return redirect(HTTP_ERROR_ROUTER.NOT_FOUND);
-    // }
+    if (error.response.status === 404) {
+      return redirect(HTTP_ERROR_ROUTER.NOT_FOUND);
+    }
 
     return Promise.reject(error);
   }

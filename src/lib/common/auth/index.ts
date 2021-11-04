@@ -8,5 +8,4 @@ export {
   authRedirectVerification,
   authRedirectNotAdmin,
   authRedirectAdmin,
-  redirectUnavailableCompanyPage,
 } from './auth.redirect';

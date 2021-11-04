@@ -3,10 +3,12 @@ import { TextFieldElement } from '../../../lib/element/text-field.element.js';
 import Grid from '@mui/material/Grid';
 import Button from '@mui/material/Button';
 
-import { COMPANY_ACCOUNT_ITEM_REVISION_CREATE_DATA_NAME } from '../company-account-item-revision-create.constant';
+import { COMPANY_ACCOUNT_ITEM_REVISION_CREATE_DATA_NAME } from '../../company-account-item-revision-create';
 
 import { FileUploadFieldContainer } from '../../../lib/common/file-upload-field/file-upload-field.container.js';
 import { text } from '../../../lib/common/text';
+
+import { companyAccountItemRevisionCreateChangeYearPeriod } from '../company-account-item-revision-create.action';
 
 export const CompanyAccountItemRevisionCreateFormComponent = (props) => {
   const {
@@ -53,6 +55,7 @@ export const CompanyAccountItemRevisionCreateFormComponent = (props) => {
               )}
               name={COMPANY_ACCOUNT_ITEM_REVISION_CREATE_DATA_NAME.TITLE}
               onChange={handleChange}
+              storeOnChange={companyAccountItemRevisionCreateChangeYearPeriod}
               onBlur={handleBlur}
               value={
                 values[COMPANY_ACCOUNT_ITEM_REVISION_CREATE_DATA_NAME.TITLE]
@@ -96,8 +99,9 @@ export const CompanyAccountItemRevisionCreateFormComponent = (props) => {
           <Grid item xs={12}>
             <FileUploadFieldContainer
               onFileAdd={(value) => {
+                console.log('VALUE', value);
                 console.log(
-                  '1',
+                  'ID LIST',
                   value.map((i) => i.id),
                 );
                 setFileList(value.map((i) => i.id));
