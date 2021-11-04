@@ -7,9 +7,9 @@ import { AUTH_VERIFICATION_PHONE_ROUTE_PATH } from '../../../core/auth-verificat
 export const authRedirectLogged = (ctx: any, pathToRedirect: string) => {
   const { res, store } = ctx;
 
-  const user = store.getState()[AUTH_STORE_NAME];
+  const authStore = store.getState()[AUTH_STORE_NAME];
 
-  if (user.logged) {
+  if (authStore.logged) {
     if (res) {
       res.writeHead(302, {
         Location: pathToRedirect,
@@ -24,9 +24,9 @@ export const authRedirectLogged = (ctx: any, pathToRedirect: string) => {
 export const authRedirectPrivated = (ctx: any, pathToRedirect: string) => {
   const { res, store } = ctx;
 
-  const user = store.getState()[AUTH_STORE_NAME];
+  const authStore = store.getState()[AUTH_STORE_NAME];
 
-  if (!user.logged) {
+  if (!authStore.logged) {
     if (res) {
       res.writeHead(301, {
         Location: pathToRedirect,

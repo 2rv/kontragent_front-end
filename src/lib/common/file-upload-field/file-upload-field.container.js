@@ -1,14 +1,18 @@
 import React from 'react';
 
-import { useDispatch, useSelector } from 'react-redux';
-
-import { getQuery, redirect } from '../../../main/navigation/navigation.core';
+import { useDispatch } from 'react-redux';
 
 import { httpRequest } from '../../../main/http';
 
 import { FileUploadFieldComponent } from './file-upload-field.component';
 
 export function FileUploadFieldContainer(props) {
+  const { storeOnFileChange, filedata } = props;
+  const dispatch = useDispatch();
+  const storeFileChange = (fileList) => {
+    storeOnFileChange && dispatch(storeOnFileChange(fileList));
+  };
+
   const updateFileListData = async (data) => {
     setRequestPending(true);
     setRequestSuccess(false);
@@ -40,18 +44,16 @@ export function FileUploadFieldContainer(props) {
 
     e.preventDefault();
 
-    console.log(file);
-
     let formData = new FormData();
     formData.append('file', file);
 
     const resData = await updateFileListData(formData);
 
-    const data = [...getData, resData];
+    const data = filedata ? [...filedata, resData] : [...getData, resData];
 
     setData(data);
 
-    props.onFileAdd(data);
+    storeFileChange(data);
   };
 
   const [isRequestPending, setRequestPending] = React.useState(null);
@@ -66,7 +68,7 @@ export function FileUploadFieldContainer(props) {
       isError={isRequestError}
       isSuccess={isRequestSuccess}
       onFileAdd={onFileAdd}
-      data={getData}
+      data={filedata ? filedata : getData}
       errorMessage={getRequestErrorMessage}
     />
   );
