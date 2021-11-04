@@ -20,16 +20,17 @@ export function CompanyAccountItemRevisionCreatePriceComponent({
 }) {
   return (
     <Paper>
-      <Grid container spacing={2}>
+      <Grid container spacing={1}>
         <Grid item xs={12}>
-          <Typography variant="title" component="div">
-            {text('Цена проверки')}
+          <Typography variant="subtitle1" component="div">
+            {text(
+              'COMPANY_ACCOUNT_ITEM_REVISION_CREATE.REVISION_CREATE_COMPANY_PRICE.TITLE',
+            )}
           </Typography>
         </Grid>
         <Divider sx={{ my: 4 }} />
         <Grid item>
           <Grid
-            spacing={3}
             container
             direction="row"
             justifyContent="flex-start"
@@ -37,16 +38,24 @@ export function CompanyAccountItemRevisionCreatePriceComponent({
             flexWrap="wrap"
           >
             <Grid item xs={8}>
-              <Typography sx={{ pb: 1 }} variant="title" component="div">
-                {total}
+              <Typography sx={{ fontWeight: 700 }} variant="h4" component="div">
+                {`${total} ${text('COMMON.CURRENCY.RUB')}`}
               </Typography>
-              <Typography variant="subTitle" component="div">
-                {text('*С учетом вычета НДС и налогов')}
+              <Typography
+                sx={{ color: '#B5B5B5' }}
+                variant="subtitle2"
+                component="div"
+              >
+                {text(
+                  'COMPANY_ACCOUNT_ITEM_REVISION_CREATE.REVISION_CREATE_COMPANY_PRICE.PS',
+                )}
               </Typography>
             </Grid>
             <Grid item xs={4}>
               <Button onClick={onClick} disabled={submitDisabled} fullWidth>
-                {text('Оплатить')}
+                {text(
+                  'COMPANY_ACCOUNT_ITEM_REVISION_CREATE.REVISION_CREATE_COMPANY_PRICE.BUTTON',
+                )}
               </Button>
             </Grid>
           </Grid>

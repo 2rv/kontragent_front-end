@@ -22,6 +22,11 @@
   "REVISON_CREATE_COMPANY_ITEM": {
     "BUTTON": "Удалить компанию"
   },
+  "REVISION_CREATE_COMPANY_PRICE": {
+    "TITLE": "Цена проверки",
+    "PS": "*С учетом вычета НДС и налогов",
+    "BUTTON": "Оплатить"
+  },
   "REVISON_CREATE_COMPANY_LIST": {
     "TITLE": "Проверка компании",
     "SUBTITLE": "Форма составления запроса на проверку компании",
