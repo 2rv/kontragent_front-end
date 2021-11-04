@@ -55,6 +55,21 @@ export const components = {
     },
     styleOverrides: {},
   },
+  MuiSelect: {
+    defaultProps: {
+      variant: 'outlined',
+      fullWidth: true,
+      size: 'medium',
+    },
+    styleOverrides: {
+      root: {
+        fontSize: '16px',
+        boxShadow: 'none',
+        border: '10px solid red',
+        height: '46px',
+      },
+    },
+  },
   MuiOutlinedInput: {
     defaultProps: {
       variant: 'outlined',

@@ -1,0 +1,12 @@
+import { ADMIN_REVISION_REVIEW_DATA_NAME } from './admin-revision-review.constant';
+
+export const convertAdminRevisionReviewSendData = (data, getFileList) => ({
+  [ADMIN_REVISION_REVIEW_DATA_NAME.REVIEW]:
+    data[ADMIN_REVISION_REVIEW_DATA_NAME.REVIEW],
+  [ADMIN_REVISION_REVIEW_DATA_NAME.STATUS]:
+    data[ADMIN_REVISION_REVIEW_DATA_NAME.STATUS],
+  [ADMIN_REVISION_REVIEW_DATA_NAME.PRICE]: Number(
+    data[ADMIN_REVISION_REVIEW_DATA_NAME.PRICE],
+  ),
+  [ADMIN_REVISION_REVIEW_DATA_NAME.FILE_ID_LIST]: getFileList,
+});
