@@ -27,7 +27,7 @@ export function AdminRevisionReviewComonent(props) {
         <Box>
           <Box sx={{ pb: 4 }}>
             <Typography variant="title" gutterBottom component="div">
-              {text('COMPANY_ACCOUNT_ITEM_REVISION.REVISION.TITLE')}
+              {text('ADMIN_REVISION_REVIEW.FORM.TITLE')}
             </Typography>
           </Box>
 

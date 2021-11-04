@@ -16,7 +16,6 @@ export function AdminRevisionReviewContainer() {
 
   const createReferalSendData = (values) => {
     const data = convertAdminRevisionReviewSendData(values, getFileList);
-    console.log(`DATA ${JSON.stringify(data)}`);
     loginFormSendData(data);
   };
 
