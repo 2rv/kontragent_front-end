@@ -51,10 +51,6 @@ export const CompanyAccountItemRevisionCreatePeriodItemFormComponent = (
 
   const getFieldError = (name) => isFieldError(name) && errors[name];
 
-  const checkboxBackground = (index) => {
-    return period.period[index] ? '#F3F3F3' : '#d9d8d8';
-  };
-
   return (
     <form>
       <Grid

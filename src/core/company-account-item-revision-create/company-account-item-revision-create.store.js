@@ -1,10 +1,5 @@
 import { COMPANY_ACCOUNT_ITEM_REVISION_CREATE_ACTION_TYPE } from './company-account-item-revision-create.constant';
-import {
-  initRequestState,
-  setRequestPending,
-  setRequestSuccess,
-  setRequestError,
-} from '../../main/store/store.service';
+import { initRequestState } from '../../main/store/store.service';
 
 const initialState = {
   form: initRequestState(),
@@ -25,7 +20,7 @@ const initialState = {
       ],
     },
   ],
-  error: false,
+  valid: false,
   total: 0,
 };
 
@@ -111,6 +106,11 @@ export function companyAccountItemRevisionCreateStore(
     }
 
     case COMPANY_ACCOUNT_ITEM_REVISION_CREATE_ACTION_TYPE.COMPANY_ACCOUNT_ITEM_REVISION_CREATE_CHANGE_YEAR_PERIOD: {
+      if (action.periods.indexOf(true) === -1) {
+        return {
+          ...state,
+        };
+      }
       const newCompanyList = state.company;
       newCompanyList[action.companyId].year[action.yearId].period =
         action.periods;
@@ -181,6 +181,26 @@ export function companyAccountItemRevisionCreateStore(
       newCompanyList[action.companyId].infoValid = action.isValid;
       return {
         ...state,
+        company: newCompanyList,
+      };
+    }
+
+    case COMPANY_ACCOUNT_ITEM_REVISION_CREATE_ACTION_TYPE.COMPANY_ACCOUNT_ITEM_REVISION_CREATE_SET_REVISON_VALIDE: {
+      const newCompanyList = state.company;
+      let valid = true;
+      newCompanyList.forEach((company) => {
+        if (!company.infoValid) {
+          valid = false;
+        }
+        company.year.forEach((year) => {
+          if (!year.valid) {
+            valid = false;
+          }
+        });
+      });
+      return {
+        ...state,
+        valid: valid,
         company: newCompanyList,
       };
     }

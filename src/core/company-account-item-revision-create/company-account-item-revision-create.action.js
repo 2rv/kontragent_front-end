@@ -1,7 +1,5 @@
 import { COMPANY_ACCOUNT_ITEM_REVISION_CREATE_ACTION_TYPE } from './company-account-item-revision-create.constant';
 
-export function companyAccountItemRevisionCreateTotal() {}
-
 export function companyAccountItemRevisionCreateAddCompany() {
   return async (dispatch) => {
     dispatch({
@@ -9,6 +7,9 @@ export function companyAccountItemRevisionCreateAddCompany() {
     });
     dispatch({
       type: COMPANY_ACCOUNT_ITEM_REVISION_CREATE_ACTION_TYPE.COMPANY_ACCOUNT_ITEM_REVISION_CREATE_GET_PRICE,
+    });
+    dispatch({
+      type: COMPANY_ACCOUNT_ITEM_REVISION_CREATE_ACTION_TYPE.COMPANY_ACCOUNT_ITEM_REVISION_CREATE_SET_REVISON_VALIDE,
     });
   };
 }
@@ -22,6 +23,9 @@ export function companyAccountItemRevisionCreateRemoveCompany(companyId) {
     dispatch({
       type: COMPANY_ACCOUNT_ITEM_REVISION_CREATE_ACTION_TYPE.COMPANY_ACCOUNT_ITEM_REVISION_CREATE_GET_PRICE,
     });
+    dispatch({
+      type: COMPANY_ACCOUNT_ITEM_REVISION_CREATE_ACTION_TYPE.COMPANY_ACCOUNT_ITEM_REVISION_CREATE_SET_REVISON_VALIDE,
+    });
   };
 }
 
@@ -33,6 +37,9 @@ export function companyAccountItemRevisionCreateAddYear(companyId) {
     });
     dispatch({
       type: COMPANY_ACCOUNT_ITEM_REVISION_CREATE_ACTION_TYPE.COMPANY_ACCOUNT_ITEM_REVISION_CREATE_GET_PRICE,
+    });
+    dispatch({
+      type: COMPANY_ACCOUNT_ITEM_REVISION_CREATE_ACTION_TYPE.COMPANY_ACCOUNT_ITEM_REVISION_CREATE_SET_REVISON_VALIDE,
     });
   };
 }
@@ -51,6 +58,9 @@ export function companyAccountItemRevisionCreateChangeYear(
     });
     dispatch({
       type: COMPANY_ACCOUNT_ITEM_REVISION_CREATE_ACTION_TYPE.COMPANY_ACCOUNT_ITEM_REVISION_CREATE_GET_PRICE,
+    });
+    dispatch({
+      type: COMPANY_ACCOUNT_ITEM_REVISION_CREATE_ACTION_TYPE.COMPANY_ACCOUNT_ITEM_REVISION_CREATE_SET_REVISON_VALIDE,
     });
   };
 }
@@ -83,6 +93,9 @@ export function companyAccountItemRevisionCreateDeleteYear(companyId, yearId) {
     dispatch({
       type: COMPANY_ACCOUNT_ITEM_REVISION_CREATE_ACTION_TYPE.COMPANY_ACCOUNT_ITEM_REVISION_CREATE_GET_PRICE,
     });
+    dispatch({
+      type: COMPANY_ACCOUNT_ITEM_REVISION_CREATE_ACTION_TYPE.COMPANY_ACCOUNT_ITEM_REVISION_CREATE_SET_REVISON_VALIDE,
+    });
   };
 }
 
@@ -99,6 +112,9 @@ export function companyAccountItemRevisionChangeCompanyName(
     dispatch({
       type: COMPANY_ACCOUNT_ITEM_REVISION_CREATE_ACTION_TYPE.COMPANY_ACCOUNT_ITEM_REVISION_CREATE_GET_PRICE,
     });
+    dispatch({
+      type: COMPANY_ACCOUNT_ITEM_REVISION_CREATE_ACTION_TYPE.COMPANY_ACCOUNT_ITEM_REVISION_CREATE_SET_REVISON_VALIDE,
+    });
   };
 }
 
@@ -111,6 +127,9 @@ export function companyAccountItemRevisionChangeCompanyINN(companyId, inn) {
     });
     dispatch({
       type: COMPANY_ACCOUNT_ITEM_REVISION_CREATE_ACTION_TYPE.COMPANY_ACCOUNT_ITEM_REVISION_CREATE_GET_PRICE,
+    });
+    dispatch({
+      type: COMPANY_ACCOUNT_ITEM_REVISION_CREATE_ACTION_TYPE.COMPANY_ACCOUNT_ITEM_REVISION_CREATE_SET_REVISON_VALIDE,
     });
   };
 }
@@ -128,6 +147,9 @@ export function companyAccountItemRevisionChangeCompanyDescription(
     dispatch({
       type: COMPANY_ACCOUNT_ITEM_REVISION_CREATE_ACTION_TYPE.COMPANY_ACCOUNT_ITEM_REVISION_CREATE_GET_PRICE,
     });
+    dispatch({
+      type: COMPANY_ACCOUNT_ITEM_REVISION_CREATE_ACTION_TYPE.COMPANY_ACCOUNT_ITEM_REVISION_CREATE_SET_REVISON_VALIDE,
+    });
   };
 }
 
@@ -143,6 +165,9 @@ export function companyAccountItemRevisionChangeFileList(companyId, fileList) {
     dispatch({
       type: COMPANY_ACCOUNT_ITEM_REVISION_CREATE_ACTION_TYPE.COMPANY_ACCOUNT_ITEM_REVISION_CREATE_GET_PRICE,
     });
+    dispatch({
+      type: COMPANY_ACCOUNT_ITEM_REVISION_CREATE_ACTION_TYPE.COMPANY_ACCOUNT_ITEM_REVISION_CREATE_SET_REVISON_VALIDE,
+    });
   };
 }
 
@@ -154,6 +179,9 @@ export function setYearValid(companyId, yearId, isValid) {
       yearId,
       isValid,
     });
+    dispatch({
+      type: COMPANY_ACCOUNT_ITEM_REVISION_CREATE_ACTION_TYPE.COMPANY_ACCOUNT_ITEM_REVISION_CREATE_SET_REVISON_VALIDE,
+    });
   };
 }
 
@@ -163,6 +191,9 @@ export function setRevisionInfoValid(companyId, isValid) {
       type: COMPANY_ACCOUNT_ITEM_REVISION_CREATE_ACTION_TYPE.COMPANY_ACCOUNT_ITEM_REVISION_CREATE_SET_REVISON_INFO_VALIDE,
       companyId,
       isValid,
+    });
+    dispatch({
+      type: COMPANY_ACCOUNT_ITEM_REVISION_CREATE_ACTION_TYPE.COMPANY_ACCOUNT_ITEM_REVISION_CREATE_SET_REVISON_VALIDE,
     });
   };
 }

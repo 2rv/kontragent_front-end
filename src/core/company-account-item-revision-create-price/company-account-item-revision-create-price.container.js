@@ -42,6 +42,7 @@ export function CompanyAccountItemRevisionCreatePriceContainer({ state }) {
       }
     }
   };
+
   const companyAccountItemRevisionCreateSendData = () => {
     const data = convertCompanyAccountItemRevisionCreatePriceStoreData(
       state.company,
@@ -54,24 +55,6 @@ export function CompanyAccountItemRevisionCreatePriceContainer({ state }) {
   const [isRequestSuccess, setRequestSuccess] = React.useState(null);
   const [getRequestErrorMessage, setRequestErrorMessage] = React.useState(null);
 
-  const [isValid, setValid] = React.useState(true);
-
-  React.useEffect(() => {
-    //СЧИТАТЬ В СТОРЕ
-    setValid(true);
-    state.company.forEach((company) => {
-      if (!company.infoValid) {
-        setValid(false);
-      }
-      company.year.forEach((year) => {
-        if (!year.valid) {
-          console.log(`YEAR VALID: ${year.valid}`);
-          setValid(false);
-        }
-      });
-    });
-  }, [state]);
-
   return (
     <CompanyAccountItemRevisionCreatePriceComponent
       isRequestPending={isRequestPending}
@@ -80,7 +63,7 @@ export function CompanyAccountItemRevisionCreatePriceContainer({ state }) {
       getRequestErrorMessage={getRequestErrorMessage}
       total={state.total}
       onClick={companyAccountItemRevisionCreateSendData}
-      submitDisabled={!isValid}
+      submitDisabled={!state.valid}
     />
   );
 }
