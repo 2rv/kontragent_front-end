@@ -101,7 +101,7 @@ export const CompanyAccountItemRevisionCreatePeriodItemFormComponent = (
             flexWrap="wrap"
             sx={{ pt: 3 }}
           >
-            <Grid xs={3} item sx={{ display: 'flex', alignItems: 'center' }}>
+            <Grid xs={3} item sx={{ display: 'flex', alignItems: 'left' }}>
               <FormControlLabel
                 control={
                   <Checkbox
@@ -125,7 +125,7 @@ export const CompanyAccountItemRevisionCreatePeriodItemFormComponent = (
               />
             </Grid>
 
-            <Grid xs={3} item sx={{ display: 'flex', alignItems: 'center' }}>
+            <Grid xs={3} item sx={{ display: 'flex', alignItems: 'left' }}>
               <FormControlLabel
                 control={
                   <Checkbox
@@ -149,7 +149,7 @@ export const CompanyAccountItemRevisionCreatePeriodItemFormComponent = (
               />
             </Grid>
 
-            <Grid xs={3} item sx={{ display: 'flex', alignItems: 'center' }}>
+            <Grid xs={3} item sx={{ display: 'flex', alignItems: 'left' }}>
               <FormControlLabel
                 control={
                   <Checkbox
@@ -173,7 +173,7 @@ export const CompanyAccountItemRevisionCreatePeriodItemFormComponent = (
               />
             </Grid>
 
-            <Grid xs={3} item sx={{ display: 'flex', alignItems: 'center' }}>
+            <Grid xs={3} item sx={{ display: 'flex', alignItems: 'left' }}>
               <FormControlLabel
                 control={
                   <Checkbox

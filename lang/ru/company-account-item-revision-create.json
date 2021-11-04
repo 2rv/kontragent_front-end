@@ -45,5 +45,6 @@
       },
       "DELETE_YEAR": "Удалить период"
     }
-  }
+  },
+  "REVISION_SENT_SUCCESSFULLY": "Проверка успешно создана"
 }

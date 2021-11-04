@@ -70,7 +70,7 @@ export function CompanyAccountItemRevisionCreatePriceComponent({
         {isRequestSuccess && (
           <Box sx={{ pt: 4 }}>
             <Alert severity="success">
-              {text('COMMON.REQUEST_SENT_SUCCESSFULLY')}
+              {text('COMPANY_ACCOUNT_ITEM_REVISION_CREATE.REVISION_SENT_SUCCESSFULLY')}
             </Alert>
           </Box>
         )}
