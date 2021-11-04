@@ -51,6 +51,10 @@ export const CompanyAccountItemRevisionCreatePeriodItemFormComponent = (
 
   const getFieldError = (name) => isFieldError(name) && errors[name];
 
+  const checkboxBackground = (index) => {
+    return period.period[index] ? '#F3F3F3' : '#d9d8d8';
+  };
+
   return (
     <form>
       <Grid
@@ -63,7 +67,7 @@ export const CompanyAccountItemRevisionCreatePeriodItemFormComponent = (
       >
         <Grid xs={12} item>
           <TextFieldElement
-            label={text(
+            placeholder={text(
               'COMPANY_ACCOUNT_ITEM_REVISION_CREATE.REVISON_CREATE_PERIOD_ITEM.FORM.FIELD.LABELS.YEAR',
             )}
             name={
@@ -95,11 +99,25 @@ export const CompanyAccountItemRevisionCreatePeriodItemFormComponent = (
             justifyContent="flex-start"
             alignItems="flex-start"
             flexWrap="wrap"
+            sx={{ pt: 3 }}
           >
-            <Grid item>
+            <Grid xs={3} item sx={{ display: 'flex', alignItems: 'center' }}>
               <FormControlLabel
+                sx={{
+                  p: 4,
+                  backgroundColor: checkboxBackground(0),
+                  borderRadius: '10px',
+                  m: 0,
+                  width: '200px',
+                  justifyContent: 'center',
+                }}
                 control={
                   <Checkbox
+                    sx={{
+                      opacity: 0,
+                      px: 0,
+                      width: 0,
+                    }}
                     onChange={(e, checked) => {
                       dispatch(
                         companyAccountItemRevisionCreateChangeYearPeriod([
@@ -120,10 +138,23 @@ export const CompanyAccountItemRevisionCreatePeriodItemFormComponent = (
               />
             </Grid>
 
-            <Grid item>
+            <Grid xs={3} item sx={{ display: 'flex', alignItems: 'center' }}>
               <FormControlLabel
+                sx={{
+                  p: 4,
+                  backgroundColor: checkboxBackground(1),
+                  borderRadius: '10px',
+                  m: 0,
+                  width: '200px',
+                  justifyContent: 'center',
+                }}
                 control={
                   <Checkbox
+                    sx={{
+                      opacity: 0,
+                      px: 0,
+                      width: 0,
+                    }}
                     onChange={(e, checked) => {
                       dispatch(
                         companyAccountItemRevisionCreateChangeYearPeriod([
@@ -144,10 +175,23 @@ export const CompanyAccountItemRevisionCreatePeriodItemFormComponent = (
               />
             </Grid>
 
-            <Grid item>
+            <Grid xs={3} item sx={{ display: 'flex', alignItems: 'center' }}>
               <FormControlLabel
+                sx={{
+                  p: 4,
+                  backgroundColor: checkboxBackground(2),
+                  borderRadius: '10px',
+                  m: 0,
+                  width: '200px',
+                  justifyContent: 'center',
+                }}
                 control={
                   <Checkbox
+                    sx={{
+                      opacity: 0,
+                      px: 0,
+                      width: 0,
+                    }}
                     onChange={(e, checked) => {
                       dispatch(
                         companyAccountItemRevisionCreateChangeYearPeriod([
@@ -168,10 +212,23 @@ export const CompanyAccountItemRevisionCreatePeriodItemFormComponent = (
               />
             </Grid>
 
-            <Grid item>
+            <Grid xs={3} item sx={{ display: 'flex', alignItems: 'center' }}>
               <FormControlLabel
+                sx={{
+                  p: 4,
+                  backgroundColor: checkboxBackground(3),
+                  borderRadius: '10px',
+                  m: 0,
+                  width: '200px',
+                  justifyContent: 'center',
+                }}
                 control={
                   <Checkbox
+                    sx={{
+                      opacity: 0,
+                      px: 0,
+                      width: 0,
+                    }}
                     onChange={(e, checked) => {
                       dispatch(
                         companyAccountItemRevisionCreateChangeYearPeriod([

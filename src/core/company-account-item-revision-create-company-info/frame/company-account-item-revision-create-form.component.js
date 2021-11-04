@@ -2,6 +2,7 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 
 import Grid from '@mui/material/Grid';
+import Divider from '@mui/material/Divider';
 import Typography from '@mui/material/Typography';
 
 import { TextFieldElement } from '../../../lib/element/text-field.element.js';
@@ -49,13 +50,19 @@ export const CompanyAccountItemRevisionCreateCompanyInfoFormComponent = (
   return (
     <form>
       <Grid rowSpacing={4} container>
-        <Grid item>
-          <Typography variant="subtitle1" component="div">
+        <Grid item sx={{ pb: 4 }}>
+          <Typography sx={{ pb: 1 }} variant="title" component="div">
             {text(
               'COMPANY_ACCOUNT_ITEM_REVISION_CREATE.REVISON_CREATE_COMPANY_INFO.TITLE',
             )}
           </Typography>
+          <Typography variant="subTitle" component="div">
+            {text(
+              'COMPANY_ACCOUNT_ITEM_REVISION_CREATE.REVISON_CREATE_COMPANY_INFO.SUBTITLE',
+            )}
+          </Typography>
         </Grid>
+        <Divider />
         <Grid item>
           <Grid
             spacing={3}
@@ -65,9 +72,16 @@ export const CompanyAccountItemRevisionCreateCompanyInfoFormComponent = (
             alignItems="flex-start"
             flexWrap="wrap"
           >
-            <Grid xs={12} item>
+            <Grid item xs={12}>
+              <Typography variant="title" component="div">
+                {text(
+                  'COMPANY_ACCOUNT_ITEM_REVISION_CREATE.REVISON_CREATE_COMPANY_INFO.FORM.TITLE',
+                )}
+              </Typography>
+            </Grid>
+            <Grid xs={6} item>
               <TextFieldElement
-                label={text(
+                placeholder={text(
                   'COMPANY_ACCOUNT_ITEM_REVISION_CREATE.REVISON_CREATE_COMPANY_INFO.FORM.FIELD.LABELS.COMPANY_NAME',
                 )}
                 name={
@@ -91,10 +105,35 @@ export const CompanyAccountItemRevisionCreateCompanyInfoFormComponent = (
                 )}
               />
             </Grid>
-
+            <Grid xs={6} item>
+              <TextFieldElement
+                placeholder={text(
+                  'COMPANY_ACCOUNT_ITEM_REVISION_CREATE.REVISON_CREATE_COMPANY_INFO.FORM.FIELD.LABELS.INN',
+                )}
+                name={
+                  COMPANY_ACCOUNT_ITEM_REVISION_CREATE_COMPANY_INFO_FIELD_NAME.INN
+                }
+                onChange={handleChange}
+                storeOnChange={companyAccountItemRevisionChangeCompanyINN}
+                onBlur={handleBlur}
+                value={
+                  values[
+                    COMPANY_ACCOUNT_ITEM_REVISION_CREATE_COMPANY_INFO_FIELD_NAME
+                      .INN
+                  ]
+                }
+                error={isFieldError(
+                  COMPANY_ACCOUNT_ITEM_REVISION_CREATE_COMPANY_INFO_FIELD_NAME.INN,
+                )}
+                fullWidth
+                errorText={getFieldError(
+                  COMPANY_ACCOUNT_ITEM_REVISION_CREATE_COMPANY_INFO_FIELD_NAME.INN,
+                )}
+              />
+            </Grid>
             <Grid xs={12} item>
               <TextFieldElement
-                label={text(
+                placeholder={text(
                   'COMPANY_ACCOUNT_ITEM_REVISION_CREATE.REVISON_CREATE_COMPANY_INFO.FORM.FIELD.LABELS.COMPANY_INFO',
                 )}
                 name={
@@ -123,34 +162,6 @@ export const CompanyAccountItemRevisionCreateCompanyInfoFormComponent = (
                 maxRows={20}
               />
             </Grid>
-
-            <Grid xs={12} item>
-              <TextFieldElement
-                label={text(
-                  'COMPANY_ACCOUNT_ITEM_REVISION_CREATE.REVISON_CREATE_COMPANY_INFO.FORM.FIELD.LABELS.INN',
-                )}
-                name={
-                  COMPANY_ACCOUNT_ITEM_REVISION_CREATE_COMPANY_INFO_FIELD_NAME.INN
-                }
-                onChange={handleChange}
-                storeOnChange={companyAccountItemRevisionChangeCompanyINN}
-                onBlur={handleBlur}
-                value={
-                  values[
-                    COMPANY_ACCOUNT_ITEM_REVISION_CREATE_COMPANY_INFO_FIELD_NAME
-                      .INN
-                  ]
-                }
-                error={isFieldError(
-                  COMPANY_ACCOUNT_ITEM_REVISION_CREATE_COMPANY_INFO_FIELD_NAME.INN,
-                )}
-                fullWidth
-                errorText={getFieldError(
-                  COMPANY_ACCOUNT_ITEM_REVISION_CREATE_COMPANY_INFO_FIELD_NAME.INN,
-                )}
-              />
-            </Grid>
-
             <Grid item xs={12}>
               <FileUploadFieldContainer
                 storeOnFileChange={companyAccountItemRevisionChangeFileList}

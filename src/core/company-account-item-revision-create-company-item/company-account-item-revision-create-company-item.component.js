@@ -21,9 +21,7 @@ export function CompanyAccountItemRevisionCreateCompanyItemComponent({
           company={company}
         />
       </Grid>
-      <Grid item>
         <Divider />
-      </Grid>
       <Grid item>
         <CompanyAccountItemRevisionCreatePeriodListContainer
           companyId={companyId}
