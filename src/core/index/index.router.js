@@ -1,13 +1,14 @@
 import {
   authRedirectPrivated,
   authRedirectVerification,
+  authRedirectNotAdmin,
+  authRedirectAdmin,
 } from '../../lib/common/auth';
 import { AUTH_SIGNUP_ROUTE_PATH } from '../../core/auth-signup/auth-signup.constant';
 import { AUTH_VERIFICATION_EMAIL_ROUTE_PATH } from '../../core/auth-verification-email';
 import { AUTH_VERIFICATION_PHONE_ROUTE_PATH } from '../../core/auth-verification-phone';
 import { USER_ADMIN_LIST_ROUTE_PATH } from '../../core/user-admin-list/user-admin-list.constant';
 import { COMPANY_ACCOUNT_LIST_ROUTE_PATH } from '../../core/company-account-list/company-account-list.constant';
-import { authRedirectRole } from '../../lib/common/auth/auth.redirect';
 export function IndexRouter(ctx) {
   authRedirectPrivated(ctx, AUTH_SIGNUP_ROUTE_PATH);
 
@@ -17,9 +18,6 @@ export function IndexRouter(ctx) {
     AUTH_VERIFICATION_PHONE_ROUTE_PATH,
   );
 
-  authRedirectRole(
-    ctx,
-    COMPANY_ACCOUNT_LIST_ROUTE_PATH,
-    USER_ADMIN_LIST_ROUTE_PATH,
-  );
+  authRedirectNotAdmin(ctx, COMPANY_ACCOUNT_LIST_ROUTE_PATH);
+  authRedirectAdmin(ctx, USER_ADMIN_LIST_ROUTE_PATH);
 }
