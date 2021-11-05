@@ -1,5 +1,4 @@
 import { redirect } from '../../../main/navigation/navigation.core';
-import { AuthUserDto } from './auth.type';
 import { AUTH_STORE_NAME, USER_ROLE } from './auth.constant';
 import { AUTH_VERIFICATION_EMAIL_ROUTE_PATH } from '../../../core/auth-verification-email/auth-verification-email.constant';
 import { AUTH_VERIFICATION_PHONE_ROUTE_PATH } from '../../../core/auth-verification-phone/auth-verification-phone.constant';
@@ -41,10 +40,10 @@ export const authRedirectPrivated = (ctx: any, pathToRedirect: string) => {
 export const authRedirectVerification = (ctx: any) => {
   const { res, store = null } = ctx;
 
-  const user: AuthUserDto = store.getState()[AUTH_STORE_NAME].user;
+  const authStore = store.getState()[AUTH_STORE_NAME];
 
-  if (user) {
-    if (!user.confirmEmail) {
+  if (authStore.logged) {
+    if (!authStore.user.confirmEmail) {
       if (res) {
         res.writeHead(301, {
           Location: AUTH_VERIFICATION_EMAIL_ROUTE_PATH,
@@ -55,7 +54,7 @@ export const authRedirectVerification = (ctx: any) => {
       }
     }
 
-    if (!user.confirmPhone) {
+    if (!authStore.user.confirmPhone) {
       if (res) {
         res.writeHead(301, {
           Location: AUTH_VERIFICATION_PHONE_ROUTE_PATH,
@@ -71,9 +70,10 @@ export const authRedirectVerification = (ctx: any) => {
 export const authRedirectNotAdmin = (ctx: any, pathToRedirect: string) => {
   const { res, store } = ctx;
 
-  const user = store.getState()[AUTH_STORE_NAME].user;
-  if (user) {
-    if (user.role !== USER_ROLE.ADMIN) {
+  const authStore = store.getState()[AUTH_STORE_NAME];
+
+  if (authStore.logged) {
+    if (authStore.user.role !== USER_ROLE.ADMIN) {
       if (res) {
         res.writeHead(301, {
           Location: pathToRedirect,
@@ -89,9 +89,9 @@ export const authRedirectNotAdmin = (ctx: any, pathToRedirect: string) => {
 export const authRedirectAdmin = (ctx: any, pathToRedirect: string) => {
   const { res, store } = ctx;
 
-  const user = store.getState()[AUTH_STORE_NAME].user;
-  if (user) {
-    if (user.role === USER_ROLE.ADMIN) {
+  const authStore = store.getState()[AUTH_STORE_NAME];
+  if (authStore.logged) {
+    if (authStore.user.role === USER_ROLE.ADMIN) {
       if (res) {
         res.writeHead(301, {
           Location: pathToRedirect,
