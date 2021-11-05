@@ -6,8 +6,9 @@ import ListItemText from '@mui/material/ListItemText';
 import Divider from '@mui/material/Divider';
 import Box from '@mui/material/Box';
 import Alert from '@mui/material/Alert';
-
+import { redirect } from '../../../main/navigation';
 import { text } from '../../../lib/common/text';
+import { ADMIN_REVISION_REVIEW_ITEM_ROUTE_PATH_DYNAMIC } from '../../admin-revision-review-item';
 
 import { COMPANY_ADMIN_ITEM_REVISION_LIST_DATA_NAME } from '../company-admin-item-revision-list.constant';
 
@@ -25,8 +26,21 @@ export const CompanyAdminItemRevisionListListComponent = ({ list }) => {
   return (
     <List sx={{ px: 8, pb: 8 }} disablePadding>
       {list.map((item, key) => (
-        <React.Fragment>
-          <ListItem key={key} button sx={{ py: 3, px: 3 }}>
+        <React.Fragment key={key}>
+          <ListItem
+            key={key}
+            onClick={() => {
+              return redirect(ADMIN_REVISION_REVIEW_ITEM_ROUTE_PATH_DYNAMIC, {
+                dynamic: true,
+                params: {
+                  revisionId:
+                    item[COMPANY_ADMIN_ITEM_REVISION_LIST_DATA_NAME.ID],
+                },
+              });
+            }}
+            button
+            sx={{ py: 3, px: 3 }}
+          >
             <ListItemText
               primary={`${text('COMMON.REVISION.TITLE')} ${[
                 item[COMPANY_ADMIN_ITEM_REVISION_LIST_DATA_NAME.TITLE],
@@ -35,16 +49,11 @@ export const CompanyAdminItemRevisionListListComponent = ({ list }) => {
                 ${
                   [
                     '',
-                    text(
-                      'COMPANY_ACCOUNT_ITEM_REVISION.REVISION_LIST.NEW_APPLICATION',
-                    ),
-                    text(
-                      'COMPANY_ACCOUNT_ITEM_REVISION.REVISION_LIST.IN_PROGRESS',
-                    ),
-                    text('COMPANY_ACCOUNT_ITEM_REVISION.REVISION_LIST.DONE'),
-                    text(
-                      'COMPANY_ACCOUNT_ITEM_REVISION.REVISION_LIST.ADDITION_PAYMENT_IS_REQUIRED',
-                    ),
+                    text('COMMON.REVISION.STATUS_TYPE.NEW'),
+                    text('COMMON.REVISION.STATUS_TYPE.PROGRESS'),
+                    text('COMMON.REVISION.STATUS_TYPE.DONE'),
+                    text('COMMON.REVISION.STATUS_TYPE.PAY'),
+                    text('COMMON.REVISION.STATUS_TYPE.PAID'),
                   ][item[COMPANY_ADMIN_ITEM_REVISION_LIST_DATA_NAME.STATUS]]
                 },
                 ${text('COMMON.REVISION.PRICE')} ${[

@@ -54,6 +54,8 @@ export function FileUploadFieldContainer(props) {
     setData(data);
 
     storeFileChange(data);
+
+    props.onFileAdd && props.onFileAdd(data);
   };
 
   const [isRequestPending, setRequestPending] = React.useState(null);

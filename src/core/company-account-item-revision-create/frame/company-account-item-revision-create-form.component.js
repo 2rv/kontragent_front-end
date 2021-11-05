@@ -99,11 +99,6 @@ export const CompanyAccountItemRevisionCreateFormComponent = (props) => {
           <Grid item xs={12}>
             <FileUploadFieldContainer
               onFileAdd={(value) => {
-                console.log('VALUE', value);
-                console.log(
-                  'ID LIST',
-                  value.map((i) => i.id),
-                );
                 setFileList(value.map((i) => i.id));
               }}
             />

@@ -4,18 +4,11 @@ import { text } from '../../../lib/common/text';
 export const ReviewStatus = ({ status }) => {
   const reviewText = [
     '',
-    text(
-      'COMPANY_ACCOUNT_ITEM_REVISION.REVISION_ITEM.REVIEW_STATUS.VERIFICATION_REQUEST',
-    ),
-    text(
-      'COMPANY_ACCOUNT_ITEM_REVISION.REVISION_ITEM.REVIEW_STATUS.APPLICATION_FOR_PROCESSING',
-    ),
-    text(
-      'COMPANY_ACCOUNT_ITEM_REVISION.REVISION_ITEM.REVIEW_STATUS.REQUEST_COMPLETED',
-    ),
-    text(
-      'COMPANY_ACCOUNT_ITEM_REVISION.REVISION_ITEM.REVIEW_STATUS.ADDITION_PAYMENT_IS_REQUIRED',
-    ),
+    text('COMMON.REVISION.STATUS_TYPE.NEW'),
+    text('COMMON.REVISION.STATUS_TYPE.PROGRESS'),
+    text('COMMON.REVISION.STATUS_TYPE.DONE'),
+    text('COMMON.REVISION.STATUS_TYPE.PAY'),
+    text('COMMON.REVISION.STATUS_TYPE.PAID'),
   ][status];
 
   switch (status) {
@@ -50,6 +43,16 @@ export const ReviewStatus = ({ status }) => {
         </Typography>
       );
     case 4:
+      return (
+        <Typography
+          sx={{ px: 8, pb: 4, color: 'blue' }}
+          variant="listTitle"
+          component="div"
+        >
+          {reviewText}
+        </Typography>
+      );
+    case 5:
       return (
         <Typography
           sx={{ px: 8, pb: 4, color: 'blue' }}
