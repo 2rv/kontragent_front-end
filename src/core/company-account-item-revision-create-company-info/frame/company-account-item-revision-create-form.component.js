@@ -81,7 +81,7 @@ export const CompanyAccountItemRevisionCreateCompanyInfoFormComponent = (
             </Grid>
             <Grid xs={6} item>
               <TextFieldElement
-                placeholder={text(
+                label={text(
                   'COMPANY_ACCOUNT_ITEM_REVISION_CREATE.REVISON_CREATE_COMPANY_INFO.FORM.FIELD.LABELS.COMPANY_NAME',
                 )}
                 name={
@@ -107,7 +107,7 @@ export const CompanyAccountItemRevisionCreateCompanyInfoFormComponent = (
             </Grid>
             <Grid xs={6} item>
               <TextFieldElement
-                placeholder={text(
+                label={text(
                   'COMPANY_ACCOUNT_ITEM_REVISION_CREATE.REVISON_CREATE_COMPANY_INFO.FORM.FIELD.LABELS.INN',
                 )}
                 name={
@@ -133,7 +133,7 @@ export const CompanyAccountItemRevisionCreateCompanyInfoFormComponent = (
             </Grid>
             <Grid xs={12} item>
               <TextFieldElement
-                placeholder={text(
+                label={text(
                   'COMPANY_ACCOUNT_ITEM_REVISION_CREATE.REVISON_CREATE_COMPANY_INFO.FORM.FIELD.LABELS.COMPANY_INFO',
                 )}
                 name={
