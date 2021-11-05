@@ -1,4 +1,3 @@
-import { getQuery } from '../../main/navigation/navigation.core';
 import { USER_REFERAL_SYSTEM_ROUTE_PATH } from '../user-referal-system';
 import { USER_REFERAL_BALANCE_ROUTE_PATH } from '../user-referal-balance';
 
