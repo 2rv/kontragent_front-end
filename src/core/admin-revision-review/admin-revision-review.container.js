@@ -1,5 +1,5 @@
 import React from 'react';
-import { AdminRevisionReviewComonent } from './admin-revision-review.component';
+import { AdminRevisionReviewComponent } from './admin-revision-review.component';
 import { adminRevisionReviewValidation } from './admin-revision-review.validation';
 import { useSelector } from 'react-redux';
 import { ADMIN_REVISION_REVIEW_DATA_NAME } from './admin-revision-review.constant';
@@ -14,12 +14,12 @@ export function AdminRevisionReviewContainer() {
     pageLoading: state[NAVIGATION_STORE_NAME].pageLoading,
   }));
 
-  const createReferalSendData = (values) => {
+  const createRevisionReview = (values, setSubmitting) => {
     const data = convertAdminRevisionReviewSendData(values, getFileList);
-    loginFormSendData(data);
+    loginFormSendData(data, setSubmitting);
   };
 
-  const loginFormSendData = async (data) => {
+  const loginFormSendData = async (data, setSubmitting) => {
     setRequestPending(true);
     setRequestSuccess(false);
     setRequestError(false);
@@ -30,20 +30,20 @@ export function AdminRevisionReviewContainer() {
     try {
       const res = await httpRequest({
         method: 'PATCH',
-        url: `/revision/company/${getQuery('companyId')}/revision/${getQuery(
-          'revisionId',
-        )}/review`,
+        url: `revision/review/${getQuery('revisionId')}`,
         data,
       });
 
       await redirect(REVISION_ADMIN_LIST_ROUTE_PATH);
       setRequestPending(false);
       setRequestSuccess(true);
+      setSubmitting(false);
     } catch (error) {
       if (error) {
         setRequestError(true);
         setRequestPending(false);
         setRequestErrorMessage(error.response.data.message);
+        setSubmitting(false);
       }
     }
   };
@@ -64,13 +64,13 @@ export function AdminRevisionReviewContainer() {
   const [getFileList, setFileList] = React.useState([]);
 
   return (
-    <AdminRevisionReviewComonent
+    <AdminRevisionReviewComponent
       isPending={isRequestPending}
       isError={isRequestError}
       isSuccess={isRequestSuccess}
       initialValue={getInitialValue()}
-      validation={adminRevisionReviewValidation}
-      onSubmitForm={createReferalSendData}
+      validations={adminRevisionReviewValidation}
+      onSubmitForm={createRevisionReview}
       pageLoading={pageLoading}
       setFileList={setFileList}
       errorMessage={getRequestErrorMessage}

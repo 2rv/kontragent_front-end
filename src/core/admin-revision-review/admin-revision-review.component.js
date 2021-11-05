@@ -8,12 +8,12 @@ import { AdminRevisionReviewFormComponent } from './frame/admin-revision-review-
 import { Formik } from 'formik';
 import { text } from '../../lib/common/text';
 
-export function AdminRevisionReviewComonent(props) {
+export function AdminRevisionReviewComponent(props) {
   const {
     initialValue,
     pageLoading,
     isPending,
-    validation,
+    validations,
     onSubmitForm,
     isError,
     isSuccess,
@@ -35,8 +35,10 @@ export function AdminRevisionReviewComonent(props) {
 
           <Formik
             initialValues={initialValue}
-            validate={validation}
-            onSubmit={onSubmitForm}
+            validate={validations}
+            onSubmit={(values, actions) => {
+              onSubmitForm(values, actions.setSubmitting);
+            }}
           >
             {(props) => (
               <AdminRevisionReviewFormComponent

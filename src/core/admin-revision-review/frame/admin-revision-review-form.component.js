@@ -36,8 +36,10 @@ export const AdminRevisionReviewFormComponent = (props) => {
   const isSubmitDisabled = () => {
     return JSON.stringify(touched) === '{}'
       ? true
-      : !isValid || isSubmitting || isSuccess || pageLoading;
+      : !isValid || isSubmitting || pageLoading;
   };
+
+  console.log(JSON.stringify(touched), isValid, isSubmitting, pageLoading);
 
   return (
     <form onSubmit={handleSubmit}>

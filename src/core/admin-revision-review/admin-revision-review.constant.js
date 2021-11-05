@@ -1,16 +1,15 @@
 export const ADMIN_REVISION_REVIEW_ROUTE_PATH =
-  '/admin/company/[companyId]/revision/[revisionId]/review';
+  '/admin/revision/[revisionId]/review';
 export const ADMIN_REVISION_REVIEW_ROUTE_PATH_DYNAMIC = (
-  { companyId, revisionId } = {
-    companyId: '[companyId]',
+  { revisionId } = {
     revisionId: '[revisionId]',
   },
-) => `/admin/company/${companyId}/revision/${revisionId}/review`;
+) => `/admin/revision/${revisionId}/review`;
 
 export const ADMIN_REVISION_REVIEW_DATA_NAME = {
   REVIEW: 'review',
   STATUS: 'status',
-  PRICE: 'price',
+  PRICE: 'additionPrice',
   FILE_ID_LIST: 'fileReviewIdList',
 };
 
