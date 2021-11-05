@@ -49,16 +49,11 @@ export const CompanyAdminItemRevisionListListComponent = ({ list }) => {
                 ${
                   [
                     '',
-                    text(
-                      'COMPANY_ACCOUNT_ITEM_REVISION.REVISION_LIST.NEW_APPLICATION',
-                    ),
-                    text(
-                      'COMPANY_ACCOUNT_ITEM_REVISION.REVISION_LIST.IN_PROGRESS',
-                    ),
-                    text('COMPANY_ACCOUNT_ITEM_REVISION.REVISION_LIST.DONE'),
-                    text(
-                      'COMPANY_ACCOUNT_ITEM_REVISION.REVISION_LIST.ADDITION_PAYMENT_IS_REQUIRED',
-                    ),
+                    text('COMMON.REVISION.STATUS_TYPE.NEW'),
+                    text('COMMON.REVISION.STATUS_TYPE.PROGRESS'),
+                    text('COMMON.REVISION.STATUS_TYPE.DONE'),
+                    text('COMMON.REVISION.STATUS_TYPE.PAY'),
+                    text('COMMON.REVISION.STATUS_TYPE.PAID'),
                   ][item[COMPANY_ADMIN_ITEM_REVISION_LIST_DATA_NAME.STATUS]]
                 },
                 ${text('COMMON.REVISION.PRICE')} ${[
