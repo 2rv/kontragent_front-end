@@ -1,12 +1,14 @@
 import React from 'react';
-import { AdminRevisionReviewComponent } from './admin-revision-review.component';
-import { adminRevisionReviewValidation } from './admin-revision-review.validation';
 import { useSelector } from 'react-redux';
-import { ADMIN_REVISION_REVIEW_DATA_NAME } from './admin-revision-review.constant';
-import { NAVIGATION_STORE_NAME } from '../../lib/common/navigation/navigation.constant';
+
 import { getQuery, redirect } from '../../main/navigation/navigation.core';
 import { httpRequest } from '../../main/http';
+
+import { ADMIN_REVISION_REVIEW_DATA_NAME } from './admin-revision-review.constant';
 import { REVISION_ADMIN_LIST_ROUTE_PATH } from '../revision-admin-list';
+import { NAVIGATION_STORE_NAME } from '../../lib/common/navigation/navigation.constant';
+
+import { AdminRevisionReviewComponent } from './admin-revision-review.component';
 import { convertAdminRevisionReviewSendData } from './admin-revision-review.convert';
 
 export function AdminRevisionReviewContainer() {
@@ -16,10 +18,10 @@ export function AdminRevisionReviewContainer() {
 
   const createRevisionReview = (values, setSubmitting) => {
     const data = convertAdminRevisionReviewSendData(values, getFileList);
-    loginFormSendData(data, setSubmitting);
+    sendData(data, setSubmitting);
   };
 
-  const loginFormSendData = async (data, setSubmitting) => {
+  const sendData = async (data, setSubmitting) => {
     setRequestPending(true);
     setRequestSuccess(false);
     setRequestError(false);
@@ -69,7 +71,6 @@ export function AdminRevisionReviewContainer() {
       isError={isRequestError}
       isSuccess={isRequestSuccess}
       initialValue={getInitialValue()}
-      validations={adminRevisionReviewValidation}
       onSubmitForm={createRevisionReview}
       pageLoading={pageLoading}
       setFileList={setFileList}

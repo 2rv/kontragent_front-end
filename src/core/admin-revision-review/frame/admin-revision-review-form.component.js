@@ -17,29 +17,17 @@ export const AdminRevisionReviewFormComponent = (props) => {
     handleChange,
     handleBlur,
     handleSubmit,
-    values,
-    errors,
-    touched,
-    isValid,
     isSubmitting,
-    setFileList,
+    values,
+
     pageLoading,
-    isSuccess,
+
+    setFileList,
   } = props;
 
-  const isFieldError = (name) => {
-    return errors[name] && touched[name] && errors[name];
-  };
-
-  const getFieldError = (name) => isFieldError(name) && errors[name];
-
   const isSubmitDisabled = () => {
-    return JSON.stringify(touched) === '{}'
-      ? true
-      : !isValid || isSubmitting || pageLoading;
+    return isSubmitting || pageLoading;
   };
-
-  console.log(JSON.stringify(touched), isValid, isSubmitting, pageLoading);
 
   return (
     <form onSubmit={handleSubmit}>
@@ -60,11 +48,7 @@ export const AdminRevisionReviewFormComponent = (props) => {
                 onChange={handleChange}
                 onBlur={handleBlur}
                 value={values[ADMIN_REVISION_REVIEW_DATA_NAME.REVIEW]}
-                error={isFieldError(ADMIN_REVISION_REVIEW_DATA_NAME.REVIEW)}
                 fullWidth
-                errorText={getFieldError(
-                  ADMIN_REVISION_REVIEW_DATA_NAME.REVIEW,
-                )}
                 multiline
                 minRows={4}
                 maxRows={20}
@@ -102,6 +86,7 @@ export const AdminRevisionReviewFormComponent = (props) => {
                 </MenuItem>
               </Select>
             </Grid>
+
             <Grid xs={6} item>
               <TextFieldElement
                 label={text('ADMIN_REVISION_REVIEW.FORM.LABELS.PRICE')}
@@ -109,9 +94,7 @@ export const AdminRevisionReviewFormComponent = (props) => {
                 onChange={handleChange}
                 onBlur={handleBlur}
                 value={values[ADMIN_REVISION_REVIEW_DATA_NAME.PRICE]}
-                error={isFieldError(ADMIN_REVISION_REVIEW_DATA_NAME.PRICE)}
                 fullWidth
-                errorText={getFieldError(ADMIN_REVISION_REVIEW_DATA_NAME.PRICE)}
               />
             </Grid>
             <Grid item xs={12}>

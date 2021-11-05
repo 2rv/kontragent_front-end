@@ -91,7 +91,6 @@ export const numberPositive = (value) => {
 
 export const numberPositiveMin = (min) => (value) => {
   const val = parseFloat(value);
-
   if (val < min) {
     return getError('VALIDATION.NUMBER_POSITIVE_MIN', { min });
   }

@@ -13,7 +13,6 @@ export function AdminRevisionReviewComponent(props) {
     initialValue,
     pageLoading,
     isPending,
-    validations,
     onSubmitForm,
     isError,
     isSuccess,
@@ -35,7 +34,6 @@ export function AdminRevisionReviewComponent(props) {
 
           <Formik
             initialValues={initialValue}
-            validate={validations}
             onSubmit={(values, actions) => {
               onSubmitForm(values, actions.setSubmitting);
             }}
