@@ -23,9 +23,10 @@ export function CompanyAccountItemRevisionCreateInfo() {
           </Typography>
         </Box>
 
-        <Grid container>
-          <Grid xs={3}>
+        <Grid container direction="row" justifyContent="flex-start">
+          <Grid xs={12} lg={4} item>
             <Button
+              fullWidth
               onClick={() => {
                 return redirect(
                   COMPANY_ACCOUNT_ITEM_REVISION_CREATE_ROUTE_PATH_DYNAMIC,

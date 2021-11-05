@@ -46,7 +46,12 @@ export const CompanyAccountItemRevisionCreateCompanyInfoFormComponent = (
   }, [touched, isValid]);
 
   const getFieldError = (name) => isFieldError(name) && errors[name];
-
+  const placeholderStyle = {
+    '&::placeholder': {
+      textOverflow: 'ellipsis !important',
+      color: 'blue',
+    },
+  };
   return (
     <form>
       <Grid rowSpacing={4} container>
@@ -79,14 +84,15 @@ export const CompanyAccountItemRevisionCreateCompanyInfoFormComponent = (
                 )}
               </Typography>
             </Grid>
-            <Grid xs={6} item>
+            <Grid xs={12} lg={6} item>
               <TextFieldElement
-                label={text(
+                placeholder={text(
                   'COMPANY_ACCOUNT_ITEM_REVISION_CREATE.REVISON_CREATE_COMPANY_INFO.FORM.FIELD.LABELS.COMPANY_NAME',
                 )}
                 name={
                   COMPANY_ACCOUNT_ITEM_REVISION_CREATE_COMPANY_INFO_FIELD_NAME.TITLE
                 }
+                inputProps={{ classes: { input: placeholderStyle } }}
                 onChange={handleChange}
                 storeOnChange={companyAccountItemRevisionChangeCompanyName}
                 onBlur={handleBlur}
@@ -105,9 +111,9 @@ export const CompanyAccountItemRevisionCreateCompanyInfoFormComponent = (
                 )}
               />
             </Grid>
-            <Grid xs={6} item>
+            <Grid xs={12} lg={6} item>
               <TextFieldElement
-                label={text(
+                placeholder={text(
                   'COMPANY_ACCOUNT_ITEM_REVISION_CREATE.REVISON_CREATE_COMPANY_INFO.FORM.FIELD.LABELS.INN',
                 )}
                 name={
@@ -133,7 +139,7 @@ export const CompanyAccountItemRevisionCreateCompanyInfoFormComponent = (
             </Grid>
             <Grid xs={12} item>
               <TextFieldElement
-                label={text(
+                placeholder={text(
                   'COMPANY_ACCOUNT_ITEM_REVISION_CREATE.REVISON_CREATE_COMPANY_INFO.FORM.FIELD.LABELS.COMPANY_INFO',
                 )}
                 name={

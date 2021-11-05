@@ -46,7 +46,7 @@ export const SettingsChangePasswordFormComponent = (props) => {
           alignItems="flex-start"
           flexWrap="wrap"
         >
-          <Grid md={4} xs={12} item>
+          <Grid lg={4} xs={12} item>
             <TextFieldElement
               label={text(
                 'SETTINGS.CHANGE_PASSWORD.FORM.FIELD.LABELS.PASSWORD',
@@ -62,7 +62,7 @@ export const SettingsChangePasswordFormComponent = (props) => {
               )}
             />
           </Grid>
-          <Grid md={4} xs={12} item>
+          <Grid lg={4} xs={12} item>
             <TextFieldElement
               label={text(
                 'SETTINGS.CHANGE_PASSWORD.FORM.FIELD.LABELS.NEW_PASSWORD',
@@ -80,7 +80,7 @@ export const SettingsChangePasswordFormComponent = (props) => {
               )}
             />
           </Grid>
-          <Grid md={4} xs={12} item>
+          <Grid lg={4} xs={12} item>
             <TextFieldElement
               label={text(
                 'SETTINGS.CHANGE_PASSWORD.FORM.FIELD.LABELS.REPEAT_NEW_PASSWORD',
@@ -98,7 +98,7 @@ export const SettingsChangePasswordFormComponent = (props) => {
               )}
             />
           </Grid>
-          <Grid item md={4} xs={12}>
+          <Grid item lg={4} xs={12}>
             <Button fullWidth type="sumbit" disabled={isSubmitDisabled()}>
               {text('SETTINGS.CHANGE_PASSWORD.FORM.BUTTON.TITLE')}
             </Button>

@@ -45,7 +45,7 @@ export const CompanyAccountItemRevisionItemPaymentFormComponent = (props) => {
           alignItems="flex-end"
           flexWrap="wrap"
         >
-          <Grid md={4} xs={12} item>
+          <Grid lg={4} xs={12} item>
             <Button onClick={onSubmitForm} fullWidth>
               {text(
                 'COMPANY_ACCOUNT_ITEM_REVISION.REVISION_PAYMENT.FORM.BUTTON.TITLE',

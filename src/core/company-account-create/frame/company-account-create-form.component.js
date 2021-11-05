@@ -43,7 +43,7 @@ export const CompanyAccountCreateFormComponent = (props) => {
           alignItems="flex-start"
           flexWrap="wrap"
         >
-          <Grid md={6} xs={12} item>
+          <Grid lg={6} xs={12} item>
             <TextFieldElement
               label={text(
                 'COMPANY_ACCOUNT_CREATE.FORM.FIELD.LABELS.COMPANY_NAME',
@@ -58,7 +58,7 @@ export const CompanyAccountCreateFormComponent = (props) => {
             />
           </Grid>
 
-          <Grid md={6} xs={12} item>
+          <Grid lg={6} xs={12} item>
             <TextFieldElement
               label={text(
                 'COMPANY_ACCOUNT_CREATE.FORM.FIELD.LABELS.COMPANY_INN',
@@ -73,7 +73,7 @@ export const CompanyAccountCreateFormComponent = (props) => {
             />
           </Grid>
 
-          <Grid item md={6} xs={12}>
+          <Grid item lg={6} xs={12}>
             <Button fullWidth type="sumbit" disabled={isSubmitDisabled()}>
               {text('COMPANY_ACCOUNT_CREATE.FORM.BUTTON.TITLE')}
             </Button>
