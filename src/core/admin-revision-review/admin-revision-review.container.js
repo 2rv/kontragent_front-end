@@ -27,8 +27,6 @@ export function AdminRevisionReviewContainer() {
     setRequestError(false);
     setRequestErrorMessage(null);
 
-    data.fileIdList = getFileList;
-
     try {
       const res = await httpRequest({
         method: 'PATCH',

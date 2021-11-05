@@ -18,7 +18,7 @@ export const convertAdminRevisionReviewSendData = (data, getFileList) => {
     );
   }
 
-  if (data[ADMIN_REVISION_REVIEW_DATA_NAME.FILE_ID_LIST].length) {
+  if (getFileList.length) {
     converted[ADMIN_REVISION_REVIEW_DATA_NAME.FILE_ID_LIST] = getFileList;
   }
 
