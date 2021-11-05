@@ -60,16 +60,11 @@ export const components = {
     defaultProps: {
       variant: 'outlined',
       fullWidth: true,
+      displayEmpty: true,
+
       size: 'medium',
     },
-    styleOverrides: {
-      root: {
-        fontSize: '16px',
-        boxShadow: 'none',
-        border: '10px solid red',
-        height: '46px',
-      },
-    },
+    styleOverrides: {},
   },
   MuiOutlinedInput: {
     defaultProps: {
