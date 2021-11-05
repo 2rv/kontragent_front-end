@@ -2,15 +2,11 @@ import Box from '@mui/material/Box';
 import { TextFieldElement } from '../../../lib/element/text-field.element.js';
 import Grid from '@mui/material/Grid';
 import Button from '@mui/material/Button';
-import {
-  ADMIN_REVISION_REVIEW_DATA_NAME,
-  REVISION_STATUS,
-} from '../admin-revision-review.constant';
+import { ADMIN_REVISION_REVIEW_DATA_NAME } from '../admin-revision-review.constant';
 import { FileUploadFieldContainer } from '../../../lib/common/file-upload-field/file-upload-field.container.js';
 import { text } from '../../../lib/common/text';
-import InputLabel from '@mui/material/InputLabel';
-import MenuItem from '@mui/material/MenuItem';
-import Select from '@mui/material/Select';
+
+import { SelectElement } from '../../../lib/element/select.element.js';
 
 export const AdminRevisionReviewFormComponent = (props) => {
   const {
@@ -32,7 +28,7 @@ export const AdminRevisionReviewFormComponent = (props) => {
   return (
     <form onSubmit={handleSubmit}>
       <Box sx={{ py: 4 }}>
-        <Grid columnSpacing={4} container>
+        <Grid sx={{ px: 0 }} columnSpacing={4}>
           <Grid
             spacing={3}
             container
@@ -56,35 +52,16 @@ export const AdminRevisionReviewFormComponent = (props) => {
             </Grid>
 
             <Grid xs={6} item>
-              <InputLabel id="demo-simple-select-label">
-                {text('ADMIN_REVISION_REVIEW.FORM.LABELS.STATUS')}
-              </InputLabel>
-
-              <Select
-                labelId="demo-simple-select-label"
-                id="demo-simple-select"
+              <SelectElement
+                label={text('ADMIN_REVISION_REVIEW.FORM.LABELS.STATUS')}
+                sx={{
+                  height: '45px',
+                }}
                 name={ADMIN_REVISION_REVIEW_DATA_NAME.STATUS}
                 value={values[ADMIN_REVISION_REVIEW_DATA_NAME.STATUS]}
-                label={text('ADMIN_REVISION_REVIEW.FORM.LABELS.STATUS')}
                 onChange={handleChange}
                 onBlur={handleBlur}
-              >
-                <MenuItem value={REVISION_STATUS.NEW}>
-                  {text('COMMON.REVISION.STATUS_TYPE.NEW')}
-                </MenuItem>
-                <MenuItem value={REVISION_STATUS.PROGRESS}>
-                  {text('COMMON.REVISION.STATUS_TYPE.PROGRESS')}
-                </MenuItem>
-                <MenuItem value={REVISION_STATUS.DONE}>
-                  {text('COMMON.REVISION.STATUS_TYPE.DONE')}
-                </MenuItem>
-                <MenuItem value={REVISION_STATUS.PAY}>
-                  {text('COMMON.REVISION.STATUS_TYPE.PAY')}
-                </MenuItem>
-                <MenuItem value={REVISION_STATUS.PAID}>
-                  {text('COMMON.REVISION.STATUS_TYPE.PAID')}
-                </MenuItem>
-              </Select>
+              />
             </Grid>
 
             <Grid xs={6} item>
