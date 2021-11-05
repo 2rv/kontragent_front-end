@@ -46,12 +46,7 @@ export const CompanyAccountItemRevisionCreateCompanyInfoFormComponent = (
   }, [touched, isValid]);
 
   const getFieldError = (name) => isFieldError(name) && errors[name];
-  const placeholderStyle = {
-    '&::placeholder': {
-      textOverflow: 'ellipsis !important',
-      color: 'blue',
-    },
-  };
+
   return (
     <form>
       <Grid rowSpacing={4} container>
