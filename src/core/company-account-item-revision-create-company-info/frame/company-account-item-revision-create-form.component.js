@@ -87,7 +87,6 @@ export const CompanyAccountItemRevisionCreateCompanyInfoFormComponent = (
                 name={
                   COMPANY_ACCOUNT_ITEM_REVISION_CREATE_COMPANY_INFO_FIELD_NAME.TITLE
                 }
-                inputProps={{ classes: { input: placeholderStyle } }}
                 onChange={handleChange}
                 storeOnChange={companyAccountItemRevisionChangeCompanyName}
                 onBlur={handleBlur}
