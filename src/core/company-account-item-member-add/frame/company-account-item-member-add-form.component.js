@@ -44,7 +44,7 @@ export const CompanyAccountItemMemberAddFormComponent = (props) => {
           alignItems="flex-end"
           flexWrap="wrap"
         >
-          <Grid md={4} xs={12} item>
+          <Grid lg={6} xs={12} item>
             <TextFieldElement
               label={text(
                 'COMPANY_ACCOUNT_ITEM_MEMBER.MEMBER_ADD.FORM.FIELD.LABELS.COMPANY_MEMBER',
@@ -61,7 +61,7 @@ export const CompanyAccountItemMemberAddFormComponent = (props) => {
             />
           </Grid>
 
-          <Grid md={4} xs={12} item>
+          <Grid lg={6} xs={12} item>
             <Button fullWidth type="sumbit" disabled={isSubmitDisabled()}>
               {text('COMPANY_ACCOUNT_ITEM_MEMBER.MEMBER_ADD.FORM.BUTTON')}
             </Button>

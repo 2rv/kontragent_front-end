@@ -46,7 +46,7 @@ export const SettingsChangeEmailFormComponent = (props) => {
           alignItems="flex-start"
           flexWrap="wrap"
         >
-          <Grid md={4} xs={12} item>
+          <Grid lg={4} xs={12} item>
             <TextFieldElement
               label={text('SETTINGS.CHANGE_EMAIL.FORM.FIELD.LABELS.EMAIL')}
               name={SETTINGS_CHANGE_EMAIL_DATA_NAME.EMAIL}
@@ -59,7 +59,7 @@ export const SettingsChangeEmailFormComponent = (props) => {
             />
           </Grid>
 
-          <Grid md={4} xs={12} item>
+          <Grid lg={4} xs={12} item>
             <TextFieldElement
               label={text('SETTINGS.CHANGE_EMAIL.FORM.FIELD.LABELS.NEW_EMAIL')}
               name={SETTINGS_CHANGE_EMAIL_DATA_NAME.NEW_EMAIL}
@@ -74,7 +74,7 @@ export const SettingsChangeEmailFormComponent = (props) => {
             />
           </Grid>
 
-          <Grid md={4} xs={12} item>
+          <Grid lg={4} xs={12} item>
             <TextFieldElement
               label={text('SETTINGS.CHANGE_EMAIL.FORM.FIELD.LABELS.PASSWORD')}
               name={SETTINGS_CHANGE_EMAIL_DATA_NAME.PASSWORD}
@@ -89,7 +89,7 @@ export const SettingsChangeEmailFormComponent = (props) => {
             />
           </Grid>
 
-          <Grid item md={4}   xs={12}>
+          <Grid item lg={4} xs={12}>
             <Button fullWidth type="sumbit" disabled={isSubmitDisabled()}>
               {text('SETTINGS.CHANGE_EMAIL.FORM.BUTTON.TITLE')}
             </Button>

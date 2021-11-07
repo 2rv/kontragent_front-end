@@ -23,12 +23,13 @@ export function CompanyCreateInfoComponent() {
           </Typography>
         </Box>
 
-        <Grid container>
-          <Grid xs={3}>
+        <Grid container direction="row" justifyContent="flex-start">
+          <Grid xs={12} lg={4} item>
             <Button
               onClick={() => {
                 redirect(COMPANY_ACCOUNT_CREATE_ROUTE_PATH);
               }}
+              fullWidth
             >
               {text('COMPANY_ACCOUNT_LIST.CREATE_COMPANY.BUTTON')}
             </Button>

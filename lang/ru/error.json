@@ -19,6 +19,7 @@
   "USER_RECOVERY_PASSWORD_INCORRECT_CODE": "Неверный код верификации",
   "USER_RECOVERY_USER_WITH_THIS_EMAIL_NOT_FOUND": "Пользователя с такой почтой не существует",
   "USER_SETTINGS_UNCORRECT_CURRENT_PASSWORD": "Неверный текущий пароль",
+  "USER_SETTINGS_SAME_EMAIL": "Пароль совпадает с предыдущем",
   "USER_USER_VERIFICATION_EMAIL_ALLDREADY_CONFIRM": "Адрес электронной почты уже был подтверждён",
   "USER_USER_VERIFICATION_EMAIL_UNCORRECT_CODE": "Неправильный код подтверждения адреса электронной почты",
   "USER_USER_VERIFICATION_PHONE_ALLREADY_CONFIRM": "Номер телефона уже был подтверждён",

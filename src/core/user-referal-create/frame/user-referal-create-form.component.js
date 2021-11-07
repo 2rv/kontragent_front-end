@@ -43,7 +43,7 @@ export const UserReferalCreateFormComponent = (props) => {
           alignItems="flex-start"
           flexWrap="wrap"
         >
-          <Grid md={8} xs={12} item>
+          <Grid lg={8} xs={12} item>
             <TextFieldElement
               placeholder={text(
                 'USER_REFERAL.USER_REFERAL_CREATE.FORM.PLACEHOLDER',
@@ -57,7 +57,7 @@ export const UserReferalCreateFormComponent = (props) => {
             />
           </Grid>
 
-          <Grid xs={12} md={4} item>
+          <Grid xs={12} lg={4} item>
             <Button
               sx={{ width: '100%' }}
               type="sumbit"

@@ -63,7 +63,7 @@ export const CompanyAccountItemRevisionCreatePeriodItemFormComponent = (
       >
         <Grid xs={12} item>
           <TextFieldElement
-            label={text(
+            placeholder={text(
               'COMPANY_ACCOUNT_ITEM_REVISION_CREATE.REVISON_CREATE_PERIOD_ITEM.FORM.FIELD.LABELS.YEAR',
             )}
             name={
