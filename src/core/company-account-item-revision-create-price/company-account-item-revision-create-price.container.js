@@ -1,9 +1,8 @@
 import React from 'react';
-
+import { redirect } from '../../main/navigation/navigation.core';
 import { httpRequest } from '../../main/http';
-
 import { getQuery } from '../../main/navigation/navigation.core';
-
+import { COMPANY_ACCOUNT_ITEM_REVISION_LIST_ROUTE_PATH_DYNAMIC } from '../company-account-item-revision-list';
 import { CompanyAccountItemRevisionCreatePriceComponent } from './company-account-item-revision-create-price.component';
 
 import { convertCompanyAccountItemRevisionCreatePriceStoreData } from './company-account-item-revision-create-price.convert';
@@ -22,6 +21,13 @@ export function CompanyAccountItemRevisionCreatePriceContainer({ state }) {
         data,
       });
 
+      return redirect(COMPANY_ACCOUNT_ITEM_REVISION_LIST_ROUTE_PATH_DYNAMIC, {
+        dynamic: true,
+        params: {
+          companyId: getQuery('companyId'),
+        },
+      });
+
       setRequestPending(false);
       setRequestSuccess(true);
     } catch (error) {
@@ -37,6 +43,13 @@ export function CompanyAccountItemRevisionCreatePriceContainer({ state }) {
       state.company,
     );
     createRevision(data);
+
+    return redirect(COMPANY_ACCOUNT_ITEM_REVISION_LIST_ROUTE_PATH_DYNAMIC, {
+      dynamic: true,
+      params: {
+        companyId: getQuery('companyId'),
+      },
+    });
   };
 
   const [isRequestPending, setRequestPending] = React.useState(null);
@@ -47,7 +60,6 @@ export function CompanyAccountItemRevisionCreatePriceContainer({ state }) {
   const [isValid, setValid] = React.useState(true);
 
   React.useEffect(() => {
-    //СЧИТАТЬ В СТОРЕ
     setValid(true);
     state.company.forEach((company) => {
       if (!company.infoValid) {
