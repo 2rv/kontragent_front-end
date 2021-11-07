@@ -6,7 +6,7 @@ import { password, required } from '../../main/validate/validate.service';
 
 const config = {
   [AUTH_LOGIN_DATA_NAME.LOGIN]: [required],
-  [AUTH_LOGIN_DATA_NAME.PASSWORD]: [required, password],
+  [AUTH_LOGIN_DATA_NAME.PASSWORD]: [required],
 };
 
 export const authLoginFormValidation = (values) => validate(values, config);
