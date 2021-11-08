@@ -1,6 +1,7 @@
 import React from 'react';
 import { redirect } from '../../main/navigation/navigation.core';
 import { httpRequest } from '../../main/http';
+
 import { getQuery } from '../../main/navigation/navigation.core';
 import { COMPANY_ACCOUNT_ITEM_REVISION_LIST_ROUTE_PATH_DYNAMIC } from '../company-account-item-revision-list';
 import { CompanyAccountItemRevisionCreatePriceComponent } from './company-account-item-revision-create-price.component';
@@ -30,6 +31,13 @@ export function CompanyAccountItemRevisionCreatePriceContainer({ state }) {
 
       setRequestPending(false);
       setRequestSuccess(true);
+
+      redirect(COMPANY_ACCOUNT_ITEM_REVISION_LIST_ROUTE_PATH_DYNAMIC, {
+        dynamic: true,
+        params: {
+          companyId: getQuery('companyId'),
+        },
+      });
     } catch (error) {
       if (error) {
         setRequestError(true);
