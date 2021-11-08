@@ -2,7 +2,7 @@
     "FORM": {
         "LABELS": {
             "REVIEW": "Ответа на запрос",
-            "STATUS": "Статус",
+            "STATUS": "Статус ",
             "PRICE": "Доплата"
         },
         "BUTTON" : {
