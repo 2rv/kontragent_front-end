@@ -200,4 +200,11 @@ export const components = {
       },
     },
   },
+  MuiChip: {
+    styleOverrides: {
+      label: {
+        overflow: 'visible',
+      },
+    },
+  },
 };

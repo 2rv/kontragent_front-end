@@ -11,13 +11,12 @@ export const FileListElement = ({ list, handleDelete }) => {
           <Grid item key={file.uuid}>
             <Chip
               id={file.uuid}
-              sx={{ borderRadius: '10px' }}
               clickable
               onClick={() => window.open(file.url)}
               label={file.fileName}
               onDelete={(e) => handleDelete(e)}
               deleteIcon={<DeleteIcon />}
-              size="20px"
+              size="medium"
             />
           </Grid>
         );
