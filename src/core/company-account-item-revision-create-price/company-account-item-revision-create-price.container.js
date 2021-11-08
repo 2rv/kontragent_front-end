@@ -47,7 +47,6 @@ export function CompanyAccountItemRevisionCreatePriceContainer({ state }) {
   const [isValid, setValid] = React.useState(true);
 
   React.useEffect(() => {
-    //СЧИТАТЬ В СТОРЕ
     setValid(true);
     state.company.forEach((company) => {
       if (!company.infoValid) {
@@ -55,7 +54,6 @@ export function CompanyAccountItemRevisionCreatePriceContainer({ state }) {
       }
       company.year.forEach((year) => {
         if (!year.valid) {
-          console.log(`YEAR VALID: ${year.valid}`);
           setValid(false);
         }
       });
