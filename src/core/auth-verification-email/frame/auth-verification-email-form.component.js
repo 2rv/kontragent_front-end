@@ -8,6 +8,8 @@ import { AUTH_VERIFICATION_EMAIL_DATA_NAME } from '../auth-verification-email.co
 
 import { text } from '../../../lib/common/text';
 
+
+
 export const AuthVerificationEmailFormComponent = (props) => {
   const {
     handleChange,

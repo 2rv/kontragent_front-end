@@ -1,9 +1,13 @@
 import Paper from '@mui/material/Paper';
 import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography';
 import Divider from '@mui/material/Divider';
 import Alert from '@mui/material/Alert';
 import LinearProgress from '@mui/material/LinearProgress';
+import Typography from '@mui/material/Typography';
+import Link from '@mui/material/Link';
+
+import { useDispatch } from 'react-redux';
+import { authLogout } from '../../lib/common/auth/auth.action';
 
 import { Formik } from 'formik';
 
@@ -12,6 +16,7 @@ import { text } from '../../lib/common/text';
 import { AuthVerificationEmailFormComponent } from './frame/auth-verification-email-form.component.js';
 
 export function AuthVerificationEmailComponent(props) {
+  const dispatch = useDispatch()
   const {
     initialValue,
     pageLoading,
@@ -51,6 +56,20 @@ export function AuthVerificationEmailComponent(props) {
               />
             )}
           </Formik>
+
+          <Divider />
+
+          <Typography variant="subtext" component="div" align='justify'>
+            <Link
+              component="button"
+              variant="body2"
+              onClick={() => {
+                dispatch(authLogout())
+              }}
+            >
+              {text('AUTH.LOGOUT.BUTTON_TEXT')}
+            </Link>
+          </Typography>
 
           {isError && (
             <Box sx={{ pt: 4 }}>

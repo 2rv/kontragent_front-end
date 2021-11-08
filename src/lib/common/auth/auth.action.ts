@@ -11,8 +11,8 @@ import { httpRequest } from '../../../main/http';
 
 export function authSetData(token: string | null = null) {
   const user = token ? parseUserAuthData(authDecode(token)) : null;
-
-  setAutorization(token);
+  //@ts-ignore
+  setAutorization(token)
 
   const data: AuthStoreAction = {
     type: AUTH_ACTION_TYPE.SET_DATA,
@@ -45,7 +45,7 @@ export function authLogout() {
 }
 
 export function authUpdateUserData() {
-  return async (dispatch) => {
+  return async (dispatch: any) => {
     try {
       const res = await httpRequest({
         method: 'GET',
@@ -53,7 +53,7 @@ export function authUpdateUserData() {
       });
 
       dispatch(authSetData(res.data.accessToken));
-    } catch (error) {
+    } catch (error: any) {
       console.log(error);
       if (error.response) {
         redirect('/error');
