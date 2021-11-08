@@ -4,6 +4,10 @@ import Typography from '@mui/material/Typography';
 import Divider from '@mui/material/Divider';
 import Alert from '@mui/material/Alert';
 import LinearProgress from '@mui/material/LinearProgress';
+import Link from '@mui/material/Link';
+
+import { useDispatch } from 'react-redux';
+import { authLogout } from '../../lib/common/auth/auth.action';
 
 import { text } from '../../lib/common/text';
 
@@ -12,6 +16,7 @@ import { Formik } from 'formik';
 import { AuthVerificationFormComponent } from './frame/auth-verification-phone-form.component.js';
 
 export function AuthVerificationPhoneComponent(props) {
+  const dispatch = useDispatch()
   const {
     initialValue,
     pageLoading,
@@ -52,6 +57,20 @@ export function AuthVerificationPhoneComponent(props) {
               />
             )}
           </Formik>
+
+          <Divider />
+
+          <Typography variant="subtext" component="div" align='justify'>
+            <Link
+              component="button"
+              variant="body2"
+              onClick={() => {
+                dispatch(authLogout())
+              }}
+            >
+              {text('AUTH.LOGOUT.BUTTON_TEXT')}
+            </Link>
+          </Typography>
 
           {isError && (
             <Box sx={{ pt: 4 }}>
