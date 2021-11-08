@@ -19,6 +19,7 @@
   "USER_RECOVERY_PASSWORD_INCORRECT_CODE": "Неверный код верификации",
   "USER_RECOVERY_USER_WITH_THIS_EMAIL_NOT_FOUND": "Пользователя с такой почтой не существует",
   "USER_SETTINGS_UNCORRECT_CURRENT_PASSWORD": "Неверный текущий пароль",
+  "USER_SETTINGS_SAME_EMAIL": "Пароль совпадает с предыдущем",
   "USER_USER_VERIFICATION_EMAIL_ALLDREADY_CONFIRM": "Адрес электронной почты уже был подтверждён",
   "USER_USER_VERIFICATION_EMAIL_UNCORRECT_CODE": "Неправильный код подтверждения адреса электронной почты",
   "USER_USER_VERIFICATION_PHONE_ALLREADY_CONFIRM": "Номер телефона уже был подтверждён",
@@ -26,7 +27,8 @@
   "COMPANY_CANT_VERIFICATE_COMPANY_INFO": "Не удалось верифицировать данные компании",
   "REFERAL_MEMBER_ERROR_USER_ALREADY_REFERAL_MEMBER": "Такой пользователь уже существует и был приглашен",
   "REFERAL_MEMBER_ERROR_USER_IS_MEMBER_OF_YOUR_COMPANY": "Пользователь состоит в вашей компании",
-  "REFERAL_MEMBER_ERROR_CANNOT_ADD_YOURSELF_AS_REFERAL_MEMEBER":"Вы не можете присоединиться по своей реферальной ссылке",
-  "REFERAL_MEMBER_ERROR_CANNOT_ADD_ROLE_ADMIN": "Вы не можете пригласить этого пользователя"
-  
+  "REFERAL_MEMBER_ERROR_CANNOT_ADD_YOURSELF_AS_REFERAL_MEMEBER": "Вы не можете присоединиться по своей реферальной ссылке",
+  "REFERAL_MEMBER_ERROR_CANNOT_ADD_ROLE_ADMIN": "Вы не можете пригласить этого пользователя",
+  "REVISION_VALIDATION_ERROR_REVISION_REVIEW_MIN_10": "Ответ на запрос должен содерждать больше 10 символов",
+  "REVISION_VALIDATION_ERROR_ADDITIONAL_PRICE_ISNOT_NATURAL": "Доплата должна быть целым положительным числом"
 }

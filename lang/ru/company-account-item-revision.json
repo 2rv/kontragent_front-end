@@ -20,17 +20,13 @@
     "MONEY_DEBITED_FROM_ACCOUNT": "Деньги списаны со счета",
     "FORM": {
       "BUTTON": {
-        "TITLE": "Создать запрос"
+        "TITLE": "Оплатить"
       }
     }
   },
   "REVISION_LIST": {
     "TITLE": "Мои проверки контрагентов",
-    "YOUR_LIST_IS_EMPTY": "Ваш список проверок пуст",
-    "NEW_APPLICATION": "Новая заявка",
-    "IN_PROGRESS": "В процессе",
-    "DONE": "Выполнено",
-    "ADDITION_PAYMENT_IS_REQUIRED": "Требуется доплата"
+    "YOUR_LIST_IS_EMPTY": "Ваш список проверок пуст"
   },
   "REVISION_CREATE_INFO": {
     "TITLE": "Проверка контрагентов",

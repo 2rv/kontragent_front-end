@@ -88,6 +88,14 @@ import {
   AccountReferalRouter,
   ACCOUNT_REFERAL_ROUTE_PATH,
 } from '../../core/account-referal';
+import {
+  AdminRevisionReviewRouter,
+  ADMIN_REVISION_REVIEW_ROUTE_PATH,
+} from '../../core/admin-revision-review';
+import {
+  AdminRevisionReviewItemRouter,
+  ADMIN_REVISION_REVIEW_ITEM_ROUTE_PATH,
+} from '../../core/admin-revision-review-item';
 
 export const routes = {
   '/': IndexRouter,
@@ -115,6 +123,8 @@ export const routes = {
   [COMPANY_ACCOUNT_ITEM_MEMBER_ROUTE_PATH]: CompanyAccountItemMemberRouter,
   [COMPANY_ADMIN_ITEM_ROUTE_PATH]: CompanyAdminItemRouter,
   [USER_ADMIN_LIST_ROUTE_PATH]: UserAdminListRouter,
+  [ADMIN_REVISION_REVIEW_ROUTE_PATH]: AdminRevisionReviewRouter,
+  [ADMIN_REVISION_REVIEW_ITEM_ROUTE_PATH]: AdminRevisionReviewItemRouter,
   [COMPANY_ADMIN_LIST_ROUTE_PATH]: CompanyAdminListRouter,
   [REVISION_ADMIN_LIST_ROUTE_PATH]: RevisionAdminListRouter,
   [AUTH_REFERAL_ROUTE_PATH]: AuthReferalRouter,

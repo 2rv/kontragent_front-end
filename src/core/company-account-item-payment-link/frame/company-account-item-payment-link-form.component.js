@@ -48,7 +48,7 @@ export const CompanyAccountItemPaymentLinkFormComponent = (props) => {
           alignItems="flex-end"
           flexWrap="wrap"
         >
-          <Grid md={4} xs={12} item>
+          <Grid lg={6} xs={12} item>
             <TextFieldElement
               label={text('COMMON.SUMM')}
               name={COMPANY_ACCOUNT_ITEM_REVISION_ITEM_PAYMENT_DATA_NAME.AMOUNT}
@@ -69,7 +69,7 @@ export const CompanyAccountItemPaymentLinkFormComponent = (props) => {
             />
           </Grid>
 
-          <Grid md={4} xs={12} item>
+          <Grid lg={6} xs={12} item>
             <Button fullWidth type="sumbit" disabled={isSubmitDisabled()}>
               {text('COMPANY_ACCOUNT_ITEM_PAYMENT.PAYMENT_LINK.SUBMIT')}
             </Button>

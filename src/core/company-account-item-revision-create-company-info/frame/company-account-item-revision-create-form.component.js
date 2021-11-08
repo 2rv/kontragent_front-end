@@ -79,7 +79,7 @@ export const CompanyAccountItemRevisionCreateCompanyInfoFormComponent = (
                 )}
               </Typography>
             </Grid>
-            <Grid xs={6} item>
+            <Grid xs={12} lg={6} item>
               <TextFieldElement
                 placeholder={text(
                   'COMPANY_ACCOUNT_ITEM_REVISION_CREATE.REVISON_CREATE_COMPANY_INFO.FORM.FIELD.LABELS.COMPANY_NAME',
@@ -87,6 +87,7 @@ export const CompanyAccountItemRevisionCreateCompanyInfoFormComponent = (
                 name={
                   COMPANY_ACCOUNT_ITEM_REVISION_CREATE_COMPANY_INFO_FIELD_NAME.TITLE
                 }
+                inputProps={{ classes: { input: placeholderStyle } }}
                 onChange={handleChange}
                 storeOnChange={companyAccountItemRevisionChangeCompanyName}
                 onBlur={handleBlur}
@@ -105,7 +106,7 @@ export const CompanyAccountItemRevisionCreateCompanyInfoFormComponent = (
                 )}
               />
             </Grid>
-            <Grid xs={6} item>
+            <Grid xs={12} lg={6} item>
               <TextFieldElement
                 placeholder={text(
                   'COMPANY_ACCOUNT_ITEM_REVISION_CREATE.REVISON_CREATE_COMPANY_INFO.FORM.FIELD.LABELS.INN',

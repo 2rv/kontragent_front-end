@@ -110,12 +110,13 @@ export const typography = {
     lineHeight: 1.3333333333333333,
     letterSpacing: 0,
     fontWeight: 500,
+    lineHeight: 1.5,
     fontFamily:
       '"IBM Plex Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"',
   },
   body1: {
     fontSize: '16px',
-    lineHeight: 1,
+    lineHeight: 1.5,
     letterSpacing: 0,
     color: '#252525',
     fontFamily:
@@ -142,7 +143,7 @@ export const typography = {
   },
   listTitle: {
     fontSize: '16px',
-    lineHeight: 1,
+    lineHeight: 1.5,
     color: '#707070',
     letterSpacing: 0,
     fontFamily:
@@ -151,7 +152,7 @@ export const typography = {
   },
   listContent: {
     fontSize: '16px',
-    lineHeight: 1,
+    lineHeight: 1.5,
     color: '#252525',
     letterSpacing: 0,
     fontFamily:
