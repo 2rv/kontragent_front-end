@@ -31,10 +31,11 @@ export function CompanyAdminItemInfoVerificateComponent(props) {
           </Typography>
         </Box>
 
-        <Grid container>
-          <Grid xs={3}>
+        <Grid container direction="row" justifyContent="flex-start">
+          <Grid xs={12} lg={4} item>
             <Button
               disabled={isVerifyButtonDisabled()}
+              fullWidth
               onClick={() => {
                 verifyButtonAction();
               }}

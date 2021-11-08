@@ -14,10 +14,10 @@ export const AuthLoginFormComponent = (props) => {
     errors,
     touched,
     isValid,
-    isSubmitting,
 
     pageLoading,
     isSuccess,
+    isPending,
   } = props;
 
   const isFieldError = (name) => {
@@ -29,7 +29,7 @@ export const AuthLoginFormComponent = (props) => {
   const isSubmitDisabled = () => {
     return JSON.stringify(touched) === '{}'
       ? true
-      : !isValid || isSubmitting || isSuccess || pageLoading;
+      : !isValid || isPending || isSuccess || pageLoading;
   };
 
   return (
@@ -50,7 +50,7 @@ export const AuthLoginFormComponent = (props) => {
           </Grid>
           <Grid item>
             <TextFieldElement
-              type='password'
+              type="password"
               label={text('AUTH.LOGIN.FORM.FIELD.LABELS.PASSWORD')}
               name={AUTH_LOGIN_DATA_NAME.PASSWORD}
               onChange={handleChange}

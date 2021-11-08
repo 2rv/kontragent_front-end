@@ -1,9 +1,6 @@
 import { httpRequest } from '../../main/http';
 
-import {
-  AUTH_LOGIN_API,
-  AUTH_LOGIN_ACTION_TYPE,
-} from './auth-login.constant';
+import { AUTH_LOGIN_API, AUTH_LOGIN_ACTION_TYPE } from './auth-login.constant';
 
 import { authSetData } from '../../lib/common/auth/auth.action';
 import { redirect } from '../../main/navigation/navigation.core';

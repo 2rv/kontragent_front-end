@@ -103,7 +103,7 @@ export function AuthLoginComponent(props) {
           {isSuccess && (
             <Box sx={{ pt: 4 }}>
               <Alert severity="success">
-                {text('COMMON.REQUEST_SENT_SUCCESSFULLY')}
+                {text('AUTH.LOGIN.FORM.SUCCESS')}
               </Alert>
             </Box>
           )}

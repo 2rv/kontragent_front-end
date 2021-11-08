@@ -7,8 +7,6 @@ export const COMPANY_ACCOUNT_ITEM_REVISION_LIST_ROUTE_PATH_DYNAMIC = (
   },
 ) => `/company/${companyId}/revision`;
 
-
-
 export const COMPANY_ACCOUNT_ITEM_REVISION_LIST_DATA_NAME = {
   LIST: 'list',
   ID: 'id',

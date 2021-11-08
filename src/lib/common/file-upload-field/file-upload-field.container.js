@@ -28,7 +28,6 @@ export function FileUploadFieldContainer(props) {
 
       setRequestPending(false);
       setRequestSuccess(true);
-
       return res.data;
     } catch (error) {
       if (error.response) {
@@ -37,6 +36,11 @@ export function FileUploadFieldContainer(props) {
         setRequestErrorMessage(error.response.data.message);
       }
     }
+  };
+
+  const handleDelete = (e) => {
+    const deleteItem = e.target.parentNode.parentNode.id;
+    setData(getData.filter((item) => item.uuid !== deleteItem));
   };
 
   const onFileAdd = async (e) => {
@@ -49,7 +53,9 @@ export function FileUploadFieldContainer(props) {
 
     const resData = await updateFileListData(formData);
 
-    const data = filedata ? [...filedata, resData] : [...getData, resData];
+    resData.fileName = file.name;
+
+    const data = [...getData, resData];
 
     setData(data);
 
@@ -70,8 +76,9 @@ export function FileUploadFieldContainer(props) {
       isError={isRequestError}
       isSuccess={isRequestSuccess}
       onFileAdd={onFileAdd}
-      data={filedata ? filedata : getData}
+      data={getData}
       errorMessage={getRequestErrorMessage}
+      handleDelete={handleDelete}
     />
   );
 }

@@ -1,5 +1,5 @@
 import React from 'react';
-
+import Typography from '@mui/material/Typography';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
@@ -57,8 +57,13 @@ export const CompanyAccountItemRevisionListListComponent = ({ list }) => {
                   '',
                   text('COMMON.REVISION.STATUS_TYPE.NEW'),
                   text('COMMON.REVISION.STATUS_TYPE.PROGRESS'),
+
                   text('COMMON.REVISION.STATUS_TYPE.DONE'),
-                  text('COMMON.REVISION.STATUS_TYPE.PAY'),
+                  <>
+                    <Typography sx={{ color: 'orange' }}>
+                      {text('COMMON.REVISION.STATUS_TYPE.PAY')}
+                    </Typography>
+                  </>,
                   text('COMMON.REVISION.STATUS_TYPE.PAID'),
                 ][item[COMPANY_ACCOUNT_ITEM_REVISION_LIST_DATA_NAME.STATUS]]
               }

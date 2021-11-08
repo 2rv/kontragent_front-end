@@ -17,8 +17,8 @@ export function AuthLogoutComponent({ onSubmitForm }) {
             </Typography>
           </Box>
 
-          <Grid container>
-            <Grid xs={12} md={4}>
+          <Grid container direction="row" justifyContent="flex-start">
+            <Grid xs={12} lg={4} item>
               <Button onClick={onSubmitForm} fullWidth type="sumbit">
                 {text('AUTH.LOGOUT.BUTTON_TEXT')}
               </Button>

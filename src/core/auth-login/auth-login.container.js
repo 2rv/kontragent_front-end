@@ -6,7 +6,10 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import { authLoginFormValidation } from './auth-login.validation';
 
-import { AUTH_LOGIN_DATA_NAME, AUTH_LOGIN_STORE_NAME } from './auth-login.constant';
+import {
+  AUTH_LOGIN_DATA_NAME,
+  AUTH_LOGIN_STORE_NAME,
+} from './auth-login.constant';
 
 import { uploadAuthLoginForm } from './auth-login.action';
 

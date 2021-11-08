@@ -21,6 +21,7 @@ export function FileUploadFieldComponent(props) {
     isSuccess,
     errorMessage,
     data,
+    handleDelete,
   } = props;
   return (
     <Box fullWidth sx={{ pb: 4, width: '100%' }}>
@@ -32,7 +33,7 @@ export function FileUploadFieldComponent(props) {
         <Box sx={{ my: 2 }}>
           <Divider sx={{ mb: 2 }} />
 
-          <FileListElement list={data} />
+          <FileListElement handleDelete={handleDelete} list={data} />
         </Box>
       )}
 

@@ -100,9 +100,11 @@ export function NavigationComponent(props) {
             <NavigationListComponent
               activePath={activePath}
               menuListItems={
-                user ?  
-                user.role  === USER_ROLE.USER ? USER_MENU_ITEM : ADMIN_MENU_ITEM
-                : []
+                user
+                  ? user.role === USER_ROLE.USER
+                    ? USER_MENU_ITEM
+                    : ADMIN_MENU_ITEM
+                  : USER_MENU_ITEM
               }
             />
           </Box>
@@ -133,9 +135,11 @@ export function NavigationComponent(props) {
             <NavigationListComponent
               activePath={activePath}
               menuListItems={
-                user ?  
-                user.role  === USER_ROLE.USER ? USER_MENU_ITEM : ADMIN_MENU_ITEM
-                : []
+                user
+                  ? user.role === USER_ROLE.USER
+                    ? USER_MENU_ITEM
+                    : ADMIN_MENU_ITEM
+                  : []
               }
             />
           </Box>

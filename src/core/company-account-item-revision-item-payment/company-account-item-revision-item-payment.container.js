@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { CompanyAccountItemRevisionItemPaymentComponent } from './company-account-item-revision-item-payment.component';
-
+import { COMPANY_ACCOUNT_ITEM_REVISION_LIST_ROUTE_PATH_DYNAMIC } from '../company-account-item-revision-list';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { companyAccountItemPaymentLinkFormValidation } from './company-account-item-revision-item-payment.validation';
@@ -32,7 +32,12 @@ export function CompanyAccountItemRevisionItemPaymentContainer({ data }) {
         )}/review/payment`,
       });
 
-      // await redirect(res.data.link);
+      return redirect(COMPANY_ACCOUNT_ITEM_REVISION_LIST_ROUTE_PATH_DYNAMIC, {
+        dynamic: true,
+        params: {
+          companyId: getQuery('companyId'),
+        },
+      });
 
       setRequestPending(false);
       setRequestSuccess(true);
