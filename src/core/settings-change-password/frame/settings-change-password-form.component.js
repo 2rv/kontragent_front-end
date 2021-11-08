@@ -1,12 +1,17 @@
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import Button from '@mui/material/Button';
+import InputAdornment from '@mui/material/InputAdornment';
+import IconButton from '@mui/material/IconButton';
+import Visibility from '@mui/icons-material/Visibility';
+import VisibilityOff from '@mui/icons-material/VisibilityOff';
 
 import { TextFieldElement } from '../../../lib/element/text-field.element.js';
 
 import { SETTINGS_CHANGE_PASSWORD_DATA_NAME } from '../settings-change-password.constant';
 
 import { text } from '../../../lib/common/text';
+import { useState } from 'react';
 
 export const SettingsChangePasswordFormComponent = (props) => {
   const {
@@ -23,6 +28,8 @@ export const SettingsChangePasswordFormComponent = (props) => {
     isSuccess,
   } = props;
 
+  const [showPassword, setShowPassword] = useState(false);
+
   const isFieldError = (name) => {
     return errors[name] && touched[name] && errors[name];
   };
@@ -33,6 +40,14 @@ export const SettingsChangePasswordFormComponent = (props) => {
     return JSON.stringify(touched) === '{}'
       ? true
       : !isValid || isSubmitting || isSuccess || pageLoading;
+  };
+
+  const handleClickShowPassword = () => {
+    setShowPassword(!showPassword);
+  };
+
+  const handleMouseDownPassword = (event) => {
+    event.preventDefault();
   };
 
   return (
@@ -51,6 +66,7 @@ export const SettingsChangePasswordFormComponent = (props) => {
               label={text(
                 'SETTINGS.CHANGE_PASSWORD.FORM.FIELD.LABELS.PASSWORD',
               )}
+              type={'password'}
               name={SETTINGS_CHANGE_PASSWORD_DATA_NAME.PASSWORD}
               onChange={handleChange}
               onBlur={handleBlur}
@@ -67,6 +83,7 @@ export const SettingsChangePasswordFormComponent = (props) => {
               label={text(
                 'SETTINGS.CHANGE_PASSWORD.FORM.FIELD.LABELS.NEW_PASSWORD',
               )}
+              type={showPassword ? 'text' : 'password'}
               name={SETTINGS_CHANGE_PASSWORD_DATA_NAME.NEW_PASSWORD}
               onChange={handleChange}
               onBlur={handleBlur}
@@ -78,6 +95,20 @@ export const SettingsChangePasswordFormComponent = (props) => {
               errorText={getFieldError(
                 SETTINGS_CHANGE_PASSWORD_DATA_NAME.NEW_PASSWORD,
               )}
+              InputProps={{
+                endAdornment: (
+                  <InputAdornment position="end">
+                    <IconButton
+                      aria-label="toggle password visibility"
+                      onClick={handleClickShowPassword}
+                      onMouseDown={handleMouseDownPassword}
+                      edge="end"
+                    >
+                      {showPassword ? <VisibilityOff /> : <Visibility />}
+                    </IconButton>
+                  </InputAdornment>
+                ),
+              }}
             />
           </Grid>
           <Grid lg={4} xs={12} item>
@@ -85,6 +116,7 @@ export const SettingsChangePasswordFormComponent = (props) => {
               label={text(
                 'SETTINGS.CHANGE_PASSWORD.FORM.FIELD.LABELS.REPEAT_NEW_PASSWORD',
               )}
+              type={showPassword ? 'text' : 'password'}
               name={SETTINGS_CHANGE_PASSWORD_DATA_NAME.PASSWORD_REPEAT}
               onChange={handleChange}
               onBlur={handleBlur}
@@ -96,6 +128,20 @@ export const SettingsChangePasswordFormComponent = (props) => {
               errorText={getFieldError(
                 SETTINGS_CHANGE_PASSWORD_DATA_NAME.PASSWORD_REPEAT,
               )}
+              InputProps={{
+                endAdornment: (
+                  <InputAdornment position="end">
+                    <IconButton
+                      aria-label="toggle password visibility"
+                      onClick={handleClickShowPassword}
+                      onMouseDown={handleMouseDownPassword}
+                      edge="end"
+                    >
+                      {showPassword ? <VisibilityOff /> : <Visibility />}
+                    </IconButton>
+                  </InputAdornment>
+                ),
+              }}
             />
           </Grid>
           <Grid item lg={4} xs={12}>

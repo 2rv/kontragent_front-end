@@ -67,7 +67,6 @@ export function CompanyAccountItemRevisionCreatePriceContainer({ state }) {
       }
       company.year.forEach((year) => {
         if (!year.valid) {
-          console.log(`YEAR VALID: ${year.valid}`);
           setValid(false);
         }
       });

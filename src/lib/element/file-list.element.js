@@ -1,22 +1,24 @@
 import Grid from '@mui/material/Grid';
 import Chip from '@mui/material/Chip';
 import UploadFileIcon from '@mui/icons-material/UploadFile';
+import DeleteIcon from '@mui/icons-material/Delete';
 
-export const FileListElement = ({ list }) => {
+export const FileListElement = ({ list, handleDelete }) => {
   return (
     <Grid container spacing={2}>
       {list.map((file) => {
         return (
-          <Grid item>
-            <a target="_blank" href={file.url}>
-              <Chip
-                size="small"
-                variant="outlined"
-                clickable
-                icon={<UploadFileIcon />}
-                label={file.uuid}
-              />
-            </a>
+          <Grid item key={file.uuid}>
+            <Chip
+              id={file.uuid}
+              sx={{ borderRadius: '10px' }}
+              clickable
+              onClick={() => window.open(file.url)}
+              label={file.fileName}
+              onDelete={(e) => handleDelete(e)}
+              deleteIcon={<DeleteIcon />}
+              size="20px"
+            />
           </Grid>
         );
       })}

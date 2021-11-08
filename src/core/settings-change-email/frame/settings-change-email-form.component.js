@@ -86,6 +86,7 @@ export const SettingsChangeEmailFormComponent = (props) => {
               errorText={getFieldError(
                 SETTINGS_CHANGE_EMAIL_DATA_NAME.PASSWORD,
               )}
+              type="password"
             />
           </Grid>
 
