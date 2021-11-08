@@ -7,7 +7,7 @@ export const FileListElement = ({ list, handleDelete }) => {
   return (
     <Grid container spacing={2}>
       {list.map((file) => {
-        return (
+        return handleDelete ? (
           <Grid item key={file.uuid}>
             <Chip
               id={file.uuid}
@@ -17,6 +17,17 @@ export const FileListElement = ({ list, handleDelete }) => {
               label={file.fileName}
               onDelete={(e) => handleDelete(e)}
               deleteIcon={<DeleteIcon />}
+              size="20px"
+            />
+          </Grid>
+        ) : (
+          <Grid item key={file.uuid}>
+            <Chip
+              id={file.uuid}
+              sx={{ borderRadius: '10px' }}
+              clickable
+              onClick={() => window.open(file.url)}
+              label={file.uuid}
               size="20px"
             />
           </Grid>

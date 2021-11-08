@@ -15,22 +15,24 @@ export function verificationPhoneFormFetchData(data, code, referalIdData) {
     });
 
     try {
-      await httpRequest({
-        method: AUTH_VERIFICATION_PHONE_API.AUTH_VERIFICATION_PHONE.TYPE,
-        url: AUTH_VERIFICATION_PHONE_API.AUTH_VERIFICATION_PHONE.ENDPOINT(code),
-        data,
-      });
-      await authUpdateUserData()(dispatch);
+      referalIdData
+        ? await httpRequest({
+            method:
+              AUTH_VERIFICATION_PHONE_API.AUTH_VERIFICATION_PHONE_REFERAL.TYPE,
+            url: AUTH_VERIFICATION_PHONE_API.AUTH_VERIFICATION_PHONE_REFERAL.ENDPOINT(
+              code,
+              referalIdData,
+            ),
+          })
+        : await httpRequest({
+            method: AUTH_VERIFICATION_PHONE_API.AUTH_VERIFICATION_PHONE.TYPE,
+            url: AUTH_VERIFICATION_PHONE_API.AUTH_VERIFICATION_PHONE.ENDPOINT(
+              code,
+            ),
+            data,
+          });
 
-      if (referalIdData) {
-        await httpRequest({
-          method:
-            AUTH_VERIFICATION_PHONE_API.AUTH_VERIFICATION_PHONE_REFERAL.TYPE,
-          url: AUTH_VERIFICATION_PHONE_API.AUTH_VERIFICATION_PHONE_REFERAL.ENDPOINT(
-            referalIdData,
-          ),
-        });
-      }
+      await authUpdateUserData()(dispatch);
 
       await redirect('/').then(() => {
         dispatch({
