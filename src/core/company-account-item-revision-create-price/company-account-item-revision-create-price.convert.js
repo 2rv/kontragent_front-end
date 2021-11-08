@@ -14,5 +14,7 @@ export const convertCompanyAccountItemRevisionCreatePriceStoreData = (
         [COMPANY_ACCOUNT_ITEM_REVISION_CREATE_DATA_NAME.YEAR_PERIOD]: y.period,
       }),
     ),
+    [COMPANY_ACCOUNT_ITEM_REVISION_CREATE_DATA_NAME.FILE_ID_LIST]:
+      company.fileIdList,
   }));
 };
