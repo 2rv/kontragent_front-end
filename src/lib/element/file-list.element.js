@@ -10,7 +10,6 @@ export const FileListElement = ({ list, handleDelete }) => {
         return (
           <Grid item key={file.uuid}>
             <Chip
-              sx={{ overflow: 'visible' }}
               id={file.uuid}
               clickable
               onClick={() => window.open(file.url)}
