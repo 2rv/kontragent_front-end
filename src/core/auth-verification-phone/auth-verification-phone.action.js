@@ -8,6 +8,8 @@ import {
 import { authUpdateUserData } from '../../lib/common/auth/auth.action';
 import { redirect } from '../../main/navigation/navigation.core';
 
+import { LOCAL_STORAGE_KEY } from '../auth-referal/auth-referal.constant';
+
 export function verificationPhoneFormFetchData(data, code, referalIdData) {
   return async (dispatch) => {
     dispatch({
@@ -33,6 +35,8 @@ export function verificationPhoneFormFetchData(data, code, referalIdData) {
           });
 
       await authUpdateUserData()(dispatch);
+
+      localStorage.removeItem(LOCAL_STORAGE_KEY);
 
       await redirect('/').then(() => {
         dispatch({
