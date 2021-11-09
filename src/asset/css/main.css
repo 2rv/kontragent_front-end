@@ -516,11 +516,6 @@ input:-webkit-autofill {
   -webkit-box-shadow: none !important;
   box-shadow: none !important;
 }
-:root,
-body,
-html {
-  background-color: #f3f3f3;
-}
 
 html {
   overflow-y: scroll;
