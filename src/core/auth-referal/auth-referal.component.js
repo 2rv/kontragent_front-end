@@ -9,7 +9,12 @@ import { redirect } from '../../main/navigation/navigation.core';
 import { text } from '../../lib/common/text';
 import { AUTH_SIGNUP_ROUTE_PATH } from '../auth-signup';
 
+import { getQuery } from '../../main/navigation/navigation.core';
+import { setLocalData } from '../../main/store/store.service';
+import { LOCAL_STORAGE_KEY } from './auth-referal.constant';
+
 export function AuthReferalComponent() {
+  const data = getQuery('referalId');
   return (
     <Box sx={{ py: 4, px: 4 }}>
       <Box sx={{ pb: 4 }}>
@@ -50,6 +55,7 @@ export function AuthReferalComponent() {
                 variant="contained"
                 type="button"
                 onClick={() => {
+                  setLocalData(LOCAL_STORAGE_KEY, data);
                   redirect(AUTH_SIGNUP_ROUTE_PATH);
                 }}
               >
