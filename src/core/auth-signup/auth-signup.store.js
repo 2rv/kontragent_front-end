@@ -31,7 +31,7 @@ export function authSignupStore(state = initialState, action) {
       };
     case AUTH_SIGNUP_ACTION_TYPE.FORM_CLEANUP:
       return {
-        form: initRequestState(),
+        ...initialState,
       };
 
     default:

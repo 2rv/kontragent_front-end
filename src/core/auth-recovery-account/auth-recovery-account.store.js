@@ -31,7 +31,7 @@ export function authRecoveryAccountStore(state = initialState, action) {
       };
     case AUTH_RECOVERY_ACCOUNT_ACTION_TYPE.FORM_CLEANUP:
       return {
-        form: initRequestState(),
+        ...initialState,
       };
 
     default:

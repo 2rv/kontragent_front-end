@@ -34,7 +34,7 @@ export function authRecoveryAccountUpdatePasswordStore(
       };
     case AUTH_RECOVERY_ACCOUNT_UPDATE_PASSWORD_ACTION_TYPE.FORM_CLEANUP:
       return {
-        form: initRequestState(),
+        ...initialState,
       };
 
     default:

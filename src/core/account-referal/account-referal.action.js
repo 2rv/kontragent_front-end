@@ -32,3 +32,9 @@ export function uploadAccountReferalId(id) {
     }
   };
 }
+
+export function cleanupStore() {
+  return {
+    type: ACCOUNT_REFERAL_ACTION_TYPE.ACCOUNT_REFERAL_CLEANUP,
+  };
+}

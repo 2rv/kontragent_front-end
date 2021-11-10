@@ -31,7 +31,7 @@ export function companyAccountItemMemberAddStore(state = initialState, action) {
       };
     case COMPANY_ACCOUNT_ITEM_MEMBER_ADD_ACTION_TYPE.ADD_CLEANUP:
       return {
-        form: initRequestState(),
+        ...initialState,
       };
 
     default:

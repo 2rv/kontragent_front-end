@@ -36,8 +36,7 @@ export function companyAccountItemMemberDeleteStore(
       };
     case COMPANY_ACCOUNT_ITEM_MEMBER_DELETE_ACTION_TYPE.DELETE_CLEANUP:
       return {
-        form: initRequestState(),
-        deletedItemIndex: null,
+        ...initialState,
       };
 
     default:

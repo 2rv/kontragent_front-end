@@ -31,7 +31,7 @@ export function authVerificationEmailStore(state = initialState, action) {
       };
     case AUTH_VERIFICATION_EMAIL_ACTION_TYPE.FORM_CLEANUP:
       return {
-        form: initRequestState(),
+        ...initialState,
       };
 
     default:

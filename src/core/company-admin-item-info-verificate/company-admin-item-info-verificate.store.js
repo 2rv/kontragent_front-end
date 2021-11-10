@@ -34,7 +34,7 @@ export function companyAdminItemInfoVerificateStore(
       };
     case COMPANY_ADMIN_ITEM_INFO_VERIFICATE_ACTION_TYPE.CLEANUP:
       return {
-        verificateCompanyInfo: initRequestState(),
+        ...initialState,
       };
 
     default:
