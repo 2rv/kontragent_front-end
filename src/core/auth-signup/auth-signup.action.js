@@ -42,6 +42,6 @@ export function uploadAuthSignupForm(data) {
 
 export function cleanupStore() {
   return {
-    type: AUTH_SIGNUP_ACTION_TYPE.FORM_PENDING,
+    type: AUTH_SIGNUP_ACTION_TYPE.FORM_CLEANUP,
   };
 }
