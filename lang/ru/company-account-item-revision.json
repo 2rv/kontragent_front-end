@@ -4,6 +4,14 @@
     "FILES_FOR_REQUEST_DESCRIPTION": "Файлы для описания запроса",
     "FILES_IS_EMPTY": "Файлы не предоставлены",
     "RESULT_OF_CHECKING": " Результат проверки",
+    "YEARS": "Год и период проверки: ",
+    "YEAR": " год",
+    "PERIODS": {
+      "ONE_PERIOD": " 1 квартал ",
+      "TWO_PERIOD": " 2 квартал ",
+      "THREE_PERIOD": " 3 квартал ",
+      "FOUR_PERIOD": " 4 квартал "
+    },
     "WE_NOT_COMPILED_RESULT_OF_YOUR_REQUEST": "Мы еще не составили результата вашего запроса",
     "FILES_FOR_DESCRIBING_RESPONSE_RESULT": "Файлы для описания результата ответа",
     "NO_FILES_PROVIDED": "Файлы не предоставлены",
