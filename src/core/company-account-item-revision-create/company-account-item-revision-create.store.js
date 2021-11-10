@@ -184,6 +184,30 @@ export function companyAccountItemRevisionCreateStore(
         company: newCompanyList,
       };
     }
+    case COMPANY_ACCOUNT_ITEM_REVISION_CREATE_ACTION_TYPE.CLEANUP: {
+      return {
+        form: initRequestState(),
+        company: [
+          {
+            name: '',
+            inn: '',
+            description: '',
+            fileIdList: [],
+            fileList: [],
+            infoValid: false,
+            year: [
+              {
+                year: '',
+                period: [true, true, true, true],
+                valid: false,
+              },
+            ],
+          },
+        ],
+        error: false,
+        total: 0,
+      };
+    }
 
     default:
       return state;

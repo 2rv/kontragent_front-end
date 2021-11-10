@@ -29,7 +29,10 @@ export function authLoginStore(state = initialState, action) {
         ...state,
         form: setRequestError(state.form, action.errorMessage),
       };
-
+    case AUTH_LOGIN_ACTION_TYPE.FORM_CLEANUP:
+      return {
+        form: initRequestState(),
+      };
     default:
       return state;
   }

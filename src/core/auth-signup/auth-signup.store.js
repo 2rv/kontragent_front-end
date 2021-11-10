@@ -29,6 +29,10 @@ export function authSignupStore(state = initialState, action) {
         ...state,
         form: setRequestError(state.form, action.errorMessage),
       };
+    case AUTH_SIGNUP_ACTION_TYPE.FORM_CLEANUP:
+      return {
+        form: initRequestState(),
+      };
 
     default:
       return state;

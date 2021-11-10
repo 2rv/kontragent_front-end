@@ -68,3 +68,9 @@ export function verificationEmailFormGetCode() {
     }
   };
 }
+
+export function cleanupStore() {
+  return {
+    type: AUTH_VERIFICATION_EMAIL_ACTION_TYPE.FORM_CLEANUP,
+  };
+}

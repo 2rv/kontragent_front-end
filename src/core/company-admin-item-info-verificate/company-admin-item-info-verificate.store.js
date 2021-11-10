@@ -32,6 +32,10 @@ export function companyAdminItemInfoVerificateStore(
           action.errorMessage,
         ),
       };
+    case COMPANY_ADMIN_ITEM_INFO_VERIFICATE_ACTION_TYPE.CLEANUP:
+      return {
+        verificateCompanyInfo: initRequestState(),
+      };
 
     default:
       return state;

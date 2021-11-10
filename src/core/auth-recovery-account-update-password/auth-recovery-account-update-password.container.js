@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import { AuthRecoveryAccountUpdatePasswordComponent } from './auth-recovery-account-update-password.component';
 
@@ -8,9 +8,15 @@ import { authRecoveryAccountUpdatePasswordFormValidation } from './auth-recovery
 
 import { convertAuthRecoveryAccountUpdatePasswordFormData } from './auth-recovery-account-update-password.convert';
 
-import { AUTH_RECOVERY_ACCOUNT_UPDATE_PASSWORD_DATA_NAME, AUTH_RECOVERY_ACCOUNT_UPDATE_PASSWORD_STORE_NAME } from './auth-recovery-account-update-password.constant';
+import {
+  AUTH_RECOVERY_ACCOUNT_UPDATE_PASSWORD_DATA_NAME,
+  AUTH_RECOVERY_ACCOUNT_UPDATE_PASSWORD_STORE_NAME,
+} from './auth-recovery-account-update-password.constant';
 
-import { updatePasswordSendFormData } from './auth-recovery-account-update-password.action';
+import {
+  updatePasswordSendFormData,
+  cleanupStore,
+} from './auth-recovery-account-update-password.action';
 
 import { NAVIGATION_STORE_NAME } from '../../lib/common/navigation/navigation.constant';
 
@@ -40,6 +46,12 @@ export function AuthRecoveryAccountUpdatePasswordContainer() {
       [AUTH_RECOVERY_ACCOUNT_UPDATE_PASSWORD_DATA_NAME.PASSWORD_REPEAT]: '',
     };
   };
+
+  useEffect(() => {
+    return function cleanup() {
+      dispatch(cleanupStore());
+    };
+  }, []);
 
   return (
     <AuthRecoveryAccountUpdatePasswordComponent

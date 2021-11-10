@@ -39,3 +39,9 @@ export function authRecoveryAccountFormSendData(data) {
     }
   };
 }
+
+export function cleanupStore() {
+  return {
+    type: AUTH_RECOVERY_ACCOUNT_ACTION_TYPE.FORM_CLEANUP,
+  };
+}

@@ -9,6 +9,7 @@ import { LOCAL_STORAGE_KEY } from '../auth-referal/auth-referal.constant';
 import {
   verificationPhoneFormFetchData,
   verificationPhoneFormGetCode,
+  cleanupStore,
 } from './auth-verification-phone.action';
 
 import { convertAuthVerificationPhoneFormData } from './auth-verification-phone.convert';
@@ -38,6 +39,10 @@ export function AuthVerificationPhoneContainer() {
 
   React.useEffect(() => {
     dispatch(verificationPhoneFormGetCode());
+
+    return function cleanup() {
+      dispatch(cleanupStore());
+    };
   }, []);
 
   const VerificationPhoneFormSendData = (values) => {
