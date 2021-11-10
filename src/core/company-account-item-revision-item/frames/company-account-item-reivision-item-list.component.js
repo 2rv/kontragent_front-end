@@ -46,6 +46,71 @@ export const CompanyAccountItemRevisionItemListComponent = ({ data }) => {
       </Grid>
 
       <Grid item>
+        <Typography gutterBottom variant="listTitle" component="div">
+          {text('COMPANY_ACCOUNT_ITEM_REVISION.REVISION_ITEM.YEARS')}
+        </Typography>
+
+        {data[COMPANY_ACCOUNT_ITEM_REVISION_ITEM_DATA_NAME.YEAR] && (
+          <>
+            {data[COMPANY_ACCOUNT_ITEM_REVISION_ITEM_DATA_NAME.YEAR].map(
+              (years) => {
+                return (
+                  <>
+                    <Typography variant="body1">
+                      {years[COMPANY_ACCOUNT_ITEM_REVISION_ITEM_DATA_NAME.NAME]}
+                      {text('COMPANY_ACCOUNT_ITEM_REVISION.REVISION_ITEM.YEAR')}
+                      {years[
+                        COMPANY_ACCOUNT_ITEM_REVISION_ITEM_DATA_NAME.PERIOD
+                      ] && (
+                        <>
+                          {years[
+                            COMPANY_ACCOUNT_ITEM_REVISION_ITEM_DATA_NAME.PERIOD
+                          ][0] && (
+                            <>
+                              {text(
+                                'COMPANY_ACCOUNT_ITEM_REVISION.REVISION_ITEM.PERIODS.ONE_PERIOD',
+                              )}
+                            </>
+                          )}
+                          {years[
+                            COMPANY_ACCOUNT_ITEM_REVISION_ITEM_DATA_NAME.PERIOD
+                          ][1] && (
+                            <>
+                              {text(
+                                'COMPANY_ACCOUNT_ITEM_REVISION.REVISION_ITEM.PERIODS.TWO_PERIOD',
+                              )}
+                            </>
+                          )}
+                          {years[
+                            COMPANY_ACCOUNT_ITEM_REVISION_ITEM_DATA_NAME.PERIOD
+                          ][2] && (
+                            <>
+                              {text(
+                                'COMPANY_ACCOUNT_ITEM_REVISION.REVISION_ITEM.PERIODS.THREE_PERIOD',
+                              )}
+                            </>
+                          )}
+                          {years[
+                            COMPANY_ACCOUNT_ITEM_REVISION_ITEM_DATA_NAME.PERIOD
+                          ][3] && (
+                            <>
+                              {text(
+                                'COMPANY_ACCOUNT_ITEM_REVISION.REVISION_ITEM.PERIODS.FOUR_PERIOD',
+                              )}
+                            </>
+                          )}
+                        </>
+                      )}
+                    </Typography>
+                  </>
+                );
+              },
+            )}
+          </>
+        )}
+      </Grid>
+
+      <Grid item>
         <Divider />
       </Grid>
 
