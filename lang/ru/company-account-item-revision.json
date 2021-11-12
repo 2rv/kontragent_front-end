@@ -1,7 +1,16 @@
 {
   "REVISION_ITEM": {
     "TITLE": "Описание запроса",
+    "PRICE": "Сумма нужной доплаты",
     "FILES_FOR_REQUEST_DESCRIPTION": "Файлы для описания запроса",
+    "YEARS": "Год и период проверки: ",
+    "YEAR": " год",
+    "PERIODS": {
+      "ONE_PERIOD": " 1 квартал ",
+      "TWO_PERIOD": " 2 квартал ",
+      "THREE_PERIOD": " 3 квартал ",
+      "FOUR_PERIOD": " 4 квартал "
+    },
     "FILES_IS_EMPTY": "Файлы не предоставлены",
     "RESULT_OF_CHECKING": " Результат проверки",
     "WE_NOT_COMPILED_RESULT_OF_YOUR_REQUEST": "Мы еще не составили результата вашего запроса",
