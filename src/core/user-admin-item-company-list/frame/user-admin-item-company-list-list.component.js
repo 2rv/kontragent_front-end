@@ -52,8 +52,8 @@ export const UserAdminItemCompanyListListComponent = ({ list }) => {
               secondary={`${text('COMMON.COMPANY.ROLE')} 
                 ${
                   item[USER_ADMIN_ITEM_COMPANY_LIST_DATA_NAME.ROLE] === 1
-                    ? text('COMMON.USER_ROLE.OWNER')
-                    : text('COMMON.USER_ROLE.EMPLOYEE')
+                    ? text('COMMON.USER.USER_ROLE.OWNER')
+                    : text('COMMON.USER.USER_ROLE.BLOCKED')
                 }`}
             />
           </ListItem>

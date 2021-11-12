@@ -80,6 +80,21 @@ export const UserAdminItemInfoListComponent = ({ data }) => {
             : text('COMMON.USER.NOT_VERIFIED')}
         </Typography>
       </Grid>
+      <Grid item>
+        <Typography sx={{ mr: 1 }} variant="listTitle">
+          {text('COMMON.USER.ROLE')}
+        </Typography>
+        <Typography
+          sx={{
+            color: !data[USER_ADMIN_ITEM_INFO_DATA_NAME.ROLE] && '#F2994A',
+          }}
+          variant="listContent"
+        >
+          {data[USER_ADMIN_ITEM_INFO_DATA_NAME.ROLE] === 1
+            ? text('COMMON.USER.USER_ROLE.OWNER')
+            : text('COMMON.USER.USER_ROLE.BLOCKED')}
+        </Typography>
+      </Grid>
     </Grid>
   );
 };
