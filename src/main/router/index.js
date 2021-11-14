@@ -96,6 +96,10 @@ import {
   AdminRevisionReviewItemRouter,
   ADMIN_REVISION_REVIEW_ITEM_ROUTE_PATH,
 } from '../../core/admin-revision-review-item';
+import {
+  UserAdminInviteRouter,
+  USER_ADMIN_INVITE_ROUTE_PATH,
+} from '../../core/user-admin-invite';
 
 export const routes = {
   '/': IndexRouter,
@@ -131,6 +135,8 @@ export const routes = {
   [USER_REFERAL_SYSTEM_ROUTE_PATH]: UserReferalSystemRouter,
   [USER_REFERAL_BALANCE_ROUTE_PATH]: UserReferalBalanceRouter,
   [ACCOUNT_REFERAL_ROUTE_PATH]: AccountReferalRouter,
+
+  [USER_ADMIN_INVITE_ROUTE_PATH]: UserAdminInviteRouter,
 };
 
 export const Router = routesInit(routes);
