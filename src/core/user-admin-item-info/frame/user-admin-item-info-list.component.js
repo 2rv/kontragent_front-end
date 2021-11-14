@@ -55,7 +55,7 @@ export const UserAdminItemInfoListComponent = ({ data }) => {
         <Typography
           sx={{
             color:
-              !data[USER_ADMIN_ITEM_INFO_DATA_NAME.CONFIRM_EMAIL] && '#F2994A',
+              !data[USER_ADMIN_ITEM_INFO_DATA_NAME.CONFIRM_EMAIL] && '#EB5757',
           }}
           variant="listContent"
         >
@@ -71,7 +71,7 @@ export const UserAdminItemInfoListComponent = ({ data }) => {
         <Typography
           sx={{
             color:
-              !data[USER_ADMIN_ITEM_INFO_DATA_NAME.CONFIRM_PHONE] && '#F2994A',
+              !data[USER_ADMIN_ITEM_INFO_DATA_NAME.CONFIRM_PHONE] && '#EB5757',
           }}
           variant="listContent"
         >
@@ -86,13 +86,16 @@ export const UserAdminItemInfoListComponent = ({ data }) => {
         </Typography>
         <Typography
           sx={{
-            color: !data[USER_ADMIN_ITEM_INFO_DATA_NAME.ROLE] && '#F2994A',
+            color: !data[USER_ADMIN_ITEM_INFO_DATA_NAME.ROLE] && '#EB5757',
           }}
           variant="listContent"
         >
-          {data[USER_ADMIN_ITEM_INFO_DATA_NAME.ROLE] === 1
-            ? text('COMMON.USER.USER_ROLE.OWNER')
-            : text('COMMON.USER.USER_ROLE.BLOCKED')}
+          {data[USER_ADMIN_ITEM_INFO_DATA_NAME.ROLE] === 1 &&
+            text('COMMON.USER.USER_ROLE.OWNER')}
+          {data[USER_ADMIN_ITEM_INFO_DATA_NAME.ROLE] === 0 &&
+            text('COMMON.USER.USER_ROLE.BLOCKED')}
+          {data[USER_ADMIN_ITEM_INFO_DATA_NAME.ROLE] === 2 &&
+            text('COMMON.USER.USER_ROLE.ADMIN')}
         </Typography>
       </Grid>
     </Grid>

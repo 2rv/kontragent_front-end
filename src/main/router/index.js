@@ -96,6 +96,14 @@ import {
   AdminRevisionReviewItemRouter,
   ADMIN_REVISION_REVIEW_ITEM_ROUTE_PATH,
 } from '../../core/admin-revision-review-item';
+import {
+  USER_ADMIN_ITEM_INFO_ROUTE_PATH,
+  UserAdminItemInfoRouter,
+} from '../../core/user-admin-item-info';
+import {
+  UserAdminItemCompanyListRouter,
+  USER_ADMIN_ITEM_COMPANY_LIST_ROUTE_PATH,
+} from '../../core/user-admin-item-company-list';
 
 export const routes = {
   '/': IndexRouter,
@@ -118,7 +126,8 @@ export const routes = {
   [COMPANY_ACCOUNT_ITEM_REVISION_LIST_ROUTE_PATH]:
     CompanyAccountItemRevisionListRouter,
   [COMPANY_ACCOUNT_ITEM_BALANCE_ROUTE_PATH]: CompanyAccountItemBalanceRouter,
-
+  [USER_ADMIN_ITEM_INFO_ROUTE_PATH]: UserAdminItemInfoRouter,
+  [USER_ADMIN_ITEM_COMPANY_LIST_ROUTE_PATH]: UserAdminItemCompanyListRouter,
   [COMPANY_ACCOUNT_ITEM_INFO_ROUTE_PATH]: CompanyAccountItemInfoRouter,
   [COMPANY_ACCOUNT_ITEM_MEMBER_ROUTE_PATH]: CompanyAccountItemMemberRouter,
   [COMPANY_ADMIN_ITEM_ROUTE_PATH]: CompanyAdminItemRouter,

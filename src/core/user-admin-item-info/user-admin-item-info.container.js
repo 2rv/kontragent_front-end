@@ -5,20 +5,21 @@ import { UserAdminItemInfoComponent } from './user-admin-item-info.component';
 import { useSelector } from 'react-redux';
 
 import { NAVIGATION_STORE_NAME } from '../../lib/common/navigation/navigation.constant';
-
+import { USER_ADMIN_ROLE_STORE_NAME } from '../user-admin-role/user-admin-role.constant';
 import { httpRequest } from '../../main/http';
 import { getQuery } from '../../main/navigation/navigation.core';
 
 import { performUserAdminItemInfoData } from './user-admin-item-info.convert';
 
 export function UserAdminItemInfoContainer() {
-  const { pageLoading } = useSelector((state) => ({
+  const { state, pageLoading } = useSelector((state) => ({
+    state: state[USER_ADMIN_ROLE_STORE_NAME],
     pageLoading: state[NAVIGATION_STORE_NAME].pageLoading,
   }));
 
   React.useEffect(() => {
     getCompanyAccountItemInfo();
-  }, []);
+  }, [state.form.success]);
 
   const getCompanyAccountItemInfo = async (data) => {
     setRequestPending(true);

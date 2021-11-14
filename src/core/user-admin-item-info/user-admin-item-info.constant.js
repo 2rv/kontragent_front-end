@@ -8,3 +8,10 @@ export const USER_ADMIN_ITEM_INFO_DATA_NAME = {
   CONFIRM_PHONE: 'confirmPhone',
   ROLE: 'role',
 };
+
+export const USER_ADMIN_ITEM_INFO_ROUTE_PATH = '/admin/user/[userId]/info';
+export const USER_ADMIN_ITEM_INFO_ROUTE_PATH_DYNAMIC = (
+  { userId } = {
+    userId: '[userId]',
+  },
+) => `/admin/user/${userId}/info`;
