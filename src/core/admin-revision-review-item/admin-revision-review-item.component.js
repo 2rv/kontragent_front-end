@@ -48,12 +48,6 @@ export function AdminRevisionReviewItemComponent({
           )}
         </Box>
       </Paper>
-
-      {data.status === 4 && (
-        <Box sx={{ mt: 4 }}>
-          <CompanyAccountItemRevisionItemPaymentContainer data={data} />
-        </Box>
-      )}
     </React.Fragment>
   );
 }
