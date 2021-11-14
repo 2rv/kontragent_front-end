@@ -22,13 +22,6 @@ export function CompanyAccountItemRevisionCreatePriceContainer({ state }) {
         data,
       });
 
-      return redirect(COMPANY_ACCOUNT_ITEM_REVISION_LIST_ROUTE_PATH_DYNAMIC, {
-        dynamic: true,
-        params: {
-          companyId: getQuery('companyId'),
-        },
-      });
-
       setRequestPending(false);
       setRequestSuccess(true);
 
@@ -51,13 +44,6 @@ export function CompanyAccountItemRevisionCreatePriceContainer({ state }) {
       state.company,
     );
     createRevision(data);
-
-    return redirect(COMPANY_ACCOUNT_ITEM_REVISION_LIST_ROUTE_PATH_DYNAMIC, {
-      dynamic: true,
-      params: {
-        companyId: getQuery('companyId'),
-      },
-    });
   };
 
   const [isRequestPending, setRequestPending] = React.useState(null);
