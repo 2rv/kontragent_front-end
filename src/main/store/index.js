@@ -36,6 +36,10 @@ import {
 } from '../../core/account-referal';
 import { USER_ADMIN_ROLE_STORE_NAME } from '../../core/user-admin-role/user-admin-role.constant';
 import { userAdminRoleStore } from '../../core/user-admin-role/user-admin-role.store';
+import {
+  userAdminItemInfoStore,
+  USER_ADMIN_ITEM_INFO_STORE_NAME,
+} from '../../core/user-admin-item-info';
 
 export const reducers = combineReducers({
   [AUTH_STORE_NAME]: authStore,
@@ -58,6 +62,7 @@ export const reducers = combineReducers({
     companyAccountItemMemberAddStore,
   [ACCOUNT_REFERAL_STORE_NAME]: accountReferalStore,
   [USER_ADMIN_ROLE_STORE_NAME]: userAdminRoleStore,
+  [USER_ADMIN_ITEM_INFO_STORE_NAME]: userAdminItemInfoStore,
 });
 
 export { initStore } from './store.core';
