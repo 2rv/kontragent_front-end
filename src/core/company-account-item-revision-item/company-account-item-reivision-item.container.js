@@ -36,11 +36,13 @@ export function CompanyAccountItemRevisionItemContainer() {
       });
 
       const data = performCompanyAccountItemRevisionItemData(res.data);
+      console.log(data);
 
       setRequestPending(false);
-      setRequestSuccess(true);
       setData(data);
+      setRequestSuccess(true);
     } catch (error) {
+      console.log(error);
       if (error.response) {
         setRequestError(true);
         setData({});

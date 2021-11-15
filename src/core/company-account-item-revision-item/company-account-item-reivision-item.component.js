@@ -12,6 +12,7 @@ import { text } from '../../lib/common/text';
 
 import { CompanyAccountItemRevisionItemPaymentContainer } from '../company-account-item-revision-item-payment/company-account-item-revision-item-payment.container';
 import { CompanyAccountItemRevisionItemListComponent } from './frames/company-account-item-reivision-item-list.component';
+import { CompanyAccountItemRevisionItemAccordionComponent } from './frames/company-account-item-revision-item-accordion.component';
 import { ReviewStatus } from './frames/review-status.component';
 
 export function CompanyAccountItemRevisionItemComponent({
@@ -21,6 +22,7 @@ export function CompanyAccountItemRevisionItemComponent({
   isSuccess,
   errorMessage,
 }) {
+  console.log(isSuccess);
   return (
     <React.Fragment>
       <Paper sx={{ p: 0 }}>
@@ -38,7 +40,28 @@ export function CompanyAccountItemRevisionItemComponent({
           <Divider sx={{ mx: 8 }} />
 
           {isSuccess && (
-            <CompanyAccountItemRevisionItemListComponent data={data} />
+            <div>
+              <CompanyAccountItemRevisionItemListComponent data={data} />
+            </div>
+          )}
+          {isPending && (
+            <Box sx={{ pt: 4, px: 8, pb: 8 }}>
+              <SkeletonListComponent text={true} />
+            </Box>
+          )}
+          {isError && (
+            <Box sx={{ pt: 4, px: 8, pb: 8 }}>
+              <Alert severity="error">{text(`ERROR.${errorMessage}`)}</Alert>
+            </Box>
+          )}
+        </Box>
+      </Paper>
+      <Paper>
+        <Box>
+          {isSuccess && (
+            <div>
+              <CompanyAccountItemRevisionItemAccordionComponent data={data} />
+            </div>
           )}
           {isPending && (
             <Box sx={{ pt: 4, px: 8, pb: 8 }}>
