@@ -51,7 +51,9 @@ export const CompanyAccountItemRevisionListListComponent = ({ list }) => {
             sx={{ py: 3, px: 3 }}
           >
             <ListItemText
-              primary={item[COMPANY_ACCOUNT_ITEM_REVISION_LIST_DATA_NAME.TITLE]}
+              primary={`Идентификатор:  ${
+                item[COMPANY_ACCOUNT_ITEM_REVISION_LIST_DATA_NAME.ID]
+              }`}
               secondary={
                 [
                   '',
