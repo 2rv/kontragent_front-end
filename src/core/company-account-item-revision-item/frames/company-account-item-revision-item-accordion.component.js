@@ -8,9 +8,6 @@ import { COMPANY_ACCOUNT_ITEM_REVISION_ITEM_DATA_NAME } from '../company-account
 import { text } from '../../../lib/common/text';
 
 export const CompanyAccountItemRevisionItemAccordionComponent = ({ data }) => {
-  console.log(
-    data[COMPANY_ACCOUNT_ITEM_REVISION_ITEM_DATA_NAME.REVISION_COMPANIES],
-  );
   return (
     <Grid>
       {data[
@@ -24,9 +21,26 @@ export const CompanyAccountItemRevisionItemAccordionComponent = ({ data }) => {
           >
             <Typography>{company.name}</Typography>
             <Typography>{company.inn}</Typography>
-            <Typography>1й период {company.firstPeriod}</Typography>
-            <Typography>2й период {company.secondPeriod}</Typography>
-            <Typography>3й период {company.thirdPeriod}</Typography>
+            <Typography>
+              {text(
+                'COMPANY_ACCOUNT_ITEM_REVISION.REVISION_ITEM.PERIODS.ONE_PERIOD',
+              ) + company.firstPeriod}
+            </Typography>
+            <Typography>
+              {text(
+                'COMPANY_ACCOUNT_ITEM_REVISION.REVISION_ITEM.PERIODS.TWO_PERIOD',
+              ) + company.secondPeriod}
+            </Typography>
+            <Typography>
+              {text(
+                'COMPANY_ACCOUNT_ITEM_REVISION.REVISION_ITEM.PERIODS.THREE_PERIOD',
+              ) + company.thirdPeriod}
+            </Typography>
+            <Typography>
+              {text(
+                'COMPANY_ACCOUNT_ITEM_REVISION.REVISION_ITEM.PERIODS.FOUR_PERIOD',
+              ) + company.thirdPeriod}
+            </Typography>
           </AccordionSummary>
           <AccordionDetails>
             <Typography>{company.description}</Typography>

@@ -22,7 +22,6 @@ export function CompanyAccountItemRevisionItemComponent({
   isSuccess,
   errorMessage,
 }) {
-  console.log(isSuccess);
   return (
     <React.Fragment>
       <Paper sx={{ p: 0 }}>
