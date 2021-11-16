@@ -29,9 +29,6 @@ export const AdminSelectElement = ({ label, storeOnChange, ...props }) => {
           <MenuItem value={ROLE_TYPE.ADMIN}>
             {text('USER_ADMIN_ROLE.SELECT.ADMIN')}
           </MenuItem>
-          <MenuItem value={ROLE_TYPE.BLOCKED}>
-            {text('USER_ADMIN_ROLE.SELECT.BLOCKED')}
-          </MenuItem>
         </Select>
       </Grid>
     </Grid>

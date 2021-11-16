@@ -7,6 +7,7 @@ import { UserAdminRoleFormComponent } from './frame/user-admin-role-form.compone
 import { Formik } from 'formik';
 import LinearProgress from '@mui/material/LinearProgress';
 import Alert from '@mui/material/Alert';
+import { UserAdminBlockedRoleContainer } from '../user-admin-blocked-role/user-admin-blocked-role.container';
 
 export function UserAdminRoleComponent(props) {
   const {
@@ -29,6 +30,10 @@ export function UserAdminRoleComponent(props) {
             </Typography>
           </Box>
           <Divider />
+
+          <Box sx={{ mt: 4 }}>
+            <UserAdminBlockedRoleContainer />
+          </Box>
 
           <Formik initialValues={initialValue} onSubmit={onSubmitForm}>
             {(props) => (
