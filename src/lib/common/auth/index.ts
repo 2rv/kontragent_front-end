@@ -8,4 +8,5 @@ export {
   authRedirectVerification,
   authRedirectNotAdmin,
   authRedirectAdmin,
+  authVerificated,
 } from './auth.redirect';

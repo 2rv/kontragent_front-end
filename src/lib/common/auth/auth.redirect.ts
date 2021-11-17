@@ -20,6 +20,23 @@ export const authRedirectLogged = (ctx: any, pathToRedirect: string) => {
   }
 };
 
+export const authVerificated = (ctx: any, pathToRedirect: string) => {
+  const { res, store } = ctx;
+
+  const authStore = store.getState()[AUTH_STORE_NAME];
+
+  if (authStore.user.confirmPhone) {
+    if (res) {
+      res.writeHead(302, {
+        Location: pathToRedirect,
+      });
+      res.end();
+    } else {
+      redirect(pathToRedirect);
+    }
+  }
+};
+
 export const authRedirectPrivated = (ctx: any, pathToRedirect: string) => {
   const { res, store } = ctx;
 
