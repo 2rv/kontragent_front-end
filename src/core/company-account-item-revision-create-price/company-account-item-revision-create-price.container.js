@@ -22,22 +22,8 @@ export function CompanyAccountItemRevisionCreatePriceContainer({ state }) {
         data,
       });
 
-      return redirect(COMPANY_ACCOUNT_ITEM_REVISION_LIST_ROUTE_PATH_DYNAMIC, {
-        dynamic: true,
-        params: {
-          companyId: getQuery('companyId'),
-        },
-      });
-
       setRequestPending(false);
       setRequestSuccess(true);
-
-      redirect(COMPANY_ACCOUNT_ITEM_REVISION_LIST_ROUTE_PATH_DYNAMIC, {
-        dynamic: true,
-        params: {
-          companyId: getQuery('companyId'),
-        },
-      });
     } catch (error) {
       if (error) {
         setRequestError(true);
@@ -46,11 +32,11 @@ export function CompanyAccountItemRevisionCreatePriceContainer({ state }) {
       }
     }
   };
-  const companyAccountItemRevisionCreateSendData = () => {
+  const companyAccountItemRevisionCreateSendData = async () => {
     const data = convertCompanyAccountItemRevisionCreatePriceStoreData(
       state.company,
     );
-    createRevision(data);
+    await createRevision(data);
 
     return redirect(COMPANY_ACCOUNT_ITEM_REVISION_LIST_ROUTE_PATH_DYNAMIC, {
       dynamic: true,
