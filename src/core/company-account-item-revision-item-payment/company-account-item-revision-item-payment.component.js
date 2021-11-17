@@ -26,7 +26,7 @@ export function CompanyAccountItemRevisionItemPaymentComponent(props) {
           <Box sx={{ pb: 4 }}>
             <Typography variant="title" gutterBottom component="div">
               {text('COMPANY_ACCOUNT_ITEM_REVISION.REVISION_PAYMENT.TITLE')}{' '}
-              {data.price}
+              {data.additionPrice}
               {text('CURRENCY.RUB')}
             </Typography>
             <Typography variant="subTitle" component="div">

@@ -15,6 +15,7 @@
     "RESULT_OF_CHECKING": " Результат проверки",
     "WE_NOT_COMPILED_RESULT_OF_YOUR_REQUEST": "Мы еще не составили результата вашего запроса",
     "FILES_FOR_DESCRIBING_RESPONSE_RESULT": "Файлы для описания результата ответа",
+    "FILES_FOR_DESCRIBING_REVISION_COMPANY": "Файлы для описания компании",
     "NO_FILES_PROVIDED": "Файлы не предоставлены",
     "REVIEW_STATUS": {
       "VERIFICATION_REQUEST": "Заявка на верификации",
