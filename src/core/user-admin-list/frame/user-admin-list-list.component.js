@@ -8,6 +8,9 @@ import Divider from '@mui/material/Divider';
 import { text } from '../../../lib/common/text';
 import { USER_ADMIN_LIST_DATA_NAME } from '../user-admin-list.constant';
 import Typography from '@mui/material/Typography';
+import { redirect } from '../../../main/navigation';
+import { USER_ADMIN_ITEM_INFO_ROUTE_PATH_DYNAMIC } from '../../user-admin-item-info';
+import { USER_ADMIN_ITEM_INFO_DATA_NAME } from '../../user-admin-item-info/user-admin-item-info.constant';
 
 export const UserAdminListListComponent = ({ list }) => {
   if (!list || list.length === 0) {
@@ -22,7 +25,19 @@ export const UserAdminListListComponent = ({ list }) => {
     <List sx={{ px: 6, pb: 8 }} disablePadding>
       {list.map((items, key) => (
         <React.Fragment>
-          <ListItem key={key} sx={{ py: 3, px: 3 }}>
+          <ListItem
+            key={key}
+            sx={{ py: 3, px: 3 }}
+            onClick={() => {
+              return redirect(USER_ADMIN_ITEM_INFO_ROUTE_PATH_DYNAMIC, {
+                dynamic: true,
+                params: {
+                  userId: items[USER_ADMIN_ITEM_INFO_DATA_NAME.ID],
+                },
+              });
+            }}
+            button
+          >
             <ListItemText
               primary={
                 <span>{`${text('COMMON.USER.ID')}${
