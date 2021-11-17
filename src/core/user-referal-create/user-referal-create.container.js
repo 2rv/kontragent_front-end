@@ -57,7 +57,7 @@ export function UserReferalCreateContainer() {
       isError={isRequestError}
       isSuccess={isRequestSuccess}
       initialValue={getInitialValue()}
-      // validation={userReferalCreateFormValidation}
+      validation={userReferalCreateFormValidation}
       onSubmitForm={UserReferalCreateFormSendData}
       pageLoading={pageLoading}
       errorMessage={getRequestErrorMessage}
