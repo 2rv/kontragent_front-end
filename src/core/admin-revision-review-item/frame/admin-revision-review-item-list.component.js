@@ -14,11 +14,11 @@ export const AdminRevisionReviewItemListComponent = ({ data }) => {
     <Grid container spacing={4} sx={{ pt: 4, px: 8, pb: 8 }}>
       <Grid item>
         <Typography gutterBottom variant="listTitle" component="div">
-          {text('COMPANY_ACCOUNT_ITEM_REVISION.REVISION_ITEM.TITLE')}
+          {text('COMMON.REVISION.CREATE_DATE')}
         </Typography>
 
         <Typography variant="body1">
-          {data[ADMIN_REVISION_REVIEW_ITEM_DATA_NAME.DESCRIPRION]}
+          {data[ADMIN_REVISION_REVIEW_ITEM_DATA_NAME.CREATE_DATE]}
         </Typography>
       </Grid>
 
@@ -37,86 +37,6 @@ export const AdminRevisionReviewItemListComponent = ({ data }) => {
         )}
       </Grid>
 
-      <Grid item>
-        <Typography gutterBottom variant="listTitle" component="div">
-          {text(
-            'COMPANY_ACCOUNT_ITEM_REVISION.REVISION_ITEM.FILES_FOR_REQUEST_DESCRIPTION',
-          )}
-        </Typography>
-
-        {data[ADMIN_REVISION_REVIEW_ITEM_DATA_NAME.FILE_DESCRIPRION] &&
-        data[ADMIN_REVISION_REVIEW_ITEM_DATA_NAME.FILE_DESCRIPRION].length >
-          0 ? (
-          <FileListElement
-            list={data[ADMIN_REVISION_REVIEW_ITEM_DATA_NAME.FILE_DESCRIPRION]}
-          />
-        ) : (
-          <Typography variant="body1">
-            {text('COMPANY_ACCOUNT_ITEM_REVISION.REVISION_ITEM.FILES_IS_EMPTY')}
-          </Typography>
-        )}
-      </Grid>
-
-      <Grid item>
-        <Typography gutterBottom variant="listTitle" component="div">
-          {text('COMPANY_ACCOUNT_ITEM_REVISION.REVISION_ITEM.YEARS')}
-        </Typography>
-
-        {data[ADMIN_REVISION_REVIEW_ITEM_DATA_NAME.YEAR] && (
-          <>
-            {data[ADMIN_REVISION_REVIEW_ITEM_DATA_NAME.YEAR].map((years) => {
-              return (
-                <>
-                  <Typography variant="body1">
-                    {years[ADMIN_REVISION_REVIEW_ITEM_DATA_NAME.NAME]}
-                    {text('COMPANY_ACCOUNT_ITEM_REVISION.REVISION_ITEM.YEAR')}
-                    {years[ADMIN_REVISION_REVIEW_ITEM_DATA_NAME.PERIOD] && (
-                      <>
-                        {years[
-                          ADMIN_REVISION_REVIEW_ITEM_DATA_NAME.PERIOD
-                        ][0] && (
-                          <>
-                            {text(
-                              'COMPANY_ACCOUNT_ITEM_REVISION.REVISION_ITEM.PERIODS.ONE_PERIOD',
-                            )}
-                          </>
-                        )}
-                        {years[
-                          ADMIN_REVISION_REVIEW_ITEM_DATA_NAME.PERIOD
-                        ][1] && (
-                          <>
-                            {text(
-                              'COMPANY_ACCOUNT_ITEM_REVISION.REVISION_ITEM.PERIODS.TWO_PERIOD',
-                            )}
-                          </>
-                        )}
-                        {years[
-                          ADMIN_REVISION_REVIEW_ITEM_DATA_NAME.PERIOD
-                        ][2] && (
-                          <>
-                            {text(
-                              'COMPANY_ACCOUNT_ITEM_REVISION.REVISION_ITEM.PERIODS.THREE_PERIOD',
-                            )}
-                          </>
-                        )}
-                        {years[
-                          ADMIN_REVISION_REVIEW_ITEM_DATA_NAME.PERIOD
-                        ][3] && (
-                          <>
-                            {text(
-                              'COMPANY_ACCOUNT_ITEM_REVISION.REVISION_ITEM.PERIODS.FOUR_PERIOD',
-                            )}
-                          </>
-                        )}
-                      </>
-                    )}
-                  </Typography>
-                </>
-              );
-            })}
-          </>
-        )}
-      </Grid>
       <Grid item>
         <Divider />
       </Grid>

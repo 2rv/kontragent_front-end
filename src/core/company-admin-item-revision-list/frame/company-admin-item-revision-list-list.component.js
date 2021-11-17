@@ -1,5 +1,5 @@
 import React from 'react';
-
+import Typography from '@mui/material/Typography';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
@@ -42,26 +42,34 @@ export const CompanyAdminItemRevisionListListComponent = ({ list }) => {
             sx={{ py: 3, px: 3 }}
           >
             <ListItemText
-              primary={`${text('COMMON.REVISION.TITLE')} ${[
-                item[COMPANY_ADMIN_ITEM_REVISION_LIST_DATA_NAME.TITLE],
-              ]}`}
-              secondary={`
-                ${
-                  [
-                    '',
-                    text('COMMON.REVISION.STATUS_TYPE.NEW'),
-                    text('COMMON.REVISION.STATUS_TYPE.PROGRESS'),
-                    text('COMMON.REVISION.STATUS_TYPE.DONE'),
-                    text('COMMON.REVISION.STATUS_TYPE.PAY'),
-                    text('COMMON.REVISION.STATUS_TYPE.PAID'),
-                  ][item[COMPANY_ADMIN_ITEM_REVISION_LIST_DATA_NAME.STATUS]]
-                },
-                ${text('COMMON.REVISION.PRICE')} ${[
-                item[COMPANY_ADMIN_ITEM_REVISION_LIST_DATA_NAME.PRICE],
-              ]}, ${text('COMMON.REVISION.ID')} ${[
-                item[COMPANY_ADMIN_ITEM_REVISION_LIST_DATA_NAME.ID],
-              ]}
-              `}
+              primary={
+                <span>
+                  {`
+                  ${text('COMMON.REVISION.ID')}
+                      ${item[COMPANY_ADMIN_ITEM_REVISION_LIST_DATA_NAME.ID]}
+                  ${text('COMMON.REVISION.CREATE_DATE')}
+                      ${
+                        item[
+                          COMPANY_ADMIN_ITEM_REVISION_LIST_DATA_NAME.CREATE_DATE
+                        ]
+                      }
+                  `}
+                </span>
+              }
+              secondary={
+                [
+                  '',
+                  text('COMMON.REVISION.STATUS_TYPE.NEW'),
+                  text('COMMON.REVISION.STATUS_TYPE.PROGRESS'),
+                  text('COMMON.REVISION.STATUS_TYPE.DONE'),
+                  <>
+                    <Typography sx={{ color: 'orange' }}>
+                      {text('COMMON.REVISION.STATUS_TYPE.PAY')}
+                    </Typography>
+                  </>,
+                  text('COMMON.REVISION.STATUS_TYPE.PAID'),
+                ][item[COMPANY_ADMIN_ITEM_REVISION_LIST_DATA_NAME.STATUS]]
+              }
             />
           </ListItem>
           {key !== list.length - 1 && <Divider />}

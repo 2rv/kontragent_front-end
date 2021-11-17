@@ -16,4 +16,13 @@ export const ADMIN_REVISION_REVIEW_ITEM_DATA_NAME = {
   YEAR: 'year',
   NAME: 'name',
   PERIOD: 'period',
+  CREATE_DATE: 'createDate',
+  COMPANY: 'company',
+  COMPANY_ID: 'id',
+  COMPANY_NAME: 'name',
+  COMPANY_INN: 'inn',
+  CREATOR: 'creator',
+  CREATOR_LOGIN: 'login',
+  CREATOR_FIRSTNAME: 'firstname',
+  CREATOR_LASTNAME: 'lastname',
 };
