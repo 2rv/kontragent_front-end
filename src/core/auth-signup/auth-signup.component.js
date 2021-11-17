@@ -95,9 +95,11 @@ export function AuthSignupComponent(props) {
               </Typography>
             </div>
           </Box>
-          <Divider />
           <Box sx={{ pt: 4 }}>
             <div>
+              <Typography>
+                {text('AUTH.SIGNUP.TERMS_OF_THE_OFFER_CONDITIONS')}
+              </Typography>
               <Typography variant="subtext" component="div">
                 {text('AUTH.SIGNUP.TERMS_OF_THE_OFFER')}{' '}
                 <Link

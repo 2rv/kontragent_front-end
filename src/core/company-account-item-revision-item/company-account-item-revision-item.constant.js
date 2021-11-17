@@ -10,10 +10,11 @@ export const COMPANY_ACCOUNT_ITEM_REVISION_ITEM_ROUTE_PATH_DYNAMIC = (
 export const COMPANY_ACCOUNT_ITEM_REVISION_ITEM_DATA_NAME = {
   DESCRIPRION: 'description',
   FILE_DESCRIPRION: 'fileDescription',
+  CREATE_DATE: 'createDate',
   REVIEW: 'review',
   FILE_REVIEW: 'fileReview',
   STATUS: 'status',
-  PRICE: 'price',
+  PRICE: 'additionPrice',
   NAME: 'name',
   REVISION_COMPANIES: 'revisionCompanies',
 };

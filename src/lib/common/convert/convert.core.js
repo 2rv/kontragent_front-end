@@ -16,5 +16,5 @@ export function convertReferalAchievementStatus(status) {
 }
 
 export function convertFormatDate(timestamp) {
-  return new Date(timestamp).toLocaleDateString();
+  return new Date(timestamp).toLocaleString();
 }
