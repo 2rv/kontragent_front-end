@@ -31,6 +31,12 @@ export function CompanyAccountItemInfoVerificateContainer() {
 
   React.useEffect(() => {
     companyAdminItemInfoVerificationGetStatus();
+
+    return function cleanup() {
+      dispatch({
+        type: COMPANY_ADMIN_ITEM_INFO_VERIFICATE_ACTION_TYPE.CLEANUP,
+      });
+    };
   }, []);
 
   const companyAdminItemInfoVerificationVerificate = async (dispatch) => {

@@ -81,3 +81,9 @@ export function verificationPhoneFormGetCode() {
     }
   };
 }
+
+export function cleanupStore() {
+  return {
+    type: AUTH_VERIFICATION_PHONE_ACTION_TYPE.FORM_CLEANUP,
+  };
+}

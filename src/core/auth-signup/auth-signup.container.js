@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import { AuthSignupComponent } from './auth-signup.component';
 
@@ -8,7 +8,7 @@ import { authSignupFormValidation } from './auth-signup.validation';
 
 import { convertAuthSignupFormData } from './auth-signup.convert';
 
-import { uploadAuthSignupForm } from './auth-signup.action';
+import { uploadAuthSignupForm, cleanupStore } from './auth-signup.action';
 
 import {
   AUTH_SIGNUP_STORE_NAME,
@@ -47,6 +47,12 @@ export function AuthSignupContainer() {
       [AUTH_SIGNUP_DATA_NAME.PHONE]: '',
     };
   };
+
+  useEffect(() => {
+    return function cleanup() {
+      dispatch(cleanupStore());
+    };
+  }, []);
 
   return (
     <AuthSignupComponent

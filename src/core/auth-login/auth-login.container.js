@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import { AuthLoginComponent } from './auth-login.component';
 
@@ -11,7 +11,9 @@ import {
   AUTH_LOGIN_STORE_NAME,
 } from './auth-login.constant';
 
-import { uploadAuthLoginForm } from './auth-login.action';
+import { uploadAuthLoginForm, cleanupStore } from './auth-login.action';
+
+import { AUTH_LOGIN_ACTION_TYPE } from './auth-login.constant';
 
 import { convertAuthLoginFormData } from './auth-login.convert';
 
@@ -42,6 +44,12 @@ export function AuthLoginContainer() {
       [AUTH_LOGIN_DATA_NAME.PASSWORD]: '',
     };
   };
+
+  useEffect(() => {
+    return function cleanup() {
+      dispatch(cleanupStore());
+    };
+  }, []);
 
   return (
     <AuthLoginComponent

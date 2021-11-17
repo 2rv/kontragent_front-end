@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import { CompanyAccountItemMemberAddComponent } from './company-account-item-member-add.component';
 
@@ -11,7 +11,10 @@ import {
   COMPANY_ACCOUNT_ITEM_MEMBER_ADD_DATA_NAME,
 } from './company-account-item-member-add.constant';
 import { NAVIGATION_STORE_NAME } from '../../lib/common/navigation/navigation.constant';
-import { CompanyAccountItemMemberAdd } from './company-account-item-member-add.action';
+import {
+  CompanyAccountItemMemberAdd,
+  cleanupStore,
+} from './company-account-item-member-add.action';
 import {
   getRequestErrorMessage,
   isRequestError,
@@ -35,6 +38,12 @@ export function CompanyAccountItemMemberAddContainer() {
       [COMPANY_ACCOUNT_ITEM_MEMBER_ADD_DATA_NAME.ID]: 0,
     };
   };
+
+  useEffect(() => {
+    return function cleanup() {
+      dispatch(cleanupStore());
+    };
+  }, []);
 
   return (
     <CompanyAccountItemMemberAddComponent

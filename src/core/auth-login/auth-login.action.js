@@ -34,3 +34,9 @@ export function uploadAuthLoginForm(data) {
     }
   };
 }
+
+export function cleanupStore() {
+  return {
+    type: AUTH_LOGIN_ACTION_TYPE.FORM_CLEANUP,
+  };
+}

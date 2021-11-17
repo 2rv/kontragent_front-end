@@ -19,7 +19,7 @@ export const CompanyAccountItemRevisionCreateCompanyListListComponent = ({
   return (
     <Grid rowSpacing={4} container>
       {companies.map((company, companyId) => (
-        <Grid item>
+        <Grid item key={companyId}>
           <Box>
             <Paper>
               <Box>
