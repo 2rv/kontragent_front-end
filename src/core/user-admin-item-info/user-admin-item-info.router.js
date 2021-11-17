@@ -6,10 +6,10 @@ import {
   authRedirectVerification,
 } from '../../lib/common/auth';
 
-import { USER_ADMIN_ITEM_ROUTE_PATH } from './user-admin-item.constant';
+import { USER_ADMIN_ITEM_INFO_ROUTE_PATH } from './user-admin-item-info.constant';
 
-export function UserAdminItemRouter(ctx) {
-  ctx.store.dispatch(setActivePath(USER_ADMIN_ITEM_ROUTE_PATH));
+export function UserAdminItemInfoRouter(ctx) {
+  ctx.store.dispatch(setActivePath(USER_ADMIN_ITEM_INFO_ROUTE_PATH));
   authRedirectPrivated(ctx, '/');
   authRedirectVerification(ctx);
   authRedirectNotAdmin(ctx);

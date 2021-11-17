@@ -50,7 +50,7 @@ export const UserAdminListListComponent = ({ list }) => {
                 
             `}{' '}
                   <>
-                    {items[USER_ADMIN_LIST_DATA_NAME.ROLE] === 0 ? (
+                    {items[USER_ADMIN_LIST_DATA_NAME.ROLE] === 0 && (
                       <>
                         {text('COMMON.USER.ROLE')}
                         <Typography
@@ -62,8 +62,21 @@ export const UserAdminListListComponent = ({ list }) => {
                           {text('COMMON.USER.USER_ROLE.BLOCKED')}
                         </Typography>
                       </>
-                    ) : (
-                      ''
+                    )}
+                  </>
+                  <>
+                    {items[USER_ADMIN_LIST_DATA_NAME.ROLE] === 2 && (
+                      <>
+                        {text('COMMON.USER.ROLE')}
+                        <Typography
+                          sx={{
+                            color: '#00cc66',
+                          }}
+                          variant="listContent"
+                        >
+                          {text('COMMON.USER.USER_ROLE.ADMIN')}
+                        </Typography>
+                      </>
                     )}
                   </>
                   <>

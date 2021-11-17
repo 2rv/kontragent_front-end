@@ -6,7 +6,6 @@ import Box from '@mui/material/Box';
 import Alert from '@mui/material/Alert';
 
 import { text } from '../../lib/common/text';
-
 import { SkeletonListComponent } from '../../lib/common/skeleton/skeleton-list.component';
 
 import { UserAdminItemInfoListComponent } from './frame/user-admin-item-info-list.component';

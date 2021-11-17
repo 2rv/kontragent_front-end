@@ -25,7 +25,8 @@ import REVISION_ADMIN_LIST from './revision-admin-list.json';
 import USER_ADMIN_LIST from './user-admin-list.json';
 import USER_REFERAL from './user-referal.json';
 import ACCOUNT_REFERAL from './account-referal.json';
-import ADMIN_REVISION_REVIEW from './admin-revision-review.json'
+import ADMIN_REVISION_REVIEW from './admin-revision-review.json';
+import USER_ADMIN_ROLE from './user-admin-role.json';
 
 export const RU = {
   translation: {
@@ -55,6 +56,7 @@ export const RU = {
     REVISION_ADMIN_LIST,
     USER_ADMIN_LIST,
     USER_REFERAL,
-    ADMIN_REVISION_REVIEW
+    ADMIN_REVISION_REVIEW,
+    USER_ADMIN_ROLE,
   },
 };
