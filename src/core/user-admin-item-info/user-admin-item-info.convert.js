@@ -1,6 +1,7 @@
 import { USER_ADMIN_ITEM_INFO_DATA_NAME } from './user-admin-item-info.constant';
 
 export const performUserAdminItemInfoData = (row) => ({
+  [USER_ADMIN_ITEM_INFO_DATA_NAME.ID]: row[USER_ADMIN_ITEM_INFO_DATA_NAME.ID],
   [USER_ADMIN_ITEM_INFO_DATA_NAME.LOGIN]:
     row[USER_ADMIN_ITEM_INFO_DATA_NAME.LOGIN],
   [USER_ADMIN_ITEM_INFO_DATA_NAME.FIRST_NAME]:
