@@ -1,4 +1,5 @@
 import { COMPANY_ACCOUNT_ITEM_REVISION_LIST_DATA_NAME } from './company-account-item-revision-list.constant';
+import { convertFormatDate } from '../../lib/common/convert/convert.core';
 
 export const performCompanyAccountItemRevisionListData = (row) => {
   return row[COMPANY_ACCOUNT_ITEM_REVISION_LIST_DATA_NAME.LIST].map(
@@ -9,6 +10,10 @@ export const performCompanyAccountItemRevisionListData = (row) => {
         revision[COMPANY_ACCOUNT_ITEM_REVISION_LIST_DATA_NAME.TITLE],
       [COMPANY_ACCOUNT_ITEM_REVISION_LIST_DATA_NAME.STATUS]:
         revision[COMPANY_ACCOUNT_ITEM_REVISION_LIST_DATA_NAME.STATUS],
+      [COMPANY_ACCOUNT_ITEM_REVISION_LIST_DATA_NAME.CREATE_DATE]:
+        convertFormatDate(
+          revision[COMPANY_ACCOUNT_ITEM_REVISION_LIST_DATA_NAME.CREATE_DATE],
+        ),
     }),
   );
 };

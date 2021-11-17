@@ -12,7 +12,7 @@ export const ADMIN_REVISION_REVIEW_ITEM_DATA_NAME = {
   REVIEW: 'review',
   FILE_REVIEW: 'fileReview',
   STATUS: 'status',
-  PRICE: 'price',
+  PRICE: 'additionPrice',
   YEAR: 'year',
   NAME: 'name',
   PERIOD: 'period',
