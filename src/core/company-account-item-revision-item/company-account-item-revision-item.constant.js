@@ -14,4 +14,6 @@ export const COMPANY_ACCOUNT_ITEM_REVISION_ITEM_DATA_NAME = {
   FILE_REVIEW: 'fileReview',
   STATUS: 'status',
   PRICE: 'price',
+  NAME: 'name',
+  REVISION_COMPANIES: 'revisionCompanies',
 };

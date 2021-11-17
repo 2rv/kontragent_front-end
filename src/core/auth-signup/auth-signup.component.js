@@ -6,6 +6,7 @@ import Link from '@mui/material/Link';
 import Alert from '@mui/material/Alert';
 import LinearProgress from '@mui/material/LinearProgress';
 
+
 import { redirect } from '../../main/navigation/navigation.core';
 
 import { Formik } from 'formik';
@@ -71,7 +72,7 @@ export function AuthSignupComponent(props) {
               <Typography variant="subtext" component="div">
                 {text('AUTH.SIGNUP.ALREADY_REGISTERED')}{' '}
                 <Link
-                  component="button"
+                  component="a"
                   variant="body2"
                   onClick={() => {
                     redirect(AUTH_LOGIN_ROUTE_PATH);
@@ -83,13 +84,40 @@ export function AuthSignupComponent(props) {
               <Typography variant="subtext" component="div">
                 {text('AUTH.SIGNUP.FORGOT_PASSWORD')}{' '}
                 <Link
-                  component="button"
+                  component="a"
                   variant="body2"
                   onClick={() => {
                     redirect(AUTH_RECOVERY_ACCOUNT_ROUTE_PATH);
                   }}
                 >
                   {text('AUTH.SIGNUP.RESTORE_ACCESS')}
+                </Link>
+              </Typography>
+            </div>
+          </Box>
+          <Divider />
+          <Box sx={{ pt: 4 }}>
+            <div>
+              <Typography variant="subtext" component="div">
+                {text('AUTH.SIGNUP.TERMS_OF_THE_OFFER')}{' '}
+                <Link
+                  component="a"
+                  variant="body2"
+                  target="_blank"
+                  href="/static/pdf/blank.pdf"
+                >
+                  {text('AUTH.SIGNUP.READ')}
+                </Link>
+              </Typography>
+              <Typography variant="subtext" component="div">
+                {text('AUTH.SIGNUP.USER_AGREEMENT')}{' '}
+                <Link
+                  component="a"
+                  variant="body2"
+                  target="_blank"
+                  href="/static/pdf/blank.pdf"
+                >
+                  {text('AUTH.SIGNUP.READ')}
                 </Link>
               </Typography>
             </div>
