@@ -7,6 +7,7 @@ import { COMPANY_ACCOUNT_ITEM_REVISION_ITEM_DATA_NAME } from '../company-account
 import { text } from '../../../lib/common/text';
 import Divider from '@mui/material/Divider';
 import { FileListElement } from '../../../lib/element/file-list.element';
+import React from 'react';
 
 export const CompanyAccountItemRevisionItemAccordionComponent = ({ data }) => {
   console.log(data[
@@ -23,36 +24,40 @@ export const CompanyAccountItemRevisionItemAccordionComponent = ({ data }) => {
             aria-controls="panel1a-content"
             id="panel1a-header"
           >
-            <Typography>{company.name} {company.inn}</Typography>
+            <Typography>Название компании: {company.name} ИНН: {company.inn}</Typography>
           </AccordionSummary>
           <AccordionDetails>
-            {company.year.map((year) => {
-              return (
-                <Typography>
-                  {year.year} ({year.firstPeriod ?
-                    text(
-                      'COMPANY_ACCOUNT_ITEM_REVISION.REVISION_ITEM.PERIODS.ONE_PERIOD',
-                    ) : null} {year.secondPeriod ?
+            <Typography>
+              {company.year.map((year) => {
+                return (
+                  <React.Fragment>
+                    Год: {year.year} (Период проверки: {year.firstPeriod ?
                       text(
-                        'COMPANY_ACCOUNT_ITEM_REVISION.REVISION_ITEM.PERIODS.TWO_PERIOD',
-                      ) : null} {year.thirdPeriod ?
+                        'COMPANY_ACCOUNT_ITEM_REVISION.REVISION_ITEM.PERIODS.ONE_PERIOD',
+                      ) : null} {year.secondPeriod ?
                         text(
-                          'COMPANY_ACCOUNT_ITEM_REVISION.REVISION_ITEM.PERIODS.THREE_PERIOD',
-                        ) : null} {year.fourthPeriod ?
+                          'COMPANY_ACCOUNT_ITEM_REVISION.REVISION_ITEM.PERIODS.TWO_PERIOD',
+                        ) : null} {year.thirdPeriod ?
                           text(
-                            'COMPANY_ACCOUNT_ITEM_REVISION.REVISION_ITEM.PERIODS.FOUR_PERIOD',
-                          ) : null}
-                  )
-
-                </Typography>
-              )
-            })}
+                            'COMPANY_ACCOUNT_ITEM_REVISION.REVISION_ITEM.PERIODS.THREE_PERIOD',
+                          ) : null} {year.fourthPeriod ?
+                            text(
+                              'COMPANY_ACCOUNT_ITEM_REVISION.REVISION_ITEM.PERIODS.FOUR_PERIOD',
+                            ) : null}
+                    )
+                    ,
+                  </React.Fragment>
+                )
+              })}
+            </Typography>
+            <Typography>Описание: </Typography>
             <Typography>{company.description}</Typography>
             <Typography gutterBottom variant="listTitle" component="div">
               {text(
-                'COMPANY_ACCOUNT_ITEM_REVISION.REVISION_ITEM.FILES_FOR_DESCRIBING_RESPONSE_RESULT',
+                'COMPANY_ACCOUNT_ITEM_REVISION.REVISION_ITEM.FILES_FOR_DESCRIBING_REVISION_COMPANY',
               )}
             </Typography>
+
             {company.fileDescription ? (
               <FileListElement
                 list={
