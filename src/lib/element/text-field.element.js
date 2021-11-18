@@ -10,6 +10,7 @@ export const TextFieldElement = ({
   error,
   label,
   storeOnChange,
+  inputProps,
   ...props
 }) => {
   const dispatch = useDispatch();
@@ -26,7 +27,12 @@ export const TextFieldElement = ({
         </Grid>
       )}
       <Grid item>
-        <TextField {...props} error={error} onChange={(e) => handleChange(e)} />
+        <TextField
+          inputProps={{ ...inputProps }}
+          {...props}
+          error={error}
+          onChange={(e) => handleChange(e)}
+        />
       </Grid>
       {error && (
         <Grid item>
