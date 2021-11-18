@@ -15,7 +15,7 @@ export function AdminRevisionReviewItemContainer() {
     getAdminRevisionReviewItemInfo();
   }, []);
 
-  const getAdminRevisionReviewItemInfo = async (data) => {
+  const getAdminRevisionReviewItemInfo = async () => {
     setRequestPending(true);
     setRequestSuccess(false);
     setRequestError(false);
@@ -31,8 +31,8 @@ export function AdminRevisionReviewItemContainer() {
       const data = performAdminRevisionReviewItemData(res.data);
 
       setRequestPending(false);
-      setRequestSuccess(true);
       setData(data);
+      setRequestSuccess(true);
     } catch (error) {
       if (error.response) {
         setRequestError(true);

@@ -25,4 +25,5 @@ export const ADMIN_REVISION_REVIEW_ITEM_DATA_NAME = {
   CREATOR_LOGIN: 'login',
   CREATOR_FIRSTNAME: 'firstname',
   CREATOR_LASTNAME: 'lastname',
+  REVISION_COMPANIES: 'revisionCompanies',
 };
