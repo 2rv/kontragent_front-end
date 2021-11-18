@@ -13,6 +13,7 @@ import { text } from '../../lib/common/text';
 import { ReviewStatus } from '../company-account-item-revision-item/frames/review-status.component';
 import { AdminRevisionReviewItemCompanyComponent } from './frame/admin-revision-review-item-company.component';
 import { AdminRevisionReviewItemCreatorComponent } from './frame/admin-revision-review-item-creator.component';
+import { AdminRevisionReviewItemAccordionComponent } from './frame/admin-revision-review-item-accordion.component';
 
 export function AdminRevisionReviewItemComponent({
   data,
@@ -21,6 +22,8 @@ export function AdminRevisionReviewItemComponent({
   isSuccess,
   errorMessage,
 }) {
+  console.log(JSON.stringify(data));
+
   return (
     <React.Fragment>
       <Grid spacing={6} container>
@@ -41,6 +44,28 @@ export function AdminRevisionReviewItemComponent({
 
               {isSuccess && (
                 <AdminRevisionReviewItemListComponent data={data} />
+              )}
+              {isPending && (
+                <Box sx={{ pt: 4, px: 8, pb: 8 }}>
+                  <SkeletonListComponent text={true} />
+                </Box>
+              )}
+              {isError && (
+                <Box sx={{ pt: 4, px: 8, pb: 8 }}>
+                  <Alert severity="error">
+                    {text(`ERROR.${errorMessage}`)}
+                  </Alert>
+                </Box>
+              )}
+            </Box>
+          </Paper>
+        </Grid>
+
+        <Grid item>
+          <Paper sx={{ p: 0 }}>
+            <Box>
+              {isSuccess && (
+                <AdminRevisionReviewItemAccordionComponent data={data} />
               )}
               {isPending && (
                 <Box sx={{ pt: 4, px: 8, pb: 8 }}>
