@@ -24,14 +24,14 @@ export const CompanyAccountItemRevisionItemAccordionComponent = ({ data }) => {
             aria-controls="panel1a-content"
             id="panel1a-header"
           >
-            <Typography>Название компании: {company.name} ИНН: {company.inn}</Typography>
+            <Typography>{text('COMPANY_ACCOUNT_ITEM_REVISION.REVISION_ITEM.COMPANY_NAME')} {company.name} {text('COMPANY_ACCOUNT_ITEM_REVISION.REVISION_ITEM.INN')} {company.inn}</Typography>
           </AccordionSummary>
           <AccordionDetails>
             <Typography>
               {company.year.map((year) => {
                 return (
                   <React.Fragment>
-                    Год: {year.year} (Период проверки: {year.firstPeriod ?
+                    Год: {year.year} ({text('COMPANY_ACCOUNT_ITEM_REVISION.REVISION_ITEM.REVISION_PERIOD')} {year.firstPeriod ?
                       text(
                         'COMPANY_ACCOUNT_ITEM_REVISION.REVISION_ITEM.PERIODS.ONE_PERIOD',
                       ) : null} {year.secondPeriod ?
@@ -50,7 +50,7 @@ export const CompanyAccountItemRevisionItemAccordionComponent = ({ data }) => {
                 )
               })}
             </Typography>
-            <Typography>Описание: </Typography>
+            <Typography>{text('COMPANY_ACCOUNT_ITEM_REVISION.REVISION_ITEM.DESCRIPTION')} </Typography>
             <Typography>{company.description}</Typography>
             <Typography gutterBottom variant="listTitle" component="div">
               {text(
