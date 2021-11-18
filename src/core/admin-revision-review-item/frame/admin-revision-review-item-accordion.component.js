@@ -10,8 +10,6 @@ import { ADMIN_REVISION_REVIEW_ITEM_DATA_NAME } from '../admin-revision-review-i
 import Divider from '@mui/material/Divider';
 
 export const AdminRevisionReviewItemAccordionComponent = ({ data }) => {
-  console.log(data[ADMIN_REVISION_REVIEW_ITEM_DATA_NAME.REVISION_COMPANIES]);
-
   return data[ADMIN_REVISION_REVIEW_ITEM_DATA_NAME.REVISION_COMPANIES].map(
     (company) => (
       <div>

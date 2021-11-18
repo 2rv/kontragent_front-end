@@ -22,8 +22,6 @@ export function AdminRevisionReviewItemComponent({
   isSuccess,
   errorMessage,
 }) {
-  console.log(JSON.stringify(data));
-
   return (
     <React.Fragment>
       <Grid spacing={6} container>

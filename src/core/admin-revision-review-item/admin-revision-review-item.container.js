@@ -31,8 +31,8 @@ export function AdminRevisionReviewItemContainer() {
       const data = performAdminRevisionReviewItemData(res.data);
 
       setRequestPending(false);
-      setRequestSuccess(true);
       setData(data);
+      setRequestSuccess(true);
     } catch (error) {
       if (error.response) {
         setRequestError(true);
