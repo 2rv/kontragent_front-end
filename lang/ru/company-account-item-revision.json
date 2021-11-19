@@ -11,6 +11,10 @@
       "THREE_PERIOD": " 3 квартал ",
       "FOUR_PERIOD": " 4 квартал "
     },
+    "COMPANY_NAME": "Название компании: ",
+    "INN": "ИНН",
+    "DESCRIPTION": "Описание: ",
+    "REVISION_PERIOD": "Период проверки: ",
     "FILES_IS_EMPTY": "Файлы не предоставлены",
     "RESULT_OF_CHECKING": " Результат проверки",
     "WE_NOT_COMPILED_RESULT_OF_YOUR_REQUEST": "Мы еще не составили результата вашего запроса",
