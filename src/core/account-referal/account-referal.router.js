@@ -5,5 +5,7 @@ import { ACCOUNT_REFERAL_ROUTE_PATH } from './account-referal.constant';
 export function AccountReferalRouter(ctx) {
   ctx.store.dispatch(setActivePath(ACCOUNT_REFERAL_ROUTE_PATH));
   authRedirectPrivated(ctx, '/');
-  authRedirectAdmin(ctx, '/')
+  if (authRedirectPrivated(ctx, '/')) return;
+  authRedirectAdmin(ctx, '/');
+  if (authRedirectAdmin(ctx, '/')) return;
 }

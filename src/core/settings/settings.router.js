@@ -8,5 +8,7 @@ import { SETTINGS_ROUTE_PATH } from './settings.constant';
 export function SettingsRouter(ctx) {
   ctx.store.dispatch(setActivePath(SETTINGS_ROUTE_PATH));
   authRedirectPrivated(ctx, '/');
+  if (authRedirectPrivated(ctx, '/')) return;
   authRedirectVerification(ctx);
+  if (authRedirectVerification(ctx)) return;
 }

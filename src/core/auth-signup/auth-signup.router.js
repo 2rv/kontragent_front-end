@@ -4,4 +4,5 @@ import { AUTH_SIGNUP_ROUTE_PATH } from './auth-signup.constant';
 export function AuthSignupRouter(ctx) {
   ctx.store.dispatch(setActivePath(AUTH_SIGNUP_ROUTE_PATH));
   authRedirectLogged(ctx, '/');
+  if (authRedirectLogged(ctx, '/')) return;
 }

@@ -10,7 +10,13 @@ import { USER_ADMIN_ITEM_INFO_ROUTE_PATH } from './user-admin-item-info.constant
 
 export function UserAdminItemInfoRouter(ctx) {
   ctx.store.dispatch(setActivePath(USER_ADMIN_ITEM_INFO_ROUTE_PATH));
+
   authRedirectPrivated(ctx, '/');
+  if (authRedirectPrivated(ctx, '/')) return;
+
   authRedirectVerification(ctx);
+  if (authRedirectVerification(ctx)) return;
+
   authRedirectNotAdmin(ctx);
+  if (authRedirectNotAdmin(ctx)) return;
 }
