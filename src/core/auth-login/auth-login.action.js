@@ -19,11 +19,10 @@ export function uploadAuthLoginForm(data) {
       });
       dispatch(authSetData(res.data.accessToken));
 
-      redirect('/').then(() => {
-        dispatch({
-          type: AUTH_LOGIN_ACTION_TYPE.FORM_SUCCESS,
-        });
+      dispatch({
+        type: AUTH_LOGIN_ACTION_TYPE.FORM_SUCCESS,
       });
+      redirect('/');
     } catch (error) {
       if (error) {
         dispatch({
