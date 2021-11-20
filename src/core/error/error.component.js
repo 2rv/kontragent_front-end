@@ -1,12 +1,9 @@
-import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
 import Button from '@mui/material/Button';
 import { text } from '../../lib/common/text';
 import { redirect } from '../../main/navigation/navigation.core';
 import { COMPANY_ACCOUNT_LIST_ROUTE_PATH } from '../company-account-list';
-import { NavigationComponent } from '../navigation/navigation.component';
-import { maxWidth } from '@mui/system';
 
 export function ErrorComponent() {
   return (
