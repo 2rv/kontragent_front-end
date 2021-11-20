@@ -6,13 +6,16 @@ export const components = {
         p: 8,
       },
       variant: 'elevation',
-      elevation: 0,
+      elevation: 24,
       width: '100%',
     },
     styleOverrides: {
       root: {},
       outlined: {
         borderColor: 'transparent',
+      },
+      elevation24: {
+        boxShadow: '0px 15px 75px rgba(0, 0, 0, 0.1)',
       },
     },
   },
@@ -101,10 +104,21 @@ export const components = {
         props: { variant: 'grey', color: 'black' },
         style: {
           '&:hover': {
-            backgroundColor: palette.grey[10],
+            backgroundColor: palette.grey[100],
             opacity: 0.9,
           },
           backgroundColor: palette.grey[10],
+          color: palette.primaryDark[900],
+        },
+      },
+      {
+        props: { variant: 'grey', color: 'black1' },
+        style: {
+          '&:hover': {
+            backgroundColor: palette.grey[500],
+            opacity: 0.9,
+          },
+          backgroundColor: palette.grey[300],
           color: palette.primaryDark[900],
         },
       },

@@ -50,19 +50,6 @@ export const CompanyAccountItemRevisionCreateCompanyInfoFormComponent = (
   return (
     <form>
       <Grid rowSpacing={4} container>
-        <Grid item sx={{ pb: 4 }}>
-          <Typography sx={{ pb: 1 }} variant="title" component="div">
-            {text(
-              'COMPANY_ACCOUNT_ITEM_REVISION_CREATE.REVISON_CREATE_COMPANY_INFO.TITLE',
-            )}
-          </Typography>
-          <Typography variant="subTitle" component="div">
-            {text(
-              'COMPANY_ACCOUNT_ITEM_REVISION_CREATE.REVISON_CREATE_COMPANY_INFO.SUBTITLE',
-            )}
-          </Typography>
-        </Grid>
-        <Divider />
         <Grid item>
           <Grid
             spacing={3}
@@ -113,6 +100,7 @@ export const CompanyAccountItemRevisionCreateCompanyInfoFormComponent = (
                 name={
                   COMPANY_ACCOUNT_ITEM_REVISION_CREATE_COMPANY_INFO_FIELD_NAME.INN
                 }
+                type={'number'}
                 onChange={handleChange}
                 storeOnChange={companyAccountItemRevisionChangeCompanyINN}
                 onBlur={handleBlur}

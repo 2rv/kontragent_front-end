@@ -1,9 +1,6 @@
 import React from 'react';
 
-import Paper from '@mui/material/Paper';
-import Box from '@mui/material/Box';
-import Alert from '@mui/material/Alert';
-import Grid from '@mui/material/Grid';
+import { Divider, Grid, Alert, Box, Paper, Typography } from '@mui/material';
 
 import { text } from '../../../lib/common/text';
 
@@ -17,11 +14,24 @@ export const CompanyAccountItemRevisionCreateCompanyListListComponent = ({
   }
 
   return (
-    <Grid rowSpacing={4} container>
-      {companies.map((company, companyId) => (
-        <Grid item key={companyId}>
-          <Box>
-            <Paper>
+    <Paper>
+      <Grid rowSpacing={4} container>
+        <Grid item sx={{ pb: 4 }}>
+          <Typography sx={{ pb: 3 }} variant="title" component="div">
+            {text(
+              'COMPANY_ACCOUNT_ITEM_REVISION_CREATE.REVISON_CREATE_COMPANY_INFO.TITLE',
+            )}
+          </Typography>
+          <Typography variant="subTitle" component="div">
+            {text(
+              'COMPANY_ACCOUNT_ITEM_REVISION_CREATE.REVISON_CREATE_COMPANY_INFO.SUBTITLE',
+            )}
+          </Typography>
+        </Grid>
+        <Divider />
+        {companies.map((company, companyId) => (
+          <Grid item key={companyId}>
+            <Box>
               <Box>
                 <CompanyAccountItemRevisionCreateCompanyItemContainer
                   company={company}
@@ -29,10 +39,10 @@ export const CompanyAccountItemRevisionCreateCompanyListListComponent = ({
                   last={companies.length === 1}
                 />
               </Box>
-            </Paper>
-          </Box>
-        </Grid>
-      ))}
-    </Grid>
+            </Box>
+          </Grid>
+        ))}
+      </Grid>
+    </Paper>
   );
 };

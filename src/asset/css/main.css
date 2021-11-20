@@ -505,7 +505,7 @@ html {
 .default.text,
 input::placeholder,
 textarea::placeholder {
-  color: rgba(0, 0, 0, 0.8) !important;
+  color: rgba(0, 0, 0, 0.9) !important;
   opacity: 1;
 }
 a:hover {
@@ -534,7 +534,7 @@ img {
 }
 
 body {
-  background: #f3f3f3 !important
+  background: #f3f3f3 !important;
 }
 
 .MuiPaper-elevation8 {
