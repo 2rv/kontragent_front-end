@@ -59,6 +59,11 @@ export function UserAdminRoleComponent(props) {
               <LinearProgress />
             </Box>
           )}
+          {isError && (
+            <Box sx={{ pt: 4 }}>
+              <Alert severity="error">{text(`ERROR.${errorMessage}`)}</Alert>
+            </Box>
+          )}
         </Box>
       </Paper>
     </Box>
