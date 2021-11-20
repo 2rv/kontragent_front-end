@@ -6,13 +6,16 @@ export const components = {
         p: 8,
       },
       variant: 'elevation',
-      elevation: 0,
+      elevation: 24,
       width: '100%',
     },
     styleOverrides: {
       root: {},
       outlined: {
         borderColor: 'transparent',
+      },
+      elevation24: {
+        boxShadow: '0px 15px 75px rgba(0, 0, 0, 0.1)',
       },
     },
   },
