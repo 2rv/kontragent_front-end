@@ -4,5 +4,7 @@ import { AUTH_VERIFICATION_PHONE_ROUTE_PATH } from './auth-verification-phone.co
 export function AuthVerificationPhoneRouter(ctx) {
   ctx.store.dispatch(setActivePath(AUTH_VERIFICATION_PHONE_ROUTE_PATH));
   authRedirectPrivated(ctx, '/');
+  if (authRedirectPrivated(ctx, '/')) return;
   authVerificated(ctx, '/');
+  if (authVerificated(ctx, '/')) return;
 }

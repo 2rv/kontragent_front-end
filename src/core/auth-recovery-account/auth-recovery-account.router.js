@@ -4,4 +4,5 @@ import { AUTH_RECOVERY_ACCOUNT_ROUTE_PATH } from './auth-recovery-account.consta
 export function AuthRecoveryAccountRouter(ctx) {
   ctx.store.dispatch(setActivePath(AUTH_RECOVERY_ACCOUNT_ROUTE_PATH));
   authRedirectLogged(ctx, '/');
+  if (authRedirectLogged(ctx, '/')) return;
 }

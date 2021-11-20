@@ -17,7 +17,9 @@ export const authRedirectLogged = (ctx: any, pathToRedirect: string) => {
     } else {
       redirect(pathToRedirect);
     }
+    return true
   }
+  return false
 };
 
 export const authVerificated = (ctx: any, pathToRedirect: string) => {
@@ -34,7 +36,9 @@ export const authVerificated = (ctx: any, pathToRedirect: string) => {
     } else {
       redirect(pathToRedirect);
     }
+    return true
   }
+  return false
 };
 
 export const authRedirectPrivated = (ctx: any, pathToRedirect: string) => {
@@ -51,7 +55,9 @@ export const authRedirectPrivated = (ctx: any, pathToRedirect: string) => {
     } else {
       redirect(pathToRedirect);
     }
+    return true
   }
+  return false
 };
 
 export const authRedirectVerification = (ctx: any) => {
@@ -81,7 +87,9 @@ export const authRedirectVerification = (ctx: any) => {
         return redirect(AUTH_VERIFICATION_PHONE_ROUTE_PATH);
       }
     }
+    return true
   }
+  return false
 };
 
 export const authRedirectNotAdmin = (ctx: any, pathToRedirect: string) => {
@@ -100,7 +108,9 @@ export const authRedirectNotAdmin = (ctx: any, pathToRedirect: string) => {
         redirect(pathToRedirect);
       }
     }
+    return true
   }
+  return false
 };
 
 export const authRedirectAdmin = (ctx: any, pathToRedirect: string) => {
@@ -118,5 +128,7 @@ export const authRedirectAdmin = (ctx: any, pathToRedirect: string) => {
         redirect(pathToRedirect);
       }
     }
+    return true
   }
+  return false
 };

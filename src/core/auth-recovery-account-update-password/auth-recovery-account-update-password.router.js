@@ -6,4 +6,5 @@ export function AuthRecoveryAccountUpdatePasswordRouter(ctx) {
     setActivePath(AUTH_RECOVERY_ACCOUNT_UPDATE_PASSWORD_ROUTE_PATH),
   );
   authRedirectLogged(ctx, '/');
+  if (authRedirectLogged(ctx, '/')) return;
 }

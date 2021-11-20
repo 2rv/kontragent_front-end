@@ -10,7 +10,8 @@ import Alert from '@mui/material/Alert';
 import { redirect } from '../../../main/navigation';
 
 import { text } from '../../../lib/common/text';
-
+import { ADMIN_REVISION_REVIEW_ITEM_DATA_NAME } from '../../admin-revision-review-item/admin-revision-review-item.constant';
+import { COMPANY_ADMIN_ITEM_ROUTE_PATH_DYNAMIC } from '../../company-admin-item';
 import { USER_ADMIN_ITEM_COMPANY_LIST_DATA_NAME } from '../user-admin-item-company-list.constant';
 
 export const UserAdminItemCompanyListListComponent = ({ list }) => {
@@ -30,10 +31,11 @@ export const UserAdminItemCompanyListListComponent = ({ list }) => {
         <React.Fragment>
           <ListItem
             onClick={() => {
-              return redirect('/CHANGE', {
+              return redirect(COMPANY_ADMIN_ITEM_ROUTE_PATH_DYNAMIC, {
                 dynamic: true,
                 params: {
-                  companyId: item[USER_ADMIN_ITEM_COMPANY_LIST_DATA_NAME.ID],
+                  companyId:
+                    item[ADMIN_REVISION_REVIEW_ITEM_DATA_NAME.COMPANY_ID],
                 },
               });
             }}
