@@ -6,7 +6,7 @@ import { ADMIN_REVISION_REVIEW_DATA_NAME } from '../admin-revision-review.consta
 import { FileUploadFieldContainer } from '../../../lib/common/file-upload-field/file-upload-field.container.js';
 import { text } from '../../../lib/common/text';
 
-import { SelectElement } from '../../../lib/element/select.element.js';
+import { SelectElement } from './select.element.js';
 
 export const AdminRevisionReviewFormComponent = (props) => {
   const {

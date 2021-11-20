@@ -1,6 +1,7 @@
 import { httpRequest } from '../../main/http';
 import { USER_ADMIN_ROLE_ACTION_TYPE } from './user-admin-role.constant';
 import { getQuery } from '../../main/navigation/navigation.core';
+import { reloadUserAdminItemData } from '../user-admin-item-info/user-admin-item-info.action';
 
 export function changeUserAdminRole(data) {
   return async (dispatch) => {
@@ -18,13 +19,25 @@ export function changeUserAdminRole(data) {
       dispatch({
         type: USER_ADMIN_ROLE_ACTION_TYPE.FORM_SUCCESS,
       });
+
+      await dispatch(reloadUserAdminItemData());
     } catch (error) {
       if (error) {
         dispatch({
           type: USER_ADMIN_ROLE_ACTION_TYPE.FORM_ERROR,
           errorMessage: error.response.data.message,
         });
+      } else {
+        console.log(error);
       }
     }
+  };
+}
+
+export function resetUserAdminItemUpdateDataFormState() {
+  return async (dispatch) => {
+    dispatch({
+      type: USER_ADMIN_ROLE_ACTION_TYPE.FORM_RESET,
+    });
   };
 }
