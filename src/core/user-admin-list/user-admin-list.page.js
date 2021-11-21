@@ -7,7 +7,9 @@ export function UserAdminListPage() {
   return (
     <NavigationComponent>
       <Grid spacing={6} container>
-        <UserAdminListContainer />
+        <Grid item>
+          <UserAdminListContainer />
+        </Grid>
       </Grid>
     </NavigationComponent>
   );

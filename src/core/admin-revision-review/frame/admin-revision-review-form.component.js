@@ -55,7 +55,7 @@ export const AdminRevisionReviewFormComponent = (props) => {
               <SelectElement
                 label={text('ADMIN_REVISION_REVIEW.FORM.LABELS.STATUS')}
                 sx={{
-                  height: '45px',
+                  height: '54px',
                 }}
                 name={ADMIN_REVISION_REVIEW_DATA_NAME.STATUS}
                 value={values[ADMIN_REVISION_REVIEW_DATA_NAME.STATUS]}
