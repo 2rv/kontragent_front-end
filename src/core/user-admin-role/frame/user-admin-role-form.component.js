@@ -3,10 +3,7 @@ import Grid from '@mui/material/Grid';
 import Button from '@mui/material/Button';
 import { text } from '../../../lib/common/text';
 import { USER_ADMIN_ROLE_DATA_NAME } from '../user-admin-role.constant';
-import { AdminSelectElement } from '../../../lib/element/admin-select.element.js';
-import { Divider } from '@mui/material';
-import { AUTH_STORE_NAME } from '../../../lib/common/auth/auth.constant';
-import { userAdminRoleStore } from '../user-admin-role.store';
+import { AdminSelectElement } from './admin-select.element';
 
 export const UserAdminRoleFormComponent = (props) => {
   const {
