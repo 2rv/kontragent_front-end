@@ -4,6 +4,8 @@ import {
   setRequestPending,
   setRequestSuccess,
   setRequestError,
+  setRequestUpdatePending,
+  setRequestUpdateSuccess,
 } from '../../main/store/store.service';
 
 const initialState = {
@@ -28,6 +30,18 @@ export function userAdminItemInfoStore(state = initialState, action) {
       return {
         ...state,
         user: setRequestError(state.user, action.errorMessage),
+      };
+
+    case USER_ADMIN_ITEM_INFO_ACTION_TYPE.REQUEST_UPDATE_PENDING:
+      return {
+        ...state,
+        user: setRequestUpdatePending(state.user),
+      };
+
+    case USER_ADMIN_ITEM_INFO_ACTION_TYPE.REQUEST_UPDATE_SUCCESS:
+      return {
+        ...state,
+        user: setRequestUpdateSuccess(state.user, action.payload),
       };
 
     default:

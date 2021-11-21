@@ -4,8 +4,8 @@ import Select from '@mui/material/Select';
 import Typography from '@mui/material/Typography';
 import MenuItem from '@mui/material/MenuItem';
 import { useDispatch } from 'react-redux';
-import { REVISION_STATUS } from '../../core/admin-revision-review/admin-revision-review.constant';
-import { text } from '../../lib/common/text/';
+import { REVISION_STATUS } from '../admin-revision-review.constant';
+import { text } from '../../../lib/common/text';
 
 export const SelectElement = ({ label, storeOnChange, ...props }) => {
   const dispatch = useDispatch();

@@ -4,6 +4,7 @@ import {
   setRequestPending,
   setRequestSuccess,
   setRequestError,
+  resetRequestStatus,
 } from '../../main/store/store.service';
 
 const initialState = {
@@ -28,6 +29,12 @@ export function userAdminRoleStore(state = initialState, action) {
       return {
         ...state,
         form: setRequestError(state.form, action.errorMessage),
+      };
+
+    case USER_ADMIN_ROLE_ACTION_TYPE.FORM_RESET:
+      return {
+        ...state,
+        form: resetRequestStatus(state.form),
       };
 
     default:

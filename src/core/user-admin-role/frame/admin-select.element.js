@@ -4,8 +4,8 @@ import Select from '@mui/material/Select';
 import Typography from '@mui/material/Typography';
 import MenuItem from '@mui/material/MenuItem';
 import { useDispatch } from 'react-redux';
-import { text } from '../../lib/common/text/';
-import { ROLE_TYPE } from '../../core/user-admin-role/user-admin-role.constant';
+import { text } from '../../../lib/common/text';
+import { ROLE_TYPE } from '../user-admin-role.constant';
 
 export const AdminSelectElement = ({ label, storeOnChange, ...props }) => {
   const dispatch = useDispatch();
