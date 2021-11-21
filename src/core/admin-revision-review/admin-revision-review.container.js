@@ -11,12 +11,11 @@ import { NAVIGATION_STORE_NAME } from '../../lib/common/navigation/navigation.co
 import { AdminRevisionReviewComponent } from './admin-revision-review.component';
 import { convertAdminRevisionReviewSendData } from './admin-revision-review.convert';
 
-import { ADMIN_REVISION_REVIEW_ITEM_STORE_NAME } from '../admin-revision-review-item';
+import { performAdminRevisionReviewGetData } from './admin-revision-review.convert';
 
 export function AdminRevisionReviewContainer() {
-  const { pageLoading, prevData } = useSelector((state) => ({
+  const { pageLoading } = useSelector((state) => ({
     pageLoading: state[NAVIGATION_STORE_NAME].pageLoading,
-    prevData: state[ADMIN_REVISION_REVIEW_ITEM_STORE_NAME].data,
   }));
 
   const createRevisionReview = (values, setSubmitting) => {
@@ -51,25 +50,48 @@ export function AdminRevisionReviewContainer() {
     }
   };
 
-  const getInitialValue = () => {
-    return {
-      [ADMIN_REVISION_REVIEW_DATA_NAME.REVIEW]: prevData?.review,
-      [ADMIN_REVISION_REVIEW_DATA_NAME.STATUS]: prevData?.status,
-      [ADMIN_REVISION_REVIEW_DATA_NAME.PRICE]: prevData?.additionPrice,
-      [ADMIN_REVISION_REVIEW_DATA_NAME.FILE_ID_LIST]: prevData?.fileReview,
-    };
+  const getData = async () => {
+    setGetDataPending(true);
+    try {
+      const res = await httpRequest({
+        method: 'GET',
+        url: `revision/admin/revision/${getQuery('revisionId')}/review`,
+        data,
+      });
+
+      const data = performAdminRevisionReviewGetData(res.data);
+      setReviewData(data);
+      setGetDataPending(false);
+    } catch (error) {
+      setGetDataPending(false);
+    }
   };
+  React.useEffect(() => {
+    getData();
+  }, []);
+
+  const [reviewData, setReviewData] = React.useState(null);
   const [isRequestPending, setRequestPending] = React.useState(null);
   const [isRequestError, setRequestError] = React.useState(null);
   const [isRequestSuccess, setRequestSuccess] = React.useState(null);
   const [getRequestErrorMessage, setRequestErrorMessage] = React.useState(null);
+  const [isGetDataPending, setGetDataPending] = React.useState(null);
   const [getFileList, setFileList] = React.useState(
-    prevData?.fileReview?.map((i) => i.id),
+    reviewData?.fileReview?.map((i) => i.id),
   );
 
-  console.log(getFileList);
+  const getInitialValue = () => {
+    return {
+      [ADMIN_REVISION_REVIEW_DATA_NAME.REVIEW]: reviewData?.review,
+      [ADMIN_REVISION_REVIEW_DATA_NAME.STATUS]: reviewData?.status,
+      [ADMIN_REVISION_REVIEW_DATA_NAME.PRICE]: reviewData?.additionPrice,
+      [ADMIN_REVISION_REVIEW_DATA_NAME.FILE_ID_LIST]: reviewData?.fileReview,
+    };
+  };
+
   return (
     <AdminRevisionReviewComponent
+      isGetDataPending={isGetDataPending}
       isPending={isRequestPending}
       isError={isRequestError}
       isSuccess={isRequestSuccess}

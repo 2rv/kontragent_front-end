@@ -8,6 +8,7 @@ import { ADMIN_REVISION_REVIEW_ROUTE_PATH_DYNAMIC } from '../../admin-revision-r
 import { getQuery } from '../../../main/navigation/navigation.core';
 import { redirect } from '../../../main/navigation';
 import Button from '@mui/material/Button';
+import { REVISION_STATUS } from '../../admin-revision-review/admin-revision-review.constant';
 
 export const AdminRevisionReviewItemListComponent = ({ data }) => {
   return (
@@ -23,7 +24,7 @@ export const AdminRevisionReviewItemListComponent = ({ data }) => {
       </Grid>
 
       <Grid item>
-        {data[ADMIN_REVISION_REVIEW_ITEM_DATA_NAME.STATUS] === 4 && (
+        {data[ADMIN_REVISION_REVIEW_ITEM_DATA_NAME.STATUS] === REVISION_STATUS.PAY && (
           <>
             <Typography gutterBottom variant="listTitle" component="div">
               {text('COMPANY_ACCOUNT_ITEM_REVISION.REVISION_ITEM.PRICE')}

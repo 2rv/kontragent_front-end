@@ -11,6 +11,7 @@ export const ADMIN_REVISION_REVIEW_DATA_NAME = {
   STATUS: 'status',
   PRICE: 'additionPrice',
   FILE_ID_LIST: 'fileReviewIdList',
+  FILE_LIST: 'fileReview',
 };
 
 export const REVISION_STATUS = {

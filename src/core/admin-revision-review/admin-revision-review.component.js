@@ -13,6 +13,7 @@ export function AdminRevisionReviewComponent(props) {
     initialValue,
     pageLoading,
     isPending,
+    isGetDataPending,
     onSubmitForm,
     isError,
     isSuccess,
@@ -34,6 +35,7 @@ export function AdminRevisionReviewComponent(props) {
 
           <Formik
             initialValues={initialValue}
+            enableReinitialize={true}
             onSubmit={(values, actions) => {
               onSubmitForm(values, actions.setSubmitting);
             }}
@@ -41,6 +43,7 @@ export function AdminRevisionReviewComponent(props) {
             {(props) => (
               <AdminRevisionReviewFormComponent
                 {...props}
+                isGetDataPending={isGetDataPending}
                 isPending={isPending}
                 isError={isError}
                 isSuccess={isSuccess}

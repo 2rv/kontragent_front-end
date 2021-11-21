@@ -17,15 +17,13 @@ export const AdminRevisionReviewFormComponent = (props) => {
     values,
 
     pageLoading,
-
+    isGetDataPending,
     setFileList,
   } = props;
 
   const isSubmitDisabled = () => {
-    return isSubmitting || pageLoading;
+    return isSubmitting || pageLoading || isGetDataPending;
   };
-
-  console.log(values);
 
   return (
     <form onSubmit={handleSubmit}>
