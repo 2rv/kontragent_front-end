@@ -11,9 +11,12 @@ import { NAVIGATION_STORE_NAME } from '../../lib/common/navigation/navigation.co
 import { AdminRevisionReviewComponent } from './admin-revision-review.component';
 import { convertAdminRevisionReviewSendData } from './admin-revision-review.convert';
 
+import { ADMIN_REVISION_REVIEW_ITEM_STORE_NAME } from '../admin-revision-review-item';
+
 export function AdminRevisionReviewContainer() {
-  const { pageLoading } = useSelector((state) => ({
+  const { pageLoading, prevData } = useSelector((state) => ({
     pageLoading: state[NAVIGATION_STORE_NAME].pageLoading,
+    prevData: state[ADMIN_REVISION_REVIEW_ITEM_STORE_NAME].data,
   }));
 
   const createRevisionReview = (values, setSubmitting) => {
@@ -50,19 +53,21 @@ export function AdminRevisionReviewContainer() {
 
   const getInitialValue = () => {
     return {
-      [ADMIN_REVISION_REVIEW_DATA_NAME.REVIEW]: '',
-      [ADMIN_REVISION_REVIEW_DATA_NAME.STATUS]: '',
-      [ADMIN_REVISION_REVIEW_DATA_NAME.PRICE]: '',
-      [ADMIN_REVISION_REVIEW_DATA_NAME.FILE_ID_LIST]: [],
+      [ADMIN_REVISION_REVIEW_DATA_NAME.REVIEW]: prevData?.review,
+      [ADMIN_REVISION_REVIEW_DATA_NAME.STATUS]: prevData?.status,
+      [ADMIN_REVISION_REVIEW_DATA_NAME.PRICE]: prevData?.additionPrice,
+      [ADMIN_REVISION_REVIEW_DATA_NAME.FILE_ID_LIST]: prevData?.fileReview,
     };
   };
-
   const [isRequestPending, setRequestPending] = React.useState(null);
   const [isRequestError, setRequestError] = React.useState(null);
   const [isRequestSuccess, setRequestSuccess] = React.useState(null);
   const [getRequestErrorMessage, setRequestErrorMessage] = React.useState(null);
-  const [getFileList, setFileList] = React.useState([]);
+  const [getFileList, setFileList] = React.useState(
+    prevData?.fileReview?.map((i) => i.id),
+  );
 
+  console.log(getFileList);
   return (
     <AdminRevisionReviewComponent
       isPending={isRequestPending}

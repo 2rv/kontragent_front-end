@@ -25,6 +25,8 @@ export const AdminRevisionReviewFormComponent = (props) => {
     return isSubmitting || pageLoading;
   };
 
+  console.log(values);
+
   return (
     <form onSubmit={handleSubmit}>
       <Box sx={{ py: 4 }}>
@@ -76,6 +78,10 @@ export const AdminRevisionReviewFormComponent = (props) => {
             </Grid>
             <Grid item xs={12}>
               <FileUploadFieldContainer
+                initData={values[ADMIN_REVISION_REVIEW_DATA_NAME.FILE_ID_LIST]}
+                onFileDelete={(value) => {
+                  setFileList(value.map((i) => i.id));
+                }}
                 onFileAdd={(value) => {
                   setFileList(value.map((i) => i.id));
                 }}

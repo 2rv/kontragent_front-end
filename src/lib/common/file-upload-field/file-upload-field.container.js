@@ -7,7 +7,7 @@ import { httpRequest } from '../../../main/http';
 import { FileUploadFieldComponent } from './file-upload-field.component';
 
 export function FileUploadFieldContainer(props) {
-  const { storeOnFileChange, filedata } = props;
+  const { storeOnFileChange, filedata, initData = [] } = props;
   const dispatch = useDispatch();
   const storeFileChange = (fileList) => {
     storeOnFileChange && dispatch(storeOnFileChange(fileList));
@@ -40,6 +40,8 @@ export function FileUploadFieldContainer(props) {
 
   const handleDelete = (e) => {
     const deleteItem = e.target.parentNode.parentNode.id;
+    const newData = getData.filter((item) => item.uuid !== deleteItem);
+    props.onFileDelete && props.onFileDelete(newData);
     setData(getData.filter((item) => item.uuid !== deleteItem));
   };
 
@@ -68,7 +70,7 @@ export function FileUploadFieldContainer(props) {
   const [isRequestError, setRequestError] = React.useState(null);
   const [isRequestSuccess, setRequestSuccess] = React.useState(null);
   const [getRequestErrorMessage, setRequestErrorMessage] = React.useState(null);
-  const [getData, setData] = React.useState([]);
+  const [getData, setData] = React.useState(initData);
 
   return (
     <FileUploadFieldComponent

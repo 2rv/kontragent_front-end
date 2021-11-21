@@ -13,7 +13,7 @@ export const FileListElement = ({ list, handleDelete }) => {
               id={file.uuid}
               clickable
               onClick={() => window.open(file.url)}
-              label={file.fileName}
+              label={file.fileName ? file.fileName : file.originalName}
               onDelete={(e) => handleDelete(e)}
               deleteIcon={<DeleteIcon />}
               size="medium"
