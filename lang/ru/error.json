@@ -11,6 +11,7 @@
   "COMPANY_MEMBER_USER_ALREADY_HAS_COMPANY_ACCOUNT": "Пользователь уже является сотруником компании",
   "COMPANY_MEMBER_ACCESS_DENIED": "У вас нет нужной роли",
   "COMPANY_MEMBER_CANNOT_REMOVE_COMPANY_MEMBER_OWNER": "Владелец компании не может быть удалён",
+  "COMPANY_MEMBER_ERROR_CANNOT_ADD_SUCH_A_USER": "Нельзя добавить такого пользователя", 
   "FILE_NOT_FOUND": "Файл не найден",
   "FILE_WITH_THIS_URL_ALREADY_EXISTS": "Файл по такой ссылке уже был загружен",
   "FILE_OWNER_IS_UNCORRECT": "Файл вам не принадлежит",
