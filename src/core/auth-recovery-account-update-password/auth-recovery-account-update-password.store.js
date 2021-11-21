@@ -10,7 +10,10 @@ const initialState = {
   form: initRequestState(),
 };
 
-export function authRecoveryAccountUpdatePasswordStore(state = initialState, action) {
+export function authRecoveryAccountUpdatePasswordStore(
+  state = initialState,
+  action,
+) {
   switch (action.type) {
     case AUTH_RECOVERY_ACCOUNT_UPDATE_PASSWORD_ACTION_TYPE.FORM_PENDING:
       return {
@@ -28,6 +31,10 @@ export function authRecoveryAccountUpdatePasswordStore(state = initialState, act
       return {
         ...state,
         form: setRequestError(state.form, action.errorMessage),
+      };
+    case AUTH_RECOVERY_ACCOUNT_UPDATE_PASSWORD_ACTION_TYPE.FORM_CLEANUP:
+      return {
+        ...initialState,
       };
 
     default:

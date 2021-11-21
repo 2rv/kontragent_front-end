@@ -8,7 +8,7 @@ import { USER_REFERAL_BALANCE_ROUTE_PATH } from './user-referal-balance.constant
 
 export function UserReferalBalanceRouter(ctx) {
   ctx.store.dispatch(setActivePath(USER_REFERAL_BALANCE_ROUTE_PATH));
-  authRedirectPrivated(ctx, '/');
-  authRedirectVerification(ctx);
-  authRedirectAdmin(ctx, '/');
+  if (authRedirectPrivated(ctx, '/')) return;
+  if (authRedirectVerification(ctx)) return;
+  if (authRedirectAdmin(ctx, '/')) return;
 }

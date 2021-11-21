@@ -70,6 +70,14 @@ const PHONE_EXP =
 export const phone = (value) =>
   !PHONE_EXP.test(value) ? getError('VALIDATION.PHONE') : null;
 
+export const emailPhone = (value) => {
+  if (value.indexOf('@') > 0) {
+    return !EMAIL_EXP.test(value) ? getError('VALIDATION.EMAIL') : null;
+  } else {
+    return !PHONE_EXP.test(value) ? getError('VALIDATION.PHONE') : null;
+  }
+};
+
 export const number = (value) => {
   // eslint-disable-next-line no-restricted-globals
   if (isNaN(parseFloat(value))) {

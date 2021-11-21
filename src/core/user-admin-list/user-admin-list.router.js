@@ -8,7 +8,7 @@ import {
 
 export function UserAdminListRouter(ctx) {
   ctx.store.dispatch(setActivePath(USER_ADMIN_LIST_ROUTE_PATH));
-  authRedirectPrivated(ctx, '/');
-  authRedirectVerification(ctx);
-  authRedirectNotAdmin(ctx, '/');
+  if (authRedirectPrivated(ctx, '/')) return;
+  if (authRedirectVerification(ctx)) return;
+  if (authRedirectNotAdmin(ctx, '/')) return;
 }

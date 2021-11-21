@@ -29,7 +29,10 @@ export function authVerificationPhoneStore(state = initialState, action) {
         ...state,
         form: setRequestError(state.form, action.errorMessage),
       };
-
+    case AUTH_VERIFICATION_PHONE_ACTION_TYPE.FORM_CLEANUP:
+      return {
+        ...initialState,
+      };
     default:
       return state;
   }

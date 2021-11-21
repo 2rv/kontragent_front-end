@@ -17,14 +17,35 @@ export const authRedirectLogged = (ctx: any, pathToRedirect: string) => {
     } else {
       redirect(pathToRedirect);
     }
+    return true;
   }
+  return false;
 };
 
-export const authRedirectPrivated = (ctx: any, pathToRedirect: string) => {
+export const authVerificated = (ctx: any, pathToRedirect: string) => {
   const { res, store } = ctx;
 
   const authStore = store.getState()[AUTH_STORE_NAME];
 
+  if (authStore.user.confirmPhone) {
+    if (res) {
+      res.writeHead(302, {
+        Location: pathToRedirect,
+      });
+      res.end();
+    } else {
+      redirect(pathToRedirect);
+    }
+    return true;
+  }
+  return false;
+};
+
+export const authRedirectPrivated = (ctx: any, pathToRedirect: string) => {
+  const { res, store } = ctx;
+  
+  const authStore = store.getState()[AUTH_STORE_NAME];
+  
   if (!authStore.logged) {
     if (res) {
       res.writeHead(301, {
@@ -34,7 +55,9 @@ export const authRedirectPrivated = (ctx: any, pathToRedirect: string) => {
     } else {
       redirect(pathToRedirect);
     }
+    return true;
   }
+  return false;
 };
 
 export const authRedirectVerification = (ctx: any) => {
@@ -48,10 +71,11 @@ export const authRedirectVerification = (ctx: any) => {
         res.writeHead(301, {
           Location: AUTH_VERIFICATION_EMAIL_ROUTE_PATH,
         });
-        return res.end();
+        res.end();
       } else {
-        return redirect(AUTH_VERIFICATION_EMAIL_ROUTE_PATH);
+        redirect(AUTH_VERIFICATION_EMAIL_ROUTE_PATH);
       }
+      return true;
     }
 
     if (!authStore.user.confirmPhone) {
@@ -59,12 +83,14 @@ export const authRedirectVerification = (ctx: any) => {
         res.writeHead(301, {
           Location: AUTH_VERIFICATION_PHONE_ROUTE_PATH,
         });
-        return res.end();
+        res.end();
       } else {
-        return redirect(AUTH_VERIFICATION_PHONE_ROUTE_PATH);
+        redirect(AUTH_VERIFICATION_PHONE_ROUTE_PATH);
       }
+      return true;
     }
   }
+  return false;
 };
 
 export const authRedirectNotAdmin = (ctx: any, pathToRedirect: string) => {
@@ -82,8 +108,10 @@ export const authRedirectNotAdmin = (ctx: any, pathToRedirect: string) => {
       } else {
         redirect(pathToRedirect);
       }
+      return true;
     }
   }
+  return false;
 };
 
 export const authRedirectAdmin = (ctx: any, pathToRedirect: string) => {
@@ -100,6 +128,8 @@ export const authRedirectAdmin = (ctx: any, pathToRedirect: string) => {
       } else {
         redirect(pathToRedirect);
       }
+      return true;
     }
   }
+  return false;
 };

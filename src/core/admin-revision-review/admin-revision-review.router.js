@@ -10,11 +10,14 @@ import { AUTH_VERIFICATION_PHONE_ROUTE_PATH } from '../auth-verification-phone/a
 
 export function AdminRevisionReviewRouter(ctx) {
   ctx.store.dispatch(setActivePath(ADMIN_REVISION_REVIEW_ROUTE_PATH));
-  authRedirectPrivated(ctx, '/');
-  authRedirectVerification(
-    ctx,
-    AUTH_VERIFICATION_EMAIL_ROUTE_PATH,
-    AUTH_VERIFICATION_PHONE_ROUTE_PATH,
-  );
-  authRedirectNotAdmin(ctx, '/');
+  if (authRedirectPrivated(ctx, '/')) return;
+  if (authRedirectNotAdmin(ctx, '/')) return;
+  if (
+    authRedirectVerification(
+      ctx,
+      AUTH_VERIFICATION_EMAIL_ROUTE_PATH,
+      AUTH_VERIFICATION_PHONE_ROUTE_PATH,
+    )
+  )
+    return;
 }

@@ -28,6 +28,10 @@
     "USER_REFERAL": {
       "SYSTEM": "Реферальная система",
       "BALANCE": "Баланс реферала"
+    },
+    "USER_ADMIN_ITEM": {
+      "INFO": "Информация",
+      "COMPANY_USER": "Компании пользователя"
     }
   }
 }

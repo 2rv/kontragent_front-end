@@ -1,7 +1,7 @@
 import React from 'react';
 import { AccountReferalComponent } from './account-referal.component';
 import { getQuery } from '../../main/navigation';
-import { uploadAccountReferalId } from './account-referal.action';
+import { uploadAccountReferalId, cleanupStore } from './account-referal.action';
 import { useSelector, useDispatch } from 'react-redux';
 import { ACCOUNT_REFERAL_STORE_NAME } from './account-referal.constant';
 import { NAVIGATION_STORE_NAME } from '../../lib/common/navigation/navigation.constant';
@@ -22,6 +22,12 @@ export function AccountReferalContainer() {
   const handleClickAccept = () => {
     dispatch(uploadAccountReferalId(getQuery('referalId')));
   };
+
+  useEffect(() => {
+    return function cleanup() {
+      dispatch(cleanupStore());
+    };
+  }, []);
 
   return (
     <AccountReferalComponent

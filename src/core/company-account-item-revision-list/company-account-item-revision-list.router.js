@@ -11,7 +11,7 @@ export function CompanyAccountItemRevisionListRouter(ctx) {
   ctx.store.dispatch(
     setActivePath(COMPANY_ACCOUNT_ITEM_REVISION_LIST_ROUTE_PATH),
   );
-  authRedirectPrivated(ctx, '/');
-  authRedirectVerification(ctx);
-  authRedirectAdmin(ctx, '/');
+  if (authRedirectPrivated(ctx, '/')) return;
+  if (authRedirectVerification(ctx)) return;
+  if (authRedirectAdmin(ctx, '/')) return;
 }

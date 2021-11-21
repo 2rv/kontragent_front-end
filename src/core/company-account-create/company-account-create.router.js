@@ -8,7 +8,7 @@ import { COMPANY_ACCOUNT_CREATE_ROUTE_PATH } from './company-account-create.cons
 
 export function CompanyAccountCreateRouter(ctx) {
   ctx.store.dispatch(setActivePath(COMPANY_ACCOUNT_CREATE_ROUTE_PATH));
-  authRedirectPrivated(ctx, '/');
-  authRedirectVerification(ctx);
-  authRedirectAdmin(ctx, '/');
+  if (authRedirectPrivated(ctx, '/')) return;
+  if (authRedirectVerification(ctx)) return;
+  if (authRedirectAdmin(ctx, '/')) return;
 }

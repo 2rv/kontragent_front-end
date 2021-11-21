@@ -166,3 +166,9 @@ export function setRevisionInfoValid(companyId, isValid) {
     });
   };
 }
+
+export function cleanupStore() {
+  return {
+    type: COMPANY_ACCOUNT_ITEM_REVISION_CREATE_ACTION_TYPE.CLEANUP,
+  };
+}

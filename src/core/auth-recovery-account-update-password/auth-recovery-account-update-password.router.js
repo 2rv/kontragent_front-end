@@ -5,5 +5,5 @@ export function AuthRecoveryAccountUpdatePasswordRouter(ctx) {
   ctx.store.dispatch(
     setActivePath(AUTH_RECOVERY_ACCOUNT_UPDATE_PASSWORD_ROUTE_PATH),
   );
-  authRedirectLogged(ctx, '/');
+  if (authRedirectLogged(ctx, '/')) return;
 }

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import { AuthRecoveryAccountComponent } from './auth-recovery-account.component';
 
@@ -6,11 +6,17 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import { authRecoveryAccountFormValidation } from './auth-recovery-account.validation';
 
-import { AUTH_RECOVERY_ACCOUNT_DATA_NAME, AUTH_RECOVERY_ACCOUNT_STORE_NAME } from './auth-recovery-account.constant';
+import {
+  AUTH_RECOVERY_ACCOUNT_DATA_NAME,
+  AUTH_RECOVERY_ACCOUNT_STORE_NAME,
+} from './auth-recovery-account.constant';
 
 import { convertAuthRecoveryAccountFormData } from './auth-recovery-account.convert';
 
-import { authRecoveryAccountFormSendData } from './auth-recovery-account.action';
+import {
+  authRecoveryAccountFormSendData,
+  cleanupStore,
+} from './auth-recovery-account.action';
 
 import { NAVIGATION_STORE_NAME } from '../../lib/common/navigation/navigation.constant';
 
@@ -38,6 +44,12 @@ export function AuthRecoveryAccountContainer() {
       [AUTH_RECOVERY_ACCOUNT_DATA_NAME.EMAIL]: '',
     };
   };
+
+  useEffect(() => {
+    return function cleanup() {
+      dispatch(cleanupStore());
+    };
+  }, []);
 
   return (
     <AuthRecoveryAccountComponent

@@ -1,11 +1,8 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 
-import FormControlLabel from '@mui/material/FormControlLabel';
-
 import Grid from '@mui/material/Grid';
 import Button from '@mui/material/Button';
-import Checkbox from '@mui/material/Checkbox';
 
 import { TextFieldElement } from '../../../lib/element/text-field.element.js';
 
@@ -63,6 +60,8 @@ export const CompanyAccountItemRevisionCreatePeriodItemFormComponent = (
       >
         <Grid xs={12} item>
           <TextFieldElement
+            type="number"
+            inputProps={{ min: '1900', max: '2099' }}
             placeholder={text(
               'COMPANY_ACCOUNT_ITEM_REVISION_CREATE.REVISON_CREATE_PERIOD_ITEM.FORM.FIELD.LABELS.YEAR',
             )}
@@ -90,6 +89,7 @@ export const CompanyAccountItemRevisionCreatePeriodItemFormComponent = (
         <Grid xs={12} item>
           <Grid
             columnSpacing={6}
+            rowSpacing={6}
             container
             direction="row"
             justifyContent="flex-start"
@@ -97,100 +97,112 @@ export const CompanyAccountItemRevisionCreatePeriodItemFormComponent = (
             flexWrap="wrap"
             sx={{ pt: 3 }}
           >
-            <Grid xs={3} item sx={{ display: 'flex', alignItems: 'left' }}>
-              <FormControlLabel
-                control={
-                  <Checkbox
-                    onChange={(e, checked) => {
-                      dispatch(
-                        companyAccountItemRevisionCreateChangeYearPeriod([
-                          checked ? true : false,
-                          period.period[1],
-                          period.period[2],
-                          period.period[3],
-                        ]),
-                      );
-                    }}
-                    checked={period.period[0]}
-                    defaultChecked
-                  />
-                }
-                label={text(
+            <Grid
+              xs={6}
+              md={3}
+              item
+              sx={{ display: 'flex', alignItems: 'left' }}
+            >
+              <Button
+                sx={!period.period[0] && { border: '1px solid #a8a7a8' }}
+                variant="grey"
+                color={period.period[0] ? 'black1' : 'black'}
+                onClick={() => {
+                  dispatch(
+                    companyAccountItemRevisionCreateChangeYearPeriod([
+                      !period.period[0],
+                      period.period[1],
+                      period.period[2],
+                      period.period[3],
+                    ]),
+                  );
+                }}
+              >
+                {text(
                   'COMPANY_ACCOUNT_ITEM_REVISION_CREATE.REVISON_CREATE_PERIOD_ITEM.FORM.FIELD.LABELS.FIRST_QUARTER',
                 )}
-              />
+              </Button>
             </Grid>
 
-            <Grid xs={3} item sx={{ display: 'flex', alignItems: 'left' }}>
-              <FormControlLabel
-                control={
-                  <Checkbox
-                    onChange={(e, checked) => {
-                      dispatch(
-                        companyAccountItemRevisionCreateChangeYearPeriod([
-                          period.period[0],
-                          checked ? true : false,
-                          period.period[2],
-                          period.period[3],
-                        ]),
-                      );
-                    }}
-                    checked={period.period[1]}
-                    defaultChecked
-                  />
-                }
-                label={text(
+            <Grid
+              xs={6}
+              md={3}
+              item
+              sx={{ display: 'flex', alignItems: 'left' }}
+            >
+              <Button
+                sx={!period.period[1] && { border: '1px solid #a8a7a8' }}
+                variant="grey"
+                color={period.period[1] ? 'black1' : 'black'}
+                onClick={() => {
+                  dispatch(
+                    companyAccountItemRevisionCreateChangeYearPeriod([
+                      period.period[0],
+                      !period.period[1],
+                      period.period[2],
+                      period.period[3],
+                    ]),
+                  );
+                }}
+              >
+                {text(
                   'COMPANY_ACCOUNT_ITEM_REVISION_CREATE.REVISON_CREATE_PERIOD_ITEM.FORM.FIELD.LABELS.SECOND_QUARTER',
                 )}
-              />
+              </Button>
             </Grid>
 
-            <Grid xs={3} item sx={{ display: 'flex', alignItems: 'left' }}>
-              <FormControlLabel
-                control={
-                  <Checkbox
-                    onChange={(e, checked) => {
-                      dispatch(
-                        companyAccountItemRevisionCreateChangeYearPeriod([
-                          period.period[0],
-                          period.period[1],
-                          checked ? true : false,
-                          period.period[3],
-                        ]),
-                      );
-                    }}
-                    checked={period.period[2]}
-                    defaultChecked
-                  />
-                }
-                label={text(
+            <Grid
+              xs={6}
+              md={3}
+              item
+              sx={{ display: 'flex', alignItems: 'left' }}
+            >
+              <Button
+                sx={!period.period[2] && { border: '1px solid #a8a7a8' }}
+                variant="grey"
+                color={period.period[2] ? 'black1' : 'black'}
+                onClick={() => {
+                  dispatch(
+                    companyAccountItemRevisionCreateChangeYearPeriod([
+                      period.period[0],
+                      period.period[1],
+                      !period.period[2],
+                      period.period[3],
+                    ]),
+                  );
+                }}
+              >
+                {text(
                   'COMPANY_ACCOUNT_ITEM_REVISION_CREATE.REVISON_CREATE_PERIOD_ITEM.FORM.FIELD.LABELS.THIRD_QUARTER',
                 )}
-              />
+              </Button>
             </Grid>
 
-            <Grid xs={3} item sx={{ display: 'flex', alignItems: 'left' }}>
-              <FormControlLabel
-                control={
-                  <Checkbox
-                    onChange={(e, checked) => {
-                      dispatch(
-                        companyAccountItemRevisionCreateChangeYearPeriod([
-                          period.period[0],
-                          period.period[1],
-                          period.period[2],
-                          checked ? true : false,
-                        ]),
-                      );
-                    }}
-                    checked={period.period[3]}
-                    defaultChecked
-                  />
-                }
-                label={text(
+            <Grid
+              xs={6}
+              md={3}
+              item
+              sx={{ display: 'flex', alignItems: 'left' }}
+            >
+              <Button
+                sx={!period.period[3] && { border: '1px solid #a8a7a8' }}
+                variant="grey"
+                color={period.period[3] ? 'black1' : 'black'}
+                onClick={() => {
+                  dispatch(
+                    companyAccountItemRevisionCreateChangeYearPeriod([
+                      period.period[0],
+                      period.period[1],
+                      period.period[2],
+                      !period.period[3],
+                    ]),
+                  );
+                }}
+              >
+                {text(
                   'COMPANY_ACCOUNT_ITEM_REVISION_CREATE.REVISON_CREATE_PERIOD_ITEM.FORM.FIELD.LABELS.FOURTH_QUARTER',
                 )}
-              />
+              </Button>
             </Grid>
           </Grid>
         </Grid>

@@ -1,9 +1,11 @@
 export const COMPANY_ACCOUNT_ITEM_REVISION_CREATE_DATA_NAME = {
-  TITLE: 'title',
+  NAME: 'name',
   INN: 'inn',
   DESCRIPTION: 'description',
   FILE_ID_LIST: 'fileIdList',
   YEAR: 'year',
-  YEAR_NAME: 'name',
-  YEAR_PERIOD: 'period',
+  FIRST_PERIOD: 'firstPeriod',
+  SECOND_PERIOD: 'secondPeriod',
+  THIRD_PERIOD: 'thirdPeriod',
+  FOURTH_PERIOD: 'fourthPeriod',
 };

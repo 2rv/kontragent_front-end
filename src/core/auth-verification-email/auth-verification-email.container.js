@@ -6,9 +6,16 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import { authVerificationEmailFormValidation } from './auth-verification-email.validation';
 
-import { AUTH_VERIFICATION_EMAIL_DATA_NAME, AUTH_VERIFICATION_EMAIL_STORE_NAME } from './auth-verification-email.constant';
+import {
+  AUTH_VERIFICATION_EMAIL_DATA_NAME,
+  AUTH_VERIFICATION_EMAIL_STORE_NAME,
+} from './auth-verification-email.constant';
 
-import { verificationEmailFormFetchData, verificationEmailFormGetCode } from './auth-verification-email.action';
+import {
+  verificationEmailFormFetchData,
+  verificationEmailFormGetCode,
+  cleanupStore,
+} from './auth-verification-email.action';
 
 import { convertAuthVerificationEmailFormData } from './auth-verification-email.convert';
 
@@ -31,11 +38,20 @@ export function AuthVerificationEmailContainer() {
 
   React.useEffect(() => {
     dispatch(verificationEmailFormGetCode());
+
+    return function cleanup() {
+      dispatch(cleanupStore());
+    };
   }, []);
 
   const verificationEmailFormSendData = (values) => {
     const data = convertAuthVerificationEmailFormData(values);
-    dispatch(verificationEmailFormFetchData(data, data[AUTH_VERIFICATION_EMAIL_DATA_NAME.CODE]));
+    dispatch(
+      verificationEmailFormFetchData(
+        data,
+        data[AUTH_VERIFICATION_EMAIL_DATA_NAME.CODE],
+      ),
+    );
   };
 
   const getInitialValue = () => {

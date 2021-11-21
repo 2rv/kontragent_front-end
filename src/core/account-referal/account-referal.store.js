@@ -29,6 +29,10 @@ export function accountReferalStore(state = initialState, action) {
           action.errorMessage,
         ),
       };
+    case ACCOUNT_REFERAL_ACTION_TYPE.ACCOUNT_REFERAL_CLEANUP:
+      return {
+        ...initialState,
+      };
 
     default:
       return state;

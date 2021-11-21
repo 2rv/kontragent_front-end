@@ -1,10 +1,8 @@
 import { httpRequest } from '../../main/http';
-
 import {
   AUTH_VERIFICATION_PHONE_API,
   AUTH_VERIFICATION_PHONE_ACTION_TYPE,
 } from './auth-verification-phone.constant';
-
 import { authUpdateUserData } from '../../lib/common/auth/auth.action';
 import { redirect } from '../../main/navigation/navigation.core';
 
@@ -72,6 +70,7 @@ export function verificationPhoneFormGetCode() {
         type: AUTH_VERIFICATION_PHONE_ACTION_TYPE.FORM_SUCCESS,
       });
     } catch (error) {
+      await authUpdateUserData()(dispatch);
       if (error) {
         dispatch({
           type: AUTH_VERIFICATION_PHONE_ACTION_TYPE.FORM_ERROR,
@@ -79,5 +78,11 @@ export function verificationPhoneFormGetCode() {
         });
       }
     }
+  };
+}
+
+export function cleanupStore() {
+  return {
+    type: AUTH_VERIFICATION_PHONE_ACTION_TYPE.FORM_CLEANUP,
   };
 }

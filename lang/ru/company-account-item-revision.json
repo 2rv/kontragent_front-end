@@ -11,10 +11,15 @@
       "THREE_PERIOD": " 3 квартал ",
       "FOUR_PERIOD": " 4 квартал "
     },
+    "COMPANY_NAME": "Название компании: ",
+    "INN": "ИНН",
+    "DESCRIPTION": "Описание: ",
+    "REVISION_PERIOD": "Период проверки: ",
     "FILES_IS_EMPTY": "Файлы не предоставлены",
     "RESULT_OF_CHECKING": " Результат проверки",
     "WE_NOT_COMPILED_RESULT_OF_YOUR_REQUEST": "Мы еще не составили результата вашего запроса",
     "FILES_FOR_DESCRIBING_RESPONSE_RESULT": "Файлы для описания результата ответа",
+    "FILES_FOR_DESCRIBING_REVISION_COMPANY": "Файлы для описания компании",
     "NO_FILES_PROVIDED": "Файлы не предоставлены",
     "REVIEW_STATUS": {
       "VERIFICATION_REQUEST": "Заявка на верификации",

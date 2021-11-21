@@ -51,7 +51,18 @@ export const CompanyAccountItemRevisionListListComponent = ({ list }) => {
             sx={{ py: 3, px: 3 }}
           >
             <ListItemText
-              primary={item[COMPANY_ACCOUNT_ITEM_REVISION_LIST_DATA_NAME.TITLE]}
+              primary={
+                <span>
+                  {`${text('COMMON.REVISION.ID')} 
+                   ${
+                     item[COMPANY_ACCOUNT_ITEM_REVISION_LIST_DATA_NAME.ID]
+                   } ${text('COMMON.REVISION.CREATE_DATE')} ${
+                    item[
+                      COMPANY_ACCOUNT_ITEM_REVISION_LIST_DATA_NAME.CREATE_DATE
+                    ]
+                  }`}
+                </span>
+              }
               secondary={
                 [
                   '',

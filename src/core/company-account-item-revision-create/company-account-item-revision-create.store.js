@@ -184,6 +184,11 @@ export function companyAccountItemRevisionCreateStore(
         company: newCompanyList,
       };
     }
+    case COMPANY_ACCOUNT_ITEM_REVISION_CREATE_ACTION_TYPE.CLEANUP: {
+      return {
+        ...initialState,
+      };
+    }
 
     default:
       return state;

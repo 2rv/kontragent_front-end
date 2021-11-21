@@ -29,6 +29,10 @@ export function authVerificationEmailStore(state = initialState, action) {
         ...state,
         form: setRequestError(state.form, action.errorMessage),
       };
+    case AUTH_VERIFICATION_EMAIL_ACTION_TYPE.FORM_CLEANUP:
+      return {
+        ...initialState,
+      };
 
     default:
       return state;

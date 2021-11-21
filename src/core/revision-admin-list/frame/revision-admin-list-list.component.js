@@ -8,7 +8,7 @@ import Divider from '@mui/material/Divider';
 import { text } from '../../../lib/common/text';
 import { REVISION_ADMIN_LIST_DATA_NAME } from '../revision-admin-list.constant';
 import { ADMIN_REVISION_REVIEW_ITEM_ROUTE_PATH_DYNAMIC } from '../../admin-revision-review-item';
-
+import Typography from '@mui/material/Typography';
 import { redirect } from '../../../main/navigation';
 
 export const RevisionAdminListListComponent = ({ list }) => {
@@ -43,18 +43,25 @@ export const RevisionAdminListListComponent = ({ list }) => {
                   {`
                     ${text('COMMON.REVISION.ID')}
                         ${items[REVISION_ADMIN_LIST_DATA_NAME.ID]}
-                    ${text('COMMON.REVISION.TITLE')}
-                        ${items[REVISION_ADMIN_LIST_DATA_NAME.TITLE]}
+                    ${text('COMMON.REVISION.CREATE_DATE')}
+                        ${items[REVISION_ADMIN_LIST_DATA_NAME.CREATE_DATE]}
                     `}
                 </span>
               }
               secondary={
-                <span>
-                  {`
-                    ${text('COMMON.REVISION.STATUS')}
-                        ${items[REVISION_ADMIN_LIST_DATA_NAME.STATUS]}
-                    `}
-                </span>
+                [
+                  '',
+                  text('COMMON.REVISION.STATUS_TYPE.NEW'),
+                  text('COMMON.REVISION.STATUS_TYPE.PROGRESS'),
+
+                  text('COMMON.REVISION.STATUS_TYPE.DONE'),
+                  <>
+                    <Typography sx={{ color: 'orange' }}>
+                      {text('COMMON.REVISION.STATUS_TYPE.PAY')}
+                    </Typography>
+                  </>,
+                  text('COMMON.REVISION.STATUS_TYPE.PAID'),
+                ][items[REVISION_ADMIN_LIST_DATA_NAME.STATUS]]
               }
             />
           </ListItem>

@@ -26,7 +26,7 @@ export const CompanyAccountItemRevisionCreatePeriodListListComponent = ({
   return (
     <Grid rowSpacing={4} container>
       {periods.map((period, index) => (
-        <React.Fragment>
+        <React.Fragment key={index}>
           <Grid item>
             <CompanyAccountItemRevisionCreatePeriodItemContainer
               companyId={companyId}
