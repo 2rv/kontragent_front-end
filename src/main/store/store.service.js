@@ -83,6 +83,8 @@ export const setRequestError = (state, message = null) => {
 };
 
 export const setRequestUpdatePending = (state) => {
+  state.error = defaultRequestState.error;
+  state.errorMessage = defaultRequestState.errorMessage;
   state.updating = true;
   state.updated = false;
   return state;

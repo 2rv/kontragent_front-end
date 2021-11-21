@@ -27,8 +27,6 @@ export function changeUserAdminRole(data) {
           type: USER_ADMIN_ROLE_ACTION_TYPE.FORM_ERROR,
           errorMessage: error.response.data.message,
         });
-      } else {
-        console.log(error);
       }
     }
   };

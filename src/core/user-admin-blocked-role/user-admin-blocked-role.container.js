@@ -36,7 +36,7 @@ export function UserAdminBlockedRoleContainer() {
     dispatch(resetUserAdminItemUpdateDataFormState());
   }, []);
 
-  const isBlocked = role === USER_ROLE.BLOCKED ? true : false;
+  const isBlocked = role === USER_ROLE.BLOCKED;
 
   return userInfoLoaded ? (
     <UserAdminBlockedRoleComponent
