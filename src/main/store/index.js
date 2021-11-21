@@ -40,6 +40,12 @@ import {
   userAdminItemInfoStore,
   USER_ADMIN_ITEM_INFO_STORE_NAME,
 } from '../../core/user-admin-item-info';
+import { adminRevisionInfoStore } from '../../core/admin-revision-info/admin-revision-info.store';
+import { ADMIN_REVISION_INFO_STORE_NAME } from '../../core/admin-revision-info/admin-revision-info.constant';
+import {
+  adminRevisionReviewStore,
+  ADMIN_REVISION_REVIEW_STORE_NAME,
+} from '../../core/admin-revision-review';
 
 export const reducers = combineReducers({
   [AUTH_STORE_NAME]: authStore,
@@ -63,6 +69,8 @@ export const reducers = combineReducers({
   [ACCOUNT_REFERAL_STORE_NAME]: accountReferalStore,
   [USER_ADMIN_ROLE_STORE_NAME]: userAdminRoleStore,
   [USER_ADMIN_ITEM_INFO_STORE_NAME]: userAdminItemInfoStore,
+  [ADMIN_REVISION_INFO_STORE_NAME]: adminRevisionInfoStore,
+  [ADMIN_REVISION_REVIEW_STORE_NAME]: adminRevisionReviewStore,
 });
 
 export { initStore } from './store.core';

@@ -15,14 +15,14 @@ export const AdminRevisionReviewFormComponent = (props) => {
     handleSubmit,
     isSubmitting,
     values,
-
+    isPending,
     pageLoading,
 
     setFileList,
   } = props;
 
   const isSubmitDisabled = () => {
-    return isSubmitting || pageLoading;
+    return isPending || pageLoading;
   };
 
   return (
