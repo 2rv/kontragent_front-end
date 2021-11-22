@@ -23,10 +23,10 @@ export const AdminSelectElement = ({ label, storeOnChange, ...props }) => {
       )}
       <Grid item>
         <Select {...props} onChange={(e) => handleChange(e)}>
-          <MenuItem value={ROLE_TYPE.USER}>
+          <MenuItem sx={{ mt: -7, ml: -6, mr: -6 }} value={ROLE_TYPE.USER}>
             {text('USER_ADMIN_ROLE.SELECT.USER')}
           </MenuItem>
-          <MenuItem value={ROLE_TYPE.ADMIN}>
+          <MenuItem sx={{ mb: -8, ml: -6, mr: -6 }} value={ROLE_TYPE.ADMIN}>
             {text('USER_ADMIN_ROLE.SELECT.ADMIN')}
           </MenuItem>
         </Select>
