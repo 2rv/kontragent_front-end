@@ -24,10 +24,9 @@ export const UserAdminListListComponent = ({ list }) => {
   return (
     <List sx={{ px: 6, pb: 8 }} disablePadding>
       {list.map((items, key) => (
-        <React.Fragment>
+        <React.Fragment key={key}>
           <ListItem
             key={key}
-            sx={{ py: 3, px: 3 }}
             onClick={() => {
               return redirect(USER_ADMIN_ITEM_INFO_ROUTE_PATH_DYNAMIC, {
                 dynamic: true,

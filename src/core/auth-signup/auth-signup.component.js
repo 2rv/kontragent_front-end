@@ -6,7 +6,6 @@ import Link from '@mui/material/Link';
 import Alert from '@mui/material/Alert';
 import LinearProgress from '@mui/material/LinearProgress';
 
-
 import { redirect } from '../../main/navigation/navigation.core';
 
 import { Formik } from 'formik';
@@ -67,7 +66,7 @@ export function AuthSignupComponent(props) {
             )}
           </Formik>
           <Divider />
-          <Box sx={{ pt: 4 }}>
+          <Box sx={{ pt: 2 }}>
             <div>
               <Typography variant="subtext" component="div">
                 {text('AUTH.SIGNUP.ALREADY_REGISTERED')}{' '}
@@ -95,9 +94,10 @@ export function AuthSignupComponent(props) {
               </Typography>
             </div>
           </Box>
-          <Box sx={{ pt: 4 }}>
+          <Divider sx={{ mt: 2 }} />
+          <Box sx={{ pt: 2 }}>
             <div>
-              <Typography>
+              <Typography variant="subtext" component="div">
                 {text('AUTH.SIGNUP.TERMS_OF_THE_OFFER_CONDITIONS')}
               </Typography>
               <Typography variant="subtext" component="div">
