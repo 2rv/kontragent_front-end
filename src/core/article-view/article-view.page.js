@@ -1,12 +1,12 @@
 import Grid from '@mui/material/Grid';
 import { NavigationComponent } from '../navigation/navigation.component';
-import { CreateArticleContainer } from './article-create.container';
+import { ArticleViewContainer } from './article-view.container';
 
-export function CreateArticlePage() {
+export function ArticlePage() {
   return (
     <NavigationComponent>
       <Grid spacing={6} container>
-        <CreateArticleContainer />
+        <ArticleViewContainer />
       </Grid>
     </NavigationComponent>
   );

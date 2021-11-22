@@ -2,7 +2,7 @@ export const EDIT_ARTICLE_ROUTE_PATH = '/article/edit/[articleId]';
 
 export const EDIT_ARTICLE_DYNAMIC_ROUTE_PATH = (
   { articleId } = { articleId: '[articleId]' },
-) => `/article/create/${articleId}`;
+) => `/article/edit/${articleId}`;
 
 export const EDIT_ARTICLE_STORE_NAME = 'EDIT_ARTICLE';
 

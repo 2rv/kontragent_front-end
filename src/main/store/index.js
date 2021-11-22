@@ -48,6 +48,10 @@ import {
   editArticleStore,
   EDIT_ARTICLE_STORE_NAME,
 } from '../../core/article-edit';
+import {
+  articleStore,
+  ARTICLE_STORE_NAME,
+} from '../../core/article-view';
 
 export const reducers = combineReducers({
   [AUTH_STORE_NAME]: authStore,
@@ -73,6 +77,7 @@ export const reducers = combineReducers({
   [USER_ADMIN_ITEM_INFO_STORE_NAME]: userAdminItemInfoStore,
   [CREATE_ARTICLE_STORE_NAME]: createArticleStore,
   [EDIT_ARTICLE_STORE_NAME]: editArticleStore,
+  [ARTICLE_STORE_NAME]: articleStore,
 });
 
 export { initStore } from './store.core';

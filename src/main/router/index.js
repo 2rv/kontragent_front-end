@@ -112,6 +112,10 @@ import {
   editArticleRouter,
   EDIT_ARTICLE_ROUTE_PATH,
 } from '../../core/article-edit';
+import {
+  articleRouter,
+  ARTICLE_ROUTE_PATH,
+} from '../../core/article-view';
 
 export const routes = {
   '/': IndexRouter,
@@ -150,6 +154,7 @@ export const routes = {
   [ACCOUNT_REFERAL_ROUTE_PATH]: AccountReferalRouter,
   [CREATE_ARTICLE_ROUTE_PATH]: createArticleRouter,
   [EDIT_ARTICLE_ROUTE_PATH]: editArticleRouter,
+  [ARTICLE_ROUTE_PATH]: articleRouter,
 };
 
 export const Router = routesInit(routes);

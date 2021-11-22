@@ -1,2 +1,2 @@
-import { CreateArticlePage } from '../../../core/article-create';
-export default CreateArticlePage;
+import { ArticlePage } from '../../../core/article-view';
+export default ArticlePage;

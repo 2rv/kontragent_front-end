@@ -1,0 +1,19 @@
+import { ARTICLE_DATA_NAME } from './article-view.constant';
+import { convertFormatDate } from '../../lib/common/convert/convert.core';
+
+export function performArticleView(row) {
+  return {
+    [ARTICLE_DATA_NAME.TITLE]: row[ARTICLE_DATA_NAME.TITLE],
+    [ARTICLE_DATA_NAME.ARTICLE]: row[ARTICLE_DATA_NAME.ARTICLE],
+    [ARTICLE_DATA_NAME.CREATE_DATE]: convertFormatDate(
+      row[ARTICLE_DATA_NAME.CREATE_DATE],
+    ),
+    [ARTICLE_DATA_NAME.FIRSTNAME]:
+      row[ARTICLE_DATA_NAME.CREATOR][ARTICLE_DATA_NAME.FIRSTNAME],
+    [ARTICLE_DATA_NAME.LASTNAME]:
+      row[ARTICLE_DATA_NAME.CREATOR][ARTICLE_DATA_NAME.LASTNAME],
+    [ARTICLE_DATA_NAME.ID]:
+      row[ARTICLE_DATA_NAME.CREATOR][ARTICLE_DATA_NAME.ID],
+    [ARTICLE_DATA_NAME.DESCRIPTION]: row[ARTICLE_DATA_NAME.DESCRIPTION],
+  };
+}
