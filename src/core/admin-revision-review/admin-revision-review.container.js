@@ -76,7 +76,7 @@ export function AdminRevisionReviewContainer() {
       isDependentPending={isRequestPending(userData.user)}
       pageLoading={pageLoading}
       setFileList={setFileList}
-      errorMessage={getRequestErrorMessage}
+      errorMessage={getRequestErrorMessage(state.form)}
     />
   );
 }
