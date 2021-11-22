@@ -112,10 +112,11 @@ import {
   editArticleRouter,
   EDIT_ARTICLE_ROUTE_PATH,
 } from '../../core/article-edit';
+import { articleRouter, ARTICLE_ROUTE_PATH } from '../../core/article-view';
 import {
-  articleRouter,
-  ARTICLE_ROUTE_PATH,
-} from '../../core/article-view';
+  ADMIN_POST_LIST_ROUTE_PATH,
+  AdminPostListRouter,
+} from '../../core/admin-post-list';
 
 export const routes = {
   '/': IndexRouter,
@@ -146,6 +147,8 @@ export const routes = {
   [USER_ADMIN_LIST_ROUTE_PATH]: UserAdminListRouter,
   [ADMIN_REVISION_REVIEW_ROUTE_PATH]: AdminRevisionReviewRouter,
   [ADMIN_REVISION_REVIEW_ITEM_ROUTE_PATH]: AdminRevisionReviewItemRouter,
+  [ADMIN_POST_LIST_ROUTE_PATH]: AdminPostListRouter,
+
   [COMPANY_ADMIN_LIST_ROUTE_PATH]: CompanyAdminListRouter,
   [REVISION_ADMIN_LIST_ROUTE_PATH]: RevisionAdminListRouter,
   [AUTH_REFERAL_ROUTE_PATH]: AuthReferalRouter,

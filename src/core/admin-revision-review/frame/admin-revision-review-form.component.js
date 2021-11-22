@@ -6,7 +6,7 @@ import { ADMIN_REVISION_REVIEW_DATA_NAME } from '../admin-revision-review.consta
 import { FileUploadFieldContainer } from '../../../lib/common/file-upload-field/file-upload-field.container.js';
 import { text } from '../../../lib/common/text';
 
-import { SelectElement } from '../../../lib/element/select.element.js';
+import { SelectElement } from './select.element.js';
 
 export const AdminRevisionReviewFormComponent = (props) => {
   const {
@@ -15,14 +15,14 @@ export const AdminRevisionReviewFormComponent = (props) => {
     handleSubmit,
     isSubmitting,
     values,
-
+    isPending,
     pageLoading,
 
     setFileList,
   } = props;
 
   const isSubmitDisabled = () => {
-    return isSubmitting || pageLoading;
+    return isPending || pageLoading;
   };
 
   return (
@@ -55,7 +55,7 @@ export const AdminRevisionReviewFormComponent = (props) => {
               <SelectElement
                 label={text('ADMIN_REVISION_REVIEW.FORM.LABELS.STATUS')}
                 sx={{
-                  height: '45px',
+                  height: '54px',
                 }}
                 name={ADMIN_REVISION_REVIEW_DATA_NAME.STATUS}
                 value={values[ADMIN_REVISION_REVIEW_DATA_NAME.STATUS]}

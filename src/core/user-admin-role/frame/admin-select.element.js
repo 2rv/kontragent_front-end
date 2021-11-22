@@ -4,8 +4,8 @@ import Select from '@mui/material/Select';
 import Typography from '@mui/material/Typography';
 import MenuItem from '@mui/material/MenuItem';
 import { useDispatch } from 'react-redux';
-import { text } from '../../lib/common/text/';
-import { ROLE_TYPE } from '../../core/user-admin-role/user-admin-role.constant';
+import { text } from '../../../lib/common/text';
+import { ROLE_TYPE } from '../user-admin-role.constant';
 
 export const AdminSelectElement = ({ label, storeOnChange, ...props }) => {
   const dispatch = useDispatch();
@@ -23,10 +23,10 @@ export const AdminSelectElement = ({ label, storeOnChange, ...props }) => {
       )}
       <Grid item>
         <Select {...props} onChange={(e) => handleChange(e)}>
-          <MenuItem value={ROLE_TYPE.USER}>
+          <MenuItem sx={{ mt: -7, ml: -6, mr: -6 }} value={ROLE_TYPE.USER}>
             {text('USER_ADMIN_ROLE.SELECT.USER')}
           </MenuItem>
-          <MenuItem value={ROLE_TYPE.ADMIN}>
+          <MenuItem sx={{ mb: -8, ml: -6, mr: -6 }} value={ROLE_TYPE.ADMIN}>
             {text('USER_ADMIN_ROLE.SELECT.ADMIN')}
           </MenuItem>
         </Select>
