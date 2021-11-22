@@ -34,7 +34,7 @@ const Container = styled.div`
     ${(p) => {
       if (!p.readOnly) {
         return css`
-	       padding: 0 10px;
+	       padding: 0 30px;
 	    }
 	  `;
       }
@@ -77,13 +77,13 @@ const Container = styled.div`
     max-height: 500px;
   }
   .ce-toolbar__content {
-    max-width: 100%;
+    max-width: 80%;
   }
   .ce-block__content {
     max-width: 100%;
-    margin: 0;
+    margin: 0px!important;
   }
-  /* .tc-wrap { // цвет таблицы
+  /* .tc-wrap {
     --color-border: #000 !important;
     --color-background: rgba(0, 0, 0, 0.06) !important;
   } */

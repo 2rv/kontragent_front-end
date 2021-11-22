@@ -27,6 +27,7 @@ import USER_REFERAL from './user-referal.json';
 import ACCOUNT_REFERAL from './account-referal.json';
 import ADMIN_REVISION_REVIEW from './admin-revision-review.json';
 import USER_ADMIN_ROLE from './user-admin-role.json';
+import ARTICLE from './article.json';
 
 export const RU = {
   translation: {
@@ -58,5 +59,6 @@ export const RU = {
     USER_REFERAL,
     ADMIN_REVISION_REVIEW,
     USER_ADMIN_ROLE,
+    ARTICLE
   },
 };
