@@ -1,95 +1,54 @@
+import { useDispatch, useSelector } from 'react-redux';
 import {
-  getRequestData,
   getRequestErrorMessage,
   isRequestError,
   isRequestPending,
   isRequestSuccess,
 } from '../../main/store/store.service';
-import { useDispatch, useSelector } from 'react-redux';
+
 import { NAVIGATION_STORE_NAME } from '../../lib/common/navigation';
-import {
-  createArticleUploadData,
-  updateArticle,
-  ArticleLoadData,
-  articleDelete,
-} from './article-create.action';
-import { CreateArticleComponent } from './article-create.component';
 import { CREATE_ARTICLE_STORE_NAME } from './article-create.constant';
 import { ARTICLE_FIELD_NAME } from './article-create.type';
+
+import { CreateArticleComponent } from './article-create.component';
+import { createArticleUploadData } from './article-create.action';
+import { convertForCreateUpdate } from './article-create.convert';
 import { formValidation } from './article-create.validation';
-import { getQuery } from '../../main/navigation';
-import { useEffect } from 'react';
 
 export function CreateArticleContainer() {
   const dispatch = useDispatch();
-  const articleId = getQuery('id');
-  const postId = getQuery('postId');
 
-  const {
-    state,
-    pageLoading,
-    productState,
-    updateArticleState,
-    deleteArticleState,
-  } = useSelector((state) => ({
-    state: state[CREATE_ARTICLE_STORE_NAME].createArticle,
+  const { pageLoading, createArticleStore } = useSelector((state) => ({
     pageLoading: state[NAVIGATION_STORE_NAME].pageLoading,
-    productState: state[CREATE_ARTICLE_STORE_NAME].product,
-    updateArticleState: state[CREATE_ARTICLE_STORE_NAME].updateArticle,
-    deleteArticleState: state[CREATE_ARTICLE_STORE_NAME].deleteArticle,
+    createArticleStore: state[CREATE_ARTICLE_STORE_NAME].createArticle,
   }));
 
-  useEffect(() => {
-    if (Boolean(articleId)) {
-      dispatch(ArticleLoadData(articleId));
-    }
-    if (Boolean(postId)) {
-      dispatch(ArticleLoadData(postId));
-    }
-  }, []);
-
   const onSubmit = (formValues) => {
-    if (Boolean(articleId)) {
-      dispatch(updateArticle(articleId, formValues));
-    } else {
-      dispatch(createArticleUploadData(formValues));
-    }
+    console.log(formValues);
+    const data = convertForCreateUpdate(formValues);
+    // dispatch(createArticleUploadData(data));
   };
 
-  const deleteProduct = () => {
-    dispatch(articleDelete(articleId));
-  };
-  const initialValues = () => {
-    const data = getRequestData(productState, {
-      [ARTICLE_FIELD_NAME.TITLE]: '',
-      [ARTICLE_FIELD_NAME.DESCRIPTION]: '',
-      [ARTICLE_FIELD_NAME.ARTICLE]: {},
-    });
-    return data;
-  };
-
+  const initialValues = () => ({
+    [ARTICLE_FIELD_NAME.TITLE]: '',
+    [ARTICLE_FIELD_NAME.DESCRIPTION]: '',
+    [ARTICLE_FIELD_NAME.ARTICLE]: {},
+  });
 
   return (
     <CreateArticleComponent
       pageLoading={pageLoading}
-      isPending={isRequestPending(state)}
-      isError={isRequestError(state)}
-      isSuccess={isRequestSuccess(state)}
-      errorMessage={getRequestErrorMessage(state)}
+      // isPending={isRequestPending(createArticleStore)}
+      isPending={true}
+      // isError={isRequestError(createArticleStore)}
+      isError={true}
+      // isSuccess={isRequestSuccess(createArticleStore)}
+      isSuccess={true}
+      // errorMessage={getRequestErrorMessage(createArticleStore)}
+      errorMessage={'ERRORMESSAGE'}
       initialValues={initialValues()}
-      isUploadedSuccess={isRequestSuccess(productState)}
       onSubmit={onSubmit}
       validation={formValidation}
-      updateIsPending={isRequestPending(updateArticleState)}
-      updateIsError={isRequestError(updateArticleState)}
-      updateIsSuccess={isRequestSuccess(updateArticleState)}
-      updateErrorMessage={getRequestErrorMessage(updateArticleState)}
-      deleteProduct={deleteProduct}
-      deleteIsPending={isRequestPending(deleteArticleState)}
-      deleteIsError={isRequestError(deleteArticleState)}
-      deleteErrorMessage={getRequestErrorMessage(deleteArticleState)}
-      readOnly={!!postId}
-      edit={!!articleId}
     />
   );
 }

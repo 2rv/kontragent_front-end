@@ -104,6 +104,14 @@ import {
   UserAdminItemCompanyListRouter,
   USER_ADMIN_ITEM_COMPANY_LIST_ROUTE_PATH,
 } from '../../core/user-admin-item-company-list';
+import {
+  createArticleRouter,
+  CREATE_ARTICLE_ROUTE_PATH,
+} from '../../core/article-create';
+import {
+  editArticleRouter,
+  EDIT_ARTICLE_ROUTE_PATH,
+} from '../../core/article-edit';
 
 export const routes = {
   '/': IndexRouter,
@@ -140,6 +148,8 @@ export const routes = {
   [USER_REFERAL_SYSTEM_ROUTE_PATH]: UserReferalSystemRouter,
   [USER_REFERAL_BALANCE_ROUTE_PATH]: UserReferalBalanceRouter,
   [ACCOUNT_REFERAL_ROUTE_PATH]: AccountReferalRouter,
+  [CREATE_ARTICLE_ROUTE_PATH]: createArticleRouter,
+  [EDIT_ARTICLE_ROUTE_PATH]: editArticleRouter,
 };
 
 export const Router = routesInit(routes);

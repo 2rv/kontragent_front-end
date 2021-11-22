@@ -114,9 +114,9 @@ export const required = (value) => {
   return null;
 };
 
-export const requiredArray = (value = []) => {
+export const requiredArray = (value = [], validationTid) => {
   if (value.length === 0) {
-    return getError(REQUIRED_TEXT_TID);
+    return getError(validationTid ? validationTid : REQUIRED_TEXT_TID);
   }
 
   return null;

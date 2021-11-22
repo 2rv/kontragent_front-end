@@ -14,6 +14,7 @@ import { ReactEditorBlock } from '../../../lib/common/editor';
 // import { ModifierBlock } from 'src/lib/common/block-modifier';
 import { Grid } from '@material-ui/core';
 import Button from '@mui/material/Button';
+import Box from '@mui/material/Box';
 
 import { TextFieldElement } from '../../../lib/element/text-field.element.js';
 
@@ -72,32 +73,35 @@ export function FormComponent(props) {
           />
         </FieldLayout>
         <BlockCategories values={values} handleBlur={handleBlur} type={4} /> */}
-      <Grid item>
-        <TextFieldElement
-          label={text('CHANGETITLE')}
-          name={ARTICLE_FIELD_NAME.TITLE}
-          onChange={handleChange}
-          onBlur={handleBlur}
-          value={values[ARTICLE_FIELD_NAME.TITLE]}
-          error={isFieldError(ARTICLE_FIELD_NAME.TITLE)}
-          fullWidth
-          errorText={getFieldError(ARTICLE_FIELD_NAME.TITLE)}
-        />
-      </Grid>
-      <Grid item>
-        <TextFieldElement
-          type="password"
-          label={text('CHANGEDESC')}
-          name={ARTICLE_FIELD_NAME.DESCRIPTION}
-          onChange={handleChange}
-          onBlur={handleBlur}
-          value={values[ARTICLE_FIELD_NAME.DESCRIPTION]}
-          error={isFieldError(ARTICLE_FIELD_NAME.DESCRIPTION)}
-          fullWidth
-          errorText={getFieldError(ARTICLE_FIELD_NAME.DESCRIPTION)}
-        />
-      </Grid>
-
+      <Box sx={{ py: 4 }}>
+        <Grid spacing={3} >
+          <Grid item>
+            <TextFieldElement
+              label={text('CHANGETITLE')}
+              name={ARTICLE_FIELD_NAME.TITLE}
+              onChange={handleChange}
+              onBlur={handleBlur}
+              value={values[ARTICLE_FIELD_NAME.TITLE]}
+              error={isFieldError(ARTICLE_FIELD_NAME.TITLE)}
+              fullWidth
+              errorText={getFieldError(ARTICLE_FIELD_NAME.TITLE)}
+            />
+          </Grid>
+          <Grid item>
+            <TextFieldElement
+              type="password"
+              label={text('CHANGEDESC')}
+              name={ARTICLE_FIELD_NAME.DESCRIPTION}
+              onChange={handleChange}
+              onBlur={handleBlur}
+              value={values[ARTICLE_FIELD_NAME.DESCRIPTION]}
+              error={isFieldError(ARTICLE_FIELD_NAME.DESCRIPTION)}
+              fullWidth
+              errorText={getFieldError(ARTICLE_FIELD_NAME.DESCRIPTION)}
+            />
+          </Grid>
+        </Grid>
+      </Box>
       <ReactEditorBlock
         titleTid="Пост"
         handleChange={setEditorData(ARTICLE_FIELD_NAME.ARTICLE)}
@@ -122,13 +126,9 @@ export function FormComponent(props) {
         /> */}
       {/* <FieldLayout type="double" adaptive> */}
       {readOnly ? null : edit ? (
-        <Button type="sumbit">
-          {text('EDITAPPROVE')}
-        </Button>
+        <Button type="sumbit">{text('EDITAPPROVE')}</Button>
       ) : (
-        <Button type="sumbit">
-          {text('CREATE')}
-        </Button>
+        <Button type="sumbit">{text('CREATE')}</Button>
       )}
 
       {/* <ButtonSecondary
