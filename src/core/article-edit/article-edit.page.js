@@ -6,7 +6,9 @@ export function EditArticlePage() {
   return (
     <NavigationComponent>
       <Grid spacing={6} container>
-        <EditArticleContainer />
+        <Grid item>
+          <EditArticleContainer />
+        </Grid>
       </Grid>
     </NavigationComponent>
   );

@@ -7,6 +7,7 @@ import { USER_ADMIN_LIST_ROUTE_PATH } from '../../user-admin-list';
 import { USER_REFERAL_BALANCE_ROUTE_PATH } from '../../user-referal-balance';
 import { USER_REFERAL_SYSTEM_ROUTE_PATH } from '../../user-referal-system';
 import { COMPANY_ADMIN_LIST_ROUTE_PATH } from '../../company-admin-list';
+import { CREATE_ARTICLE_ROUTE_PATH } from '../../article-create';
 
 export const USER_MENU_ITEM = [
   { [COMPANY_ACCOUNT_LIST_ROUTE_PATH]: text('NAVIGATION.USER.MY_COMPANIES') },
@@ -16,6 +17,7 @@ export const USER_MENU_ITEM = [
   {
     [USER_REFERAL_SYSTEM_ROUTE_PATH]: text('NAVIGATION.USER.SYSTEM'),
   },
+  { [CREATE_ARTICLE_ROUTE_PATH]: text('NAVIGATION.USER.ARTICLE_CREATE') },
   { [SETTINGS_ROUTE_PATH]: text('NAVIGATION.USER.SETITNGS') },
 ];
 

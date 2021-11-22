@@ -6,7 +6,9 @@ export function CreateArticlePage() {
   return (
     <NavigationComponent>
       <Grid spacing={6} container>
-        <CreateArticleContainer />
+        <Grid item>
+          <CreateArticleContainer />
+        </Grid>
       </Grid>
     </NavigationComponent>
   );

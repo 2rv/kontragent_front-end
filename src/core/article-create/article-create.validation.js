@@ -9,9 +9,9 @@ import { ARTICLE_FIELD_NAME } from './article-create.type';
 
 const config = {
   [ARTICLE_FIELD_NAME.TITLE]: [required, minLength(3), maxLength(50)],
-  [ARTICLE_FIELD_NAME.DESCRIPTION]: [required],
+  [ARTICLE_FIELD_NAME.DESCRIPTION]: [required, minLength(10)],
   [ARTICLE_FIELD_NAME.ARTICLE]: [
-    (article) => requiredArray(article.blocks, 'VALIDATION.ARTICLE_REQIERED')
+    (article) => requiredArray(article.blocks, 'VALIDATION.ARTICLE_REQIERED'),
   ],
 };
 

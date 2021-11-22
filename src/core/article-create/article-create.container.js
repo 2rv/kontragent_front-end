@@ -26,7 +26,7 @@ export function CreateArticleContainer() {
   const onSubmit = (formValues) => {
     console.log(formValues);
     const data = convertForCreateUpdate(formValues);
-    // dispatch(createArticleUploadData(data));
+    dispatch(createArticleUploadData(data));
   };
 
   const initialValues = () => ({
@@ -38,14 +38,10 @@ export function CreateArticleContainer() {
   return (
     <CreateArticleComponent
       pageLoading={pageLoading}
-      // isPending={isRequestPending(createArticleStore)}
-      isPending={true}
-      // isError={isRequestError(createArticleStore)}
-      isError={true}
-      // isSuccess={isRequestSuccess(createArticleStore)}
-      isSuccess={true}
-      // errorMessage={getRequestErrorMessage(createArticleStore)}
-      errorMessage={'ERRORMESSAGE'}
+      isPending={isRequestPending(createArticleStore)}
+      isError={isRequestError(createArticleStore)}
+      isSuccess={isRequestSuccess(createArticleStore)}
+      errorMessage={getRequestErrorMessage(createArticleStore)}
       initialValues={initialValues()}
       onSubmit={onSubmit}
       validation={formValidation}
