@@ -117,6 +117,10 @@ import {
   ADMIN_POST_LIST_ROUTE_PATH,
   AdminPostListRouter,
 } from '../../core/admin-post-list';
+import {
+  INVITE_ROUTE_PATH,
+  InviteRouter
+} from '../../core/invite'
 
 export const routes = {
   '/': IndexRouter,
@@ -158,6 +162,7 @@ export const routes = {
   [CREATE_ARTICLE_ROUTE_PATH]: createArticleRouter,
   [EDIT_ARTICLE_ROUTE_PATH]: editArticleRouter,
   [ARTICLE_ROUTE_PATH]: articleRouter,
+  [INVITE_ROUTE_PATH]: InviteRouter,
 };
 
 export const Router = routesInit(routes);

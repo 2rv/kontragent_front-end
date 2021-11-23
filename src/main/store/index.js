@@ -55,6 +55,12 @@ import {
   adminRevisionReviewStore,
   ADMIN_REVISION_REVIEW_STORE_NAME,
 } from '../../core/admin-revision-review';
+import {
+  inviteStore
+} from '../../core/invite/invite.store'
+import {
+  INVITE_STORE_NAME
+} from '../../core/invite/invite.constant'
 
 export const reducers = combineReducers({
   [AUTH_STORE_NAME]: authStore,
@@ -83,6 +89,7 @@ export const reducers = combineReducers({
   [ARTICLE_STORE_NAME]: articleStore,
   [ADMIN_REVISION_INFO_STORE_NAME]: adminRevisionInfoStore,
   [ADMIN_REVISION_REVIEW_STORE_NAME]: adminRevisionReviewStore,
+  [INVITE_STORE_NAME]: inviteStore,
 });
 
 export { initStore } from './store.core';
