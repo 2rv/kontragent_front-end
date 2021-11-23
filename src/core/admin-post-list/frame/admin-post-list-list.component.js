@@ -8,6 +8,10 @@ import Divider from '@mui/material/Divider';
 import { text } from '../../../lib/common/text';
 import { redirect } from '../../../main/navigation';
 import { ADMIN_POST_LIST_DATA_NAME } from '../admin-post-list.constant';
+import {
+  ARTICLE_DATA_NAME,
+  ARTICLE_DYNAMIC_ROUTE_PATH,
+} from '../../article-view/article-view.constant';
 
 export const AdminPostListListComponent = ({ list }) => {
   if (!list || list.length === 0) {
@@ -25,14 +29,14 @@ export const AdminPostListListComponent = ({ list }) => {
           <ListItem
             button
             key={key}
-            /* onClick={() => {
-              return redirect(ADMIN_REVISION_REVIEW_ITEM_ROUTE_PATH_DYNAMIC, {
+            onClick={() => {
+              return redirect(ARTICLE_DYNAMIC_ROUTE_PATH, {
                 dynamic: true,
                 params: {
-                  postId: items[REVISION_ADMIN_LIST_DATA_NAME.ID],
+                  articleId: items[ARTICLE_DATA_NAME.ID],
                 },
               });
-            }}*/
+            }}
             sx={{ py: 3, px: 3 }}
           >
             <ListItemText

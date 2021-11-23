@@ -36,5 +36,6 @@
   "REVISION_VALIDATION_ERROR_ADDITIONAL_PRICE_ISNOT_NATURAL": "Доплата должна быть целым положительным числом",
   "REFERAL_ERROR_REFERAL_WITH_THIS_ID_NOT_FOUND": "Ваше приглашение больше недействительно",
   "REFERAL_MEMBER_ERROR_CANNOT_JOIN_AS_ADMIN": "Вы не можете присоединиться к системе будучи администратором",
-  "USER_ROLE_ERROR_CANNOT_CHANGE_THE_ROLE_OF_YOURSELF": "Нельзя менять роль у самого себя"
+  "USER_ROLE_ERROR_CANNOT_CHANGE_THE_ROLE_OF_YOURSELF": "Нельзя менять роль у самого себя",
+  "INVITE_ERROR_ALLREARY_INVITED": "Приглашение уже отправленно"
 }

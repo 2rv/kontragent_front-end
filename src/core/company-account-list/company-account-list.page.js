@@ -1,8 +1,5 @@
-import { NavigationComponent } from '../navigation/navigation.component';
-
-import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid';
-
+import { NavigationComponent } from '../navigation/navigation.component';
 import { CompanyCreateInfoComponent } from './frame/company-create-info.component';
 import { CompanyAccountListContainer } from './company-account-list.container';
 

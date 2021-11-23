@@ -1,4 +1,4 @@
-export const ADMIN_POST_LIST_ROUTE_PATH = '/admin/post-list';
+export const ADMIN_POST_LIST_ROUTE_PATH = '/article-list';
 
 export const ADMIN_POST_LIST_DATA_NAME = {
   ID: 'id',

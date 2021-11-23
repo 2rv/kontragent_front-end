@@ -1,6 +1,5 @@
 import { setActivePath } from '../../lib/common/navigation/navigation.action';
 import {
-  authRedirectNotAdmin,
   authRedirectPrivated,
   authRedirectVerification,
 } from '../../lib/common/auth';
@@ -11,7 +10,6 @@ import { AUTH_VERIFICATION_PHONE_ROUTE_PATH } from '../auth-verification-phone/a
 export function AdminPostListRouter(ctx) {
   ctx.store.dispatch(setActivePath(ADMIN_POST_LIST_ROUTE_PATH));
   if (authRedirectPrivated(ctx, '/')) return;
-  if (authRedirectNotAdmin(ctx, '/')) return;
   if (
     authRedirectVerification(
       ctx,
