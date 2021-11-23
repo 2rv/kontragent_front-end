@@ -48,10 +48,13 @@ import {
   editArticleStore,
   EDIT_ARTICLE_STORE_NAME,
 } from '../../core/article-edit';
+import { articleStore, ARTICLE_STORE_NAME } from '../../core/article-view';
+import { adminRevisionInfoStore } from '../../core/admin-revision-info/admin-revision-info.store';
+import { ADMIN_REVISION_INFO_STORE_NAME } from '../../core/admin-revision-info/admin-revision-info.constant';
 import {
-  articleStore,
-  ARTICLE_STORE_NAME,
-} from '../../core/article-view';
+  adminRevisionReviewStore,
+  ADMIN_REVISION_REVIEW_STORE_NAME,
+} from '../../core/admin-revision-review';
 
 export const reducers = combineReducers({
   [AUTH_STORE_NAME]: authStore,
@@ -78,6 +81,8 @@ export const reducers = combineReducers({
   [CREATE_ARTICLE_STORE_NAME]: createArticleStore,
   [EDIT_ARTICLE_STORE_NAME]: editArticleStore,
   [ARTICLE_STORE_NAME]: articleStore,
+  [ADMIN_REVISION_INFO_STORE_NAME]: adminRevisionInfoStore,
+  [ADMIN_REVISION_REVIEW_STORE_NAME]: adminRevisionReviewStore,
 });
 
 export { initStore } from './store.core';

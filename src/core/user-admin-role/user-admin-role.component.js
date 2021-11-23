@@ -47,6 +47,7 @@ export function UserAdminRoleComponent(props) {
               />
             )}
           </Formik>
+
           {isSuccess && (
             <Box sx={{ pt: 4 }}>
               <Alert severity="success">
@@ -57,6 +58,11 @@ export function UserAdminRoleComponent(props) {
           {isPending && (
             <Box sx={{ pt: 4, width: '100%' }}>
               <LinearProgress />
+            </Box>
+          )}
+          {isError && (
+            <Box sx={{ pt: 4 }}>
+              <Alert severity="error">{text(`ERROR.${errorMessage}`)}</Alert>
             </Box>
           )}
         </Box>

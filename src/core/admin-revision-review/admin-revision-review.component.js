@@ -50,14 +50,11 @@ export function AdminRevisionReviewComponent(props) {
               />
             )}
           </Formik>
-
-          {isError &&
-            errorMessage &&
-            errorMessage.map((error) => (
-              <Box sx={{ pt: 4 }}>
-                <Alert severity="error">{text(`ERROR.${error}`)}</Alert>
-              </Box>
-            ))}
+          {isPending && (
+            <Box sx={{ pt: 4, width: '100%' }}>
+              <LinearProgress />
+            </Box>
+          )}
           {isSuccess && (
             <Box sx={{ pt: 4 }}>
               <Alert severity="success">
@@ -65,9 +62,10 @@ export function AdminRevisionReviewComponent(props) {
               </Alert>
             </Box>
           )}
-          {isPending && (
-            <Box sx={{ pt: 4, width: '100%' }}>
-              <LinearProgress />
+
+          {isError && (
+            <Box sx={{ pt: 4 }}>
+              <Alert severity="error">{text(`ERROR.${errorMessage}`)}</Alert>
             </Box>
           )}
         </Box>

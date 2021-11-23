@@ -1,12 +1,11 @@
 import { Article } from './frames/article.component';
 import { ARTICLE_DATA_NAME } from './article-view.constant';
-
+import Skeleton from '@mui/material/Skeleton';
 import Link from '@mui/material/Link';
 import { redirect } from '../../main/navigation/navigation.core';
 import { USER_ADMIN_ITEM_INFO_ROUTE_PATH_DYNAMIC } from '../user-admin-item-info';
 
 import { Grid } from '@material-ui/core';
-import LinearProgress from '@mui/material/LinearProgress';
 import Typography from '@mui/material/Typography';
 import Paper from '@mui/material/Paper';
 import Box from '@mui/material/Box';
@@ -41,7 +40,7 @@ export function ArticleViewComponent(props) {
                   );
                 }}
               >
-                {`${article[ARTICLE_DATA_NAME.FIRSTNAME]} ${
+                {`автор: ${article[ARTICLE_DATA_NAME.FIRSTNAME]} ${
                   article[ARTICLE_DATA_NAME.LASTNAME]
                 }`}
               </Link>
@@ -57,9 +56,14 @@ export function ArticleViewComponent(props) {
             />
           )}
           {loadDataPending && (
-            <Box sx={{ pt: 4, width: '100%' }}>
-              <LinearProgress />
-            </Box>
+            <Grid>
+              <Box sx={{ pt: 4, px: 2, pb: 2 }}>
+                <Skeleton variant="rectangular" sx={{ height: '120px' }} />
+              </Box>
+              <Box sx={{ pt: 4, px: 2, pb: 2 }}>
+                <Skeleton variant="rectangular" sx={{ height: '120px' }} />
+              </Box>
+            </Grid>
           )}
         </Grid>
       </Box>

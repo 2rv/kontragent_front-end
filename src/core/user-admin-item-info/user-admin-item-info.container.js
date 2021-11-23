@@ -22,14 +22,14 @@ import { USER_ADMIN_ITEM_INFO_STORE_NAME } from './user-admin-item-info.constant
 export function UserAdminItemInfoContainer() {
   const dispatch = useDispatch();
   const { state, pageLoading, data } = useSelector((state) => ({
-    state: state[USER_ADMIN_ROLE_STORE_NAME],
     data: state[USER_ADMIN_ITEM_INFO_STORE_NAME],
+    state: state[USER_ADMIN_ROLE_STORE_NAME],
     pageLoading: state[NAVIGATION_STORE_NAME].pageLoading,
   }));
 
   React.useEffect(() => {
     dispatch(getUserAdminItemInfo());
-  }, [state.form.success]);
+  }, []);
 
   return (
     <UserAdminItemInfoComponent
