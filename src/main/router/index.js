@@ -108,6 +108,23 @@ import {
   UserAdminItemCompanyListRouter,
   USER_ADMIN_ITEM_COMPANY_LIST_ROUTE_PATH,
 } from '../../core/user-admin-item-company-list';
+import {
+  createArticleRouter,
+  CREATE_ARTICLE_ROUTE_PATH,
+} from '../../core/article-create';
+import {
+  editArticleRouter,
+  EDIT_ARTICLE_ROUTE_PATH,
+} from '../../core/article-edit';
+import { articleRouter, ARTICLE_ROUTE_PATH } from '../../core/article-view';
+import {
+  ADMIN_POST_LIST_ROUTE_PATH,
+  AdminPostListRouter,
+} from '../../core/admin-post-list';
+import {
+  INVITE_ROUTE_PATH,
+  InviteRouter
+} from '../../core/invite'
 
 export const routes = {
   '/': IndexRouter,
@@ -138,6 +155,8 @@ export const routes = {
   [USER_ADMIN_LIST_ROUTE_PATH]: UserAdminListRouter,
   [ADMIN_REVISION_REVIEW_ROUTE_PATH]: AdminRevisionReviewRouter,
   [ADMIN_REVISION_REVIEW_ITEM_ROUTE_PATH]: AdminRevisionReviewItemRouter,
+  [ADMIN_POST_LIST_ROUTE_PATH]: AdminPostListRouter,
+
   [COMPANY_ADMIN_LIST_ROUTE_PATH]: CompanyAdminListRouter,
   [REVISION_ADMIN_LIST_ROUTE_PATH]: RevisionAdminListRouter,
   [AUTH_REFERAL_ROUTE_PATH]: AuthReferalRouter,
@@ -146,6 +165,10 @@ export const routes = {
   [ACCOUNT_REFERAL_ROUTE_PATH]: AccountReferalRouter,
 
   [USER_ADMIN_INVITE_ROUTE_PATH]: UserAdminInviteRouter,
+  [CREATE_ARTICLE_ROUTE_PATH]: createArticleRouter,
+  [EDIT_ARTICLE_ROUTE_PATH]: editArticleRouter,
+  [ARTICLE_ROUTE_PATH]: articleRouter,
+  [INVITE_ROUTE_PATH]: InviteRouter,
 };
 
 export const Router = routesInit(routes);

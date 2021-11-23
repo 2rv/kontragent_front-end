@@ -1,54 +1,61 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 
 import { getQuery, redirect } from '../../main/navigation/navigation.core';
 import { httpRequest } from '../../main/http';
-
-import { ADMIN_REVISION_REVIEW_DATA_NAME } from './admin-revision-review.constant';
+import {
+  resetAdminRevisionReviewUpdateDataFromState,
+  changeAdminRevisionReview,
+} from './admin-revision-review.action';
+import {
+  ADMIN_REVISION_REVIEW_DATA_NAME,
+  ADMIN_REVISION_REVIEW_STORE_NAME,
+} from './admin-revision-review.constant';
 import { REVISION_ADMIN_LIST_ROUTE_PATH } from '../revision-admin-list';
 import { NAVIGATION_STORE_NAME } from '../../lib/common/navigation/navigation.constant';
-
+import { ADMIN_REVISION_INFO_STORE_NAME } from '../admin-revision-info/admin-revision-info.constant';
 import { AdminRevisionReviewComponent } from './admin-revision-review.component';
 import { convertAdminRevisionReviewSendData } from './admin-revision-review.convert';
+import {
+  getRequestData,
+  getRequestErrorMessage,
+  isRequestError,
+  isRequestPending,
+  isRequestSuccess,
+} from '../../main/store/store.service';
 
 export function AdminRevisionReviewContainer() {
-  const { pageLoading } = useSelector((state) => ({
+  const dispatch = useDispatch();
+  const { state, pageLoading, userData } = useSelector((state) => ({
+    state: state[ADMIN_REVISION_REVIEW_STORE_NAME],
     pageLoading: state[NAVIGATION_STORE_NAME].pageLoading,
+    userData: state[ADMIN_REVISION_INFO_STORE_NAME],
   }));
 
-  const createRevisionReview = (values, setSubmitting) => {
+  React.useEffect(() => {
+    dispatch(resetAdminRevisionReviewUpdateDataFromState());
+  }, []);
+
+  const createRevisionReview = (values) => {
     const data = convertAdminRevisionReviewSendData(values, getFileList);
-    sendData(data, setSubmitting);
-  };
-
-  const sendData = async (data, setSubmitting) => {
-    setRequestPending(true);
-    setRequestSuccess(false);
-    setRequestError(false);
-    setRequestErrorMessage(null);
-
-    try {
-      const res = await httpRequest({
-        method: 'PATCH',
-        url: `revision/review/${getQuery('revisionId')}`,
-        data,
-      });
-
-      await redirect(REVISION_ADMIN_LIST_ROUTE_PATH);
-      setRequestPending(false);
-      setRequestSuccess(true);
-      setSubmitting(false);
-    } catch (error) {
-      if (error) {
-        setRequestError(true);
-        setRequestPending(false);
-        setRequestErrorMessage(error.response.data.message);
-        setSubmitting(false);
-      }
-    }
+    dispatch(changeAdminRevisionReview(data));
   };
 
   const getInitialValue = () => {
+    if (isRequestSuccess(userData.user)) {
+      const data = getRequestData(userData.user, '');
+
+      return {
+        [ADMIN_REVISION_REVIEW_DATA_NAME.REVIEW]:
+          data[ADMIN_REVISION_REVIEW_DATA_NAME.REVIEW],
+        [ADMIN_REVISION_REVIEW_DATA_NAME.STATUS]:
+          data[ADMIN_REVISION_REVIEW_DATA_NAME.STATUS],
+        [ADMIN_REVISION_REVIEW_DATA_NAME.PRICE]:
+          data[ADMIN_REVISION_REVIEW_DATA_NAME.PRICE],
+        [ADMIN_REVISION_REVIEW_DATA_NAME.FILE_ID_LIST]:
+          data[ADMIN_REVISION_REVIEW_DATA_NAME.FILE_ID_LIST],
+      };
+    }
     return {
       [ADMIN_REVISION_REVIEW_DATA_NAME.REVIEW]: '',
       [ADMIN_REVISION_REVIEW_DATA_NAME.STATUS]: '',
@@ -57,22 +64,19 @@ export function AdminRevisionReviewContainer() {
     };
   };
 
-  const [isRequestPending, setRequestPending] = React.useState(null);
-  const [isRequestError, setRequestError] = React.useState(null);
-  const [isRequestSuccess, setRequestSuccess] = React.useState(null);
-  const [getRequestErrorMessage, setRequestErrorMessage] = React.useState(null);
   const [getFileList, setFileList] = React.useState([]);
 
   return (
     <AdminRevisionReviewComponent
-      isPending={isRequestPending}
-      isError={isRequestError}
-      isSuccess={isRequestSuccess}
+      isPending={isRequestPending(state.form)}
+      isError={isRequestError(state.form)}
+      isSuccess={isRequestSuccess(state.form)}
       initialValue={getInitialValue()}
       onSubmitForm={createRevisionReview}
+      isDependentPending={isRequestPending(userData.user)}
       pageLoading={pageLoading}
       setFileList={setFileList}
-      errorMessage={getRequestErrorMessage}
+      errorMessage={getRequestErrorMessage(state.form)}
     />
   );
 }

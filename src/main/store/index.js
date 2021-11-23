@@ -40,6 +40,27 @@ import {
   userAdminItemInfoStore,
   USER_ADMIN_ITEM_INFO_STORE_NAME,
 } from '../../core/user-admin-item-info';
+import {
+  createArticleStore,
+  CREATE_ARTICLE_STORE_NAME,
+} from '../../core/article-create';
+import {
+  editArticleStore,
+  EDIT_ARTICLE_STORE_NAME,
+} from '../../core/article-edit';
+import { articleStore, ARTICLE_STORE_NAME } from '../../core/article-view';
+import { adminRevisionInfoStore } from '../../core/admin-revision-info/admin-revision-info.store';
+import { ADMIN_REVISION_INFO_STORE_NAME } from '../../core/admin-revision-info/admin-revision-info.constant';
+import {
+  adminRevisionReviewStore,
+  ADMIN_REVISION_REVIEW_STORE_NAME,
+} from '../../core/admin-revision-review';
+import {
+  inviteStore
+} from '../../core/invite/invite.store'
+import {
+  INVITE_STORE_NAME
+} from '../../core/invite/invite.constant'
 
 export const reducers = combineReducers({
   [AUTH_STORE_NAME]: authStore,
@@ -63,6 +84,12 @@ export const reducers = combineReducers({
   [ACCOUNT_REFERAL_STORE_NAME]: accountReferalStore,
   [USER_ADMIN_ROLE_STORE_NAME]: userAdminRoleStore,
   [USER_ADMIN_ITEM_INFO_STORE_NAME]: userAdminItemInfoStore,
+  [CREATE_ARTICLE_STORE_NAME]: createArticleStore,
+  [EDIT_ARTICLE_STORE_NAME]: editArticleStore,
+  [ARTICLE_STORE_NAME]: articleStore,
+  [ADMIN_REVISION_INFO_STORE_NAME]: adminRevisionInfoStore,
+  [ADMIN_REVISION_REVIEW_STORE_NAME]: adminRevisionReviewStore,
+  [INVITE_STORE_NAME]: inviteStore,
 });
 
 export { initStore } from './store.core';
