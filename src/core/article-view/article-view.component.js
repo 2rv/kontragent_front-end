@@ -10,8 +10,14 @@ import Box from '@mui/material/Box';
 import { USER_ADMIN_ITEM_INFO_ROUTE_PATH_DYNAMIC } from '../user-admin-item-info/user-admin-item-info.constant';
 
 export function ArticleViewComponent(props) {
-  const { loadDataPending, loadDataSuccess, article, isadmin, iscreator } =
-    props;
+  const {
+    loadDataPending,
+    loadDataSuccess,
+    article,
+    isadmin,
+    iscreator,
+    articleId
+  } = props;
 
   return (
     <Paper>
@@ -32,11 +38,12 @@ export function ArticleViewComponent(props) {
                 component="button"
                 variant="body2"
                 onClick={() => {
-                  redirect(
-                    USER_ADMIN_ITEM_INFO_ROUTE_PATH_DYNAMIC(
-                      article[ARTICLE_DATA_NAME.ID],
-                    ),
-                  );
+                  redirect(USER_ADMIN_ITEM_INFO_ROUTE_PATH_DYNAMIC, {
+                    dynamic: true,
+                    params: {
+                      userId: article[ARTICLE_DATA_NAME.ID],
+                    },
+                  });
                 }}
               >
                 {`${article[ARTICLE_DATA_NAME.FIRSTNAME]} ${
@@ -49,6 +56,7 @@ export function ArticleViewComponent(props) {
         <Grid>
           {loadDataSuccess && (
             <Article
+              articleId={articleId}
               isadmin={isadmin}
               iscreator={iscreator}
               acticleData={article[ARTICLE_DATA_NAME.ARTICLE]}
