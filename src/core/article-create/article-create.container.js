@@ -1,4 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux';
+import { useEffect } from 'react';
 import {
   getRequestErrorMessage,
   isRequestError,
@@ -11,7 +12,10 @@ import { CREATE_ARTICLE_STORE_NAME } from './article-create.constant';
 import { ARTICLE_FIELD_NAME } from './article-create.type';
 
 import { CreateArticleComponent } from './article-create.component';
-import { createArticleUploadData, resetArticleCreateDataFormState } from './article-create.action';
+import {
+  createArticleUploadData,
+  resetArticleCreateDataFormState,
+} from './article-create.action';
 import { convertForCreateUpdate } from './article-create.convert';
 import { formValidation } from './article-create.validation';
 
@@ -36,7 +40,9 @@ export function CreateArticleContainer() {
   });
 
   useEffect(() => {
-    dispatch(resetArticleCreateDataFormState());
+    return function cleanup() {
+      dispatch(resetArticleCreateDataFormState());
+    };
   }, []);
 
   return (
