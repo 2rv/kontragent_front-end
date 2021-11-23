@@ -35,7 +35,7 @@ export function createArticleStore(state = initialState, action) {
     case CREATE_ARTICLE_ACTION_TYPE.ARTICLE_RESET:
       return {
         ...state,
-        form: resetRequestStatus(state.article),
+        form: resetRequestStatus(state.createArticle),
       };
 
     default:
