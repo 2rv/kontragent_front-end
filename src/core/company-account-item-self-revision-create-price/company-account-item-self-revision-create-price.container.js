@@ -38,7 +38,7 @@ export function CompanyAccountItemSelfRevisionCreatePriceContainer({ state }) {
     );
     await createRevision(data);
 
-    return redirect(COMPANY_ACCOUNT_ITEM_REVISION_LIST_ROUTE_PATH_DYNAMIC, {
+    redirect(COMPANY_ACCOUNT_ITEM_REVISION_LIST_ROUTE_PATH_DYNAMIC, {
       dynamic: true,
       params: {
         companyId: getQuery('companyId'),

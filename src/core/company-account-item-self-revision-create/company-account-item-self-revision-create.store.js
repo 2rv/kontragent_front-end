@@ -10,8 +10,6 @@ const initialState = {
   form: initRequestState(),
   company: [
     {
-      name: '',
-      inn: '',
       description: '',
       fileIdList: [],
       fileList: [],

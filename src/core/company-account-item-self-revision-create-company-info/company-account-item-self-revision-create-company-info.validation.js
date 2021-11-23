@@ -5,14 +5,8 @@ import { required } from '../../main/validate/validate.service';
 import { COMPANY_ACCOUNT_ITEM_SELF_REVISION_CREATE_COMPANY_INFO_FIELD_NAME } from './company-account-item-self-revision-create-company-info.constant';
 
 const config = {
-  [COMPANY_ACCOUNT_ITEM_SELF_REVISION_CREATE_COMPANY_INFO_FIELD_NAME.TITLE]: [
-    required,
-  ],
   [COMPANY_ACCOUNT_ITEM_SELF_REVISION_CREATE_COMPANY_INFO_FIELD_NAME.DESCRIPTION]:
     [required],
-  [COMPANY_ACCOUNT_ITEM_SELF_REVISION_CREATE_COMPANY_INFO_FIELD_NAME.INN]: [
-    required,
-  ],
 };
 
 export const CompanyAccountItemSelfRevisionCreateCompanyInfoFormValidation = (

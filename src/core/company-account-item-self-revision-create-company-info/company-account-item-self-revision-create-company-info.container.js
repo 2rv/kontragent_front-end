@@ -17,12 +17,8 @@ export function CompanyAccountItemSelfRevisionCreateCompanyInfoContainer({
 }) {
   const getInitialValue = () => {
     return {
-      [COMPANY_ACCOUNT_ITEM_SELF_REVISION_CREATE_COMPANY_INFO_FIELD_NAME.TITLE]:
-        company.name,
       [COMPANY_ACCOUNT_ITEM_SELF_REVISION_CREATE_COMPANY_INFO_FIELD_NAME.DESCRIPTION]:
         company.description,
-      [COMPANY_ACCOUNT_ITEM_SELF_REVISION_CREATE_COMPANY_INFO_FIELD_NAME.INN]:
-        company.inn,
       [COMPANY_ACCOUNT_ITEM_SELF_REVISION_CREATE_COMPANY_INFO_FIELD_NAME.FILE_ID_LIST]:
         [],
     };
