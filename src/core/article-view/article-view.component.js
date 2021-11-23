@@ -10,6 +10,10 @@ import Typography from '@mui/material/Typography';
 import Paper from '@mui/material/Paper';
 import Box from '@mui/material/Box';
 import { SkeletonListComponent } from '../../lib/common/skeleton/skeleton-list.component';
+import {
+  USER_ADMIN_ITEM_INFO_ROUTE_PATH_DYNAMIC,
+  USER_ADMIN_ITEM_INFO_DATA_NAME,
+} from '../user-admin-item-info/user-admin-item-info.constant';
 
 export function ArticleViewComponent(props) {
   const { loadDataPending, loadDataSuccess, article, isadmin, articleId } =
@@ -33,11 +37,17 @@ export function ArticleViewComponent(props) {
               component="button"
               variant="body2"
               onClick={() => {
-                redirect(AUTH_RECOVERY_ACCOUNT_ROUTE_PATH);
+                redirect(USER_ADMIN_ITEM_INFO_ROUTE_PATH_DYNAMIC, {
+                  dynamic: true,
+                  params: {
+                    userId: article[USER_ADMIN_ITEM_INFO_DATA_NAME.ID],
+                  },
+                });
               }}
             >
-              {`${article[ARTICLE_DATA_NAME.FIRSTNAME]} ${article[ARTICLE_DATA_NAME.LASTNAME]
-                }`}
+              {`${article[ARTICLE_DATA_NAME.FIRSTNAME]} ${
+                article[ARTICLE_DATA_NAME.LASTNAME]
+              }`}
             </Link>
           </Box>
         )}
