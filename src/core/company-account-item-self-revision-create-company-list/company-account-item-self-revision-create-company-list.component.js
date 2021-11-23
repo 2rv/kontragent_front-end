@@ -15,7 +15,7 @@ export function CompanyAccountItemSelfRevisionCreateCompanyListComponent({
       <Grid item>
         <Typography variant="heading" component="div">
           {text(
-            'COMPANY_ACCOUNT_ITEM_REVISION_CREATE.REVISON_CREATE_COMPANY_LIST.TITLE',
+            'COMPANY_ACCOUNT_ITEM_REVISION_CREATE.REVISON_CREATE_COMPANY_LIST.TITLE1',
           )}
         </Typography>
       </Grid>

@@ -8,7 +8,7 @@ import { redirect, getQuery } from '../../../main/navigation/navigation.core';
 
 import { text } from '../../../lib/common/text';
 
-import { COMPANY_ACCOUNT_ITEM_REVISION_CREATE_ROUTE_PATH_DYNAMIC } from '../../company-account-item-revision-create';
+import { COMPANY_ACCOUNT_ITEM_SELF_REVISION_CREATE_ROUTE_PATH_DYNAMIC } from '../../company-account-item-self-revision-create';
 
 export function CompanyAccountItemSelfRevisionCreateInfo() {
   return (
@@ -33,7 +33,7 @@ export function CompanyAccountItemSelfRevisionCreateInfo() {
               fullWidth
               onClick={() => {
                 return redirect(
-                  COMPANY_ACCOUNT_ITEM_REVISION_CREATE_ROUTE_PATH_DYNAMIC,
+                  COMPANY_ACCOUNT_ITEM_SELF_REVISION_CREATE_ROUTE_PATH_DYNAMIC,
                   {
                     dynamic: true,
                     params: {
