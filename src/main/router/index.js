@@ -97,6 +97,10 @@ import {
   ADMIN_REVISION_REVIEW_ITEM_ROUTE_PATH,
 } from '../../core/admin-revision-review-item';
 import {
+  UserAdminInviteRouter,
+  USER_ADMIN_INVITE_ROUTE_PATH,
+} from '../../core/user-admin-invite';
+import {
   USER_ADMIN_ITEM_INFO_ROUTE_PATH,
   UserAdminItemInfoRouter,
 } from '../../core/user-admin-item-info';
@@ -160,6 +164,8 @@ export const routes = {
   [USER_REFERAL_SYSTEM_ROUTE_PATH]: UserReferalSystemRouter,
   [USER_REFERAL_BALANCE_ROUTE_PATH]: UserReferalBalanceRouter,
   [ACCOUNT_REFERAL_ROUTE_PATH]: AccountReferalRouter,
+
+  [USER_ADMIN_INVITE_ROUTE_PATH]: UserAdminInviteRouter,
   [CREATE_ARTICLE_ROUTE_PATH]: createArticleRouter,
   [EDIT_ARTICLE_ROUTE_PATH]: editArticleRouter,
   [ARTICLE_ROUTE_PATH]: articleRouter,
