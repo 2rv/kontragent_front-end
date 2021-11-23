@@ -20,6 +20,7 @@ export const CREATE_ARTICLE_ACTION_TYPE = {
 };
 
 export const ARTICLE_FIELD_NAME = {
+  ID: 'id',
   TITLE: 'title',
   DESCRIPTION: 'description',
   ARTICLE: 'article',

@@ -2,6 +2,7 @@ import { httpRequest } from '../../main/http';
 import { CREATE_ARTICLE_ACTION_TYPE } from './article-create.type';
 import { CREATE_ARTICLE_API } from './article-create.constant';
 import { redirect } from '../../main/navigation/navigation.core';
+import { ADMIN_POST_LIST_ROUTE_PATH } from '../admin-post-list';
 
 export function createArticleUploadData(data) {
   return async (dispatch) => {
@@ -15,7 +16,7 @@ export function createArticleUploadData(data) {
         data: data,
       });
 
-      await redirect('/').then(() => {
+      await redirect(ADMIN_POST_LIST_ROUTE_PATH).then(() => {
         dispatch({
           type: CREATE_ARTICLE_ACTION_TYPE.CREATE_ARTICLE_UPLOAD_SUCCESS,
         });
