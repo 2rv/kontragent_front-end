@@ -7,7 +7,7 @@ import {
 import { useDispatch, useSelector } from 'react-redux';
 
 import { getQuery } from '../../main/navigation';
-import { articleLoadData, resetArticleViewDataFormState } from './article-view.action';
+import { articleLoadData } from './article-view.action';
 
 import { NAVIGATION_STORE_NAME } from '../../lib/common/navigation';
 import { ARTICLE_STORE_NAME } from './article-view.constant';
@@ -34,9 +34,7 @@ export function ArticleViewContainer() {
   const isadmin = role === USER_ROLE.ADMIN
   const iscreator = creatorId === userId
 
-  useEffect(() => {
-    dispatch(resetArticleViewDataFormState());
-  }, []);
+
 
   return (
     <ArticleViewComponent

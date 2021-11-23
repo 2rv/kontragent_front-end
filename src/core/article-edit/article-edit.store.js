@@ -3,6 +3,7 @@ import {
   setRequestError,
   setRequestPending,
   setRequestSuccess,
+  resetRequestStatus
 } from '../../main/store/store.service';
 import { EDIT_ARTICLE_ACTION_TYPE } from './article-edit.type';
 
@@ -68,7 +69,15 @@ export function editArticleStore(state = initialState, action) {
         ),
       };
 
+    case EDIT_ARTICLE_ACTION_TYPE.ARTICLE_RESET:
+      return {
+        ...state,
+        form: resetRequestStatus(state.article),
+      };
+
+
     default:
       return state;
   }
+
 }

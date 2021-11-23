@@ -11,7 +11,7 @@ import { CREATE_ARTICLE_STORE_NAME } from './article-create.constant';
 import { ARTICLE_FIELD_NAME } from './article-create.type';
 
 import { CreateArticleComponent } from './article-create.component';
-import { createArticleUploadData } from './article-create.action';
+import { createArticleUploadData, resetArticleCreateDataFormState } from './article-create.action';
 import { convertForCreateUpdate } from './article-create.convert';
 import { formValidation } from './article-create.validation';
 
@@ -34,6 +34,10 @@ export function CreateArticleContainer() {
     [ARTICLE_FIELD_NAME.DESCRIPTION]: '',
     [ARTICLE_FIELD_NAME.ARTICLE]: {},
   });
+
+  useEffect(() => {
+    dispatch(resetArticleCreateDataFormState());
+  }, []);
 
   return (
     <CreateArticleComponent

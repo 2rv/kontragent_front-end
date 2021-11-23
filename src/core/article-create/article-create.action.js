@@ -36,3 +36,11 @@ export function createArticleUploadData(data) {
     }
   };
 }
+
+export function resetArticleCreateDataFormState() {
+  return async (dispatch) => {
+    dispatch({
+      type: CREATE_ARTICLE_ACTION_TYPE.ARTICLE_RESET,
+    });
+  };
+}

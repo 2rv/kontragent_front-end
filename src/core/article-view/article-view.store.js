@@ -28,12 +28,6 @@ export function articleStore(state = initialState, action) {
         ...state,
         article: setRequestError(state.article, action.errorMessage),
       };
-    case ARTICLE_ACTION_TYPE.FORM_RESET:
-      return {
-        ...state,
-        form: resetRequestStatus(state.article),
-      };
-
     default:
       return state;
   }

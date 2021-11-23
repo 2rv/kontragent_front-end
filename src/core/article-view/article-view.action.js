@@ -31,10 +31,3 @@ export function articleLoadData(id) {
   };
 }
 
-export function resetArticleViewDataFormState() {
-  return async (dispatch) => {
-    dispatch({
-      type: ARTICLE_ACTION_TYPE.FORM_RESET,
-    });
-  };
-}

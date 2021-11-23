@@ -16,6 +16,7 @@ import {
   updateArticle,
   articleLoadData,
   articleDelete,
+  resetArticleEditDataFormState
 } from './article-edit.action';
 
 import { EditArticleComponent } from './article-edit.component';
@@ -37,6 +38,10 @@ export function EditArticleContainer() {
 
   useEffect(() => {
     dispatch(articleLoadData(articleId));
+  }, []);
+
+  useEffect(() => {
+    dispatch(resetArticleEditDataFormState());
   }, []);
 
   const onSubmit = (formValues) => {

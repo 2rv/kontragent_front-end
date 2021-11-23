@@ -6,6 +6,7 @@ import { redirect } from '../../main/navigation/navigation.core';
 import { ADMIN_POST_LIST_ROUTE_PATH } from '../admin-post-list';
 import { ARTICLE_DYNAMIC_ROUTE_PATH } from '../article-view';
 
+
 export function articleLoadData(id) {
   return async (dispatch) => {
     dispatch({
@@ -94,3 +95,12 @@ export function articleDelete(id) {
     }
   };
 }
+
+export function resetArticleEditDataFormState() {
+  return async (dispatch) => {
+    dispatch({
+      type: EDIT_ARTICLE_ACTION_TYPE.ARTICLE_RESET,
+    });
+  };
+}
+
