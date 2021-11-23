@@ -7,6 +7,7 @@ import { USER_ADMIN_LIST_ROUTE_PATH } from '../../user-admin-list';
 import { USER_REFERAL_BALANCE_ROUTE_PATH } from '../../user-referal-balance';
 import { USER_REFERAL_SYSTEM_ROUTE_PATH } from '../../user-referal-system';
 import { COMPANY_ADMIN_LIST_ROUTE_PATH } from '../../company-admin-list';
+import { USER_ADMIN_INVITE_ROUTE_PATH } from '../../user-admin-invite';
 import { CREATE_ARTICLE_ROUTE_PATH } from '../../article-create';
 import { ADMIN_POST_LIST_ROUTE_PATH } from '../../admin-post-list';
 
@@ -32,6 +33,9 @@ export const ADMIN_MENU_ITEM = [
   },
   {
     [USER_ADMIN_LIST_ROUTE_PATH]: text('NAVIGATION.ADMIN.USERS'),
+  },
+  {
+    [USER_ADMIN_INVITE_ROUTE_PATH]: text('NAVIGATION.ADMIN.INVITE'),
   },
   { [ADMIN_POST_LIST_ROUTE_PATH]: text('NAVIGATION.ADMIN.POSTS') },
   { [SETTINGS_ROUTE_PATH]: text('NAVIGATION.ADMIN.SETITNGS') },

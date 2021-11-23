@@ -26,6 +26,7 @@ import USER_ADMIN_LIST from './user-admin-list.json';
 import USER_REFERAL from './user-referal.json';
 import ACCOUNT_REFERAL from './account-referal.json';
 import ADMIN_REVISION_REVIEW from './admin-revision-review.json';
+import USER_ADMIN_INVITE from './user-admin-invite.json';
 import USER_ADMIN_ROLE from './user-admin-role.json';
 import ARTICLE from './article.json';
 import ADMIN_POST_LIST from './admin-post-list.json';
@@ -59,6 +60,7 @@ export const RU = {
     USER_ADMIN_LIST,
     USER_REFERAL,
     ADMIN_REVISION_REVIEW,
+    USER_ADMIN_INVITE,
     USER_ADMIN_ROLE,
     ARTICLE,
     ADMIN_POST_LIST,
