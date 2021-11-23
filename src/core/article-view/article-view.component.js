@@ -12,7 +12,7 @@ import Box from '@mui/material/Box';
 import { SkeletonListComponent } from '../../lib/common/skeleton/skeleton-list.component';
 
 export function ArticleViewComponent(props) {
-  const { loadDataPending, loadDataSuccess, article, isadmin, articleId } =
+  const { loadDataPending, loadDataSuccess, article, isadmin, iscreator } =
     props;
 
   return (
@@ -45,7 +45,7 @@ export function ArticleViewComponent(props) {
           {loadDataSuccess && (
             <Article
               isadmin={isadmin}
-              articleId={articleId}
+              iscreator={iscreator}
               acticleData={article[ARTICLE_DATA_NAME.ARTICLE]}
             />
           )}

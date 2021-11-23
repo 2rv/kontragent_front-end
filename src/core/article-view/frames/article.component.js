@@ -9,6 +9,7 @@ import { redirect } from '../../../main/navigation/navigation.core';
 import { EDIT_ARTICLE_DYNAMIC_ROUTE_PATH } from '../../article-edit';
 
 export function Article(props) {
+
   return (
     <Box sx={{ py: 4 }}>
       <Grid rowGap={3}>
@@ -19,7 +20,7 @@ export function Article(props) {
             readOnly={true}
           />
         </Grid>
-        {props.isadmin && (
+        {(props.isadmin || props.iscreator) && (
           <Grid item>
             <Button
               fullWidth
