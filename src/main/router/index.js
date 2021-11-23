@@ -121,10 +121,11 @@ import {
   ADMIN_POST_LIST_ROUTE_PATH,
   AdminPostListRouter,
 } from '../../core/admin-post-list';
+import { INVITE_ROUTE_PATH, InviteRouter } from '../../core/invite';
 import {
-  INVITE_ROUTE_PATH,
-  InviteRouter
-} from '../../core/invite'
+  COMPANY_ACCOUNT_ITEM_SELF_REVISION_CREATE_ROUTE_PATH,
+  CompanyAccountItemSelfRevisionCreateRouter,
+} from '../../core/company-account-item-self-revision-create';
 
 export const routes = {
   '/': IndexRouter,
@@ -169,6 +170,8 @@ export const routes = {
   [EDIT_ARTICLE_ROUTE_PATH]: editArticleRouter,
   [ARTICLE_ROUTE_PATH]: articleRouter,
   [INVITE_ROUTE_PATH]: InviteRouter,
+  [COMPANY_ACCOUNT_ITEM_SELF_REVISION_CREATE_ROUTE_PATH]:
+    CompanyAccountItemSelfRevisionCreateRouter,
 };
 
 export const Router = routesInit(routes);
