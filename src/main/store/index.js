@@ -55,12 +55,12 @@ import {
   adminRevisionReviewStore,
   ADMIN_REVISION_REVIEW_STORE_NAME,
 } from '../../core/admin-revision-review';
+import { inviteStore } from '../../core/invite/invite.store';
+import { INVITE_STORE_NAME } from '../../core/invite/invite.constant';
 import {
-  inviteStore
-} from '../../core/invite/invite.store'
-import {
-  INVITE_STORE_NAME
-} from '../../core/invite/invite.constant'
+  companyAccountItemSelfRevisionCreateStore,
+  COMPANY_ACCOUNT_ITEM_SELF_REVISION_CREATE_STORE_NAME,
+} from '../../core/company-account-item-self-revision-create';
 
 export const reducers = combineReducers({
   [AUTH_STORE_NAME]: authStore,
@@ -90,6 +90,8 @@ export const reducers = combineReducers({
   [ADMIN_REVISION_INFO_STORE_NAME]: adminRevisionInfoStore,
   [ADMIN_REVISION_REVIEW_STORE_NAME]: adminRevisionReviewStore,
   [INVITE_STORE_NAME]: inviteStore,
+  [COMPANY_ACCOUNT_ITEM_SELF_REVISION_CREATE_STORE_NAME]:
+    companyAccountItemSelfRevisionCreateStore,
 });
 
 export { initStore } from './store.core';
