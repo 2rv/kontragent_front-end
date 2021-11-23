@@ -3,6 +3,7 @@ import {
   setRequestError,
   setRequestPending,
   setRequestSuccess,
+  resetRequestStatus,
 } from '../../main/store/store.service';
 import { ARTICLE_ACTION_TYPE } from './article-view.type';
 
@@ -26,6 +27,11 @@ export function articleStore(state = initialState, action) {
       return {
         ...state,
         article: setRequestError(state.article, action.errorMessage),
+      };
+    case ARTICLE_ACTION_TYPE.FORM_RESET:
+      return {
+        ...state,
+        form: resetRequestStatus(state.article),
       };
 
     default:
