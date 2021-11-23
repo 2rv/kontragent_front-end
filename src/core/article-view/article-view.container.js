@@ -43,6 +43,7 @@ export function ArticleViewContainer() {
       pageLoading={pageLoading}
       article={getRequestData(articleState)}
       isadmin={isadmin}
+      articleId={articleId}
       iscreator={iscreator}
       loadDataPending={isRequestPending(articleState)}
       loadDataSuccess={isRequestSuccess(articleState)}

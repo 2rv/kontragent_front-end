@@ -4,6 +4,7 @@ import { EDIT_ARTICLE_API } from './article-edit.constant';
 import { convertForEdit } from './article-edit.convert';
 import { redirect } from '../../main/navigation/navigation.core';
 import { ADMIN_POST_LIST_ROUTE_PATH } from '../admin-post-list';
+import { ARTICLE_DYNAMIC_ROUTE_PATH } from '../article-view';
 
 export function articleLoadData(id) {
   return async (dispatch) => {
@@ -47,6 +48,13 @@ export function updateArticle(id, data) {
 
       dispatch({
         type: EDIT_ARTICLE_ACTION_TYPE.ARTICLE_UPDATE_SUCCESS,
+      });
+
+      await redirect(ARTICLE_DYNAMIC_ROUTE_PATH, {
+        dynamic: true,
+        params: {
+          articleId: id,
+        },
       });
     } catch (err) {
       if (err.response) {
