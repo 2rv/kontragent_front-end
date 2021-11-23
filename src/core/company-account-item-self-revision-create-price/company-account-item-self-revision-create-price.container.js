@@ -18,7 +18,7 @@ export function CompanyAccountItemSelfRevisionCreatePriceContainer({ state }) {
     try {
       await httpRequest({
         method: 'POST',
-        url: `revision/company/${getQuery('companyId')}`,
+        url: `revision/own-company/${getQuery('companyId')}`,
         data,
       });
 

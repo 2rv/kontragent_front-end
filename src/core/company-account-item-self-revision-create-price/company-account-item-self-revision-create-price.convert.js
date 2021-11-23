@@ -4,8 +4,6 @@ export const convertCompanyAccountItemSelfRevisionCreatePriceStoreData = (
   companies,
 ) => {
   return companies.map((company) => ({
-    [COMPANY_ACCOUNT_ITEM_SELF_REVISION_CREATE_DATA_NAME.NAME]: company.name,
-    [COMPANY_ACCOUNT_ITEM_SELF_REVISION_CREATE_DATA_NAME.INN]: company.inn,
     [COMPANY_ACCOUNT_ITEM_SELF_REVISION_CREATE_DATA_NAME.DESCRIPTION]:
       company.description,
     [COMPANY_ACCOUNT_ITEM_SELF_REVISION_CREATE_DATA_NAME.YEAR]:

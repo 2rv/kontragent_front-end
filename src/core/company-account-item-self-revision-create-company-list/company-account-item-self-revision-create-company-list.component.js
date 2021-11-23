@@ -24,13 +24,6 @@ export function CompanyAccountItemSelfRevisionCreateCompanyListComponent({
           companies={companies}
         />
       </Grid>
-      <Grid item>
-        <Button variant="black" onClick={addCompany} fullWidth>
-          {text(
-            'COMPANY_ACCOUNT_ITEM_REVISION_CREATE.REVISON_CREATE_COMPANY_LIST.BUTTON',
-          )}
-        </Button>
-      </Grid>
     </Grid>
   );
 }

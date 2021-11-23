@@ -66,59 +66,6 @@ export const CompanyAccountItemSelfRevisionCreateCompanyInfoFormComponent = (
                 )}
               </Typography>
             </Grid>
-            <Grid xs={12} lg={6} item>
-              <TextFieldElement
-                placeholder={text(
-                  'COMPANY_ACCOUNT_ITEM_REVISION_CREATE.REVISON_CREATE_COMPANY_INFO.FORM.FIELD.LABELS.COMPANY_NAME',
-                )}
-                name={
-                  COMPANY_ACCOUNT_ITEM_SELF_REVISION_CREATE_COMPANY_INFO_FIELD_NAME.TITLE
-                }
-                onChange={handleChange}
-                storeOnChange={companyAccountItemRevisionChangeCompanyName}
-                onBlur={handleBlur}
-                value={
-                  values[
-                    COMPANY_ACCOUNT_ITEM_SELF_REVISION_CREATE_COMPANY_INFO_FIELD_NAME
-                      .TITLE
-                  ]
-                }
-                error={isFieldError(
-                  COMPANY_ACCOUNT_ITEM_SELF_REVISION_CREATE_COMPANY_INFO_FIELD_NAME.TITLE,
-                )}
-                fullWidth
-                errorText={getFieldError(
-                  COMPANY_ACCOUNT_ITEM_SELF_REVISION_CREATE_COMPANY_INFO_FIELD_NAME.TITLE,
-                )}
-              />
-            </Grid>
-            <Grid xs={12} lg={6} item>
-              <TextFieldElement
-                placeholder={text(
-                  'COMPANY_ACCOUNT_ITEM_REVISION_CREATE.REVISON_CREATE_COMPANY_INFO.FORM.FIELD.LABELS.INN',
-                )}
-                name={
-                  COMPANY_ACCOUNT_ITEM_SELF_REVISION_CREATE_COMPANY_INFO_FIELD_NAME.INN
-                }
-                type={'number'}
-                onChange={handleChange}
-                storeOnChange={companyAccountItemRevisionChangeCompanyINN}
-                onBlur={handleBlur}
-                value={
-                  values[
-                    COMPANY_ACCOUNT_ITEM_SELF_REVISION_CREATE_COMPANY_INFO_FIELD_NAME
-                      .INN
-                  ]
-                }
-                error={isFieldError(
-                  COMPANY_ACCOUNT_ITEM_SELF_REVISION_CREATE_COMPANY_INFO_FIELD_NAME.INN,
-                )}
-                fullWidth
-                errorText={getFieldError(
-                  COMPANY_ACCOUNT_ITEM_SELF_REVISION_CREATE_COMPANY_INFO_FIELD_NAME.INN,
-                )}
-              />
-            </Grid>
             <Grid xs={12} item>
               <TextFieldElement
                 placeholder={text(
