@@ -10,6 +10,7 @@ import {
 } from '@mui/material';
 import { text } from '../../lib/common/text';
 import { TextFieldElement } from '../../lib/element/text-field.element';
+import Divider from '@mui/material/Divider';
 
 export function UserAdminInviteComponent({
   handleChange,
@@ -24,7 +25,9 @@ export function UserAdminInviteComponent({
     <Paper>
       <Grid container spacing={3}>
         <Grid item xs={12}>
-          <Typography>{text('USER_ADMIN_INVITE.TITLE')}</Typography>
+          <Typography variant="title" component="div">
+            {text('USER_ADMIN_INVITE.TITLE')}
+          </Typography>
         </Grid>
         <Grid item xs={12}>
           <TextFieldElement
