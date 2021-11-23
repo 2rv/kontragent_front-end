@@ -29,7 +29,7 @@ import ADMIN_REVISION_REVIEW from './admin-revision-review.json';
 import USER_ADMIN_ROLE from './user-admin-role.json';
 import ARTICLE from './article.json';
 import ADMIN_POST_LIST from './admin-post-list.json';
-
+import INVITE from './invite.json';
 export const RU = {
   translation: {
     ERROR,
@@ -62,5 +62,6 @@ export const RU = {
     USER_ADMIN_ROLE,
     ARTICLE,
     ADMIN_POST_LIST,
+    INVITE,
   },
 };

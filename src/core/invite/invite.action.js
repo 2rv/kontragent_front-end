@@ -22,7 +22,6 @@ export function uploadInviteForm(data) {
       dispatch({
         type: INVITE_ACTION_TYPE.FORM_SUCCESS,
       });
-      redirect('/');
     } catch (error) {
       if (error) {
         dispatch({

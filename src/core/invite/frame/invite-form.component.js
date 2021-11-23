@@ -29,7 +29,7 @@ export const InviteFormComponent = (props) => {
   const isSubmitDisabled = () => {
     return JSON.stringify(touched) === '{}'
       ? true
-      : !isValid || isPending || isSuccess || pageLoading;
+      : !isValid || isPending || pageLoading;
   };
 
   return (

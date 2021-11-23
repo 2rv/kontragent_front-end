@@ -11,7 +11,6 @@ import { Formik } from 'formik';
 
 import { InviteFormComponent } from './frame/invite-form.component.js';
 
-
 export function InviteComponent(props) {
   const {
     initialValue,
@@ -37,6 +36,9 @@ export function InviteComponent(props) {
           <Box sx={{ pb: 4 }}>
             <Typography variant="heading" gutterBottom component="div">
               {text('INVITE.TITLE')}
+            </Typography>
+            <Typography variant="subtitle" component="div">
+              {text('INVITE.DESCRIPTION')}
             </Typography>
           </Box>
           <Divider />
@@ -66,7 +68,7 @@ export function InviteComponent(props) {
           {isSuccess && (
             <Box sx={{ pt: 4 }}>
               <Alert severity="success">
-                {text('INVITE.FORM.SUCCESS')}
+                {text('COMMON.REQUEST_SENT_SUCCESSFULLY')}
               </Alert>
             </Box>
           )}
