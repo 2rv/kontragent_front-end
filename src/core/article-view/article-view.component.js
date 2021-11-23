@@ -40,7 +40,7 @@ export function ArticleViewComponent(props) {
                   );
                 }}
               >
-                {`автор: ${article[ARTICLE_DATA_NAME.FIRSTNAME]} ${
+                {`${article[ARTICLE_DATA_NAME.FIRSTNAME]} ${
                   article[ARTICLE_DATA_NAME.LASTNAME]
                 }`}
               </Link>
