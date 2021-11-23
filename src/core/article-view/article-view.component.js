@@ -3,6 +3,7 @@ import { ARTICLE_DATA_NAME } from './article-view.constant';
 
 import Link from '@mui/material/Link';
 import { redirect } from '../../main/navigation/navigation.core';
+import { USER_ADMIN_ITEM_INFO_ROUTE_PATH_DYNAMIC } from '../user-admin-item-info';
 
 import { Grid } from '@material-ui/core';
 import LinearProgress from '@mui/material/LinearProgress';
@@ -28,17 +29,23 @@ export function ArticleViewComponent(props) {
             <Typography>
               {'Дата создания: ' + article[ARTICLE_DATA_NAME.CREATE_DATE]}
             </Typography>
-            <Link
-              component="button"
-              variant="body2"
-              onClick={() => {
-                redirect(AUTH_RECOVERY_ACCOUNT_ROUTE_PATH);
-              }}
-            >
-              {`${article[ARTICLE_DATA_NAME.FIRSTNAME]} ${
-                article[ARTICLE_DATA_NAME.LASTNAME]
-              }`}
-            </Link>
+            {isadmin && (
+              <Link
+                component="button"
+                variant="body2"
+                onClick={() => {
+                  redirect(
+                    USER_ADMIN_ITEM_INFO_ROUTE_PATH_DYNAMIC(
+                      article[ARTICLE_DATA_NAME.ID],
+                    ),
+                  );
+                }}
+              >
+                {`${article[ARTICLE_DATA_NAME.FIRSTNAME]} ${
+                  article[ARTICLE_DATA_NAME.LASTNAME]
+                }`}
+              </Link>
+            )}
           </Box>
         )}
         <Grid>
