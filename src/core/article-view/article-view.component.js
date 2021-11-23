@@ -3,15 +3,14 @@ import { ARTICLE_DATA_NAME } from './article-view.constant';
 import Skeleton from '@mui/material/Skeleton';
 import Link from '@mui/material/Link';
 import { redirect } from '../../main/navigation/navigation.core';
-import { USER_ADMIN_ITEM_INFO_ROUTE_PATH_DYNAMIC } from '../user-admin-item-info';
-
 import { Grid } from '@material-ui/core';
 import Typography from '@mui/material/Typography';
 import Paper from '@mui/material/Paper';
 import Box from '@mui/material/Box';
+import { USER_ADMIN_ITEM_INFO_ROUTE_PATH_DYNAMIC } from '../user-admin-item-info/user-admin-item-info.constant';
 
 export function ArticleViewComponent(props) {
-  const { loadDataPending, loadDataSuccess, article, isadmin, articleId } =
+  const { loadDataPending, loadDataSuccess, article, isadmin, iscreator } =
     props;
 
   return (
@@ -51,7 +50,7 @@ export function ArticleViewComponent(props) {
           {loadDataSuccess && (
             <Article
               isadmin={isadmin}
-              articleId={articleId}
+              iscreator={iscreator}
               acticleData={article[ARTICLE_DATA_NAME.ARTICLE]}
             />
           )}
