@@ -183,7 +183,6 @@ export const components = {
   },
   MuiListItemText: {
     defaultProps: {
-      gutterBottom: false,
     },
     styleOverrides: {
       root: {

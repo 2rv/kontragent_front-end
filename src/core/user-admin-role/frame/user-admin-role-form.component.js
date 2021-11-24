@@ -30,7 +30,7 @@ export const UserAdminRoleFormComponent = (props) => {
           alignItems="flex-start"
           flexWrap="wrap"
         >
-          <Grid lg={6} xs={12} gutterBottom item>
+          <Grid lg={6} xs={12} item>
             <AdminSelectElement
               label={text('USER_ADMIN_ROLE.SELECT.LABEL')}
               sx={{

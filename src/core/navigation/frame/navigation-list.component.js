@@ -25,7 +25,7 @@ export function NavigationListComponent({ activePath, menuListItems }) {
               redirect(Object.keys(item)[0]);
             }}
           >
-            <ListItemText disablePadding primary={item[Object.keys(item)[0]]} />
+            <ListItemText primary={item[Object.keys(item)[0]]} />
           </ListItem>
         );
       })}
