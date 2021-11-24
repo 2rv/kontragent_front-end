@@ -53,7 +53,7 @@ class MyApp extends App {
     await Router({ ...ctx, token });
 
     const pageProps = Component?.getInitialProps
-      ? await Component.getInitialProps({ ...ctx, token })
+      ? await Component?.getInitialProps({ ...ctx, token })
       : { token };
 
     return { pageProps };

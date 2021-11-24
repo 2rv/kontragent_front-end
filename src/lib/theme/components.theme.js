@@ -198,8 +198,10 @@ export const components = {
         fontWeight: '500',
         fontSize: '16px',
       },
-      selected: {
-        color: '#252525',
+      "root": {
+        "&.Mui-selected": {
+          "color": "#252525"
+        }
       },
     },
   },
