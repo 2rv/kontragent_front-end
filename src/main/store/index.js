@@ -61,6 +61,8 @@ import {
   companyAccountItemSelfRevisionCreateStore,
   COMPANY_ACCOUNT_ITEM_SELF_REVISION_CREATE_STORE_NAME,
 } from '../../core/company-account-item-self-revision-create';
+import { articleCommentSendStore } from '../../core/article-comment-send/article-comment-send.store';
+import { ARTICLE_COMMENT_SEND_STORE_NAME } from '../../core/article-comment-send/article-comment-send.constant';
 
 export const reducers = combineReducers({
   [AUTH_STORE_NAME]: authStore,
@@ -92,6 +94,8 @@ export const reducers = combineReducers({
   [INVITE_STORE_NAME]: inviteStore,
   [COMPANY_ACCOUNT_ITEM_SELF_REVISION_CREATE_STORE_NAME]:
     companyAccountItemSelfRevisionCreateStore,
+
+  [ARTICLE_COMMENT_SEND_STORE_NAME]: articleCommentSendStore,
 });
 
 export { initStore } from './store.core';

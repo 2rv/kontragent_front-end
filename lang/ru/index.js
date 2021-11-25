@@ -31,6 +31,8 @@ import USER_ADMIN_ROLE from './user-admin-role.json';
 import ARTICLE from './article.json';
 import ADMIN_POST_LIST from './admin-post-list.json';
 import INVITE from './invite.json';
+import COMMENT from './comment.json';
+
 export const RU = {
   translation: {
     ERROR,
@@ -65,5 +67,6 @@ export const RU = {
     ARTICLE,
     ADMIN_POST_LIST,
     INVITE,
+    COMMENT,
   },
 };

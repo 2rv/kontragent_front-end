@@ -1,0 +1,10 @@
+{
+    "ARTICLE_COMMENT_SEND": {
+        "TITLE": "Прокоментировать статью",
+        "BUTTON": "Отправить"
+    }, 
+    "ARTICLE_COMMENT_LIST":{
+        "TITLE": "Комментарии",
+        "EMPTY": "Комментариев к статье нет"
+    }
+}
