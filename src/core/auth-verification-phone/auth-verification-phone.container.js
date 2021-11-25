@@ -20,6 +20,7 @@ import {
 } from './auth-verification-phone.constant';
 
 import { NAVIGATION_STORE_NAME } from '../../lib/common/navigation/navigation.constant';
+import { AUTH_STORE_NAME } from '../../lib/common/auth'
 
 import {
   getLocalData,
@@ -28,22 +29,33 @@ import {
   isRequestPending,
   isRequestSuccess,
 } from '../../main/store/store.service';
+import { redirect } from '../../main/navigation/navigation.core';
+import { authUpdateUserData } from '../../lib/common/auth/auth.action';
 
 export function AuthVerificationPhoneContainer() {
-  const { state, pageLoading } = useSelector((state) => ({
+  const { state, pageLoading, confirmPhone } = useSelector((state) => ({
     state: state[AUTH_VERIFICATION_PHONE_STORE_NAME],
     pageLoading: state[NAVIGATION_STORE_NAME].pageLoading,
+    confirmPhone: state[AUTH_STORE_NAME].user.confirmEmail
   }));
 
   const dispatch = useDispatch();
 
   React.useEffect(() => {
+    authUpdateUserData()(dispatch)
     dispatch(verificationPhoneFormGetCode());
 
     return function cleanup() {
       dispatch(cleanupStore());
     };
   }, []);
+
+  React.useEffect(() => {
+    if (confirmPhone) {
+      console.log(confirmPhone)
+      redirect('/')
+    }
+  }, [confirmPhone])
 
   const VerificationPhoneFormSendData = (values) => {
     const data = convertAuthVerificationPhoneFormData(values);
