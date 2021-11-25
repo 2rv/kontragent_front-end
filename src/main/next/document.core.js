@@ -28,6 +28,6 @@ class MyDocument extends Document {
   }
 }
 
-MyDocument.getInitialProps = getInitialStyleProps;
+MyDocument?.getInitialProps = getInitialStyleProps;
 
 export const DocumentCore = MyDocument;
