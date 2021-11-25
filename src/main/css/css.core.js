@@ -15,7 +15,7 @@ export async function getInitialStyleProps(ctx) {
       enhanceApp: (App) => (props) => <App emotionCache={cache} {...props} />,
     });
 
-  const initialProps = await Document?.getInitialProps(ctx);
+  const initialProps = await Document.getInitialProps(ctx);
 
   const emotionStyles = extractCriticalToChunks(initialProps.html);
   const emotionStyleTags = emotionStyles.styles.map((style) => (

@@ -52,7 +52,7 @@ class MyApp extends App {
 
     await Router({ ...ctx, token });
 
-    const pageProps = Component?.getInitialProps
+    const pageProps = Component.getInitialProps
       ? await Component.getInitialProps({ ...ctx, token })
       : { token };
 
