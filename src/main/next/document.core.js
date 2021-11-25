@@ -3,6 +3,11 @@ import Document, { Html, Main, NextScript, Head } from 'next/document';
 import { getInitialStyleProps } from '../css';
 
 class MyDocument extends Document {
+  static async getInitialProps(ctx) {
+    const initialProps = await getInitialStyleProps(ctx);
+    return initialProps;
+  }
+
   render() {
     return (
       <Html>
@@ -27,7 +32,5 @@ class MyDocument extends Document {
     );
   }
 }
-
-MyDocument?.getInitialProps = getInitialStyleProps;
 
 export const DocumentCore = MyDocument;
