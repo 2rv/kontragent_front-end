@@ -23,12 +23,13 @@ export function ArticleCommentSendComponent(props) {
 
   return (
     <Grid sx={{ mx: 8 }} item>
-      <Divider />
-
       <Formik
         initialValues={initialValue}
         validate={validation}
-        onSubmit={onSubmitForm}
+        onSubmit={(values, { resetForm }) => {
+          onSubmitForm(values);
+          resetForm();
+        }}
       >
         {(props) => (
           <ArticleCommentSendFormComponent

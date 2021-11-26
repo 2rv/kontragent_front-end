@@ -11,39 +11,33 @@ import { ArticleCommentSendContainer } from '../article-comment-send/article-com
 
 export function ArticleCommentListComponent({
   data,
-  pageLoading,
   isPending,
   isError,
   isSuccess,
   errorMessage,
+  role,
 }) {
   return (
-    <Paper sx={{ p: 0 }}>
-      <Box>
-        <Typography
-          variant="title"
-          sx={{ px: 8, pt: 8, pb: 4 }}
-          component="div"
-        >
-          {text('COMMENT.ARTICLE_COMMENT_LIST.TITLE')}
-        </Typography>
+    <div>
+      <Typography sx={{ mb: 3 }} variant="title" component="div">
+        {text('COMMENT.ARTICLE_COMMENT_LIST.TITLE')}
+      </Typography>
 
-        <Divider sx={{ mx: 8 }} />
+      <Divider />
 
-        {isSuccess && <ArticleCommentListListComponent list={data} />}
-        {isPending && (
-          <Box sx={{ pt: 4, px: 8, pb: 8 }}>
-            <SkeletonListComponent />
-          </Box>
-        )}
-        {isError && (
-          <Box sx={{ pt: 4, px: 8, pb: 8 }}>
-            <Alert severity="error">{text(`ERROR.${errorMessage}`)}</Alert>
-          </Box>
-        )}
+      {isSuccess && <ArticleCommentListListComponent list={data} role={role} />}
+      {isPending && (
+        <Box sx={{ pt: 4, px: 8, pb: 8 }}>
+          <SkeletonListComponent />
+        </Box>
+      )}
+      {isError && (
+        <Box sx={{ pt: 4, pb: 8 }}>
+          <Alert severity="error">{text(`ERROR.${errorMessage}`)}</Alert>
+        </Box>
+      )}
 
-        <ArticleCommentSendContainer />
-      </Box>
-    </Paper>
+      <ArticleCommentSendContainer />
+    </div>
   );
 }

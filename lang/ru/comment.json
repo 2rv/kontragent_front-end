@@ -1,7 +1,8 @@
 {
     "ARTICLE_COMMENT_SEND": {
         "TITLE": "Прокоментировать статью",
-        "BUTTON": "Отправить"
+        "BUTTON": "Отправить",
+        "PLACEHOLDER": "Написать комментарий"
     }, 
     "ARTICLE_COMMENT_LIST":{
         "TITLE": "Комментарии",

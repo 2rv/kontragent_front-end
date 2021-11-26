@@ -6,16 +6,24 @@ import { httpRequest } from '../../main/http';
 import { getQuery } from '../../main/navigation/navigation.core';
 import { performArticleCommentListData } from './article-comment-list.convert';
 import { ARTICLE_COMMENT_SEND_STORE_NAME } from '../article-comment-send/article-comment-send.constant';
+import { ARTICLE_COMMENT_DELETE_STORE_NAME } from '../article-comment-delete/article-comment-delete.constant';
+import { AUTH_STORE_NAME } from '../../lib/common/auth';
 
 export function ArticleCommentListContainer() {
-  const { pageLoading, state } = useSelector((state) => ({
+  const { pageLoading, state, stateDelete, role } = useSelector((state) => ({
     state: state[ARTICLE_COMMENT_SEND_STORE_NAME],
+    stateDelete: state[ARTICLE_COMMENT_DELETE_STORE_NAME],
     pageLoading: state[NAVIGATION_STORE_NAME].pageLoading,
+    role: state[AUTH_STORE_NAME].user.role,
   }));
 
   React.useEffect(() => {
     getArticleCommentList();
-  }, [state.form.success]);
+  }, []);
+
+  React.useEffect(() => {
+    updateArticleCommentList();
+  }, [stateDelete.form.success, state.form.success]);
 
   const getArticleCommentList = async () => {
     setRequestPending(true);
@@ -32,9 +40,32 @@ export function ArticleCommentListContainer() {
 
       const data = performArticleCommentListData(res.data);
 
-      console.log(data);
-
       setRequestPending(false);
+      setRequestSuccess(true);
+      setData(data);
+    } catch (error) {
+      if (error.response) {
+        setRequestError(true);
+        setData([]);
+        setRequestPending(false);
+        setRequestErrorMessage(error.response.data.message);
+      }
+    }
+  };
+
+  const updateArticleCommentList = async () => {
+    setRequestSuccess(false);
+    setRequestError(false);
+    setRequestErrorMessage(null);
+    setData([]);
+
+    try {
+      const res = await httpRequest({
+        method: 'GET',
+        url: `/comment/get/post/${getQuery('articleId')}`,
+      });
+
+      const data = performArticleCommentListData(res.data);
       setRequestSuccess(true);
       setData(data);
     } catch (error) {
@@ -61,6 +92,7 @@ export function ArticleCommentListContainer() {
       data={getData}
       pageLoading={pageLoading}
       errorMessage={getRequestErrorMessage}
+      role={role}
     />
   );
 }

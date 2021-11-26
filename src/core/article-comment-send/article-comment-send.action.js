@@ -11,15 +11,13 @@ export function changeArticleCommentSend(data) {
     try {
       const res = await httpRequest({
         method: 'POST',
-        url: `comment/create`,
+        url: `comment/create/${getQuery('articleId')}`,
         data,
       });
 
       dispatch({
         type: ARCTICLE_COMMENT_SEND_ACTION_TYPE.FORM_SUCCESS,
       });
-      //тут поменять
-      //await dispatch(reloadAdminRevisionInfoData());
     } catch (error) {
       if (error) {
         dispatch({

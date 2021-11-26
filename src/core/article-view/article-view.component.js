@@ -8,6 +8,7 @@ import Typography from '@mui/material/Typography';
 import Paper from '@mui/material/Paper';
 import Box from '@mui/material/Box';
 import { USER_ADMIN_ITEM_INFO_ROUTE_PATH_DYNAMIC } from '../user-admin-item-info/user-admin-item-info.constant';
+import { ArticleCommentListContainer } from '../article-comment-list/article-comment-list.container';
 
 export function ArticleViewComponent(props) {
   const {
@@ -16,7 +17,7 @@ export function ArticleViewComponent(props) {
     article,
     isadmin,
     iscreator,
-    articleId
+    articleId,
   } = props;
 
   return (
@@ -73,6 +74,8 @@ export function ArticleViewComponent(props) {
             </Grid>
           )}
         </Grid>
+
+        <ArticleCommentListContainer />
       </Box>
     </Paper>
   );
