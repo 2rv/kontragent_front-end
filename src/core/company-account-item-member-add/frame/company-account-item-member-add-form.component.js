@@ -45,26 +45,30 @@ export const CompanyAccountItemMemberAddFormComponent = (props) => {
           flexWrap="wrap"
         >
           <Grid lg={6} xs={12} item>
-            <TextFieldElement
-              label={text(
-                'COMPANY_ACCOUNT_ITEM_MEMBER.MEMBER_ADD.FORM.FIELD.LABELS.COMPANY_MEMBER',
-              )}
-              name={COMPANY_ACCOUNT_ITEM_MEMBER_ADD_DATA_NAME.ID}
-              onChange={handleChange}
-              onBlur={handleBlur}
-              value={values[COMPANY_ACCOUNT_ITEM_MEMBER_ADD_DATA_NAME.ID]}
-              error={isFieldError(COMPANY_ACCOUNT_ITEM_MEMBER_ADD_DATA_NAME.ID)}
-              fullWidth
-              errorText={getFieldError(
-                COMPANY_ACCOUNT_ITEM_MEMBER_ADD_DATA_NAME.ID,
-              )}
-            />
-          </Grid>
+            <Grid lg={6} xs={12} item>
+              <TextFieldElement
+                label={text(
+                  'COMPANY_ACCOUNT_ITEM_MEMBER.MEMBER_ADD.FORM.FIELD.LABELS.COMPANY_MEMBER',
+                )}
+                name={COMPANY_ACCOUNT_ITEM_MEMBER_ADD_DATA_NAME.ID}
+                onChange={handleChange}
+                onBlur={handleBlur}
+                value={values[COMPANY_ACCOUNT_ITEM_MEMBER_ADD_DATA_NAME.ID]}
+                error={isFieldError(
+                  COMPANY_ACCOUNT_ITEM_MEMBER_ADD_DATA_NAME.ID,
+                )}
+                fullWidth
+                errorText={getFieldError(
+                  COMPANY_ACCOUNT_ITEM_MEMBER_ADD_DATA_NAME.ID,
+                )}
+              />
+            </Grid>
 
-          <Grid lg={6} xs={12} item>
-            <Button fullWidth type="sumbit" disabled={isSubmitDisabled()}>
-              {text('COMPANY_ACCOUNT_ITEM_MEMBER.MEMBER_ADD.FORM.BUTTON')}
-            </Button>
+            <Grid lg={6} xs={12} sx={{ mt: 3 }} item>
+              <Button fullWidth type="sumbit" disabled={isSubmitDisabled()}>
+                {text('COMPANY_ACCOUNT_ITEM_MEMBER.MEMBER_ADD.FORM.BUTTON')}
+              </Button>
+            </Grid>
           </Grid>
         </Grid>
       </Box>

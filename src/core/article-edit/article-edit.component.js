@@ -2,7 +2,7 @@ import { ArticleEditFormComponent } from './frames/article-edit-form.component';
 
 import { Formik } from 'formik';
 import { text } from '../../lib/common/text';
-
+import Divider from '@mui/material/Divider';
 import { Grid } from '@material-ui/core';
 import LinearProgress from '@mui/material/LinearProgress';
 import Typography from '@mui/material/Typography';
@@ -36,6 +36,7 @@ export function EditArticleComponent(props) {
             {text('ARTICLE.EDIT.TITLE')}
           </Typography>
         </Box>
+        <Divider sx={{ mt: 5 }} />
         <Grid>
           {loadDataPending ? null : (
             <Formik
