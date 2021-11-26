@@ -14,7 +14,7 @@ export const AuthSignupFormComponent = (props) => {
     errors,
     touched,
     isValid,
-    isSubmitting,
+    isPending
 
     pageLoading,
     isSuccess,
@@ -29,7 +29,7 @@ export const AuthSignupFormComponent = (props) => {
   const isSubmitDisabled = () => {
     return JSON.stringify(touched) === '{}'
       ? true
-      : !isValid || isSubmitting || isSuccess || pageLoading;
+      : !isValid || isSuccess || isPending || pageLoading;
   };
 
   return (
@@ -98,7 +98,7 @@ export const AuthSignupFormComponent = (props) => {
           </Grid>
           <Grid item>
             <TextFieldElement
-              type='password'
+              type="password"
               label={text('AUTH.SIGNUP.FORM.FIELD.LABELS.PASSWORD')}
               name={AUTH_SIGNUP_DATA_NAME.PASSWORD}
               onChange={handleChange}
@@ -111,7 +111,7 @@ export const AuthSignupFormComponent = (props) => {
           </Grid>
           <Grid item>
             <TextFieldElement
-              type='password'
+              type="password"
               label={text('AUTH.SIGNUP.FORM.FIELD.LABELS.REPEAT_PASSWORD')}
               name={AUTH_SIGNUP_DATA_NAME.PASSWORD_REPEAT}
               onChange={handleChange}
