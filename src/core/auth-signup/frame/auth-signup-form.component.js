@@ -14,7 +14,7 @@ export const AuthSignupFormComponent = (props) => {
     errors,
     touched,
     isValid,
-    isSubmitting,
+    isPending
 
     pageLoading,
     isSuccess,
@@ -29,7 +29,7 @@ export const AuthSignupFormComponent = (props) => {
   const isSubmitDisabled = () => {
     return JSON.stringify(touched) === '{}'
       ? true
-      : !isValid || isSuccess || pageLoading;
+      : !isValid || isSuccess || isPending || pageLoading;
   };
 
   return (
