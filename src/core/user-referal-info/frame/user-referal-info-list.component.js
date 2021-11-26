@@ -42,6 +42,7 @@ export const UserReferalInfoListComponent = ({ list }) => {
                         sx={{
                           color: '#252525',
                           py: 1,
+                          fontSize: '18px',
                         }}
                       >
                         {list[USER_REFERAL_INFO_DATA_NAME.BALANCE]}
@@ -57,6 +58,7 @@ export const UserReferalInfoListComponent = ({ list }) => {
                         sx={{
                           color: '#707070',
                           whiteSpace: 'nowrap',
+                          fontSize: '14px',
                         }}
                       >
                         {' '}
@@ -79,6 +81,7 @@ export const UserReferalInfoListComponent = ({ list }) => {
                         sx={{
                           color: '#252525',
                           py: 1,
+                          fontSize: '18px',
                         }}
                       >
                         {list[USER_REFERAL_INFO_DATA_NAME.REFERAL_MEMBER_COUNT]}
@@ -93,6 +96,7 @@ export const UserReferalInfoListComponent = ({ list }) => {
                         sx={{
                           color: '#707070',
                           whiteSpace: 'nowrap',
+                          fontSize: '14px',
                         }}
                       >
                         {text(
