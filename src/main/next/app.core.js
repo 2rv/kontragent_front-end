@@ -56,8 +56,6 @@ class MyApp extends App {
       ? await Component.getInitialProps({ ...ctx, token })
       : { token };
 
-    const pageProps = { token };
-
     return { pageProps };
   }
 
