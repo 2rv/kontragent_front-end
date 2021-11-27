@@ -15,7 +15,7 @@ export async function getInitialStyleProps(ctx) {
       enhanceApp: (App) => (props) => <App emotionCache={cache} {...props} />,
     });
 
-  const initialProps = await Document.getInitialProps(ctx);
+  // const initialProps = await Document.getInitialProps(ctx);
 
   const emotionStyles = extractCriticalToChunks(initialProps.html);
   const emotionStyleTags = emotionStyles.styles.map((style) => (
@@ -27,7 +27,7 @@ export async function getInitialStyleProps(ctx) {
   ));
 
   return {
-    ...initialProps,
+    // ...initialProps,
     styles: [
       ...(React.Children.toArray(initialProps.styles) || null),
       ...(emotionStyleTags || null),

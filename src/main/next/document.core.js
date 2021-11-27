@@ -17,7 +17,7 @@ class MyDocument extends Document {
             href="https://fonts.googleapis.com/icon?family=Material+Icons"
           />
           {/* <meta name="viewport" content="initial-scale=1, width=device-width" /> */}
-          <script src="//code-ya.jivosite.com/widget/DEIEyoYgaD" async></script>
+          {/* <script src="//code-ya.jivosite.com/widget/DEIEyoYgaD" async></script> */}
         </Head>
         <body>
           <Main />
@@ -28,6 +28,6 @@ class MyDocument extends Document {
   }
 }
 
-MyDocument.getInitialProps = getInitialStyleProps;
+// MyDocument.getInitialProps = getInitialStyleProps;
 
 export const DocumentCore = MyDocument;
