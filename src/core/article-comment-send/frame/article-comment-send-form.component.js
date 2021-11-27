@@ -43,6 +43,7 @@ export const ArticleCommentSendFormComponent = (props) => {
                 minRows={4}
                 maxRows={20}
                 InputProps={{
+                  sx: { background: 'none' },
                   endAdornment: (
                     <IconButton type="sumbit" edge="end" color="primary">
                       <Box sx={{ pb: 4 }}>

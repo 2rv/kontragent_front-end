@@ -3,7 +3,7 @@ import { ARTICLE_DATA_NAME } from './article-view.constant';
 import Skeleton from '@mui/material/Skeleton';
 import Link from '@mui/material/Link';
 import { redirect } from '../../main/navigation/navigation.core';
-import { Grid } from '@material-ui/core';
+import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import Paper from '@mui/material/Paper';
 import Box from '@mui/material/Box';
@@ -25,15 +25,13 @@ export function ArticleViewComponent(props) {
       <Box>
         {loadDataSuccess && (
           <Box>
-            <Typography>
-              {'Заголовок: ' + article[ARTICLE_DATA_NAME.TITLE]}
+            <Typography fontWeight={600}>
+              {article[ARTICLE_DATA_NAME.TITLE]}
             </Typography>
             <Typography>
-              {'Описание: ' + article[ARTICLE_DATA_NAME.DESCRIPTION]}
+              {article[ARTICLE_DATA_NAME.DESCRIPTION]}
             </Typography>
-            <Typography>
-              {'Дата создания: ' + article[ARTICLE_DATA_NAME.CREATE_DATE]}
-            </Typography>
+
             {isadmin && (
               <Link
                 component="button"
@@ -73,6 +71,20 @@ export function ArticleViewComponent(props) {
               </Box>
             </Grid>
           )}
+        </Grid>
+
+        <Grid container direction="row" justifyContent="start" sx={{ pb: 10 }}>
+          <Grid item sx={{ pr: 5 }}>
+            <Typography color="#B5B5B5">
+              {article[ARTICLE_DATA_NAME.CREATE_DATE]}
+            </Typography>
+          </Grid>
+          <Grid item>
+            <Typography>
+              {article[ARTICLE_DATA_NAME.FIRSTNAME]}{' '}
+              {article[ARTICLE_DATA_NAME.LASTNAME]}
+            </Typography>
+          </Grid>
         </Grid>
 
         <ArticleCommentListContainer />
