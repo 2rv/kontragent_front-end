@@ -66,7 +66,6 @@ export const ArticleCommentListListComponent = ({ list, role }) => {
               </Grid>
             </Grid>
           </ListItem>
-          {key !== list.length - 1 && <Divider />}
         </React.Fragment>
       ))}
     </List>
