@@ -193,16 +193,6 @@ export const components = {
   },
   MuiTab: {
     defaultProps: {},
-    styleOverrides: {
-      textColorPrimary: {
-        color: '#707070',
-        fontWeight: '500',
-        fontSize: '16px',
-      },
-      selected: {
-        color: '#252525',
-      },
-    },
   },
   MuiAlert: {
     defaultProps: {},
