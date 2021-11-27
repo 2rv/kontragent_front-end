@@ -27,7 +27,7 @@ export function CompanyAccountListComponent({
         >
           {text('COMPANY_ACCOUNT_LIST.TITLE')}
         </Typography>
-        <Divider sx={{ mx: 8 }} />
+        <Divider sx={{ mx: 8, my: 2 }} />
         {isSuccess && <CompanyAccountListListComponent list={data} />}
         {isPending && (
           <Box sx={{ pt: 4, px: 8, pb: 8 }}>

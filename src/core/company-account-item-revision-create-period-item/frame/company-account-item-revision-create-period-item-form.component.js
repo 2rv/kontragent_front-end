@@ -204,8 +204,9 @@ export const CompanyAccountItemRevisionCreatePeriodItemFormComponent = (
         </Grid>
 
         {!last && (
-          <Grid item xs>
+          <Grid item xs={12}>
             <Button
+              sx={{ mt: '14px' }}
               onClick={() => {
                 dispatch(companyAccountItemRevisionCreateDeleteYear());
               }}

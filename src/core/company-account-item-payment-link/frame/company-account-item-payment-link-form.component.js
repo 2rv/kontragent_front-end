@@ -2,6 +2,7 @@ import { TextFieldElement } from '../../../lib/element/text-field.element.js';
 import Grid from '@mui/material/Grid';
 import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
+import { Typography, TextField } from '@material-ui/core';
 
 import { text } from '../../../lib/common/text';
 
@@ -48,9 +49,17 @@ export const CompanyAccountItemPaymentLinkFormComponent = (props) => {
           alignItems="flex-end"
           flexWrap="wrap"
         >
-          <Grid lg={6} xs={12} item>
-            <TextFieldElement
-              label={text('COMMON.SUMM')}
+          <Grid item xs={12}>
+            <Typography variant="fieldLabel">{text('COMMON.SUMM')}</Typography>
+          </Grid>
+          <Grid item lg={6} xs={12}>
+            <TextField
+              inputProps={{
+                style: {
+                  paddingTop: '11px',
+                  paddingBottom: '11px',
+                },
+              }}
               name={COMPANY_ACCOUNT_ITEM_REVISION_ITEM_PAYMENT_DATA_NAME.AMOUNT}
               onChange={handleChange}
               onBlur={handleBlur}
@@ -59,21 +68,29 @@ export const CompanyAccountItemPaymentLinkFormComponent = (props) => {
                   COMPANY_ACCOUNT_ITEM_REVISION_ITEM_PAYMENT_DATA_NAME.AMOUNT
                 ]
               }
+              fullWidth
               error={isFieldError(
                 COMPANY_ACCOUNT_ITEM_REVISION_ITEM_PAYMENT_DATA_NAME.AMOUNT,
               )}
-              fullWidth
-              errorText={getFieldError(
-                COMPANY_ACCOUNT_ITEM_REVISION_ITEM_PAYMENT_DATA_NAME.AMOUNT,
-              )}
+              onChange={(e) => handleChange(e)}
             />
           </Grid>
-
           <Grid lg={6} xs={12} item>
             <Button fullWidth type="sumbit" disabled={isSubmitDisabled()}>
               {text('COMPANY_ACCOUNT_ITEM_PAYMENT.PAYMENT_LINK.SUBMIT')}
             </Button>
           </Grid>
+          {isFieldError(
+            COMPANY_ACCOUNT_ITEM_REVISION_ITEM_PAYMENT_DATA_NAME.AMOUNT,
+          ) && (
+            <Grid item xs={12}>
+              <Typography variant="errorText">
+                {getFieldError(
+                  COMPANY_ACCOUNT_ITEM_REVISION_ITEM_PAYMENT_DATA_NAME.AMOUNT,
+                )}
+              </Typography>
+            </Grid>
+          )}
         </Grid>
       </Box>
     </form>
