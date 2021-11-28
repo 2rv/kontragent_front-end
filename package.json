@@ -4,7 +4,7 @@
   "scripts": {
     "dev": "cross-env next",
     "build": "next build",
-    "start": "node server.js -p $PORT"
+    "start": "cross-env node server.js -p $PORT"
   },
   "dependencies": {
     "@babel/plugin-proposal-class-properties": "^7.13.0",
