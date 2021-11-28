@@ -1,1 +1,1 @@
-web: NODE_ENV=production node server.js -p $PORT
+web: npm start
