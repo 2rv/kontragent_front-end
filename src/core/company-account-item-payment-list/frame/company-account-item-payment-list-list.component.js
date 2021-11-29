@@ -13,7 +13,7 @@ import { COMPANY_ACCOUNT_ITEM_PAYMENT_LIST_DATA_NAME } from '../company-account-
 export const CompanyAccountItemPaymentListListComponent = ({ list }) => {
   if (!list || list.length === 0) {
     return (
-      <Box sx={{ py: 4, px: 8 }}>
+      <Box sx={{ pt: 4, px: 8, pb: 8 }}>
         <Alert severity="info">
           {text('COMPANY_ACCOUNT_ITEM_PAYMENT.PAYMENT_LIST.EMPTY')}
         </Alert>

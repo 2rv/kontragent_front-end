@@ -71,6 +71,7 @@ export function AuthLoginComponent(props) {
               <Typography variant="subtext" component="div">
                 {text('AUTH.LOGIN.ALREADY_REGISTERED')}{' '}
                 <Link
+                  sx={{ fontWeight: '600', fontSize: '14px' }}
                   component="button"
                   variant="body2"
                   onClick={() => {
@@ -83,6 +84,7 @@ export function AuthLoginComponent(props) {
               <Typography variant="subtext" component="div">
                 {text('AUTH.LOGIN.FORGOT_PASSWORD')}{' '}
                 <Link
+                  sx={{ fontWeight: '600', fontSize: '14px' }}
                   component="button"
                   variant="body2"
                   onClick={() => {
