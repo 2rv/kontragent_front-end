@@ -12,6 +12,7 @@ export function ReactEditorBlock(props) {
     <Grid>
       <Grid item>
         <ReactEditor
+          label={'Поле ввода'}
           data={data}
           readOnly={readOnly}
           minHeight={minHeight}

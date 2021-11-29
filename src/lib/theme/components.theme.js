@@ -104,21 +104,34 @@ export const components = {
         props: { variant: 'grey', color: 'black' },
         style: {
           '&:hover': {
-            backgroundColor: palette.grey[100],
+            backgroundColor: palette.primaryDark[900],
             opacity: 0.9,
+            color: '#fff',
           },
           backgroundColor: palette.grey[10],
           color: palette.primaryDark[900],
         },
       },
       {
+        props: { variant: 'grey', color: 'blue' },
+        style: {
+          '&:hover': {
+            backgroundColor: '#F3F3F3',
+            opacity: 0.9,
+          },
+          backgroundColor: '#F3F3F3',
+          color: '#3AB8FF',
+          border: '1px solid #3AB8FF',
+        },
+      },
+      {
         props: { variant: 'grey', color: 'black1' },
         style: {
           '&:hover': {
-            backgroundColor: palette.grey[500],
+            backgroundColor: '#F3F3F3',
             opacity: 0.9,
           },
-          backgroundColor: palette.grey[300],
+          backgroundColor: '#F3F3F3',
           color: palette.primaryDark[900],
         },
       },
@@ -178,7 +191,8 @@ export const components = {
       gutterBottom: false,
     },
     styleOverrides: {
-      root: {},
+      title: { fontSize: '18px' },
+      subTitle: { fontSize: '14px' },
     },
   },
   MuiListItemText: {
@@ -218,6 +232,27 @@ export const components = {
     styleOverrides: {
       label: {
         overflow: 'visible',
+      },
+    },
+  },
+  MuiListItemButton: {
+    styleOverrides: {
+      root: {
+        '&.Mui-selected': {
+          backgroundColor: '#fff',
+          '&:hover': {
+            backgroundColor: '#F3F3F3',
+          },
+        },
+      },
+    },
+  },
+  MuiIconButton: {
+    styleOverrides: {
+      root: {
+        '&:hover': {
+          backgroundColor: 'rgba(0, 0, 0, 0.0)',
+        },
       },
     },
   },

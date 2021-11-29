@@ -31,8 +31,6 @@ export function FileUploadFieldComponent(props) {
 
       {data.length > 0 && (
         <Box sx={{ my: 2 }}>
-          <Divider sx={{ mb: 2 }} />
-
           <FileListElement handleDelete={handleDelete} list={data} />
         </Box>
       )}
@@ -76,9 +74,9 @@ export const Form = (props) => {
         flexWrap="wrap"
       >
         <Button
-          sx={{ height: '30px' }}
-          variant="outlined"
-          color="primaryDark"
+          sx={{ width: '200px' }}
+          variant="grey"
+          color="black"
           component="label"
         >
           Загрузить

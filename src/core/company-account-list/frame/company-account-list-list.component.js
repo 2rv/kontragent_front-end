@@ -44,7 +44,13 @@ export const CompanyAccountListListComponent = ({ list }) => {
             }}
             key={key}
             button
-            sx={{ py: 3, px: 3 }}
+            sx={{
+              py: 3,
+              px: 3,
+              ':hover': {
+                backgroundColor: '#F3F3F3',
+              }
+            }}
           >
             <ListItemAvatar>
               <Avatar>
