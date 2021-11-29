@@ -48,7 +48,9 @@ export const CompanyAccountListListComponent = ({ list }) => {
               py: 3,
               px: 3,
               borderRadius: '10px',
-              backgroundColor: '#F3F3F3',
+              ':hover': {
+                backgroundColor: '#F3F3F3',
+              }
             }}
           >
             <ListItemAvatar>
