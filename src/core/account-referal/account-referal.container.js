@@ -23,7 +23,7 @@ export function AccountReferalContainer() {
     dispatch(uploadAccountReferalId(getQuery('referalId')));
   };
 
-  useEffect(() => {
+  React.useEffect(() => {
     return function cleanup() {
       dispatch(cleanupStore());
     };

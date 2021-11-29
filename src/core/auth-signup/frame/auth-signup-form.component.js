@@ -15,6 +15,7 @@ export const AuthSignupFormComponent = (props) => {
     touched,
     isValid,
     isPending,
+
     pageLoading,
     isSuccess,
   } = props;
