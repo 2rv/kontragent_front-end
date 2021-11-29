@@ -22,12 +22,12 @@ export function CompanyAccountListComponent({
       <Box>
         <Typography
           variant="heading"
-          sx={{ px: 8, pt: 8, pb: 4 }}
+          sx={{ px: 8, pt: 8 }}
           component="div"
         >
           {text('COMPANY_ACCOUNT_LIST.TITLE')}
         </Typography>
-        <Divider sx={{ mx: 8, my: 2 }} />
+        <Divider sx={{ mx: 8, my: 4 }} />
         {isSuccess && <CompanyAccountListListComponent list={data} />}
         {isPending && (
           <Box sx={{ pt: 4, px: 8, pb: 8 }}>

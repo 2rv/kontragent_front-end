@@ -47,7 +47,6 @@ export const CompanyAccountListListComponent = ({ list }) => {
             sx={{
               py: 3,
               px: 3,
-              borderRadius: '10px',
               ':hover': {
                 backgroundColor: '#F3F3F3',
               }
