@@ -6,7 +6,7 @@ import Table from '@editorjs/table';
 import Marker from '@editorjs/marker';
 import Delimiter from '@editorjs/delimiter';
 import ImageTool from '@editorjs/image';
-// import { httpRequest } from 'src/main/http';
+import { httpRequest } from 'src/main/http';
 
 export const tools = {
   header: {
@@ -48,31 +48,33 @@ export const tools = {
   table: Table,
   marker: Marker,
   delimiter: Delimiter,
-  // image: {
-  //   class: ImageTool,
-  //   config: {
-  //     uploader: {
-  //       uploadByFile(file) {
-  //         const formData = new FormData();
-  //         formData.append('file', file);
-  //         return httpRequest({
-  //           method: 'POST',
-  //           url: 'file/create',
-  //           data: formData,
-  //           headers: { 'Content-Type': 'multipart/form-data' },
-  //         }).then((res) => {
-  //           return {
-  //             success: 1,
-  //             file: {
-  //               url: res.data.fileUrl,
-  //             },
-  //           };
-  //         });
-  //       },
-  //     },
-  //     captionPlaceholder: 'Описание',
-  //   },
-  // },
+  image: {
+    class: ImageTool,
+    config: {
+      uploader: {
+        uploadByFile(file) {
+          console.log(file)
+          const formData = new FormData();
+          formData.append('file', file);
+          return httpRequest({
+            method: 'POST',
+            url: 'file',
+            data: formData,
+            headers: { 'Content-Type': 'multipart/form-data' },
+          }).then((res) => {
+            console.log(res);
+            return {
+              success: 1,
+              file: {
+                url: res.data.url,
+              },
+            };
+          });
+        },
+      },
+      captionPlaceholder: 'Описание',
+    },
+  },
 };
 
 export const i18n = {

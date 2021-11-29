@@ -2,7 +2,7 @@ import { ArticleCreateFormComponent } from './frames/article-create-form.compone
 
 import { Formik } from 'formik';
 import { text } from '../../lib/common/text';
-
+import Divider from '@mui/material/Divider';
 import { Grid } from '@material-ui/core';
 import LinearProgress from '@mui/material/LinearProgress';
 import Typography from '@mui/material/Typography';
@@ -30,6 +30,9 @@ export function CreateArticleComponent(props) {
             {text('ARTICLE.CREATE.TITLE')}
           </Typography>
         </Box>
+
+        <Divider sx={{ mt: 5 }} />
+
         <Grid>
           <Formik
             initialValues={initialValues}

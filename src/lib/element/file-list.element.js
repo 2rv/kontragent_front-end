@@ -1,7 +1,7 @@
 import Grid from '@mui/material/Grid';
 import Chip from '@mui/material/Chip';
 import UploadFileIcon from '@mui/icons-material/UploadFile';
-import DeleteIcon from '@mui/icons-material/Delete';
+import DeleteOutlinedIcon from '@mui/icons-material/DeleteOutlined';
 
 export const FileListElement = ({ list, handleDelete }) => {
   return (
@@ -10,20 +10,21 @@ export const FileListElement = ({ list, handleDelete }) => {
         return handleDelete ? (
           <Grid item key={file.uuid}>
             <Chip
+              sx={{ borderRadius: '10px' }}
               id={file.uuid}
               clickable
               onClick={() => window.open(file.url)}
               label={file.fileName}
               onDelete={(e) => handleDelete(e)}
-              deleteIcon={<DeleteIcon />}
+              deleteIcon={<DeleteOutlinedIcon />}
               size="medium"
             />
           </Grid>
         ) : (
           <Grid item key={file.uuid}>
             <Chip
-              id={file.uuid}
               sx={{ borderRadius: '10px' }}
+              id={file.uuid}
               clickable
               onClick={() => window.open(file.url)}
               label={file.uuid}

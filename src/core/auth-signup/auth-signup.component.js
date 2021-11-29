@@ -71,7 +71,8 @@ export function AuthSignupComponent(props) {
               <Typography variant="subtext" component="div">
                 {text('AUTH.SIGNUP.ALREADY_REGISTERED')}{' '}
                 <Link
-                  component="a"
+                  sx={{ fontSize: '14px', fontWeight: '600' }}
+                  component="button"
                   variant="body2"
                   onClick={() => {
                     redirect(AUTH_LOGIN_ROUTE_PATH);
@@ -83,7 +84,8 @@ export function AuthSignupComponent(props) {
               <Typography variant="subtext" component="div">
                 {text('AUTH.SIGNUP.FORGOT_PASSWORD')}{' '}
                 <Link
-                  component="a"
+                  sx={{ fontSize: '14px', fontWeight: '600' }}
+                  component="button"
                   variant="body2"
                   onClick={() => {
                     redirect(AUTH_RECOVERY_ACCOUNT_ROUTE_PATH);
@@ -103,7 +105,8 @@ export function AuthSignupComponent(props) {
               <Typography variant="subtext" component="div">
                 {text('AUTH.SIGNUP.TERMS_OF_THE_OFFER')}{' '}
                 <Link
-                  component="a"
+                  sx={{ fontSize: '14px', fontWeight: '600' }}
+                  component="button"
                   variant="body2"
                   target="_blank"
                   href="/static/pdf/blank.pdf"
@@ -114,7 +117,8 @@ export function AuthSignupComponent(props) {
               <Typography variant="subtext" component="div">
                 {text('AUTH.SIGNUP.USER_AGREEMENT')}{' '}
                 <Link
-                  component="a"
+                  sx={{ fontSize: '14px', fontWeight: '600' }}
+                  component="button"
                   variant="body2"
                   target="_blank"
                   href="/static/pdf/blank.pdf"
