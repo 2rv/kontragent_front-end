@@ -18,35 +18,33 @@ export function CompanyAccountListContainer() {
   }));
 
   React.useEffect(() => {
-    getCompanyAccountList();
-  }, []);
+    (async () => {
+      setRequestPending(true);
+      setRequestSuccess(false);
+      setRequestError(false);
+      setRequestErrorMessage(null);
+      setData([]);
 
-  const getCompanyAccountList = async () => {
-    setRequestPending(true);
-    setRequestSuccess(false);
-    setRequestError(false);
-    setRequestErrorMessage(null);
-    setData([]);
+      try {
+        const res = await httpRequest({
+          method: COMPANY_ACCOUNT_LIST_API.GET_COMPANY_ACCOUNT_LIST.TYPE,
+          url: COMPANY_ACCOUNT_LIST_API.GET_COMPANY_ACCOUNT_LIST.ENDPOINT,
+        });
+        const data = performCompanyAccountListRowData(res.data);
 
-    try {
-      const res = await httpRequest({
-        method: COMPANY_ACCOUNT_LIST_API.GET_COMPANY_ACCOUNT_LIST.TYPE,
-        url: COMPANY_ACCOUNT_LIST_API.GET_COMPANY_ACCOUNT_LIST.ENDPOINT,
-      });
-      const data = performCompanyAccountListRowData(res.data);
-
-      setRequestPending(false);
-      setRequestSuccess(true);
-      setData(data);
-    } catch (error) {
-      if (error.response) {
-        setRequestError(true);
-        setData([]);
         setRequestPending(false);
-        setRequestErrorMessage(error.response.data.message);
+        setRequestSuccess(true);
+        setData(data);
+      } catch (error) {
+        if (error.response) {
+          setRequestError(true);
+          setData([]);
+          setRequestPending(false);
+          setRequestErrorMessage(error.response.data.message);
+        }
       }
-    }
-  };
+    })();
+  }, []);
 
   const [isRequestPending, setRequestPending] = React.useState(null);
   const [getData, setData] = React.useState([]);
