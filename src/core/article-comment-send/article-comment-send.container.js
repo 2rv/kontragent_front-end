@@ -26,8 +26,6 @@ export const ArticleCommentSendContainer = React.memo(() => {
     pageLoading: state[NAVIGATION_STORE_NAME].pageLoading,
   }));
 
-  console.log('render')
-
   const articleCommentSendData = async (data) => {
     dispatch(changeArticleCommentSend(data));
   };
