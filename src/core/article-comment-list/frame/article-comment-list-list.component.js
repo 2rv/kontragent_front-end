@@ -23,10 +23,11 @@ export const ArticleCommentListListComponent = ({ list, role }) => {
   }
 
   return (
-    <List disablePadding sx={{ pl: 5 }}>
+    <List disablePadding>
       {list.map((item, key) => (
         <React.Fragment key={key}>
           <ListItem
+            sx={{ pl: 0 }}
             secondaryAction={
               role === USER_ROLE.USER ? null : (
                 <ArticleCommentDeleteContainer

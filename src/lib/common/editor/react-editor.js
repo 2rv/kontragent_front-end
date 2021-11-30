@@ -41,21 +41,21 @@ const Container = styled.div`
     ${(p) => {
       if (!p.readOnly) {
         return css`
-	       padding: 0 30px;
-         border-radius: 10px;
-         background-color: #F3F3F3;
-	    }
-	  `;
+          padding: 0 30px;
+          border-radius: 10px;
+          background-color: #F3F3F3;
+          width: 100%;
+        }
+      `;
       }
     }}
   }
-  .codex-editor:hover {
-    border: 1px solid #252525;
-    border-radius: 10px;
-  }
   .codex-editor {
-    border: 1px solid #e5e5e5;
+    border: ${(props) => props.readOnly ? 'none' : '1px solid #e5e5e5'};
     border-radius: 10px;
+    &:hover {
+      border: ${(props) => props.readOnly ? 'none' : '1px solid #252525'};
+    }
   }
   .ce-block__content h1 {
     font-size: 36px;
