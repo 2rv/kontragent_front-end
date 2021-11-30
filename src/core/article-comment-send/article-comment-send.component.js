@@ -22,7 +22,7 @@ export function ArticleCommentSendComponent(props) {
   } = props;
 
   return (
-    <Grid sx={{ pl: 8 }} item>
+    <Grid item>
       <Formik
         initialValues={initialValue}
         validate={validation}
