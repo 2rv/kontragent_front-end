@@ -10,33 +10,24 @@ export const ArticleCommentSendFormComponent = (props) => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <Box>
-        <Grid>
-          <TextFieldElement
-            placeholder={text('COMMENT.ARTICLE_COMMENT_SEND.PLACEHOLDER')}
-            name={ARTICLE_COMMENT_SEND_DATA_NAME.TEXT}
-            onChange={handleChange}
-            onBlur={handleBlur}
-            value={values[ARTICLE_COMMENT_SEND_DATA_NAME.TEXT]}
-            fullWidth
-            minRows={4}
-            maxRows={20}
-            InputProps={{
-              sx: { background: 'none' },
-              endAdornment: (
-                <IconButton type="sumbit" edge="end" color="primary">
-                  <Box sx={{ pb: 4 }}>
-                    <img
-                      style={{ marginTop: '12px', display: 'block' }}
-                      src="/static/img/send.svg"
-                    />
-                  </Box>
-                </IconButton>
-              ),
-            }}
-          />
-        </Grid>
-      </Box>
+      <TextFieldElement
+        placeholder={text('COMMENT.ARTICLE_COMMENT_SEND.PLACEHOLDER')}
+        name={ARTICLE_COMMENT_SEND_DATA_NAME.TEXT}
+        onChange={handleChange}
+        onBlur={handleBlur}
+        value={values[ARTICLE_COMMENT_SEND_DATA_NAME.TEXT]}
+        fullWidth
+        InputProps={{
+          sx: { background: 'none' },
+          endAdornment: (
+            <IconButton type="sumbit" edge="end" color="primary">
+              <Box sx={{ pb: 1 }}>
+                <img src="/static/img/send.svg" />
+              </Box>
+            </IconButton>
+          ),
+        }}
+      />
     </form>
   );
 };
