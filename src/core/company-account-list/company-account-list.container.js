@@ -24,7 +24,7 @@ export function CompanyAccountListContainer() {
     getCompanyAccountList();
   }, []);
 
-  const getCompanyAccountList = async (data) => {
+  const getCompanyAccountList = async () => {
     setRequestPending(true);
     setRequestSuccess(false);
     setRequestError(false);
