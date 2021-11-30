@@ -7,12 +7,12 @@ const ReactEditor = dynamic(() => import('./react-editor'), {
 });
 
 export function ReactEditorBlock(props) {
-  const { handleChange, data, minHeight, readOnly, error, errorText } = props;
+  const { handleChange, label, data, minHeight, readOnly, error, errorText } = props;
   return (
     <Grid>
       <Grid item>
         <ReactEditor
-          label={'Поле ввода'}
+          label={label}
           data={data}
           readOnly={readOnly}
           minHeight={minHeight}

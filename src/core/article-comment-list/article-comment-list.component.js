@@ -27,12 +27,12 @@ export function ArticleCommentListComponent({
 
       {isSuccess && <ArticleCommentListListComponent list={data} role={role} />}
       {isPending && (
-        <Box sx={{ pt: 4, px: 8, pb: 8 }}>
+        <Box sx={{ pt: 4, pl: 8, pb: 8 }}>
           <SkeletonListComponent />
         </Box>
       )}
       {isError && (
-        <Box sx={{ pt: 4, pb: 8 }}>
+        <Box sx={{ pt: 4, pl: 8, pb: 8 }}>
           <Alert severity="error">{text(`ERROR.${errorMessage}`)}</Alert>
         </Box>
       )}
