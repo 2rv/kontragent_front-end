@@ -10,6 +10,9 @@ const config = {
     config.node = {
       fs: 'empty',
     };
+    config.optimization = {
+      minimize: false,
+    };
     config.module.rules = [
       ...config.module.rules,
       {
