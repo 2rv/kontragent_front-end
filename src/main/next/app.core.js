@@ -3,6 +3,7 @@ import React from 'react';
 import { Provider as ReduxProvider } from 'react-redux';
 import withRedux from 'next-redux-wrapper';
 import { ThemeProvider } from '@mui/material/styles';
+import Head from 'next/head';
 
 import { initStore } from '../store';
 import { setAutorization } from '../auth';
@@ -62,13 +63,18 @@ class MyApp extends App {
   render() {
     const { Component, pageProps, store } = this.props;
     return (
-      <ReduxProvider store={store}>
-        <NavigationObserver />
-        <CssBaseline />
-        <ThemeProvider theme={this.state.theme}>
-          <Component {...pageProps} />
-        </ThemeProvider>
-      </ReduxProvider>
+      <>
+        <Head>
+          <meta name="viewport" content="initial-scale=1, width=device-width" />
+        </Head>
+        <ReduxProvider store={store}>
+          <NavigationObserver />
+          <CssBaseline />
+          <ThemeProvider theme={this.state.theme}>
+            <Component {...pageProps} />
+          </ThemeProvider>
+        </ReduxProvider>
+      </>
     );
   }
 }

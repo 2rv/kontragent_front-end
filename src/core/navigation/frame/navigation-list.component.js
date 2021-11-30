@@ -8,7 +8,7 @@ export function NavigationListComponent({ activePath, menuListItems }) {
     <List disablePadding>
       {menuListItems.map((item, i) => {
         return (
-          <ListItem disablePadding key={i}>
+          <ListItem key={i}>
             <ListItemButton
               sx={{ px: 8, py: 3 }}
               selected={activePath === Object.keys(item)[0]}
@@ -17,7 +17,6 @@ export function NavigationListComponent({ activePath, menuListItems }) {
               }}
             >
               <ListItemText
-                disablePadding
                 primary={item[Object.keys(item)[0]]}
                 primaryTypographyProps={
                   activePath === Object.keys(item)[0]
