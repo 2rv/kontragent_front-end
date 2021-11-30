@@ -1,4 +1,3 @@
-import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import { text } from '../../../lib/common/text';
 import { TextFieldElement } from '../../../lib/element/text-field.element.js';
@@ -16,7 +15,6 @@ export const ArticleCommentSendFormComponent = (props) => {
         onChange={handleChange}
         onBlur={handleBlur}
         value={values[ARTICLE_COMMENT_SEND_DATA_NAME.TEXT]}
-        fullWidth
         InputProps={{
           sx: { background: 'none' },
           endAdornment: (
@@ -30,4 +28,4 @@ export const ArticleCommentSendFormComponent = (props) => {
       />
     </form>
   );
-};
+}

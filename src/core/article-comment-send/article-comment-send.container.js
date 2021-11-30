@@ -10,15 +10,9 @@ import {
   changeArticleCommentSend,
   cleanupStore,
 } from './article-comment-send.action';
-import {
-  getRequestErrorMessage,
-  isRequestError,
-  isRequestPending,
-  isRequestSuccess,
-} from '../../main/store/store.service';
 import { NAVIGATION_STORE_NAME } from '../../lib/common/navigation/navigation.constant';
 
-export function ArticleCommentSendContainer() {
+export const ArticleCommentSendContainer = React.memo(() => {
   const dispatch = useDispatch();
 
   const { pageLoading, state } = useSelector((state) => ({
@@ -26,8 +20,9 @@ export function ArticleCommentSendContainer() {
     pageLoading: state[NAVIGATION_STORE_NAME].pageLoading,
   }));
 
-  const articleCommentSendData = async (data) => {
+  const articleCommentSendData = (data, { resetForm }) => {
     dispatch(changeArticleCommentSend(data));
+    resetForm();
   };
 
   const getInitialValue = () => {
@@ -44,14 +39,9 @@ export function ArticleCommentSendContainer() {
 
   return (
     <ArticleCommentSendComponent
-      isPending={isRequestPending(state.form)}
-      isError={isRequestError(state.form)}
-      isSuccess={isRequestSuccess(state.form)}
       initialValue={getInitialValue()}
       validation={articleCommentSendValidation}
       onSubmitForm={articleCommentSendData}
-      pageLoading={pageLoading}
-      errorMessage={getRequestErrorMessage(state.form)}
     />
   );
-}
+});
