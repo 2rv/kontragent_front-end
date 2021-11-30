@@ -10,6 +10,7 @@ const config = {
     config.node = {
       fs: 'empty',
     };
+    config.devtool = 'source-map';
     config.module.rules = [
       ...config.module.rules,
       {
