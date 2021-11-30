@@ -9,19 +9,18 @@ import { redirect } from '../../../main/navigation/navigation.core';
 import { EDIT_ARTICLE_DYNAMIC_ROUTE_PATH } from '../../article-edit';
 
 export function Article(props) {
-
   return (
     <Box sx={{ py: 4 }}>
       <Grid rowGap={3}>
         <Grid item>
           <ReactEditorBlock
             data={props.acticleData}
-            minHeight={100}
+            minHeight={0}
             readOnly={true}
           />
         </Grid>
         {(props.isadmin || props.iscreator) && (
-          <Grid item>
+          <Grid item sx={{ mt: 4 }}>
             <Button
               fullWidth
               type="button"
