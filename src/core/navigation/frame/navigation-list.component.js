@@ -11,15 +11,15 @@ export function NavigationListComponent({ activePath, menuListItems }) {
           <ListItem key={i}>
             <ListItemButton
               sx={{ px: 8, py: 3 }}
-              selected={activePath === Object.keys(item)[0]}
+              selected={activePath === item.path}
               onClick={() => {
-                redirect(Object.keys(item)[0]);
+                redirect(item.path);
               }}
             >
               <ListItemText
-                primary={item[Object.keys(item)[0]]}
+                primary={item.name}
                 primaryTypographyProps={
-                  activePath === Object.keys(item)[0]
+                  activePath === item.path
                     ? {
                         fontWeight: '600',
                         color: '#000',
