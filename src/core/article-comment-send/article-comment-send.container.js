@@ -18,13 +18,15 @@ import {
 } from '../../main/store/store.service';
 import { NAVIGATION_STORE_NAME } from '../../lib/common/navigation/navigation.constant';
 
-export function ArticleCommentSendContainer() {
+export const ArticleCommentSendContainer = React.memo(() => {
   const dispatch = useDispatch();
 
   const { pageLoading, state } = useSelector((state) => ({
     state: state[ARTICLE_COMMENT_SEND_STORE_NAME],
     pageLoading: state[NAVIGATION_STORE_NAME].pageLoading,
   }));
+
+  console.log('render')
 
   const articleCommentSendData = async (data) => {
     dispatch(changeArticleCommentSend(data));
@@ -54,4 +56,4 @@ export function ArticleCommentSendContainer() {
       errorMessage={getRequestErrorMessage(state.form)}
     />
   );
-}
+});

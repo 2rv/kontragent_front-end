@@ -86,16 +86,6 @@ export function NavigationComponent(props) {
             },
           }}
         >
-          <Box sx={{ pt: 4, px: 4, pb: 2 }}>
-            <img
-              style={{ margin: '0 auto', display: 'block' }}
-              height="32px"
-              src="/static/img/logo.svg"
-            />
-          </Box>
-          <Box sx={{ px: 4 }}>
-            <Divider />
-          </Box>
           <Box sx={{ overflow: 'auto', pt: 2 }}>
             <NavigationListComponent
               activePath={activePath}
