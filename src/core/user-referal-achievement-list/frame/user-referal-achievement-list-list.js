@@ -28,7 +28,7 @@ export const UserReferalAchievementListListComponent = ({ list }) => {
           <Grid container direction="row">
             <Grid item xs={6} sx={{ py: 3, px: 3 }}>
               <Typography variant="listContent">
-                {items[USER_REFERAL_ACHIEVEMENT_LIST_DATA_NAME.FIRSTNAME]}
+                {items[USER_REFERAL_ACHIEVEMENT_LIST_DATA_NAME.FIRSTNAME]}{' '}
                 {items[USER_REFERAL_ACHIEVEMENT_LIST_DATA_NAME.LASTNAME]}
               </Typography>
               <Typography sx={{ color: '#252525', py: 2 }}>
@@ -36,11 +36,10 @@ export const UserReferalAchievementListListComponent = ({ list }) => {
               </Typography>
             </Grid>
             <Grid item xs={6} display="flex" alignItems="flex-end" sx={{ py: 3 }}>
-              <span>
-                {`${items[USER_REFERAL_ACHIEVEMENT_LIST_DATA_NAME.AWARD]}
-                    ${text('COMMON.CURRENCY.RUB')}
-                `}
-              </span>
+              <Typography>
+                {items[USER_REFERAL_ACHIEVEMENT_LIST_DATA_NAME.AWARD]}
+                {text('COMMON.CURRENCY.RUB')}
+              </Typography>
             </Grid>
           </Grid>
           {key !== list.length - 1 && <Divider />}
