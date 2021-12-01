@@ -79,6 +79,7 @@ export const components = {
       },
       notchedOutline: {
         borderColor: '#E5E8EC',
+        borderRadius: '10px',
       },
       input: {
         fontSize: '14px',

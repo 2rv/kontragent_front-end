@@ -58,8 +58,10 @@ export const CompanyAccountItemPaymentLinkFormComponent = (props) => {
                 style: {
                   paddingTop: '11px',
                   paddingBottom: '11px',
+                  borderRadius: '10px',
                 },
               }}
+              sx={{ borderRadius: '10px' }}
               name={COMPANY_ACCOUNT_ITEM_REVISION_ITEM_PAYMENT_DATA_NAME.AMOUNT}
               onChange={handleChange}
               onBlur={handleBlur}
