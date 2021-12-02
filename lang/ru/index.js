@@ -32,6 +32,7 @@ import ARTICLE from './article.json';
 import ADMIN_POST_LIST from './admin-post-list.json';
 import INVITE from './invite.json';
 import COMMENT from './comment.json';
+import COMPANY_ACCOUNT_ITEM_CREATE_BILL from './company-account-item-create-bill.json';
 
 export const RU = {
   translation: {
@@ -68,5 +69,6 @@ export const RU = {
     ADMIN_POST_LIST,
     INVITE,
     COMMENT,
+    COMPANY_ACCOUNT_ITEM_CREATE_BILL,
   },
 };

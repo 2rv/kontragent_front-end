@@ -1,0 +1,3 @@
+export const COMPANY_ACCOUNT_ITEM_CREATE_BILL_DATA_NAME = {
+  AMOUNT: 'amount',
+};
