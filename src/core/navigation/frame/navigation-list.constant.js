@@ -12,13 +12,13 @@ import { CREATE_ARTICLE_ROUTE_PATH } from '../../article-create';
 import { ADMIN_POST_LIST_ROUTE_PATH } from '../../admin-post-list';
 
 export const USER_MENU_ITEM = [
-  // {
-  //   path: COMPANY_ACCOUNT_LIST_ROUTE_PATH,
-  //   name: text('NAVIGATION.USER.MY_COMPANIES'),
-  // },
   {
     path: USER_REFERAL_BALANCE_ROUTE_PATH,
     name: text('NAVIGATION.USER.BALANCE'),
+  },
+  {
+    path: COMPANY_ACCOUNT_LIST_ROUTE_PATH,
+    name: text('NAVIGATION.USER.MY_COMPANIES'),
   },
   {
     path: USER_REFERAL_SYSTEM_ROUTE_PATH,
