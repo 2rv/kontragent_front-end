@@ -10,6 +10,7 @@ import { COMPANY_ADMIN_LIST_ROUTE_PATH } from '../../company-admin-list';
 import { USER_ADMIN_INVITE_ROUTE_PATH } from '../../user-admin-invite';
 import { CREATE_ARTICLE_ROUTE_PATH } from '../../article-create';
 import { ADMIN_POST_LIST_ROUTE_PATH } from '../../admin-post-list';
+import { BILL_ADMIN_LIST_ROUTE_PATH } from '../../bill-admin-list';
 
 export const USER_MENU_ITEM = [
   {
@@ -54,5 +55,6 @@ export const ADMIN_MENU_ITEM = [
     name: text('NAVIGATION.USER.ARTICLE_CREATE'),
   },
   { path: ADMIN_POST_LIST_ROUTE_PATH, name: text('NAVIGATION.ADMIN.POSTS') },
+  { path: BILL_ADMIN_LIST_ROUTE_PATH, name: text('NAVIGATION.ADMIN.BILLS') },
   { path: SETTINGS_ROUTE_PATH, name: text('NAVIGATION.ADMIN.SETITNGS') },
 ];
