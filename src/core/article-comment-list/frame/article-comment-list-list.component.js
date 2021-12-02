@@ -21,7 +21,6 @@ export const ArticleCommentListListComponent = ({ list, role }) => {
       </Box>
     );
   }
-  console.log(list[0]);
   return (
     <List disablePadding>
       {list.map((item, key) => (
