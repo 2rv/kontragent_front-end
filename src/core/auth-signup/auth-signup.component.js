@@ -74,6 +74,7 @@ export function AuthSignupComponent(props) {
                   sx={{ fontSize: '14px', fontWeight: '600' }}
                   component="button"
                   variant="body2"
+                  underline="hover"
                   onClick={() => {
                     redirect(AUTH_LOGIN_ROUTE_PATH);
                   }}
@@ -87,6 +88,7 @@ export function AuthSignupComponent(props) {
                   sx={{ fontSize: '14px', fontWeight: '600' }}
                   component="button"
                   variant="body2"
+                  underline="hover"
                   onClick={() => {
                     redirect(AUTH_RECOVERY_ACCOUNT_ROUTE_PATH);
                   }}
@@ -110,6 +112,7 @@ export function AuthSignupComponent(props) {
                   variant="body2"
                   target="_blank"
                   href="/static/pdf/blank.pdf"
+                  underline="hover"
                 >
                   {text('AUTH.SIGNUP.READ')}
                 </Link>
@@ -122,6 +125,7 @@ export function AuthSignupComponent(props) {
                   variant="body2"
                   target="_blank"
                   href="/static/pdf/blank.pdf"
+                  underline="hover"
                 >
                   {text('AUTH.SIGNUP.READ')}
                 </Link>

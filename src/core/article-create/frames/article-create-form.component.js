@@ -1,6 +1,8 @@
 import { Grid } from '@material-ui/core';
 import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
+import Typography from '@mui/material/Typography';
+
 import { ReactEditorBlock } from '../../../lib/common/editor';
 import { TextFieldElement } from '../../../lib/element/text-field.element.js';
 
@@ -59,14 +61,23 @@ export function ArticleCreateFormComponent(props) {
             />
           </Grid>
           <Grid xs={12} item>
-            <ReactEditorBlock
-              error={isFieldError(ARTICLE_FIELD_NAME.ARTICLE)}
-              errorText={getFieldError(ARTICLE_FIELD_NAME.ARTICLE)}
-              handleChange={setEditorData(ARTICLE_FIELD_NAME.ARTICLE)}
-              data={values[ARTICLE_FIELD_NAME.ARTICLE]}
-              minHeight={100}
-              readOnly={false}
-            />
+            <Grid container>
+              <Grid item xs={12}>
+                <Typography variant="fieldLabel">
+                  {text('ARTICLE.CREATE.FORM.FIELD.LABELS.BODY')}
+                </Typography>
+              </Grid>
+              <Grid item xs={12}>
+                <ReactEditorBlock
+                  error={isFieldError(ARTICLE_FIELD_NAME.ARTICLE)}
+                  errorText={getFieldError(ARTICLE_FIELD_NAME.ARTICLE)}
+                  handleChange={setEditorData(ARTICLE_FIELD_NAME.ARTICLE)}
+                  data={values[ARTICLE_FIELD_NAME.ARTICLE]}
+                  minHeight={100}
+                  readOnly={false}
+                />
+              </Grid>
+            </Grid>
           </Grid>
           <Grid xs={6} item>
             <Button type="sumbit" fullWidth>

@@ -5,7 +5,8 @@
       "FIELD": {
         "LABELS": {
           "TITLE": "Заголовок",
-          "DESCRIPTION": "Описание"
+          "DESCRIPTION": "Описание",
+          "BODY": "Редактирование статьи"
         }
       },
       "BUTTON": {

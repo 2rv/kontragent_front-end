@@ -8,9 +8,8 @@ export function NavigationListComponent({ activePath, menuListItems }) {
     <List disablePadding>
       {menuListItems.map((item, i) => {
         return (
-          <ListItem key={i}>
+          <ListItem key={i} sx={{ py: 0 }}>
             <ListItemButton
-              sx={{ px: 8, py: 3 }}
               selected={activePath === item.path}
               onClick={() => {
                 redirect(item.path);
