@@ -18,11 +18,14 @@ export function BillAdminListComponent({
     <Paper sx={{ p: 0 }}>
       <Box>
         <Typography
-          variant="heading"
+          variant="title"
           sx={{ px: 8, pt: 8, pb: 4 }}
           component="div"
         >
-          {text('BILL_ADMIN_LIST.TITLE')}
+          {text('BILL_ADMIN_LIST.SUB_TITLE')}
+        </Typography>
+        <Typography variant="subTitle" sx={{ px: 8, pb: 4 }} component="div">
+          {text('BILL_ADMIN_LIST.DESCRIPTION')}
         </Typography>
         <Divider sx={{ mx: 8 }} />
         {isSuccess && <BillAccountListListComponent list={data} />}

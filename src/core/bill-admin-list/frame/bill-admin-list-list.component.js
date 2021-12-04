@@ -8,6 +8,7 @@ import Divider from '@mui/material/Divider';
 import { redirect } from '../../../main/navigation';
 import { text } from '../../../lib/common/text';
 import { BILL_ADMIN_LIST_DATA_NAME } from '../bill-admin-list.constant';
+import Typography from '@mui/material/Typography';
 
 export const BillAccountListListComponent = ({ list }) => {
   if (!list || list.length === 0) {
@@ -25,15 +26,69 @@ export const BillAccountListListComponent = ({ list }) => {
           <ListItem key={key} button sx={{ py: 3, px: 3 }}>
             <ListItemText
               primary={
-                <span>{`${text('BILL_ADMIN_LIST.BILL_LIST.ID')} ${
-                  item[BILL_ADMIN_LIST_DATA_NAME.ID]
-                }, ${text('BILL_ADMIN_LIST.BILL_LIST.NAME')} ${
-                  item[BILL_ADMIN_LIST_DATA_NAME.NAME]
-                }`}</span>
+                <span>{`${item[BILL_ADMIN_LIST_DATA_NAME.NAME]} — ${
+                  item[BILL_ADMIN_LIST_DATA_NAME.AMOUNT]
+                }${text('COMMON.CURRENCY.RUB')}`}</span>
               }
-              secondary={`${text('BILL_ADMIN_LIST.BILL_LIST.CREATE_DATE')} ${
-                item[BILL_ADMIN_LIST_DATA_NAME.CREATE_DATE]
-              }`}
+              secondary={
+                <span>
+                  <>
+                    <Typography
+                      sx={{
+                        color: '#252525',
+                      }}
+                      variant="listContent"
+                    >
+                      {item[BILL_ADMIN_LIST_DATA_NAME.INN]}
+                    </Typography>
+                  </>
+                  {` ${item[BILL_ADMIN_LIST_DATA_NAME.CREATE_DATE]} `}
+                  <>
+                    {item[BILL_ADMIN_LIST_DATA_NAME.STATUS] === 1 && (
+                      <>
+                        <Typography
+                          sx={{
+                            color: '#EB5757',
+                          }}
+                          variant="listContent"
+                        >
+                          {text('BILL_ADMIN_LIST.BILL_LIST.BILL_STATUS.NEW')}
+                        </Typography>
+                      </>
+                    )}
+                  </>
+                  <>
+                    {item[BILL_ADMIN_LIST_DATA_NAME.STATUS] === 2 && (
+                      <>
+                        <Typography
+                          sx={{
+                            color: '#3AB8FF',
+                          }}
+                          variant="listContent"
+                        >
+                          {text('BILL_ADMIN_LIST.BILL_LIST.BILL_STATUS.FILLED')}
+                        </Typography>
+                      </>
+                    )}
+                  </>
+                  <>
+                    {item[BILL_ADMIN_LIST_DATA_NAME.STATUS] === 3 && (
+                      <>
+                        <Typography
+                          sx={{
+                            color: '#219653',
+                          }}
+                          variant="listContent"
+                        >
+                          {text(
+                            'BILL_ADMIN_LIST.BILL_LIST.BILL_STATUS.FULFILLED',
+                          )}
+                        </Typography>
+                      </>
+                    )}
+                  </>
+                </span>
+              }
             />
           </ListItem>
           {key !== list.length - 1 && <Divider />}

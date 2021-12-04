@@ -5,6 +5,9 @@ export const BILL_ADMIN_LIST_DATA_NAME = {
   ID: 'id',
   COMPANY: 'company',
   NAME: 'name',
+  STATUS: 'status',
+  AMOUNT: 'amount',
+  INN: 'inn',
   CREATE_DATE: 'createDate',
 };
 
