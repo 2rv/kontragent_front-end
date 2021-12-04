@@ -130,6 +130,10 @@ import {
   BillAdminListRouter,
   BILL_ADMIN_LIST_ROUTE_PATH,
 } from '../../core/bill-admin-list';
+import {
+  COMPANY_BILL_LIST_ROUTE_PATH,
+  CompanyBillListRouter,
+} from '../../core/company-bill-list';
 
 export const routes = {
   '/': IndexRouter,
@@ -168,7 +172,7 @@ export const routes = {
   [USER_REFERAL_SYSTEM_ROUTE_PATH]: UserReferalSystemRouter,
   [USER_REFERAL_BALANCE_ROUTE_PATH]: UserReferalBalanceRouter,
   [ACCOUNT_REFERAL_ROUTE_PATH]: AccountReferalRouter,
-
+  [COMPANY_BILL_LIST_ROUTE_PATH]: CompanyBillListRouter,
   [USER_ADMIN_INVITE_ROUTE_PATH]: UserAdminInviteRouter,
   [CREATE_ARTICLE_ROUTE_PATH]: createArticleRouter,
   [EDIT_ARTICLE_ROUTE_PATH]: editArticleRouter,
