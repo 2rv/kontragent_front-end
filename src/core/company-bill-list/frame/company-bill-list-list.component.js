@@ -29,7 +29,7 @@ export const CompanyBillListListComponent = ({ list }) => {
             <ListItemText
               primary={
                 <span>
-                  {`${item[COMPANY_BILL_LIST_DATA_NAME.NAME]} —                 
+                  {`               
                     ${item[COMPANY_BILL_LIST_DATA_NAME.AMOUNT]}${text(
                     'COMMON.CURRENCY.RUB',
                   )}
