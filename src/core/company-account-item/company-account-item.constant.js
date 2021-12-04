@@ -15,6 +15,10 @@ import {
   COMPANY_ACCOUNT_ITEM_REVISION_LIST_ROUTE_PATH,
   COMPANY_ACCOUNT_ITEM_REVISION_LIST_ROUTE_PATH_DYNAMIC,
 } from '../company-account-item-revision-list';
+import {
+  COMPANY_ACCOUNT_ITEM_CREATE_BILL_ROUTE_PATH,
+  COMPANY_ACCOUNT_ITEM_CREATE_BILL_ROUTE_PATH_DYNAMIC,
+} from '../company-account-item-create-bill';
 
 export const COMPANY_ACCOUNT_ITEM_NAVIGATION = [
   {
@@ -57,5 +61,15 @@ export const COMPANY_ACCOUNT_ITEM_NAVIGATION = [
       });
     },
     pathname: COMPANY_ACCOUNT_ITEM_REVISION_LIST_ROUTE_PATH,
+  },
+  {
+    id: 4,
+    label: 'NAVIGATION.TABS.COMPANY_ACCOUNT_ITEM.CREATE_BILLS',
+    path: () => {
+      return COMPANY_ACCOUNT_ITEM_CREATE_BILL_ROUTE_PATH_DYNAMIC({
+        companyId: getQuery('companyId'),
+      });
+    },
+    pathname: COMPANY_ACCOUNT_ITEM_CREATE_BILL_ROUTE_PATH,
   },
 ];
