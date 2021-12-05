@@ -65,6 +65,12 @@ import { articleCommentSendStore } from '../../core/article-comment-send/article
 import { ARTICLE_COMMENT_SEND_STORE_NAME } from '../../core/article-comment-send/article-comment-send.constant';
 import { articleCommentDeleteStore } from '../../core/article-comment-delete/article-comment-delete.store';
 import { ARTICLE_COMMENT_DELETE_STORE_NAME } from '../../core/article-comment-delete/article-comment-delete.constant';
+import { adminBillInfoStore } from '../../core/admin-bill-info/admin-bill-info.store';
+import { ADMIN_BILL_INFO_STORE_NAME } from '../../core/admin-bill-info/admin-bill-info.constant';
+import {
+  adminBillRevisionStore,
+  ADMIN_BILL_REVISION_STORE_NAME,
+} from '../../core/admin-bill-revision';
 
 export const reducers = combineReducers({
   [AUTH_STORE_NAME]: authStore,
@@ -96,9 +102,10 @@ export const reducers = combineReducers({
   [INVITE_STORE_NAME]: inviteStore,
   [COMPANY_ACCOUNT_ITEM_SELF_REVISION_CREATE_STORE_NAME]:
     companyAccountItemSelfRevisionCreateStore,
-
+  [ADMIN_BILL_INFO_STORE_NAME]: adminBillInfoStore,
   [ARTICLE_COMMENT_SEND_STORE_NAME]: articleCommentSendStore,
   [ARTICLE_COMMENT_DELETE_STORE_NAME]: articleCommentDeleteStore,
+  [ADMIN_BILL_REVISION_STORE_NAME]: adminBillRevisionStore,
 });
 
 export { initStore } from './store.core';

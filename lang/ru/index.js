@@ -35,6 +35,8 @@ import COMMENT from './comment.json';
 import BILL_ADMIN_LIST from './bill-admin-list.json';
 import COMPANY_BILL_LIST from './company-bill-list.json';
 import COMPANY_ACCOUNT_BILL_ITEM from './company-account-bill-item.json';
+import ADMIN_BILL_INFO from './admin-bill-info.json';
+import ADMIN_BILL_REVISION from './admin-bill-revision.json';
 
 export const RU = {
   translation: {
@@ -74,5 +76,7 @@ export const RU = {
     COMPANY_BILL_LIST,
     BILL_ADMIN_LIST,
     COMPANY_ACCOUNT_BILL_ITEM,
+    ADMIN_BILL_INFO,
+    ADMIN_BILL_REVISION,
   },
 };

@@ -138,6 +138,10 @@ import {
   COMPANY_ACCOUNT_BILL_ITEM_ROUTE_PATH,
   CompanyAccountBillItemRouter,
 } from '../../core/company-account-bill-item';
+import {
+  ADMIN_BILL_REVISION_ROUTE_PATH,
+  AdminBillRevisionRouter,
+} from '../../core/admin-bill-revision';
 
 export const routes = {
   '/': IndexRouter,
@@ -185,6 +189,7 @@ export const routes = {
   [COMPANY_ACCOUNT_ITEM_SELF_REVISION_CREATE_ROUTE_PATH]:
     CompanyAccountItemSelfRevisionCreateRouter,
   [BILL_ADMIN_LIST_ROUTE_PATH]: BillAdminListRouter,
+  [ADMIN_BILL_REVISION_ROUTE_PATH]: AdminBillRevisionRouter,
 };
 
 export const Router = routesInit(routes);
