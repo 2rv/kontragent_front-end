@@ -8,14 +8,16 @@ import { COMPANY_ADMIN_ITEM_INFO_LIST_DATA_NAME } from '../company-admin-item-in
 export const CompanyAdminItemInfoListListComponent = ({ data }) => {
   return (
     <Grid container spacing={3} sx={{ pt: 4, px: 8, pb: 8 }}>
-      <Grid item>
-        <Typography sx={{ mr: 1 }} variant="listTitle">
-          {text('COMMON.COMPANY.COMPANY_NAME')}
-        </Typography>
-        <Typography variant="listContent">
-          {data[COMPANY_ADMIN_ITEM_INFO_LIST_DATA_NAME.NAME]}
-        </Typography>
-      </Grid>
+      {data[COMPANY_ADMIN_ITEM_INFO_LIST_DATA_NAME.NAME] && (
+        <Grid item>
+          <Typography sx={{ mr: 1 }} variant="listTitle">
+            {text('COMMON.COMPANY.COMPANY_NAME')}
+          </Typography>
+          <Typography variant="listContent">
+            {data[COMPANY_ADMIN_ITEM_INFO_LIST_DATA_NAME.NAME]}
+          </Typography>
+        </Grid>
+      )}
       <Grid item>
         <Typography sx={{ mr: 1 }} variant="listTitle">
           {text('COMMON.COMPANY.ID')}
