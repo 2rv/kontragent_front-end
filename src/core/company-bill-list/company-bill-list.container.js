@@ -8,19 +8,20 @@ import { NAVIGATION_STORE_NAME } from '../../lib/common/navigation/navigation.co
 
 import { httpRequest } from '../../main/http';
 import { getQuery } from '../../main/navigation/navigation.core';
-
+import { COMPANY_ACCOUNT_ITEM_CREATE_BILL_STORE_NAME } from '../company-account-item-create-bill/company-account-item-create-bill.constant';
 import { performComapnyBillListRowData } from './company-bill-list.convert';
 
 export function CompanyBillListContainer() {
-  const { pageLoading } = useSelector((state) => ({
+  const { state, pageLoading } = useSelector((state) => ({
+    state: state[COMPANY_ACCOUNT_ITEM_CREATE_BILL_STORE_NAME],
     pageLoading: state[NAVIGATION_STORE_NAME].pageLoading,
   }));
 
   React.useEffect(() => {
-    getCompanyBillList();
-  }, []);
+    getBillAdminList();
+  }, [state.form.success]);
 
-  const getCompanyBillList = async () => {
+  const getBillAdminList = async () => {
     setRequestPending(true);
     setRequestSuccess(false);
     setRequestError(false);

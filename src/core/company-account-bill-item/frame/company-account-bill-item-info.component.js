@@ -13,7 +13,9 @@ export const CompanyAccountBillItemInfoComponent = ({ data }) => {
     <Grid container spacing={4} sx={{ pt: 4, px: 8, pb: 8 }}>
       <Grid item>
         <Typography variant="body1">
-          {data[COMPANY_ACCOUNT_BILL_ITEM_DATA_NAME.DESCRIPTION]}
+          {data[COMPANY_ACCOUNT_BILL_ITEM_DATA_NAME.DESCRIPTION]
+            ? data[COMPANY_ACCOUNT_BILL_ITEM_DATA_NAME.DESCRIPTION]
+            : text('COMPANY_ACCOUNT_BILL_ITEM.EMPTY_DESCRIPTION')}
         </Typography>
       </Grid>
 

@@ -39,7 +39,9 @@ export function CompanyAccountItemCreateBillComponent(props) {
           <Formik
             initialValues={initialValue}
             validate={validation}
-            onSubmit={onSubmitForm}
+            onSubmit={(values, { resetForm }) => {
+              onSubmitForm(values, resetForm);
+            }}
           >
             {(props) => (
               <CompanyAccountItemCreateBillFormComponent
