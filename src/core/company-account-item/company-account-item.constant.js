@@ -15,6 +15,10 @@ import {
   COMPANY_ACCOUNT_ITEM_REVISION_LIST_ROUTE_PATH,
   COMPANY_ACCOUNT_ITEM_REVISION_LIST_ROUTE_PATH_DYNAMIC,
 } from '../company-account-item-revision-list';
+import {
+  COMPANY_ACCOUNT_KONTRAGENTS_ROUTE_PATH,
+  COMPANY_ACCOUNT_KONTRAGENTS_ROUTE_PATH_DYNAMIC,
+} from '../company-account-kontragents';
 
 export const COMPANY_ACCOUNT_ITEM_NAVIGATION = [
   {
@@ -57,5 +61,15 @@ export const COMPANY_ACCOUNT_ITEM_NAVIGATION = [
       });
     },
     pathname: COMPANY_ACCOUNT_ITEM_REVISION_LIST_ROUTE_PATH,
+  },
+  {
+    id: 4,
+    label: 'NAVIGATION.TABS.COMPANY_ACCOUNT_ITEM.KONTRAGENTS',
+    path: () => {
+      return COMPANY_ACCOUNT_KONTRAGENTS_ROUTE_PATH_DYNAMIC({
+        companyId: getQuery('companyId'),
+      });
+    },
+    pathname: COMPANY_ACCOUNT_KONTRAGENTS_ROUTE_PATH,
   },
 ];

@@ -126,6 +126,10 @@ import {
   COMPANY_ACCOUNT_ITEM_SELF_REVISION_CREATE_ROUTE_PATH,
   CompanyAccountItemSelfRevisionCreateRouter,
 } from '../../core/company-account-item-self-revision-create';
+import {
+  COMPANY_ACCOUNT_KONTRAGENTS_ROUTE_PATH,
+  CompanyAccountKontragentsRouter,
+} from '../../core/company-account-kontragents';
 
 export const routes = {
   '/': IndexRouter,
@@ -172,6 +176,7 @@ export const routes = {
   [INVITE_ROUTE_PATH]: InviteRouter,
   [COMPANY_ACCOUNT_ITEM_SELF_REVISION_CREATE_ROUTE_PATH]:
     CompanyAccountItemSelfRevisionCreateRouter,
+  [COMPANY_ACCOUNT_KONTRAGENTS_ROUTE_PATH]: CompanyAccountKontragentsRouter,
 };
 
 export const Router = routesInit(routes);

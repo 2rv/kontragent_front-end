@@ -1,0 +1,24 @@
+{
+  "TITLE": "Контрагенты",
+  "LIST_EMPTY": "Список контрагентов пуст",
+  "COMPANY_NAME": "Имя: ",
+  "COMPANY_INN": "INN: ",
+  "FORM": {
+    "TITLE": "Создание контрагента",
+    "SUBTITLE": "Форма создания нового контрагента",
+    "FIELD": {
+      "LABELS": {
+        "COMPANY_NAME": "Название компании",
+        "COMPANY_INN": "INN компании"
+      }
+    },
+    "BUTTON": {
+      "TITLE": "Создать контрагентa"
+    }
+  },
+  "INFO": {
+    "KONTRAGENT_INFO": "Информация из контрагенте",
+    "COMPANY_INFO": "О контрагенте",
+    "REMOVE_KONTRAGENT": "Удалить контрагентa"
+  }
+}
