@@ -34,6 +34,7 @@ import INVITE from './invite.json';
 import COMMENT from './comment.json';
 import BILL_ADMIN_LIST from './bill-admin-list.json';
 import COMPANY_BILL_LIST from './company-bill-list.json';
+import COMPANY_ACCOUNT_BILL_ITEM from './company-account-bill-item.json';
 
 export const RU = {
   translation: {
@@ -72,5 +73,6 @@ export const RU = {
     COMMENT,
     COMPANY_BILL_LIST,
     BILL_ADMIN_LIST,
+    COMPANY_ACCOUNT_BILL_ITEM,
   },
 };

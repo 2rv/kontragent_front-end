@@ -5,10 +5,11 @@ import ListItemText from '@mui/material/ListItemText';
 import Alert from '@mui/material/Alert';
 import Box from '@mui/material/Box';
 import Divider from '@mui/material/Divider';
-import { redirect } from '../../../main/navigation';
+import { getQuery, redirect } from '../../../main/navigation';
 import { text } from '../../../lib/common/text';
 import { COMPANY_BILL_LIST_DATA_NAME } from '../company-bill-list.constant';
 import Typography from '@mui/material/Typography';
+import { COMPANY_ACCOUNT_BILL_ITEM_ROUTE_PATH_DYNAMIC } from '../../company-account-bill-item';
 
 export const CompanyBillListListComponent = ({ list }) => {
   if (!list || list.length === 0) {
@@ -25,7 +26,20 @@ export const CompanyBillListListComponent = ({ list }) => {
     <List sx={{ px: 8, pb: 8 }} disablePadding>
       {list.map((item, key) => (
         <React.Fragment key={key}>
-          <ListItem key={key} button sx={{ py: 3, px: 3 }}>
+          <ListItem
+            onClick={() => {
+              return redirect(COMPANY_ACCOUNT_BILL_ITEM_ROUTE_PATH_DYNAMIC, {
+                dynamic: true,
+                params: {
+                  billId: item[COMPANY_BILL_LIST_DATA_NAME.ID],
+                  companyId: getQuery('companyId'),
+                },
+              });
+            }}
+            key={key}
+            button
+            sx={{ py: 3, px: 3 }}
+          >
             <ListItemText
               primary={
                 <span>
