@@ -3,6 +3,8 @@ import { useSelector, useDispatch } from 'react-redux';
 import {
   resetAdminBillRevisionUpdateDataFromState,
   changeAdminBillRevision,
+  closeAdminBillRevision,
+  deleteAdminBillRevision,
 } from './admin-bill-revision.action';
 import {
   ADMIN_BILL_REVISION_DATA_NAME,
@@ -32,41 +34,49 @@ export function AdminBillRevisionContainer() {
     dispatch(resetAdminBillRevisionUpdateDataFromState());
   }, []);
 
-  const createRevisionReview = (values) => {
+  const createBillRevision = (values) => {
     const data = convertAdminBillRevisionSendData(values, getFileList);
     dispatch(changeAdminBillRevision(data));
-
-    const getInitialValue = () => {
-      if (isRequestSuccess(billData.bill)) {
-        const data = getRequestData(billData.bill, '');
-
-        return {
-          [ADMIN_BILL_REVISION_DATA_NAME.DESCRIPTION]:
-            data[ADMIN_BILL_REVISION_DATA_NAME.DESCRIPTION],
-          [ADMIN_BILL_REVISION_DATA_NAME.FILES]:
-            data[ADMIN_BILL_REVISION_DATA_NAME.FILES],
-        };
-      }
-      return {
-        [ADMIN_BILL_REVISION_DATA_NAME.DESCRIPTION]: '',
-        [ADMIN_BILL_REVISION_DATA_NAME.FILES]: [],
-      };
-    };
-
-    const [getFileList, setFileList] = React.useState([]);
-
-    return (
-      <AdminBillRevisionComponent
-        isPending={isRequestPending(state.form)}
-        isError={isRequestError(state.form)}
-        isSuccess={isRequestSuccess(state.form)}
-        initialValue={getInitialValue()}
-        onSubmitForm={createRevisionReview}
-        isDependentPending={isRequestPending(billData.bill)}
-        pageLoading={pageLoading}
-        setFileList={setFileList}
-        errorMessage={getRequestErrorMessage(state.form)}
-      />
-    );
   };
+
+  const closeBillRevision = () => {
+    dispatch(closeAdminBillRevision());
+  };
+
+  const deleteBillRevision = () => {
+    dispatch(deleteAdminBillRevision());
+  };
+
+  const getInitialValue = () => {
+    if (isRequestSuccess(billData.bill)) {
+      const data = getRequestData(billData.bill, '');
+
+      return {
+        [ADMIN_BILL_REVISION_DATA_NAME.DESCRIPTION]:
+          data[ADMIN_BILL_REVISION_DATA_NAME.DESCRIPTION],
+        [ADMIN_BILL_REVISION_DATA_NAME.FILES]:
+          data[ADMIN_BILL_REVISION_DATA_NAME.FILES],
+      };
+    }
+    return {
+      [ADMIN_BILL_REVISION_DATA_NAME.DESCRIPTION]: '',
+      [ADMIN_BILL_REVISION_DATA_NAME.FILES]: [],
+    };
+  };
+  const [getFileList, setFileList] = React.useState([]);
+  return (
+    <AdminBillRevisionComponent
+      isPending={isRequestPending(state.form)}
+      isError={isRequestError(state.form)}
+      isSuccess={isRequestSuccess(state.form)}
+      initialValue={getInitialValue()}
+      onSubmitForm={createBillRevision}
+      isDependentPending={isRequestPending(billData.bill)}
+      pageLoading={pageLoading}
+      setFileList={setFileList}
+      errorMessage={getRequestErrorMessage(state.form)}
+      onSubmitClose={closeBillRevision}
+      onSubmitDelete={deleteBillRevision}
+    />
+  );
 }

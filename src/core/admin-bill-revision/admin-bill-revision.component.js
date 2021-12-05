@@ -7,6 +7,8 @@ import LinearProgress from '@mui/material/LinearProgress';
 import { AdminBillRevisionFormComponent } from './frame/admin-bill-revision-form.component';
 import { Formik } from 'formik';
 import { text } from '../../lib/common/text';
+import Grid from '@mui/material/Grid';
+import Button from '@mui/material/Button';
 
 export function AdminBillRevisionComponent(props) {
   const {
@@ -18,70 +20,85 @@ export function AdminBillRevisionComponent(props) {
     isSuccess,
     errorMessage,
     setFileList,
+    onSubmitClose,
+    onSubmitDelete,
   } = props;
 
+  const isSubmitDisabled = () => {
+    return isPending || pageLoading || isSuccess;
+  };
+
   return (
-    <Box>
-      <Paper>
-        <Box>
-          <Box sx={{ pb: 4 }}>
-            <Typography
-              variant="title"
-              sx={{ px: 8, pt: 8, pb: 4 }}
-              component="div"
-            >
-              {text('ADMIN_BILL_REVISION.SUB_TITLE')}
-              {data[ADMIN_BILL_INFO_DATA_NAME.ID]}
-            </Typography>
-            <Typography
-              variant="subTitle"
-              sx={{ px: 8, pb: 4 }}
-              component="div"
-            >
-              {text('ADMIN_BILL_REVISION.INFO_TITLE')}
-            </Typography>
-          </Box>
+    <Paper>
+      <Box>
+        <Typography variant="title" sx={{ pb: 4 }} component="div">
+          {text('ADMIN_BILL_REVISION.SUB_TITLE')}
+        </Typography>
+        <Typography variant="subTitle" sx={{ pb: 4 }} component="div">
+          {text('ADMIN_BILL_REVISION.INFO_TITLE')}
+        </Typography>
 
-          <Divider />
+        <Divider />
 
-          <Formik
-            initialValues={initialValue}
-            onSubmit={(values, actions) => {
-              onSubmitForm(values, actions.setSubmitting);
-            }}
+        <Formik
+          initialValues={initialValue}
+          onSubmit={(values, actions) => {
+            onSubmitForm(values, actions.setSubmitting);
+          }}
+        >
+          {(props) => (
+            <AdminBillRevisionFormComponent
+              {...props}
+              isPending={isPending}
+              isError={isError}
+              isSuccess={isSuccess}
+              errorMessage={errorMessage}
+              pageLoading={pageLoading}
+              setFileList={setFileList}
+            />
+          )}
+        </Formik>
+        <Grid item>
+          <Divider sx={{ mb: 4 }} />
+        </Grid>
+        <Grid item>
+          <Button onClick={onSubmitClose} fullWidth>
+            {text('ADMIN_BILL_REVISION.BUTTON.FULFILLED')}
+          </Button>
+        </Grid>
+
+        <Grid item>
+          <Button
+            variant="red"
+            sx={{ mt: 4 }}
+            onClick={onSubmitDelete}
+            fullWidth
+            disabled={isSubmitDisabled()}
           >
-            {(props) => (
-              <AdminBillRevisionFormComponent
-                {...props}
-                isPending={isPending}
-                isError={isError}
-                isSuccess={isSuccess}
-                errorMessage={errorMessage}
-                pageLoading={pageLoading}
-                setFileList={setFileList}
-              />
-            )}
-          </Formik>
-          {isPending && (
-            <Box sx={{ pt: 4, width: '100%' }}>
-              <LinearProgress />
-            </Box>
-          )}
-          {isSuccess && (
-            <Box sx={{ pt: 4 }}>
-              <Alert severity="success">
-                {text('COMMON.REQUEST_SENT_SUCCESSFULLY')}
-              </Alert>
-            </Box>
-          )}
+            {text('ADMIN_BILL_REVISION.BUTTON.CLOSED')}
+          </Button>
+        </Grid>
 
-          {isError && (
-            <Box sx={{ pt: 4 }}>
-              <Alert severity="error">{text(`ERROR.${errorMessage}`)}</Alert>
-            </Box>
-          )}
-        </Box>
-      </Paper>
-    </Box>
+        {isPending && (
+          <Box sx={{ pt: 4, width: '100%' }}>
+            <LinearProgress />
+          </Box>
+        )}
+
+        {isSuccess && (
+          <Box sx={{ pt: 4 }}>
+            <Alert severity="success">
+              {text('COMMON.REQUEST_SENT_SUCCESSFULLY')}
+            </Alert>
+          </Box>
+        )}
+
+        {isError && (
+          <Box sx={{ pt: 4 }}>
+            <Alert severity="error">{text(`ERROR.${errorMessage}`)}</Alert>
+          </Box>
+        )}
+      </Box>
+    </Paper>
   );
 }

@@ -38,11 +38,7 @@ export const AdminBillRevisionFormComponent = (props) => {
             flexWrap="wrap"
           >
             <Grid xs={12} item>
-              <Typography
-                variant="title"
-                sx={{ px: 8, pt: 8, pb: 4 }}
-                component="div"
-              >
+              <Typography variant="title" sx={{ pb: 4 }} component="div">
                 {text('ADMIN_BILL_REVISION.DESCRIPTION')}
               </Typography>
               <TextFieldElement
@@ -66,23 +62,19 @@ export const AdminBillRevisionFormComponent = (props) => {
               />
             </Grid>
 
-            <Grid item>
-              <Divider />
+            <Grid item xs={12}>
+              <Divider sx={{ mt: -2 }} />
             </Grid>
 
             <Grid item xs={12}>
-              <Grid container>
-                <Grid xs={4}>
-                  <Button
-                    fullWidth
-                    variant="black"
-                    type="sumbit"
-                    disabled={isSubmitDisabled()}
-                  >
-                    {text('ADMIN_BILL_REVISION.BUTTON.SAVE')}
-                  </Button>
-                </Grid>
-              </Grid>
+              <Button
+                fullWidth
+                variant="black"
+                type="sumbit"
+                disabled={isSubmitDisabled()}
+              >
+                {text('ADMIN_BILL_REVISION.BUTTON.SAVE')}
+              </Button>
             </Grid>
           </Grid>
         </Grid>
