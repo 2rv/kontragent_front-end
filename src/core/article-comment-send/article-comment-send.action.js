@@ -2,7 +2,7 @@ import { httpRequest } from '../../main/http';
 import { getQuery } from '../../main/navigation/navigation.core';
 import { ARCTICLE_COMMENT_SEND_ACTION_TYPE } from './article-comment-send.constant';
 
-export function changeArticleCommentSend(data) {
+export function changeArticleCommentSend(data, resetForm) {
   return async (dispatch) => {
     dispatch({
       type: ARCTICLE_COMMENT_SEND_ACTION_TYPE.FORM_PENDING,
@@ -18,6 +18,7 @@ export function changeArticleCommentSend(data) {
       dispatch({
         type: ARCTICLE_COMMENT_SEND_ACTION_TYPE.FORM_SUCCESS,
       });
+      resetForm();
     } catch (error) {
       if (error) {
         dispatch({

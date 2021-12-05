@@ -5,6 +5,7 @@ import {
   changeAdminBillRevision,
   closeAdminBillRevision,
   deleteAdminBillRevision,
+  cleanupStore,
 } from './admin-bill-revision.action';
 import {
   ADMIN_BILL_REVISION_DATA_NAME,
@@ -34,9 +35,15 @@ export function AdminBillRevisionContainer() {
     dispatch(resetAdminBillRevisionUpdateDataFromState());
   }, []);
 
-  const createBillRevision = (values) => {
+  React.useEffect(() => {
+    return function cleanup() {
+      dispatch(cleanupStore());
+    };
+  }, []);
+
+  const createBillRevision = (values, resetForm) => {
     const data = convertAdminBillRevisionSendData(values, getFileList);
-    dispatch(changeAdminBillRevision(data));
+    dispatch(changeAdminBillRevision(data, resetForm));
   };
 
   const closeBillRevision = () => {
@@ -48,16 +55,16 @@ export function AdminBillRevisionContainer() {
   };
 
   const getInitialValue = () => {
-    if (isRequestSuccess(billData.bill)) {
-      const data = getRequestData(billData.bill, '');
+    // if (isRequestSuccess(billData.bill)) {
+    //   const data = getRequestData(billData.bill, '');
 
-      return {
-        [ADMIN_BILL_REVISION_DATA_NAME.DESCRIPTION]:
-          data[ADMIN_BILL_REVISION_DATA_NAME.DESCRIPTION],
-        [ADMIN_BILL_REVISION_DATA_NAME.FILES]:
-          data[ADMIN_BILL_REVISION_DATA_NAME.FILES],
-      };
-    }
+    //   return {
+    //     [ADMIN_BILL_REVISION_DATA_NAME.DESCRIPTION]:
+    //       data[ADMIN_BILL_REVISION_DATA_NAME.DESCRIPTION],
+    //     [ADMIN_BILL_REVISION_DATA_NAME.FILES]:
+    //       data[ADMIN_BILL_REVISION_DATA_NAME.FILES],
+    //   };
+    // }
     return {
       [ADMIN_BILL_REVISION_DATA_NAME.DESCRIPTION]: '',
       [ADMIN_BILL_REVISION_DATA_NAME.FILES]: [],
@@ -72,9 +79,16 @@ export function AdminBillRevisionContainer() {
       initialValue={getInitialValue()}
       onSubmitForm={createBillRevision}
       isDependentPending={isRequestPending(billData.bill)}
+      data={billData.bill}
       pageLoading={pageLoading}
       setFileList={setFileList}
       errorMessage={getRequestErrorMessage(state.form)}
+      isClosePending={isRequestPending(state.closeForm)}
+      isCloseSuccess={isRequestSuccess(state.closeForm)}
+      isCloseError={isRequestError(state.closeForm)}
+      isDeletePending={isRequestPending(state.deleteForm)}
+      isDeleteSuccess={isRequestSuccess(state.deleteForm)}
+      isDeleteError={isRequestError(state.deleteForm)}
       onSubmitClose={closeBillRevision}
       onSubmitDelete={deleteBillRevision}
     />

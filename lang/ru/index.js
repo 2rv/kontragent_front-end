@@ -32,6 +32,9 @@ import ARTICLE from './article.json';
 import ADMIN_POST_LIST from './admin-post-list.json';
 import INVITE from './invite.json';
 import COMMENT from './comment.json';
+import BILL_ADMIN_LIST from './bill-admin-list.json';
+import COMPANY_BILL_LIST from './company-bill-list.json';
+import COMPANY_ACCOUNT_BILL_ITEM from './company-account-bill-item.json';
 import COMPANY_ACCOUNT_ITEM_CREATE_BILL from './company-account-item-create-bill.json';
 import ADMIN_BILL_INFO from './admin-bill-info.json';
 import ADMIN_BILL_REVISION from './admin-bill-revision.json';
@@ -71,6 +74,9 @@ export const RU = {
     ADMIN_POST_LIST,
     INVITE,
     COMMENT,
+    COMPANY_BILL_LIST,
+    BILL_ADMIN_LIST,
+    COMPANY_ACCOUNT_BILL_ITEM,
     COMPANY_ACCOUNT_ITEM_CREATE_BILL,
     ADMIN_BILL_INFO,
     ADMIN_BILL_REVISION,

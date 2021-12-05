@@ -4,12 +4,10 @@ import {
   authRedirectAdmin,
   authRedirectVerification,
 } from '../../lib/common/auth';
-import { COMPANY_ACCOUNT_ITEM_CREATE_BILL_ROUTE_PATH } from './company-account-item-create-bill.constant';
+import { COMPANY_ACCOUNT_BILL_ITEM_ROUTE_PATH } from './company-account-bill-item.constant';
 
-export function CompanyAccountItemCreateBillRouter(ctx) {
-  ctx.store.dispatch(
-    setActivePath(COMPANY_ACCOUNT_ITEM_CREATE_BILL_ROUTE_PATH),
-  );
+export function CompanyAccountBillItemRouter(ctx) {
+  ctx.store.dispatch(setActivePath(COMPANY_ACCOUNT_BILL_ITEM_ROUTE_PATH));
   if (authRedirectPrivated(ctx, '/')) return;
   if (authRedirectVerification(ctx)) return;
   if (authRedirectAdmin(ctx, '/')) return;
