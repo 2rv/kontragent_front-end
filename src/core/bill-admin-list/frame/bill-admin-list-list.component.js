@@ -9,6 +9,7 @@ import { redirect } from '../../../main/navigation';
 import { text } from '../../../lib/common/text';
 import { BILL_ADMIN_LIST_DATA_NAME } from '../bill-admin-list.constant';
 import Typography from '@mui/material/Typography';
+import { ADMIN_BILL_REVISION_ROUTE_PATH_DYNAMIC } from '../../admin-bill-revision';
 
 export const BillAccountListListComponent = ({ list }) => {
   if (!list || list.length === 0) {
@@ -23,7 +24,19 @@ export const BillAccountListListComponent = ({ list }) => {
     <List sx={{ px: 8, pb: 8 }} disablePadding>
       {list.map((item, key) => (
         <React.Fragment key={key}>
-          <ListItem key={key} button sx={{ py: 3, px: 3 }}>
+          <ListItem
+            onClick={() => {
+              return redirect(ADMIN_BILL_REVISION_ROUTE_PATH_DYNAMIC, {
+                dynamic: true,
+                params: {
+                  billId: item[BILL_ADMIN_LIST_DATA_NAME.ID],
+                },
+              });
+            }}
+            key={key}
+            button
+            sx={{ py: 3, px: 3 }}
+          >
             <ListItemText
               primary={
                 <span>{`${item[BILL_ADMIN_LIST_DATA_NAME.NAME]} — ${

@@ -79,6 +79,10 @@ export function AdminBillRevisionComponent(props) {
           </Button>
         </Grid>
 
+        <Typography variant="fieldLabel" sx={{ pt: 4 }} component="div">
+          {text('ADMIN_BILL_REVISION.INFO')}
+        </Typography>
+
         {isPending && (
           <Box sx={{ pt: 4, width: '100%' }}>
             <LinearProgress />
