@@ -10,6 +10,7 @@ import { CompanyAdminItemInfoPage } from '../company-admin-item-info/company-adm
 import { CompanyAccountItemBalancePage } from '../company-account-item-balance/company-account-item-balance.page';
 import { CompanyAdminItemMemberListContainer } from '../company-admin-item-member-list/company-admin-item-member-list.container';
 import { CompanyAdminItemRevisionListContainer } from '../company-admin-item-revision-list/company-admin-item-revision-list.container';
+import { CompanyAdminBillListContainer } from '../company-admin-bill-list/company-admin-bill-list.container';
 
 const TAB = [
   {
@@ -26,6 +27,11 @@ const TAB = [
     id: 2,
     label: 'NAVIGATION.TABS.COMPANY_ADMIN_ITEM.MEMBERS',
     component: CompanyAdminItemMemberListContainer,
+  },
+  {
+    id: 3,
+    label: 'NAVIGATION.TABS.COMPANY_ADMIN_ITEM.BILL_LIST',
+    component: CompanyAdminBillListContainer,
   },
 ];
 

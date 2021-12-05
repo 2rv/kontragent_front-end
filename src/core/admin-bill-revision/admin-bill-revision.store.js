@@ -37,52 +37,57 @@ export function adminBillRevisionStore(state = initialState, action) {
         ...state,
         form: resetRequestStatus(state.form),
       };
+
+    case ADMIN_BILL_REVISION_ACTION_TYPE.CLEANUP:
+      return {
+        ...initialState,
+      };
     //close
     case ADMIN_BILL_REVISION_ACTION_TYPE.CLOSE_FORM_PENDING:
       return {
         ...state,
-        form: setRequestPending(state.form),
+        closeForm: setRequestPending(state.closeForm),
       };
     case ADMIN_BILL_REVISION_ACTION_TYPE.CLOSE_FORM_SUCCESS:
       return {
         ...state,
-        form: setRequestSuccess(state.form),
+        closeForm: setRequestSuccess(state.closeForm),
       };
 
     case ADMIN_BILL_REVISION_ACTION_TYPE.CLOSE_FORM_ERROR:
       return {
         ...state,
-        form: setRequestError(state.form, action.errorMessage),
+        closeForm: setRequestError(state.closeForm, action.errorMessage),
       };
 
     case ADMIN_BILL_REVISION_ACTION_TYPE.CLOSE_FORM_RESET:
       return {
         ...state,
-        form: resetRequestStatus(state.form),
+        closeForm: resetRequestStatus(state.closeForm),
       };
 
     //delete
     case ADMIN_BILL_REVISION_ACTION_TYPE.DELETE_FORM_PENDING:
       return {
         ...state,
-        form: setRequestPending(state.form),
+        deleteForm: setRequestPending(state.deleteForm),
       };
     case ADMIN_BILL_REVISION_ACTION_TYPE.DELETE_FORM_SUCCESS:
       return {
         ...state,
-        form: setRequestSuccess(state.form),
+        deleteForm: setRequestSuccess(state.deleteForm),
       };
 
     case ADMIN_BILL_REVISION_ACTION_TYPE.DELETE_FORM_SUCCESS:
       return {
         ...state,
-        form: setRequestError(state.form, action.errorMessage),
+        deleteForm: setRequestError(state.deleteForm, action.errorMessage),
       };
 
     case ADMIN_BILL_REVISION_ACTION_TYPE.DELETE_FORM_RESET:
       return {
         ...state,
-        form: resetRequestStatus(state.form),
+        deleteForm: resetRequestStatus(state.deleteForm),
       };
 
     default:

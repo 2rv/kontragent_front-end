@@ -5,7 +5,7 @@ import { reloadAdminBillInfoData } from '../admin-bill-info/admin-bill-info.acti
 import { redirect } from '../../main/navigation/navigation.core';
 import { BILL_ADMIN_LIST_ROUTE_PATH } from '../bill-admin-list';
 
-export function changeAdminBillRevision(data) {
+export function changeAdminBillRevision(data, resetForm) {
   return async (dispatch) => {
     dispatch({
       type: ADMIN_BILL_REVISION_ACTION_TYPE.FORM_PENDING,
@@ -22,6 +22,7 @@ export function changeAdminBillRevision(data) {
         type: ADMIN_BILL_REVISION_ACTION_TYPE.FORM_SUCCESS,
       });
       await dispatch(reloadAdminBillInfoData());
+      resetForm();
     } catch (error) {
       if (error) {
         dispatch({
@@ -72,11 +73,11 @@ export function deleteAdminBillRevision() {
         url: `bill/delete/bill/${getQuery('billId')}`,
       });
 
-      await redirect(BILL_ADMIN_LIST_ROUTE_PATH).then(() => {
-        dispatch({
-          type: ADMIN_BILL_REVISION_ACTION_TYPE.DELETE_FORM_SUCCESS,
-        });
+      dispatch({
+        type: ADMIN_BILL_REVISION_ACTION_TYPE.DELETE_FORM_SUCCESS,
       });
+
+      redirect(BILL_ADMIN_LIST_ROUTE_PATH);
     } catch (error) {
       if (error) {
         dispatch({
@@ -96,5 +97,11 @@ export function resetAdminBillRevisionUpdateDataFromState() {
     dispatch({
       type: ADMIN_BILL_REVISION_ACTION_TYPE.CLOSE_FORM_RESET,
     });
+  };
+}
+
+export function cleanupStore() {
+  return {
+    type: ADMIN_BILL_REVISION_ACTION_TYPE.CLEANUP,
   };
 }
