@@ -33,6 +33,8 @@ import ADMIN_POST_LIST from './admin-post-list.json';
 import INVITE from './invite.json';
 import COMMENT from './comment.json';
 import COMPANY_ACCOUNT_ITEM_CREATE_BILL from './company-account-item-create-bill.json';
+import ADMIN_BILL_INFO from './admin-bill-info.json';
+import ADMIN_BILL_REVISION from './admin-bill-revision.json';
 
 export const RU = {
   translation: {
@@ -70,5 +72,7 @@ export const RU = {
     INVITE,
     COMMENT,
     COMPANY_ACCOUNT_ITEM_CREATE_BILL,
+    ADMIN_BILL_INFO,
+    ADMIN_BILL_REVISION,
   },
 };
