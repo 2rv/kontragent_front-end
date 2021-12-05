@@ -127,6 +127,10 @@ import {
   CompanyAccountItemSelfRevisionCreateRouter,
 } from '../../core/company-account-item-self-revision-create';
 import {
+  CompanyAccountItemCreateBillRouter,
+  COMPANY_ACCOUNT_ITEM_CREATE_BILL_ROUTE_PATH,
+} from '../../core/company-account-item-create-bill';
+import {
   ADMIN_BILL_REVISION_ROUTE_PATH,
   AdminBillRevisionRouter,
 } from '../../core/admin-bill-revision';
@@ -168,7 +172,8 @@ export const routes = {
   [USER_REFERAL_SYSTEM_ROUTE_PATH]: UserReferalSystemRouter,
   [USER_REFERAL_BALANCE_ROUTE_PATH]: UserReferalBalanceRouter,
   [ACCOUNT_REFERAL_ROUTE_PATH]: AccountReferalRouter,
-
+  [COMPANY_ACCOUNT_ITEM_CREATE_BILL_ROUTE_PATH]:
+    CompanyAccountItemCreateBillRouter,
   [USER_ADMIN_INVITE_ROUTE_PATH]: UserAdminInviteRouter,
   [CREATE_ARTICLE_ROUTE_PATH]: createArticleRouter,
   [EDIT_ARTICLE_ROUTE_PATH]: editArticleRouter,
