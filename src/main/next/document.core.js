@@ -16,7 +16,7 @@ class MyDocument extends Document {
             rel="stylesheet"
             href="https://fonts.googleapis.com/icon?family=Material+Icons"
           />
-          <script src="//code-ya.jivosite.com/widget/DEIEyoYgaD" async></script>
+          <script src="//code-ya.jivosite.com/widget/Mb8m46XBwd" async></script>
         </Head>
         <body>
           <Main />
