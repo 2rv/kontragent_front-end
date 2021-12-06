@@ -176,6 +176,9 @@ export const components = {
         boxShadow: 'none',
         height: '46px',
       },
+      input: {
+        height: '46px',
+      },
     },
   },
   MuiDivider: {

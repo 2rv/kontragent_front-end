@@ -108,7 +108,7 @@ export function AuthSignupComponent(props) {
                 {text('AUTH.SIGNUP.TERMS_OF_THE_OFFER')}{' '}
                 <Link
                   sx={{ fontSize: '14px', fontWeight: '600' }}
-                  component="button"
+                  component="a"
                   variant="body2"
                   target="_blank"
                   href="/static/pdf/blank.pdf"
@@ -121,7 +121,7 @@ export function AuthSignupComponent(props) {
                 {text('AUTH.SIGNUP.USER_AGREEMENT')}{' '}
                 <Link
                   sx={{ fontSize: '14px', fontWeight: '600' }}
-                  component="button"
+                  component="a"
                   variant="body2"
                   target="_blank"
                   href="/static/pdf/blank.pdf"

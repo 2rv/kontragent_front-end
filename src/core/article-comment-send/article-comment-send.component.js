@@ -27,8 +27,7 @@ export function ArticleCommentSendComponent(props) {
         initialValues={initialValue}
         validate={validation}
         onSubmit={(values, { resetForm }) => {
-          onSubmitForm(values);
-          resetForm();
+          onSubmitForm(values, resetForm);
         }}
       >
         {(props) => (

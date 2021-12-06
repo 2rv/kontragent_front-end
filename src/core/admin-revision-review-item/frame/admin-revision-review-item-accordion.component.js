@@ -109,7 +109,6 @@ export const AdminRevisionReviewItemAccordionComponent = ({ data }) => {
             )}
           </AccordionDetails>
         </Accordion>
-        <Divider sx={{ mx: 8 }} />
       </div>
     ),
   );

@@ -52,13 +52,13 @@ export const CompanyAccountListListComponent = ({ list }) => {
             </ListItemAvatar>
             <ListItemText
               primary={
-                <span>{`${text('COMMON.COMPANY.ID')} ${
-                  item[COMPANY_ADMIN_LIST_DATA_NAME.ID]
-                }, ${text('COMMON.COMPANY.COMPANY_NAME')} ${
-                  item[COMPANY_ADMIN_LIST_DATA_NAME.NAME]
-                }, ${text('COMMON.COMPANY.INN')} ${
-                  item[COMPANY_ADMIN_LIST_DATA_NAME.INN]
-                }`}</span>
+                <span>
+                  {text('COMMON.COMPANY.ID')} {item[COMPANY_ADMIN_LIST_DATA_NAME.ID]},{' '}
+                  {item[COMPANY_ADMIN_LIST_DATA_NAME.NAME] && (
+                    <>{text('COMMON.COMPANY.COMPANY_NAME')} {item[COMPANY_ADMIN_LIST_DATA_NAME.NAME]},{' '}</>
+                  )}
+                  {text('COMMON.COMPANY.INN')} {item[COMPANY_ADMIN_LIST_DATA_NAME.INN]}{' '}
+                </span>
               }
               secondary={`${text('COMMON.COMPANY.BALANCE_VERIFICATION')} ${
                 item[COMPANY_ADMIN_LIST_DATA_NAME.VERIFICATE_PAYMENT]

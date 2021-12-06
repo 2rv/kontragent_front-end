@@ -127,9 +127,26 @@ import {
   CompanyAccountItemSelfRevisionCreateRouter,
 } from '../../core/company-account-item-self-revision-create';
 import {
+
   COMPANY_ACCOUNT_KONTRAGENTS_ROUTE_PATH,
   CompanyAccountKontragentsRouter,
 } from '../../core/company-account-kontragents';
+import {
+  BillAdminListRouter,
+  BILL_ADMIN_LIST_ROUTE_PATH,
+} from '../../core/bill-admin-list';
+import {
+  COMPANY_BILL_LIST_ROUTE_PATH,
+  CompanyBillListRouter,
+} from '../../core/company-bill-list';
+import {
+  COMPANY_ACCOUNT_BILL_ITEM_ROUTE_PATH,
+  CompanyAccountBillItemRouter,
+} from '../../core/company-account-bill-item';
+import {
+  ADMIN_BILL_REVISION_ROUTE_PATH,
+  AdminBillRevisionRouter,
+} from '../../core/admin-bill-revision';
 
 export const routes = {
   '/': IndexRouter,
@@ -161,14 +178,14 @@ export const routes = {
   [ADMIN_REVISION_REVIEW_ROUTE_PATH]: AdminRevisionReviewRouter,
   [ADMIN_REVISION_REVIEW_ITEM_ROUTE_PATH]: AdminRevisionReviewItemRouter,
   [ADMIN_POST_LIST_ROUTE_PATH]: AdminPostListRouter,
-
+  [COMPANY_ACCOUNT_BILL_ITEM_ROUTE_PATH]: CompanyAccountBillItemRouter,
   [COMPANY_ADMIN_LIST_ROUTE_PATH]: CompanyAdminListRouter,
   [REVISION_ADMIN_LIST_ROUTE_PATH]: RevisionAdminListRouter,
   [AUTH_REFERAL_ROUTE_PATH]: AuthReferalRouter,
   [USER_REFERAL_SYSTEM_ROUTE_PATH]: UserReferalSystemRouter,
   [USER_REFERAL_BALANCE_ROUTE_PATH]: UserReferalBalanceRouter,
   [ACCOUNT_REFERAL_ROUTE_PATH]: AccountReferalRouter,
-
+  [COMPANY_BILL_LIST_ROUTE_PATH]: CompanyBillListRouter,
   [USER_ADMIN_INVITE_ROUTE_PATH]: UserAdminInviteRouter,
   [CREATE_ARTICLE_ROUTE_PATH]: createArticleRouter,
   [EDIT_ARTICLE_ROUTE_PATH]: editArticleRouter,
@@ -177,6 +194,8 @@ export const routes = {
   [COMPANY_ACCOUNT_ITEM_SELF_REVISION_CREATE_ROUTE_PATH]:
     CompanyAccountItemSelfRevisionCreateRouter,
   [COMPANY_ACCOUNT_KONTRAGENTS_ROUTE_PATH]: CompanyAccountKontragentsRouter,
+  [BILL_ADMIN_LIST_ROUTE_PATH]: BillAdminListRouter,
+  [ADMIN_BILL_REVISION_ROUTE_PATH]: AdminBillRevisionRouter,
 };
 
 export const Router = routesInit(routes);

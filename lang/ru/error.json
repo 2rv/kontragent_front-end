@@ -21,7 +21,7 @@
   "USER_RECOVERY_USER_WITH_THIS_EMAIL_NOT_FOUND": "Пользователя с такой почтой не существует",
   "USER_SETTINGS_UNCORRECT_CURRENT_PASSWORD": "Неверный текущий пароль",
   "USER_SETTINGS_SAME_EMAIL": "Адрес электронной почты совпадает с предыдущем",
-  "USER_USER_VERIFICATION_EMAIL_ALLDREADY_CONFIRM": "Адрес электронной почты уже был подтверждён",
+  "USER_USER_VERIFICATION_EMAIL_ALLREADY_CONFIRM": "Адрес электронной почты уже был подтверждён",
   "USER_USER_VERIFICATION_EMAIL_UNCORRECT_CODE": "Неправильный код подтверждения адреса электронной почты",
   "USER_USER_VERIFICATION_PHONE_ALLREADY_CONFIRM": "Номер телефона уже был подтверждён",
   "USER_USER_VERIFICATION_PHONE_UNCORRECT_CODE": "Неправильный код подтверждения номера телефона",
@@ -40,5 +40,8 @@
   "INVITE_ERROR_ALLREARY_INVITED": "Приглашение уже отправленно",
   "USER_ERROR_CANNOT_FIND_USER": "Такого пользователя не существует",
   "USER_ERROR_USER_IS_BLOKED": "Аккаунт пользователя заблокирован",
-  "KONTRAGENT_ALREADY_EXISTS": "Контрагент уже существует"
+  "KONTRAGENT_ALREADY_EXISTS": "Контрагент уже существует",
+  "BILL_ERROR_BILL_ALREADY_FULFIELD": "Запрос уже закрыт",
+  "BILL_ERROR_BILL_DESCRIPTION_MIN_10": "Минимум 10 символов",
+  "MAXIMUM_OF_FILES_10": "Максимум 10 файлов"
 }

@@ -37,9 +37,8 @@ export function ArticleCommentListContainer() {
         method: 'GET',
         url: `/comment/get/post/${getQuery('articleId')}`,
       });
-
       const data = performArticleCommentListData(res.data);
-
+      console.log(res.data);
       setRequestPending(false);
       setRequestSuccess(true);
       setData(data);

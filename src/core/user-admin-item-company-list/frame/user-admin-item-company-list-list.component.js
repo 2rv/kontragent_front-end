@@ -17,7 +17,7 @@ import { USER_ADMIN_ITEM_COMPANY_LIST_DATA_NAME } from '../user-admin-item-compa
 export const UserAdminItemCompanyListListComponent = ({ list }) => {
   if (!list || list.length === 0) {
     return (
-      <Box sx={{ py: 4, px: 8 }}>
+      <Box sx={{ pt: 4, pb: 8, px: 8 }}>
         <Alert severity="info">
           {text('USER_ADMIN_ITEM_COMPANY_LIST.EMPTY')}
         </Alert>
