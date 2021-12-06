@@ -35,7 +35,6 @@ export function CompanyAccountItemMemberAddComponent(props) {
             </Typography>
           </Box>
           <Divider />
-
           <Formik
             initialValues={initialValue}
             validate={validation}

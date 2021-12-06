@@ -23,7 +23,7 @@ export const CompanyBillListListComponent = ({ list }) => {
   }
 
   return (
-    <List sx={{ px: 8, pb: 8 }} disablePadding>
+    <List sx={{ px: 8, pb: 6 }} disablePadding>
       {list.map((item, key) => (
         <React.Fragment key={key}>
           <ListItem
