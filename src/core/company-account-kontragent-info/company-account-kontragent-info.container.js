@@ -54,10 +54,10 @@ export function CompanyAccountKontragentItemInfoContainer() {
   };
 
   const removeKontragent = async () => {
-    setRequestPending(true);
-    setRequestSuccess(false);
-    setRequestError(false);
-    setRequestErrorMessage(null);
+    setRequestRemovePending(true);
+    setRequestRemoveSuccess(false);
+    setRequestRemoveError(false);
+    setRequestRemoveErrorMessage(null);
 
     try {
       await httpRequest({
@@ -72,13 +72,13 @@ export function CompanyAccountKontragentItemInfoContainer() {
         },
       });
 
-      setRequestPending(false);
-      setRequestSuccess(true);
+      setRequestRemovePending(false);
+      setRequestRemoveSuccess(true);
     } catch (error) {
       if (error.response) {
-        setRequestError(true);
-        setRequestPending(false);
-        setRequestErrorMessage(error.response.data.message);
+        setRequestRemoveError(true);
+        setRequestRemovePending(false);
+        setRequestRemoveErrorMessage(error.response.data.message);
       }
     }
   };
@@ -89,6 +89,11 @@ export function CompanyAccountKontragentItemInfoContainer() {
   const [isRequestSuccess, setRequestSuccess] = React.useState(null);
   const [getRequestErrorMessage, setRequestErrorMessage] = React.useState(null);
 
+  const [isRequestRemovePending, setRequestRemovePending] = React.useState(null);
+  const [isRequestRemoveError, setRequestRemoveError] = React.useState(null);
+  const [isRequestRemoveSuccess, setRequestRemoveSuccess] = React.useState(null);
+  const [getRequestRemoveErrorMessage, setRequestRemoveErrorMessage] = React.useState(null);
+
   return (
     <CompanyAccountKontragentItemInfoComponent
       isPending={isRequestPending || (!isRequestSuccess && pageLoading)}
@@ -97,6 +102,10 @@ export function CompanyAccountKontragentItemInfoContainer() {
       data={getData}
       pageLoading={pageLoading}
       errorMessage={getRequestErrorMessage}
+      isRemovePending={isRequestRemovePending}
+      isRemoveError={isRequestRemoveError}
+      isRemoveSuccess={isRequestRemoveSuccess}
+      removeErrorMessage={getRequestRemoveErrorMessage}
       removeKontragent={removeKontragent}
     />
   );

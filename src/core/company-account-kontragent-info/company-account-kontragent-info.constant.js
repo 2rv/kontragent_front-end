@@ -2,8 +2,10 @@ export const COMPANY_ACCOUNT_KONTRAGENT_INFO_DATA_NAME = {
   ID: 'id',
   NAME: 'name',
   INN: 'inn',
+  COMPANY_ID: 'companyId',
   COMPANY_NAME: 'companyName',
   KONTRAGENT_NAME: 'kontragentName',
+  COMPANY_REGISTERED: 'registered',
   CONTRACTOR: 'contractor',
   CONSUMER: 'consumer',
 };

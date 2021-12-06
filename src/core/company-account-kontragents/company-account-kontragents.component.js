@@ -5,12 +5,14 @@ import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import Alert from '@mui/material/Alert';
 
+import { Formik } from 'formik';
+
 import { CompanyAccountKontragentsListComponent } from './frame/company-account-kontragents-list.component';
+import { CompanyAccountKontragentFormFieldsComponent } from './frame/company-account-kontragent-form-fields.component';
 
 import { SkeletonListComponent } from '../../lib/common/skeleton/skeleton-list.component';
 
 import { text } from '../../lib/common/text';
-import { KontragentCreateFormComponent } from './frame/kontragent-create-form.component';
 
 export function CompanyAccountKontragentsComponent({
   data,
@@ -18,23 +20,59 @@ export function CompanyAccountKontragentsComponent({
   isError,
   isSuccess,
   errorMessage,
-  pageLoading,
+  isCreatePending,
+  isCreateError,
+  isCreateSuccess,
+  createErrorMessage,
   initialValue,
   validation,
   onSubmitForm,
+  pageLoading,
 }) {
   return (
     <Grid spacing={6} container>
       <Grid item>
-        <KontragentCreateFormComponent
-          initialValue={initialValue}
-          validation={validation}
-          onSubmitForm={onSubmitForm}
-          isPending={isPending}
-          isError={isError}
-          errorMessage={errorMessage}
-          pageLoading={pageLoading}
-        />
+        <Paper>
+          <Box>
+            <Box sx={{ pb: 4 }}>
+              <Typography variant="title" sx={{ pb: 2 }} component="div">
+                {text('COMPANY_ACCOUNT_KONTRAGENTS.FORM.TITLE')}
+              </Typography>
+              <Typography variant="subTitle" component="div">
+                {text('COMPANY_ACCOUNT_KONTRAGENTS.FORM.SUBTITLE')}
+              </Typography>
+            </Box>
+
+            <Formik
+              initialValues={initialValue}
+              validate={validation}
+              onSubmit={onSubmitForm}
+            >
+              {(props) => (
+                <CompanyAccountKontragentFormFieldsComponent
+                  {...props}
+                  isPending={isCreatePending}
+                  isError={isCreateError}
+                  errorMessage={createErrorMessage}
+                  pageLoading={pageLoading}
+                />
+              )}
+            </Formik>
+
+            {isCreateError && (
+              <Box sx={{ pt: 4 }}>
+                <Alert severity="error">{text(`ERROR.${createErrorMessage}`)}</Alert>
+              </Box>
+            )}
+            {isCreateSuccess && (
+              <Box sx={{ pt: 4 }}>
+                <Alert severity="success">
+                  {text('COMPANY_ACCOUNT_KONTRAGENTS.FORM.SUCCESS')}
+                </Alert>
+              </Box>
+            )}
+          </Box>
+        </Paper>
       </Grid>
       <Grid item>
         <Paper sx={{ p: 0 }}>

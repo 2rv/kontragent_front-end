@@ -17,16 +17,34 @@ export function CompanyAccountKontragentItemInfoComponent({
   isError,
   isSuccess,
   errorMessage,
+  isRemovePending,
   removeKontragent,
 }) {
   return (
-    <Paper sx={{ p: 0 }}>
+    <Box>
+      <Typography
+        variant="heading"
+        sx={{ pb: 4 }}
+        component="div"
+      >
+        {text('COMPANY_ACCOUNT_KONTRAGENTS.INFO.TITLE')}
+      </Typography>
+
+      <Divider />
       <Box>
-        {isSuccess && <CompanyAccountKontragentItemInfoListComponent data={data} removeKontragent={removeKontragent} />}
+        {isSuccess && (
+          <CompanyAccountKontragentItemInfoListComponent
+            data={data}
+            removeKontragent={removeKontragent}
+            isRemovePending={isRemovePending}
+          />
+        )}
         {isPending && (
-          <Box sx={{ pt: 4, px: 8, pb: 8 }}>
-            <SkeletonListComponent text={true} />
-          </Box>
+          <Paper>
+            <Box>
+              <SkeletonListComponent text={true} />
+            </Box>
+          </Paper>
         )}
         {isError && (
           <Box sx={{ pt: 4, px: 8, pb: 8 }}>
@@ -34,6 +52,6 @@ export function CompanyAccountKontragentItemInfoComponent({
           </Box>
         )}
       </Box>
-    </Paper>
+    </Box>
   );
 }

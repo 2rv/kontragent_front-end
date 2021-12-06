@@ -14,11 +14,22 @@
     },
     "BUTTON": {
       "TITLE": "Создать контрагентa"
-    }
+    },
+    "SUCCESS": "Контрагент успешно создан"
   },
   "INFO": {
-    "KONTRAGENT_INFO": "Информация из контрагенте",
-    "COMPANY_INFO": "О контрагенте",
-    "REMOVE_KONTRAGENT": "Удалить контрагентa"
+    "TITLE": "Контрагент",
+    "KONTRAGENT_INFO": "Информация о контрагенте",
+    "COMPANY_INFO": "О компании",
+    "REMOVE_KONTRAGENT": "Удалить контрагентa",
+    "ID": "ID в системе",
+    "KONTRAGENT_NICKNAME": "Псевдоним компании",
+    "COMPANY_NAME": "Название компании",
+    "INN": "INN",
+    "REGISTERED": {
+      "TITLE": "Зарегистрирован",
+      "YES": "Да",
+      "NO": "Нет"
+    }
   }
 }

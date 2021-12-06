@@ -5,7 +5,7 @@ import Button from '@mui/material/Button';
 import { COMPANY_ACCOUNT_KONTRAGENTS_DATA_NAME } from '../company-account-kontragents.constant';
 import { text } from '../../../lib/common/text';
 
-export const KontragentCreateFormFieldsComponent = (props) => {
+export const CompanyAccountKontragentFormFieldsComponent = (props) => {
   const {
     handleChange,
     handleBlur,

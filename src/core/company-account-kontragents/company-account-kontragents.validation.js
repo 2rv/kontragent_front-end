@@ -8,5 +8,5 @@ const config = {
   [COMPANY_ACCOUNT_KONTRAGENTS_DATA_NAME.INN]: [required],
 };
 
-export const companyAccountKontragentCreateFormValidation = (values) =>
+export const companyAccountKontragentsFormValidation = (values) =>
   validate(values, config);

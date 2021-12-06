@@ -14,11 +14,11 @@ export const COMPANY_ACCOUNT_KONTRAGENTS_DATA_NAME = {
 };
 
 export const COMPANY_ACCOUNT_KONTRAGENTS_API = {
-  GET_COMPANY_ACCOUNT_KONTRAGENTS: {
+  FETCH_COMPANY_ACCOUNT_KONTRAGENTS: {
     ENDPOINT: (companyId) => `/kontragent/get/company/${companyId}/kontragents`,
     TYPE: 'GET',
   },
-  FETCH_COMPANY_ACCOUNT_KONTRAGENTS: {
+  CREATE_COMPANY_ACCOUNT_KONTRAGENT: {
     ENDPOINT: (companyId) => `/kontragent/company/${companyId}/create/kontragent`,
     TYPE: 'POST',
   },
