@@ -28,7 +28,7 @@ export const TextFieldElement = ({
       )}
       <Grid item>
         <TextField
-          inputProps={{ ...inputProps }}
+          inputProps={{ ...inputProps, style: { padding: '13px 14px' } }}
           {...props}
           error={error}
           onChange={(e) => handleChange(e)}

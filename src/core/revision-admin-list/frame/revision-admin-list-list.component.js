@@ -21,7 +21,7 @@ export const RevisionAdminListListComponent = ({ list }) => {
   }
 
   return (
-    <List sx={{ px: 6, pb: 8 }} disablePadding>
+    <List sx={{ px: 6, pb: 6 }} disablePadding>
       {list.map((items, key) => (
         <React.Fragment key={key}>
           <ListItem
