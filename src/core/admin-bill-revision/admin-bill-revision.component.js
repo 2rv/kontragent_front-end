@@ -71,6 +71,19 @@ export function AdminBillRevisionComponent(props) {
           )}
         </Formik>
         <Grid item>
+          {isSuccess && (
+            <Box sx={{ pt: 2, pb: 4 }}>
+              <Alert severity="success">
+                {text('ADMIN_BILL_REVISION.SUCCESSFULLY')}
+              </Alert>
+            </Box>
+          )}
+
+          {isError && (
+            <Box sx={{ pt: 2, pb: 4 }}>
+              <Alert severity="error">{text(`ERROR.${errorMessage}`)}</Alert>
+            </Box>
+          )}
           <Divider sx={{ mb: 4 }} />
         </Grid>
         {data.data?.status !== BILL_STATUS.FULFILLED ? (
@@ -101,36 +114,10 @@ export function AdminBillRevisionComponent(props) {
           {text('ADMIN_BILL_REVISION.INFO')}
         </Typography>
 
-        {isPending && (
-          <Box sx={{ pt: 4, width: '100%' }}>
-            <LinearProgress />
-          </Box>
-        )}
-
-        {isSuccess && (
-          <Box sx={{ pt: 4 }}>
-            <Alert severity="success">
-              {text('COMMON.REQUEST_SENT_SUCCESSFULLY')}
-            </Alert>
-          </Box>
-        )}
-
-        {isError && (
-          <Box sx={{ pt: 4 }}>
-            <Alert severity="error">{text(`ERROR.${errorMessage}`)}</Alert>
-          </Box>
-        )}
-
-        {isClosePending && (
-          <Box sx={{ pt: 4, width: '100%' }}>
-            <LinearProgress />
-          </Box>
-        )}
-
         {isCloseSuccess && (
           <Box sx={{ pt: 4 }}>
             <Alert severity="success">
-              {text('COMMON.REQUEST_SENT_SUCCESSFULLY')}
+              {text('ADMIN_BILL_REVISION.FULFILLED')}
             </Alert>
           </Box>
         )}
@@ -141,16 +128,10 @@ export function AdminBillRevisionComponent(props) {
           </Box>
         )}
 
-        {isDeletePending && (
-          <Box sx={{ pt: 4, width: '100%' }}>
-            <LinearProgress />
-          </Box>
-        )}
-
         {isDeleteSuccess && (
           <Box sx={{ pt: 4 }}>
             <Alert severity="success">
-              {text('COMMON.REQUEST_SENT_SUCCESSFULLY')}
+              {text('ADMIN_BILL_REVISION.CLOSED')}
             </Alert>
           </Box>
         )}

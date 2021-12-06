@@ -2,44 +2,49 @@ import React from 'react';
 
 import { CompanyAccountItemCreateBillComponent } from './company-account-item-create-bill.component';
 
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 
 import { companyAccountItemCreateBillFormValidation } from './company-account-item-create-bill.validation';
-
-import { COMPANY_ACCOUNT_ITEM_CREATE_BILL_DATA_NAME } from './company-account-item-create-bill.constant';
-
+import { COMPANY_BILL_LIST_STORE_NAME } from '../company-bill-list';
+import {
+  COMPANY_ACCOUNT_ITEM_CREATE_BILL_DATA_NAME,
+  COMPANY_ACCOUNT_ITEM_CREATE_BILL_STORE_NAME,
+} from './company-account-item-create-bill.constant';
+import {
+  changeCompanyAccountItemCreateBill,
+  resetCompanyAccountItemCreateBillDataFromState,
+  cleanupStore,
+} from './company-account-item-create-bill.action';
 import { NAVIGATION_STORE_NAME } from '../../lib/common/navigation/navigation.constant';
-
-import { httpRequest } from '../../main/http';
-import { getQuery } from '../../main/navigation/navigation.core';
+import {
+  getRequestData,
+  getRequestErrorMessage,
+  isRequestError,
+  isRequestPending,
+  isRequestSuccess,
+} from '../../main/store/store.service';
+import { convertCompanyAccountItemCreateBillSendData } from './company-account-item-create-bill.convert';
 
 export function CompanyAccountItemCreateBillContainer() {
-  const { pageLoading } = useSelector((state) => ({
+  const dispatch = useDispatch();
+  const { state, pageLoading, billData } = useSelector((state) => ({
+    state: state[COMPANY_ACCOUNT_ITEM_CREATE_BILL_STORE_NAME],
     pageLoading: state[NAVIGATION_STORE_NAME].pageLoading,
   }));
 
-  const loginFormSendData = async (data) => {
-    setRequestPending(true);
-    setRequestSuccess(false);
-    setRequestError(false);
-    setRequestErrorMessage(null);
+  React.useEffect(() => {
+    dispatch(resetCompanyAccountItemCreateBillDataFromState());
+  }, []);
 
-    try {
-      const res = await httpRequest({
-        method: 'POST',
-        url: `/bill/company/${getQuery('companyId')}`,
-        data,
-      });
+  React.useEffect(() => {
+    return function cleanup() {
+      dispatch(cleanupStore());
+    };
+  }, []);
 
-      setRequestPending(false);
-      setRequestSuccess(true);
-    } catch (error) {
-      if (error) {
-        setRequestError(true);
-        setRequestPending(false);
-        setRequestErrorMessage(error.response.data.message);
-      }
-    }
+  const createBillAmount = (values, resetForm) => {
+    const data = convertCompanyAccountItemCreateBillSendData(values);
+    dispatch(changeCompanyAccountItemCreateBill(data, resetForm));
   };
 
   const getInitialValue = () => {
@@ -48,21 +53,16 @@ export function CompanyAccountItemCreateBillContainer() {
     };
   };
 
-  const [isRequestPending, setRequestPending] = React.useState(null);
-  const [isRequestError, setRequestError] = React.useState(null);
-  const [isRequestSuccess, setRequestSuccess] = React.useState(null);
-  const [getRequestErrorMessage, setRequestErrorMessage] = React.useState(null);
-
   return (
     <CompanyAccountItemCreateBillComponent
-      isPending={isRequestPending}
-      isError={isRequestError}
-      isSuccess={isRequestSuccess}
+      isPending={isRequestPending(state.form)}
+      isError={isRequestError(state.form)}
+      isSuccess={isRequestSuccess(state.form)}
       initialValue={getInitialValue()}
       validation={companyAccountItemCreateBillFormValidation}
-      onSubmitForm={loginFormSendData}
+      onSubmitForm={createBillAmount}
       pageLoading={pageLoading}
-      errorMessage={getRequestErrorMessage}
+      errorMessage={getRequestErrorMessage(state.form)}
     />
   );
 }
