@@ -9,6 +9,7 @@ import { Formik } from 'formik';
 import { text } from '../../lib/common/text';
 import Grid from '@mui/material/Grid';
 import Button from '@mui/material/Button';
+import { BILL_STATUS } from '../company-bill-list/company-bill-list.constant';
 
 export function AdminBillRevisionComponent(props) {
   const {
@@ -20,12 +21,23 @@ export function AdminBillRevisionComponent(props) {
     isSuccess,
     errorMessage,
     setFileList,
+    isClosePending,
+    isCloseSuccess,
+    isCloseError,
+    isDeletePending,
+    isDeleteSuccess,
+    isDeleteError,
     onSubmitClose,
     onSubmitDelete,
+    data,
   } = props;
 
-  const isSubmitDisabled = () => {
-    return isPending || pageLoading || isSuccess;
+  const isSubmitCloseDisabled = () => {
+    return isClosePending || pageLoading;
+  };
+
+  const isSubmitDeleteDisabled = () => {
+    return isDeletePending || pageLoading;
   };
 
   return (
@@ -42,8 +54,8 @@ export function AdminBillRevisionComponent(props) {
 
         <Formik
           initialValues={initialValue}
-          onSubmit={(values, actions) => {
-            onSubmitForm(values, actions.setSubmitting);
+          onSubmit={(values, { resetForm }) => {
+            onSubmitForm(values, resetForm);
           }}
         >
           {(props) => (
@@ -59,41 +71,72 @@ export function AdminBillRevisionComponent(props) {
           )}
         </Formik>
         <Grid item>
+          {isSuccess && (
+            <Box sx={{ pt: 2, pb: 4 }}>
+              <Alert severity="success">
+                {text('ADMIN_BILL_REVISION.SUCCESSFULLY')}
+              </Alert>
+            </Box>
+          )}
+
+          {isError && (
+            <Box sx={{ pt: 2, pb: 4 }}>
+              <Alert severity="error">{text(`ERROR.${errorMessage}`)}</Alert>
+            </Box>
+          )}
           <Divider sx={{ mb: 4 }} />
         </Grid>
-        <Grid item>
-          <Button onClick={onSubmitClose} fullWidth>
-            {text('ADMIN_BILL_REVISION.BUTTON.FULFILLED')}
-          </Button>
-        </Grid>
+        {data.data?.status !== BILL_STATUS.FULFILLED ? (
+          <Grid item>
+            <Button
+              sx={{ mb: 2 }}
+              onClick={onSubmitClose}
+              disabled={isSubmitCloseDisabled()}
+              fullWidth
+            >
+              {text('ADMIN_BILL_REVISION.BUTTON.FULFILLED')}
+            </Button>
+          </Grid>
+        ) : null}
 
         <Grid item>
           <Button
             variant="red"
-            sx={{ mt: 4 }}
             onClick={onSubmitDelete}
             fullWidth
-            disabled={isSubmitDisabled()}
+            disabled={isSubmitDeleteDisabled()}
           >
             {text('ADMIN_BILL_REVISION.BUTTON.CLOSED')}
           </Button>
         </Grid>
 
-        {isPending && (
-          <Box sx={{ pt: 4, width: '100%' }}>
-            <LinearProgress />
-          </Box>
-        )}
+        <Typography variant="fieldLabel" sx={{ pt: 4 }} component="div">
+          {text('ADMIN_BILL_REVISION.INFO')}
+        </Typography>
 
-        {isSuccess && (
+        {isCloseSuccess && (
           <Box sx={{ pt: 4 }}>
             <Alert severity="success">
-              {text('COMMON.REQUEST_SENT_SUCCESSFULLY')}
+              {text('ADMIN_BILL_REVISION.FULFILLED')}
             </Alert>
           </Box>
         )}
 
-        {isError && (
+        {isCloseError && (
+          <Box sx={{ pt: 4 }}>
+            <Alert severity="error">{text(`ERROR.${errorMessage}`)}</Alert>
+          </Box>
+        )}
+
+        {isDeleteSuccess && (
+          <Box sx={{ pt: 4 }}>
+            <Alert severity="success">
+              {text('ADMIN_BILL_REVISION.CLOSED')}
+            </Alert>
+          </Box>
+        )}
+
+        {isDeleteError && (
           <Box sx={{ pt: 4 }}>
             <Alert severity="error">{text(`ERROR.${errorMessage}`)}</Alert>
           </Box>

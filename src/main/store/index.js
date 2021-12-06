@@ -72,6 +72,9 @@ import {
   ADMIN_BILL_REVISION_STORE_NAME,
 } from '../../core/admin-bill-revision';
 
+import { companyAccountItemCreateBillStore } from '../../core/company-account-item-create-bill/company-acoount-item-create-bill.store';
+import { COMPANY_ACCOUNT_ITEM_CREATE_BILL_STORE_NAME } from '../../core/company-account-item-create-bill/company-account-item-create-bill.constant';
+
 export const reducers = combineReducers({
   [AUTH_STORE_NAME]: authStore,
   [LANG_STORE_NAME]: langStore,
@@ -106,6 +109,8 @@ export const reducers = combineReducers({
   [ARTICLE_COMMENT_SEND_STORE_NAME]: articleCommentSendStore,
   [ARTICLE_COMMENT_DELETE_STORE_NAME]: articleCommentDeleteStore,
   [ADMIN_BILL_REVISION_STORE_NAME]: adminBillRevisionStore,
+  [COMPANY_ACCOUNT_ITEM_CREATE_BILL_STORE_NAME]:
+    companyAccountItemCreateBillStore,
 });
 
 export { initStore } from './store.core';

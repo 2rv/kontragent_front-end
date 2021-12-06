@@ -82,9 +82,7 @@ export const AdminBillInfoItemComponent = ({ data }) => {
           </Typography>
         ) : (
           <Typography variant="body1">
-            {text(
-              'COMPANY_ACCOUNT_ITEM_REVISION.REVISION_ITEM.WE_NOT_COMPILED_RESULT_OF_YOUR_REQUEST',
-            )}
+            {text('COMPANY_ACCOUNT_BILL_ITEM.EMPTY_DESCRIPTION')}
           </Typography>
         )}
       </Grid>

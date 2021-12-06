@@ -1,11 +1,13 @@
 import { NavigationComponent } from '../navigation/navigation.component';
-
 import Grid from '@mui/material/Grid';
+import { CompanyBillListContainer } from './company-bill-list.container';
+import { text } from '../../lib/common/text';
+import Typography from '@mui/material/Typography';
 import { TabContainer } from '../../lib/common/navigation-tab/navigation-tab.container';
 import { COMPANY_ACCOUNT_ITEM_NAVIGATION } from '../company-account-item/company-account-item.constant';
-import { CompanyAccountItemCreateBillContainer } from './company-account-item-create-bill.container';
+import { CompanyAccountItemCreateBillContainer } from '../company-account-item-create-bill/company-account-item-create-bill.container';
 
-export function CompanyAccountItemCreateBillPage() {
+export function CompanyBillListPage() {
   return (
     <NavigationComponent>
       <Grid spacing={6} container>
@@ -14,6 +16,9 @@ export function CompanyAccountItemCreateBillPage() {
         </Grid>
         <Grid item>
           <CompanyAccountItemCreateBillContainer />
+        </Grid>
+        <Grid item>
+          <CompanyBillListContainer />
         </Grid>
       </Grid>
     </NavigationComponent>
