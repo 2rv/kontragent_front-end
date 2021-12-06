@@ -1,0 +1,35 @@
+{
+  "TITLE": "Контрагенты",
+  "LIST_EMPTY": "Список контрагентов пуст",
+  "COMPANY_NAME": "Имя: ",
+  "COMPANY_INN": "INN: ",
+  "FORM": {
+    "TITLE": "Создание контрагента",
+    "SUBTITLE": "Форма создания нового контрагента",
+    "FIELD": {
+      "LABELS": {
+        "COMPANY_NAME": "Название компании",
+        "COMPANY_INN": "INN компании"
+      }
+    },
+    "BUTTON": {
+      "TITLE": "Создать контрагентa"
+    },
+    "SUCCESS": "Контрагент успешно создан"
+  },
+  "INFO": {
+    "TITLE": "Контрагент",
+    "KONTRAGENT_INFO": "Информация о контрагенте",
+    "COMPANY_INFO": "О компании",
+    "REMOVE_KONTRAGENT": "Удалить контрагентa",
+    "ID": "ID в системе",
+    "KONTRAGENT_NICKNAME": "Псевдоним компании",
+    "COMPANY_NAME": "Название компании",
+    "INN": "INN",
+    "REGISTERED": {
+      "TITLE": "Зарегистрирован",
+      "YES": "Да",
+      "NO": "Нет"
+    }
+  }
+}
