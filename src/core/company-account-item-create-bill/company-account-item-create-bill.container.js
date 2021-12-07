@@ -49,7 +49,7 @@ export function CompanyAccountItemCreateBillContainer() {
 
   const getInitialValue = () => {
     return {
-      [COMPANY_ACCOUNT_ITEM_CREATE_BILL_DATA_NAME.AMOUNT]: null,
+      [COMPANY_ACCOUNT_ITEM_CREATE_BILL_DATA_NAME.AMOUNT]: '',
     };
   };
 
