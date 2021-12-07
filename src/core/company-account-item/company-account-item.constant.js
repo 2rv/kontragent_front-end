@@ -75,6 +75,7 @@ export const COMPANY_ACCOUNT_ITEM_NAVIGATION = [
       });
     },
     pathname: COMPANY_ACCOUNT_KONTRAGENTS_ROUTE_PATH,
+  },
   {
     id: 5,
     label: 'NAVIGATION.TABS.COMPANY_ACCOUNT_ITEM.BILL_LIST',
