@@ -21,7 +21,7 @@ import { COMPANY_ACCOUNT_LIST_DATA_NAME } from '../company-account-list.constant
 export const CompanyAccountListListComponent = ({ list }) => {
   if (!list || list.length === 0) {
     return (
-      <Box sx={{ pt: 4, px: 8, pb: 8 }}>
+      <Box >sx={{ px: 8, pb: 8 }}
         <Alert severity="info">
           {text('COMPANY_ACCOUNT_LIST.COMPANY_LIST.EMPTY')}
         </Alert>
