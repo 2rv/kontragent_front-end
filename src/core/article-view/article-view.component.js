@@ -1,3 +1,4 @@
+import moment from 'moment';
 import { Article } from './frames/article.component';
 import { ARTICLE_DATA_NAME } from './article-view.constant';
 import Skeleton from '@mui/material/Skeleton';
@@ -76,7 +77,7 @@ export function ArticleViewComponent(props) {
         <Grid container direction="row" justifyContent="start" sx={{ pb: 10 }}>
           <Grid item sx={{ pr: 5 }}>
             <Typography color="#B5B5B5">
-              {article[ARTICLE_DATA_NAME.CREATE_DATE]}
+              {moment(article[ARTICLE_DATA_NAME.CREATE_DATE]).utc().fromNow()}
             </Typography>
           </Grid>
           <Grid item>

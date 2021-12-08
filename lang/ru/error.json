@@ -43,5 +43,6 @@
   "KONTRAGENT_ALREADY_EXISTS": "Контрагент уже существует",
   "BILL_ERROR_BILL_ALREADY_FULFIELD": "Запрос уже закрыт",
   "BILL_ERROR_BILL_DESCRIPTION_MIN_10": "Минимум 10 символов",
-  "MAXIMUM_OF_FILES_10": "Максимум 10 файлов"
+  "MAXIMUM_OF_FILES_10": "Максимум 10 файлов",
+  "COMPANY_INN": "INN компании должен содержать 10 чисел"
 }
