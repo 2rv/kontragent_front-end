@@ -22,7 +22,7 @@ export const UserReferalAchievementListListComponent = ({ list }) => {
   }
 
   return (
-    <Grid sx={{ px: 6, pb: 8 }} container direction="column" disablePadding>
+    <Grid sx={{ px: 6, pb: 8 }} container direction="column">
       {list.map((items, key) => (
         <React.Fragment key={key}>
           <Grid container direction="row">
@@ -35,7 +35,13 @@ export const UserReferalAchievementListListComponent = ({ list }) => {
                 {items[USER_REFERAL_ACHIEVEMENT_LIST_DATA_NAME.TYPE]}
               </Typography>
             </Grid>
-            <Grid item xs={6} display="flex" alignItems="flex-end" sx={{ py: 3 }}>
+            <Grid
+              item
+              xs={6}
+              display="flex"
+              alignItems="flex-end"
+              sx={{ py: 3 }}
+            >
               <Typography>
                 {items[USER_REFERAL_ACHIEVEMENT_LIST_DATA_NAME.AWARD]}
                 {text('COMMON.CURRENCY.RUB')}

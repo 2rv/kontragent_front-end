@@ -3,7 +3,6 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Divider from '@mui/material/Divider';
 import Alert from '@mui/material/Alert';
-import LinearProgress from '@mui/material/LinearProgress';
 
 import { text } from '../../lib/common/text';
 
@@ -63,11 +62,6 @@ export function CompanyAccountItemMemberAddComponent(props) {
               <Alert severity="success">
                 {text('COMMON.REQUEST_SENT_SUCCESSFULLY')}
               </Alert>
-            </Box>
-          )}
-          {isPending && (
-            <Box sx={{ pt: 4, width: '100%' }}>
-              <LinearProgress />
             </Box>
           )}
         </Box>

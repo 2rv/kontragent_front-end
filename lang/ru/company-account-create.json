@@ -5,7 +5,7 @@
     "FIELD": {
       "LABELS": {
         "COMPANY_NAME": "Название компании",
-        "COMPANY_INN": "INN компании"
+        "COMPANY_INN": "ИНН компании"
       }
     },
     "BUTTON": {

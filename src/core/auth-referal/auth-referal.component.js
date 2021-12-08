@@ -16,7 +16,7 @@ import { LOCAL_STORAGE_KEY } from './auth-referal.constant';
 export function AuthReferalComponent() {
   const data = getQuery('referalId');
   return (
-    <Box sx={{ py: 4, px: 4 }}>
+    <Box>
       <Box sx={{ pb: 4 }}>
         <img
           style={{ margin: '0 auto', display: 'block' }}
@@ -24,9 +24,9 @@ export function AuthReferalComponent() {
           src="/static/img/logo.svg"
         />
       </Box>
-      <Paper sx={{ textAlign: 'center', width: '480px', p: 6 }}>
+      <Paper>
         <Box>
-          <Box sx={{ pb: 6 }}>
+          <Box>
             <Typography
               sx={{
                 pb: 2,
