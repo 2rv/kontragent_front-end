@@ -4,6 +4,9 @@ import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
+import MenuList from '@mui/material/MenuList';
+import MenuItem from '@mui/material/MenuItem';
+import ListItemText from '@mui/material/ListItemText';
 
 import { NAVIGATION_STORE_NAME } from '../navigation/navigation.constant';
 import { text } from '../text';
@@ -35,28 +38,55 @@ export function TabContainer({ config }) {
     redirect(config[newValue].path());
   };
 
+  const handleChangeMobile = (item) => {
+    redirect(config[item.id].path());
+  };
+
   return (
-    <Grid spacing={6} container>
-      <Grid item>
-        <Paper sx={{ py: 0, px: 6 }}>
-          <Tabs
-            value={value}
-            onChange={handleChange}
-            aria-label="basic tabs example"
-            scrollButtons="auto"
-            variant="scrollable"
-          >
-            {config.map((item) => (
-              <Tab
-                key={item.id}
-                sx={{ p: 4 }}
-                label={text(item.label)}
-                {...a11yProps(item.id)}
-              />
-            ))}
-          </Tabs>
-        </Paper>
-      </Grid>
-    </Grid>
+    <>
+      <Paper
+        sx={{
+          py: 0,
+          px: 6,
+          display: { xs: 'none', md: 'flex' }
+        }}
+      >
+        <Tabs
+          value={value}
+          onChange={handleChange}
+          aria-label="basic tabs example"
+          scrollButtons="auto"
+          variant="scrollable"
+        >
+          {config.map((item) => (
+            <Tab
+              key={item.id}
+              sx={{ p: 4 }}
+              label={text(item.label)}
+              {...a11yProps(item.id)}
+            />
+          ))}
+        </Tabs>
+      </Paper>
+      <Paper
+        sx={{
+          py: 0,
+          px: 6,
+          display: { xs: 'block', md: 'none' }
+        }}
+      >
+        <MenuList>
+          {config.map((item) => (
+            <MenuItem
+              key={item.id}
+              onClick={() => handleChangeMobile(item)}
+              selected={item.pathname === activePath}
+            >
+              <ListItemText sx={{ textAlign: 'center' }}>{text(item.label)}</ListItemText>
+            </MenuItem>
+          ))}
+        </MenuList>
+      </Paper>
+    </>
   );
 }
