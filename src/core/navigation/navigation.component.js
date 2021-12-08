@@ -53,7 +53,7 @@ export function NavigationComponent(props) {
             onClick={handleDrawerToggle}
             sx={{ display: { sm: 'none' } }}
           >
-            <MenuIcon />
+            <MenuIcon fontSize="large" />
           </IconButton>
           <Box>
             <img
