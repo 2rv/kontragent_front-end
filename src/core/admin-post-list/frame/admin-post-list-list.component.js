@@ -16,14 +16,14 @@ import {
 export const AdminPostListListComponent = ({ list }) => {
   if (!list || list.length === 0) {
     return (
-      <Box sx={{ pt: 4, px: 8, pb: 8 }}>
+      <Box sx={{ px: 8, pb: 8 }}>
         <Alert severity="info">{text('ADMIN_POST_LIST.EMPTY')}</Alert>
       </Box>
     );
   }
 
   return (
-    <List sx={{ px: 6, pb: 6 }} disablePadding>
+    <List sx={{ px: 8, pb: 8 }} disablePadding>
       {list.map((items, key) => (
         <React.Fragment key={key}>
           <ListItem

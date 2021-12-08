@@ -17,14 +17,10 @@ export function AdminPostListComponent({
   return (
     <Paper sx={{ p: 0 }}>
       <Box>
-        <Typography
-          variant="heading"
-          sx={{ px: 8, pt: 8, pb: 4 }}
-          component="div"
-        >
+        <Typography variant="heading" sx={{ px: 8, pt: 8 }} component="div">
           {text('ADMIN_POST_LIST.TITLE')}
         </Typography>
-        <Divider sx={{ mx: 8 }} />
+        <Divider sx={{ mx: 8, my: 4 }} />
 
         {isSuccess && <AdminPostListListComponent list={data} />}
         {isPending && (

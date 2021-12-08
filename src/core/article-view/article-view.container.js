@@ -34,8 +34,6 @@ export function ArticleViewContainer() {
   const isadmin = role === USER_ROLE.ADMIN
   const iscreator = creatorId === userId
 
-
-
   return (
     <ArticleViewComponent
       pageLoading={pageLoading}

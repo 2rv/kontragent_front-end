@@ -14,7 +14,7 @@ import { ADMIN_BILL_REVISION_ROUTE_PATH_DYNAMIC } from '../../admin-bill-revisio
 export const BillAccountListListComponent = ({ list }) => {
   if (!list || list.length === 0) {
     return (
-      <Box sx={{ pt: 4, px: 8, pb: 8 }}>
+      <Box sx={{ px: 8, pb: 8 }}>
         <Alert severity="info">{text('BILL_ADMIN_LIST.BILL_LIST.EMPTY')}</Alert>
       </Box>
     );

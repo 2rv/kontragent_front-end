@@ -127,6 +127,11 @@ import {
   CompanyAccountItemSelfRevisionCreateRouter,
 } from '../../core/company-account-item-self-revision-create';
 import {
+
+  COMPANY_ACCOUNT_KONTRAGENTS_ROUTE_PATH,
+  CompanyAccountKontragentsRouter,
+} from '../../core/company-account-kontragents';
+import {
   BillAdminListRouter,
   BILL_ADMIN_LIST_ROUTE_PATH,
 } from '../../core/bill-admin-list';
@@ -188,6 +193,7 @@ export const routes = {
   [INVITE_ROUTE_PATH]: InviteRouter,
   [COMPANY_ACCOUNT_ITEM_SELF_REVISION_CREATE_ROUTE_PATH]:
     CompanyAccountItemSelfRevisionCreateRouter,
+  [COMPANY_ACCOUNT_KONTRAGENTS_ROUTE_PATH]: CompanyAccountKontragentsRouter,
   [BILL_ADMIN_LIST_ROUTE_PATH]: BillAdminListRouter,
   [ADMIN_BILL_REVISION_ROUTE_PATH]: AdminBillRevisionRouter,
 };

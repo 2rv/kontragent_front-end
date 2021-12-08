@@ -40,6 +40,7 @@
   "INVITE_ERROR_ALLREARY_INVITED": "Приглашение уже отправленно",
   "USER_ERROR_CANNOT_FIND_USER": "Такого пользователя не существует",
   "USER_ERROR_USER_IS_BLOKED": "Аккаунт пользователя заблокирован",
+  "KONTRAGENT_ALREADY_EXISTS": "Контрагент уже существует",
   "BILL_ERROR_BILL_ALREADY_FULFIELD": "Запрос уже закрыт",
   "BILL_ERROR_BILL_DESCRIPTION_MIN_10": "Минимум 10 символов",
   "MAXIMUM_OF_FILES_10": "Максимум 10 файлов"
