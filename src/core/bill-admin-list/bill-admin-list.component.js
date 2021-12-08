@@ -24,10 +24,10 @@ export function BillAdminListComponent({
         >
           {text('BILL_ADMIN_LIST.SUB_TITLE')}
         </Typography>
-        <Typography variant="subTitle" sx={{ px: 8, pb: 4 }} component="div">
+        <Typography variant="subTitle" sx={{ px: 8 }} component="div">
           {text('BILL_ADMIN_LIST.DESCRIPTION')}
         </Typography>
-        <Divider sx={{ mx: 8 }} />
+        <Divider sx={{ mx: 8, my: 4 }} />
         {isSuccess && <BillAccountListListComponent list={data} />}
         {isPending && (
           <Box sx={{ pt: 4, px: 8, pb: 8 }}>

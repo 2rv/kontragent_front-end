@@ -20,14 +20,10 @@ export function CompanyAdminUnregisteredListComponent({
   return (
     <Paper sx={{ p: 0 }}>
       <Box>
-        <Typography
-          variant="heading"
-          sx={{ px: 8, pt: 8, pb: 4 }}
-          component="div"
-        >
+        <Typography variant="heading" sx={{ px: 8, pt: 8 }} component="div">
           {text('COMPANY_ADMIN_LIST.UNREGISTERED_COMPANIES_LIST.TITLE')}
         </Typography>
-        <Divider sx={{ mx: 8 }} />
+        <Divider sx={{ mx: 8, my: 4 }} />
         {isSuccess && <CompanyAccountListListComponent list={data} />}
         {isPending && (
           <Box sx={{ pt: 4, px: 8, pb: 8 }}>

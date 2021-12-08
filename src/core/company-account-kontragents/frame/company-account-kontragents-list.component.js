@@ -6,7 +6,7 @@ import ListItemText from '@mui/material/ListItemText';
 import Alert from '@mui/material/Alert';
 import Box from '@mui/material/Box';
 import Divider from '@mui/material/Divider';
-
+import Typography from '@mui/material/Typography';
 import { getQuery, redirect } from '../../../main/navigation';
 
 import { text } from '../../../lib/common/text';
@@ -30,13 +30,16 @@ export const CompanyAccountKontragentsListComponent = ({ list }) => {
         <React.Fragment key={key}>
           <ListItem
             onClick={() => {
-              return redirect(COMPANY_ACCOUNT_KONTRAGENT_INFO_ROUTE_PATH_DYNAMIC, {
-                dynamic: true,
-                params: {
-                  companyId: getQuery('companyId'),
-                  kontragentId: item.id,
+              return redirect(
+                COMPANY_ACCOUNT_KONTRAGENT_INFO_ROUTE_PATH_DYNAMIC,
+                {
+                  dynamic: true,
+                  params: {
+                    companyId: getQuery('companyId'),
+                    kontragentId: item.id,
+                  },
                 },
-              });
+              );
             }}
             button
             sx={{
@@ -44,12 +47,23 @@ export const CompanyAccountKontragentsListComponent = ({ list }) => {
               px: 3,
               ':hover': {
                 backgroundColor: '#F3F3F3',
-              }
+              },
             }}
           >
             <ListItemText
-              primary={text('COMPANY_ACCOUNT_KONTRAGENTS.COMPANY_NAME') + item[COMPANY_ACCOUNT_KONTRAGENTS_DATA_NAME.NAME]}
-              secondary={text('COMPANY_ACCOUNT_KONTRAGENTS.COMPANY_INN') + item[COMPANY_ACCOUNT_KONTRAGENTS_DATA_NAME.INN]}
+              primary={item[COMPANY_ACCOUNT_KONTRAGENTS_DATA_NAME.NAME]}
+              secondary={
+                <>
+                  <Typography
+                    sx={{
+                      color: '#252525',
+                    }}
+                    variant="listContent"
+                  >
+                    {item[COMPANY_ACCOUNT_KONTRAGENTS_DATA_NAME.INN]}
+                  </Typography>
+                </>
+              }
             />
           </ListItem>
           {key !== list.length - 1 && <Divider />}

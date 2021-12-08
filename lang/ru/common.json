@@ -37,11 +37,11 @@
       "PAID": "Оплачен"
     }
   },
-  
+
   "COMPANY": {
     "COMPANY_NAME": "Название компании:",
     "ID": "ID в системе:",
-    "INN": "INN компании:",
+    "INN": "ИНН компании:",
     "DATA_VERIFICATION": "Верификация данных:",
     "BALANCE_VERIFICATION": "Верификация баланса:",
     "BALANCE": "Баланс:",
