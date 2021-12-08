@@ -15,27 +15,23 @@ export function CompanyBillListComponent({
   errorMessage,
 }) {
   return (
-    <Paper sx={{ p: 0 }}>
+    <Paper>
       <Box>
-        <Typography
-          variant="title"
-          sx={{ px: 8, pt: 8, pb: 4 }}
-          component="div"
-        >
+        <Typography variant="title" gutterBottom component="div">
           {text('BILL_ADMIN_LIST.TITLE')}
         </Typography>
-        <Typography variant="subTitle" sx={{ px: 8 }} component="div">
+        <Typography variant="subTitle" component="div">
           {text('COMPANY_BILL_LIST.DESCRIPTION')}
         </Typography>
-        <Divider sx={{ mx: 8, my: 4 }} />
+        <Divider sx={{ my: 4 }} />
         {isSuccess && <CompanyBillListListComponent list={data} />}
         {isPending && (
-          <Box sx={{ pt: 4, px: 8, pb: 8 }}>
+          <Box sx={{ pt: 4 }}>
             <SkeletonListComponent />
           </Box>
         )}
         {isError && (
-          <Box sx={{ pt: 4, px: 8, pb: 8 }}>
+          <Box sx={{ pt: 4 }}>
             <Alert severity="error">{text(`ERROR.${errorMessage}`)}</Alert>
           </Box>
         )}

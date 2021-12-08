@@ -16,7 +16,7 @@ import { COMPANY_ACCOUNT_KONTRAGENT_INFO_ROUTE_PATH_DYNAMIC } from '../../compan
 export const CompanyAccountKontragentsListComponent = ({ list }) => {
   if (!list || list.length === 0) {
     return (
-      <Box sx={{ pt: 4, px: 8, pb: 8 }}>
+      <Box sx={{ px: 8, pb: 8 }}>
         <Alert severity="info">
           {text('COMPANY_ACCOUNT_KONTRAGENTS.LIST_EMPTY')}
         </Alert>
