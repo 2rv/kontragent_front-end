@@ -10,7 +10,7 @@ import { text } from '../../lib/common/text';
 
 import { SkeletonListComponent } from '../../lib/common/skeleton/skeleton-list.component';
 
-import { CompanyAccountItemPaymentListListComponent } from './frame/company-account-item-member-list.component';
+import { CompanyAccountItemMemberListListComponent } from './frame/company-account-item-member-list.component';
 
 export function CompanyAccountItemMemberListComponent({
   data,
@@ -33,9 +33,7 @@ export function CompanyAccountItemMemberListComponent({
 
         <Divider sx={{ mx: 8 }} />
 
-        {isSuccess && (
-          <CompanyAccountItemPaymentListListComponent list={data} />
-        )}
+        {isSuccess && <CompanyAccountItemMemberListListComponent list={data} />}
         {isPending && (
           <Box sx={{ pt: 4, px: 8, pb: 8 }}>
             <SkeletonListComponent />

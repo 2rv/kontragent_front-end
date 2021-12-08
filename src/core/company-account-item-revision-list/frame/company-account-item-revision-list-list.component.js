@@ -18,7 +18,7 @@ import { COMPANY_ACCOUNT_ITEM_REVISION_ITEM_ROUTE_PATH_DYNAMIC } from '../../com
 export const CompanyAccountItemRevisionListListComponent = ({ list }) => {
   if (!list || list.length === 0) {
     return (
-      <Box sx={{ py: 4, px: 8 }}>
+      <Box sx={{ pt: 4, pb: 8, px: 8 }}>
         <Alert severity="info">
           {text(
             'COMPANY_ACCOUNT_ITEM_REVISION.REVISION_LIST.YOUR_LIST_IS_EMPTY',

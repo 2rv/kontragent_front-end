@@ -14,7 +14,7 @@ import { COMPANY_ACCOUNT_BILL_ITEM_ROUTE_PATH_DYNAMIC } from '../../company-acco
 export const CompanyBillListListComponent = ({ list }) => {
   if (!list || list.length === 0) {
     return (
-      <Box sx={{ pt: 4, px: 8, pb: 8 }}>
+      <Box>
         <Alert severity="info">
           {text('COMPANY_BILL_LIST.BILL_LIST.EMPTY')}
         </Alert>
@@ -23,7 +23,7 @@ export const CompanyBillListListComponent = ({ list }) => {
   }
 
   return (
-    <List sx={{ px: 8, pb: 8 }} disablePadding>
+    <List sx={{ px: 8, pb: 6 }} disablePadding>
       {list.map((item, key) => (
         <React.Fragment key={key}>
           <ListItem
