@@ -10,35 +10,36 @@ export const CompanyAdminItemInfoListListComponent = ({ data }) => {
     <Grid container spacing={3} sx={{ pt: 4, px: 8, pb: 8 }}>
       {data[COMPANY_ADMIN_ITEM_INFO_LIST_DATA_NAME.NAME] && (
         <Grid item>
-          <Typography sx={{ mr: 1 }} variant="listTitle">
+          <Typography component="div" sx={{ mr: 1 }} variant="listTitle">
             {text('COMMON.COMPANY.COMPANY_NAME')}
           </Typography>
-          <Typography variant="listContent">
+          <Typography component="div" variant="listContent">
             {data[COMPANY_ADMIN_ITEM_INFO_LIST_DATA_NAME.NAME]}
           </Typography>
         </Grid>
       )}
       <Grid item>
-        <Typography sx={{ mr: 1 }} variant="listTitle">
+        <Typography component="div" sx={{ mr: 1 }} variant="listTitle">
           {text('COMMON.COMPANY.ID')}
         </Typography>
-        <Typography variant="listContent">
+        <Typography component="div" variant="listContent">
           {data[COMPANY_ADMIN_ITEM_INFO_LIST_DATA_NAME.ID]}
         </Typography>
       </Grid>
       <Grid item>
-        <Typography sx={{ mr: 1 }} variant="listTitle">
+        <Typography component="div" sx={{ mr: 1 }} variant="listTitle">
           {text('COMMON.COMPANY.INN')}
         </Typography>
-        <Typography variant="listContent">
+        <Typography component="div" variant="listContent">
           {data[COMPANY_ADMIN_ITEM_INFO_LIST_DATA_NAME.INN]}
         </Typography>
       </Grid>
       <Grid item>
-        <Typography sx={{ mr: 1 }} variant="listTitle">
+        <Typography component="div" sx={{ mr: 1 }} variant="listTitle">
           {text('COMMON.COMPANY.DATA_VERIFICATION')}
         </Typography>
         <Typography
+          component="div"
           sx={{
             color:
               !data[COMPANY_ADMIN_ITEM_INFO_LIST_DATA_NAME.VERIFICATE_INFO] &&
@@ -52,10 +53,11 @@ export const CompanyAdminItemInfoListListComponent = ({ data }) => {
         </Typography>
       </Grid>
       <Grid item>
-        <Typography sx={{ mr: 1 }} variant="listTitle">
+        <Typography component="div" sx={{ mr: 1 }} variant="listTitle">
           {text('COMMON.COMPANY.BALANCE_VERIFICATION')}
         </Typography>
         <Typography
+          component="div"
           sx={{
             color:
               !data[

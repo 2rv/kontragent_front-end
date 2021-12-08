@@ -9,50 +9,51 @@ export const UserAdminItemInfoListComponent = ({ data }) => {
   return (
     <Grid container spacing={3} sx={{ pt: 4, px: 8, pb: 8 }}>
       <Grid item>
-        <Typography sx={{ mr: 1 }} variant="listTitle">
+        <Typography component="div" sx={{ mr: 1 }} variant="listTitle">
           {text('COMMON.USER.LOGIN')}
         </Typography>
-        <Typography variant="listContent">
+        <Typography component="div" variant="listContent">
           {data[USER_ADMIN_ITEM_INFO_DATA_NAME.LOGIN]}
         </Typography>
       </Grid>
       <Grid item>
-        <Typography sx={{ mr: 1 }} variant="listTitle">
+        <Typography component="div" sx={{ mr: 1 }} variant="listTitle">
           {text('COMMON.USER.FISRT_NAME')}
         </Typography>
-        <Typography variant="listContent">
+        <Typography component="div" variant="listContent">
           {data[USER_ADMIN_ITEM_INFO_DATA_NAME.FIRST_NAME]}
         </Typography>
       </Grid>
       <Grid item>
-        <Typography sx={{ mr: 1 }} variant="listTitle">
+        <Typography component="div" sx={{ mr: 1 }} variant="listTitle">
           {text('COMMON.USER.LAST_NAME')}
         </Typography>
-        <Typography variant="listContent">
+        <Typography component="div" variant="listContent">
           {data[USER_ADMIN_ITEM_INFO_DATA_NAME.LAST_NAME]}
         </Typography>
       </Grid>
       <Grid item>
-        <Typography sx={{ mr: 1 }} variant="listTitle">
+        <Typography component="div" sx={{ mr: 1 }} variant="listTitle">
           {text('COMMON.USER.EMAIL')}
         </Typography>
-        <Typography variant="listContent">
+        <Typography component="div" variant="listContent">
           {data[USER_ADMIN_ITEM_INFO_DATA_NAME.EMAIL]}
         </Typography>
       </Grid>
       <Grid item>
-        <Typography sx={{ mr: 1 }} variant="listTitle">
+        <Typography component="div" sx={{ mr: 1 }} variant="listTitle">
           {text('COMMON.USER.PHONE')}
         </Typography>
-        <Typography variant="listContent">
+        <Typography component="div" variant="listContent">
           {data[USER_ADMIN_ITEM_INFO_DATA_NAME.PHONE]}
         </Typography>
       </Grid>
       <Grid item>
-        <Typography sx={{ mr: 1 }} variant="listTitle">
+        <Typography component="div" sx={{ mr: 1 }} variant="listTitle">
           {text('COMMON.USER.CONFIRM_EMAIL')}
         </Typography>
         <Typography
+          component="div"
           sx={{
             color:
               !data[USER_ADMIN_ITEM_INFO_DATA_NAME.CONFIRM_EMAIL] && '#EB5757',
@@ -65,10 +66,11 @@ export const UserAdminItemInfoListComponent = ({ data }) => {
         </Typography>
       </Grid>
       <Grid item>
-        <Typography sx={{ mr: 1 }} variant="listTitle">
+        <Typography component="div" sx={{ mr: 1 }} variant="listTitle">
           {text('COMMON.USER.CONFIRM_PHONE')}
         </Typography>
         <Typography
+          component="div"
           sx={{
             color:
               !data[USER_ADMIN_ITEM_INFO_DATA_NAME.CONFIRM_PHONE] && '#EB5757',
@@ -81,10 +83,11 @@ export const UserAdminItemInfoListComponent = ({ data }) => {
         </Typography>
       </Grid>
       <Grid item>
-        <Typography sx={{ mr: 1 }} variant="listTitle">
+        <Typography component="div" sx={{ mr: 1 }} variant="listTitle">
           {text('COMMON.USER.ROLE')}
         </Typography>
         <Typography
+          component="div"
           sx={{
             color: !data[USER_ADMIN_ITEM_INFO_DATA_NAME.ROLE] && '#EB5757',
           }}

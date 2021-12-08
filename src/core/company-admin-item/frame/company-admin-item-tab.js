@@ -45,6 +45,8 @@ export function CompanyAccountItemTabComponent({ tab }) {
             value={value}
             onChange={handleChange}
             aria-label="basic tabs example"
+            scrollButtons="auto"
+            variant="scrollable"
           >
             {tab.map((tabItem) => (
               <Tab

@@ -4,7 +4,6 @@ import Box from '@mui/material/Box';
 import { Typography, TextField } from '@mui/material';
 import { text } from '../../../lib/common/text';
 import { COMPANY_ACCOUNT_ITEM_MEMBER_ADD_DATA_NAME } from '../company-account-item-member-add.constant';
-import { TextField } from '@material-ui/core';
 import { TextFieldElement } from '../../../lib/element/text-field.element.js';
 
 export const CompanyAccountItemMemberAddFormComponent = (props) => {
