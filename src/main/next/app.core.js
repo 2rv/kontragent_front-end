@@ -79,4 +79,4 @@ class MyApp extends App {
   }
 }
 
-export const AppCore = withRedux(initStore, { debug: true })(MyApp);
+export const AppCore = withRedux(initStore, { debug: false })(MyApp);
