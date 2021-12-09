@@ -11,32 +11,32 @@ export const CompanyAdminItemInfoListListComponent = ({ data }) => {
       {data[COMPANY_ADMIN_ITEM_INFO_LIST_DATA_NAME.NAME] && (
         <Grid item>
           <Typography component="div" sx={{ mr: 1 }} variant="listTitle">
-            {text('COMMON.COMPANY.COMPANY_NAME')}
+            {text('COMPANY_ADMIN_ITEM_INFO.COMPANY_NAME')}
           </Typography>
-          <Typography component="div" variant="listContent">
+          <Typography component="div" variant="body1">
             {data[COMPANY_ADMIN_ITEM_INFO_LIST_DATA_NAME.NAME]}
           </Typography>
         </Grid>
       )}
       <Grid item>
         <Typography component="div" sx={{ mr: 1 }} variant="listTitle">
-          {text('COMMON.COMPANY.ID')}
+          {text('COMPANY_ADMIN_ITEM_INFO.ID')}
         </Typography>
-        <Typography component="div" variant="listContent">
+        <Typography component="div" variant="body1">
           {data[COMPANY_ADMIN_ITEM_INFO_LIST_DATA_NAME.ID]}
         </Typography>
       </Grid>
       <Grid item>
         <Typography component="div" sx={{ mr: 1 }} variant="listTitle">
-          {text('COMMON.COMPANY.INN')}
+          {text('COMPANY_ADMIN_ITEM_INFO.INN')}
         </Typography>
-        <Typography component="div" variant="listContent">
+        <Typography component="div" variant="body1">
           {data[COMPANY_ADMIN_ITEM_INFO_LIST_DATA_NAME.INN]}
         </Typography>
       </Grid>
       <Grid item>
         <Typography component="div" sx={{ mr: 1 }} variant="listTitle">
-          {text('COMMON.COMPANY.DATA_VERIFICATION')}
+          {text('COMPANY_ADMIN_ITEM_INFO.DATA_VERIFICATION')}
         </Typography>
         <Typography
           component="div"
@@ -45,7 +45,7 @@ export const CompanyAdminItemInfoListListComponent = ({ data }) => {
               !data[COMPANY_ADMIN_ITEM_INFO_LIST_DATA_NAME.VERIFICATE_INFO] &&
               '#F2994A',
           }}
-          variant="listContent"
+          variant="body1"
         >
           {data[COMPANY_ADMIN_ITEM_INFO_LIST_DATA_NAME.VERIFICATE_INFO]
             ? text('COMMON.COMPANY.VERIFIED')
@@ -54,7 +54,7 @@ export const CompanyAdminItemInfoListListComponent = ({ data }) => {
       </Grid>
       <Grid item>
         <Typography component="div" sx={{ mr: 1 }} variant="listTitle">
-          {text('COMMON.COMPANY.BALANCE_VERIFICATION')}
+          {text('COMPANY_ADMIN_ITEM_INFO.BALANCE_VERIFICATION')}
         </Typography>
         <Typography
           component="div"
@@ -64,7 +64,7 @@ export const CompanyAdminItemInfoListListComponent = ({ data }) => {
                 COMPANY_ADMIN_ITEM_INFO_LIST_DATA_NAME.VERIFICATE_PAYMENT
               ] && '#F2994A',
           }}
-          variant="listContent"
+          variant="body1"
         >
           {data[COMPANY_ADMIN_ITEM_INFO_LIST_DATA_NAME.VERIFICATE_PAYMENT]
             ? text('COMMON.COMPANY.VERIFIED')
