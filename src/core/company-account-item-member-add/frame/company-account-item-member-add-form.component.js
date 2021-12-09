@@ -1,10 +1,9 @@
 import Grid from '@mui/material/Grid';
 import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
-import { Typography, TextField } from '@mui/material';
 import { text } from '../../../lib/common/text';
 import { COMPANY_ACCOUNT_ITEM_MEMBER_ADD_DATA_NAME } from '../company-account-item-member-add.constant';
-import { TextFieldElement } from '../../../lib/element/text-field.element.js';
+import { TextFieldElement } from '../../../lib/element/text-field.element';
 
 export const CompanyAccountItemMemberAddFormComponent = (props) => {
   const {
@@ -42,25 +41,13 @@ export const CompanyAccountItemMemberAddFormComponent = (props) => {
           alignItems="flex-end"
           flexWrap="wrap"
         >
-          <Grid item xs={12}>
-            <Typography variant="fieldLabel">
-              {text(
-                'COMPANY_ACCOUNT_ITEM_MEMBER.MEMBER_ADD.FORM.FIELD.LABELS.COMPANY_MEMBER',
-              )}
-            </Typography>
-          </Grid>
           <Grid lg={6} xs={12} item>
             <Grid container>
-              <Grid item sx={{ pb: 1 }}>
-                <Typography sx={{ pb: 2 }} variant="fieldLabel">
-                  {text(
+              <Grid item>
+                <TextFieldElement
+                  label={text(
                     'COMPANY_ACCOUNT_ITEM_MEMBER.MEMBER_ADD.FORM.FIELD.LABELS.COMPANY_MEMBER',
                   )}
-                </Typography>
-              </Grid>
-
-              <Grid item>
-                <TextField
                   inputProps={{
                     style: { padding: props.multiline || '13px 14px' },
                   }}
@@ -69,6 +56,9 @@ export const CompanyAccountItemMemberAddFormComponent = (props) => {
                   value={values[COMPANY_ACCOUNT_ITEM_MEMBER_ADD_DATA_NAME.ID]}
                   fullWidth
                   error={isFieldError(
+                    COMPANY_ACCOUNT_ITEM_MEMBER_ADD_DATA_NAME.ID,
+                  )}
+                  errorText={getFieldError(
                     COMPANY_ACCOUNT_ITEM_MEMBER_ADD_DATA_NAME.ID,
                   )}
                   onChange={handleChange}
@@ -81,13 +71,6 @@ export const CompanyAccountItemMemberAddFormComponent = (props) => {
               {text('COMPANY_ACCOUNT_ITEM_MEMBER.MEMBER_ADD.FORM.BUTTON')}
             </Button>
           </Grid>
-          {isFieldError(COMPANY_ACCOUNT_ITEM_MEMBER_ADD_DATA_NAME.ID) && (
-            <Grid lg={12} xs={12} item>
-              <Typography variant="errorText">
-                {getFieldError(COMPANY_ACCOUNT_ITEM_MEMBER_ADD_DATA_NAME.ID)}
-              </Typography>
-            </Grid>
-          )}
         </Grid>
       </Box>
     </form>
