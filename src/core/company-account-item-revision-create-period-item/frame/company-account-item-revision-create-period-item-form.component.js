@@ -61,7 +61,6 @@ export const CompanyAccountItemRevisionCreatePeriodItemFormComponent = (
         <Grid xs={12} item>
           <TextFieldElement
             type="number"
-            inputProps={{ min: '1900', max: '2099' }}
             placeholder={text(
               'COMPANY_ACCOUNT_ITEM_REVISION_CREATE.REVISON_CREATE_PERIOD_ITEM.FORM.FIELD.LABELS.YEAR',
             )}
@@ -105,7 +104,7 @@ export const CompanyAccountItemRevisionCreatePeriodItemFormComponent = (
             >
               <Button
                 variant="grey"
-                color={period.period[0] ? 'black1' : 'blue'}
+                color={period.period[0] ? 'blue' : 'black1'}
                 onClick={() => {
                   dispatch(
                     companyAccountItemRevisionCreateChangeYearPeriod([
@@ -131,7 +130,7 @@ export const CompanyAccountItemRevisionCreatePeriodItemFormComponent = (
             >
               <Button
                 variant="grey"
-                color={period.period[1] ? 'black1' : 'blue'}
+                color={period.period[1] ? 'blue' : 'black1'}
                 onClick={() => {
                   dispatch(
                     companyAccountItemRevisionCreateChangeYearPeriod([
@@ -157,7 +156,7 @@ export const CompanyAccountItemRevisionCreatePeriodItemFormComponent = (
             >
               <Button
                 variant="grey"
-                color={period.period[2] ? 'black1' : 'blue'}
+                color={period.period[2] ? 'blue' : 'black1'}
                 onClick={() => {
                   dispatch(
                     companyAccountItemRevisionCreateChangeYearPeriod([
@@ -183,7 +182,7 @@ export const CompanyAccountItemRevisionCreatePeriodItemFormComponent = (
             >
               <Button
                 variant="grey"
-                color={period.period[3] ? 'black1' : 'blue'}
+                color={period.period[3] ? 'blue' : 'black1'}
                 onClick={() => {
                   dispatch(
                     companyAccountItemRevisionCreateChangeYearPeriod([
