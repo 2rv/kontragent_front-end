@@ -9,9 +9,15 @@ import { CompanyAccountItemMemberDeleteContainer } from '../../company-account-i
 
 import { text } from '../../../lib/common/text';
 
-import { COMPANY_ACCOUNT_ITEM_MEMBER_LIST_DATA_NAME } from '../company-account-item-member-list.constant';
+import {
+  COMPANY_ACCOUNT_ITEM_MEMBER_LIST_DATA_NAME,
+  MEMBER_ROLE,
+} from '../company-account-item-member-list.constant';
 
-export const CompanyAccountItemMemberListListComponent = ({ list }) => {
+export const CompanyAccountItemMemberListListComponent = ({
+  list,
+  companyMemberRole,
+}) => {
   if (!list || list.length === 0) {
     return (
       <Box sx={{ pt: 4, px: 8 }}>
@@ -30,7 +36,8 @@ export const CompanyAccountItemMemberListListComponent = ({ list }) => {
             sx={{ pt: 3, px: 3 }}
             secondaryAction={
               item[COMPANY_ACCOUNT_ITEM_MEMBER_LIST_DATA_NAME.ROLE] ===
-              1 ? null : (
+                MEMBER_ROLE.OWNER ||
+              companyMemberRole !== MEMBER_ROLE.OWNER ? null : (
                 <CompanyAccountItemMemberDeleteContainer
                   companyMemberId={
                     item[COMPANY_ACCOUNT_ITEM_MEMBER_LIST_DATA_NAME.ID]
@@ -51,7 +58,8 @@ export const CompanyAccountItemMemberListListComponent = ({ list }) => {
               }
               secondary={
                 <span>{`${
-                  item[COMPANY_ACCOUNT_ITEM_MEMBER_LIST_DATA_NAME.ROLE] === 1
+                  item[COMPANY_ACCOUNT_ITEM_MEMBER_LIST_DATA_NAME.ROLE] ===
+                  MEMBER_ROLE.OWNER
                     ? text('COMMON.COMPANY_MEMBER_ROLE.OWNER')
                     : text('COMMON.COMPANY_MEMBER_ROLE.EMPLOYEE')
                 }`}</span>

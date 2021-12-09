@@ -110,6 +110,13 @@ export const numberPositiveMin = (min) => (value) => {
   return null;
 };
 
+export const year = (value) => {
+  const val = Number(value);
+  if (val <= 1999 || val >= 2022) return getError('VALIDATION.YEAR');
+
+  return null;
+};
+
 export const required = (value) => {
   if (!value) {
     return getError(REQUIRED_TEXT_TID);

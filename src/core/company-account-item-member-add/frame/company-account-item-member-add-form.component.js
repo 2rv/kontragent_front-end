@@ -33,43 +33,41 @@ export const CompanyAccountItemMemberAddFormComponent = (props) => {
   return (
     <form onSubmit={handleSubmit}>
       <Box sx={{ pt: 4 }}>
-        <Grid
-          spacing={3}
-          container
-          direction="row"
-          justifyContent="flex-start"
-          alignItems="flex-end"
-          flexWrap="wrap"
-        >
-          <Grid lg={6} xs={12} item>
-            <Grid container>
-              <Grid item>
-                <TextFieldElement
-                  label={text(
-                    'COMPANY_ACCOUNT_ITEM_MEMBER.MEMBER_ADD.FORM.FIELD.LABELS.COMPANY_MEMBER',
-                  )}
-                  inputProps={{
-                    style: { padding: props.multiline || '13px 14px' },
-                  }}
-                  name={COMPANY_ACCOUNT_ITEM_MEMBER_ADD_DATA_NAME.ID}
-                  onBlur={handleBlur}
-                  value={values[COMPANY_ACCOUNT_ITEM_MEMBER_ADD_DATA_NAME.ID]}
-                  fullWidth
-                  error={isFieldError(
-                    COMPANY_ACCOUNT_ITEM_MEMBER_ADD_DATA_NAME.ID,
-                  )}
-                  errorText={getFieldError(
-                    COMPANY_ACCOUNT_ITEM_MEMBER_ADD_DATA_NAME.ID,
-                  )}
-                  onChange={handleChange}
-                />
-              </Grid>
+        <Grid sx={{ px: 0 }} columnSpacing={4}>
+          <Grid
+            spacing={3}
+            container
+            direction="row"
+            justifyContent="flex-start"
+            alignItems="flex-end"
+            flexWrap="wrap"
+          >
+            <Grid xs={12} item>
+              <TextFieldElement
+                label={text(
+                  'COMPANY_ACCOUNT_ITEM_MEMBER.MEMBER_ADD.FORM.FIELD.LABELS.COMPANY_MEMBER',
+                )}
+                inputProps={{
+                  style: { padding: props.multiline || '13px 14px' },
+                }}
+                name={COMPANY_ACCOUNT_ITEM_MEMBER_ADD_DATA_NAME.ID}
+                onBlur={handleBlur}
+                value={values[COMPANY_ACCOUNT_ITEM_MEMBER_ADD_DATA_NAME.ID]}
+                error={isFieldError(
+                  COMPANY_ACCOUNT_ITEM_MEMBER_ADD_DATA_NAME.ID,
+                )}
+                errorText={getFieldError(
+                  COMPANY_ACCOUNT_ITEM_MEMBER_ADD_DATA_NAME.ID,
+                )}
+                onChange={handleChange}
+                fullWidth
+              />
             </Grid>
-          </Grid>
-          <Grid lg={6} xs={12} item>
-            <Button fullWidth type="sumbit" disabled={isSubmitDisabled()}>
-              {text('COMPANY_ACCOUNT_ITEM_MEMBER.MEMBER_ADD.FORM.BUTTON')}
-            </Button>
+            <Grid lg={6} xs={12} item>
+              <Button type="sumbit" disabled={isSubmitDisabled()} fullWidth>
+                {text('COMPANY_ACCOUNT_ITEM_MEMBER.MEMBER_ADD.FORM.BUTTON')}
+              </Button>
+            </Grid>
           </Grid>
         </Grid>
       </Box>
