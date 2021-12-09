@@ -64,7 +64,7 @@ export const ArticleCommentListListComponent = ({ list, role }) => {
               </Grid>
             </Grid>
           </ListItem>
-          <Divider />
+          <Divider sx={{ mb: 4 }} />
         </React.Fragment>
       ))}
     </List>

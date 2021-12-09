@@ -15,7 +15,7 @@ import { COMPANY_ADMIN_ITEM_REVISION_LIST_DATA_NAME } from '../company-admin-ite
 export const CompanyAdminItemRevisionListListComponent = ({ list }) => {
   if (!list || list.length === 0) {
     return (
-      <Box sx={{ py: 4, px: 8 }}>
+      <Box sx={{ pb: 8, px: 8 }}>
         <Alert severity="info">
           {text('COMPANY_ADMIN_ITEM_REVISION.REVISION_LIST.EMPTY')}
         </Alert>

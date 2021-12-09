@@ -4,7 +4,7 @@ export const COMPANY_ADMIN_BILL_LIST_ROUTE_PATH_DYNAMIC = (
   { companyId } = {
     companyId: '[companyId]',
   },
-) => `admin/company/${companyId}/bill-list`;
+) => `/admin/company/${companyId}/bill-list`;
 
 export const COMPANY_ADMIN_BILL_LIST_DATA_NAME = {
   LIST: 'list',

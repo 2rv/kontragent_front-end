@@ -15,7 +15,7 @@ import { COMPANY_ADMIN_ITEM_MEMBER_LIST_DATA_NAME } from '../company-admin-item-
 export const CompanyAdminItemPaymentListListComponent = ({ list }) => {
   if (!list || list.length === 0) {
     return (
-      <Box sx={{ py: 4, px: 8 }}>
+      <Box sx={{ pt: 4, pb: 8, px: 8 }}>
         <Alert severity="info">
           {text('COMPANY_ACCOUNT_ITEM_MEMBER.MEMBER_LIST.EMPTY')}
         </Alert>
@@ -24,23 +24,16 @@ export const CompanyAdminItemPaymentListListComponent = ({ list }) => {
   }
 
   return (
-    <List sx={{ px: 8, pb: 8 }} disablePadding>
+    <List sx={{ px: 8, pb: 6 }} disablePadding>
       {list.map((item, key) => (
-        <React.Fragment>
-          <ListItem key={key} sx={{ py: 3, px: 3 }}>
+        <React.Fragment key={key}>
+          <ListItem sx={{ py: 3, px: 3 }}>
             <ListItemText
               primary={
-                <span>{`${
-                  item[COMPANY_ADMIN_ITEM_MEMBER_LIST_DATA_NAME.FIRSTNAME]
-                } ${
-                  item[COMPANY_ADMIN_ITEM_MEMBER_LIST_DATA_NAME.LASTNAME]
-                } (${text('COMMON.USER.LOGIN')} ${
-                  item[COMPANY_ADMIN_ITEM_MEMBER_LIST_DATA_NAME.LOGIN]
-                }, ${text('COMMON.USER.EMAIL')} ${
-                  item[COMPANY_ADMIN_ITEM_MEMBER_LIST_DATA_NAME.EMAIL]
-                }, ${text('COMMON.USER.PHONE')} ${
-                  item[COMPANY_ADMIN_ITEM_MEMBER_LIST_DATA_NAME.PHONE]
-                })`}</span>
+                <span>
+                  {item[COMPANY_ADMIN_ITEM_MEMBER_LIST_DATA_NAME.LASTNAME]}{' '}
+                  {item[COMPANY_ADMIN_ITEM_MEMBER_LIST_DATA_NAME.FIRSTNAME]}
+                </span>
               }
               secondary={
                 <span>{`${

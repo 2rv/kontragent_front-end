@@ -11,7 +11,6 @@ export const ArticleCommentSendFormComponent = (props) => {
   return (
     <form onSubmit={handleSubmit}>
       <TextFieldElement
-        sx={{ pt: 4 }}
         placeholder={text('COMMENT.ARTICLE_COMMENT_SEND.PLACEHOLDER')}
         name={ARTICLE_COMMENT_SEND_DATA_NAME.TEXT}
         onChange={handleChange}

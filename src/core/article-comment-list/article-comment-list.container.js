@@ -42,6 +42,7 @@ export function ArticleCommentListContainer() {
       setRequestPending(false);
       setRequestSuccess(true);
       setData(data);
+      console.log(data);
     } catch (error) {
       if (error.response) {
         setRequestError(true);

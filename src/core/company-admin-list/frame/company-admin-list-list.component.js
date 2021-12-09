@@ -11,7 +11,7 @@ import Divider from '@mui/material/Divider';
 
 import { redirect } from '../../../main/navigation';
 
-import { COMPANY_ADMIN_ITEM_ROUTE_PATH_DYNAMIC } from '../../company-admin-item';
+import { COMPANY_ADMIN_ITEM_REVISION_LIST_ROUTE_PATH_DYNAMIC } from '../../company-admin-item-revision-list';
 
 import { text } from '../../../lib/common/text';
 
@@ -34,12 +34,15 @@ export const CompanyAccountListListComponent = ({ list }) => {
         <React.Fragment key={key}>
           <ListItem
             onClick={() => {
-              return redirect(COMPANY_ADMIN_ITEM_ROUTE_PATH_DYNAMIC, {
-                dynamic: true,
-                params: {
-                  companyId: item[COMPANY_ADMIN_LIST_DATA_NAME.ID],
+              return redirect(
+                COMPANY_ADMIN_ITEM_REVISION_LIST_ROUTE_PATH_DYNAMIC,
+                {
+                  dynamic: true,
+                  params: {
+                    companyId: item[COMPANY_ADMIN_LIST_DATA_NAME.ID],
+                  },
                 },
-              });
+              );
             }}
             key={key}
             button
@@ -53,11 +56,12 @@ export const CompanyAccountListListComponent = ({ list }) => {
             <ListItemText
               primary={
                 <span>
-                  {text('COMMON.COMPANY.ID')} {item[COMPANY_ADMIN_LIST_DATA_NAME.ID]},{' '}
+                  {text('COMMON.COMPANY.ID')}
+                  {item[COMPANY_ADMIN_LIST_DATA_NAME.ID]},{' '}
                   {item[COMPANY_ADMIN_LIST_DATA_NAME.NAME] && (
-                    <>{text('COMMON.COMPANY.COMPANY_NAME')} {item[COMPANY_ADMIN_LIST_DATA_NAME.NAME]},{' '}</>
-                  )}
-                  {text('COMMON.COMPANY.INN')} {item[COMPANY_ADMIN_LIST_DATA_NAME.INN]}{' '}
+                    <>{item[COMPANY_ADMIN_LIST_DATA_NAME.NAME]}, </>
+                  )}{' '}
+                  {item[COMPANY_ADMIN_LIST_DATA_NAME.INN]}{' '}
                 </span>
               }
               secondary={`${text('COMMON.COMPANY.BALANCE_VERIFICATION')} ${
@@ -69,7 +73,7 @@ export const CompanyAccountListListComponent = ({ list }) => {
                   ? text('COMMON.COMPANY.VERIFIED')
                   : text('COMMON.COMPANY.NOT_VERIFIED')
               }, ${text('COMMON.COMPANY.BALANCE')} ${
-                item[COMPANY_ADMIN_LIST_DATA_NAME.AMOUNT]
+                item[COMPANY_ADMIN_LIST_DATA_NAME.AMOUNT] + '₽'
               }`}
             />
           </ListItem>

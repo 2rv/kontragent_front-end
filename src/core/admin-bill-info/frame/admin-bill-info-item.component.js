@@ -86,13 +86,12 @@ export const AdminBillInfoItemComponent = ({ data }) => {
           </Typography>
         )}
       </Grid>
-
-      <Grid item>
-        {data[ADMIN_BILL_INFO_DATA_NAME.FILES] &&
-        data[ADMIN_BILL_INFO_DATA_NAME.FILES].length > 0 ? (
-          <FileListElement list={data[ADMIN_BILL_INFO_DATA_NAME.FILES]} />
-        ) : null}
-      </Grid>
+      {data[ADMIN_BILL_INFO_DATA_NAME.FILES] &&
+        data[ADMIN_BILL_INFO_DATA_NAME.FILES].length > 0 && (
+          <Grid item>
+            <FileListElement list={data[ADMIN_BILL_INFO_DATA_NAME.FILES]} />
+          </Grid>
+        )}
     </Grid>
   );
 };

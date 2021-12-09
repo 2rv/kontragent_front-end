@@ -56,12 +56,12 @@ export function CompanyAccountItemCreateBillComponent(props) {
           </Formik>
 
           {isError && (
-            <Box>
+            <Box sx={{ pt: 4 }}>
               <Alert severity="error">{text(`ERROR.${errorMessage}`)}</Alert>
             </Box>
           )}
           {isSuccess && (
-            <Box>
+            <Box sx={{ pt: 4 }}>
               <Alert severity="success">
                 {text('COMMON.REQUEST_SENT_SUCCESSFULLY')}
               </Alert>

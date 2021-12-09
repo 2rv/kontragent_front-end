@@ -4,7 +4,7 @@
   "LOGIN_UNCORRECT_PASSWORD_OR_LOGIN": "Неверные данные для входа",
   "AUTH_UNAUTHORIZED": "Вы не авторизированы",
   "COMPANY_WITH_THIS_ID_NOT_FOUND": "Такой компании не существует",
-  "COMPANY_ALREADY_EXISTS": "Компания с таким названием или ИНН уже существует",
+  "COMPANY_ALREADY_EXISTS": "Компания с таким названием или ИНН уже зарегистрирована",
   "COMPANY_BALANCE_NOT_ENOUGH_MONEY": "Недостаточно средств",
   "COMPANY_MEMBER_USER_NOT_EMPLOYEE_OR_DONT_EXIST": "Пользователь не является сотрудником или не существует",
   "COMPANY_MEMBER_NO_ACCESS": "Доступ запрещён",

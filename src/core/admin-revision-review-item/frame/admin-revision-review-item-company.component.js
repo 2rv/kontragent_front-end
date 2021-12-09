@@ -4,7 +4,7 @@ import Typography from '@mui/material/Typography';
 import { text } from '../../../lib/common/text';
 import { redirect } from '../../../main/navigation/navigation.core';
 import { ADMIN_REVISION_REVIEW_ITEM_DATA_NAME } from '../../admin-revision-review-item/admin-revision-review-item.constant';
-import { COMPANY_ADMIN_ITEM_ROUTE_PATH_DYNAMIC } from '../../company-admin-item';
+import { COMPANY_ADMIN_ITEM_REVISION_LIST_ROUTE_PATH_DYNAMIC } from '../../company-admin-item-revision-list';
 
 export const AdminRevisionReviewItemCompanyComponent = ({ data }) => {
   return (
@@ -35,13 +35,16 @@ export const AdminRevisionReviewItemCompanyComponent = ({ data }) => {
             component="button"
             variant="body2"
             onClick={() => {
-              return redirect(COMPANY_ADMIN_ITEM_ROUTE_PATH_DYNAMIC, {
-                dynamic: true,
-                params: {
-                  companyId:
-                    data[ADMIN_REVISION_REVIEW_ITEM_DATA_NAME.COMPANY_ID],
+              return redirect(
+                COMPANY_ADMIN_ITEM_REVISION_LIST_ROUTE_PATH_DYNAMIC,
+                {
+                  dynamic: true,
+                  params: {
+                    companyId:
+                      data[ADMIN_REVISION_REVIEW_ITEM_DATA_NAME.COMPANY_ID],
+                  },
                 },
-              });
+              );
             }}
           >
             {data[ADMIN_REVISION_REVIEW_ITEM_DATA_NAME.COMPANY_NAME]}

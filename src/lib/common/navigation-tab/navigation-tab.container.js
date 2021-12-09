@@ -48,7 +48,7 @@ export function TabContainer({ config }) {
         sx={{
           py: 0,
           px: 6,
-          display: { xs: 'none', md: 'flex' }
+          display: { xs: 'none', md: 'flex' },
         }}
       >
         <Tabs
@@ -70,9 +70,9 @@ export function TabContainer({ config }) {
       </Paper>
       <Paper
         sx={{
-          py: 0,
+          py: 4,
           px: 6,
-          display: { xs: 'block', md: 'none' }
+          display: { xs: 'block', md: 'none' },
         }}
       >
         <MenuList>
@@ -82,7 +82,9 @@ export function TabContainer({ config }) {
               onClick={() => handleChangeMobile(item)}
               selected={item.pathname === activePath}
             >
-              <ListItemText sx={{ textAlign: 'center' }}>{text(item.label)}</ListItemText>
+              <ListItemText sx={{ textAlign: 'center' }}>
+                {text(item.label)}
+              </ListItemText>
             </MenuItem>
           ))}
         </MenuList>

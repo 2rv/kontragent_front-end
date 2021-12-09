@@ -10,3 +10,9 @@ export const referalAchieventStatusType = {
   0: 'COMMON.REFERAL.STATUS.SIGNUP',
   1: 'COMMON.REFERAL.STATUS.PAYMENT',
 };
+
+export const paymentType = {
+  1: 'COMMON.PAYMENT.STATUS.IN',
+  2: 'COMMON.PAYMENT.STATUS.OUT',
+  3: 'COMMON.PAYMENT.STATUS.BILL_IN',
+};
