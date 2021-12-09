@@ -54,22 +54,18 @@ export function AuthRecoveryAccountUpdatePasswordComponent(props) {
           </Formik>
 
           {isError && (
-            <Box sx={{ pt: 4 }}>
+            <Box>
               <Alert severity="error">{text(`ERROR.${errorMessage}`)}</Alert>
             </Box>
           )}
           {isSuccess && (
-            <Box sx={{ pt: 4 }}>
+            <Box>
               <Alert severity="success">
-                {text('AUTH.COMMONT.REQUEST_SENT_SUCCESSFULLY')}
+                {text('AUTH.RECOVERY_UPDATE_PASSWORD.FORM.SUCCESS')}
               </Alert>
             </Box>
           )}
-          {isPending && (
-            <Box sx={{ pt: 4, width: '100%' }}>
-              <LinearProgress />
-            </Box>
-          )}
+          {isPending && <LinearProgress />}
         </Box>
       </Paper>
     </Box>

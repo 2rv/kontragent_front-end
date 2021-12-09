@@ -6,10 +6,11 @@ import Divider from '@mui/material/Divider';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
-import ListItemAvatar from '@mui/material/ListItemAvatar';
 
 import { text } from '../../../lib/common/text';
+import { redirect } from '../../../main/navigation';
 
+import { USER_ADMIN_ITEM_INFO_ROUTE_PATH_DYNAMIC } from '../../user-admin-item-info';
 import { COMPANY_ADMIN_ITEM_MEMBER_LIST_DATA_NAME } from '../company-admin-item-member-list.constant';
 
 export const CompanyAdminItemPaymentListListComponent = ({ list }) => {
@@ -27,7 +28,18 @@ export const CompanyAdminItemPaymentListListComponent = ({ list }) => {
     <List sx={{ px: 8, pb: 6 }} disablePadding>
       {list.map((item, key) => (
         <React.Fragment key={key}>
-          <ListItem sx={{ py: 3, px: 3 }}>
+          <ListItem
+            onClick={() => {
+              return redirect(USER_ADMIN_ITEM_INFO_ROUTE_PATH_DYNAMIC, {
+                dynamic: true,
+                params: {
+                  userId: item[COMPANY_ADMIN_ITEM_MEMBER_LIST_DATA_NAME.ID],
+                },
+              });
+            }}
+            button
+            sx={{ py: 3, px: 3 }}
+          >
             <ListItemText
               primary={
                 <span>

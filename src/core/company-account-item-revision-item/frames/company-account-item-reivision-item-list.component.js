@@ -53,8 +53,7 @@ export const CompanyAccountItemRevisionItemListComponent = ({ data }) => {
         </Typography>
 
         {data[COMPANY_ACCOUNT_ITEM_REVISION_ITEM_DATA_NAME.FILE_REVIEW] &&
-        data[COMPANY_ACCOUNT_ITEM_REVISION_ITEM_DATA_NAME.FILE_REVIEW].length >
-          0 ? (
+        data[COMPANY_ACCOUNT_ITEM_REVISION_ITEM_DATA_NAME.FILE_REVIEW].length ? (
           <FileListElement
             list={
               data[COMPANY_ACCOUNT_ITEM_REVISION_ITEM_DATA_NAME.FILE_REVIEW]

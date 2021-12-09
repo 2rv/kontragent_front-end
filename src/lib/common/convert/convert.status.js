@@ -16,3 +16,8 @@ export const paymentType = {
   2: 'COMMON.PAYMENT.STATUS.OUT',
   3: 'COMMON.PAYMENT.STATUS.BILL_IN',
 };
+
+export const companyMemberType = {
+  1: 'COMMON.COMPANY_MEMBER_ROLE.OWNER',
+  2: 'COMMON.COMPANY_MEMBER_ROLE.EMPLOYEE',
+};

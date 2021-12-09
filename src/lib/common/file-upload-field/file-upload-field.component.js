@@ -80,7 +80,14 @@ export const Form = (props) => {
           component="label"
         >
           Загрузить
-          <input onChange={onFileAdd} type="file" hidden />
+          <input
+            onChange={(e) => {
+              onFileAdd(e);
+              e.target.value = '';
+            }}
+            type="file"
+            hidden
+          />
         </Button>
       </Grid>
     </Paper>

@@ -55,11 +55,7 @@ export const UserAdminItemCompanyListListComponent = ({ list }) => {
                 item[USER_ADMIN_ITEM_COMPANY_LIST_DATA_NAME.INN]
               }`}
               secondary={`${text('COMMON.COMPANY.ROLE')} 
-                ${
-                  item[USER_ADMIN_ITEM_COMPANY_LIST_DATA_NAME.ROLE] === 1
-                    ? text('COMMON.USER.USER_ROLE.OWNER')
-                    : text('COMMON.USER.USER_ROLE.BLOCKED')
-                }`}
+                ${item[USER_ADMIN_ITEM_COMPANY_LIST_DATA_NAME.ROLE].text}`}
             />
           </ListItem>
           {key !== list.length - 1 && <Divider />}

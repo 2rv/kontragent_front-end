@@ -27,9 +27,6 @@ export function AdminBillInfoComponent({
           {text('ADMIN_BILL_INFO.SUB_TITLE')}
           {data[ADMIN_BILL_INFO_DATA_NAME.ID]}
         </Typography>
-        <Typography variant="subTitle" sx={{ px: 8, pb: 4 }} component="div">
-          {text('ADMIN_BILL_INFO.DESCRIPTION')}
-        </Typography>
         <Divider sx={{ mx: 8 }} />
 
         {isSuccess && <AdminBillInfoItemComponent data={data} />}
