@@ -26,8 +26,8 @@ export const CompanyAdminItemPaymentListListComponent = ({ list }) => {
   return (
     <List sx={{ px: 8, pb: 6 }} disablePadding>
       {list.map((item, key) => (
-        <React.Fragment>
-          <ListItem key={key} sx={{ py: 3, px: 3 }}>
+        <React.Fragment key={key}>
+          <ListItem sx={{ py: 3, px: 3 }}>
             <ListItemText
               primary={
                 <span>

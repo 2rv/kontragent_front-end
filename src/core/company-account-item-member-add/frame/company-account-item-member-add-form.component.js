@@ -66,7 +66,7 @@ export const CompanyAccountItemMemberAddFormComponent = (props) => {
               </Grid>
             </Grid>
           </Grid>
-          <Grid lg={6} xs={12} sx={{ mt: 3 }} item>
+          <Grid lg={6} xs={12} item>
             <Button fullWidth type="sumbit" disabled={isSubmitDisabled()}>
               {text('COMPANY_ACCOUNT_ITEM_MEMBER.MEMBER_ADD.FORM.BUTTON')}
             </Button>

@@ -29,19 +29,19 @@ if (!dev && cluster.isMaster) {
   nextApp.prepare().then(() => {
     const server = express();
 
-    // if (!dev) {
-    //   // Enforce SSL & HSTS in production
-    //   server.use((req, res, next) => {
-    //     const proto = req.headers['x-forwarded-proto'];
-    //     if (proto === 'https') {
-    //       res.set({
-    //         'Strict-Transport-Security': 'max-age=31557600', // one-year
-    //       });
-    //       return next();
-    //     }
-    //     res.redirect(`https://${req.headers.host}${req.url}`);
-    //   });
-    // }
+    if (!dev) {
+      // Enforce SSL & HSTS in production
+      server.use((req, res, next) => {
+        const proto = req.headers['x-forwarded-proto'];
+        if (proto === 'https') {
+          res.set({
+            'Strict-Transport-Security': 'max-age=31557600', // one-year
+          });
+          return next();
+        }
+        res.redirect(`https://${req.headers.host}${req.url}`);
+      });
+    }
 
     server.use(
       '/static',

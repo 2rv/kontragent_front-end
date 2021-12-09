@@ -11,7 +11,7 @@ import Divider from '@mui/material/Divider';
 
 import { redirect } from '../../../main/navigation';
 
-import { COMPANY_ADMIN_ITEM_ROUTE_PATH_DYNAMIC } from '../../company-admin-item';
+import { COMPANY_ADMIN_ITEM_REVISION_LIST_ROUTE_PATH_DYNAMIC } from '../../company-admin-item-revision-list';
 
 import { text } from '../../../lib/common/text';
 
@@ -34,12 +34,15 @@ export const CompanyAccountListListComponent = ({ list }) => {
         <React.Fragment key={key}>
           <ListItem
             onClick={() => {
-              return redirect(COMPANY_ADMIN_ITEM_ROUTE_PATH_DYNAMIC, {
-                dynamic: true,
-                params: {
-                  companyId: item[COMPANY_ADMIN_LIST_DATA_NAME.ID],
+              return redirect(
+                COMPANY_ADMIN_ITEM_REVISION_LIST_ROUTE_PATH_DYNAMIC,
+                {
+                  dynamic: true,
+                  params: {
+                    companyId: item[COMPANY_ADMIN_LIST_DATA_NAME.ID],
+                  },
                 },
-              });
+              );
             }}
             key={key}
             button

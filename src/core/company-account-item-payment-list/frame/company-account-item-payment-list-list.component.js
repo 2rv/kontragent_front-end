@@ -1,5 +1,6 @@
 import React from 'react';
 
+import Divider from '@mui/material/Divider';
 import Box from '@mui/material/Box';
 import Alert from '@mui/material/Alert';
 import List from '@mui/material/List';
@@ -34,9 +35,16 @@ export const CompanyAccountItemPaymentListListComponent = ({ list }) => {
                   {text('CURRENCY.RUB')}
                 </span>
               }
-              secondary={new Date(
-                item[COMPANY_ACCOUNT_ITEM_PAYMENT_LIST_DATA_NAME.CREATE_DATE],
-              ).toLocaleDateString()}
+              secondary={
+                <span>
+                  {`${
+                    item[
+                      COMPANY_ACCOUNT_ITEM_PAYMENT_LIST_DATA_NAME.CREATE_DATE
+                    ]
+                  } `}
+                  {item[COMPANY_ACCOUNT_ITEM_PAYMENT_LIST_DATA_NAME.TYPE].text}
+                </span>
+              }
             />
           </ListItem>
           {key !== list.length - 1 && <Divider />}

@@ -4,10 +4,9 @@ import Grid from '@mui/material/Grid';
 
 import { TabContainer } from '../../lib/common/navigation-tab/navigation-tab.container';
 import { COMPANY_ADMIN_ITEM_NAVIGATION } from '../company-admin-item/company-admin-item.constant';
-import { CompanyAdminItemInfoListContainer } from '../company-admin-item-info-list/company-admin-item-info-list.container';
-import { CompanyAccountItemInfoVerificateContainer } from '../company-admin-item-info-verificate';
+import { CompanyAdminItemMemberListContainer } from './company-admin-item-member-list.container';
 
-export function CompanyAdminItemInfoPage() {
+export function CompanyAdminItemMemberListPage() {
   return (
     <NavigationComponent>
       <Grid spacing={6} container>
@@ -15,10 +14,7 @@ export function CompanyAdminItemInfoPage() {
           <TabContainer config={COMPANY_ADMIN_ITEM_NAVIGATION} />
         </Grid>
         <Grid item>
-          <CompanyAdminItemInfoListContainer />
-        </Grid>
-        <Grid item>
-          <CompanyAccountItemInfoVerificateContainer />
+          <CompanyAdminItemMemberListContainer />
         </Grid>
       </Grid>
     </NavigationComponent>
