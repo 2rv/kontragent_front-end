@@ -54,7 +54,7 @@ const COMPANY_NAME_EXP = /^[а-яА-Я]+(([',. -][а-яА-Я ])?[а-яА-Я]*)*$
 export const companyName = (value) =>
   !COMPANY_NAME_EXP.test(value) ? getError('VALIDATION.COMPANY_NAME') : null;
 
-const COMPANY_INN_EXP = /^\d{10,10}$/;
+const COMPANY_INN_EXP = /^[\d+]{10,12}$/;
 export const companyInn = (value) =>
   !COMPANY_INN_EXP.test(value) ? getError('VALIDATION.COMPANY_INN') : null;
 

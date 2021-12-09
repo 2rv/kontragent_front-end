@@ -8,7 +8,7 @@
   "COMPANY_BALANCE_NOT_ENOUGH_MONEY": "Недостаточно средств",
   "COMPANY_MEMBER_USER_NOT_EMPLOYEE_OR_DONT_EXIST": "Пользователь не является сотрудником или не существует",
   "COMPANY_MEMBER_NO_ACCESS": "Доступ запрещён",
-  "COMPANY_MEMBER_USER_ALREADY_HAS_COMPANY_ACCOUNT": "Пользователь уже является сотруником компании",
+  "COMPANY_MEMBER_USER_ALREADY_HAS_COMPANY_ACCOUNT": "Пользователь уже является сотрудником компании",
   "COMPANY_MEMBER_ACCESS_DENIED": "У вас нет нужной роли",
   "COMPANY_MEMBER_CANNOT_REMOVE_COMPANY_MEMBER_OWNER": "Владелец компании не может быть удалён",
   "COMPANY_MEMBER_ERROR_CANNOT_ADD_SUCH_A_USER": "Нельзя добавить такого пользователя",
@@ -44,5 +44,5 @@
   "BILL_ERROR_BILL_ALREADY_FULFIELD": "Запрос уже закрыт",
   "BILL_ERROR_BILL_DESCRIPTION_MIN_10": "Минимум 10 символов",
   "MAXIMUM_OF_FILES_10": "Максимум 10 файлов",
-  "COMPANY_INN": "ИНН компании должен содержать 10 чисел"
+  "COMPANY_INN": "ИНН компании должен содержать от 10 до 12 символов"
 }
