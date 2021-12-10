@@ -40,11 +40,6 @@ class MyApp extends App {
   static async getInitialProps({ Component, ctx }) {
     langServerDetection(ctx);
 
-    if (ctx.res?.statusCode === 404) {
-      ctx.res.writeHead(301, { Location: '/' });
-      ctx.res.end();
-    }
-
     const token = authGetCookieToken(ctx);
 
     setAutorization(token);
