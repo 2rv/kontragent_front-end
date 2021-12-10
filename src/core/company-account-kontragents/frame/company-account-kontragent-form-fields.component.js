@@ -35,11 +35,13 @@ export const CompanyAccountKontragentFormFieldsComponent = (props) => {
       <Box sx={{ py: 4 }}>
         <Grid
           container
-          spacing={5}
-          direction="column"
+          spacing={3}
+          direction="row"
+          justifyContent="flex-start"
+          alignItems="flex-end"
           flexWrap="wrap"
         >
-          <Grid item>
+          <Grid item xs={12} lg={6}>
             <TextFieldElement
               label={text(
                 'COMPANY_ACCOUNT_KONTRAGENTS.FORM.FIELD.LABELS.COMPANY_NAME',
@@ -50,11 +52,13 @@ export const CompanyAccountKontragentFormFieldsComponent = (props) => {
               value={values[COMPANY_ACCOUNT_KONTRAGENTS_DATA_NAME.NAME]}
               error={isFieldError(COMPANY_ACCOUNT_KONTRAGENTS_DATA_NAME.NAME)}
               fullWidth
-              errorText={getFieldError(COMPANY_ACCOUNT_KONTRAGENTS_DATA_NAME.NAME)}
+              errorText={getFieldError(
+                COMPANY_ACCOUNT_KONTRAGENTS_DATA_NAME.NAME,
+              )}
             />
           </Grid>
 
-          <Grid item>
+          <Grid xs={12} lg={6} item>
             <TextFieldElement
               label={text(
                 'COMPANY_ACCOUNT_KONTRAGENTS.FORM.FIELD.LABELS.COMPANY_INN',
@@ -65,7 +69,9 @@ export const CompanyAccountKontragentFormFieldsComponent = (props) => {
               value={values[COMPANY_ACCOUNT_KONTRAGENTS_DATA_NAME.INN]}
               error={isFieldError(COMPANY_ACCOUNT_KONTRAGENTS_DATA_NAME.INN)}
               fullWidth
-              errorText={getFieldError(COMPANY_ACCOUNT_KONTRAGENTS_DATA_NAME.INN)}
+              errorText={getFieldError(
+                COMPANY_ACCOUNT_KONTRAGENTS_DATA_NAME.INN,
+              )}
             />
           </Grid>
 
