@@ -24,11 +24,11 @@ export function uploadAuthSignupForm(data) {
       });
       dispatch(authSetData(res.data.accessToken));
 
-      await redirect(AUTH_VERIFICATION_EMAIL_ROUTE_PATH).then(() => {
-        dispatch({
-          type: AUTH_SIGNUP_ACTION_TYPE.FORM_SUCCESS,
-        });
+      dispatch({
+        type: AUTH_SIGNUP_ACTION_TYPE.FORM_SUCCESS,
       });
+
+      redirect(AUTH_VERIFICATION_EMAIL_ROUTE_PATH);
     } catch (error) {
       if (error) {
         dispatch({

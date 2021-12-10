@@ -1,1 +1,6 @@
-export { convertRevisionStatus } from './convert.core';
+export {
+  convertRevisionStatus,
+  convertPaymentType,
+  convertFormatDate,
+  convertCompanyMemberRole,
+} from './convert.core';

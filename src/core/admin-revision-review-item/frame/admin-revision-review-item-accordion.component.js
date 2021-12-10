@@ -34,9 +34,9 @@ export const AdminRevisionReviewItemAccordionComponent = ({ data }) => {
           </AccordionSummary>
           <AccordionDetails sx={{ mb: -6 }}>
             <Typography>
-              {company.year.map((years) => {
+              {company.year.map((years, i) => {
                 return (
-                  <React.Fragment>
+                  <React.Fragment key={i}>
                     <Typography
                       gutterBottom
                       variant="listTitle"
@@ -109,7 +109,6 @@ export const AdminRevisionReviewItemAccordionComponent = ({ data }) => {
             )}
           </AccordionDetails>
         </Accordion>
-        <Divider sx={{ mx: 8 }} />
       </div>
     ),
   );

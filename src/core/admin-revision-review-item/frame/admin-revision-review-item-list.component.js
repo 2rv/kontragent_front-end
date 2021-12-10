@@ -37,9 +37,7 @@ export const AdminRevisionReviewItemListComponent = ({ data }) => {
         )}
       </Grid>
 
-      <Grid item>
-        <Divider />
-      </Grid>
+      <Divider sx={{ mx: 4 }} />
 
       <Grid item>
         <Typography gutterBottom variant="listTitle" component="div">
@@ -84,7 +82,7 @@ export const AdminRevisionReviewItemListComponent = ({ data }) => {
 
       <Grid item xs={12}>
         <Grid container>
-          <Grid xs={4}>
+          <Grid item xs={4}>
             <Button
               fullWidth
               type="button"

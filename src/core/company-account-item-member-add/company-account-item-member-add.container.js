@@ -35,7 +35,7 @@ export function CompanyAccountItemMemberAddContainer() {
 
   const getInitialValue = () => {
     return {
-      [COMPANY_ACCOUNT_ITEM_MEMBER_ADD_DATA_NAME.ID]: 0,
+      [COMPANY_ACCOUNT_ITEM_MEMBER_ADD_DATA_NAME.ID]: '',
     };
   };
 

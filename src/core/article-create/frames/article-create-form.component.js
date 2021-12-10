@@ -23,7 +23,7 @@ export function ArticleCreateFormComponent(props) {
     setFieldValue(name, editorData);
 
   return (
-    <Box sx={{ py: 4 }}>
+    <Box sx={{ pt: 4 }}>
       <Grid sx={{ px: 0 }} columnSpacing={4}>
         <Grid
           spacing={3}

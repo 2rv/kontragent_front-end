@@ -27,7 +27,7 @@ export const AdminRevisionReviewFormComponent = (props) => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <Box sx={{ py: 4 }}>
+      <Box sx={{ pt: 4 }}>
         <Grid sx={{ px: 0 }} columnSpacing={4}>
           <Grid
             spacing={3}
@@ -51,11 +51,11 @@ export const AdminRevisionReviewFormComponent = (props) => {
               />
             </Grid>
 
-            <Grid xs={6} item>
+            <Grid xs={12} lg={6} item>
               <SelectElement
                 label={text('ADMIN_REVISION_REVIEW.FORM.LABELS.STATUS')}
                 sx={{
-                  height: '54px',
+                  height: '46px',
                 }}
                 name={ADMIN_REVISION_REVIEW_DATA_NAME.STATUS}
                 value={values[ADMIN_REVISION_REVIEW_DATA_NAME.STATUS]}
@@ -64,7 +64,7 @@ export const AdminRevisionReviewFormComponent = (props) => {
               />
             </Grid>
 
-            <Grid xs={6} item>
+            <Grid xs={12} lg={6} item>
               <TextFieldElement
                 label={text('ADMIN_REVISION_REVIEW.FORM.LABELS.PRICE')}
                 name={ADMIN_REVISION_REVIEW_DATA_NAME.PRICE}
@@ -84,7 +84,7 @@ export const AdminRevisionReviewFormComponent = (props) => {
 
             <Grid item xs={12}>
               <Grid container>
-                <Grid xs={4}>
+                <Grid xs={12} lg={6}>
                   <Button fullWidth type="sumbit" disabled={isSubmitDisabled()}>
                     {text('ADMIN_REVISION_REVIEW.FORM.BUTTON.TITLE')}
                   </Button>

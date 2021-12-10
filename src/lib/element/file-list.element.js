@@ -14,9 +14,13 @@ export const FileListElement = ({ list, handleDelete }) => {
               id={file.uuid}
               clickable
               onClick={() => window.open(file.url)}
-              label={file.fileName}
+              label={file.originalName}
               onDelete={(e) => handleDelete(e)}
-              deleteIcon={<DeleteOutlinedIcon />}
+              deleteIcon={
+                <div>
+                  <DeleteOutlinedIcon />
+                </div>
+              }
               size="medium"
             />
           </Grid>
@@ -27,7 +31,7 @@ export const FileListElement = ({ list, handleDelete }) => {
               id={file.uuid}
               clickable
               onClick={() => window.open(file.url)}
-              label={file.uuid}
+              label={file.originalName}
               size="20px"
             />
           </Grid>

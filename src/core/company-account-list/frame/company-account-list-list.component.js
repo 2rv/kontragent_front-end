@@ -21,7 +21,7 @@ import { COMPANY_ACCOUNT_LIST_DATA_NAME } from '../company-account-list.constant
 export const CompanyAccountListListComponent = ({ list }) => {
   if (!list || list.length === 0) {
     return (
-      <Box sx={{ pt: 4, px: 8, pb: 8 }}>
+      <Box sx={{ px: 8, pb: 8 }}>
         <Alert severity="info">
           {text('COMPANY_ACCOUNT_LIST.COMPANY_LIST.EMPTY')}
         </Alert>
@@ -32,7 +32,7 @@ export const CompanyAccountListListComponent = ({ list }) => {
   return (
     <List sx={{ px: 8, pb: 8 }} disablePadding>
       {list.map((item, key) => (
-        <React.Fragment>
+        <div key={key}>
           <ListItem
             onClick={() => {
               return redirect(COMPANY_ACCOUNT_ITEM_BALANCE_ROUTE_PATH_DYNAMIC, {
@@ -42,14 +42,13 @@ export const CompanyAccountListListComponent = ({ list }) => {
                 },
               });
             }}
-            key={key}
             button
             sx={{
               py: 3,
               px: 3,
               ':hover': {
                 backgroundColor: '#F3F3F3',
-              }
+              },
             }}
           >
             <ListItemAvatar>
@@ -67,7 +66,7 @@ export const CompanyAccountListListComponent = ({ list }) => {
             />
           </ListItem>
           {key !== list.length - 1 && <Divider />}
-        </React.Fragment>
+        </div>
       ))}
     </List>
   );

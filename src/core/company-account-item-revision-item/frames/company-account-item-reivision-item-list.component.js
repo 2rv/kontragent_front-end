@@ -13,7 +13,7 @@ export const CompanyAccountItemRevisionItemListComponent = ({ data }) => {
     <Grid container spacing={4} sx={{ pt: 4, px: 8, pb: 8 }}>
       <Grid item>
         <Typography gutterBottom variant="listTitle" component="div">
-          {text('COMMON.REVISION.CREATE_DATE')}
+          {text('COMPANY_ACCOUNT_ITEM_REVISION.REVISION_ITEM.CREATE_DATE')}
         </Typography>
 
         <Typography variant="body1">
@@ -53,8 +53,8 @@ export const CompanyAccountItemRevisionItemListComponent = ({ data }) => {
         </Typography>
 
         {data[COMPANY_ACCOUNT_ITEM_REVISION_ITEM_DATA_NAME.FILE_REVIEW] &&
-        data[COMPANY_ACCOUNT_ITEM_REVISION_ITEM_DATA_NAME.FILE_REVIEW].length >
-          0 ? (
+        data[COMPANY_ACCOUNT_ITEM_REVISION_ITEM_DATA_NAME.FILE_REVIEW]
+          .length ? (
           <FileListElement
             list={
               data[COMPANY_ACCOUNT_ITEM_REVISION_ITEM_DATA_NAME.FILE_REVIEW]

@@ -15,7 +15,7 @@ export const AuthRecoveryAccountUpdatePasswordForm = (props) => {
     errors,
     touched,
     isValid,
-    isSubmitting,
+    isPending,
 
     pageLoading,
     isSuccess,
@@ -30,7 +30,7 @@ export const AuthRecoveryAccountUpdatePasswordForm = (props) => {
   const isSubmitDisabled = () => {
     return JSON.stringify(touched) === '{}'
       ? true
-      : !isValid || isSubmitting || isSuccess || pageLoading;
+      : !isValid || isPending || isSuccess || pageLoading;
   };
 
   return (
@@ -39,7 +39,9 @@ export const AuthRecoveryAccountUpdatePasswordForm = (props) => {
         <Grid spacing={3} container>
           <Grid item>
             <TextFieldElement
-              label={text('AUTH.RECOVERY_UPDATE_PASSWORD.FORM.FIELD.LABELS.CODE')}
+              label={text(
+                'AUTH.RECOVERY_UPDATE_PASSWORD.FORM.FIELD.LABELS.CODE',
+              )}
               name={AUTH_RECOVERY_ACCOUNT_UPDATE_PASSWORD_DATA_NAME.CODE}
               onChange={handleChange}
               onBlur={handleBlur}
@@ -57,7 +59,9 @@ export const AuthRecoveryAccountUpdatePasswordForm = (props) => {
           </Grid>
           <Grid item>
             <TextFieldElement
-              label={text('AUTH.RECOVERY_UPDATE_PASSWORD.FORM.FIELD.LABELS.NEW_PASSWORD')}
+              label={text(
+                'AUTH.RECOVERY_UPDATE_PASSWORD.FORM.FIELD.LABELS.NEW_PASSWORD',
+              )}
               name={AUTH_RECOVERY_ACCOUNT_UPDATE_PASSWORD_DATA_NAME.PASSWORD}
               onChange={handleChange}
               onBlur={handleBlur}
@@ -75,7 +79,9 @@ export const AuthRecoveryAccountUpdatePasswordForm = (props) => {
           </Grid>
           <Grid item>
             <TextFieldElement
-              label={text('AUTH.RECOVERY_UPDATE_PASSWORD.FORM.FIELD.LABELS.REPEAT_PASSWORD')}
+              label={text(
+                'AUTH.RECOVERY_UPDATE_PASSWORD.FORM.FIELD.LABELS.REPEAT_PASSWORD',
+              )}
               name={
                 AUTH_RECOVERY_ACCOUNT_UPDATE_PASSWORD_DATA_NAME.PASSWORD_REPEAT
               }

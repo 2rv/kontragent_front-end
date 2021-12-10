@@ -41,7 +41,7 @@ export function UserAdminInviteComponent({
           ></TextFieldElement>
         </Grid>
         <Grid item xs={12}>
-          <Button onClick={onClick}>
+          <Button onClick={onClick} disabled={!value || !value.includes('@')}>
             {text('USER_ADMIN_INVITE.BUTTON.TITLE')}
           </Button>
         </Grid>

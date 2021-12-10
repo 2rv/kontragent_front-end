@@ -21,7 +21,7 @@ export const ReviewStatus = ({ status }) => {
             <span>
               <>
                 <Typography
-                  sx={{ px: 8, pb: 1, color: 'black' }}
+                  sx={{ px: 8, pb: 1 }}
                   variant="listTitle"
                   component="div"
                 >
@@ -52,7 +52,7 @@ export const ReviewStatus = ({ status }) => {
             <span>
               <>
                 <Typography
-                  sx={{ px: 8, pb: 1, color: 'black' }}
+                  sx={{ px: 8, pb: 1 }}
                   variant="listTitle"
                   component="div"
                 >
@@ -83,7 +83,7 @@ export const ReviewStatus = ({ status }) => {
             <span>
               <>
                 <Typography
-                  sx={{ px: 8, pb: 1, color: 'black' }}
+                  sx={{ px: 8, pb: 1 }}
                   variant="listTitle"
                   component="div"
                 >
@@ -114,7 +114,7 @@ export const ReviewStatus = ({ status }) => {
             <span>
               <>
                 <Typography
-                  sx={{ px: 8, pb: 1, color: 'black' }}
+                  sx={{ px: 8, pb: 1 }}
                   variant="listTitle"
                   component="div"
                 >
@@ -145,7 +145,7 @@ export const ReviewStatus = ({ status }) => {
             <span>
               <>
                 <Typography
-                  sx={{ px: 8, pb: 1, color: 'black' }}
+                  sx={{ px: 8, pb: 1 }}
                   variant="listTitle"
                   component="div"
                 >

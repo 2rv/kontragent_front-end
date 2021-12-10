@@ -28,28 +28,7 @@ export function ArticleViewComponent(props) {
             <Typography fontWeight={600}>
               {article[ARTICLE_DATA_NAME.TITLE]}
             </Typography>
-            <Typography>
-              {article[ARTICLE_DATA_NAME.DESCRIPTION]}
-            </Typography>
-
-            {isadmin && (
-              <Link
-                component="button"
-                variant="body2"
-                onClick={() => {
-                  redirect(USER_ADMIN_ITEM_INFO_ROUTE_PATH_DYNAMIC, {
-                    dynamic: true,
-                    params: {
-                      userId: article[ARTICLE_DATA_NAME.ID],
-                    },
-                  });
-                }}
-              >
-                {`${article[ARTICLE_DATA_NAME.FIRSTNAME]} ${
-                  article[ARTICLE_DATA_NAME.LASTNAME]
-                }`}
-              </Link>
-            )}
+            <Typography>{article[ARTICLE_DATA_NAME.DESCRIPTION]}</Typography>
           </Box>
         )}
         <Grid>
@@ -80,10 +59,29 @@ export function ArticleViewComponent(props) {
             </Typography>
           </Grid>
           <Grid item>
-            <Typography>
-              {article[ARTICLE_DATA_NAME.FIRSTNAME]}{' '}
-              {article[ARTICLE_DATA_NAME.LASTNAME]}
-            </Typography>
+            {isadmin ? (
+              <Link
+                component="button"
+                variant="body2"
+                onClick={() => {
+                  redirect(USER_ADMIN_ITEM_INFO_ROUTE_PATH_DYNAMIC, {
+                    dynamic: true,
+                    params: {
+                      userId: article[ARTICLE_DATA_NAME.ID],
+                    },
+                  });
+                }}
+              >
+                {`${article[ARTICLE_DATA_NAME.FIRSTNAME]} ${
+                  article[ARTICLE_DATA_NAME.LASTNAME]
+                }`}
+              </Link>
+            ) : (
+              <Typography>
+                {article[ARTICLE_DATA_NAME.FIRSTNAME]}{' '}
+                {article[ARTICLE_DATA_NAME.LASTNAME]}
+              </Typography>
+            )}
           </Grid>
         </Grid>
 

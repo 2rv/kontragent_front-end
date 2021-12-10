@@ -7,21 +7,18 @@ import { FileListElement } from '../../../lib/element/file-list.element';
 export const AdminRevisionInfoItemComponent = ({ data }) => {
   return (
     <Grid container spacing={3} sx={{ pt: 4, px: 8, pb: 8 }}>
-      <Grid item>
-        {data[ADMIN_REVISION_INFO_DATA_NAME.STATUS] === 4 && (
-          <>
-            <Typography gutterBottom variant="listTitle" component="div">
-              {text('COMPANY_ACCOUNT_ITEM_REVISION.REVISION_ITEM.PRICE')}
-            </Typography>
+      {data[ADMIN_REVISION_INFO_DATA_NAME.STATUS] === 4 && (
+        <Grid item>
+          <Typography gutterBottom variant="listTitle" component="div">
+            {text('COMPANY_ACCOUNT_ITEM_REVISION.REVISION_ITEM.PRICE')}
+          </Typography>
 
-            <Typography variant="body1">
-              {data[ADMIN_REVISION_INFO_DATA_NAME.PRICE]}
-              {text('CURRENCY.RUB')}
-            </Typography>
-          </>
-        )}
-      </Grid>
-
+          <Typography variant="body1">
+            {data[ADMIN_REVISION_INFO_DATA_NAME.PRICE]}
+            {text('CURRENCY.RUB')}
+          </Typography>
+        </Grid>
+      )}
       <Grid item>
         <Typography gutterBottom variant="listTitle" component="div">
           {text(

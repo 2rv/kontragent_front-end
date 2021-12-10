@@ -54,6 +54,10 @@ const COMPANY_NAME_EXP = /^[а-яА-Я]+(([',. -][а-яА-Я ])?[а-яА-Я]*)*$
 export const companyName = (value) =>
   !COMPANY_NAME_EXP.test(value) ? getError('VALIDATION.COMPANY_NAME') : null;
 
+const COMPANY_INN_EXP = /^[\d+]{10,12}$/;
+export const companyInn = (value) =>
+  !COMPANY_INN_EXP.test(value) ? getError('VALIDATION.COMPANY_INN') : null;
+
 // eslint-disable-next-line max-len
 const FIRST_NAME_EXP = /^[а-яА-Я]+(([',. -][а-яА-Я ])?[а-яА-Я]*)*$/;
 export const firstname = (value) =>
@@ -102,6 +106,13 @@ export const numberPositiveMin = (min) => (value) => {
   if (val < min) {
     return getError('VALIDATION.NUMBER_POSITIVE_MIN', { min });
   }
+
+  return null;
+};
+
+export const year = (value) => {
+  const val = Number(value);
+  if (val <= 1999 || val >= 2022) return getError('VALIDATION.YEAR');
 
   return null;
 };
