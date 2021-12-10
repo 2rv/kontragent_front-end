@@ -6,10 +6,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import { inviteFormValidation } from './invite.validation';
 
-import {
-  INVITE_DATA_NAME,
-  INVITE_STORE_NAME,
-} from './invite.constant';
+import { INVITE_DATA_NAME, INVITE_STORE_NAME } from './invite.constant';
 
 import { uploadInviteForm, cleanupStore } from './invite.action';
 
