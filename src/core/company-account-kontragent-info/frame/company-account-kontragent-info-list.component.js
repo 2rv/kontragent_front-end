@@ -27,8 +27,7 @@ export const CompanyAccountKontragentItemInfoListComponent = ({ data, removeKont
             <Typography variant="listTitle">
               {text('COMPANY_ACCOUNT_KONTRAGENTS.INFO.ID')}
             </Typography>
-            <br />
-            <Typography variant="listContent">
+            <Typography variant="body1">
               {data[COMPANY_ACCOUNT_KONTRAGENT_INFO_DATA_NAME.ID]}
             </Typography>
           </Grid>
@@ -36,8 +35,7 @@ export const CompanyAccountKontragentItemInfoListComponent = ({ data, removeKont
             <Typography variant="listTitle">
               {text('COMPANY_ACCOUNT_KONTRAGENTS.INFO.KONTRAGENT_NICKNAME')}
             </Typography>
-            <br />
-            <Typography variant="listContent">
+            <Typography variant="body1">
               {data[COMPANY_ACCOUNT_KONTRAGENT_INFO_DATA_NAME.KONTRAGENT_NAME]}
             </Typography>
           </Grid>
@@ -60,8 +58,7 @@ export const CompanyAccountKontragentItemInfoListComponent = ({ data, removeKont
             <Typography variant="listTitle">
               {text('COMPANY_ACCOUNT_KONTRAGENTS.INFO.ID')}
             </Typography>
-            <br />
-            <Typography variant="listContent">
+            <Typography variant="body1">
               {data[COMPANY_ACCOUNT_KONTRAGENT_INFO_DATA_NAME.COMPANY_ID]}
             </Typography>
           </Grid>
@@ -70,8 +67,7 @@ export const CompanyAccountKontragentItemInfoListComponent = ({ data, removeKont
               <Typography variant="listTitle">
                 {text('COMPANY_ACCOUNT_KONTRAGENTS.INFO.COMPANY_NAME')}
               </Typography>
-              <br />
-              <Typography variant="listContent">
+              <Typography variant="body1">
                 {data[COMPANY_ACCOUNT_KONTRAGENT_INFO_DATA_NAME.COMPANY_NAME]}
               </Typography>
             </Grid>
@@ -80,8 +76,7 @@ export const CompanyAccountKontragentItemInfoListComponent = ({ data, removeKont
             <Typography variant="listTitle">
               {text('COMPANY_ACCOUNT_KONTRAGENTS.INFO.INN')}
             </Typography>
-            <br />
-            <Typography variant="listContent">
+            <Typography variant="body1">
               {data[COMPANY_ACCOUNT_KONTRAGENT_INFO_DATA_NAME.INN]}
             </Typography>
           </Grid>
@@ -89,8 +84,7 @@ export const CompanyAccountKontragentItemInfoListComponent = ({ data, removeKont
             <Typography variant="listTitle">
               {text('COMPANY_ACCOUNT_KONTRAGENTS.INFO.REGISTERED.TITLE')}
             </Typography>
-            <br />
-            <Typography variant="listContent">
+            <Typography variant="body1">
               {data[COMPANY_ACCOUNT_KONTRAGENT_INFO_DATA_NAME.COMPANY_REGISTERED] ?
                 text('COMPANY_ACCOUNT_KONTRAGENTS.INFO.REGISTERED.YES') :
                 text('COMPANY_ACCOUNT_KONTRAGENTS.INFO.REGISTERED.NO')}

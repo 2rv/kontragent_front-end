@@ -30,75 +30,71 @@ export function CompanyAccountKontragentsComponent({
   pageLoading,
 }) {
   return (
-    <Grid spacing={6} container>
-      <Grid item>
-        <Paper>
-          <Box>
-            <Box sx={{ pb: 4 }}>
-              <Typography variant="title" sx={{ pb: 2 }} component="div">
-                {text('COMPANY_ACCOUNT_KONTRAGENTS.FORM.TITLE')}
-              </Typography>
-              <Typography variant="subTitle" component="div">
-                {text('COMPANY_ACCOUNT_KONTRAGENTS.FORM.SUBTITLE')}
-              </Typography>
-            </Box>
-
-            <Formik
-              initialValues={initialValue}
-              validate={validation}
-              onSubmit={onSubmitForm}
-            >
-              {(props) => (
-                <CompanyAccountKontragentFormFieldsComponent
-                  {...props}
-                  isPending={isCreatePending}
-                  isError={isCreateError}
-                  errorMessage={createErrorMessage}
-                  pageLoading={pageLoading}
-                />
-              )}
-            </Formik>
-
-            {isCreateError && (
-              <Box sx={{ pt: 4 }}>
-                <Alert severity="error">{text(`ERROR.${createErrorMessage}`)}</Alert>
-              </Box>
-            )}
-            {isCreateSuccess && (
-              <Box sx={{ pt: 4 }}>
-                <Alert severity="success">
-                  {text('COMPANY_ACCOUNT_KONTRAGENTS.FORM.SUCCESS')}
-                </Alert>
-              </Box>
-            )}
-          </Box>
-        </Paper>
-      </Grid>
-      <Grid item>
-        <Paper sx={{ p: 0 }}>
-          <Box>
-            <Typography
-              variant="heading"
-              sx={{ px: 8, pt: 8 }}
-              component="div"
-            >
-              {text('COMPANY_ACCOUNT_KONTRAGENTS.TITLE')}
+    <>
+      <Paper>
+        <Box>
+          <Box sx={{ pb: 4 }}>
+            <Typography variant="title" sx={{ pb: 2 }} component="div">
+              {text('COMPANY_ACCOUNT_KONTRAGENTS.FORM.TITLE')}
             </Typography>
-            <Divider sx={{ mx: 8, my: 4 }} />
-            {isSuccess && <CompanyAccountKontragentsListComponent list={data} />}
-            {isPending && (
-              <Box sx={{ pt: 4, px: 8, pb: 8 }}>
-                <SkeletonListComponent />
-              </Box>
-            )}
-            {isError && (
-              <Box sx={{ pt: 4, px: 8, pb: 8 }}>
-                <Alert severity="error">{text(`ERROR.${errorMessage}`)}</Alert>
-              </Box>
-            )}
+            <Typography variant="subTitle" component="div">
+              {text('COMPANY_ACCOUNT_KONTRAGENTS.FORM.SUBTITLE')}
+            </Typography>
           </Box>
-        </Paper>
-      </Grid>
-    </Grid>
+
+          <Formik
+            initialValues={initialValue}
+            validate={validation}
+            onSubmit={onSubmitForm}
+          >
+            {(props) => (
+              <CompanyAccountKontragentFormFieldsComponent
+                {...props}
+                isPending={isCreatePending}
+                isError={isCreateError}
+                errorMessage={createErrorMessage}
+                pageLoading={pageLoading}
+              />
+            )}
+          </Formik>
+
+          {isCreateError && (
+            <Box sx={{ pt: 4 }}>
+              <Alert severity="error">{text(`ERROR.${createErrorMessage}`)}</Alert>
+            </Box>
+          )}
+          {isCreateSuccess && (
+            <Box sx={{ pt: 4 }}>
+              <Alert severity="success">
+                {text('COMPANY_ACCOUNT_KONTRAGENTS.FORM.SUCCESS')}
+              </Alert>
+            </Box>
+          )}
+        </Box>
+      </Paper>
+      <Paper sx={{ p: 0, mt: 6 }}>
+        <Box>
+          <Typography
+            variant="heading"
+            sx={{ px: 8, pt: 8 }}
+            component="div"
+          >
+            {text('COMPANY_ACCOUNT_KONTRAGENTS.TITLE')}
+          </Typography>
+          <Divider sx={{ mx: 8, my: 4 }} />
+          {isSuccess && <CompanyAccountKontragentsListComponent list={data} />}
+          {isPending && (
+            <Box sx={{ pt: 4, px: 8, pb: 8 }}>
+              <SkeletonListComponent />
+            </Box>
+          )}
+          {isError && (
+            <Box sx={{ pt: 4, px: 8, pb: 8 }}>
+              <Alert severity="error">{text(`ERROR.${errorMessage}`)}</Alert>
+            </Box>
+          )}
+        </Box>
+      </Paper>
+    </>
   );
 }
