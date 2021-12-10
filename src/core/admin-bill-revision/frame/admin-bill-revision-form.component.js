@@ -72,6 +72,11 @@ export const AdminBillRevisionFormComponent = (props) => {
                 variant="black"
                 type="sumbit"
                 disabled={isSubmitDisabled()}
+                sx={{
+                  "&:disabled": {
+                    backgroundColor: 'rgba(0, 0, 0, 0.12)',
+                  },
+                }}
               >
                 {text('ADMIN_BILL_REVISION.BUTTON.SAVE')}
               </Button>

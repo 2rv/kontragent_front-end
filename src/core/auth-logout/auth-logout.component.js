@@ -6,31 +6,35 @@ import Button from '@mui/material/Button';
 
 import { text } from '../../lib/common/text';
 
-export function AuthLogoutComponent({ onSubmitForm }) {
+export function AuthLogoutComponent({ onSubmitForm, pageLoading }) {
   return (
-    <Box>
-      <Paper>
-        <Box>
-          <Box sx={{ pb: 4 }}>
-            <Typography variant="title" component="div">
-              {text('AUTH.LOGOUT.TITLE_TEXT')}
-            </Typography>
-          </Box>
-
-          <Grid container direction="row" justifyContent="flex-start">
-            <Grid xs={12} lg={4} item>
-              <Button
-                onClick={onSubmitForm}
-                fullWidth
-                type="sumbit"
-                variant="black"
-              >
-                {text('AUTH.LOGOUT.BUTTON_TEXT')}
-              </Button>
-            </Grid>
-          </Grid>
+    <Paper>
+      <Box>
+        <Box sx={{ pb: 4 }}>
+          <Typography variant="title" component="div">
+            {text('AUTH.LOGOUT.TITLE_TEXT')}
+          </Typography>
         </Box>
-      </Paper>
-    </Box>
+
+        <Grid container direction="row" justifyContent="flex-start">
+          <Grid xs={12} lg={4} item>
+            <Button
+              onClick={onSubmitForm}
+              disabled={pageLoading}
+              fullWidth
+              type="sumbit"
+              variant="black"
+              sx={{
+                "&:disabled": {
+                  backgroundColor: 'rgba(0, 0, 0, 0.12)',
+                },
+              }}
+            >
+              {text('AUTH.LOGOUT.BUTTON_TEXT')}
+            </Button>
+          </Grid>
+        </Grid>
+      </Box>
+    </Paper>
   );
 }
