@@ -9,8 +9,14 @@ import { redirect } from '../../../main/navigation/navigation.core';
 import { text } from '../../../lib/common/text';
 
 import { COMPANY_ACCOUNT_CREATE_ROUTE_PATH } from '../../company-account-create';
+import { useSelector } from 'react-redux';
+import { NAVIGATION_STORE_NAME } from '../../../lib/common/navigation';
 
 export function CompanyCreateInfoComponent() {
+  const { pageLoading } = useSelector((state) => ({
+    pageLoading: state[NAVIGATION_STORE_NAME].pageLoading,
+  }));
+
   return (
     <Paper>
       <Box>
@@ -30,6 +36,7 @@ export function CompanyCreateInfoComponent() {
                 redirect(COMPANY_ACCOUNT_CREATE_ROUTE_PATH);
               }}
               fullWidth
+              disabled={pageLoading}
             >
               {text('COMPANY_ACCOUNT_LIST.CREATE_COMPANY.BUTTON')}
             </Button>
