@@ -38,7 +38,7 @@ export const CompanyAccountKontragentFormFieldsComponent = (props) => {
           spacing={3}
           direction="row"
           justifyContent="flex-start"
-          alignItems="flex-end"
+          alignItems="flex-start"
           flexWrap="wrap"
         >
           <Grid item xs={12} lg={6}>
@@ -52,9 +52,7 @@ export const CompanyAccountKontragentFormFieldsComponent = (props) => {
               value={values[COMPANY_ACCOUNT_KONTRAGENTS_DATA_NAME.NAME]}
               error={isFieldError(COMPANY_ACCOUNT_KONTRAGENTS_DATA_NAME.NAME)}
               fullWidth
-              errorText={getFieldError(
-                COMPANY_ACCOUNT_KONTRAGENTS_DATA_NAME.NAME,
-              )}
+              errorText={getFieldError(COMPANY_ACCOUNT_KONTRAGENTS_DATA_NAME.NAME)}
             />
           </Grid>
 
@@ -69,13 +67,11 @@ export const CompanyAccountKontragentFormFieldsComponent = (props) => {
               value={values[COMPANY_ACCOUNT_KONTRAGENTS_DATA_NAME.INN]}
               error={isFieldError(COMPANY_ACCOUNT_KONTRAGENTS_DATA_NAME.INN)}
               fullWidth
-              errorText={getFieldError(
-                COMPANY_ACCOUNT_KONTRAGENTS_DATA_NAME.INN,
-              )}
+              errorText={getFieldError(COMPANY_ACCOUNT_KONTRAGENTS_DATA_NAME.INN)}
             />
           </Grid>
 
-          <Grid item>
+          <Grid xs={12} lg={6} item>
             <Button fullWidth type="sumbit" disabled={isSubmitDisabled()}>
               {text('COMPANY_ACCOUNT_KONTRAGENTS.FORM.BUTTON.TITLE')}
             </Button>

@@ -12,7 +12,7 @@ export const CompanyAccountItemInfoListComponent = ({ data }) => {
         <Typography sx={{ mr: 1 }} variant="listTitle">
           {text('COMMON.COMPANY.COMPANY_NAME')}
         </Typography>
-        <Typography variant="listContent">
+        <Typography variant="body1">
           {data[COMPANY_ACCOUNT_ITEM_INFO_DATA_NAME.NAME]}
         </Typography>
       </Grid>
@@ -20,7 +20,7 @@ export const CompanyAccountItemInfoListComponent = ({ data }) => {
         <Typography sx={{ mr: 1 }} variant="listTitle">
           {text('COMMON.COMPANY.ID')}
         </Typography>
-        <Typography variant="listContent">
+        <Typography variant="body1">
           {data[COMPANY_ACCOUNT_ITEM_INFO_DATA_NAME.ID]}
         </Typography>
       </Grid>
@@ -28,7 +28,7 @@ export const CompanyAccountItemInfoListComponent = ({ data }) => {
         <Typography sx={{ mr: 1 }} variant="listTitle">
           {text('COMMON.COMPANY.INN')}
         </Typography>
-        <Typography variant="listContent">
+        <Typography variant="body1">
           {data[COMPANY_ACCOUNT_ITEM_INFO_DATA_NAME.INN]}
         </Typography>
       </Grid>
@@ -42,7 +42,7 @@ export const CompanyAccountItemInfoListComponent = ({ data }) => {
               !data[COMPANY_ACCOUNT_ITEM_INFO_DATA_NAME.VERIFICATE_INFO] &&
               '#F2994A',
           }}
-          variant="listContent"
+          variant="body1"
         >
           {data[COMPANY_ACCOUNT_ITEM_INFO_DATA_NAME.VERIFICATE_INFO]
             ? text('COMMON.COMPANY.VERIFIED')
@@ -59,7 +59,7 @@ export const CompanyAccountItemInfoListComponent = ({ data }) => {
               !data[COMPANY_ACCOUNT_ITEM_INFO_DATA_NAME.VERIFICATE_PAYMENT] &&
               '#F2994A',
           }}
-          variant="listContent"
+          variant="body1"
         >
           {data[COMPANY_ACCOUNT_ITEM_INFO_DATA_NAME.VERIFICATE_PAYMENT]
             ? text('COMMON.COMPANY.VERIFIED')
