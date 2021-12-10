@@ -28,7 +28,8 @@ export const SettingsChangePasswordFormComponent = (props) => {
     isSuccess,
   } = props;
 
-  const [showPassword, setShowPassword] = useState(false);
+  const [showNewPassword, setShowNewPassword] = useState(false);
+  const [showRepeatPassword, setShowRepeatPassword] = useState(false);
 
   const isFieldError = (name) => {
     return errors[name] && touched[name] && errors[name];
@@ -42,8 +43,12 @@ export const SettingsChangePasswordFormComponent = (props) => {
       : !isValid || isSubmitting || isSuccess || pageLoading;
   };
 
-  const handleClickShowPassword = () => {
-    setShowPassword(!showPassword);
+  const handleClickShowNewPassword = () => {
+    setShowNewPassword(!showNewPassword);
+  };
+
+  const handleClickShowRepeatPassword = () => {
+    setShowRepeatPassword(!showRepeatPassword);
   };
 
   const handleMouseDownPassword = (event) => {
@@ -83,7 +88,7 @@ export const SettingsChangePasswordFormComponent = (props) => {
               label={text(
                 'SETTINGS.CHANGE_PASSWORD.FORM.FIELD.LABELS.NEW_PASSWORD',
               )}
-              type={showPassword ? 'text' : 'password'}
+              type={showNewPassword ? 'text' : 'password'}
               name={SETTINGS_CHANGE_PASSWORD_DATA_NAME.NEW_PASSWORD}
               onChange={handleChange}
               onBlur={handleBlur}
@@ -100,11 +105,15 @@ export const SettingsChangePasswordFormComponent = (props) => {
                   <InputAdornment position="end">
                     <IconButton
                       aria-label="toggle password visibility"
-                      onClick={handleClickShowPassword}
+                      onClick={handleClickShowNewPassword}
                       onMouseDown={handleMouseDownPassword}
                       edge="end"
                     >
-                      {showPassword ? <VisibilityOff /> : <Visibility />}
+                      {showNewPassword ? (
+                        <VisibilityOff sx={{ width: '20px', height: '20px' }} />
+                      ) : (
+                        <Visibility sx={{ width: '20px', height: '20px' }} />
+                      )}
                     </IconButton>
                   </InputAdornment>
                 ),
@@ -116,7 +125,7 @@ export const SettingsChangePasswordFormComponent = (props) => {
               label={text(
                 'SETTINGS.CHANGE_PASSWORD.FORM.FIELD.LABELS.REPEAT_NEW_PASSWORD',
               )}
-              type={showPassword ? 'text' : 'password'}
+              type={showRepeatPassword ? 'text' : 'password'}
               name={SETTINGS_CHANGE_PASSWORD_DATA_NAME.PASSWORD_REPEAT}
               onChange={handleChange}
               onBlur={handleBlur}
@@ -133,11 +142,15 @@ export const SettingsChangePasswordFormComponent = (props) => {
                   <InputAdornment position="end">
                     <IconButton
                       aria-label="toggle password visibility"
-                      onClick={handleClickShowPassword}
+                      onClick={handleClickShowRepeatPassword}
                       onMouseDown={handleMouseDownPassword}
                       edge="end"
                     >
-                      {showPassword ? <VisibilityOff /> : <Visibility />}
+                      {showRepeatPassword ? (
+                        <VisibilityOff sx={{ width: '20px', height: '20px' }} />
+                      ) : (
+                        <Visibility sx={{ width: '20px', height: '20px' }} />
+                      )}
                     </IconButton>
                   </InputAdornment>
                 ),
