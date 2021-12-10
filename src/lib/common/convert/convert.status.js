@@ -15,6 +15,8 @@ export const paymentType = {
   1: 'COMMON.PAYMENT.STATUS.IN',
   2: 'COMMON.PAYMENT.STATUS.OUT',
   3: 'COMMON.PAYMENT.STATUS.BILL_IN',
+  4: 'COMMON.PAYMENT.STATUS.REVISION',
+  5: 'COMMON.PAYMENT.STATUS.PAY_IN',
 };
 
 export const companyMemberType = {

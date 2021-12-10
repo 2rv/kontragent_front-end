@@ -25,14 +25,16 @@ export const CompanyAccountItemPaymentListListComponent = ({ list }) => {
   return (
     <List sx={{ px: 8, pb: 8 }} disablePadding>
       {list.map((item, key) => (
-        <React.Fragment>
-          <ListItem key={key} sx={{ py: 3, px: 3 }}>
+        <React.Fragment key={key}>
+          <ListItem sx={{ py: 3, px: 3 }}>
             <ListItemText
               primary={
                 <span>
-                  {text('COMMON.SUMM')}:{' '}
-                  {item[COMPANY_ACCOUNT_ITEM_PAYMENT_LIST_DATA_NAME.AMOUNT]}{' '}
-                  {text('CURRENCY.RUB')}
+                  {`${
+                    item[COMPANY_ACCOUNT_ITEM_PAYMENT_LIST_DATA_NAME.TYPE].text
+                  } - ${
+                    item[COMPANY_ACCOUNT_ITEM_PAYMENT_LIST_DATA_NAME.AMOUNT]
+                  } ${text('CURRENCY.RUB')}`}
                 </span>
               }
               secondary={
@@ -41,8 +43,7 @@ export const CompanyAccountItemPaymentListListComponent = ({ list }) => {
                     item[
                       COMPANY_ACCOUNT_ITEM_PAYMENT_LIST_DATA_NAME.CREATE_DATE
                     ]
-                  } `}
-                  {item[COMPANY_ACCOUNT_ITEM_PAYMENT_LIST_DATA_NAME.TYPE].text}
+                  }`}
                 </span>
               }
             />
