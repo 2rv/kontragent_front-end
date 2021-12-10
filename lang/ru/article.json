@@ -7,6 +7,10 @@
           "TITLE": "Заголовок",
           "DESCRIPTION": "Описание",
           "BODY": "Редактирование статьи"
+        },
+        "PLACEHOLDERS": {
+          "TITLE": "Введите заголовок",
+          "DESCRIPTION": "Введите описание"
         }
       },
       "BUTTON": {
@@ -22,6 +26,10 @@
         "LABELS": {
           "TITLE": "Заголовок",
           "DESCRIPTION": "Описание"
+        },
+        "PLACEHOLDERS": {
+          "TITLE": "Введите заголовок",
+          "DESCRIPTION": "Введите описание"
         }
       },
       "BUTTON": {
