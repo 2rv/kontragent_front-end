@@ -13,7 +13,7 @@ import Typography from '@mui/material/Typography';
 export const UserReferalAchievementListListComponent = ({ list }) => {
   if (!list || list.length === 0) {
     return (
-      <Box sx={{ pt: 4, px: 8, pb: 8 }}>
+      <Box sx={{ px: 8, pb: 8 }}>
         <Alert severity="info">
           {text('USER_REFERAL.USER_REFERAL_ACHIEVEMENT_LIST.EMPTY')}
         </Alert>

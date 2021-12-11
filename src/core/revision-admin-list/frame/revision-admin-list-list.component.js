@@ -14,7 +14,7 @@ import { redirect } from '../../../main/navigation';
 export const RevisionAdminListListComponent = ({ list }) => {
   if (!list || list.length === 0) {
     return (
-      <Box sx={{ pt: 4, px: 8, pb: 8 }}>
+      <Box sx={{ px: 8, pb: 8 }}>
         <Alert severity="info">{text('REVISION_ADMIN_LIST.EMPTY')}</Alert>
       </Box>
     );
