@@ -43,13 +43,23 @@ export const CompanyAdminItemInfoListListComponent = ({ data }) => {
           sx={{
             color:
               !data[COMPANY_ADMIN_ITEM_INFO_LIST_DATA_NAME.VERIFICATE_INFO] &&
-              '#F2994A',
+              '#EB5757',
           }}
           variant="body1"
         >
-          {data[COMPANY_ADMIN_ITEM_INFO_LIST_DATA_NAME.VERIFICATE_INFO]
-            ? text('COMMON.COMPANY.VERIFIED')
-            : text('COMMON.COMPANY.NOT_VERIFIED')}
+          {data[COMPANY_ADMIN_ITEM_INFO_LIST_DATA_NAME.VERIFICATE_INFO] ? (
+            <Typography
+              sx={{
+                color: '#219653',
+              }}
+              variant="listContent"
+            >
+              {' '}
+              {text('COMMON.COMPANY.VERIFIED')}
+            </Typography>
+          ) : (
+            text('COMMON.COMPANY.NOT_VERIFIED')
+          )}
         </Typography>
       </Grid>
       <Grid item>
@@ -62,13 +72,23 @@ export const CompanyAdminItemInfoListListComponent = ({ data }) => {
             color:
               !data[
                 COMPANY_ADMIN_ITEM_INFO_LIST_DATA_NAME.VERIFICATE_PAYMENT
-              ] && '#F2994A',
+              ] && '#EB5757',
           }}
           variant="body1"
         >
-          {data[COMPANY_ADMIN_ITEM_INFO_LIST_DATA_NAME.VERIFICATE_PAYMENT]
-            ? text('COMMON.COMPANY.VERIFIED')
-            : text('COMMON.COMPANY.NOT_VERIFIED')}
+          {data[COMPANY_ADMIN_ITEM_INFO_LIST_DATA_NAME.VERIFICATE_PAYMENT] ? (
+            <Typography
+              sx={{
+                color: '#219653',
+              }}
+              variant="listContent"
+            >
+              {' '}
+              {text('COMMON.COMPANY.VERIFIED')}
+            </Typography>
+          ) : (
+            text('COMMON.COMPANY.NOT_VERIFIED')
+          )}
         </Typography>
       </Grid>
     </Grid>

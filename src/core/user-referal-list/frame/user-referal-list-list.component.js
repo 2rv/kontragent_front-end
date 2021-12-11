@@ -11,7 +11,7 @@ import { USER_REFERAL_LIST_DATA_NAME } from '../user-referal-list.constant';
 export const UserReferalListListComponent = ({ list }) => {
   if (!list || list.length === 0) {
     return (
-      <Box sx={{ pt: 4, px: 8, pb: 8 }}>
+      <Box sx={{ px: 8, pb: 8 }}>
         <Alert severity="info">
           {text('USER_REFERAL.USER_REFERAL_LIST.EMPTY')}
         </Alert>

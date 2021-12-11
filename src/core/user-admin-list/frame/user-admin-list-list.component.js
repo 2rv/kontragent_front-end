@@ -15,7 +15,7 @@ import { USER_ADMIN_ITEM_INFO_DATA_NAME } from '../../user-admin-item-info/user-
 export const UserAdminListListComponent = ({ list }) => {
   if (!list || list.length === 0) {
     return (
-      <Box sx={{ pt: 4, px: 8, pb: 8 }}>
+      <Box sx={{ px: 8, pb: 8 }}>
         <Alert severity="info">{text('USER_ADMIN_LIST.USER_LIST.EMPTY')}</Alert>
       </Box>
     );
@@ -96,11 +96,18 @@ export const UserAdminListListComponent = ({ list }) => {
                   <>
                     {text('COMMON.USER.CONFIRM_EMAIL')}
                     {items[USER_ADMIN_LIST_DATA_NAME.CONFIRM_EMAIL] ? (
-                      text('COMMON.USER.VERIFIED')
+                      <Typography
+                        sx={{
+                          color: '#219653',
+                        }}
+                        variant="listContent"
+                      >
+                        {text('COMMON.USER.VERIFIED')}
+                      </Typography>
                     ) : (
                       <Typography
                         sx={{
-                          color: '#F2994A',
+                          color: '#EB5757',
                         }}
                         variant="listContent"
                       >
@@ -112,11 +119,18 @@ export const UserAdminListListComponent = ({ list }) => {
                   <>
                     {text('COMMON.USER.CONFIRM_PHONE')}{' '}
                     {items[USER_ADMIN_LIST_DATA_NAME.CONFIRM_PHONE] ? (
-                      text('COMMON.USER.VERIFIED')
+                      <Typography
+                        sx={{
+                          color: '#219653',
+                        }}
+                        variant="listContent"
+                      >
+                        {text('COMMON.USER.VERIFIED')}
+                      </Typography>
                     ) : (
                       <Typography
                         sx={{
-                          color: '#F2994A',
+                          color: '#EB5757',
                         }}
                         variant="listContent"
                       >

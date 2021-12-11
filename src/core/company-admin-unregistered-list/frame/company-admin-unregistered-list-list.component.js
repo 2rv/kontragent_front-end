@@ -20,7 +20,7 @@ import { COMPANY_ADMIN_UNREGISTERED_LIST_DATA_NAME } from '../company-admin-unre
 export const CompanyAccountListListComponent = ({ list }) => {
   if (!list || list.length === 0) {
     return (
-      <Box sx={{ pt: 4, px: 8, pb: 8 }}>
+      <Box sx={{ px: 8, pb: 8 }}>
         <Alert severity="info">
           {text('COMPANY_ADMIN_LIST.UNREGISTERED_COMPANIES_LIST.EMPTY')}
         </Alert>

@@ -18,7 +18,7 @@ import { COMPANY_ACCOUNT_ITEM_REVISION_ITEM_ROUTE_PATH_DYNAMIC } from '../../com
 export const CompanyAccountItemRevisionListListComponent = ({ list }) => {
   if (!list || list.length === 0) {
     return (
-      <Box sx={{ pt: 4, pb: 8, px: 8 }}>
+      <Box sx={{ pb: 8, px: 8 }}>
         <Alert severity="info">
           {text(
             'COMPANY_ACCOUNT_ITEM_REVISION.REVISION_LIST.YOUR_LIST_IS_EMPTY',
@@ -66,16 +66,31 @@ export const CompanyAccountItemRevisionListListComponent = ({ list }) => {
               secondary={
                 [
                   '',
-                  text('COMMON.REVISION.STATUS_TYPE.NEW'),
-                  text('COMMON.REVISION.STATUS_TYPE.PROGRESS'),
-
-                  text('COMMON.REVISION.STATUS_TYPE.DONE'),
+                  <>
+                    <Typography sx={{ color: 'red' }}>
+                      {text('COMMON.REVISION.STATUS_TYPE.NEW')}
+                    </Typography>
+                  </>,
+                  <>
+                    <Typography sx={{ color: 'blue' }}>
+                      {text('COMMON.REVISION.STATUS_TYPE.PROGRESS')}
+                    </Typography>
+                  </>,
+                  <>
+                    <Typography sx={{ color: 'green' }}>
+                      {text('COMMON.REVISION.STATUS_TYPE.DONE')}
+                    </Typography>
+                  </>,
                   <>
                     <Typography sx={{ color: 'orange' }}>
                       {text('COMMON.REVISION.STATUS_TYPE.PAY')}
                     </Typography>
                   </>,
-                  text('COMMON.REVISION.STATUS_TYPE.PAID'),
+                  <>
+                    <Typography sx={{ color: 'green' }}>
+                      {text('COMMON.REVISION.STATUS_TYPE.PAID')}
+                    </Typography>
+                  </>,
                 ][item[COMPANY_ACCOUNT_ITEM_REVISION_LIST_DATA_NAME.STATUS]]
               }
             />

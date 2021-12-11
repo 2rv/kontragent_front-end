@@ -6,17 +6,17 @@
     "EMPLOYEE": "Сотрудник"
   },
   "USER": {
-    "EMAIL": "Почта: ",
-    "PHONE": "Телефон: ",
-    "ID": "ID: ",
-    "LOGIN": "Логин: ",
-    "FISRT_NAME": "Имя: ",
-    "LAST_NAME": "Фамилия: ",
-    "CONFIRM_EMAIL": "Верификация почты: ",
-    "CONFIRM_PHONE": "Верификация номера телефона: ",
+    "EMAIL": "Почта ",
+    "PHONE": "Телефон ",
+    "ID": "ID ",
+    "LOGIN": "Логин ",
+    "FISRT_NAME": "Имя ",
+    "LAST_NAME": "Фамилия ",
+    "CONFIRM_EMAIL": "Верификация почты ",
+    "CONFIRM_PHONE": "Верификация номера телефона ",
     "VERIFIED": "Верифицировано",
     "NOT_VERIFIED": "Не верифицировано",
-    "ROLE": "Роль: ",
+    "ROLE": "Роль ",
     "USER_ROLE": {
       "OWNER": "Пользователь",
       "BLOCKED": "Заблокирован ",
@@ -24,11 +24,11 @@
     }
   },
   "REVISION": {
-    "PRICE": "Стоимость: ",
-    "ID": "ID в системе: ",
-    "CREATE_DATE": "Дата создания: ",
-    "TITLE": "Название: ",
-    "STATUS": "Состояние: ",
+    "PRICE": "Стоимость ",
+    "ID": "ID ",
+    "CREATE_DATE": "Дата создания ",
+    "TITLE": "Название ",
+    "STATUS": "Состояние ",
     "STATUS_TYPE": {
       "NEW": "Новый запрос",
       "PROGRESS": "В работе",
@@ -39,15 +39,15 @@
   },
 
   "COMPANY": {
-    "COMPANY_NAME": "Название: ",
-    "ID": "ID: ",
-    "INN": "ИНН: ",
-    "DATA_VERIFICATION": "Данные: ",
-    "BALANCE_VERIFICATION": "Баланс: ",
-    "BALANCE": "Средства: ",
+    "COMPANY_NAME": "Название ",
+    "ID": "ID ",
+    "INN": "ИНН ",
+    "DATA_VERIFICATION": "Данные ",
+    "BALANCE_VERIFICATION": "Баланс ",
+    "BALANCE": "Средства ",
     "VERIFIED": "Вериф. ",
     "NOT_VERIFIED": "Не вериф. ",
-    "ROLE": "Роль: "
+    "ROLE": "Роль "
   },
   "REFERAL": {
     "STATUS": {
@@ -56,7 +56,7 @@
     }
   },
   "CURRENCY": {
-    "RUB": " ₽"
+    "RUB": "₽"
   },
   "ERROR": {
     "TITLE": "Ошибка",
