@@ -66,16 +66,31 @@ export const CompanyAccountItemRevisionListListComponent = ({ list }) => {
               secondary={
                 [
                   '',
-                  text('COMMON.REVISION.STATUS_TYPE.NEW'),
-                  text('COMMON.REVISION.STATUS_TYPE.PROGRESS'),
-
-                  text('COMMON.REVISION.STATUS_TYPE.DONE'),
+                  <>
+                    <Typography sx={{ color: 'red' }}>
+                      {text('COMMON.REVISION.STATUS_TYPE.NEW')}
+                    </Typography>
+                  </>,
+                  <>
+                    <Typography sx={{ color: 'blue' }}>
+                      {text('COMMON.REVISION.STATUS_TYPE.PROGRESS')}
+                    </Typography>
+                  </>,
+                  <>
+                    <Typography sx={{ color: 'green' }}>
+                      {text('COMMON.REVISION.STATUS_TYPE.DONE')}
+                    </Typography>
+                  </>,
                   <>
                     <Typography sx={{ color: 'orange' }}>
                       {text('COMMON.REVISION.STATUS_TYPE.PAY')}
                     </Typography>
                   </>,
-                  text('COMMON.REVISION.STATUS_TYPE.PAID'),
+                  <>
+                    <Typography sx={{ color: 'green' }}>
+                      {text('COMMON.REVISION.STATUS_TYPE.PAID')}
+                    </Typography>
+                  </>,
                 ][item[COMPANY_ACCOUNT_ITEM_REVISION_LIST_DATA_NAME.STATUS]]
               }
             />

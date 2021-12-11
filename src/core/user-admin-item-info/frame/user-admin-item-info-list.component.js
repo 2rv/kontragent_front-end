@@ -60,9 +60,19 @@ export const UserAdminItemInfoListComponent = ({ data }) => {
           }}
           variant="body1"
         >
-          {data[USER_ADMIN_ITEM_INFO_DATA_NAME.CONFIRM_EMAIL]
-            ? text('USER_ADMIN_ITEM_INFO.VERIFIED')
-            : text('USER_ADMIN_ITEM_INFO.NOT_VERIFIED')}
+          {data[USER_ADMIN_ITEM_INFO_DATA_NAME.CONFIRM_EMAIL] ? (
+            <Typography
+              sx={{
+                color: '#219653',
+              }}
+              variant="listContent"
+            >
+              {' '}
+              {text('USER_ADMIN_ITEM_INFO.VERIFIED')}
+            </Typography>
+          ) : (
+            text('USER_ADMIN_ITEM_INFO.NOT_VERIFIED')
+          )}
         </Typography>
       </Grid>
       <Grid item>
@@ -77,9 +87,19 @@ export const UserAdminItemInfoListComponent = ({ data }) => {
           }}
           variant="body1"
         >
-          {data[USER_ADMIN_ITEM_INFO_DATA_NAME.CONFIRM_PHONE]
-            ? text('USER_ADMIN_ITEM_INFO.VERIFIED')
-            : text('USER_ADMIN_ITEM_INFO.NOT_VERIFIED')}
+          {data[USER_ADMIN_ITEM_INFO_DATA_NAME.CONFIRM_PHONE] ? (
+            <Typography
+              sx={{
+                color: '#219653',
+              }}
+              variant="listContent"
+            >
+              {' '}
+              {text('USER_ADMIN_ITEM_INFO.VERIFIED')}
+            </Typography>
+          ) : (
+            text('USER_ADMIN_ITEM_INFO.NOT_VERIFIED')
+          )}
         </Typography>
       </Grid>
       <Grid item>
