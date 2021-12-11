@@ -30,9 +30,7 @@ export function ArticleCreateFormComponent(props) {
     setFieldValue(name, editorData);
 
   const isSubmitDisabled = () => {
-    return JSON.stringify(touched) === '{}'
-      ? true
-      : !isValid
+    return JSON.stringify(touched) === '{}' ? true : !isValid;
   };
 
   return (
@@ -62,7 +60,9 @@ export function ArticleCreateFormComponent(props) {
           <Grid xs={12} item>
             <TextFieldElement
               label={text('ARTICLE.CREATE.FORM.FIELD.LABELS.DESCRIPTION')}
-              placeholder={text('ARTICLE.CREATE.FORM.FIELD.PLACEHOLDERS.DESCRIPTION')}
+              placeholder={text(
+                'ARTICLE.CREATE.FORM.FIELD.PLACEHOLDERS.DESCRIPTION',
+              )}
               name={ARTICLE_FIELD_NAME.DESCRIPTION}
               onChange={handleChange}
               onBlur={handleBlur}
@@ -95,7 +95,7 @@ export function ArticleCreateFormComponent(props) {
             </Grid>
           </Grid>
           <Grid xs={6} item>
-            <Button type="sumbit" fullWidth disabled={isSubmitDisabled}>
+            <Button type="sumbit" fullWidth disabled={isSubmitDisabled()}>
               {text('ARTICLE.CREATE.FORM.BUTTON.TITLE')}
             </Button>
           </Grid>

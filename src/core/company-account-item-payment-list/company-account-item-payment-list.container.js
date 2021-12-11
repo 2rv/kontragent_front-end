@@ -34,7 +34,6 @@ export function CompanyAccountItemPaymentListContainer() {
       });
 
       const data = performCompanyAccountItemPaymentListData(res.data);
-      console.log(data);
 
       setRequestPending(false);
       setRequestSuccess(true);
