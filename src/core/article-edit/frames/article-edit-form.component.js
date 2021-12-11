@@ -25,10 +25,6 @@ export function ArticleEditFormComponent(props) {
     updateIsPending,
   } = props;
 
-  const isSubmitDisabled = () => {
-    return JSON.stringify(touched) === '{}' ? true : !isValid;
-  };
-
   const isFieldError = (name) => {
     return errors[name] && touched[name] && errors[name];
   };
@@ -87,7 +83,7 @@ export function ArticleEditFormComponent(props) {
           </Grid>
           <Grid xs={12} item>
             <Grid sx={{ mb: 3 }} xs={6} item>
-              <Button disabled={isSubmitDisabled()} type="sumbit" fullWidth>
+              <Button type="sumbit" fullWidth>
                 {text('ARTICLE.EDIT.FORM.BUTTON.EDIT')}
               </Button>
             </Grid>
