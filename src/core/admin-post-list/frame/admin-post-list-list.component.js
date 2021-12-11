@@ -43,15 +43,13 @@ export const AdminPostListListComponent = ({ list }) => {
             <ListItemText
               primary={
                 <>
-                  <Typography sx={{ color: '#707070' }} variant="listTitle">
-                    {text('COMMON.REVISION.TITLE')}
-                  </Typography>
                   <Typography variant="listTitle">
                     {items[ADMIN_POST_LIST_DATA_NAME.TITLE]}
-                  </Typography>{' '}
-                  <Typography sx={{ color: '#707070' }} variant="listTitle">
-                    {text('COMMON.REVISION.CREATE_DATE')}
                   </Typography>
+                </>
+              }
+              secondary={
+                <>
                   <Typography variant="listTitle">
                     {items[ADMIN_POST_LIST_DATA_NAME.CREATE_DATE]}
                   </Typography>

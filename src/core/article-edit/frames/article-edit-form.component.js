@@ -18,17 +18,15 @@ export function ArticleEditFormComponent(props) {
     handleBlur,
     setFieldValue,
     deleteProduct,
-
+    isValid,
     loadDataPending,
     deleteIsSuccess,
     deleteIsPending,
     updateIsPending,
   } = props;
 
-  const isSubmittDisabled = () => {
-    return (
-      loadDataPending || deleteIsSuccess || deleteIsPending || updateIsPending
-    );
+  const isSubmitDisabled = () => {
+    return JSON.stringify(touched) === '{}' ? true : !isValid;
   };
 
   const isFieldError = (name) => {
@@ -89,13 +87,12 @@ export function ArticleEditFormComponent(props) {
           </Grid>
           <Grid xs={12} item>
             <Grid sx={{ mb: 3 }} xs={6} item>
-              <Button disabled={isSubmittDisabled()} type="sumbit" fullWidth>
+              <Button disabled={isSubmitDisabled()} type="sumbit" fullWidth>
                 {text('ARTICLE.EDIT.FORM.BUTTON.EDIT')}
               </Button>
             </Grid>
             <Grid xs={6} item>
               <Button
-                disabled={isSubmittDisabled()}
                 type="button"
                 variant="red"
                 onClick={deleteProduct}
