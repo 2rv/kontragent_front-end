@@ -5,8 +5,8 @@ import Divider from '@mui/material/Divider';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import IconButton from '@mui/material/IconButton';
-import MenuIcon from '@mui/icons-material/Menu';
 
+import Grid from '@mui/material/Grid';
 import { useSelector } from 'react-redux';
 import { NAVIGATION_STORE_NAME } from '../../lib/common/navigation/navigation.constant';
 import { AUTH_STORE_NAME } from '../../lib/common/auth';
@@ -47,21 +47,17 @@ export function NavigationComponent(props) {
       >
         <Toolbar sx={{ justifyContent: 'space-between' }}>
           <IconButton
-            color="primary"
             aria-label="open drawer"
             edge="start"
             onClick={handleDrawerToggle}
             sx={{ display: { sm: 'none' } }}
           >
-            <MenuIcon fontSize="large" />
-          </IconButton>
-          <Box>
             <img
-              style={{ margin: '0 auto', display: 'block' }}
-              height="32px"
-              src="/static/img/logo.svg"
+              style={{ display: 'block' }}
+              height="24px"
+              src="/static/img/menuIcon.svg"
             />
-          </Box>
+          </IconButton>
         </Toolbar>
       </AppBar>
       <Box
@@ -86,6 +82,42 @@ export function NavigationComponent(props) {
             },
           }}
         >
+          <Box sx={{ pt: 8, pb: 4 }}>
+            <Grid
+              spacing={3}
+              container
+              display="flex"
+              direction="row"
+              justifyContent="center"
+              alignItems="center"
+              flexWrap="wrap"
+            >
+              <Grid sx={{ ml: 3, mr: -3 }} xs={3} item>
+                <IconButton
+                  aria-label="open drawer"
+                  edge="start"
+                  onClick={handleDrawerToggle}
+                >
+                  <img
+                    style={{ display: 'block' }}
+                    height="24px"
+                    src="/static/img/cross.svg"
+                  />
+                </IconButton>
+              </Grid>
+              <Grid xs={8} item>
+                <img
+                  style={{ display: 'block' }}
+                  height="22px"
+                  src="/static/img/logo.svg"
+                />
+              </Grid>
+            </Grid>
+          </Box>
+
+          <Box sx={{ px: 8 }}>
+            <Divider />
+          </Box>
           <Box sx={{ overflow: 'auto', pt: 2 }}>
             <NavigationListComponent
               activePath={activePath}
