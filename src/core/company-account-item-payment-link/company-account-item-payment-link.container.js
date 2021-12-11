@@ -32,10 +32,10 @@ export function CompanyAccountItemPaymentLinkContainer() {
         }`,
       });
 
-      await redirect(res.data.link);
-
       setRequestPending(false);
       setRequestSuccess(true);
+
+      window.location.href = res.data.link;
     } catch (error) {
       if (error) {
         setRequestError(true);
