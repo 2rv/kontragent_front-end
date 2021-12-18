@@ -158,6 +158,10 @@ import {
   COMPANY_ADMIN_ITEM_MEMBER_LIST_ROUTE_PATH,
   CompanyAdminItemMemberListRouter,
 } from '../../core/company-admin-item-member-list';
+import {
+  NOTIFICATION_EMAIL_CREATE_ROUTE_PATH,
+  NotificationAdminEmailCreateRouter,
+} from '../../core/notification-admin-email-create';
 
 export const routes = {
   '/': IndexRouter,
@@ -209,6 +213,7 @@ export const routes = {
   [COMPANY_ADMIN_ITEM_INFO_ROUTE_PATH]: CompanyAdminItemInfoRouter,
   [COMPANY_ADMIN_BILL_LIST_ROUTE_PATH]: CompanyAdminItemBillListRouter,
   [COMPANY_ADMIN_ITEM_MEMBER_LIST_ROUTE_PATH]: CompanyAdminItemMemberListRouter,
+  [NOTIFICATION_EMAIL_CREATE_ROUTE_PATH]: NotificationAdminEmailCreateRouter,
 };
 
 export const Router = routesInit(routes);
