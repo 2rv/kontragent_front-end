@@ -8,7 +8,7 @@ export function LandingAdvantagesDesktopComponent() {
     <LandingLayout>
       <LandingAdvantagesSectionDesktopCompmponent
         rowReverse={true}
-        image={`/static/img/landing-advantages-1.jpg`}
+        image={`/static/img/landing/landing-advantages/image-1.jpg`}
         title={`Что покупают клиенты на нашей платформе?`}
         description={
           <Typography variant="body1" sx={{ mt: 6 }}>
@@ -18,7 +18,7 @@ export function LandingAdvantagesDesktopComponent() {
         }
       />
       <LandingAdvantagesSectionDesktopCompmponent
-        image={`/static/img/landing-advantages-2.jpg`}
+        image={`/static/img/landing/landing-advantages/image-2.jpg`}
         title={`Как происходит диагностика книг покупок на платформе?`}
         description={
           <Typography variant="body1" sx={{ mt: 6 }}>
@@ -29,7 +29,7 @@ export function LandingAdvantagesDesktopComponent() {
       />
       <LandingAdvantagesSectionDesktopCompmponent
         rowReverse={true}
-        image={`/static/img/landing-advantages-3.jpg`}
+        image={`/static/img/landing/landing-advantages/image-3.jpg`}
         title={`Что получают клиенты после диагностики?`}
         description={
           <Typography variant="body1" sx={{ mt: 6 }}>

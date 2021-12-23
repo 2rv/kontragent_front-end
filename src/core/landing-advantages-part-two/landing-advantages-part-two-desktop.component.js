@@ -20,7 +20,7 @@ export function LandingAdvantagesPartTwoDesktopComponent() {
   return (
     <LandingLayout>
       <LandingAdvantagesPartTwoSectionDesktopCompmponent
-        image={`/static/img/landing-advantages-1.jpg`}
+        image={`/static/img/landing/landing-advantages/image-3.jpg`}
         title={`Почему стоит начать пользоваться нашей платформой?`}
         description={
           <Typography variant="body1" sx={{ mt: 6 }}>
@@ -33,7 +33,7 @@ export function LandingAdvantagesPartTwoDesktopComponent() {
       />
       <LandingAdvantagesPartTwoSectionDesktopCompmponent
         rowReverse={true}
-        image={`/static/img/landing-advantages-2.jpg`}
+        image={`/static/img/landing/landing-advantages/image-4.jpg`}
         title={`Почему стоит начать именно сегодня и сейчас?`}
         description={
           <Typography variant="body1" sx={{ mt: 6 }}>
@@ -43,7 +43,7 @@ export function LandingAdvantagesPartTwoDesktopComponent() {
         }
       />
       <LandingAdvantagesPartTwoSectionDesktopCompmponent
-        image={`/static/img/landing-advantages-3.jpg`}
+        image={`/static/img/landing/landing-advantages/image-5.jpg`}
         title={`Почему именно наша платформа?`}
         description={
           <Typography variant="body1" sx={{ mt: 6 }}>

@@ -1,35 +1,36 @@
-import { useSelector } from "react-redux";
-import { NAVIGATION_STORE_NAME } from "../../lib/common/navigation";
-import { LandingHeaderDesktopComponent } from "./landing-header-desktop.component";
+import { useSelector } from 'react-redux';
+import { NAVIGATION_STORE_NAME } from '../../lib/common/navigation';
+import { HOME_ROUTE_PATH } from '../landing';
+import { LandingHeaderDesktopComponent } from './landing-header-desktop.component';
 
 export function LandingHeaderContainer() {
   const { activePath } = useSelector((state) => ({
     activePath: state[NAVIGATION_STORE_NAME].activePath,
   }));
 
+  const headerLinks = [
+    {
+      path: HOME_ROUTE_PATH,
+      name: 'Главная',
+    },
+    {
+      path: '',
+      name: 'О проекте',
+    },
+    {
+      path: '',
+      name: 'Наши преимущества',
+    },
+    {
+      path: '',
+      name: 'Наши принципы',
+    },
+  ];
+
   return (
     <LandingHeaderDesktopComponent
       activePath={activePath}
-      headerLinks={HEADER_LINKS}
+      headerLinks={headerLinks}
     />
   );
 }
-
-export const HEADER_LINKS = [
-  {
-    path: '/landing',
-    name: 'Главная',
-  },
-  {
-    path: '',
-    name: 'О проекте',
-  },
-  {
-    path: '',
-    name: 'Наши преимущества',
-  },
-  {
-    path: '',
-    name: 'Наши принципы',
-  },
-];

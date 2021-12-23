@@ -14,7 +14,7 @@ export function LandingHeroDesktopComponent() {
       </Typography>
       <LandingButtonComponent
         tid="Узнать больше"
-        sx={{ width: '320px' }}
+        sx={{ width: '320px', mb: 4 }}
       />
     </LandingLayout>
   );

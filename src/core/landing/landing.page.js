@@ -15,7 +15,7 @@ import { LandingAdvantagesPartTwoContainer } from '../landing-advantages-part-tw
 export function LandingPage() {
   return (
     <Grid spacing={6} container>
-      <Grid item style={{ padding: 0 }}>
+      <Grid item>
         <LandingHeaderContainer />
       </Grid>
       <Grid item style={{ padding: 0, backgroundColor: '#fff' }}>
@@ -24,7 +24,7 @@ export function LandingPage() {
       <Grid item style={{ padding: 0, backgroundColor: '#F3F3F3' }}>
         <LandingAboutContainer />
       </Grid>
-      <Grid item style={{ padding: 0, backgroundColor: '#fff' }}>
+      <Grid item style={{ padding: 0, backgroundColor: '#fff', position: 'relative' }}>
         <LandingBetaInfoContainer />
       </Grid>
       <Grid item style={{ padding: 0, backgroundColor: '#F3F3F3' }}>
