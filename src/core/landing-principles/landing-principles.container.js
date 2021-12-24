@@ -1,4 +1,4 @@
-import { LandingPrinciplesDesktopComponent } from "./landing-principles-desktop.component";
+import { LandingPrinciplesDesktopComponent } from './landing-principles-desktop.component';
 
 export function LandingPrinciplesContainer() {
   return (

@@ -1,4 +1,4 @@
-import { LandingProblemsDesktopComponent } from "./landing-problems-desktop.component";
+import { LandingProblemsDesktopComponent } from './landing-problems-desktop.component';
 
 export function LandingProblemsContainer() {
   return (

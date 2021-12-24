@@ -8,8 +8,7 @@ import { AUTH_LOGIN_ROUTE_PATH } from '../auth-login';
 import { AUTH_SIGNUP_ROUTE_PATH } from '../auth-signup';
 import { redirect } from '../../main/navigation';
 
-import { LandingButtonComponent } from '../../lib/common/landing/landing-button.component';
-
+import { LandingButtonComponent } from '../../lib/common/landing';
 import { LandingHeaderMobileComponent } from './landing-header.mobile.component';
 
 export function LandingHeaderDesktopComponent({ activePath, headerLinks }) {

@@ -1,11 +1,26 @@
-import Box from '@mui/material/Box';
+import styled from 'styled-components';
 
-export function LandingLayout({ children, height, }) {
+export function LandingLayout({ children, className }) {
   return (
-    <Box sx={{ display: 'flex', flexDirection: 'column', flex: '1' }} height={height}>
-      <Box sx={{ p: 8, width: '100%', maxWidth: '1140px', display: 'flex', alignSelf: 'center', flexDirection: 'column' }}>
+    <MainContainer className={className}>
+      <MainContent>
         {children}
-      </Box>
-    </Box>
+      </MainContent>
+    </MainContainer>
   );
 }
+
+const MainContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+`;
+
+const MainContent = styled.div`
+  padding: 32px;
+  width: 100%;
+  max-width: 1140px;
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+`;

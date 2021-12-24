@@ -1,12 +1,12 @@
-import Box from '@mui/material/Box';
+import styled from 'styled-components';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 
-import { LandingLayout } from '../../lib/common/landing/landing-layout.component';
+import { LandingLayout } from '../../lib/common/landing';
 
 export function LandingFooterDesktopComponent() {
   return (
-    <LandingLayout>
+    <Layout>
       <Grid container direction="row" display="flex" justifyContent="space-between" gap="32px">
         <Grid item>
           <Grid container direction="row" justifyContent="flex-start" gap="32px">
@@ -27,6 +27,10 @@ export function LandingFooterDesktopComponent() {
           <Typography variant="body1">© 2021 Контрагент. All rights reserved.</Typography>
         </Grid>
       </Grid>
-    </LandingLayout>
+    </Layout>
   );
 }
+
+const Layout = styled(LandingLayout)`
+  background-color: #F3F3F3;
+`;

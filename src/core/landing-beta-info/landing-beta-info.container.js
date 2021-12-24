@@ -1,4 +1,4 @@
-import { LandingBetaInfoDesktopComponent } from "./landing-beta-info-desktop.component";
+import { LandingBetaInfoDesktopComponent } from './landing-beta-info-desktop.component';
 
 export function LandingBetaInfoContainer() {
   return (
