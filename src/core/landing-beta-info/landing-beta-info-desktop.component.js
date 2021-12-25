@@ -7,7 +7,6 @@ import { LandingLayout } from '../../lib/common/landing';
 export function LandingBetaInfoDesktopComponent({ graphicData }) {
   return (
     <Layout>
-      <PolygonSvg src="/static/img/landing/polygon.svg" />
       <Box display="flex" flexDirection="column" gap="20px">
         <Box item display="flex" flexDirection="column" gap="20px">
           <Title variant="landingTitleHero">
@@ -22,16 +21,16 @@ export function LandingBetaInfoDesktopComponent({ graphicData }) {
         <Box item>
           <GraphicContainer>
             {graphicData.map((graphic, index) => (
-              <Box key={index} display="flex" flexDirection="column" width="245px">
-                <Box sx={{ position: 'relative', display: 'flex', alignItems: 'center', mb: 6 }}>
+              <Box key={index} display="flex" flexDirection="column">
+                <Box sx={{ position: 'relative', display: 'flex', alignItems: 'center' }}>
                   <GraphicCircle src={graphic.svgCircle} />
                   {graphic.svgLine && (
                     <GraphicLine src={graphic.svgLine} />
                   )}
                 </Box>
-                <Typography variant="title" sx={{ mb: 5 }}>{graphic.date}</Typography>
+                <Title variant="title" sx={{ my: 4 }}>{graphic.date}</Title>
                 {graphic.tasks.map((task, index) => (
-                  <Typography key={index} variant="landingText">{task}</Typography>
+                  <SmallText key={index} variant="landingText">{task}</SmallText>
                 ))}
               </Box>
             ))}
@@ -44,21 +43,33 @@ export function LandingBetaInfoDesktopComponent({ graphicData }) {
 
 const Layout = styled(LandingLayout)`
   background-color: #fff;
-  position: relative;
+  @media (min-width: 1366px) {
+    background-image: url("/static/img/landing/landing-beta-info/background.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 60%;
+  }
+  @media (min-width: 0px) and (max-width: 599px) {
+    background-image: url("/static/img/landing/landing-beta-info/background-mobile.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 60%;
+  }
 `;
 
 const GraphicContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
   gap: 32px;
-  @media (max-width: 900px) {
-    justify-content: center;
-  }
 `;
 
 const GraphicCircle = styled.img`
   width: 45px;
   height: 45px;
+  @media (min-width: 0px) and (max-width: 599px) {
+    width: 28px;
+    height: 28px;
+  }
 `;
 
 const GraphicLine = styled.img`
@@ -66,7 +77,6 @@ const GraphicLine = styled.img`
   left: 45px;
   width: 100%;
   max-width: 235px;
-
   @media (max-width: 1140px) {
     display: none;
   }
@@ -83,14 +93,5 @@ const SmallText = styled(Typography)`
   @media (min-width: 0px) and (max-width: 599px) {
     font-size: 14px;
     line-height: 20px;
-  }
-`;
-
-const PolygonSvg = styled.img`
-  position: absolute;
-  top: 50%;
-  left: 3%;
-  @media (max-width: 1366px) {
-    display: none;
   }
 `;

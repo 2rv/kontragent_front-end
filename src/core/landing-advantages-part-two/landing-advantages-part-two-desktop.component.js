@@ -70,6 +70,12 @@ export function LandingAdvantagesPartTwoDesktopComponent() {
 
 const Layout = styled(LandingLayout)`
   background-color: #fff;
+  @media (min-width: 1280px) {
+    background-image: url("/static/img/landing/landing-advantages-part-two/background.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 60%;
+  }
 `;
 
 const SmallText = styled(Typography)`

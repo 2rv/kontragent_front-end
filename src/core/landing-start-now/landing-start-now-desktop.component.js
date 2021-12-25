@@ -43,6 +43,12 @@ export function LandingStartNowDesktopComponent() {
 
 const Layout = styled(LandingLayout)`
   background-color: #3AB8FF;
+  @media (min-width: 1000px) {
+    background-image: url("/static/img/landing/landing-start-now/background.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 60%;
+  }
 `;
 
 const Title = styled(Typography)`

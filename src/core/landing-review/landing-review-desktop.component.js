@@ -12,7 +12,7 @@ export function LandingReviewDesktopComponent() {
         <Title variant="landingTitleHero" sx={{ color: '#fff' }}>
           Точность проверки состовляет 97%
         </Title>
-        <Box display="flex" flexDirection="column" gap="20px" sx={{ maxWidth: '700px' }}>
+        <Box display="flex" flexDirection="column" gap="20px" sx={{ maxWidth: '600px' }}>
           <SmallText variant="landingText" sx={{ color: '#fff' }}>
             Наш сервис базируется на информации из открытых источников и баз данных,
             а также на отзывах и рейтингах бизнес-сообществ, основанных на историях
@@ -42,6 +42,12 @@ export function LandingReviewDesktopComponent() {
 
 const Layout = styled(LandingLayout)`
   background-color: #3AB8FF;
+  @media (min-width: 1000px) {
+    background-image: url("/static/img/landing/landing-review/background.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 60%;
+  }
 `;
 
 const Title = styled(Typography)`

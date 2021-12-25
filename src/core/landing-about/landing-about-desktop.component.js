@@ -29,6 +29,12 @@ export function LandingAboutDesktopComponent() {
 
 const Layout = styled(LandingLayout)`
   background-color: #F3F3F3;
+  @media (min-width: 1000px) {
+    background-image: url("/static/img/landing/landing-about/background.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 60%;
+  }
 `;
 
 const Title = styled(Typography)`

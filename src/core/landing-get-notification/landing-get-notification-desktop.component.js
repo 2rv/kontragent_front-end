@@ -8,6 +8,7 @@ import { LandingLayout, LandingButtonComponent } from '../../lib/common/landing'
 export function LandingGetNotificationDesktopComponent() {
   return (
     <Layout>
+      <PolygonSvg src="/static/img/landing/polygon.svg" />
       <Grid container direction="row" alignItems="center" wrap="wrap" gap="32px">
         <Grid item sx={{ maxWidth: '500px' }} display="flex" flexDirection="column" gap="20px">
           <Title variant="landingTitleHero">
@@ -36,6 +37,7 @@ export function LandingGetNotificationDesktopComponent() {
 
 const Layout = styled(LandingLayout)`
   background-color: #F3F3F3;
+  position: relative;
 `;
 
 const Title = styled(Typography)`
@@ -49,5 +51,14 @@ const SmallText = styled(Typography)`
   @media (min-width: 0px) and (max-width: 599px) {
     font-size: 14px;
     line-height: 20px;
+  }
+`;
+
+const PolygonSvg = styled.img`
+  position: absolute;
+  top: 50%;
+  left: 3%;
+  @media (max-width: 1366px) {
+    display: none;
   }
 `;

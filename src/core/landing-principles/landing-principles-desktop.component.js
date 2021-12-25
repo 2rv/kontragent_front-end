@@ -7,6 +7,8 @@ import { LandingLayout } from '../../lib/common/landing';
 export function LandingPrinciplesDesktopComponent() {
   return (
     <Layout>
+      <PolygonSvg src="/static/img/landing/polygon.svg" />
+      <BubbleSvg src="/static/img/landing/2-bubble.svg" />
       <Grid container gap="32px">
         <Grid item display="flex" flexDirection="column" textAlign="center" gap="20px">
           <Title variant="landingTitleHero">
@@ -39,6 +41,7 @@ export function LandingPrinciplesDesktopComponent() {
 
 const Layout = styled(LandingLayout)`
   background-color: #F3F3F3;
+  position: relative;
 `;
 
 const Title = styled(Typography)`
@@ -61,5 +64,23 @@ const Icon = styled.img`
   @media (min-width: 0px) and (max-width: 599px) {
     width: 20px;
     height: 20px;
+  }
+`;
+
+const PolygonSvg = styled.img`
+  position: absolute;
+  top: 50%;
+  right: 3%;
+  @media (max-width: 1366px) {
+    display: none;
+  }
+`;
+
+const BubbleSvg = styled.img`
+  position: absolute;
+  top: 50%;
+  left: 3%;
+  @media (max-width: 1366px) {
+    display: none;
   }
 `;

@@ -11,7 +11,7 @@ export function LandingHeroDesktopComponent() {
         display="flex"
         alignItems="center"
         justifyContent="center"
-        sx={{ minHeight: { xs: '400px', lg: '90vh' } }}
+        sx={{ minHeight: { xs: '400px', lg: '85vh' } }}
       >
         <Box display="flex" flexDirection="column" gap="20px">
           <Title variant="landingTitle">
@@ -57,9 +57,10 @@ const Layout = styled(LandingLayout)`
     background-repeat: no-repeat;
     background-position: 50% 60%;
   }
-  @media (min-width: 1601px) and (max-width: 1900px) {
+  @media (min-width: 1601px) {
     background-image: url("/static/img/landing/landing-hero/background-max-display.svg");
     background-repeat: no-repeat;
+    background-size: cover;
     background-position: 50% 60%;
   }
 `;
