@@ -4,12 +4,21 @@ import Typography from '@mui/material/Typography';
 
 import { AUTH_SIGNUP_ROUTE_PATH } from '../auth-signup';
 import { LandingLayout, LandingButtonComponent } from '../../lib/common/landing';
+import { redirect } from '../../main/navigation';
 
 export function LandingAboutDesktopComponent() {
   return (
     <Layout>
-      <Box display="flex" flexDirection="column" gap="20px">
-        <Title variant="landingTitleHero">
+      <Box
+        sx={{
+          display: 'flex',
+          justifyContent: 'center',
+          flexDirection: 'column',
+          minHeight: { xs: '300px', lg: '350px' },
+          gap: { xs: '12px', lg: '24px' },
+        }}
+      >
+        <Title variant="landingTitle">
           Что мы предлагаем?
         </Title>
         <SmallText variant="landingText" sx={{ maxWidth: '700px' }}>
@@ -20,7 +29,6 @@ export function LandingAboutDesktopComponent() {
         <LandingButtonComponent
           tid="Пройти регистрацию"
           onClick={() => redirect(AUTH_SIGNUP_ROUTE_PATH)}
-          sx={{ width: '100%', maxWidth: '320px' }}
         />
       </Box>
     </Layout>
@@ -30,7 +38,7 @@ export function LandingAboutDesktopComponent() {
 const Layout = styled(LandingLayout)`
   background-color: #F3F3F3;
   @media (min-width: 1000px) {
-    background-image: url("/static/img/landing/landing-about/background.png");
+    background-image: url("/static/img/landing/landing-about/background.svg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 50% 60%;
@@ -39,14 +47,14 @@ const Layout = styled(LandingLayout)`
 
 const Title = styled(Typography)`
   @media (min-width: 0px) and (max-width: 599px) {
-    font-size: 17px;
-    line-height: 20px;
+    font-size: 16px;
+    line-height: 24px;
   }
 `;
 
 const SmallText = styled(Typography)`
   @media (min-width: 0px) and (max-width: 599px) {
-    font-size: 14px;
-    line-height: 20px;
+    font-size: 12px;
+    line-height: 18px;
   }
 `;

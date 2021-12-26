@@ -5,6 +5,7 @@ import Typography from '@mui/material/Typography';
 
 import { LandingLayout } from '../../lib/common/landing';
 import { LandingAdvantagesPartTwoSectionDesktopCompmponent } from './frame/landing-advantages-part-two-section-desktop.component';
+import { LandingAdvantagesPartTwoMobileComponent } from './landing-advantages-part-two-mobile.component';
 import { PopoverComponent } from './frame/popover.component';
 
 export function LandingAdvantagesPartTwoDesktopComponent() {
@@ -20,12 +21,12 @@ export function LandingAdvantagesPartTwoDesktopComponent() {
 
   return (
     <Layout>
-      <Box display="grid" gap="32px">
+      <Box gap="32px" sx={{ display: { xs: 'none', lg: 'grid' } }}>
         <LandingAdvantagesPartTwoSectionDesktopCompmponent
-          image={`/static/img/landing/landing-advantages/image-3.jpg`}
+          image={`/static/img/landing/landing-advantages-part-two/image-1.svg`}
           title={`Почему стоит начать пользоваться нашей платформой?`}
           description={
-            <SmallText variant="body1" sx={{ mt: 6 }}>
+            <SmallText variant="body1">
               Сегодня «письма счастья» или предпроверочные мероприятия невозможно заблаговременно спрогнозировать, а тем более угадать финансовые потери от потенциально планируемых претензий.<br/><br/>
               Сегодняшние реалии таковы, что в определенных контекстах крайне невыгодно предупреждать или сигнализировать налогоплательщику о его возможных допущенных нарушениях НК РФ,
               так как от этого будет зависеть объём средств истребованных в бюджет РФ.<br/><br/>
@@ -35,20 +36,20 @@ export function LandingAdvantagesPartTwoDesktopComponent() {
         />
         <LandingAdvantagesPartTwoSectionDesktopCompmponent
           rowReverse={true}
-          image={`/static/img/landing/landing-advantages/image-4.jpg`}
+          image={`/static/img/landing/landing-advantages-part-two/image-2.svg`}
           title={`Почему стоит начать именно сегодня и сейчас?`}
           description={
-            <SmallText variant="body1" sx={{ mt: 6 }}>
+            <SmallText variant="body1">
               Платформа заранее позволяет с одной стороны минимизировать потенциальные доначисления, а с другой стороны предупредить о надвигающихся рисках со стороны
               недобросовестных партнеров и контрагентах. А самое главное дает драгоценное время на исправление ситуации!
             </SmallText>
           }
         />
         <LandingAdvantagesPartTwoSectionDesktopCompmponent
-          image={`/static/img/landing/landing-advantages/image-5.jpg`}
+          image={`/static/img/landing/landing-advantages-part-two/image-3.svg`}
           title={`Почему именно наша платформа?`}
           description={
-            <SmallText variant="body1" sx={{ mt: 6 }}>
+            <SmallText variant="body1">
               Платформа уникальна и не имеет аналогов.<br/><br/>
               Наши возможные конкуренты заставляют подписывать налоговую{' '}
               <PopoverComponent
@@ -64,14 +65,16 @@ export function LandingAdvantagesPartTwoDesktopComponent() {
           }
         />
       </Box>
+      <LandingAdvantagesPartTwoMobileComponent />
     </Layout>
   );
 }
 
 const Layout = styled(LandingLayout)`
   background-color: #fff;
+  padding: 32px 0;
   @media (min-width: 1280px) {
-    background-image: url("/static/img/landing/landing-advantages-part-two/background.png");
+    background-image: url("/static/img/landing/landing-advantages-part-two/background.svg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 50% 60%;
@@ -80,7 +83,7 @@ const Layout = styled(LandingLayout)`
 
 const SmallText = styled(Typography)`
   @media (min-width: 0px) and (max-width: 599px) {
-    font-size: 14px;
-    line-height: 20px;
+    font-size: 12px;
+    line-height: 18px;
   }
 `;

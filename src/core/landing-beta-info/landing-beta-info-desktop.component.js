@@ -7,12 +7,12 @@ import { LandingLayout } from '../../lib/common/landing';
 export function LandingBetaInfoDesktopComponent({ graphicData }) {
   return (
     <Layout>
-      <Box display="flex" flexDirection="column" gap="20px">
-        <Box item display="flex" flexDirection="column" gap="20px">
-          <Title variant="landingTitleHero">
+      <Box display="flex" justifyContent="center" flexDirection="column" gap="24px" sx={{ minHeight: { xs: '500px', lg: '440px' } }}>
+        <Box item display="flex" flexDirection="column" sx={{ gap: { xs: '12px', lg: '24px' } }}>
+          <Title variant="landingTitle">
             Наша платформа в Бета-версии
           </Title>
-          <SmallText variant="landingText" sx={{ maxWidth: '700px' }}>
+          <SmallText variant="landingText" sx={{ maxWidth: '550px' }}>
             Каждый месяц мы внедряем новый функционал в нашу платформу
             и постоянно улучшаем текущий. Станьте первыми, кто получит
             уникальные бонусы от пользования нашей платформы.
@@ -28,10 +28,12 @@ export function LandingBetaInfoDesktopComponent({ graphicData }) {
                     <GraphicLine src={graphic.svgLine} />
                   )}
                 </Box>
-                <Title variant="title" sx={{ my: 4 }}>{graphic.date}</Title>
-                {graphic.tasks.map((task, index) => (
-                  <SmallText key={index} variant="landingText">{task}</SmallText>
-                ))}
+                <GraphicText variant="title">{graphic.date}</GraphicText>
+                <ul style={{ listStyle: 'inherit', marginLeft: '15px' }}>
+                  {graphic.tasks.map((task, index) => (
+                    <li><GraphicDescription key={index} variant="landingText">{task}</GraphicDescription></li>
+                  ))}
+                </ul>
               </Box>
             ))}
           </GraphicContainer>
@@ -44,13 +46,13 @@ export function LandingBetaInfoDesktopComponent({ graphicData }) {
 const Layout = styled(LandingLayout)`
   background-color: #fff;
   @media (min-width: 1366px) {
-    background-image: url("/static/img/landing/landing-beta-info/background.png");
+    background-image: url("/static/img/landing/landing-beta-info/background.svg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 50% 60%;
   }
   @media (min-width: 0px) and (max-width: 599px) {
-    background-image: url("/static/img/landing/landing-beta-info/background-mobile.png");
+    background-image: url("/static/img/landing/landing-beta-info/background-mobile.svg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 50% 60%;
@@ -59,8 +61,15 @@ const Layout = styled(LandingLayout)`
 
 const GraphicContainer = styled.div`
   display: flex;
+  justify-content: space-between;
   flex-wrap: wrap;
   gap: 32px;
+  div {
+    gap: 16px;
+    @media (min-width: 0px) and (max-width: 599px) {
+      gap: 6px;
+    }
+  }
 `;
 
 const GraphicCircle = styled.img`
@@ -75,8 +84,7 @@ const GraphicCircle = styled.img`
 const GraphicLine = styled.img`
   position: absolute;
   left: 45px;
-  width: 100%;
-  max-width: 235px;
+  max-width: 252px;
   @media (max-width: 1140px) {
     display: none;
   }
@@ -84,14 +92,28 @@ const GraphicLine = styled.img`
 
 const Title = styled(Typography)`
   @media (min-width: 0px) and (max-width: 599px) {
-    font-size: 17px;
-    line-height: 20px;
+    font-size: 16px;
+    line-height: 24px;
   }
 `;
 
 const SmallText = styled(Typography)`
   @media (min-width: 0px) and (max-width: 599px) {
-    font-size: 14px;
-    line-height: 20px;
+    font-size: 12px;
+    line-height: 18px;
+  }
+`;
+
+const GraphicText = styled(Typography)`
+  @media (min-width: 0px) and (max-width: 599px) {
+    font-size: 12px;
+    line-height: 18px;
+  }
+`;
+
+const GraphicDescription = styled(Typography)`
+  @media (min-width: 0px) and (max-width: 599px) {
+    font-size: 10px;
+    line-height: 15px;
   }
 `;

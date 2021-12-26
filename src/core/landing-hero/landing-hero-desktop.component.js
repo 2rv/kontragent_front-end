@@ -3,32 +3,34 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 
 import { LandingLayout, LandingButtonComponent } from '../../lib/common/landing';
+import { LandingHeroMobileComponent } from './landing-hero-mobile.component';
 
 export function LandingHeroDesktopComponent() {
   return (
     <Layout>
       <Box
-        display="flex"
-        alignItems="center"
-        justifyContent="center"
-        sx={{ minHeight: { xs: '400px', lg: '85vh' } }}
+        sx={{
+          display: { xs: 'none', lg: 'flex' },
+          alignItems: 'center',
+          minHeight: '85vh',
+        }}
       >
-        <Box display="flex" flexDirection="column" gap="20px">
-          <Title variant="landingTitle">
-            Платформа бизнес-сообщества
-          </Title>
-          <SmallText variant="landingText">
-            Выявите налоговые риски с недобросовестными контрагентами в режиме онлайн
-          </SmallText>
-          <LandingButtonComponent
-            tid="Узнать больше"
-            sx={{ width: '100%', maxWidth: '320px' }}
-          />
-        </Box>
-        <Box sx={{ display: { xs: 'none', lg: 'block' } }}>
-          <img src="/static/img/landing/landing-hero/info-image.png" />
+        <Box display="flex" alignItems="center" gap="32px">
+          <Box display="flex" flexDirection="column" gap="32px" width="850px">
+            <Title variant="landingTitleHero">
+              Платформа бизнес-сообщества
+            </Title>
+            <SmallText variant="landingText">
+              Выявите налоговые риски с недобросовестными контрагентами в режиме онлайн
+            </SmallText>
+            <LandingButtonComponent tid="Узнать больше" />
+          </Box>
+          <Box>
+            <img src="/static/img/landing/landing-hero/info-image.svg" />
+          </Box>
         </Box>
       </Box>
+      <LandingHeroMobileComponent />
     </Layout>
   );
 }
@@ -67,14 +69,16 @@ const Layout = styled(LandingLayout)`
 
 const Title = styled(Typography)`
   @media (min-width: 0px) and (max-width: 599px) {
-    font-size: 17px;
-    line-height: 20px;
+    font-size: 16px;
+    line-height: 24px;
   }
 `;
 
 const SmallText = styled(Typography)`
+  font-size: 20px;
+  line-height: 35px;
   @media (min-width: 0px) and (max-width: 599px) {
-    font-size: 14px;
-    line-height: 20px;
+    font-size: 12px;
+    line-height: 18px;
   }
 `;

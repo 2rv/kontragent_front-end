@@ -2,16 +2,16 @@ import styled from 'styled-components';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 
-export function LandingAdvantagesSectionDesktopCompmponent({ rowReverse, title, description, image }) {
+export function LandingAdvantagesPartTwoSectionMobileCompmponent({ title, description, image }) {
   return (
     <Box
       display="flex"
-      alignItems="center"
-      flexDirection={rowReverse ? 'row-reverse' : 'row'}
-      gap="60px"
+      alignItems="flex-start"
+      flexDirection="column-reverse"
+      gap="12px"
     >
-      <Box display="flex" flexDirection="column" gap="24px" maxWidth="529px">
-        <Title variant="landingTitle" sx={{ fontSize: '24px' }}>{title}</Title>
+      <Box display="flex" flexDirection="column" gap="12px" maxWidth="529px">
+        <Title variant="landingTitle">{title}</Title>
         {description}
       </Box>
       <Box>
@@ -27,3 +27,4 @@ const Title = styled(Typography)`
     line-height: 24px;
   }
 `;
+

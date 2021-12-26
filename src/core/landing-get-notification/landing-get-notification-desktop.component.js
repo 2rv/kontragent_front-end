@@ -1,20 +1,21 @@
 import styled from 'styled-components';
-import Grid from '@mui/material/Grid';
+import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 
 import { AUTH_SIGNUP_ROUTE_PATH } from '../auth-signup';
 import { LandingLayout, LandingButtonComponent } from '../../lib/common/landing';
+import { redirect } from '../../main/navigation';
 
 export function LandingGetNotificationDesktopComponent() {
   return (
     <Layout>
-      <PolygonSvg src="/static/img/landing/polygon.svg" />
-      <Grid container direction="row" alignItems="center" wrap="wrap" gap="32px">
-        <Grid item sx={{ maxWidth: '500px' }} display="flex" flexDirection="column" gap="20px">
-          <Title variant="landingTitleHero">
+      <PolygonSvg src="/static/img/landing/polygon-white-background.svg" />
+      <Box display="flex" alignItems="center" gap="32px">
+        <Box display="flex" flexDirection="column" sx={{ gap: { xs: '12px', lg: '24px' } }}>
+          <Title variant="landingTitle">
             Узнайте о проблеме первыми
           </Title>
-          <SmallText variant="landingText">
+          <SmallText variant="landingText" sx={{ maxWidth: '700px' }}>
             Наша платформа как система раннего предупреждения,
             клиент получает первым сигнал о потенциальных проблемах
             как в своем бизнесе, так и в бизнесе его партнерах,
@@ -24,13 +25,12 @@ export function LandingGetNotificationDesktopComponent() {
           <LandingButtonComponent
             tid="Пройти регистрацию"
             onClick={() => redirect(AUTH_SIGNUP_ROUTE_PATH)}
-            sx={{ width: '100%', maxWidth: '320px' }}
           />
-        </Grid>
-        <Grid item sx={{ maxWidth: '500px', display: { xs: 'none', lg: 'block' } }}>
-          <img src="/static/img/landing/landing-get-notification/info-image.png" />
-        </Grid>
-      </Grid>
+        </Box>
+        <Box sx={{ display: { xs: 'none', lg: 'block' } }}>
+          <img src="/static/img/landing/landing-get-notification/info-image.svg" />
+        </Box>
+      </Box>
     </Layout>
   );
 }
@@ -42,15 +42,15 @@ const Layout = styled(LandingLayout)`
 
 const Title = styled(Typography)`
   @media (min-width: 0px) and (max-width: 599px) {
-    font-size: 17px;
-    line-height: 20px;
+    font-size: 16px;
+    line-height: 24px;
   }
 `;
 
 const SmallText = styled(Typography)`
   @media (min-width: 0px) and (max-width: 599px) {
-    font-size: 14px;
-    line-height: 20px;
+    font-size: 12px;
+    line-height: 18px;
   }
 `;
 

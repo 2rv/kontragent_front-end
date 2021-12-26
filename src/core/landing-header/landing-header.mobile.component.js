@@ -21,8 +21,8 @@ export function LandingHeaderMobileComponent({ activePath, headerLinks }) {
   return (
     <Box sx={{ display: { xs: 'flex', md: 'none' } }}>
       <Box sx={{ display: 'flex', p: 3, width: '100%' }}>
-        <img height="22px" src="/static/img/menuIcon.svg" onClick={handleDrawerToggle} />
-        <img height="22px" src="/static/img/logo.svg" style={{ margin: '0 auto' }} />
+        <img src="/static/img/landing/mobile-menu.svg" onClick={handleDrawerToggle} />
+        <img height="20px" src="/static/img/logo.svg" style={{ margin: '0 auto' }} />
       </Box>
       <Drawer
         variant="temporary"
@@ -43,41 +43,40 @@ export function LandingHeaderMobileComponent({ activePath, headerLinks }) {
         }}
       >
         <Box sx={{ display: 'flex', p: 0, width: '100%' }}>
-          <img height="22px" src="/static/img/cross.svg" onClick={handleDrawerToggle} />
-          <img height="22px" src="/static/img/logo.svg" style={{ margin: '0 auto' }} />
+          <img height="20px" src="/static/img/cross.svg" onClick={handleDrawerToggle} />
+          <img height="20px" src="/static/img/logo.svg" style={{ margin: '0 auto' }} />
         </Box>
-        <Box sx={{ overflow: 'auto', pt: 2, display: 'grid', gap: '10px', mt: 5 }}>
+        <Box sx={{ display: 'grid', gap: 2, mt: 5 }}>
           {headerLinks.map((item, i) => (
-            <Box item key={i}>
-              <Typography
-                key={i}
-                sx={
-                  activePath === item.path
-                    ? {
-                        fontWeight: '600',
-                        color: '#000',
-                      }
-                    : { color: '#707070', cursor: 'pointer' }
-                }
-              >
-                {item.name}
-              </Typography>
-            </Box>
+            <Typography
+              key={i}
+              sx={
+                activePath === item.path
+                  ? {
+                      fontWeight: '600',
+                      color: '#000',
+                    }
+                  : { color: '#707070', cursor: 'pointer' }
+              }
+            >
+              {item.name}
+            </Typography>
           ))}
-          <Button variant="black" onClick={() => redirect(AUTH_LOGIN_ROUTE_PATH)} sx={{ mt: 3 }}>
-            Вход
+          <Button
+            variant="black"
+            onClick={() => redirect(AUTH_LOGIN_ROUTE_PATH)}
+            sx={{ height: '30px', mt: 3 }}
+          >
+            <Typography variant="landingText" sx={{ fontSize: '12px' }}>Вход</Typography>
           </Button>
           <LandingButtonComponent
             tid="Регистрация"
             onClick={() => redirect(AUTH_SIGNUP_ROUTE_PATH)}
+            height="30px"
+            maxWidth="100%"
           />
         </Box>
       </Drawer>
     </Box>
   );
 }
-
-const HeaderContent = styled.div`
-  display: grid;
-  grid-template-columns: 0.8fr 1fr;
-`;

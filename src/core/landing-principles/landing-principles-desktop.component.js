@@ -3,15 +3,16 @@ import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 
 import { LandingLayout } from '../../lib/common/landing';
+import { LandingPrinciplesMobileComponent } from './landing-principles-mobile.component';
 
 export function LandingPrinciplesDesktopComponent() {
   return (
     <Layout>
-      <PolygonSvg src="/static/img/landing/polygon.svg" />
+      <PolygonSvg src="/static/img/landing/polygon-white-background.svg" />
       <BubbleSvg src="/static/img/landing/2-bubble.svg" />
-      <Grid container gap="32px">
+      <Grid container gap="32px" minHeight="300px" sx={{ display: { xs: 'none', lg: 'flex' } }}>
         <Grid item display="flex" flexDirection="column" textAlign="center" gap="20px">
-          <Title variant="landingTitleHero">
+          <Title variant="landingTitle">
             Платформа придерживается некоторым принципам
           </Title>
           <SmallText variant="landingText">
@@ -35,6 +36,7 @@ export function LandingPrinciplesDesktopComponent() {
           </Grid>
         </Grid>
       </Grid>
+      <LandingPrinciplesMobileComponent />
     </Layout>
   );
 }
@@ -46,25 +48,21 @@ const Layout = styled(LandingLayout)`
 
 const Title = styled(Typography)`
   @media (min-width: 0px) and (max-width: 599px) {
-    font-size: 17px;
-    line-height: 20px;
+    font-size: 16px;
+    line-height: 24px;
   }
 `;
 
 const SmallText = styled(Typography)`
   @media (min-width: 0px) and (max-width: 599px) {
-    font-size: 14px;
-    line-height: 20px;
+    font-size: 12px;
+    line-height: 18px;
   }
 `;
 
 const Icon = styled.img`
   width: 50px;
   height: 50px;
-  @media (min-width: 0px) and (max-width: 599px) {
-    width: 20px;
-    height: 20px;
-  }
 `;
 
 const PolygonSvg = styled.img`

@@ -14,12 +14,19 @@ import { LandingHeaderMobileComponent } from './landing-header.mobile.component'
 export function LandingHeaderDesktopComponent({ activePath, headerLinks }) {
   return (
     <>
-      <AppBar position="static" sx={{ backgroundColor: '#F3F3F3', p: 0, display: { xs: 'none', md: 'flex' } }}>
-        <Toolbar sx={{ justifyContent: 'space-between' }}>
-          <IconButton>
-            <img height="22px" src="/static/img/logo.svg" />
+      <AppBar
+        position="static"
+        sx={{
+          p: 0,
+          backgroundColor: '#F3F3F3',
+          display: { xs: 'none', md: 'flex' },
+        }}
+      >
+        <Toolbar sx={{ display: 'grid', gridTemplateColumns: '0.7fr 2fr 0.4fr' }}>
+          <IconButton sx={{ justifySelf: 'flex-start' }}>
+            <img height="24px" src="/static/img/logo.svg" />
           </IconButton>
-          <Box sx={{ display: 'flex', gap: 4 }}>
+          <Box sx={{ display: 'flex', gap: 5 }}>
             {headerLinks.map((item, i) => (
               <Typography
                 key={i}
@@ -46,6 +53,7 @@ export function LandingHeaderDesktopComponent({ activePath, headerLinks }) {
             <LandingButtonComponent
               tid="Регистрация"
               onClick={() => redirect(AUTH_SIGNUP_ROUTE_PATH)}
+              height="46px"
             />
           </Box>
         </Toolbar>

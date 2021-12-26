@@ -1,33 +1,33 @@
 import styled from 'styled-components';
-import Grid from '@mui/material/Grid';
+import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 
 export function LandingAdvantagesPartTwoSectionDesktopCompmponent({ rowReverse, title, description, image }) {
   return (
-    <Grid
-      container
-      direction={rowReverse ? 'row-reverse' : 'row'}
+    <Box
+      display="flex"
       alignItems="center"
-      wrap="wrap"
+      justifyContent="center"
+      flexWrap="wrap"
       gap="32px"
       sx={{
         flexDirection: { xs: 'column-reverse', lg: rowReverse ? 'row-reverse' : 'row' }
       }}
     >
-      <Grid item sx={{ maxWidth: '500px' }} display="flex" flexDirection="column">
-        <Title variant="landingTitleHero">{title}</Title>
+      <Box display="flex" flexDirection="column" gap="24px" maxWidth="529px">
+        <Title variant="landingTitle" sx={{ fontSize: '24px' }}>{title}</Title>
         {description}
-      </Grid>
-      <Grid item sx={{ maxWidth: '500px' }}>
+      </Box>
+      <Box>
         <img src={image} />
-      </Grid>
-    </Grid>
+      </Box>
+    </Box>
   );
 }
 
 const Title = styled(Typography)`
   @media (min-width: 0px) and (max-width: 599px) {
-    font-size: 17px;
-    line-height: 20px;
+    font-size: 16px;
+    line-height: 24px;
   }
 `;

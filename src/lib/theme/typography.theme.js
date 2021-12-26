@@ -184,20 +184,20 @@ export const typography = {
     fontFamily:
       '"IBM Plex Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"',
     fontWeight: 700,
-    fontSize: 36,
-    lineHeight: '54px',
+    fontSize: 28,
+    lineHeight: '29px',
   },
   landingText: {
     fontFamily:
       '"IBM Plex Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"',
-    fontSize: 20,
-    lineHeight: '35px',
+    fontSize: 16,
+    lineHeight: '24px',
   },
   landingTitleHero: {
     fontFamily:
       '"IBM Plex Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"',
     fontWeight: 700,
-    fontSize: 28,
-    lineHeight: '40px',
+    fontSize: 36,
+    lineHeight: '54px',
   },
 };
