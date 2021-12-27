@@ -6,9 +6,8 @@ import { LandingAdvantagesSectionMobileCompmponent } from './frame/landing-advan
 
 export function LandingAdvantagesMobileComponent() {
   return (
-    <Box gap="24px" sx={{ display: { xs: 'grid', md: 'none' } }}>
+    <Box sx={{ display: { xs: 'grid', md: 'none' }, gap: '24px' }}>
       <LandingAdvantagesSectionMobileCompmponent
-        rowReverse={true}
         image={`/static/img/landing/landing-advantages/image-1-mobile.svg`}
         title={`Что покупают клиенты на нашей платформе?`}
         description={
@@ -29,7 +28,6 @@ export function LandingAdvantagesMobileComponent() {
         }
       />
       <LandingAdvantagesSectionMobileCompmponent
-        rowReverse={true}
         image={`/static/img/landing/landing-advantages/image-3-mobile.svg`}
         title={`Что получают клиенты после диагностики?`}
         description={

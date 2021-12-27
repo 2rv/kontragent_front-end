@@ -10,8 +10,21 @@ export function LandingGetNotificationDesktopComponent() {
   return (
     <Layout>
       <PolygonSvg src="/static/img/landing/polygon-white-background.svg" />
-      <Box display="flex" alignItems="center" gap="32px">
-        <Box display="flex" flexDirection="column" sx={{ gap: { xs: '12px', lg: '24px' } }}>
+      <Box
+        sx={{
+          minHeight: { xs: '280px', lg: '350px' },
+          display: 'flex',
+          alignItems: 'center',
+          gap: '32px',
+        }}
+      >
+        <Box
+          sx={{
+            display: 'flex',
+            flexDirection: 'column',
+            gap: { xs: '12px', lg: '24px' },
+          }}
+        >
           <Title variant="landingTitle">
             Узнайте о проблеме первыми
           </Title>
@@ -25,6 +38,7 @@ export function LandingGetNotificationDesktopComponent() {
           <LandingButtonComponent
             tid="Пройти регистрацию"
             onClick={() => redirect(AUTH_SIGNUP_ROUTE_PATH)}
+            sx={{ marginTop: { xs: '5px', lg: 'inherit' } }}
           />
         </Box>
         <Box sx={{ display: { xs: 'none', lg: 'block' } }}>

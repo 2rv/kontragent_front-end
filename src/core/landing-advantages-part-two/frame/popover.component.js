@@ -1,6 +1,6 @@
 import React from 'react';
 import Popover from '@mui/material/Popover';
-import { Typography } from '@mui/material';
+import Typography from '@mui/material/Typography';
 
 export function PopoverComponent({ anchorEl, visibility, onClosePopover }) {
   return (
@@ -16,7 +16,13 @@ export function PopoverComponent({ anchorEl, visibility, onClosePopover }) {
         },
       }}
     >
-      <Typography sx={{ maxWidth: '500px', color: '#707070', fontSize: { xs: '10px', lg: 'inherit' } }}>
+      <Typography
+        sx={{
+          maxWidth: '500px',
+          color: '#707070',
+          fontSize: { xs: '10px', lg: 'inherit' },
+        }}
+      >
         * «Налоговая оговорка» – особое условие договора, которое является действенным инструментом финансовой и имущественной защиты добросовестного заказчика от налоговых последствий за действия
         (бездействие) третьих лиц по выполнению обязанности уплаты налогов, в случае установления претензий со стороны налоговых органов.
         <br /><br />

@@ -13,7 +13,13 @@ export function LandingProblemsMobileComponent() {
         minHeight: '300px',
       }}
     >
-      <Box display="flex" flexDirection="column" gap="8px">
+      <Box
+        sx={{
+          display: 'flex',
+          flexDirection: 'column',
+          gap: '8px',
+        }}
+      >
         <Title variant="landingTitle">
           Сталкиваетесь с этим?
         </Title>
@@ -21,17 +27,24 @@ export function LandingProblemsMobileComponent() {
           Мы раскроем вам правду и предложим решение!
         </SmallText>
       </Box>
-      <Box display="flex" flexDirection="column" justifyContent="flex-start" gap="24px">
-        <Box display="flex" alignItems="center" gap="16px">
-          <Icon src="/static/img/landing/landing-problems/icon-1.svg" />
+      <Box
+        sx={{
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'flex-start',
+          gap: '24px',
+        }}
+      >
+        <Box sx={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
+          <img src="/static/img/landing/landing-problems/icon-1-mobile.svg" />
           <SmallText variant="landingText">Побуждение откорректировать декларацию и заплатить бюджет?</SmallText>
         </Box>
-        <Box display="flex" alignItems="center" gap="16px">
-          <Icon src="/static/img/landing/landing-problems/icon-2.svg" />
+        <Box sx={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
+          <img src="/static/img/landing/landing-problems/icon-2-mobile.svg" />
           <SmallText variant="landingText">Регулярные вызовы на комиссию КАО ИФНС?</SmallText>
         </Box>
-        <Box display="flex" alignItems="center" gap="16px">
-          <Icon src="/static/img/landing/landing-problems/icon-3.svg" />
+        <Box sx={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
+          <img src="/static/img/landing/landing-problems/icon-3-mobile.svg" />
           <SmallText variant="landingText">Частые запросы со стороны ИФНС вне рамок налоговых проверок?</SmallText>
         </Box>
       </Box>
@@ -51,9 +64,4 @@ const SmallText = styled(Typography)`
     font-size: 12px;
     line-height: 18px;
   }
-`;
-
-const Icon = styled.img`
-  width: 28px;
-  height: 28px;
 `;

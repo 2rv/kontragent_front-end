@@ -12,22 +12,28 @@ export function LandingHeroDesktopComponent() {
         sx={{
           display: { xs: 'none', lg: 'flex' },
           alignItems: 'center',
+          gap: '32px',
           minHeight: '85vh',
         }}
       >
-        <Box display="flex" alignItems="center" gap="32px">
-          <Box display="flex" flexDirection="column" gap="32px" width="850px">
-            <Title variant="landingTitleHero">
-              Платформа бизнес-сообщества
-            </Title>
-            <SmallText variant="landingText">
-              Выявите налоговые риски с недобросовестными контрагентами в режиме онлайн
-            </SmallText>
-            <LandingButtonComponent tid="Узнать больше" />
-          </Box>
-          <Box>
-            <img src="/static/img/landing/landing-hero/info-image.svg" />
-          </Box>
+        <Box
+          sx={{
+            display: 'flex',
+            flexDirection: 'column',
+            gap: '32px',
+            width: '850px',
+          }}
+        >
+          <Typography variant="landingTitleHero">
+            Платформа бизнес-сообщества
+          </Typography>
+          <Typography variant="landingText" sx={{ fontSize: '20px', lineHeight: '35px' }}>
+            Выявите налоговые риски с недобросовестными контрагентами в режиме онлайн
+          </Typography>
+          <LandingButtonComponent tid="Узнать больше" />
+        </Box>
+        <Box>
+          <img src="/static/img/landing/landing-hero/info-image.svg" />
         </Box>
       </Box>
       <LandingHeroMobileComponent />
@@ -37,7 +43,6 @@ export function LandingHeroDesktopComponent() {
 
 const Layout = styled(LandingLayout)`
   background-color: #fff;
-  padding: 0;
   max-height: 100vh;
   @media (min-width: 0px) and (max-width: 599px) {
     background-image: url("/static/img/landing/landing-hero/background-mobile.svg");
@@ -64,21 +69,5 @@ const Layout = styled(LandingLayout)`
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 50% 60%;
-  }
-`;
-
-const Title = styled(Typography)`
-  @media (min-width: 0px) and (max-width: 599px) {
-    font-size: 16px;
-    line-height: 24px;
-  }
-`;
-
-const SmallText = styled(Typography)`
-  font-size: 20px;
-  line-height: 35px;
-  @media (min-width: 0px) and (max-width: 599px) {
-    font-size: 12px;
-    line-height: 18px;
   }
 `;

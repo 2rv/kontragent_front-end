@@ -1,63 +1,63 @@
 import styled from 'styled-components';
-import Grid from '@mui/material/Grid';
+import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 
-import { LandingLayout } from '../../lib/common/landing';
 import { LandingProblemsMobileComponent } from './landing-problems-mobile.component';
 
 export function LandingProblemsDesktopComponent() {
   return (
-    <Layout>
+    <>
       <BubbleSvg src="/static/img/landing/2-bubble.svg" />
-      <Grid container gap="32px" minHeight="300px" sx={{ display: { xs: 'none', lg: 'flex' } }}>
-        <Grid item display="flex" flexDirection="column" textAlign="center" gap="24px">
-          <Title variant="landingTitle">
+      <Box
+        sx={{
+          display: { xs: 'none', lg: 'flex' },
+          flexDirection: 'column',
+          justifyContent: 'center',
+          minHeight: '300px',
+          gap: '32px',
+        }}
+      >
+        <Box
+          sx={{
+            display: 'flex',
+            flexDirection: 'column',
+            textAlign: 'center',
+            gap: '16px',
+          }}
+        >
+          <Typography variant="landingTitle">
             Сталкиваетесь с этими проблемами?
-          </Title>
-          <SmallText variant="landingText">
+          </Typography>
+          <Typography variant="landingText">
             Мы раскроем вам правду и предложим решение!
-          </SmallText>
-        </Grid>
-        <Grid item>
-          <Grid container direction="row" justifyContent="center" textAlign="center" gap="24px">
-            <Grid item maxWidth="340px" display="flex" flexDirection="column" alignItems="center">
+          </Typography>
+        </Box>
+        <Box>
+          <Box
+            sx={{
+              display: 'flex',
+              justifyContent: 'space-evenly',
+              textAlign: 'center',
+            }}
+          >
+            <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '10px' }}>
               <Icon src="/static/img/landing/landing-problems/icon-1.svg" />
-              <SmallText variant="landingText">Побуждение откорректировать декларацию и заплатить бюджет?</SmallText>
-            </Grid>
-            <Grid item maxWidth="340px" display="flex" flexDirection="column" alignItems="center">
+              <Typography variant="landingText">Побуждение откорректировать<br /> декларацию и заплатить бюджет?</Typography>
+            </Box>
+            <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '10px' }}>
               <Icon src="/static/img/landing/landing-problems/icon-2.svg" />
-              <SmallText variant="landingText">Регулярные вызовы на комиссию КАО ИФНС?</SmallText>
-            </Grid>
-            <Grid item maxWidth="340px" display="flex" flexDirection="column" alignItems="center">
+              <Typography variant="landingText">Регулярные вызовы<br /> на комиссию КАО ИФНС?</Typography>
+            </Box>
+            <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '10px' }}>
               <Icon src="/static/img/landing/landing-problems/icon-3.svg" />
-              <SmallText variant="landingText">Частые запросы со стороны ИФНС вне рамок налоговых проверок?</SmallText>
-            </Grid>
-          </Grid>
-        </Grid>
-      </Grid>
-      <LandingProblemsMobileComponent />
-    </Layout>
+              <Typography variant="landingText">Частые запросы со стороны ИФНС<br /> вне рамок налоговых проверок?</Typography>
+            </Box>
+          </Box>
+        </Box>
+      </Box>
+    </>
   );
 }
-
-const Layout = styled(LandingLayout)`
-  background-color: #F3F3F3;
-  position: relative;
-`;
-
-const Title = styled(Typography)`
-  @media (min-width: 0px) and (max-width: 599px) {
-    font-size: 16px;
-    line-height: 24px;
-  }
-`;
-
-const SmallText = styled(Typography)`
-  @media (min-width: 0px) and (max-width: 599px) {
-    font-size: 12px;
-    line-height: 18px;
-  }
-`;
 
 const Icon = styled.img`
   width: 50px;

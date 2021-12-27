@@ -1,64 +1,62 @@
 import styled from 'styled-components';
-import Grid from '@mui/material/Grid';
+import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
-
-import { LandingLayout } from '../../lib/common/landing';
-import { LandingPrinciplesMobileComponent } from './landing-principles-mobile.component';
 
 export function LandingPrinciplesDesktopComponent() {
   return (
-    <Layout>
+    <>
       <PolygonSvg src="/static/img/landing/polygon-white-background.svg" />
       <BubbleSvg src="/static/img/landing/2-bubble.svg" />
-      <Grid container gap="32px" minHeight="300px" sx={{ display: { xs: 'none', lg: 'flex' } }}>
-        <Grid item display="flex" flexDirection="column" textAlign="center" gap="20px">
-          <Title variant="landingTitle">
+      <Box
+        sx={{
+          display: { xs: 'none', lg: 'flex' },
+          flexDirection: 'column',
+          justifyContent: 'center',
+          minHeight: '300px',
+          gap: '32px',
+        }}
+      >
+        <Box
+          sx={{
+            display: 'flex',
+            flexDirection: 'column',
+            textAlign: 'center',
+            gap: '16px',
+          }}
+        >
+          <Typography variant="landingTitle">
             Платформа придерживается некоторым принципам
-          </Title>
-          <SmallText variant="landingText">
+          </Typography>
+          <Typography variant="landingText">
             Вот 3 основных из них:
-          </SmallText>
-        </Grid>
-        <Grid item>
-          <Grid container direction="row" justifyContent="center" textAlign="center" gap="20px">
-            <Grid item maxWidth="345px" display="flex" flexDirection="column" alignItems="center">
+          </Typography>
+        </Box>
+        <Box>
+          <Box
+            sx={{
+              display: 'flex',
+              justifyContent: 'space-evenly',
+              textAlign: 'center',
+            }}
+          >
+            <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '10px' }}>
               <Icon src="/static/img/landing/landing-principles/icon-1.svg" />
-              <SmallText variant="landingText">Мы приносим пользу и ценность предпринимателям</SmallText>
-            </Grid>
-            <Grid item maxWidth="345px" display="flex" flexDirection="column" alignItems="center">
+              <Typography variant="landingText">Мы приносим пользу и ценность<br /> предпринимателям</Typography>
+            </Box>
+            <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '10px' }}>
               <Icon src="/static/img/landing/landing-principles/icon-2.svg" />
-              <SmallText variant="landingText">Мы ценим наших клиентов и дорожим их доверием</SmallText>
-            </Grid>
-            <Grid item maxWidth="345px" display="flex" flexDirection="column" alignItems="center">
+              <Typography variant="landingText">Мы ценим наших клиентов и дорожим<br /> их доверием</Typography>
+            </Box>
+            <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '10px' }}>
               <Icon src="/static/img/landing/landing-principles/icon-3.svg" />
-              <SmallText variant="landingText">Мы гарантируем качество и ответственность результата</SmallText>
-            </Grid>
-          </Grid>
-        </Grid>
-      </Grid>
-      <LandingPrinciplesMobileComponent />
-    </Layout>
+              <Typography variant="landingText">Мы гарантируем качество и<br /> ответственность результата</Typography>
+            </Box>
+          </Box>
+        </Box>
+      </Box>
+    </>
   );
 }
-
-const Layout = styled(LandingLayout)`
-  background-color: #F3F3F3;
-  position: relative;
-`;
-
-const Title = styled(Typography)`
-  @media (min-width: 0px) and (max-width: 599px) {
-    font-size: 16px;
-    line-height: 24px;
-  }
-`;
-
-const SmallText = styled(Typography)`
-  @media (min-width: 0px) and (max-width: 599px) {
-    font-size: 12px;
-    line-height: 18px;
-  }
-`;
 
 const Icon = styled.img`
   width: 50px;

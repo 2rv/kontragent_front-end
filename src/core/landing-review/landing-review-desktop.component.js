@@ -9,8 +9,22 @@ import { redirect } from '../../main/navigation';
 export function LandingReviewDesktopComponent() {
   return (
     <Layout>
-      <Box display="flex" flexDirection="column" justifyContent="center" gap="24px" sx={{ minHeight: { xs: '300px', lg: '400px' } }}>
-        <Box display="flex" flexDirection="column" gap="24px" sx={{ display: { xs: 'none', lg: 'flex' } }}>
+      <Box
+        sx={{
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'center',
+          gap: { xs: '12px', lg: '24px' },
+          minHeight: { xs: '300px', lg: '400px' },
+        }}
+      >
+        <Box
+          sx={{
+            display: { xs: 'none', lg: 'flex' },
+            flexDirection: 'column',
+            gap: '24px',
+          }}
+        >
           <Title variant="landingTitle" sx={{ color: '#fff' }}>
             Точность проверки состовляет 97%
           </Title>
@@ -25,7 +39,13 @@ export function LandingReviewDesktopComponent() {
             </SmallText>
           </Box>
         </Box>
-        <Box sx={{ display: { xs: 'flex', lg: 'none' } }} flexDirection="column" gap="12px">
+        <Box
+          sx={{
+            display: { xs: 'flex', lg: 'none' },
+            flexDirection: 'column',
+            gap: '12px',
+          }}
+        >
           <Title variant="landingTitle" sx={{ color: '#fff' }}>
             Точность проверки 97%
           </Title>
@@ -42,6 +62,7 @@ export function LandingReviewDesktopComponent() {
           sx={{
             backgroundColor: '#fff',
             color: '#3AB8FF',
+            marginTop: { xs: '5px', lg: 'inherit' },
             '&:hover': {
               background: '#f3f3f3',
             },

@@ -5,12 +5,21 @@ import Typography from '@mui/material/Typography';
 export function LandingAdvantagesSectionDesktopCompmponent({ rowReverse, title, description, image }) {
   return (
     <Box
-      display="flex"
-      alignItems="center"
-      flexDirection={rowReverse ? 'row-reverse' : 'row'}
-      gap="60px"
+      sx={{
+        display: 'flex',
+        alignItems: 'center',
+        flexDirection: rowReverse ? 'row-reverse' : 'row',
+        gap: '32px',
+      }}
     >
-      <Box display="flex" flexDirection="column" gap="24px" maxWidth="529px">
+      <Box
+        sx={{
+          display: 'flex',
+          flexDirection: 'column',
+          gap: '24px',
+          maxWidth: '529px',
+        }}
+      >
         <Title variant="landingTitle" sx={{ fontSize: '24px' }}>{title}</Title>
         {description}
       </Box>

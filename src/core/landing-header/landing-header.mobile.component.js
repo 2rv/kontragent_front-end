@@ -1,5 +1,4 @@
 import React from 'react';
-import styled from 'styled-components';
 import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
 import Typography from '@mui/material/Typography';
@@ -20,9 +19,17 @@ export function LandingHeaderMobileComponent({ activePath, headerLinks }) {
 
   return (
     <Box sx={{ display: { xs: 'flex', md: 'none' } }}>
-      <Box sx={{ display: 'flex', p: 3, width: '100%' }}>
+      <Box
+        sx={{
+          display: 'grid',
+          gridTemplateColumns: { xs: '1fr 2.5fr', sm: '1fr 1.7fr' },
+          alignItems: 'center',
+          width: '100%',
+          p: 3
+        }}
+      >
         <img src="/static/img/landing/mobile-menu.svg" onClick={handleDrawerToggle} />
-        <img height="20px" src="/static/img/logo.svg" style={{ margin: '0 auto' }} />
+        <img height="20px" src="/static/img/logo.svg" />
       </Box>
       <Drawer
         variant="temporary"
@@ -42,9 +49,17 @@ export function LandingHeaderMobileComponent({ activePath, headerLinks }) {
           },
         }}
       >
-        <Box sx={{ display: 'flex', p: 0, width: '100%' }}>
+        <Box
+          sx={{
+            display: 'grid',
+            gridTemplateColumns: { xs: '1fr 2.5fr', sm: '1fr 1.7fr' },
+            alignItems: 'center',
+            width: '100%',
+            p: 0,
+          }}
+        >
           <img height="20px" src="/static/img/cross.svg" onClick={handleDrawerToggle} />
-          <img height="20px" src="/static/img/logo.svg" style={{ margin: '0 auto' }} />
+          <img height="20px" src="/static/img/logo.svg" />
         </Box>
         <Box sx={{ display: 'grid', gap: 2, mt: 5 }}>
           {headerLinks.map((item, i) => (

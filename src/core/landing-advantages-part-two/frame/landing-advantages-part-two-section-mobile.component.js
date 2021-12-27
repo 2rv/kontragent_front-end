@@ -5,12 +5,21 @@ import Typography from '@mui/material/Typography';
 export function LandingAdvantagesPartTwoSectionMobileCompmponent({ title, description, image }) {
   return (
     <Box
-      display="flex"
-      alignItems="flex-start"
-      flexDirection="column-reverse"
-      gap="12px"
+      sx={{
+        display: 'flex',
+        alignItems: 'flex-start',
+        flexDirection: 'column-reverse',
+        gap: '12px',
+      }}
     >
-      <Box display="flex" flexDirection="column" gap="12px" maxWidth="529px">
+      <Box
+        sx={{
+          display: 'flex',
+          flexDirection: 'column',
+          gap: '12px',
+          maxWidth: '529px',
+        }}
+      >
         <Title variant="landingTitle">{title}</Title>
         {description}
       </Box>

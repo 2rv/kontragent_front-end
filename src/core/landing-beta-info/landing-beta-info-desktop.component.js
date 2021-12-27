@@ -7,8 +7,22 @@ import { LandingLayout } from '../../lib/common/landing';
 export function LandingBetaInfoDesktopComponent({ graphicData }) {
   return (
     <Layout>
-      <Box display="flex" justifyContent="center" flexDirection="column" gap="24px" sx={{ minHeight: { xs: '500px', lg: '440px' } }}>
-        <Box item display="flex" flexDirection="column" sx={{ gap: { xs: '12px', lg: '24px' } }}>
+      <Box
+        sx={{
+          display: 'flex',
+          justifyContent: 'center',
+          flexDirection: 'column',
+          gap: '24px',
+          minHeight: { xs: '500px', lg: '440px' },
+        }}
+      >
+        <Box
+          sx={{
+            gap: { xs: '12px', lg: '24px' },
+            display: 'flex',
+            flexDirection: 'column',
+          }}
+        >
           <Title variant="landingTitle">
             Наша платформа в Бета-версии
           </Title>
@@ -18,10 +32,10 @@ export function LandingBetaInfoDesktopComponent({ graphicData }) {
             уникальные бонусы от пользования нашей платформы.
           </SmallText>
         </Box>
-        <Box item>
+        <Box>
           <GraphicContainer>
             {graphicData.map((graphic, index) => (
-              <Box key={index} display="flex" flexDirection="column">
+              <Box key={index} sx={{ display: 'flex', flexDirection: 'column' }}>
                 <Box sx={{ position: 'relative', display: 'flex', alignItems: 'center' }}>
                   <GraphicCircle src={graphic.svgCircle} />
                   {graphic.svgLine && (
@@ -31,7 +45,7 @@ export function LandingBetaInfoDesktopComponent({ graphicData }) {
                 <GraphicText variant="title">{graphic.date}</GraphicText>
                 <ul style={{ listStyle: 'inherit', marginLeft: '15px' }}>
                   {graphic.tasks.map((task, index) => (
-                    <li><GraphicDescription key={index} variant="landingText">{task}</GraphicDescription></li>
+                    <li key={index}><GraphicDescription variant="landingText">{task}</GraphicDescription></li>
                   ))}
                 </ul>
               </Box>
@@ -106,6 +120,7 @@ const SmallText = styled(Typography)`
 
 const GraphicText = styled(Typography)`
   @media (min-width: 0px) and (max-width: 599px) {
+    margin-top: 5px;
     font-size: 12px;
     line-height: 18px;
   }

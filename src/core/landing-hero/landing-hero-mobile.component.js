@@ -12,7 +12,7 @@ export function LandingHeroMobileComponent() {
         justifyContent: 'center',
         flexDirection: 'column',
         minHeight: '400px',
-        gap: 4,
+        gap: '16px',
       }}
     >
       <Title variant="landingTitleHero">

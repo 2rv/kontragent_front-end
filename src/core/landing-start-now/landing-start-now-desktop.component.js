@@ -9,22 +9,28 @@ import { redirect } from '../../main/navigation';
 export function LandingStartNowDesktopComponent() {
   return (
     <Layout>
-      <Box display="flex" flexDirection="column" justifyContent="center" sx={{ gap: { xs: '12px', lg: '24px' } }} minHeight="400px">
-        <Box display="flex" flexDirection="column" gap="24px">
-          <Title variant="landingTitle" sx={{ color: '#fff' }}>
-            Начните пользоваться платформой
-          </Title>
-          <Box display="flex" flexDirection="column" gap="24px" maxWidth="600px">
-            <SmallText variant="landingText" sx={{ color: '#fff' }}>
-              Использование постоянно обновляемых алгоритмов и методических рекомендаций со стороны ФНС РФ, ЦБ РФ и Росфинмониторинга РФ.
-            </SmallText>
-            <SmallText variant="landingText" sx={{ color: '#fff' }}>
-              Более 20-ти источников информации с государственных платформ.
-            </SmallText>
-            <SmallText variant="landingText" sx={{ color: '#fff' }}>
-              Обновляемые базы данных о недобросовестных контрагентах, информацию которую сообщают юзеры в рамках их финансово-хозяйственной деятельности.
-            </SmallText>
-          </Box>
+      <Box
+        sx={{
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'center',
+          gap: { xs: '12px', lg: '24px' },
+          minHeight: '400px',
+        }}
+      >
+        <Title variant="landingTitle" sx={{ color: '#fff' }}>
+          Начните пользоваться платформой
+        </Title>
+        <Box sx={{ display: 'flex', flexDirection: 'column', gap: '24px', maxWidth: '600px' }}>
+          <SmallText variant="landingText" sx={{ color: '#fff' }}>
+            Использование постоянно обновляемых алгоритмов и методических рекомендаций со стороны ФНС РФ, ЦБ РФ и Росфинмониторинга РФ.
+          </SmallText>
+          <SmallText variant="landingText" sx={{ color: '#fff' }}>
+            Более 20-ти источников информации с государственных платформ.
+          </SmallText>
+          <SmallText variant="landingText" sx={{ color: '#fff' }}>
+            Обновляемые базы данных о недобросовестных контрагентах, информацию которую сообщают юзеры в рамках их финансово-хозяйственной деятельности.
+          </SmallText>
         </Box>
         <LandingButtonComponent
           tid="Пройти регистрацию"
@@ -32,6 +38,7 @@ export function LandingStartNowDesktopComponent() {
           sx={{
             backgroundColor: '#fff',
             color: '#3AB8FF',
+            marginTop: { xs: '5px', lg: 'inherit' },
             '&:hover': {
               background: '#f3f3f3',
             },

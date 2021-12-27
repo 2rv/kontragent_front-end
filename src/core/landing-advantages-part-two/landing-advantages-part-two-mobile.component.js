@@ -18,7 +18,7 @@ export function LandingAdvantagesPartTwoMobileComponent() {
   };
 
   return (
-    <Box gap="24px" sx={{ display: { xs: 'grid', md: 'none' } }}>
+    <Box sx={{ display: { xs: 'grid', lg: 'none' }, gap: '24px' }}>
       <LandingAdvantagesPartTwoSectionMobileCompmponent
         image={`/static/img/landing/landing-advantages-part-two/image-1-mobile.svg`}
         title={`Почему стоит начать пользоваться нашей платформой?`}
@@ -32,7 +32,6 @@ export function LandingAdvantagesPartTwoMobileComponent() {
         }
       />
       <LandingAdvantagesPartTwoSectionMobileCompmponent
-        rowReverse={true}
         image={`/static/img/landing/landing-advantages-part-two/image-2-mobile.svg`}
         title={`Почему стоит начать именно сегодня и сейчас?`}
         description={
