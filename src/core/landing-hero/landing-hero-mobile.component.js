@@ -9,7 +9,7 @@ export function LandingHeroMobileComponent() {
   return (
     <Box
       sx={{
-        display: { xs: 'flex', lg: 'none' },
+        display: 'flex',
         justifyContent: 'center',
         flexDirection: 'column',
         minHeight: '400px',

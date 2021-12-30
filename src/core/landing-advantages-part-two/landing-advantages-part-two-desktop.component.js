@@ -18,7 +18,7 @@ export function LandingAdvantagesPartTwoDesktopComponent() {
   };
 
   return (
-    <Box sx={{ display: { xs: 'none', lg: 'grid' }, gap: '32px' }}>
+    <Box sx={{ display: 'grid', gap: '32px' }}>
       <LandingAdvantagesPartTwoSectionDesktopCompmponent
         image={`/static/img/landing/landing-advantages-part-two/image-1.svg`}
         title={text('LANDING.ADVANTAGES_PART_TWO.BLOCK_1.TITLE')}

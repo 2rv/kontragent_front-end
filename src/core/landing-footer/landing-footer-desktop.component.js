@@ -11,7 +11,7 @@ import { AUTH_LOGIN_ROUTE_PATH } from '../auth-login';
 
 export function LandingFooterDesktopComponent() {
   return (
-    <Box sx={{ display: { xs: 'none', lg: 'flex' } }}>
+    <Box>
       <Layout>
         <Grid
           container

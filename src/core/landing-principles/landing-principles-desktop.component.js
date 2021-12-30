@@ -10,7 +10,7 @@ export function LandingPrinciplesDesktopComponent() {
       <BubbleSvg src="/static/img/landing/2-bubble.svg" />
       <Box
         sx={{
-          display: { xs: 'none', lg: 'flex' },
+          display: 'flex',
           flexDirection: 'column',
           justifyContent: 'center',
           minHeight: '300px',

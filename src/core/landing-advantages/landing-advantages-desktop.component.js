@@ -6,7 +6,7 @@ import { LandingAdvantagesSectionDesktopCompmponent } from './frame/landing-adva
 
 export function LandingAdvantagesDesktopComponent() {
   return (
-    <Box sx={{ display: { xs: 'none', lg: 'grid' }, gap: '32px' }}>
+    <Box sx={{ display: 'grid', gap: '32px' }}>
       <LandingAdvantagesSectionDesktopCompmponent
         rowReverse={true}
         image={`/static/img/landing/landing-advantages/image-1.svg`}

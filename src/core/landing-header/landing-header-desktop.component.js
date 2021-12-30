@@ -13,14 +13,7 @@ import { text } from '../../lib/common/text';
 
 export function LandingHeaderDesktopComponent({ activePath, headerLinks }) {
   return (
-    <AppBar
-      position="static"
-      sx={{
-        p: 0,
-        backgroundColor: '#F3F3F3',
-        display: { xs: 'none', md: 'flex' },
-      }}
-    >
+    <AppBar position="static" sx={{ p: 0, backgroundColor: '#F3F3F3' }}>
       <ToolbarCase>
         <img height="24px" src="/static/img/logo.svg" />
         <LinkItems>

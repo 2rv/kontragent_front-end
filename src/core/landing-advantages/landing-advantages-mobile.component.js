@@ -6,7 +6,7 @@ import { LandingAdvantagesSectionMobileCompmponent } from './frame/landing-advan
 
 export function LandingAdvantagesMobileComponent() {
   return (
-    <Box sx={{ display: { xs: 'grid', md: 'none' }, gap: '24px' }}>
+    <Box sx={{ display: 'grid', gap: '24px' }}>
       <LandingAdvantagesSectionMobileCompmponent
         rowReverse={true}
         image={`/static/img/landing/landing-advantages/image-1-mobile.svg`}

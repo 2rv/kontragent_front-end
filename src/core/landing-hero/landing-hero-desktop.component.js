@@ -1,74 +1,38 @@
-import styled from 'styled-components';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 
-import { LandingLayout, LandingButtonComponent } from '../../lib/common/landing';
-import { LandingHeroMobileComponent } from './landing-hero-mobile.component';
+import { LandingButtonComponent } from '../../lib/common/landing';
 import { text } from '../../lib/common/text';
 
 export function LandingHeroDesktopComponent() {
   return (
-    <Layout>
+    <Box
+      sx={{
+        display: 'flex',
+        alignItems: 'center',
+        gap: '32px',
+        minHeight: '85vh',
+      }}
+    >
       <Box
         sx={{
-          display: { xs: 'none', lg: 'flex' },
-          alignItems: 'center',
+          display: 'flex',
+          flexDirection: 'column',
           gap: '32px',
-          minHeight: '85vh',
+          width: '850px',
         }}
       >
-        <Box
-          sx={{
-            display: 'flex',
-            flexDirection: 'column',
-            gap: '32px',
-            width: '850px',
-          }}
-        >
-          <Typography variant="landingTitleHero">
-            {text('LANDING.HERO.TITLE')}
-          </Typography>
-          <Typography variant="landingText" sx={{ fontSize: '20px', lineHeight: '35px' }}>
-            {text('LANDING.HERO.DESCRIPTION')}
-          </Typography>
-          <LandingButtonComponent tid={text('LANDING.HERO.BUTTON_TEXT')} />
-        </Box>
-        <Box>
-          <img src="/static/img/landing/landing-hero/info-image.svg" />
-        </Box>
+        <Typography variant="landingTitleHero">
+          {text('LANDING.HERO.TITLE')}
+        </Typography>
+        <Typography variant="landingText" sx={{ fontSize: '20px', lineHeight: '35px' }}>
+          {text('LANDING.HERO.DESCRIPTION')}
+        </Typography>
+        <LandingButtonComponent tid={text('LANDING.HERO.BUTTON_TEXT')} />
       </Box>
-      <LandingHeroMobileComponent />
-    </Layout>
+      <Box>
+        <img src="/static/img/landing/landing-hero/info-image.svg" />
+      </Box>
+    </Box>
   );
 }
-
-const Layout = styled(LandingLayout)`
-  background-color: #fff;
-  max-height: 100vh;
-  @media (min-width: 0px) and (max-width: 599px) {
-    background-image: url("/static/img/landing/landing-hero/background-mobile.svg");
-    background-repeat: no-repeat;
-    background-position: 50% 60%;
-  }
-  @media (min-width: 999px) and (max-width: 1281px) {
-    background-image: url("/static/img/landing/landing-hero/background-1280.svg");
-    background-repeat: no-repeat;
-    background-position: 50% 60%;
-  }
-  @media (min-width: 1279px) and (max-width: 1367px) {
-    background-image: url("/static/img/landing/landing-hero/background-1366.svg");
-    background-repeat: no-repeat;
-    background-position: 50% 60%;
-  }
-  @media (min-width: 1367px) and (max-width: 1601px) {
-    background-image: url("/static/img/landing/landing-hero/background-1600.svg");
-    background-repeat: no-repeat;
-    background-position: 50% 60%;
-  }
-  @media (min-width: 1601px) {
-    background-image: url("/static/img/landing/landing-hero/background-max-display.svg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: 50% 60%;
-  }
-`;

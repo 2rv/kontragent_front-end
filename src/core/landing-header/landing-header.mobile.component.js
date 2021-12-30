@@ -19,14 +19,14 @@ export function LandingHeaderMobileComponent({ activePath, headerLinks }) {
   };
 
   return (
-    <Box sx={{ display: { xs: 'flex', md: 'none' } }}>
+    <Box>
       <Box
         sx={{
           display: 'grid',
           gridTemplateColumns: { xs: '1fr 2.5fr', sm: '1fr 1.7fr' },
           alignItems: 'center',
           width: '100%',
-          p: 3
+          p: 3,
         }}
       >
         <img src="/static/img/landing/mobile-menu.svg" onClick={handleDrawerToggle} />

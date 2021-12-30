@@ -7,7 +7,7 @@ export function LandingProblemsMobileComponent() {
   return (
     <Box
       sx={{
-        display: { xs: 'flex', lg: 'none' },
+        display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',
         gap: '20px',
