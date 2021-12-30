@@ -5,6 +5,7 @@ import Typography from '@mui/material/Typography';
 import { AUTH_SIGNUP_ROUTE_PATH } from '../auth-signup';
 import { LandingLayout, LandingButtonComponent } from '../../lib/common/landing';
 import { redirect } from '../../main/navigation';
+import { text } from '../../lib/common/text';
 
 export function LandingGetNotificationDesktopComponent() {
   return (
@@ -26,17 +27,13 @@ export function LandingGetNotificationDesktopComponent() {
           }}
         >
           <Title variant="landingTitle">
-            Узнайте о проблеме первыми
+            {text('LANDING.GET_NOTIFICATION.TITLE')}
           </Title>
           <SmallText variant="landingText" sx={{ maxWidth: '700px' }}>
-            Наша платформа как система раннего предупреждения,
-            клиент получает первым сигнал о потенциальных проблемах
-            как в своем бизнесе, так и в бизнесе его партнерах,
-            в части применения незаконных методов по оптимизации
-            налогообложения как в прошлом, так и в режиме онлайн.
+            {text('LANDING.GET_NOTIFICATION.DESCRIPTION')}
           </SmallText>
           <LandingButtonComponent
-            tid="Пройти регистрацию"
+            tid={text('LANDING.COMMON.REGISTER_NOW')}
             onClick={() => redirect(AUTH_SIGNUP_ROUTE_PATH)}
             sx={{ marginTop: { xs: '5px', lg: 'inherit' } }}
           />

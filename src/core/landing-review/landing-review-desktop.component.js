@@ -5,6 +5,7 @@ import Typography from '@mui/material/Typography';
 import { AUTH_SIGNUP_ROUTE_PATH } from '../auth-signup';
 import { LandingLayout, LandingButtonComponent } from '../../lib/common/landing';
 import { redirect } from '../../main/navigation';
+import { text } from '../../lib/common/text';
 
 export function LandingReviewDesktopComponent() {
   return (
@@ -26,18 +27,14 @@ export function LandingReviewDesktopComponent() {
           }}
         >
           <Title variant="landingTitle" sx={{ color: '#fff' }}>
-            Точность проверки состовляет 97%
+            {text('LANDING.REVIEW.TITLE')}
           </Title>
-          <Box maxWidth="600px">
-            <SmallText variant="landingText" sx={{ color: '#fff' }}>
-              Наш сервис базируется на информации из открытых источников и баз данных,
-              а также на отзывах и рейтингах бизнес-сообществ, основанных на историях
-              реальных бизнес партнеров
-            </SmallText>
-            <SmallText variant="landingText" sx={{ color: '#fff' }}>
-              Каждый участник сообщества публикует информацию о рисках, связанных с работой недобросовесных контрагентов, которая видна всем участникам
-            </SmallText>
-          </Box>
+          <SmallText variant="landingText" sx={{ color: '#fff', maxWidth: '600px' }}>
+            {text('LANDING.REVIEW.DESCRIPTION_1')}
+          </SmallText>
+          <SmallText variant="landingText" sx={{ color: '#fff', maxWidth: '600px' }}>
+            {text('LANDING.REVIEW.DESCRIPTION_2')}
+          </SmallText>
         </Box>
         <Box
           sx={{
@@ -47,17 +44,14 @@ export function LandingReviewDesktopComponent() {
           }}
         >
           <Title variant="landingTitle" sx={{ color: '#fff' }}>
-            Точность проверки 97%
+            {text('LANDING.REVIEW.MOBILE_TITLE')}
           </Title>
           <SmallText variant="landingText" sx={{ color: '#fff' }}>
-            Наш сервис базируется на информации из открытых источников и баз данных,
-            а также на отзывах и рейтингах бизнес-сообществ, основанных на историях
-            реальных бизнес партнеров. Каждый участник сообщества публикует информацию
-            о рисках, связанных с работой недобросовесных контрагентов, которая видна всем участникам
+            {text('LANDING.REVIEW.MOBILE_DESCRIPTION')}
           </SmallText>
         </Box>
         <LandingButtonComponent
-          tid="Пройти регистрацию"
+          tid={text('LANDING.COMMON.REGISTER_NOW')}
           onClick={() => redirect(AUTH_SIGNUP_ROUTE_PATH)}
           sx={{
             backgroundColor: '#fff',

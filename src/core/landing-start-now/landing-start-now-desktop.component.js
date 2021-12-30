@@ -5,6 +5,7 @@ import Typography from '@mui/material/Typography';
 import { AUTH_SIGNUP_ROUTE_PATH } from '../auth-signup';
 import { LandingLayout, LandingButtonComponent } from '../../lib/common/landing';
 import { redirect } from '../../main/navigation';
+import { text } from '../../lib/common/text';
 
 export function LandingStartNowDesktopComponent() {
   return (
@@ -19,21 +20,21 @@ export function LandingStartNowDesktopComponent() {
         }}
       >
         <Title variant="landingTitle" sx={{ color: '#fff' }}>
-          Начните пользоваться платформой
+          {text('LANDING.START_NOW.TITLE')}
         </Title>
         <Box sx={{ display: 'flex', flexDirection: 'column', gap: '24px', maxWidth: '600px' }}>
           <SmallText variant="landingText" sx={{ color: '#fff' }}>
-            Использование постоянно обновляемых алгоритмов и методических рекомендаций со стороны ФНС РФ, ЦБ РФ и Росфинмониторинга РФ.
+            {text('LANDING.START_NOW.DESCRIPTION_1')}
           </SmallText>
           <SmallText variant="landingText" sx={{ color: '#fff' }}>
-            Более 20-ти источников информации с государственных платформ.
+            {text('LANDING.START_NOW.DESCRIPTION_2')}
           </SmallText>
           <SmallText variant="landingText" sx={{ color: '#fff' }}>
-            Обновляемые базы данных о недобросовестных контрагентах, информацию которую сообщают юзеры в рамках их финансово-хозяйственной деятельности.
+            {text('LANDING.START_NOW.DESCRIPTION_3')}
           </SmallText>
         </Box>
         <LandingButtonComponent
-          tid="Пройти регистрацию"
+          tid={text('LANDING.COMMON.REGISTER_NOW')}
           onClick={() => redirect(AUTH_SIGNUP_ROUTE_PATH)}
           sx={{
             backgroundColor: '#fff',

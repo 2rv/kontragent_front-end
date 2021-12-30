@@ -12,19 +12,19 @@ export function LandingHeaderContainer() {
   const headerLinks = [
     {
       path: HOME_ROUTE_PATH,
-      name: 'Главная',
+      name: 'LANDING.HEADER.HOME',
     },
     {
       path: '',
-      name: 'О проекте',
+      name: 'LANDING.HEADER.ABOUT',
     },
     {
       path: '',
-      name: 'Наши преимущества',
+      name: 'LANDING.HEADER.ADVANTAGES',
     },
     {
       path: '',
-      name: 'Наши принципы',
+      name: 'LANDING.HEADER.PRINCIPLES',
     },
   ];
 

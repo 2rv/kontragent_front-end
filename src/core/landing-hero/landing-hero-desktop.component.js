@@ -4,6 +4,7 @@ import Typography from '@mui/material/Typography';
 
 import { LandingLayout, LandingButtonComponent } from '../../lib/common/landing';
 import { LandingHeroMobileComponent } from './landing-hero-mobile.component';
+import { text } from '../../lib/common/text';
 
 export function LandingHeroDesktopComponent() {
   return (
@@ -25,12 +26,12 @@ export function LandingHeroDesktopComponent() {
           }}
         >
           <Typography variant="landingTitleHero">
-            Платформа бизнес-сообщества
+            {text('LANDING.HERO.TITLE')}
           </Typography>
           <Typography variant="landingText" sx={{ fontSize: '20px', lineHeight: '35px' }}>
-            Выявите налоговые риски с недобросовестными контрагентами в режиме онлайн
+            {text('LANDING.HERO.DESCRIPTION')}
           </Typography>
-          <LandingButtonComponent tid="Узнать больше" />
+          <LandingButtonComponent tid={text('LANDING.HERO.BUTTON_TEXT')} />
         </Box>
         <Box>
           <img src="/static/img/landing/landing-hero/info-image.svg" />

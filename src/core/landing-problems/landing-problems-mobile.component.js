@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
+import { text } from '../../lib/common/text';
 
 export function LandingProblemsMobileComponent() {
   return (
@@ -21,10 +22,10 @@ export function LandingProblemsMobileComponent() {
         }}
       >
         <Title variant="landingTitle">
-          Сталкиваетесь с этим?
+          {text('LANDING.PROBLEMS.MOBILE_TITLE')}
         </Title>
         <SmallText variant="landingText">
-          Мы раскроем вам правду и предложим решение!
+          {text('LANDING.PROBLEMS.DESCRIPTION')}
         </SmallText>
       </Box>
       <Box

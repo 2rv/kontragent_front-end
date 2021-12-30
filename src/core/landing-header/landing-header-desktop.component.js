@@ -9,6 +9,7 @@ import { AUTH_SIGNUP_ROUTE_PATH } from '../auth-signup';
 import { redirect } from '../../main/navigation';
 
 import { LandingButtonComponent } from '../../lib/common/landing';
+import { text } from '../../lib/common/text';
 
 export function LandingHeaderDesktopComponent({ activePath, headerLinks }) {
   return (
@@ -35,7 +36,7 @@ export function LandingHeaderDesktopComponent({ activePath, headerLinks }) {
                   : { color: '#707070', cursor: 'pointer' }
               }
             >
-              {item.name}
+              {text(item.name)}
             </Typography>
           ))}
         </LinkItems>
@@ -44,10 +45,10 @@ export function LandingHeaderDesktopComponent({ activePath, headerLinks }) {
             sx={{ fontWeight: '600', color: '#000', cursor: 'pointer' }}
             onClick={() => redirect(AUTH_LOGIN_ROUTE_PATH)}
           >
-            Вход
+            {text('LANDING.COMMON.SIGNIN')}
           </Typography>
           <LandingButtonComponent
-            tid="Регистрация"
+            tid={text('LANDING.COMMON.SIGNUP')}
             onClick={() => redirect(AUTH_SIGNUP_ROUTE_PATH)}
             height="46px"
           />

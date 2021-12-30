@@ -9,6 +9,7 @@ import { AUTH_SIGNUP_ROUTE_PATH } from '../auth-signup';
 import { redirect } from '../../main/navigation';
 
 import { LandingButtonComponent } from '../../lib/common/landing/landing-button.component';
+import { text } from '../../lib/common/text';
 
 export function LandingHeaderMobileComponent({ activePath, headerLinks }) {
   const [mobileDrawerVisibility, setMobileDrawerVisibility] = React.useState(false);
@@ -74,7 +75,7 @@ export function LandingHeaderMobileComponent({ activePath, headerLinks }) {
                   : { color: '#707070', cursor: 'pointer' }
               }
             >
-              {item.name}
+              {text(item.name)}
             </Typography>
           ))}
           <Button
@@ -82,10 +83,12 @@ export function LandingHeaderMobileComponent({ activePath, headerLinks }) {
             onClick={() => redirect(AUTH_LOGIN_ROUTE_PATH)}
             sx={{ height: '30px', mt: 3 }}
           >
-            <Typography variant="landingText" sx={{ fontSize: '12px' }}>Вход</Typography>
+            <Typography variant="landingText" sx={{ fontSize: '12px' }}>
+              {text('LANDING.COMMON.SIGNIN')}
+            </Typography>
           </Button>
           <LandingButtonComponent
-            tid="Регистрация"
+            tid={text('LANDING.COMMON.SIGNUP')}
             onClick={() => redirect(AUTH_SIGNUP_ROUTE_PATH)}
             height="30px"
             maxWidth="100%"

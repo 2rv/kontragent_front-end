@@ -3,6 +3,7 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 
 import { LandingLayout } from '../../lib/common/landing';
+import { text } from '../../lib/common/text';
 
 export function LandingBetaInfoDesktopComponent({ graphicData }) {
   return (
@@ -24,12 +25,10 @@ export function LandingBetaInfoDesktopComponent({ graphicData }) {
           }}
         >
           <Title variant="landingTitle">
-            Наша платформа в Бета-версии
+            {text('LANDING.BETA_INFO.TITLE')}
           </Title>
           <SmallText variant="landingText" sx={{ maxWidth: '550px' }}>
-            Каждый месяц мы внедряем новый функционал в нашу платформу
-            и постоянно улучшаем текущий. Станьте первыми, кто получит
-            уникальные бонусы от пользования нашей платформы.
+            {text('LANDING.BETA_INFO.DESCRIPTION')}
           </SmallText>
         </Box>
         <Box>

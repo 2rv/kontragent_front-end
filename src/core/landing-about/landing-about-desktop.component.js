@@ -5,6 +5,7 @@ import Typography from '@mui/material/Typography';
 import { AUTH_SIGNUP_ROUTE_PATH } from '../auth-signup';
 import { LandingLayout, LandingButtonComponent } from '../../lib/common/landing';
 import { redirect } from '../../main/navigation';
+import { text } from '../../lib/common/text';
 
 export function LandingAboutDesktopComponent() {
   return (
@@ -19,16 +20,14 @@ export function LandingAboutDesktopComponent() {
         }}
       >
         <Title variant="landingTitle">
-          Что мы предлагаем?
+          {text('LANDING.ABOUT.TITLE')}
         </Title>
         <SmallText variant="landingText" sx={{ maxWidth: '700px' }}>
-          Платформа для проверки нахождения контрагента (или будущего контрагента)<br />
-          в списке юридических лиц, в отношении которых налоговыми органами передана
-          информация в систему ФНС России об отсутствии источника применения правомерной
-          налоговой выгоды в виде вычета/возмещения НДС по книгам продаж.
+          {text('LANDING.ABOUT.DESCRIPTION_1')}<br />
+          {text('LANDING.ABOUT.DESCRIPTION_2')}
         </SmallText>
         <LandingButtonComponent
-          tid="Пройти регистрацию"
+          tid={text('LANDING.COMMON.REGISTER_NOW')}
           onClick={() => redirect(AUTH_SIGNUP_ROUTE_PATH)}
         />
       </Box>

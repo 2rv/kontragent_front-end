@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
+import { text } from '../../lib/common/text';
 
 export function LandingPrinciplesDesktopComponent() {
   return (
@@ -25,10 +26,10 @@ export function LandingPrinciplesDesktopComponent() {
           }}
         >
           <Typography variant="landingTitle">
-            Платформа придерживается некоторым принципам
+            {text('LANDING.PRINCIPLES.TITLE')}
           </Typography>
           <Typography variant="landingText">
-            Вот 3 основных из них:
+            {text('LANDING.PRINCIPLES.DESCRIPTION')}
           </Typography>
         </Box>
         <Box>

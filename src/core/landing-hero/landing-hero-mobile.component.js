@@ -3,6 +3,7 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 
 import { LandingButtonComponent } from '../../lib/common/landing';
+import { text } from '../../lib/common/text';
 
 export function LandingHeroMobileComponent() {
   return (
@@ -16,12 +17,12 @@ export function LandingHeroMobileComponent() {
       }}
     >
       <Title variant="landingTitleHero">
-        Платформа бизнес-сообщества
+        {text('LANDING.HERO.TITLE')}
       </Title>
       <SmallText variant="landingText">
-        Выявите налоговые риски с недобросовестными контрагентами в режиме онлайн
+        {text('LANDING.HERO.DESCRIPTION')}
       </SmallText>
-      <LandingButtonComponent tid="Узнать больше" />
+      <LandingButtonComponent tid={text('LANDING.HERO.BUTTON_TEXT')} />
     </Box>
   );
 }
