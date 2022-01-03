@@ -24,11 +24,11 @@ export function LandingAdvantagesPartTwoMobileComponent() {
         image={`/static/img/landing/landing-advantages-part-two/image-1-mobile.svg`}
         title={text('LANDING.ADVANTAGES_PART_TWO.BLOCK_1.TITLE')}
         description={
-          <Typography variant="body1">
+          <SmallText variant="body1">
             {text('LANDING.ADVANTAGES_PART_TWO.BLOCK_1.DESCRIPTION_1')}<br/><br/>
             {text('LANDING.ADVANTAGES_PART_TWO.BLOCK_1.DESCRIPTION_2')}<br/><br/>
             {text('LANDING.ADVANTAGES_PART_TWO.BLOCK_1.DESCRIPTION_3')}
-          </Typography>
+          </SmallText>
         }
       />
       <LandingAdvantagesPartTwoSectionMobileCompmponent
@@ -36,16 +36,16 @@ export function LandingAdvantagesPartTwoMobileComponent() {
         image={`/static/img/landing/landing-advantages-part-two/image-2-mobile.svg`}
         title={text('LANDING.ADVANTAGES_PART_TWO.BLOCK_2.TITLE')}
         description={
-          <Typography variant="body1">
+          <SmallText variant="body1">
             {text('LANDING.ADVANTAGES_PART_TWO.BLOCK_2.DESCRIPTION')}
-          </Typography>
+          </SmallText>
         }
       />
       <LandingAdvantagesPartTwoSectionMobileCompmponent
         image={`/static/img/landing/landing-advantages-part-two/image-3-mobile.svg`}
         title={text('LANDING.ADVANTAGES_PART_TWO.BLOCK_3.TITLE')}
         description={
-          <Typography variant="body1">
+          <SmallText variant="body1">
             {text('LANDING.ADVANTAGES_PART_TWO.BLOCK_3.DESCRIPTION_1')}<br/><br/>
             {text('LANDING.ADVANTAGES_PART_TWO.BLOCK_3.DESCRIPTION_BEFORE_CLAUSE')}{' '}
             <PopoverComponent
@@ -56,7 +56,7 @@ export function LandingAdvantagesPartTwoMobileComponent() {
             <span style={{ cursor: 'pointer', fontWeight: 600 }} onClick={onOpenPopover}>{text('LANDING.ADVANTAGES_PART_TWO.BLOCK_3.CLAUSE')}</span>{' '}
             {text('LANDING.ADVANTAGES_PART_TWO.BLOCK_3.DESCRIPTION_AFTER_CLAUSE')}<br/><br/>
             {text('LANDING.ADVANTAGES_PART_TWO.BLOCK_3.DESCRIPTION_3')}
-          </Typography>
+          </SmallText>
         }
       />
     </Box>
@@ -64,7 +64,7 @@ export function LandingAdvantagesPartTwoMobileComponent() {
 }
 
 const SmallText = styled(Typography)`
-  @media (min-width: 0px) and (max-width: 599px) {
+  @media (min-width: 0px) and (max-width: 600px) {
     font-size: 12px;
     line-height: 18px;
   }

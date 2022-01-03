@@ -1,3 +1,4 @@
+import styled from 'styled-components';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import { text } from '../../lib/common/text';
@@ -12,19 +13,19 @@ export function LandingAdvantagesMobileComponent() {
         image={`/static/img/landing/landing-advantages/image-1-mobile.svg`}
         title={text('LANDING.ADVANTAGES.BLOCK_1.TITLE')}
         description={
-          <Typography variant="body1">
+          <SmallText variant="body1">
             {text('LANDING.ADVANTAGES.BLOCK_1.DESCRIPTION')}
-          </Typography>
+          </SmallText>
         }
       />
       <LandingAdvantagesSectionMobileCompmponent
         image={`/static/img/landing/landing-advantages/image-2-mobile.svg`}
         title={text('LANDING.ADVANTAGES.BLOCK_2.TITLE')}
         description={
-          <Typography variant="body1">
+          <SmallText variant="body1">
             {text('LANDING.ADVANTAGES.BLOCK_2.DESCRIPTION_1')}<br/><br/>
             {text('LANDING.ADVANTAGES.BLOCK_2.DESCRIPTION_2')}
-          </Typography>
+          </SmallText>
         }
       />
       <LandingAdvantagesSectionMobileCompmponent
@@ -33,13 +34,20 @@ export function LandingAdvantagesMobileComponent() {
         title={text('LANDING.ADVANTAGES.BLOCK_3.TITLE')}
         description={
           <ul style={{ listStyle: 'inherit', marginLeft: '15px' }}>
-            <li><Typography variant="body1">{text('LANDING.ADVANTAGES.BLOCK_3.LIST.ITEM_1')}</Typography></li>
-            <li><Typography variant="body1">{text('LANDING.ADVANTAGES.BLOCK_3.LIST.ITEM_2')}</Typography></li>
-            <li><Typography variant="body1">{text('LANDING.ADVANTAGES.BLOCK_3.LIST.ITEM_3')}</Typography></li>
-            <li><Typography variant="body1">{text('LANDING.ADVANTAGES.BLOCK_3.LIST.ITEM_4')}</Typography></li>
+            <li><SmallText variant="body1">{text('LANDING.ADVANTAGES.BLOCK_3.LIST.ITEM_1')}</SmallText></li>
+            <li><SmallText variant="body1">{text('LANDING.ADVANTAGES.BLOCK_3.LIST.ITEM_2')}</SmallText></li>
+            <li><SmallText variant="body1">{text('LANDING.ADVANTAGES.BLOCK_3.LIST.ITEM_3')}</SmallText></li>
+            <li><SmallText variant="body1">{text('LANDING.ADVANTAGES.BLOCK_3.LIST.ITEM_4')}</SmallText></li>
           </ul>
         }
       />
     </Box>
   );
 }
+
+const SmallText = styled(Typography)`
+  @media (min-width: 0px) and (max-width: 600px) {
+    font-size: 12px;
+    line-height: 18px;
+  }
+`;

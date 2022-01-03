@@ -19,31 +19,31 @@ export function LandingHeroContainer() {
 
 const Layout = styled(LandingLayout)`
   background-color: #fff;
-  max-height: 100vh;
-  @media (min-width: 0px) and (max-width: 599px) {
+  max-height: 120vh;
+  @media (min-width: 0px) and (max-width: 600px) {
     background-image: url("/static/img/landing/landing-hero/background-mobile.svg");
     background-repeat: no-repeat;
-    background-position: 50% 60%;
+    background-position: 50% 50%;
   }
-  @media (min-width: 999px) and (max-width: 1281px) {
+  @media (min-width: 1000px) and (max-width: 1280px) {
     background-image: url("/static/img/landing/landing-hero/background-1280.svg");
     background-repeat: no-repeat;
-    background-position: 50% 60%;
+    background-position: 50% 50%;
   }
-  @media (min-width: 1279px) and (max-width: 1367px) {
+  @media (min-width: 1280px) and (max-width: 1366px) {
     background-image: url("/static/img/landing/landing-hero/background-1366.svg");
     background-repeat: no-repeat;
-    background-position: 50% 60%;
+    background-position: 50% 50%;
   }
-  @media (min-width: 1367px) and (max-width: 1601px) {
+  @media (min-width: 1366px) and (max-width: 1600px) {
     background-image: url("/static/img/landing/landing-hero/background-1600.svg");
     background-repeat: no-repeat;
-    background-position: 50% 60%;
+    background-position: 50% 50%;
   }
-  @media (min-width: 1601px) {
+  @media (min-width: 1600px) {
     background-image: url("/static/img/landing/landing-hero/background-max-display.svg");
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: 50% 60%;
+    background-position: 50% 50%;
   }
 `;

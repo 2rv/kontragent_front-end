@@ -28,15 +28,17 @@ export function LandingHeroMobileComponent() {
 }
 
 const Title = styled(Typography)`
-  @media (min-width: 0px) and (max-width: 599px) {
-    font-size: 16px;
+  @media (min-width: 0px) and (max-width: 600px) {
+    font-size: 17px;
     line-height: 24px;
   }
 `;
 
 const SmallText = styled(Typography)`
-  @media (min-width: 0px) and (max-width: 599px) {
-    font-size: 12px;
+  @media (min-width: 0px) and (max-width: 600px) {
+    font-weight: 500;
+    line-heigth: 150%;
+    font-size: 14px;
     line-height: 18px;
   }
 `;

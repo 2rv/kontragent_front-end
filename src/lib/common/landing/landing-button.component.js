@@ -10,11 +10,16 @@ export function LandingButtonComponent({ tid, onClick, variant, sx, maxWidth, he
           ...sx,
           boxShadow: '0px 15px 75px rgba(0, 0, 0, 0.1)',
           width: '100%',
-          maxWidth: maxWidth ? maxWidth : '320px',
+          maxWidth: { xs: '100%', sm: maxWidth ? maxWidth : '320px' },
           height: { xs: height ? height : '42px', lg: height ? height : '52px' },
         }}
       >
-      <Typography variant="landingText" sx={{ fontSize: { xs: '12px', lg: 'inherit' } }}>{tid}</Typography>
+        <Typography
+          variant="landingText"
+          sx={{ fontWeight: '600', fontSize: { xs: '12px', lg: 'inherit' } }}
+        >
+          {tid}
+        </Typography>
     </Button>
   );
 }

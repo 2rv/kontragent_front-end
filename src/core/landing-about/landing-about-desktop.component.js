@@ -28,6 +28,7 @@ export function LandingAboutDesktopComponent() {
         </SmallText>
         <LandingButtonComponent
           tid={text('LANDING.COMMON.REGISTER_NOW')}
+          sx={{ marginTop: { xs: '6px', lg: 'inherit' } }}
           onClick={() => redirect(AUTH_SIGNUP_ROUTE_PATH)}
         />
       </Box>
@@ -46,14 +47,14 @@ const Layout = styled(LandingLayout)`
 `;
 
 const Title = styled(Typography)`
-  @media (min-width: 0px) and (max-width: 599px) {
+  @media (min-width: 0px) and (max-width: 600px) {
     font-size: 16px;
     line-height: 24px;
   }
 `;
 
 const SmallText = styled(Typography)`
-  @media (min-width: 0px) and (max-width: 599px) {
+  @media (min-width: 0px) and (max-width: 600px) {
     font-size: 12px;
     line-height: 18px;
   }

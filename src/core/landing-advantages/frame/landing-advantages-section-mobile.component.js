@@ -31,7 +31,7 @@ export function LandingAdvantagesSectionMobileCompmponent({ title, description, 
 }
 
 const Title = styled(Typography)`
-  @media (min-width: 0px) and (max-width: 599px) {
+  @media (min-width: 0px) and (max-width: 600px) {
     font-size: 16px;
     line-height: 24px;
   }

@@ -65,6 +65,6 @@ const LinkItems = styled(Box)`
   gap: 20px;
   @media (min-width: 1601px) {
     width: 100%;
-    max-width: 1035px;
+    max-width: 1030px;
   }
 `;

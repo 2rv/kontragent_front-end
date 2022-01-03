@@ -26,11 +26,11 @@ export function LandingHeaderMobileComponent({ activePath, headerLinks }) {
           gridTemplateColumns: { xs: '1fr 2.5fr', sm: '1fr 1.7fr' },
           alignItems: 'center',
           width: '100%',
-          p: 3,
+          p: '20px',
         }}
       >
         <img src="/static/img/landing/mobile-menu.svg" onClick={handleDrawerToggle} />
-        <img height="20px" src="/static/img/logo.svg" />
+        <img src="/static/img/landing/header-logo-mobile.svg" style={{ marginTop: '4px' }} />
       </Box>
       <Drawer
         variant="temporary"
@@ -59,8 +59,8 @@ export function LandingHeaderMobileComponent({ activePath, headerLinks }) {
             p: 0,
           }}
         >
-          <img height="20px" src="/static/img/cross.svg" onClick={handleDrawerToggle} />
-          <img height="20px" src="/static/img/logo.svg" />
+          <img src="/static/img/landing/close.svg" onClick={handleDrawerToggle} />
+          <img src="/static/img/landing/header-logo-mobile.svg" />
         </Box>
         <Box sx={{ display: 'grid', gap: 2, mt: 5 }}>
           {headerLinks.map((item, i) => (
@@ -81,16 +81,16 @@ export function LandingHeaderMobileComponent({ activePath, headerLinks }) {
           <Button
             variant="black"
             onClick={() => redirect(AUTH_LOGIN_ROUTE_PATH)}
-            sx={{ height: '30px', mt: 3 }}
+            sx={{ height: '32px', mt: 3, mb: 1 }}
           >
-            <Typography variant="landingText" sx={{ fontSize: '12px' }}>
+            <Typography variant="landingText" sx={{ fontWeight: '600', fontSize: '12px' }}>
               {text('LANDING.COMMON.SIGNIN')}
             </Typography>
           </Button>
           <LandingButtonComponent
             tid={text('LANDING.COMMON.SIGNUP')}
             onClick={() => redirect(AUTH_SIGNUP_ROUTE_PATH)}
-            height="30px"
+            height="32px"
             maxWidth="100%"
           />
         </Box>

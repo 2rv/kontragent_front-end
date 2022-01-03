@@ -16,13 +16,24 @@ export function LandingFooterDesktopComponent() {
         <Grid
           container
           direction="row"
-          display="flex"
-          justifyContent="space-between"
-          gap="32px"
+          sx={{
+            display: 'flex',
+            justifyContent: 'space-between',
+            gap: '32px',
+            padding: '16px 0',
+          }}
         >
           <Grid item>
-            <Grid container direction="row" justifyContent="flex-start" gap="55px">
-              <Grid item display="flex" flexDirection="column">
+            <Grid
+              container
+              direction="row"
+              sx={{
+                display: 'flex',
+                justifyContent: 'flex-start',
+                gap: '55px',
+              }}
+            >
+              <Grid item sx={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
                 <Typography variant="body2" sx={{ fontWeight: '600', color: '#000' }}>
                   {text('LANDING.FOOTER.HOME')}
                 </Typography>
@@ -33,14 +44,24 @@ export function LandingFooterDesktopComponent() {
                   {text('LANDING.FOOTER.AUTHORIZATION')}
                 </Typography>
               </Grid>
-              <Grid item display="flex" flexDirection="column">
+              <Grid item sx={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
                 <Typography variant="body2" sx={{ cursor: 'pointer' }}>Privacy policy</Typography>
                 <Typography variant="body2" sx={{ cursor: 'pointer' }}>Privacy terms</Typography>
                 <Typography variant="body2" sx={{ cursor: 'pointer' }}>Privacy user terms</Typography>
               </Grid>
             </Grid>
           </Grid>
-          <Grid item display="flex" flexDirection="column" justifyContent="flex-end" alignItems="flex-end">
+          <Grid
+            item
+            sx={{
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'flex-end',
+              alignItems: 'flex-end',
+              gap: '6px',
+              marginBottom: '10px',
+            }}
+          >
             <img height="22px" src="/static/img/logo.svg" />
             <Typography variant="body1">© 2021 Контрагент. All rights reserved.</Typography>
           </Grid>

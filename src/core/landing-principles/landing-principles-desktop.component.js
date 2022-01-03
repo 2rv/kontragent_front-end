@@ -28,7 +28,7 @@ export function LandingPrinciplesDesktopComponent() {
           <Typography variant="landingTitle">
             {text('LANDING.PRINCIPLES.TITLE')}
           </Typography>
-          <Typography variant="landingText">
+          <Typography variant="landingText" sx={{ color: '#707070' }}>
             {text('LANDING.PRINCIPLES.DESCRIPTION')}
           </Typography>
         </Box>

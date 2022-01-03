@@ -1,3 +1,4 @@
+import useMediaQuery from '@mui/material/useMediaQuery';
 import styled from 'styled-components';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
@@ -6,6 +7,9 @@ import { LandingLayout } from '../../lib/common/landing';
 import { text } from '../../lib/common/text';
 
 export function LandingBetaInfoDesktopComponent({ graphicData }) {
+  const desktopBreakpoint = useMediaQuery(theme => theme.breakpoints.up('sm'));
+  const mobileBreakpoint = useMediaQuery(theme => theme.breakpoints.between('xs', 'sm'));
+
   return (
     <Layout>
       <Box
@@ -36,13 +40,14 @@ export function LandingBetaInfoDesktopComponent({ graphicData }) {
             {graphicData.map((graphic, index) => (
               <Box key={index} sx={{ display: 'flex', flexDirection: 'column' }}>
                 <Box sx={{ position: 'relative', display: 'flex', alignItems: 'center' }}>
-                  <GraphicCircle src={graphic.svgCircle} />
+                  {Boolean(desktopBreakpoint) && <img src={graphic.svgCircle} />}
+                  {Boolean(mobileBreakpoint) && <img src={graphic.svgCircleMobile} />}
                   {graphic.svgLine && (
                     <GraphicLine src={graphic.svgLine} />
                   )}
                 </Box>
                 <GraphicText variant="title">{graphic.date}</GraphicText>
-                <ul style={{ listStyle: 'inherit', marginLeft: '15px' }}>
+                <ul style={{ listStyle: 'inherit', marginLeft: '16px' }}>
                   {graphic.tasks.map((task, index) => (
                     <li key={index}><GraphicDescription variant="landingText">{task}</GraphicDescription></li>
                   ))}
@@ -58,14 +63,20 @@ export function LandingBetaInfoDesktopComponent({ graphicData }) {
 
 const Layout = styled(LandingLayout)`
   background-color: #fff;
-  @media (min-width: 1366px) {
-    background-image: url("/static/img/landing/landing-beta-info/background.svg");
+  @media (min-width: 0px) and (max-width: 600px) {
+    background-image: url("/static/img/landing/landing-beta-info/background-mobile.svg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 50% 60%;
   }
-  @media (min-width: 0px) and (max-width: 599px) {
-    background-image: url("/static/img/landing/landing-beta-info/background-mobile.svg");
+  @media (min-width: 1366px) and (max-width: 1600px) {
+    background-image: url("/static/img/landing/landing-beta-info/background-1366.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 60%;
+  }
+  @media (min-width: 1601px) {
+    background-image: url("/static/img/landing/landing-beta-info/background-1600.svg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 50% 60%;
@@ -79,18 +90,9 @@ const GraphicContainer = styled.div`
   gap: 32px;
   div {
     gap: 16px;
-    @media (min-width: 0px) and (max-width: 599px) {
+    @media (min-width: 0px) and (max-width: 600px) {
       gap: 6px;
     }
-  }
-`;
-
-const GraphicCircle = styled.img`
-  width: 45px;
-  height: 45px;
-  @media (min-width: 0px) and (max-width: 599px) {
-    width: 28px;
-    height: 28px;
   }
 `;
 
@@ -104,29 +106,29 @@ const GraphicLine = styled.img`
 `;
 
 const Title = styled(Typography)`
-  @media (min-width: 0px) and (max-width: 599px) {
+  @media (min-width: 0px) and (max-width: 600px) {
     font-size: 16px;
     line-height: 24px;
   }
 `;
 
 const SmallText = styled(Typography)`
-  @media (min-width: 0px) and (max-width: 599px) {
+  @media (min-width: 0px) and (max-width: 600px) {
     font-size: 12px;
     line-height: 18px;
   }
 `;
 
 const GraphicText = styled(Typography)`
-  @media (min-width: 0px) and (max-width: 599px) {
-    margin-top: 5px;
+  @media (min-width: 0px) and (max-width: 600px) {
+    margin-top: 4px;
     font-size: 12px;
     line-height: 18px;
   }
 `;
 
 const GraphicDescription = styled(Typography)`
-  @media (min-width: 0px) and (max-width: 599px) {
+  @media (min-width: 0px) and (max-width: 600px) {
     font-size: 10px;
     line-height: 15px;
   }
