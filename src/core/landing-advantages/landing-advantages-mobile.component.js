@@ -11,7 +11,11 @@ export function LandingAdvantagesMobileComponent() {
       <LandingAdvantagesSectionMobileCompmponent
         rowReverse={true}
         image={`/static/img/landing/landing-advantages/image-1-mobile.svg`}
-        title={text('LANDING.ADVANTAGES.BLOCK_1.TITLE')}
+        title={
+          <Title variant="landingTitle">
+            {text('LANDING.ADVANTAGES.BLOCK_1.TITLE')}
+          </Title>
+        }
         description={
           <SmallText variant="body1">
             {text('LANDING.ADVANTAGES.BLOCK_1.DESCRIPTION')}
@@ -20,18 +24,27 @@ export function LandingAdvantagesMobileComponent() {
       />
       <LandingAdvantagesSectionMobileCompmponent
         image={`/static/img/landing/landing-advantages/image-2-mobile.svg`}
-        title={text('LANDING.ADVANTAGES.BLOCK_2.TITLE')}
+        title={
+          <Title variant="landingTitle">
+            {text('LANDING.ADVANTAGES.BLOCK_2.TITLE')}
+          </Title>
+        }
         description={
           <SmallText variant="body1">
-            {text('LANDING.ADVANTAGES.BLOCK_2.DESCRIPTION_1')}<br/><br/>
-            {text('LANDING.ADVANTAGES.BLOCK_2.DESCRIPTION_2')}
+            {text('LANDING.ADVANTAGES.BLOCK_2.DESCRIPTION_1')}
+            {text('LANDING.ADVANTAGES.BLOCK_2.DESCRIPTION_2')}<br/><br/>
+            {text('LANDING.ADVANTAGES.BLOCK_2.DESCRIPTION_3')}
           </SmallText>
         }
       />
       <LandingAdvantagesSectionMobileCompmponent
         rowReverse={true}
         image={`/static/img/landing/landing-advantages/image-3-mobile.svg`}
-        title={text('LANDING.ADVANTAGES.BLOCK_3.TITLE')}
+        title={
+          <Title variant="landingTitle">
+            {text('LANDING.ADVANTAGES.BLOCK_3.TITLE')}
+          </Title>
+        }
         description={
           <ul style={{ listStyle: 'inherit', marginLeft: '15px' }}>
             <li><SmallText variant="body1">{text('LANDING.ADVANTAGES.BLOCK_3.LIST.ITEM_1')}</SmallText></li>
@@ -44,6 +57,13 @@ export function LandingAdvantagesMobileComponent() {
     </Box>
   );
 }
+
+const Title = styled(Typography)`
+  @media (min-width: 0px) and (max-width: 600px) {
+    font-size: 16px;
+    line-height: 21px;
+  }
+`;
 
 const SmallText = styled(Typography)`
   @media (min-width: 0px) and (max-width: 600px) {

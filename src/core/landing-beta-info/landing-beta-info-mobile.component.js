@@ -39,10 +39,12 @@ export function LandingBetaInfoMobileComponent({ graphicData }) {
             <Box sx={{ display: 'flex', alignItems: 'center' }}>
               {Boolean(graphicCircleDesktopBreakpoint) && <GraphicCircle src={graphic.svgCircle} />}
               {Boolean(graphicCircleMobileBreakpoint) && <GraphicCircle src={graphic.svgCircleMobile} />}
-              <GraphicLineContainer>
-                <GraphicLine></GraphicLine>
-                <GraphicLineCircle></GraphicLineCircle>
-              </GraphicLineContainer>
+              {Boolean(index % 2 === 0) && (
+                <GraphicLineContainer>
+                  <GraphicLine></GraphicLine>
+                  <GraphicLineCircle></GraphicLineCircle>
+                </GraphicLineContainer>
+              )}
             </Box>
             <GraphicText variant="title">{graphic.date}</GraphicText>
             <ul style={{ listStyle: 'inherit', marginLeft: '16px' }}>
@@ -60,7 +62,7 @@ export function LandingBetaInfoMobileComponent({ graphicData }) {
 const Title = styled(Typography)`
   @media (min-width: 0px) and (max-width: 600px) {
     font-size: 16px;
-    line-height: 24px;
+    line-height: 21px;
   }
 `;
 
@@ -78,11 +80,14 @@ const GraphicCircle = styled.img`
 const GraphicLineContainer = styled.div`
   position: absolute;
   left: 25px;
-  width: 90%;
+  width: 96%;
+  @media (min-width: 0px) and (max-width: 599px) {
+    left: 15px;
+  }
 `;
 
 const GraphicLine = styled.div`
-  border-bottom: 2px solid #B5B5B5;
+  border-bottom: 1px solid #B5B5B5;
 `;
 
 const GraphicLineCircle = styled.div`

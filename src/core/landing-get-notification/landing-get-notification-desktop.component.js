@@ -29,7 +29,7 @@ export function LandingGetNotificationDesktopComponent() {
           <Title variant="landingTitle">
             {text('LANDING.GET_NOTIFICATION.TITLE')}
           </Title>
-          <SmallText variant="landingText" sx={{ maxWidth: '700px' }}>
+          <SmallText variant="landingText" sx={{ maxWidth: '475px' }}>
             {text('LANDING.GET_NOTIFICATION.DESCRIPTION')}
           </SmallText>
           <LandingButtonComponent
@@ -54,7 +54,7 @@ const Layout = styled(LandingLayout)`
 const Title = styled(Typography)`
   @media (min-width: 0px) and (max-width: 600px) {
     font-size: 16px;
-    line-height: 24px;
+    line-height: 21px;
   }
 `;
 

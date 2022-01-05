@@ -80,7 +80,7 @@ const Layout = styled(LandingLayout)`
 const Title = styled(Typography)`
   @media (min-width: 0px) and (max-width: 600px) {
     font-size: 16px;
-    line-height: 24px;
+    line-height: 21px;
   }
 `;
 

@@ -18,7 +18,7 @@ export function PopoverComponent({ anchorEl, visibility, onClosePopover }) {
     >
       <Typography
         sx={{
-          maxWidth: '500px',
+          maxWidth: '512px',
           color: '#707070',
           fontSize: { xs: '10px', lg: 'inherit' },
         }}

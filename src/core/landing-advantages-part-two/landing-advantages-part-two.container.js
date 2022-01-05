@@ -20,4 +20,10 @@ export function LandingAdvantagesPartTwoContainer() {
 const Layout = styled(LandingLayout)`
   background-color: #fff;
   padding: 32px 0;
+  @media (min-width: 1280px) {
+    background-image: url("/static/img/landing/landing-advantages-part-two/background.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 60%;
+  }
 `;

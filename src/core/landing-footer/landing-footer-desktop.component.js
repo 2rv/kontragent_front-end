@@ -8,6 +8,7 @@ import { text } from '../../lib/common/text';
 import { redirect } from '../../main/navigation';
 import { AUTH_SIGNUP_ROUTE_PATH } from '../auth-signup';
 import { AUTH_LOGIN_ROUTE_PATH } from '../auth-login';
+import { HOME_ROUTE_PATH } from '../landing';
 
 export function LandingFooterDesktopComponent() {
   return (

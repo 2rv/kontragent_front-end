@@ -1,6 +1,4 @@
-import styled from 'styled-components';
 import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography';
 
 export function LandingAdvantagesPartTwoSectionDesktopCompmponent({ rowReverse, title, description, image }) {
   return (
@@ -8,8 +6,8 @@ export function LandingAdvantagesPartTwoSectionDesktopCompmponent({ rowReverse, 
       sx={{
         display: 'flex',
         alignItems: 'center',
+        justifyContent: 'space-between',
         flexDirection: rowReverse ? 'row-reverse' : 'row',
-        gap: '32px',
       }}
     >
       <Box
@@ -20,7 +18,7 @@ export function LandingAdvantagesPartTwoSectionDesktopCompmponent({ rowReverse, 
           maxWidth: '529px',
         }}
       >
-        <Title variant="landingTitle" sx={{ fontSize: '24px' }}>{title}</Title>
+        {title}
         {description}
       </Box>
       <Box>
@@ -29,10 +27,3 @@ export function LandingAdvantagesPartTwoSectionDesktopCompmponent({ rowReverse, 
     </Box>
   );
 }
-
-const Title = styled(Typography)`
-  @media (min-width: 0px) and (max-width: 600px) {
-    font-size: 16px;
-    line-height: 24px;
-  }
-`;

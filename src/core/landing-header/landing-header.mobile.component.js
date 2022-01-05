@@ -1,4 +1,5 @@
 import React from 'react';
+import { useRouter } from 'next/router'
 import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
 import Typography from '@mui/material/Typography';
@@ -12,7 +13,12 @@ import { LandingButtonComponent } from '../../lib/common/landing/landing-button.
 import { text } from '../../lib/common/text';
 
 export function LandingHeaderMobileComponent({ activePath, headerLinks }) {
+  const router = useRouter();
   const [mobileDrawerVisibility, setMobileDrawerVisibility] = React.useState(false);
+
+  const scrollWithAnchor = (path) => {
+    router.push(path, undefined, { shallow: true });
+  };
 
   const handleDrawerToggle = () => {
     setMobileDrawerVisibility(!mobileDrawerVisibility);
@@ -22,15 +28,15 @@ export function LandingHeaderMobileComponent({ activePath, headerLinks }) {
     <Box>
       <Box
         sx={{
-          display: 'grid',
-          gridTemplateColumns: { xs: '1fr 2.5fr', sm: '1fr 1.7fr' },
+          display: 'flex',
           alignItems: 'center',
           width: '100%',
-          p: '20px',
+          px: '32px',
+          py: '20px',
         }}
       >
         <img src="/static/img/landing/mobile-menu.svg" onClick={handleDrawerToggle} />
-        <img src="/static/img/landing/header-logo-mobile.svg" style={{ marginTop: '4px' }} />
+        <img src="/static/img/landing/header-logo-mobile.svg" style={{ margin: '0 auto', marginTop: '4px' }} />
       </Box>
       <Drawer
         variant="temporary"
@@ -45,34 +51,40 @@ export function LandingHeaderMobileComponent({ activePath, headerLinks }) {
           '& .MuiDrawer-paper': {
             background: '#F3F3F3',
             boxSizing: 'border-box',
-            padding: '20px',
             height: '100%',
+            px: '32px',
+            py: '20px',
           },
         }}
       >
         <Box
           sx={{
-            display: 'grid',
-            gridTemplateColumns: { xs: '1fr 2.5fr', sm: '1fr 1.7fr' },
+            display: 'flex',
             alignItems: 'center',
             width: '100%',
             p: 0,
           }}
         >
           <img src="/static/img/landing/close.svg" onClick={handleDrawerToggle} />
-          <img src="/static/img/landing/header-logo-mobile.svg" />
+          <img src="/static/img/landing/header-logo-mobile.svg" style={{ margin: '0 auto', marginTop: '4px' }} />
         </Box>
         <Box sx={{ display: 'grid', gap: 2, mt: 5 }}>
-          {headerLinks.map((item, i) => (
+          {headerLinks.map((item, index) => (
             <Typography
-              key={i}
+              key={index}
+              onClick={() => scrollWithAnchor(item.path)}
               sx={
                 activePath === item.path
                   ? {
+                      fontSize: '12px',
                       fontWeight: '600',
                       color: '#000',
                     }
-                  : { color: '#707070', cursor: 'pointer' }
+                  : {
+                      fontSize: '12px',
+                      color: '#707070',
+                      cursor: 'pointer',
+                    }
               }
             >
               {text(item.name)}

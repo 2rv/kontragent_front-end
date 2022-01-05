@@ -1,4 +1,3 @@
-import useMediaQuery from '@mui/material/useMediaQuery';
 import styled from 'styled-components';
 
 import { LandingLayout } from '../../lib/common/landing';
@@ -6,13 +5,14 @@ import { LandingBetaInfoDesktopComponent } from './landing-beta-info-desktop.com
 import { LandingBetaInfoMobileComponent } from './landing-beta-info-mobile.component';
 
 export function LandingBetaInfoContainer() {
-  const desktopBreakpoint = useMediaQuery(theme => theme.breakpoints.up('lg'));
-  const mobileBreakpoint = useMediaQuery(theme => theme.breakpoints.between('xs', 'lg'));
-
   return (
     <Layout>
-      {Boolean(desktopBreakpoint) && <LandingBetaInfoDesktopComponent graphicData={GRAPHIC_DATA} />}
-      {Boolean(mobileBreakpoint) && <LandingBetaInfoMobileComponent graphicData={GRAPHIC_DATA} />}
+      <Desktop>
+        <LandingBetaInfoDesktopComponent graphicData={GRAPHIC_DATA} />
+      </Desktop>
+      <Mobile>
+        <LandingBetaInfoMobileComponent graphicData={GRAPHIC_DATA} />
+      </Mobile>
     </Layout>
   );
 }
@@ -25,17 +25,25 @@ const Layout = styled(LandingLayout)`
     background-size: cover;
     background-position: 50% 60%;
   }
-  @media (min-width: 1366px) and (max-width: 1600px) {
-    background-image: url("/static/img/landing/landing-beta-info/background-1366.svg");
+  @media (min-width: 1366px) {
+    background-image: url("/static/img/landing/landing-beta-info/background.svg");
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: 50% 60%;
+    background-position: right top;
   }
-  @media (min-width: 1601px) {
-    background-image: url("/static/img/landing/landing-beta-info/background-1600.svg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: 50% 60%;
+`;
+
+const Desktop = styled.div`
+  position: relative;
+  @media (min-width: 0px) and (max-width: 1140px) {
+    display: none;
+  }
+`;
+
+const Mobile = styled.div`
+  display: none;
+  @media (min-width: 0px) and (max-width: 1140px) {
+    display: block;
   }
 `;
 

@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
-export function LandingLayout({ children, className }) {
+export function LandingLayout({ children, className, id }) {
   return (
-    <MainContainer className={className}>
+    <MainContainer id={id} className={className}>
       <MainContent>
         {children}
       </MainContent>

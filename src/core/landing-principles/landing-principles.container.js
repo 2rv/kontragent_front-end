@@ -10,7 +10,7 @@ export function LandingPrinciplesContainer() {
   const mobileBreakpoint = useMediaQuery(theme => theme.breakpoints.between('xs', 'lg'));
 
   return (
-    <Layout>
+    <Layout id="principles">
       {Boolean(desktopBreakpoint) && <LandingPrinciplesDesktopComponent />}
       {Boolean(mobileBreakpoint) && <LandingPrinciplesMobileComponent />}
     </Layout>

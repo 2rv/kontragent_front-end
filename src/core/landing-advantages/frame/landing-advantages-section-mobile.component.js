@@ -1,6 +1,4 @@
-import styled from 'styled-components';
 import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography';
 
 export function LandingAdvantagesSectionMobileCompmponent({ title, description, image }) {
   return (
@@ -20,7 +18,7 @@ export function LandingAdvantagesSectionMobileCompmponent({ title, description, 
           maxWidth: '529px',
         }}
       >
-        <Title variant="landingTitle">{title}</Title>
+        {title}
         {description}
       </Box>
       <Box>
@@ -29,10 +27,3 @@ export function LandingAdvantagesSectionMobileCompmponent({ title, description, 
     </Box>
   );
 }
-
-const Title = styled(Typography)`
-  @media (min-width: 0px) and (max-width: 600px) {
-    font-size: 16px;
-    line-height: 24px;
-  }
-`;

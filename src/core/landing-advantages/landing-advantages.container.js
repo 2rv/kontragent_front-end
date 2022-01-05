@@ -10,7 +10,7 @@ export function LandingAdvantagesContainer() {
   const mobileBreakpoint = useMediaQuery(theme => theme.breakpoints.between('xs', 'lg'));1
 
   return (
-    <Layout>
+    <Layout id="advantages">
       {Boolean(desktopBreakpoint) && <LandingAdvantagesDesktopComponent />}
       {Boolean(mobileBreakpoint) && <LandingAdvantagesMobileComponent />}
     </Layout>

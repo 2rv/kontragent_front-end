@@ -10,7 +10,11 @@ export function LandingAdvantagesDesktopComponent() {
       <LandingAdvantagesSectionDesktopCompmponent
         rowReverse={true}
         image={`/static/img/landing/landing-advantages/image-1.svg`}
-        title={text('LANDING.ADVANTAGES.BLOCK_1.TITLE')}
+        title={
+          <Typography variant="landingTitle" sx={{ fontSize: '24px' }}>
+            {text('LANDING.ADVANTAGES.BLOCK_1.TITLE')}
+          </Typography>
+        }
         description={
           <Typography variant="body1">
             {text('LANDING.ADVANTAGES.BLOCK_1.DESCRIPTION')}
@@ -19,18 +23,27 @@ export function LandingAdvantagesDesktopComponent() {
       />
       <LandingAdvantagesSectionDesktopCompmponent
         image={`/static/img/landing/landing-advantages/image-2.svg`}
-        title={text('LANDING.ADVANTAGES.BLOCK_2.TITLE')}
+        title={
+          <Typography variant="landingTitle" sx={{ fontSize: '24px' }}>
+            {text('LANDING.ADVANTAGES.BLOCK_2.TITLE')}
+          </Typography>
+        }
         description={
-          <Typography variant="body1">
-            {text('LANDING.ADVANTAGES.BLOCK_2.DESCRIPTION_1')}<br/><br/>
-            {text('LANDING.ADVANTAGES.BLOCK_2.DESCRIPTION_2')}
+          <Typography variant="body1" sx={{ maxWidth: '480px' }}>
+            {text('LANDING.ADVANTAGES.BLOCK_2.DESCRIPTION_1')}<br/>
+            {text('LANDING.ADVANTAGES.BLOCK_2.DESCRIPTION_2')}<br/><br/>
+            {text('LANDING.ADVANTAGES.BLOCK_2.DESCRIPTION_3')}
           </Typography>
         }
       />
       <LandingAdvantagesSectionDesktopCompmponent
         rowReverse={true}
         image={`/static/img/landing/landing-advantages/image-3.svg`}
-        title={text('LANDING.ADVANTAGES.BLOCK_3.TITLE')}
+        title={
+          <Typography variant="landingTitle" sx={{ fontSize: '24px' }}>
+            {text('LANDING.ADVANTAGES.BLOCK_3.TITLE')}
+          </Typography>
+        }
         description={
           <ul style={{ listStyle: 'inherit', marginLeft: '15px' }}>
             <li><Typography variant="body1">{text('LANDING.ADVANTAGES.BLOCK_3.LIST.ITEM_1')}</Typography></li>

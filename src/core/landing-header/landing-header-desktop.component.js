@@ -1,3 +1,4 @@
+import { useRouter } from 'next/router';
 import styled from 'styled-components';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
@@ -11,17 +12,24 @@ import { redirect } from '../../main/navigation';
 import { LandingButtonComponent } from '../../lib/common/landing';
 import { text } from '../../lib/common/text';
 
-export function LandingHeaderDesktopComponent({ activePath, headerLinks }) {
+export function LandingHeaderDesktopComponent({ headerLinks }) {
+  const router = useRouter();
+
+  const scrollWithAnchor = (path) => {
+    router.push(path, undefined, { shallow: true });
+  };
+
   return (
     <AppBar position="static" sx={{ p: 0, backgroundColor: '#F3F3F3' }}>
-      <ToolbarCase>
+      <ToolbarCase disableGutters sx={{ px: 8 }}>
         <img height="24px" src="/static/img/logo.svg" />
         <LinkItems>
-          {headerLinks.map((item, i) => (
+          {headerLinks.map((item, index) => (
             <Typography
-              key={i}
+              key={index}
+              onClick={() => scrollWithAnchor(item.path)}
               sx={
-                activePath === item.path
+                router.asPath === item.path
                   ? {
                       fontWeight: '600',
                       color: '#000',
