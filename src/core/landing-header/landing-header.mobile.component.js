@@ -12,7 +12,7 @@ import { redirect } from '../../main/navigation';
 import { LandingButtonComponent } from '../../lib/common/landing/landing-button.component';
 import { text } from '../../lib/common/text';
 
-export function LandingHeaderMobileComponent({ activePath, headerLinks }) {
+export function LandingHeaderMobileComponent({ headerLinks }) {
   const router = useRouter();
   const [mobileDrawerVisibility, setMobileDrawerVisibility] = React.useState(false);
 
@@ -36,7 +36,7 @@ export function LandingHeaderMobileComponent({ activePath, headerLinks }) {
         }}
       >
         <img src="/static/img/landing/mobile-menu.svg" onClick={handleDrawerToggle} />
-        <img src="/static/img/landing/header-logo-mobile.svg" style={{ margin: '0 auto', marginTop: '4px' }} />
+        <img src="/static/img/landing/header-logo-mobile.svg" style={{ margin: '4px 55px 0px', marginTop: '4px' }} />
       </Box>
       <Drawer
         variant="temporary"
@@ -66,7 +66,7 @@ export function LandingHeaderMobileComponent({ activePath, headerLinks }) {
           }}
         >
           <img src="/static/img/landing/close.svg" onClick={handleDrawerToggle} />
-          <img src="/static/img/landing/header-logo-mobile.svg" style={{ margin: '0 auto', marginTop: '4px' }} />
+          <img src="/static/img/landing/header-logo-mobile.svg" style={{ margin: '4px 55px 0px', marginTop: '4px' }} />
         </Box>
         <Box sx={{ display: 'grid', gap: 2, mt: 5 }}>
           {headerLinks.map((item, index) => (
@@ -74,7 +74,7 @@ export function LandingHeaderMobileComponent({ activePath, headerLinks }) {
               key={index}
               onClick={() => scrollWithAnchor(item.path)}
               sx={
-                activePath === item.path
+                router.asPath === item.path
                   ? {
                       fontSize: '12px',
                       fontWeight: '600',

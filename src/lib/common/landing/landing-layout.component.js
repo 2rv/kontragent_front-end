@@ -23,7 +23,4 @@ const MainContent = styled.div`
   display: flex;
   flex-direction: column;
   align-self: center;
-  @media (min-width: 0px) and (max-width: 600px) {
-    padding: 20px;
-  }
 `;
