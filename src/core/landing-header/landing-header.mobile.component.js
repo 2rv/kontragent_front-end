@@ -29,6 +29,7 @@ export function LandingHeaderMobileComponent({ headerLinks }) {
       <Box
         sx={{
           display: 'flex',
+          justifyContent: 'space-between',
           alignItems: 'center',
           width: '100%',
           px: '32px',
@@ -36,7 +37,8 @@ export function LandingHeaderMobileComponent({ headerLinks }) {
         }}
       >
         <img src="/static/img/landing/mobile-menu.svg" onClick={handleDrawerToggle} />
-        <img src="/static/img/landing/header-logo-mobile.svg" style={{ margin: '4px 55px 0px', marginTop: '4px' }} />
+        <img src="/static/img/landing/header-logo-mobile.svg" style={{ marginRight: '12px', marginTop: '2px' }} />
+        <div></div>
       </Box>
       <Drawer
         variant="temporary"
@@ -60,40 +62,44 @@ export function LandingHeaderMobileComponent({ headerLinks }) {
         <Box
           sx={{
             display: 'flex',
+            justifyContent: 'space-between',
             alignItems: 'center',
             width: '100%',
             p: 0,
           }}
         >
           <img src="/static/img/landing/close.svg" onClick={handleDrawerToggle} />
-          <img src="/static/img/landing/header-logo-mobile.svg" style={{ margin: '4px 55px 0px', marginTop: '4px' }} />
+          <img src="/static/img/landing/header-logo-mobile.svg" style={{ marginRight: '12px', marginTop: '2px' }} />
+          <div></div>
         </Box>
         <Box sx={{ display: 'grid', gap: 2, mt: 5 }}>
-          {headerLinks.map((item, index) => (
-            <Typography
-              key={index}
-              onClick={() => scrollWithAnchor(item.path)}
-              sx={
-                router.asPath === item.path
-                  ? {
-                      fontSize: '12px',
-                      fontWeight: '600',
-                      color: '#000',
-                    }
-                  : {
-                      fontSize: '12px',
-                      color: '#707070',
-                      cursor: 'pointer',
-                    }
-              }
-            >
-              {text(item.name)}
-            </Typography>
-          ))}
+          <Box sx={{ display: 'grid', gap: 2 }}>
+            {headerLinks.map((item, index) => (
+              <Typography
+                key={index}
+                onClick={() => scrollWithAnchor(item.path)}
+                sx={
+                  router.asPath === item.path
+                    ? {
+                        fontSize: '16px',
+                        fontWeight: '600',
+                        color: '#000',
+                      }
+                    : {
+                        fontSize: '16px',
+                        color: '#707070',
+                        cursor: 'pointer',
+                      }
+                }
+              >
+                {text(item.name)}
+              </Typography>
+            ))}
+          </Box>
           <Button
             variant="black"
             onClick={() => redirect(AUTH_LOGIN_ROUTE_PATH)}
-            sx={{ height: '32px', mt: 3, mb: 1 }}
+            sx={{ height: '36px', mt: 3, mb: 0.5 }}
           >
             <Typography variant="landingText" sx={{ fontWeight: '600', fontSize: '12px' }}>
               {text('LANDING.COMMON.SIGNIN')}
@@ -102,8 +108,9 @@ export function LandingHeaderMobileComponent({ headerLinks }) {
           <LandingButtonComponent
             tid={text('LANDING.COMMON.SIGNUP')}
             onClick={() => redirect(AUTH_SIGNUP_ROUTE_PATH)}
-            height="32px"
+            height="36px"
             maxWidth="100%"
+            boxShadow="inherit"
           />
         </Box>
       </Drawer>

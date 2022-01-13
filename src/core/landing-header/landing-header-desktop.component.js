@@ -52,6 +52,7 @@ export function LandingHeaderDesktopComponent({ headerLinks }) {
             tid={text('LANDING.COMMON.SIGNUP')}
             onClick={() => redirect(AUTH_SIGNUP_ROUTE_PATH)}
             height="46px"
+            boxShadow="inherit"
           />
         </Box>
       </ToolbarCase>
