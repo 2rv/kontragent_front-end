@@ -14,13 +14,13 @@ import { CompanyAdminItemRevisionListContainer } from '../company-admin-item-rev
 const TAB = [
   {
     id: 0,
-    label: 'NAVIGATION.TABS.COMPANY_ADMIN_ITEM.REVISION',
-    component: CompanyAdminItemRevisionListContainer,
+    label: 'NAVIGATION.TABS.COMPANY_ADMIN_ITEM.INFO',
+    component: CompanyAdminItemInfoPage,
   },
   {
     id: 1,
-    label: 'NAVIGATION.TABS.COMPANY_ADMIN_ITEM.INFO',
-    component: CompanyAdminItemInfoPage,
+    label: 'NAVIGATION.TABS.COMPANY_ADMIN_ITEM.REVISION',
+    component: CompanyAdminItemRevisionListContainer,
   },
   {
     id: 2,

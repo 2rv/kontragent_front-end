@@ -65,8 +65,13 @@ import { articleCommentSendStore } from '../../core/article-comment-send/article
 import { ARTICLE_COMMENT_SEND_STORE_NAME } from '../../core/article-comment-send/article-comment-send.constant';
 import { articleCommentDeleteStore } from '../../core/article-comment-delete/article-comment-delete.store';
 import { ARTICLE_COMMENT_DELETE_STORE_NAME } from '../../core/article-comment-delete/article-comment-delete.constant';
+import {
+  companyAdminItemInfoDataStore,
+  COMPANY_ADMIN_ITEM_INFO_DATA_STORE_NAME,
+} from '../../core/company-admin-item-info-data';
 
 export const reducers = combineReducers({
+  [COMPANY_ADMIN_ITEM_INFO_DATA_STORE_NAME]: companyAdminItemInfoDataStore,
   [AUTH_STORE_NAME]: authStore,
   [LANG_STORE_NAME]: langStore,
   [NAVIGATION_STORE_NAME]: navigationStore,
