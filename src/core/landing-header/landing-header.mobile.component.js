@@ -32,8 +32,8 @@ export function LandingHeaderMobileComponent({ headerLinks }) {
           justifyContent: 'space-between',
           alignItems: 'center',
           width: '100%',
-          px: '32px',
-          py: '20px',
+          px: 5,
+          py: 5,
         }}
       >
         <img src="/static/img/landing/mobile-menu.svg" onClick={handleDrawerToggle} />
@@ -54,8 +54,8 @@ export function LandingHeaderMobileComponent({ headerLinks }) {
             background: '#F3F3F3',
             boxSizing: 'border-box',
             height: '100%',
-            px: '32px',
-            py: '20px',
+            px: 5,
+            py: 5,
           },
         }}
       >
