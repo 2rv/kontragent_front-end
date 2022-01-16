@@ -22,7 +22,7 @@ export function LandingStartNowDesktopComponent() {
         <Title variant="landingTitle" sx={{ color: '#fff' }}>
           {text('LANDING.START_NOW.TITLE')}
         </Title>
-        <Box sx={{ display: 'flex', flexDirection: 'column', gap: '24px', maxWidth: '600px' }}>
+        <Box sx={{ display: 'flex', flexDirection: 'column', gap: '24px', maxWidth: '610px' }}>
           <SmallText variant="landingText" sx={{ color: '#fff' }}>
             {text('LANDING.START_NOW.DESCRIPTION_1')}
           </SmallText>

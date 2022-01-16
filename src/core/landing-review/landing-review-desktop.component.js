@@ -32,7 +32,7 @@ export function LandingReviewDesktopComponent() {
           <SmallText variant="landingText" sx={{ color: '#fff', maxWidth: '600px' }}>
             {text('LANDING.REVIEW.DESCRIPTION_1')}
           </SmallText>
-          <SmallText variant="landingText" sx={{ color: '#fff', maxWidth: '600px' }}>
+          <SmallText variant="landingText" sx={{ color: '#fff', maxWidth: '570px' }}>
             {text('LANDING.REVIEW.DESCRIPTION_2')}
           </SmallText>
         </Box>

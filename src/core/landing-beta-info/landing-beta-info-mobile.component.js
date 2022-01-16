@@ -1,4 +1,3 @@
-import useMediaQuery from '@mui/material/useMediaQuery';
 import styled from 'styled-components';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
@@ -6,9 +5,6 @@ import Typography from '@mui/material/Typography';
 import { text } from '../../lib/common/text';
 
 export function LandingBetaInfoMobileComponent({ graphicData }) {
-  const graphicCircleDesktopBreakpoint = useMediaQuery(theme => theme.breakpoints.up('sm'));
-  const graphicCircleMobileBreakpoint = useMediaQuery(theme => theme.breakpoints.between('xs', 'sm'));
-
   return (
     <Box
       sx={{
@@ -19,33 +15,28 @@ export function LandingBetaInfoMobileComponent({ graphicData }) {
         minHeight: { xs: '460px', sm: '600px' },
       }}
     >
-      <Box
-        sx={{
-          gap: '12px',
-          display: 'flex',
-          flexDirection: 'column',
-        }}
-      >
+      <Box sx={{ display: 'grid', gap: '12px' }}>
         <Title variant="landingTitle">
           {text('LANDING.BETA_INFO.TITLE')}
         </Title>
-        <SmallText variant="landingText" sx={{ maxWidth: '550px' }}>
+        <SmallText variant="landingText">
           {text('LANDING.BETA_INFO.DESCRIPTION')}
         </SmallText>
       </Box>
       <Box sx={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '24px', position: 'relative' }}>
         {graphicData.map((graphic, index) => (
           <Box key={index} sx={{ display: 'flex', flexDirection: 'column', gap: { xs: '6px', sm: '12px' } }}>
-            <Box sx={{ display: 'flex', alignItems: 'center' }}>
-              {Boolean(graphicCircleDesktopBreakpoint) && <GraphicCircle src={graphic.svgCircle} />}
-              {Boolean(graphicCircleMobileBreakpoint) && <GraphicCircle src={graphic.svgCircleMobile} />}
+            <GraphicContainer>
+              <GraphicCricle>
+                <GraphicCirclePoint />
+              </GraphicCricle>
               {Boolean(index % 2 === 0) && (
                 <GraphicLineContainer>
-                  <GraphicLine></GraphicLine>
-                  <GraphicLineCircle></GraphicLineCircle>
+                  <GraphicLine />
+                  <GraphicPoint />
                 </GraphicLineContainer>
               )}
-            </Box>
+            </GraphicContainer>
             <GraphicText variant="title">{graphic.date}</GraphicText>
             <ul style={{ listStyle: 'inherit', marginLeft: '16px' }}>
               {graphic.tasks.map((task, index) => (
@@ -73,40 +64,6 @@ const SmallText = styled(Typography)`
   }
 `;
 
-const GraphicCircle = styled.img`
-  z-index: 999;
-`;
-
-const GraphicLineContainer = styled.div`
-  position: absolute;
-  left: 25px;
-  width: 96%;
-  @media (min-width: 0px) and (max-width: 599px) {
-    left: 15px;
-  }
-`;
-
-const GraphicLine = styled.div`
-  border-bottom: 1px solid #B5B5B5;
-`;
-
-const GraphicLineCircle = styled.div`
-  background-color: #3AB8FF;
-  border: 1px solid #3AB8FF;
-  height: 10px;
-  width: 10px;
-  border-radius: 50%;
-  position: absolute;
-  right: -4px;
-  bottom: -4px;
-  @media (min-width: 600px) and (max-width: 1000px) {
-    height: 12px;
-    width: 12px;
-    right: -5px;
-    bottom: -5px;
-  }
-`;
-
 const GraphicText = styled(Typography)`
   @media (min-width: 0px) and (max-width: 599px) {
     margin-top: 3px;
@@ -120,4 +77,48 @@ const GraphicDescription = styled(Typography)`
     font-size: 10px;
     line-height: 15px;
   }
+`;
+
+const GraphicContainer = styled.div`
+  display: flex;
+  align-items: center;
+  width: 100%;
+`;
+
+const GraphicCricle = styled.div`
+  border: 3px solid #3AB8FF;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
+const GraphicCirclePoint = styled.div`
+  background-color: #3AB8FF;
+  width: 5.6px;
+  height: 5.6px;
+  border-radius: 50%;
+`;
+
+const GraphicLineContainer = styled.div`
+  display: flex;
+  align-items: center;
+  position: absolute;
+  width: 100%;
+  left: 15px;
+`;
+
+const GraphicPoint = styled.div`
+  background-color: #3AB8FF;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+`;
+
+const GraphicLine = styled.div`
+  border-bottom: 1px solid #B5B5B5;
+  width: 95%;
 `;

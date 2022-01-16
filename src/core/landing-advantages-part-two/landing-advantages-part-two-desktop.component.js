@@ -30,9 +30,13 @@ export function LandingAdvantagesPartTwoDesktopComponent() {
         }
         description={
           <Typography variant="body1" sx={{ maxWidth: '480px' }}>
-            {text('LANDING.ADVANTAGES_PART_TWO.BLOCK_1.DESCRIPTION_1')}<br/><br/>
-            {text('LANDING.ADVANTAGES_PART_TWO.BLOCK_1.DESCRIPTION_2')}<br/><br/>
-            {text('LANDING.ADVANTAGES_PART_TWO.BLOCK_1.DESCRIPTION_3')}
+            Сегодня «письма счастья» или предпроверочные мероприятия невозможно заблаговременно спрогнозировать, а тем более
+            угадать финансовые потери от потенциально планируемых претензий.<br/><br/>
+            Сегодняшние реалии таковы, что в определенных контекстах крайне невыгодно предупреждать
+            или сигнализировать налогоплательщику о его возможных допущенных нарушениях НК РФ,
+            так как от этогобудет зависеть объём средств истребованных в бюджет РФ.<br/><br/>
+            Наша платформа как современный медицинский центр: диагностируем, выявляем проблемные места,
+            назначаем «курс лечения», выводим из критической ситуации.
           </Typography>
         }
       />
@@ -59,16 +63,19 @@ export function LandingAdvantagesPartTwoDesktopComponent() {
         }
         description={
           <Typography variant="body1" sx={{ maxWidth: '490px' }}>
-            {text('LANDING.ADVANTAGES_PART_TWO.BLOCK_3.DESCRIPTION_1')}<br/><br/>
-            {text('LANDING.ADVANTAGES_PART_TWO.BLOCK_3.DESCRIPTION_BEFORE_CLAUSE')}{' '}
+            Платформа уникальна и не имеет аналогов.<br/><br/>
+            Наши возможные конкуренты заставляют подписывать налоговую{' '}
             <PopoverComponent
               anchorEl={anchorEl}
               visibility={isOpen}
               onClosePopover={onClosePopover}
             />
-            <ClauseText isOpen={isOpen} onClick={onOpenPopover}>{text('LANDING.ADVANTAGES_PART_TWO.BLOCK_3.CLAUSE')}</ClauseText>{' '}
-            {text('LANDING.ADVANTAGES_PART_TWO.BLOCK_3.DESCRIPTION_AFTER_CLAUSE')}<br/><br/>
-            {text('LANDING.ADVANTAGES_PART_TWO.BLOCK_3.DESCRIPTION_3')}
+            <ClauseText isOpen={isOpen} onClick={onOpenPopover}>оговорку*</ClauseText>{' '}
+            в договорах всей цепочки прослеживаемых организаций и давать бессрочное согласие ФНС РФ на признание сведений,
+            составляющих налоговую тайну общедоступным для мгновенного выявления и доначисления за условно допущенные налоговые
+            правонарушения со стороны контрагентов и партнеров клиента.<br/><br/>
+            Иными словами, занимаются посреднической деятельностью между государством и налогоплательщиком, при этом<br/>
+            не оказывая никакой поддержки и не беря на себя никакой ответственности за данный факт.
           </Typography>
         }
       />

@@ -17,7 +17,8 @@ export function LandingAdvantagesDesktopComponent() {
         }
         description={
           <Typography variant="body1">
-            {text('LANDING.ADVANTAGES.BLOCK_1.DESCRIPTION')}
+            Информационную услугу, а простым языком диагностику книги покупок на предмет наличия расхождений или разрывов<br/>
+            по декларации НДС. Клиент получает детальную расшифровку выявленных проблемных участков, а также рекомендации специалистов нашей платформы по ее устранению и пресечению.
           </Typography>
         }
       />
@@ -48,7 +49,7 @@ export function LandingAdvantagesDesktopComponent() {
           <ul style={{ listStyle: 'inherit', marginLeft: '15px' }}>
             <li><Typography variant="body1">{text('LANDING.ADVANTAGES.BLOCK_3.LIST.ITEM_1')}</Typography></li>
             <li><Typography variant="body1">{text('LANDING.ADVANTAGES.BLOCK_3.LIST.ITEM_2')}</Typography></li>
-            <li><Typography variant="body1">{text('LANDING.ADVANTAGES.BLOCK_3.LIST.ITEM_3')}</Typography></li>
+            <li><Typography variant="body1" sx={{ maxWidth: '490px' }}>{text('LANDING.ADVANTAGES.BLOCK_3.LIST.ITEM_3')}</Typography></li>
             <li><Typography variant="body1">{text('LANDING.ADVANTAGES.BLOCK_3.LIST.ITEM_4')}</Typography></li>
           </ul>
         }

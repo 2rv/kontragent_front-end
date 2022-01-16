@@ -30,7 +30,8 @@ export function LandingGetNotificationDesktopComponent() {
             {text('LANDING.GET_NOTIFICATION.TITLE')}
           </Title>
           <SmallText variant="landingText" sx={{ maxWidth: '475px' }}>
-            {text('LANDING.GET_NOTIFICATION.DESCRIPTION')}
+            {text('LANDING.GET_NOTIFICATION.DESCRIPTION_1')}<br/>
+            {text('LANDING.GET_NOTIFICATION.DESCRIPTION_2')}
           </SmallText>
           <LandingButtonComponent
             tid={text('LANDING.COMMON.REGISTER_NOW')}
