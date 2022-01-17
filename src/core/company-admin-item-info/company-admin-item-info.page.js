@@ -21,9 +21,9 @@ export function CompanyAdminItemInfoPage() {
         <Grid item>
           <CompanyAccountItemInfoVerificateContainer />
         </Grid>
-      </Grid>
-      <Grid item>
-        <CompanyAdminItemInfoDataContainer />
+        <Grid item>
+          <CompanyAdminItemInfoDataContainer />
+        </Grid>
       </Grid>
     </NavigationComponent>
   );
