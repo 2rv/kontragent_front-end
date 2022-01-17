@@ -20,29 +20,39 @@ import {
 import { convertAuthVerificationEmailFormData } from './auth-verification-email.convert';
 
 import { NAVIGATION_STORE_NAME } from '../../lib/common/navigation/navigation.constant';
-
+import { AUTH_STORE_NAME } from '../../lib/common/auth'
+import { authUpdateUserData } from '../../lib/common/auth/auth.action';
 import {
   getRequestErrorMessage,
   isRequestError,
   isRequestPending,
   isRequestSuccess,
 } from '../../main/store/store.service';
+import { redirect } from '../../main/navigation/navigation.core';
 
 export function AuthVerificationEmailContainer() {
-  const { state, pageLoading } = useSelector((state) => ({
+  const { state, pageLoading, confirmEmail } = useSelector((state) => ({
     state: state[AUTH_VERIFICATION_EMAIL_STORE_NAME],
     pageLoading: state[NAVIGATION_STORE_NAME].pageLoading,
+    confirmEmail: state[AUTH_STORE_NAME].user.confirmEmail
   }));
 
   const dispatch = useDispatch();
 
   React.useEffect(() => {
+    authUpdateUserData()(dispatch)
     dispatch(verificationEmailFormGetCode());
 
     return function cleanup() {
       dispatch(cleanupStore());
     };
   }, []);
+
+  React.useEffect(() => {
+    if (confirmEmail) {
+      redirect('/')
+    }
+  }, [confirmEmail])
 
   const verificationEmailFormSendData = (values) => {
     const data = convertAuthVerificationEmailFormData(values);

@@ -40,6 +40,8 @@ import COMPANY_ACCOUNT_ITEM_CREATE_BILL from './company-account-item-create-bill
 import ADMIN_BILL_INFO from './admin-bill-info.json';
 import ADMIN_BILL_REVISION from './admin-bill-revision.json';
 import NOTIFICATION_ADMIN_EMAIL_CREATE from './notification-admin-email-create.json';
+import FEEDBACK_ACCOUNT_CREATE from './feedback-account-create.json';
+import FEEDBACK_ADMIN_ITEM from './feedback-admin-item.json';
 
 export const RU = {
   translation: {
@@ -84,5 +86,7 @@ export const RU = {
     ADMIN_BILL_INFO,
     ADMIN_BILL_REVISION,
     NOTIFICATION_ADMIN_EMAIL_CREATE,
+    FEEDBACK_ACCOUNT_CREATE,
+    FEEDBACK_ADMIN_ITEM,
   },
 };
