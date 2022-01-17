@@ -21,7 +21,6 @@ export const ArticleCommentListListComponent = ({ list, role }) => {
       </Box>
     );
   }
-
   return (
     <List disablePadding>
       {list.map((item, key) => (
@@ -37,7 +36,7 @@ export const ArticleCommentListListComponent = ({ list, role }) => {
             }
           >
             <Grid container direction="column">
-              <Grid item>
+              <Grid item sx={{ pb: 2, fontSize: '16px' }}>
                 <ListItemText
                   primary={
                     <span style={{ fontWeight: '500' }}>
@@ -47,16 +46,14 @@ export const ArticleCommentListListComponent = ({ list, role }) => {
                   }
                 />
               </Grid>
-              <Grid item>
+              <Grid item sx={{ pb: 3, fontSize: '14px' }}>
                 <ListItemText
                   primary={
-                    <span>
-                      {item[ARTICLE_COMMENT_LIST_DATA_NAME.TEXT]}
-                    </span>
+                    <span>{item[ARTICLE_COMMENT_LIST_DATA_NAME.TEXT]}</span>
                   }
                 />
               </Grid>
-              <Grid item>
+              <Grid item item sx={{ fontSize: '14px' }}>
                 <ListItemText
                   secondary={
                     <span style={{ color: '#B5B5B5' }}>
@@ -67,6 +64,7 @@ export const ArticleCommentListListComponent = ({ list, role }) => {
               </Grid>
             </Grid>
           </ListItem>
+          <Divider sx={{ mb: 4 }} />
         </React.Fragment>
       ))}
     </List>

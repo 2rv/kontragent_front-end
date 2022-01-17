@@ -8,19 +8,17 @@ export function NavigationListComponent({ activePath, menuListItems }) {
     <List disablePadding>
       {menuListItems.map((item, i) => {
         return (
-          <ListItem disablePadding key={i}>
+          <ListItem key={i} sx={{ py: 0 }}>
             <ListItemButton
-              sx={{ px: 8, py: 3 }}
-              selected={activePath === Object.keys(item)[0]}
+              selected={activePath === item.path}
               onClick={() => {
-                redirect(Object.keys(item)[0]);
+                redirect(item.path);
               }}
             >
               <ListItemText
-                disablePadding
-                primary={item[Object.keys(item)[0]]}
+                primary={item.name}
                 primaryTypographyProps={
-                  activePath === Object.keys(item)[0]
+                  activePath === item.path
                     ? {
                         fontWeight: '600',
                         color: '#000',

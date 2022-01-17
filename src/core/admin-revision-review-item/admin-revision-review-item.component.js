@@ -33,7 +33,7 @@ export function AdminRevisionReviewItemComponent({
                 sx={{ px: 8, pt: 8, pb: 2 }}
                 component="div"
               >
-                {data.title}
+                {data.title ? data.title : ''}
               </Typography>
 
               <ReviewStatus status={data.status} />

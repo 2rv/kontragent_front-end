@@ -34,7 +34,7 @@ export const UserReferalCreateFormComponent = (props) => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <Box sx={{ py: 4 }}>
+      <Box sx={{ pt: 4 }}>
         <Grid
           spacing={3}
           container
@@ -59,7 +59,7 @@ export const UserReferalCreateFormComponent = (props) => {
 
           <Grid xs={12} lg={4} item>
             <Button
-              sx={{ width: '100%', height: '54px' }}
+              sx={{ width: '100%' }}
               type="sumbit"
               disabled={isSubmitDisabled()}
             >

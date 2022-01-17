@@ -79,6 +79,7 @@ export const components = {
       },
       notchedOutline: {
         borderColor: '#E5E8EC',
+        borderRadius: '10px',
       },
       input: {
         fontSize: '14px',
@@ -175,6 +176,9 @@ export const components = {
         boxShadow: 'none',
         height: '46px',
       },
+      input: {
+        height: '46px',
+      },
     },
   },
   MuiDivider: {
@@ -196,9 +200,6 @@ export const components = {
     },
   },
   MuiListItemText: {
-    defaultProps: {
-      gutterBottom: false,
-    },
     styleOverrides: {
       root: {
         margin: 0,

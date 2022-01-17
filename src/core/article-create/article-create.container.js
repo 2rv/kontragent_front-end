@@ -28,7 +28,6 @@ export function CreateArticleContainer() {
   }));
 
   const onSubmit = (formValues) => {
-    console.log(formValues);
     const data = convertForCreateUpdate(formValues);
     dispatch(createArticleUploadData(data));
   };

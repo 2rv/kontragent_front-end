@@ -20,7 +20,7 @@ export function CompanyAccountItemPaymentListContainer() {
     getCompanyAccountItemPaymentList();
   }, []);
 
-  const getCompanyAccountItemPaymentList = async (data) => {
+  const getCompanyAccountItemPaymentList = async () => {
     setRequestPending(true);
     setRequestSuccess(false);
     setRequestError(false);

@@ -23,36 +23,22 @@ export const AdminRevisionReviewItemAccordionComponent = ({ data }) => {
           >
             <Grid item>
               <Grid item>
-                <Typography gutterBottom variant="listTitle" component="div">
-                  {text('ADMIN_REVISION_REVIEW.ACCORDION.NAME')}
-                </Typography>{' '}
                 <Typography variant="body1" sx={{ mt: -2 }}>
-                  {company.name}
+                  {company.name} {company.inn}
                 </Typography>
               </Grid>
             </Grid>
           </AccordionSummary>
-          <AccordionDetails sx={{ mb: -6 }}>
+          <AccordionDetails>
             <Typography>
-              {company.year.map((years) => {
+              {company.year.map((years, i) => {
                 return (
-                  <React.Fragment>
+                  <React.Fragment key={i}>
                     <Typography
                       gutterBottom
                       variant="listTitle"
                       component="div"
-                    >
-                      {' '}
-                      {text('ADMIN_REVISION_REVIEW.ACCORDION.INN')}{' '}
-                    </Typography>
-                    <Typography variant="body1" sx={{ mt: -2 }}>
-                      {' '}
-                      {company.inn}
-                    </Typography>
-                    <Typography
-                      gutterBottom
-                      variant="listTitle"
-                      component="div"
+                      sx={{ mt: 2 }}
                     >
                       {text('ADMIN_REVISION_REVIEW.ACCORDION.YEAR')}
                     </Typography>
@@ -85,14 +71,24 @@ export const AdminRevisionReviewItemAccordionComponent = ({ data }) => {
                 );
               })}
             </Typography>
-            <Typography gutterBottom variant="listTitle" component="div">
+            <Typography
+              gutterBottom
+              variant="listTitle"
+              component="div"
+              sx={{ mt: 2 }}
+            >
               {text('ADMIN_REVISION_REVIEW.ACCORDION.DESCRIPTION')}{' '}
             </Typography>
-            <Typography variant="body1" sx={{ mt: -3 }}>
+            <Typography variant="body1" sx={{ mt: -2 }}>
               {company.description}
             </Typography>
 
-            <Typography gutterBottom variant="listTitle" component="div">
+            <Typography
+              gutterBottom
+              variant="listTitle"
+              component="div"
+              sx={{ mt: 2 }}
+            >
               {text(
                 'COMPANY_ACCOUNT_ITEM_REVISION.REVISION_ITEM.FILES_FOR_DESCRIBING_REVISION_COMPANY',
               )}
@@ -109,7 +105,6 @@ export const AdminRevisionReviewItemAccordionComponent = ({ data }) => {
             )}
           </AccordionDetails>
         </Accordion>
-        <Divider sx={{ mx: 8 }} />
       </div>
     ),
   );

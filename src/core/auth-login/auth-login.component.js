@@ -74,6 +74,7 @@ export function AuthLoginComponent(props) {
                   sx={{ fontWeight: '600', fontSize: '14px' }}
                   component="button"
                   variant="body2"
+                  underline="hover"
                   onClick={() => {
                     redirect(AUTH_SIGNUP_ROUTE_PATH);
                   }}
@@ -87,6 +88,7 @@ export function AuthLoginComponent(props) {
                   sx={{ fontWeight: '600', fontSize: '14px' }}
                   component="button"
                   variant="body2"
+                  underline="hover"
                   onClick={() => {
                     redirect(AUTH_RECOVERY_ACCOUNT_ROUTE_PATH);
                   }}

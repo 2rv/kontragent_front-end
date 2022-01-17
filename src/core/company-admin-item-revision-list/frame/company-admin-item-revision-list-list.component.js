@@ -15,7 +15,7 @@ import { COMPANY_ADMIN_ITEM_REVISION_LIST_DATA_NAME } from '../company-admin-ite
 export const CompanyAdminItemRevisionListListComponent = ({ list }) => {
   if (!list || list.length === 0) {
     return (
-      <Box sx={{ py: 4, px: 8 }}>
+      <Box sx={{ pb: 8, px: 8 }}>
         <Alert severity="info">
           {text('COMPANY_ADMIN_ITEM_REVISION.REVISION_LIST.EMPTY')}
         </Alert>
@@ -47,7 +47,7 @@ export const CompanyAdminItemRevisionListListComponent = ({ list }) => {
                   {`
                   ${text('COMMON.REVISION.ID')}
                       ${item[COMPANY_ADMIN_ITEM_REVISION_LIST_DATA_NAME.ID]}
-                  ${text('COMMON.REVISION.CREATE_DATE')}
+                      ${text('COMMON.REVISION.CREATE_DATE')}
                       ${
                         item[
                           COMPANY_ADMIN_ITEM_REVISION_LIST_DATA_NAME.CREATE_DATE
@@ -57,18 +57,50 @@ export const CompanyAdminItemRevisionListListComponent = ({ list }) => {
                 </span>
               }
               secondary={
-                [
-                  '',
-                  text('COMMON.REVISION.STATUS_TYPE.NEW'),
-                  text('COMMON.REVISION.STATUS_TYPE.PROGRESS'),
-                  text('COMMON.REVISION.STATUS_TYPE.DONE'),
+                <span>
                   <>
-                    <Typography sx={{ color: 'orange' }}>
-                      {text('COMMON.REVISION.STATUS_TYPE.PAY')}
-                    </Typography>
-                  </>,
-                  text('COMMON.REVISION.STATUS_TYPE.PAID'),
-                ][item[COMPANY_ADMIN_ITEM_REVISION_LIST_DATA_NAME.STATUS]]
+                    {item[COMPANY_ADMIN_ITEM_REVISION_LIST_DATA_NAME.STATUS] ===
+                      1 && (
+                      <>
+                        <Typography sx={{ color: 'red' }}>
+                          {text('COMMON.REVISION.STATUS_TYPE.NEW')}
+                        </Typography>
+                      </>
+                    )}
+                    {item[COMPANY_ADMIN_ITEM_REVISION_LIST_DATA_NAME.STATUS] ===
+                      2 && (
+                      <>
+                        <Typography sx={{ color: 'blue' }}>
+                          {text('COMMON.REVISION.STATUS_TYPE.PROGRESS')}
+                        </Typography>
+                      </>
+                    )}
+                    {item[COMPANY_ADMIN_ITEM_REVISION_LIST_DATA_NAME.STATUS] ===
+                      3 && (
+                      <>
+                        <Typography sx={{ color: 'green' }}>
+                          {text('COMMON.REVISION.STATUS_TYPE.DONE')}
+                        </Typography>
+                      </>
+                    )}
+                    {item[COMPANY_ADMIN_ITEM_REVISION_LIST_DATA_NAME.STATUS] ===
+                      4 && (
+                      <>
+                        <Typography sx={{ color: 'orange' }}>
+                          {text('COMMON.REVISION.STATUS_TYPE.PAY')}
+                        </Typography>
+                      </>
+                    )}
+                    {item[COMPANY_ADMIN_ITEM_REVISION_LIST_DATA_NAME.STATUS] ===
+                      5 && (
+                      <>
+                        <Typography sx={{ color: 'green' }}>
+                          {text('COMMON.REVISION.STATUS_TYPE.PAID')}
+                        </Typography>
+                      </>
+                    )}
+                  </>
+                </span>
               }
             />
           </ListItem>

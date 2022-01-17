@@ -9,93 +9,116 @@ export const UserAdminItemInfoListComponent = ({ data }) => {
   return (
     <Grid container spacing={3} sx={{ pt: 4, px: 8, pb: 8 }}>
       <Grid item>
-        <Typography sx={{ mr: 1 }} variant="listTitle">
-          {text('COMMON.USER.LOGIN')}
+        <Typography component="div" sx={{ mr: 1 }} variant="listTitle">
+          {text('USER_ADMIN_ITEM_INFO.LOGIN')}
         </Typography>
-        <Typography variant="listContent">
+        <Typography component="div" variant="body1">
           {data[USER_ADMIN_ITEM_INFO_DATA_NAME.LOGIN]}
         </Typography>
       </Grid>
       <Grid item>
-        <Typography sx={{ mr: 1 }} variant="listTitle">
-          {text('COMMON.USER.FISRT_NAME')}
+        <Typography component="div" sx={{ mr: 1 }} variant="listTitle">
+          {text('USER_ADMIN_ITEM_INFO.FISRT_NAME')}
         </Typography>
-        <Typography variant="listContent">
+        <Typography component="div" variant="body1">
           {data[USER_ADMIN_ITEM_INFO_DATA_NAME.FIRST_NAME]}
         </Typography>
       </Grid>
       <Grid item>
-        <Typography sx={{ mr: 1 }} variant="listTitle">
-          {text('COMMON.USER.LAST_NAME')}
+        <Typography component="div" sx={{ mr: 1 }} variant="listTitle">
+          {text('USER_ADMIN_ITEM_INFO.LAST_NAME')}
         </Typography>
-        <Typography variant="listContent">
+        <Typography component="div" variant="body1">
           {data[USER_ADMIN_ITEM_INFO_DATA_NAME.LAST_NAME]}
         </Typography>
       </Grid>
       <Grid item>
-        <Typography sx={{ mr: 1 }} variant="listTitle">
-          {text('COMMON.USER.EMAIL')}
+        <Typography component="div" sx={{ mr: 1 }} variant="listTitle">
+          {text('USER_ADMIN_ITEM_INFO.EMAIL')}
         </Typography>
-        <Typography variant="listContent">
+        <Typography component="div" variant="body1">
           {data[USER_ADMIN_ITEM_INFO_DATA_NAME.EMAIL]}
         </Typography>
       </Grid>
       <Grid item>
-        <Typography sx={{ mr: 1 }} variant="listTitle">
-          {text('COMMON.USER.PHONE')}
+        <Typography component="div" sx={{ mr: 1 }} variant="listTitle">
+          {text('USER_ADMIN_ITEM_INFO.PHONE')}
         </Typography>
-        <Typography variant="listContent">
+        <Typography component="div" variant="body1">
           {data[USER_ADMIN_ITEM_INFO_DATA_NAME.PHONE]}
         </Typography>
       </Grid>
       <Grid item>
-        <Typography sx={{ mr: 1 }} variant="listTitle">
-          {text('COMMON.USER.CONFIRM_EMAIL')}
+        <Typography component="div" sx={{ mr: 1 }} variant="listTitle">
+          {text('USER_ADMIN_ITEM_INFO.CONFIRM_EMAIL')}
         </Typography>
         <Typography
+          component="div"
           sx={{
             color:
               !data[USER_ADMIN_ITEM_INFO_DATA_NAME.CONFIRM_EMAIL] && '#EB5757',
           }}
-          variant="listContent"
+          variant="body1"
         >
-          {data[USER_ADMIN_ITEM_INFO_DATA_NAME.CONFIRM_EMAIL]
-            ? text('COMMON.USER.VERIFIED')
-            : text('COMMON.USER.NOT_VERIFIED')}
+          {data[USER_ADMIN_ITEM_INFO_DATA_NAME.CONFIRM_EMAIL] ? (
+            <Typography
+              sx={{
+                color: '#219653',
+              }}
+              variant="listContent"
+            >
+              {' '}
+              {text('USER_ADMIN_ITEM_INFO.VERIFIED')}
+            </Typography>
+          ) : (
+            text('USER_ADMIN_ITEM_INFO.NOT_VERIFIED')
+          )}
         </Typography>
       </Grid>
       <Grid item>
-        <Typography sx={{ mr: 1 }} variant="listTitle">
-          {text('COMMON.USER.CONFIRM_PHONE')}
+        <Typography component="div" sx={{ mr: 1 }} variant="listTitle">
+          {text('USER_ADMIN_ITEM_INFO.CONFIRM_PHONE')}
         </Typography>
         <Typography
+          component="div"
           sx={{
             color:
               !data[USER_ADMIN_ITEM_INFO_DATA_NAME.CONFIRM_PHONE] && '#EB5757',
           }}
-          variant="listContent"
+          variant="body1"
         >
-          {data[USER_ADMIN_ITEM_INFO_DATA_NAME.CONFIRM_PHONE]
-            ? text('COMMON.USER.VERIFIED')
-            : text('COMMON.USER.NOT_VERIFIED')}
+          {data[USER_ADMIN_ITEM_INFO_DATA_NAME.CONFIRM_PHONE] ? (
+            <Typography
+              sx={{
+                color: '#219653',
+              }}
+              variant="listContent"
+            >
+              {' '}
+              {text('USER_ADMIN_ITEM_INFO.VERIFIED')}
+            </Typography>
+          ) : (
+            text('USER_ADMIN_ITEM_INFO.NOT_VERIFIED')
+          )}
         </Typography>
       </Grid>
       <Grid item>
-        <Typography sx={{ mr: 1 }} variant="listTitle">
-          {text('COMMON.USER.ROLE')}
+        <Typography component="div" sx={{ mr: 1 }} variant="listTitle">
+          {text('USER_ADMIN_ITEM_INFO.ROLE')}
         </Typography>
         <Typography
+          component="div"
           sx={{
             color: !data[USER_ADMIN_ITEM_INFO_DATA_NAME.ROLE] && '#EB5757',
           }}
-          variant="listContent"
+          variant="body1"
         >
           {data[USER_ADMIN_ITEM_INFO_DATA_NAME.ROLE] === 1 &&
-            text('COMMON.USER.USER_ROLE.OWNER')}
+            text('USER_ADMIN_ITEM_INFO.USER_ROLE.OWNER')}
           {data[USER_ADMIN_ITEM_INFO_DATA_NAME.ROLE] === 0 &&
-            text('COMMON.USER.USER_ROLE.BLOCKED')}
+            text('USER_ADMIN_ITEM_INFO.USER_ROLE.BLOCKED')}
           {data[USER_ADMIN_ITEM_INFO_DATA_NAME.ROLE] === 2 &&
-            text('COMMON.USER.USER_ROLE.ADMIN')}
+            text('USER_ADMIN_ITEM_INFO.USER_ROLE.ADMIN')}
         </Typography>
       </Grid>
     </Grid>

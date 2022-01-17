@@ -1,13 +1,18 @@
 import React from 'react';
-import { Paper, Box, Typography, Button, Grid, Alert } from '@material-ui/core';
+import Alert from '@mui/material/Alert';
 import { text } from '../../lib/common/text';
+import Paper from '@mui/material/Paper';
+import Box from '@mui/material/Box';
+import Typography from '@mui/material/Typography';
+import Grid from '@mui/material/Grid';
+import Button from '@mui/material/Button';
 
 export function AccountReferalComponent(props) {
   const { handleClickAccept, isPending, isSuccess, isError, errorMessage } =
     props;
 
   return (
-    <Box sx={{ py: 4, px: 4 }}>
+    <Box>
       <Box sx={{ pb: 4 }}>
         <img
           style={{ margin: '0 auto', display: 'block' }}
@@ -15,9 +20,9 @@ export function AccountReferalComponent(props) {
           src="/static/img/logo.svg"
         />
       </Box>
-      <Paper sx={{ textAlign: 'center', width: '480px' }}>
+      <Paper>
         <Box>
-          <Box sx={{ p: 6 }}>
+          <Box>
             <Typography
               sx={{
                 pb: 2,
@@ -51,7 +56,7 @@ export function AccountReferalComponent(props) {
               </Button>
             </Grid>
             {isError && (
-              <Box sx={{ pt: 2 }}>
+              <Box sx={{ pt: 4 }}>
                 <Alert sx={{ textAlign: 'left' }} severity="error">
                   {text(`ERROR.${errorMessage}`)}
                 </Alert>

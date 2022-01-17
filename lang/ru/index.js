@@ -14,6 +14,7 @@ import COMPANY_ACCOUNT_ITEM_INFO from './company-account-item-info.json';
 import COMPANY_ACCOUNT_ITEM_MEMBER from './company-account-item-member.json';
 import COMPANY_ACCOUNT_ITEM_PAYMENT from './company-account-item-payment.json';
 import COMPANY_ACCOUNT_ITEM_REVISION_CREATE from './company-account-item-revision-create.json';
+import COMPANY_ACCOUNT_KONTRAGENTS from './company-account-kontragent.json';
 import COMPANY_ADMIN_ITEM_INFO from './company-admin-item-info.json';
 import COMPANY_ADMIN_ITEM_MEMBER from './company-admin-item-member.json';
 import COMPANY_ADMIN_ITEM_REVISION from './company-admin-item-revision.json';
@@ -32,6 +33,14 @@ import ARTICLE from './article.json';
 import ADMIN_POST_LIST from './admin-post-list.json';
 import INVITE from './invite.json';
 import COMMENT from './comment.json';
+import BILL_ADMIN_LIST from './bill-admin-list.json';
+import COMPANY_BILL_LIST from './company-bill-list.json';
+import COMPANY_ACCOUNT_BILL_ITEM from './company-account-bill-item.json';
+import COMPANY_ACCOUNT_ITEM_CREATE_BILL from './company-account-item-create-bill.json';
+import ADMIN_BILL_INFO from './admin-bill-info.json';
+import ADMIN_BILL_REVISION from './admin-bill-revision.json';
+import FEEDBACK_ACCOUNT_CREATE from './feedback-account-create.json';
+import FEEDBACK_ADMIN_ITEM from './feedback-admin-item.json';
 
 export const RU = {
   translation: {
@@ -51,6 +60,7 @@ export const RU = {
     COMPANY_ACCOUNT_ITEM_MEMBER,
     COMPANY_ACCOUNT_ITEM_PAYMENT,
     COMPANY_ACCOUNT_ITEM_REVISION_CREATE,
+    COMPANY_ACCOUNT_KONTRAGENTS,
     COMPANY_ADMIN_ITEM_INFO,
     COMPANY_ADMIN_ITEM_MEMBER,
     COMPANY_ADMIN_ITEM_REVISION,
@@ -68,5 +78,13 @@ export const RU = {
     ADMIN_POST_LIST,
     INVITE,
     COMMENT,
+    COMPANY_BILL_LIST,
+    BILL_ADMIN_LIST,
+    COMPANY_ACCOUNT_BILL_ITEM,
+    COMPANY_ACCOUNT_ITEM_CREATE_BILL,
+    ADMIN_BILL_INFO,
+    ADMIN_BILL_REVISION,
+    FEEDBACK_ACCOUNT_CREATE,
+    FEEDBACK_ADMIN_ITEM,
   },
 };

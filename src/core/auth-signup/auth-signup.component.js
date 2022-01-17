@@ -74,6 +74,7 @@ export function AuthSignupComponent(props) {
                   sx={{ fontSize: '14px', fontWeight: '600' }}
                   component="button"
                   variant="body2"
+                  underline="hover"
                   onClick={() => {
                     redirect(AUTH_LOGIN_ROUTE_PATH);
                   }}
@@ -87,6 +88,7 @@ export function AuthSignupComponent(props) {
                   sx={{ fontSize: '14px', fontWeight: '600' }}
                   component="button"
                   variant="body2"
+                  underline="hover"
                   onClick={() => {
                     redirect(AUTH_RECOVERY_ACCOUNT_ROUTE_PATH);
                   }}
@@ -106,10 +108,11 @@ export function AuthSignupComponent(props) {
                 {text('AUTH.SIGNUP.TERMS_OF_THE_OFFER')}{' '}
                 <Link
                   sx={{ fontSize: '14px', fontWeight: '600' }}
-                  component="button"
+                  component="a"
                   variant="body2"
                   target="_blank"
                   href="/static/pdf/blank.pdf"
+                  underline="hover"
                 >
                   {text('AUTH.SIGNUP.READ')}
                 </Link>
@@ -118,10 +121,11 @@ export function AuthSignupComponent(props) {
                 {text('AUTH.SIGNUP.USER_AGREEMENT')}{' '}
                 <Link
                   sx={{ fontSize: '14px', fontWeight: '600' }}
-                  component="button"
+                  component="a"
                   variant="body2"
                   target="_blank"
                   href="/static/pdf/blank.pdf"
+                  underline="hover"
                 >
                   {text('AUTH.SIGNUP.READ')}
                 </Link>

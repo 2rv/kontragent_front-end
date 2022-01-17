@@ -5,6 +5,7 @@ import ListItemText from '@mui/material/ListItemText';
 import Alert from '@mui/material/Alert';
 import Box from '@mui/material/Box';
 import Divider from '@mui/material/Divider';
+import Typography from '@mui/material/Typography';
 import { text } from '../../../lib/common/text';
 import { redirect } from '../../../main/navigation';
 import { ADMIN_POST_LIST_DATA_NAME } from '../admin-post-list.constant';
@@ -16,14 +17,14 @@ import {
 export const AdminPostListListComponent = ({ list }) => {
   if (!list || list.length === 0) {
     return (
-      <Box sx={{ pt: 4, px: 8, pb: 8 }}>
+      <Box sx={{ px: 8, pb: 8 }}>
         <Alert severity="info">{text('ADMIN_POST_LIST.EMPTY')}</Alert>
       </Box>
     );
   }
 
   return (
-    <List sx={{ px: 6, pb: 8 }} disablePadding>
+    <List sx={{ px: 8, pb: 8 }} disablePadding>
       {list.map((items, key) => (
         <React.Fragment key={key}>
           <ListItem
@@ -41,14 +42,18 @@ export const AdminPostListListComponent = ({ list }) => {
           >
             <ListItemText
               primary={
-                <span>
-                  {`
-                     ${text('COMMON.REVISION.TITLE')}
-                     ${items[ADMIN_POST_LIST_DATA_NAME.TITLE]} 
-                    ${text('COMMON.REVISION.CREATE_DATE')}
-                        ${items[ADMIN_POST_LIST_DATA_NAME.CREATE_DATE]}
-                    `}
-                </span>
+                <>
+                  <Typography variant="listTitle">
+                    {items[ADMIN_POST_LIST_DATA_NAME.TITLE]}
+                  </Typography>
+                </>
+              }
+              secondary={
+                <>
+                  <Typography variant="listTitle">
+                    {items[ADMIN_POST_LIST_DATA_NAME.CREATE_DATE]}
+                  </Typography>
+                </>
               }
             />
           </ListItem>

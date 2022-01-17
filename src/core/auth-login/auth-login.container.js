@@ -13,8 +13,6 @@ import {
 
 import { uploadAuthLoginForm, cleanupStore } from './auth-login.action';
 
-import { AUTH_LOGIN_ACTION_TYPE } from './auth-login.constant';
-
 import { convertAuthLoginFormData } from './auth-login.convert';
 
 import { NAVIGATION_STORE_NAME } from '../../lib/common/navigation/navigation.constant';

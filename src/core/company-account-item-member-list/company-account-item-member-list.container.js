@@ -10,8 +10,8 @@ import { httpRequest } from '../../main/http';
 import { getQuery } from '../../main/navigation/navigation.core';
 
 import { performCompanyAccountItemMemberListData } from './company-account-item-member-list.convert';
-import { COMPANY_ACCOUNT_ITEM_MEMBER_DELETE_STORE_NAME } from '../company-account-item-member-delete/company-account-item-member-delete.constant'
-import { COMPANY_ACCOUNT_ITEM_MEMBER_ADD_STORE_NAME } from '../company-account-item-member-add/company-account-item-member-add.constant'
+import { COMPANY_ACCOUNT_ITEM_MEMBER_DELETE_STORE_NAME } from '../company-account-item-member-delete/company-account-item-member-delete.constant';
+import { COMPANY_ACCOUNT_ITEM_MEMBER_ADD_STORE_NAME } from '../company-account-item-member-add/company-account-item-member-add.constant';
 
 export function CompanyAccountItemMemberListContainer() {
   const { pageLoading, deleteState, addState } = useSelector((state) => ({
@@ -33,7 +33,7 @@ export function CompanyAccountItemMemberListContainer() {
     setRequestSuccess(false);
     setRequestError(false);
     setRequestErrorMessage(null);
-    setData([]);
+    setData({});
 
     try {
       const res = await httpRequest({
@@ -49,7 +49,7 @@ export function CompanyAccountItemMemberListContainer() {
     } catch (error) {
       if (error.response) {
         setRequestError(true);
-        setData([]);
+        setData({});
         setRequestPending(false);
         setRequestErrorMessage(error.response.data.message);
       }
@@ -57,7 +57,7 @@ export function CompanyAccountItemMemberListContainer() {
   };
 
   const [isRequestPending, setRequestPending] = React.useState(null);
-  const [getData, setData] = React.useState([]);
+  const [getData, setData] = React.useState({});
   const [isRequestError, setRequestError] = React.useState(null);
   const [isRequestSuccess, setRequestSuccess] = React.useState(null);
   const [getRequestErrorMessage, setRequestErrorMessage] = React.useState(null);

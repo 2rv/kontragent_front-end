@@ -65,7 +65,6 @@ export const CompanyAccountItemRevisionCreatePeriodItemFormComponent = (
               values={values}
             />
           </FormControl>
-
         </Grid>
 
         <Grid xs={12} item>
@@ -87,7 +86,7 @@ export const CompanyAccountItemRevisionCreatePeriodItemFormComponent = (
             >
               <Button
                 variant="grey"
-                color={period.period[0] ? 'black1' : 'blue'}
+                color={period.period[0] ? 'blue' : 'black1'}
                 onClick={() => {
                   dispatch(
                     companyAccountItemRevisionCreateChangeYearPeriod([
@@ -113,7 +112,7 @@ export const CompanyAccountItemRevisionCreatePeriodItemFormComponent = (
             >
               <Button
                 variant="grey"
-                color={period.period[1] ? 'black1' : 'blue'}
+                color={period.period[1] ? 'blue' : 'black1'}
                 onClick={() => {
                   dispatch(
                     companyAccountItemRevisionCreateChangeYearPeriod([
@@ -139,7 +138,7 @@ export const CompanyAccountItemRevisionCreatePeriodItemFormComponent = (
             >
               <Button
                 variant="grey"
-                color={period.period[2] ? 'black1' : 'blue'}
+                color={period.period[2] ? 'blue' : 'black1'}
                 onClick={() => {
                   dispatch(
                     companyAccountItemRevisionCreateChangeYearPeriod([
@@ -165,7 +164,7 @@ export const CompanyAccountItemRevisionCreatePeriodItemFormComponent = (
             >
               <Button
                 variant="grey"
-                color={period.period[3] ? 'black1' : 'blue'}
+                color={period.period[3] ? 'blue' : 'black1'}
                 onClick={() => {
                   dispatch(
                     companyAccountItemRevisionCreateChangeYearPeriod([

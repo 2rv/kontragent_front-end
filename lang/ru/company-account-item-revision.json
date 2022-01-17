@@ -6,15 +6,16 @@
     "YEARS": "Год и период проверки: ",
     "YEAR": " год",
     "PERIODS": {
-      "ONE_PERIOD": " 1 квартал ",
-      "TWO_PERIOD": " 2 квартал ",
-      "THREE_PERIOD": " 3 квартал ",
-      "FOUR_PERIOD": " 4 квартал "
+      "ONE_PERIOD": " 1 ",
+      "TWO_PERIOD": " 2 ",
+      "THREE_PERIOD": " 3 ",
+      "FOUR_PERIOD": " 4 "
     },
     "COMPANY_NAME": "Название компании: ",
     "INN": "ИНН",
-    "DESCRIPTION": "Описание: ",
-    "REVISION_PERIOD": "Период проверки: ",
+    "CREATE_DATE": "Дата создания",
+    "DESCRIPTION": "Описание ",
+    "REVISION_PERIOD": "Период проверки ",
     "FILES_IS_EMPTY": "Файлы не предоставлены",
     "RESULT_OF_CHECKING": " Результат проверки",
     "WE_NOT_COMPILED_RESULT_OF_YOUR_REQUEST": "Мы еще не составили результата вашего запроса",
@@ -30,7 +31,7 @@
   },
   "REVISION_PAYMENT": {
     "TITLE": "Требуется оплата в размере",
-    "INFO": "Ваш запрос оказался комплексным и объемным вопрос, поэтому нам требуется доплата",
+    "INFO": "Ваш запрос оказался комплексным и объемным, требуется доплата",
     "MONEY_DEBITED_FROM_ACCOUNT": "Деньги списаны со счета",
     "FORM": {
       "BUTTON": {

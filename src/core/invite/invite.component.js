@@ -59,24 +59,15 @@ export function InviteComponent(props) {
               />
             )}
           </Formik>
-          <Divider />
           {isError && (
-            <Box sx={{ pt: 4 }}>
-              <Alert severity="error">{text(`ERROR.${errorMessage}`)}</Alert>
-            </Box>
+            <Alert severity="error">{text(`ERROR.${errorMessage}`)}</Alert>
           )}
           {isSuccess && (
-            <Box sx={{ pt: 4 }}>
-              <Alert severity="success">
-                {text('COMMON.REQUEST_SENT_SUCCESSFULLY')}
-              </Alert>
-            </Box>
+            <Alert severity="success">
+              {text('COMMON.REQUEST_SENT_SUCCESSFULLY')}
+            </Alert>
           )}
-          {isPending && (
-            <Box sx={{ pt: 4, width: '100%' }}>
-              <LinearProgress />
-            </Box>
-          )}
+          {isPending && <LinearProgress />}
         </Box>
       </Paper>
     </Box>

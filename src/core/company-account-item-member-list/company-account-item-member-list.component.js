@@ -5,12 +5,12 @@ import Divider from '@mui/material/Divider';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import Alert from '@mui/material/Alert';
-
+import { COMPANY_ACCOUNT_ITEM_MEMBER_LIST_DATA_NAME } from './company-account-item-member-list.constant';
 import { text } from '../../lib/common/text';
 
 import { SkeletonListComponent } from '../../lib/common/skeleton/skeleton-list.component';
 
-import { CompanyAccountItemPaymentListListComponent } from './frame/company-account-item-member-list.component';
+import { CompanyAccountItemMemberListListComponent } from './frame/company-account-item-member-list.component';
 
 export function CompanyAccountItemMemberListComponent({
   data,
@@ -34,7 +34,14 @@ export function CompanyAccountItemMemberListComponent({
         <Divider sx={{ mx: 8 }} />
 
         {isSuccess && (
-          <CompanyAccountItemPaymentListListComponent list={data} />
+          <CompanyAccountItemMemberListListComponent
+            list={data[COMPANY_ACCOUNT_ITEM_MEMBER_LIST_DATA_NAME.LIST]}
+            companyMemberRole={
+              data[
+                COMPANY_ACCOUNT_ITEM_MEMBER_LIST_DATA_NAME.COMPANY_MEMBER_ROLE
+              ]
+            }
+          />
         )}
         {isPending && (
           <Box sx={{ pt: 4, px: 8, pb: 8 }}>

@@ -78,6 +78,13 @@ const Container = styled.div`
   .ce-block__content h6 {
     font-size: 12px;
   }
+  .ce-toolbar__actions {
+    transform: translate3d(0px, calc(19px - 50%), 0px);
+    top: 0;
+  }
+  .cdx-block {
+    padding: 8px 0;
+  }
   .ce-delimiter:before {
     content: '';
     border-radius: 5px;
@@ -92,6 +99,9 @@ const Container = styled.div`
   }
   .image-tool__image-picture {
     max-height: 500px;
+  }
+  .image-tool--withBackground .image-tool__image-picture {
+    max-height: 100%;
   }
   .ce-toolbar__content {
     max-width: 80%;

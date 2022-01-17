@@ -32,10 +32,10 @@ export function CompanyAccountItemPaymentLinkContainer() {
         }`,
       });
 
-      await redirect(res.data.link);
-
       setRequestPending(false);
       setRequestSuccess(true);
+
+      window.location.href = res.data.link;
     } catch (error) {
       if (error) {
         setRequestError(true);
@@ -47,7 +47,7 @@ export function CompanyAccountItemPaymentLinkContainer() {
 
   const getInitialValue = () => {
     return {
-      [COMPANY_ACCOUNT_ITEM_REVISION_ITEM_PAYMENT_DATA_NAME.AMOUNT]: 0,
+      [COMPANY_ACCOUNT_ITEM_REVISION_ITEM_PAYMENT_DATA_NAME.AMOUNT]: '',
     };
   };
 
