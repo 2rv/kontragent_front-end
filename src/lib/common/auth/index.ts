@@ -9,4 +9,6 @@ export {
   authRedirectNotAdmin,
   authRedirectAdmin,
   authVerificated,
+  authRedirectVerificatedEmail,
+  authRedirectVerificatedPhone
 } from './auth.redirect';
