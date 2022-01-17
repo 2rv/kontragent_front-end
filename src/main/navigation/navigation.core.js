@@ -23,7 +23,7 @@ export const redirect = (pathname, config = {}) => {
 
   if (local) {
     return router
-      .push({ pathname, as, query, shallow })
+      .push({ pathname, query }, as, shallow)
       .then(() => scrollToTop(scrollTop));
   }
 

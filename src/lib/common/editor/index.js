@@ -1,0 +1,1 @@
+export { ReactEditorBlock } from './component';

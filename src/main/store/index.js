@@ -1,266 +1,116 @@
 import { combineReducers } from 'redux';
+import { AUTH_SIGNUP_STORE_NAME } from '../../core/auth-signup/auth-signup.constant';
+import { authSignupStore } from '../../core/auth-signup/auth-signup.store';
+import { AUTH_LOGIN_STORE_NAME } from '../../core/auth-login/auth-login.constant';
+import { authLoginStore } from '../../core/auth-login/auth-login.store';
+import { AUTH_RECOVERY_ACCOUNT_STORE_NAME } from '../../core/auth-recovery-account/auth-recovery-account.constant';
+import { authRecoveryAccountStore } from '../../core/auth-recovery-account/auth-recovery-account.store';
+import { AUTH_RECOVERY_ACCOUNT_UPDATE_PASSWORD_STORE_NAME } from '../../core/auth-recovery-account-update-password/auth-recovery-account-update-password.constant';
+import { authRecoveryAccountUpdatePasswordStore } from '../../core/auth-recovery-account-update-password/auth-recovery-account-update-password.store';
+import { AUTH_VERIFICATION_EMAIL_STORE_NAME } from '../../core/auth-verification-email/auth-verification-email.constant';
+import { authVerificationEmailStore } from '../../core/auth-verification-email/auth-verification-email.store';
+import { AUTH_VERIFICATION_PHONE_STORE_NAME } from '../../core/auth-verification-phone/auth-verification-phone.constant';
+import { authVerificationPhoneStore } from '../../core/auth-verification-phone/auth-verification-phone.store';
+import { companyAccountItemMemberDeleteStore } from '../../core/company-account-item-member-delete/company-account-item-member-delete.store';
+import { COMPANY_ACCOUNT_ITEM_MEMBER_DELETE_STORE_NAME } from '../../core/company-account-item-member-delete/company-account-item-member-delete.constant';
+import { companyAccountItemMemberAddStore } from '../../core/company-account-item-member-add/company-account-item-member-add.store';
+import { COMPANY_ACCOUNT_ITEM_MEMBER_ADD_STORE_NAME } from '../../core/company-account-item-member-add/company-account-item-member-add.constant';
+import {
+  companyAdminItemInfoVerificateStore,
+  COMPANY_ADMIN_ITEM_INFO_VERIFICATE_STORE_NAME,
+} from '../../core/company-admin-item-info-verificate';
 
 import { authStore, AUTH_STORE_NAME } from '../../lib/common/auth';
 import { langStore, LANG_STORE_NAME } from '../../lib/common/lang';
-import { signupStore, SIGNUP_STORE_NAME } from '../../core/signup';
-import { loginStore, LOGIN_STORE_NAME } from '../../core/login';
 import {
   navigationStore,
   NAVIGATION_STORE_NAME,
 } from '../../lib/common/navigation';
 import {
-  authChangePasswordStore,
-  AUTH_CHANGE_PASSWORD_STORE_NAME,
-} from '../../core/auth-change-password';
+  COMPANY_ACCOUNT_ITEM_REVISION_CREATE_STORE_NAME,
+  companyAccountItemRevisionCreateStore,
+} from '../../core/company-account-item-revision-create';
 import {
-  authRecoveryAccountStore,
-  AUTH_RECOVERY_ACCOUNT_STORE_NAME,
-} from '../../core/auth-recovery-account';
+  ACCOUNT_REFERAL_STORE_NAME,
+  accountReferalStore,
+} from '../../core/account-referal';
+import { USER_ADMIN_ROLE_STORE_NAME } from '../../core/user-admin-role/user-admin-role.constant';
+import { userAdminRoleStore } from '../../core/user-admin-role/user-admin-role.store';
 import {
-  myCounterpartiesListStore,
-  MY_COUNTERPARTIES_LIST_STORE_NAME,
-} from '../../core/my-counterparties-list';
+  userAdminItemInfoStore,
+  USER_ADMIN_ITEM_INFO_STORE_NAME,
+} from '../../core/user-admin-item-info';
 import {
-  myLegalEntitiesListStore,
-  MY_LEGAL_ENTITIES_LIST_STORE_NAME,
-} from '../../core/my-legal-entities-list';
+  createArticleStore,
+  CREATE_ARTICLE_STORE_NAME,
+} from '../../core/article-create';
 import {
-  mySupportRequestsListStore,
-  MY_SUPPORT_REQUESTS_LIST_STORE_NAME,
-} from '../../core/my-support-requests-list';
+  editArticleStore,
+  EDIT_ARTICLE_STORE_NAME,
+} from '../../core/article-edit';
+import { articleStore, ARTICLE_STORE_NAME } from '../../core/article-view';
+import { adminRevisionInfoStore } from '../../core/admin-revision-info/admin-revision-info.store';
+import { ADMIN_REVISION_INFO_STORE_NAME } from '../../core/admin-revision-info/admin-revision-info.constant';
 import {
-  myVerificationRequestsListStore,
-  MY_VERIFICATION_REQUESTS_LIST_STORE_NAME,
-} from '../../core/my-verification-requests-list';
+  adminRevisionReviewStore,
+  ADMIN_REVISION_REVIEW_STORE_NAME,
+} from '../../core/admin-revision-review';
+import { inviteStore } from '../../core/invite/invite.store';
+import { INVITE_STORE_NAME } from '../../core/invite/invite.constant';
 import {
-  supportCreateRequestStore,
-  SUPPORT_CREATE_REQUEST_STORE_NAME,
-} from '../../core/support-create-request';
+  companyAccountItemSelfRevisionCreateStore,
+  COMPANY_ACCOUNT_ITEM_SELF_REVISION_CREATE_STORE_NAME,
+} from '../../core/company-account-item-self-revision-create';
+import { articleCommentSendStore } from '../../core/article-comment-send/article-comment-send.store';
+import { ARTICLE_COMMENT_SEND_STORE_NAME } from '../../core/article-comment-send/article-comment-send.constant';
+import { articleCommentDeleteStore } from '../../core/article-comment-delete/article-comment-delete.store';
+import { ARTICLE_COMMENT_DELETE_STORE_NAME } from '../../core/article-comment-delete/article-comment-delete.constant';
+import { adminBillInfoStore } from '../../core/admin-bill-info/admin-bill-info.store';
+import { ADMIN_BILL_INFO_STORE_NAME } from '../../core/admin-bill-info/admin-bill-info.constant';
 import {
-  bookReviewListStore,
-  BOOK_REVIEW_LIST_STORE_NAME,
-} from '../../core/book-review-list';
-import {
-  balanceDepositFormStore,
-  BALANCE_DEPOSIT_STORE_NAME,
-} from '../../core/balance-deposit';
-import {
-  arbitrationRequestsListStore,
-  ARBITRATION_REQUESTS_LIST_STORE_NAME,
-} from '../../core/arbitration-requests-list';
-import {
-  settings2FAStore,
-  SETTINGS_2FA_STORE_NAME,
-} from '../../core/settings-2fa';
-import {
-  myLawyerRequestListStore,
-  MY_LAWYER_REQUEST_LIST_STORE_NAME,
-} from '../../core/my-lawyer-request-list';
-import {
-  themeArbitrationStore,
-  THEME_ARBITRATION_STORE_NAME,
-} from '../../core/theme-arbitration';
-import {
-  counterpartyStore,
-  COUNTERPARTY_STORE_NAME,
-} from '../../core/counterparty';
-import {
-  counterpartyInformationStore,
-  COUNTERPARTY_INFORMATION_STORE_NAME,
-} from '../../core/counterparty/frames/information';
-import {
-  counterpartyRiskRatingAssesssmentStore,
-  COUNTERPARTY_RISK_RATING_ASSESSMENT_STORE_NAME,
-} from '../../core/counterparty/frames/risk-rating-assessment';
-import {
-  counterpartyReviewsStore,
-  COUNTERPARTY_REVIEWS_STORE_NAME,
-} from '../../core/counterparty/frames/reviews';
-import {
-  counterpartyVerificationsStore,
-  COUNTERPARTY_VERIFICATIONS_STORE_NAME,
-} from '../../core/counterparty/frames/verifications';
-import {
-  counterpartyArbitrationCasesStore,
-  COUNTERPARTY_ARBITRATION_CASES_STORE_NAME,
-} from '../../core/counterparty/frames/arbitration-cases-list';
-import {
-  counterpartyRedZoneInformationStore,
-  COUNTERPARTY_RED_ZONE_INFORMATION_STORE_NAME,
-} from '../../core/counterparty/frames/red-zone-information';
-import { captchaStore, CAPTCHA_STORE_NAME } from '../../lib/common/captcha';
-import {
-  myCompaniesAddCompanyStore,
-  MY_COMPANIES_ADD_COMPANY_STORE_NAME,
-} from '../../core/my-companies-add-company';
-import {
-  COMPANY_MEMBERS_STORE_NAME,
-  companyMembersStore,
-} from '../../core/company-members';
-import { REFERRAL_STORE_NAME, referralStore } from '../../core/referral';
-import {
-  NEWS_ARTICLE_STORE_NAME,
-  newsArticleStore,
-} from '../../core/news-article';
-import { entityStore, ENTITY_STORE_NAME } from '../../core/entity';
-import {
-  entityInformationStore,
-  ENTITY_INFORMATION_STORE_NAME,
-} from '../../core/entity/frames/information';
-import {
-  entityRiskRatingAssesssmentStore,
-  ENTITY_RISK_RATING_ASSESSMENT_STORE_NAME,
-} from '../../core/entity/frames/risk-rating-assessment';
-import {
-  entityReviewsStore,
-  ENTITY_REVIEWS_STORE_NAME,
-} from '../../core/entity/frames/reviews';
-import {
-  entityVerificationsStore,
-  ENTITY_VERIFICATIONS_STORE_NAME,
-} from '../../core/entity/frames/verifications';
-import {
-  entityArbitrationCasesStore,
-  ENTITY_ARBITRATION_CASES_STORE_NAME,
-} from '../../core/entity/frames/arbitration-cases';
-import {
-  entityParticipantsStore,
-  ENTITY_PARTICIPANTS_STORE_NAME,
-} from '../../core/entity/frames/participants';
-import {
-  entityBalanceStore,
-  ENTITY_BALANCE_STORE_NAME,
-} from '../../core/entity/frames/balance';
-import {
-  entitySettingsStore,
-  ENTITY_SETTINGS_STORE_NAME,
-} from '../../core/entity/frames/settings';
-import {
-  DIALOG_PERSONAL_STORE_NAME,
-  dialogPersonalStore,
-} from '../../core/dialog-personal';
-import {
-  DIALOG_LAWYER_STORE_NAME,
-  dialogLawyerStore,
-} from '../../core/dialog-lawyer';
-import {
-  BALANCE_ACTIVITY_STORE_NAME,
-  balanceActivityStore,
-} from '../../core/balance-activity';
-import { DASHBOARD_STORE_NAME, dashboardStore } from '../../core/dashboard';
-import {
-  feedAndNotificationsListStore,
-  FEED_AND_NOTIFICATIONS_LIST_STORE_NAME,
-} from '../../core/feed-and-notifications-list';
-import {
-  DASHBOARD_ADMIN_STORE_NAME,
-  dashboardAdminStore,
-} from '../../core/dashboard-admin';
-import {
-  LAWYER_REQUEST_STORE_NAME,
-  lawyerRequestStore,
-} from '../../core/lawyer-request';
-import {
-  settingsPhoneStore,
-  SETTINGS_PHONE_STORE_NAME,
-} from '../../core/settings-phone';
-import {
-  settingsPasswordStore,
-  SETTINGS_PASSWORD_STORE_NAME,
-} from '../../core/settings-password';
-import {
-  authVerificationPhoneStore,
-  AUTH_VERIFICATION_PHONE_STORE_NAME,
-} from '../../core/auth-verification-phone';
-import {
-  settingsEmailStore,
-  SETTINGS_EMAIL_STORE_NAME,
-} from '../../core/settings-email';
-import {
-  authVerificationEmailConfirmStore,
-  AUTH_VERIFICATION_EMAIL_CONFIRM_STORE_NAME,
-} from '../../core/auth-verification-email-confirm';
-import {
-  authVerificationEmailStore,
-  AUTH_VERIFICATION_EMAIL_STORE_NAME,
-} from '../../core/auth-verification-email';
-import {
-  MY_COMPANIES_REVIEW_COMPANY_LIST_STORE_NAME,
-  myCompaniesReviewCompanyListStore,
-} from '../../core/my-companies-review-company-list';
-import {
-  settingsChangeEmailNotification,
-  SETTINGS_CHANGE_EMAIL_NOTIFICATION_STORE_NAME,
-} from '../../core/settings-notification';
-import {
-  companyInviteStore,
-  COMPANY_INVITE_STORE_NAME,
-} from '../../core/company-invite';
-import { headerStore, HEADER_STORE_NAME } from '../../core/header';
+  adminBillRevisionStore,
+  ADMIN_BILL_REVISION_STORE_NAME,
+} from '../../core/admin-bill-revision';
+
+import { companyAccountItemCreateBillStore } from '../../core/company-account-item-create-bill/company-acoount-item-create-bill.store';
+import { COMPANY_ACCOUNT_ITEM_CREATE_BILL_STORE_NAME } from '../../core/company-account-item-create-bill/company-account-item-create-bill.constant';
 
 export const reducers = combineReducers({
-  [HEADER_STORE_NAME]: headerStore,
-  [COMPANY_INVITE_STORE_NAME]: companyInviteStore,
-  [SETTINGS_CHANGE_EMAIL_NOTIFICATION_STORE_NAME]:
-    settingsChangeEmailNotification,
-  [MY_COMPANIES_REVIEW_COMPANY_LIST_STORE_NAME]:
-    myCompaniesReviewCompanyListStore,
-  [FEED_AND_NOTIFICATIONS_LIST_STORE_NAME]: feedAndNotificationsListStore,
-  [DASHBOARD_STORE_NAME]: dashboardStore,
-  [DIALOG_PERSONAL_STORE_NAME]: dialogPersonalStore,
-  [DIALOG_LAWYER_STORE_NAME]: dialogLawyerStore,
-  [REFERRAL_STORE_NAME]: referralStore,
-  [NEWS_ARTICLE_STORE_NAME]: newsArticleStore,
-  [COMPANY_MEMBERS_STORE_NAME]: companyMembersStore,
   [AUTH_STORE_NAME]: authStore,
   [LANG_STORE_NAME]: langStore,
   [NAVIGATION_STORE_NAME]: navigationStore,
-  [SIGNUP_STORE_NAME]: signupStore,
-  [LOGIN_STORE_NAME]: loginStore,
-  [AUTH_CHANGE_PASSWORD_STORE_NAME]: authChangePasswordStore,
+  [AUTH_SIGNUP_STORE_NAME]: authSignupStore,
+  [AUTH_LOGIN_STORE_NAME]: authLoginStore,
   [AUTH_RECOVERY_ACCOUNT_STORE_NAME]: authRecoveryAccountStore,
-  [MY_COUNTERPARTIES_LIST_STORE_NAME]: myCounterpartiesListStore,
-  [MY_LEGAL_ENTITIES_LIST_STORE_NAME]: myLegalEntitiesListStore,
-  [MY_SUPPORT_REQUESTS_LIST_STORE_NAME]: mySupportRequestsListStore,
-  [MY_VERIFICATION_REQUESTS_LIST_STORE_NAME]: myVerificationRequestsListStore,
-  [SUPPORT_CREATE_REQUEST_STORE_NAME]: supportCreateRequestStore,
-  [BOOK_REVIEW_LIST_STORE_NAME]: bookReviewListStore,
-  [BALANCE_DEPOSIT_STORE_NAME]: balanceDepositFormStore,
-  [ARBITRATION_REQUESTS_LIST_STORE_NAME]: arbitrationRequestsListStore,
-  [SETTINGS_2FA_STORE_NAME]: settings2FAStore,
-  [MY_LAWYER_REQUEST_LIST_STORE_NAME]: myLawyerRequestListStore,
-  [CAPTCHA_STORE_NAME]: captchaStore,
-  [THEME_ARBITRATION_STORE_NAME]: themeArbitrationStore,
-  [MY_COMPANIES_ADD_COMPANY_STORE_NAME]: myCompaniesAddCompanyStore,
-  [COUNTERPARTY_STORE_NAME]: counterpartyStore,
-  [COUNTERPARTY_INFORMATION_STORE_NAME]: counterpartyInformationStore,
-  [COUNTERPARTY_RISK_RATING_ASSESSMENT_STORE_NAME]:
-    counterpartyRiskRatingAssesssmentStore,
-  [COUNTERPARTY_REVIEWS_STORE_NAME]: counterpartyReviewsStore,
-  [COUNTERPARTY_VERIFICATIONS_STORE_NAME]: counterpartyVerificationsStore,
-  [COUNTERPARTY_ARBITRATION_CASES_STORE_NAME]:
-    counterpartyArbitrationCasesStore,
-  [COUNTERPARTY_RED_ZONE_INFORMATION_STORE_NAME]:
-    counterpartyRedZoneInformationStore,
-  [ENTITY_STORE_NAME]: entityStore,
-  [ENTITY_INFORMATION_STORE_NAME]: entityInformationStore,
-  [ENTITY_RISK_RATING_ASSESSMENT_STORE_NAME]: entityRiskRatingAssesssmentStore,
-  [ENTITY_REVIEWS_STORE_NAME]: entityReviewsStore,
-  [ENTITY_VERIFICATIONS_STORE_NAME]: entityVerificationsStore,
-  [ENTITY_ARBITRATION_CASES_STORE_NAME]: entityArbitrationCasesStore,
-  [ENTITY_PARTICIPANTS_STORE_NAME]: entityParticipantsStore,
-  [ENTITY_BALANCE_STORE_NAME]: entityBalanceStore,
-  [ENTITY_SETTINGS_STORE_NAME]: entitySettingsStore,
-  [BALANCE_ACTIVITY_STORE_NAME]: balanceActivityStore,
-  [DASHBOARD_ADMIN_STORE_NAME]: dashboardAdminStore,
-  [LAWYER_REQUEST_STORE_NAME]: lawyerRequestStore,
-  [SETTINGS_PHONE_STORE_NAME]: settingsPhoneStore,
-  [SETTINGS_PASSWORD_STORE_NAME]: settingsPasswordStore,
-  [AUTH_VERIFICATION_PHONE_STORE_NAME]: authVerificationPhoneStore,
-  [SETTINGS_EMAIL_STORE_NAME]: settingsEmailStore,
-  [AUTH_VERIFICATION_EMAIL_CONFIRM_STORE_NAME]:
-    authVerificationEmailConfirmStore,
+  [AUTH_RECOVERY_ACCOUNT_UPDATE_PASSWORD_STORE_NAME]:
+    authRecoveryAccountUpdatePasswordStore,
   [AUTH_VERIFICATION_EMAIL_STORE_NAME]: authVerificationEmailStore,
+  [AUTH_VERIFICATION_PHONE_STORE_NAME]: authVerificationPhoneStore,
+  [COMPANY_ACCOUNT_ITEM_REVISION_CREATE_STORE_NAME]:
+    companyAccountItemRevisionCreateStore,
+  [COMPANY_ADMIN_ITEM_INFO_VERIFICATE_STORE_NAME]:
+    companyAdminItemInfoVerificateStore,
+  [COMPANY_ACCOUNT_ITEM_MEMBER_DELETE_STORE_NAME]:
+    companyAccountItemMemberDeleteStore,
+  [COMPANY_ACCOUNT_ITEM_MEMBER_ADD_STORE_NAME]:
+    companyAccountItemMemberAddStore,
+  [ACCOUNT_REFERAL_STORE_NAME]: accountReferalStore,
+  [USER_ADMIN_ROLE_STORE_NAME]: userAdminRoleStore,
+  [USER_ADMIN_ITEM_INFO_STORE_NAME]: userAdminItemInfoStore,
+  [CREATE_ARTICLE_STORE_NAME]: createArticleStore,
+  [EDIT_ARTICLE_STORE_NAME]: editArticleStore,
+  [ARTICLE_STORE_NAME]: articleStore,
+  [ADMIN_REVISION_INFO_STORE_NAME]: adminRevisionInfoStore,
+  [ADMIN_REVISION_REVIEW_STORE_NAME]: adminRevisionReviewStore,
+  [INVITE_STORE_NAME]: inviteStore,
+  [COMPANY_ACCOUNT_ITEM_SELF_REVISION_CREATE_STORE_NAME]:
+    companyAccountItemSelfRevisionCreateStore,
+  [ADMIN_BILL_INFO_STORE_NAME]: adminBillInfoStore,
+  [ARTICLE_COMMENT_SEND_STORE_NAME]: articleCommentSendStore,
+  [ARTICLE_COMMENT_DELETE_STORE_NAME]: articleCommentDeleteStore,
+  [ADMIN_BILL_REVISION_STORE_NAME]: adminBillRevisionStore,
+  [COMPANY_ACCOUNT_ITEM_CREATE_BILL_STORE_NAME]:
+    companyAccountItemCreateBillStore,
 });
 
 export { initStore } from './store.core';

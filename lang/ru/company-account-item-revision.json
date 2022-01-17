@@ -1,0 +1,56 @@
+{
+  "REVISION_ITEM": {
+    "TITLE": "Описание запроса",
+    "PRICE": "Сумма нужной доплаты",
+    "FILES_FOR_REQUEST_DESCRIPTION": "Файлы для описания запроса",
+    "YEARS": "Год и период проверки: ",
+    "YEAR": " год",
+    "PERIODS": {
+      "ONE_PERIOD": " 1 ",
+      "TWO_PERIOD": " 2 ",
+      "THREE_PERIOD": " 3 ",
+      "FOUR_PERIOD": " 4 "
+    },
+    "COMPANY_NAME": "Название компании: ",
+    "INN": "ИНН",
+    "CREATE_DATE": "Дата создания",
+    "DESCRIPTION": "Описание ",
+    "REVISION_PERIOD": "Период проверки ",
+    "FILES_IS_EMPTY": "Файлы не предоставлены",
+    "RESULT_OF_CHECKING": " Результат проверки",
+    "WE_NOT_COMPILED_RESULT_OF_YOUR_REQUEST": "Мы еще не составили результата вашего запроса",
+    "FILES_FOR_DESCRIBING_RESPONSE_RESULT": "Файлы для описания результата ответа",
+    "FILES_FOR_DESCRIBING_REVISION_COMPANY": "Файлы для описания компании",
+    "NO_FILES_PROVIDED": "Файлы не предоставлены",
+    "REVIEW_STATUS": {
+      "VERIFICATION_REQUEST": "Заявка на верификации",
+      "APPLICATION_FOR_PROCESSING": "Заявка в процесс обработки",
+      "REQUEST_COMPLETED": "Заявка выполнена",
+      "ADDITION_PAYMENT_IS_REQUIRED": "Требуется доплата за результата заявки"
+    }
+  },
+  "REVISION_PAYMENT": {
+    "TITLE": "Требуется оплата в размере",
+    "INFO": "Ваш запрос оказался комплексным и объемным, требуется доплата",
+    "MONEY_DEBITED_FROM_ACCOUNT": "Деньги списаны со счета",
+    "FORM": {
+      "BUTTON": {
+        "TITLE": "Оплатить"
+      }
+    }
+  },
+  "REVISION_LIST": {
+    "TITLE": "Мои проверки контрагентов",
+    "YOUR_LIST_IS_EMPTY": "Ваш список проверок пуст"
+  },
+  "REVISION_CREATE_INFO": {
+    "TITLE": "Проверка контрагентов",
+    "INFO": "Создайте проверку контрагентов",
+    "BUTTON_TEXT": "Создать"
+  },
+  "SELF_REVISION_CREATE_INFO": {
+    "TITLE": "Проверка своей компании",
+    "INFO": "Создайте проверку на свою компанию",
+    "BUTTON_TEXT": "Создать"
+  }
+}

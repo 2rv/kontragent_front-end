@@ -1,0 +1,3 @@
+export const COMPANY_ACCOUNT_ITEM_REVISION_ITEM_PAYMENT_DATA_NAME = {
+  AMOUNT: 'amount',
+};

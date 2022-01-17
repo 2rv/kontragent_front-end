@@ -1,3 +1,2 @@
-import { ErrorPage } from '../../core/error-page';
-
-export default ErrorPage;
+import { ErrorComponent } from '../../core/error/error.component';
+export default ErrorComponent;

@@ -1,34 +1,50 @@
 import { httpRequest } from '../../main/http';
-import { redirect } from '../../main/navigation/navigation.core';
-
-import { AUTH_VERIFICATION_PHONE_ACTION_TYPE } from './auth-verification-phone.type';
-
-import { AUTH_VERIFICATION_PHONE_REDIRECT_ON_UPLOAD_PATH } from './auth-verification-phone.constant';
-
 import {
   AUTH_VERIFICATION_PHONE_API,
-  AUTH_VERIFICATION_PHONE_CONFIRM_API,
+  AUTH_VERIFICATION_PHONE_ACTION_TYPE,
 } from './auth-verification-phone.constant';
+import { authUpdateUserData } from '../../lib/common/auth/auth.action';
+import { redirect } from '../../main/navigation/navigation.core';
 
-export function authFormVerificationPhoneSendCode() {
+import { LOCAL_STORAGE_KEY } from '../auth-referal/auth-referal.constant';
+
+export function verificationPhoneFormFetchData(data, code, referalIdData) {
   return async (dispatch) => {
     dispatch({
-      type: AUTH_VERIFICATION_PHONE_ACTION_TYPE.AUTH_FORM_VERIFICATION_PHONE_UPLOAD_PENDING,
+      type: AUTH_VERIFICATION_PHONE_ACTION_TYPE.FORM_PENDING,
     });
 
     try {
-      await httpRequest({
-        method: AUTH_VERIFICATION_PHONE_API.TYPE,
-        url: AUTH_VERIFICATION_PHONE_API.ENDPOINT,
-      });
+      referalIdData
+        ? await httpRequest({
+            method:
+              AUTH_VERIFICATION_PHONE_API.AUTH_VERIFICATION_PHONE_REFERAL.TYPE,
+            url: AUTH_VERIFICATION_PHONE_API.AUTH_VERIFICATION_PHONE_REFERAL.ENDPOINT(
+              code,
+              referalIdData,
+            ),
+          })
+        : await httpRequest({
+            method: AUTH_VERIFICATION_PHONE_API.AUTH_VERIFICATION_PHONE.TYPE,
+            url: AUTH_VERIFICATION_PHONE_API.AUTH_VERIFICATION_PHONE.ENDPOINT(
+              code,
+            ),
+            data,
+          });
 
-      dispatch({
-        type: AUTH_VERIFICATION_PHONE_ACTION_TYPE.AUTH_FORM_VERIFICATION_PHONE_UPLOAD_SUCCESS,
+      await authUpdateUserData()(dispatch);
+
+      localStorage.removeItem(LOCAL_STORAGE_KEY);
+
+      await redirect('/').then(() => {
+        dispatch({
+          type: AUTH_VERIFICATION_PHONE_ACTION_TYPE.FORM_SUCCESS,
+        });
       });
     } catch (error) {
       if (error) {
         dispatch({
-          type: AUTH_VERIFICATION_PHONE_ACTION_TYPE.AUTH_FORM_VERIFICATION_PHONE_UPLOAD_ERROR,
+          type: AUTH_VERIFICATION_PHONE_ACTION_TYPE.FORM_ERROR,
           errorMessage: error.response.data.message,
         });
       }
@@ -36,30 +52,37 @@ export function authFormVerificationPhoneSendCode() {
   };
 }
 
-export function authFormVerificationPhoneConfirmCode(code) {
+export function verificationPhoneFormGetCode() {
   return async (dispatch) => {
     dispatch({
-      type: AUTH_VERIFICATION_PHONE_ACTION_TYPE.AUTH_FORM_VERIFICATION_PHONE_CONFIRM_UPLOAD_PENDING,
+      type: AUTH_VERIFICATION_PHONE_ACTION_TYPE.FORM_PENDING,
     });
 
     try {
       await httpRequest({
-        method: AUTH_VERIFICATION_PHONE_CONFIRM_API.TYPE,
-        url: AUTH_VERIFICATION_PHONE_CONFIRM_API.ENDPOINT.concat(code),
+        method:
+          AUTH_VERIFICATION_PHONE_API.AUTH_VERIFICATION_PHONE_GET_CODE.TYPE,
+        url: AUTH_VERIFICATION_PHONE_API.AUTH_VERIFICATION_PHONE_GET_CODE
+          .ENDPOINT,
       });
 
       dispatch({
-        type: AUTH_VERIFICATION_PHONE_ACTION_TYPE.AUTH_FORM_VERIFICATION_PHONE_CONFIRM_UPLOAD_SUCCESS,
+        type: AUTH_VERIFICATION_PHONE_ACTION_TYPE.FORM_SUCCESS,
       });
-
-      redirect(AUTH_VERIFICATION_PHONE_REDIRECT_ON_UPLOAD_PATH);
     } catch (error) {
+      await authUpdateUserData()(dispatch);
       if (error) {
         dispatch({
-          type: AUTH_VERIFICATION_PHONE_ACTION_TYPE.AUTH_FORM_VERIFICATION_PHONE_CONFIRM_UPLOAD_ERROR,
+          type: AUTH_VERIFICATION_PHONE_ACTION_TYPE.FORM_ERROR,
           errorMessage: error.response.data.message,
         });
       }
     }
+  };
+}
+
+export function cleanupStore() {
+  return {
+    type: AUTH_VERIFICATION_PHONE_ACTION_TYPE.FORM_CLEANUP,
   };
 }

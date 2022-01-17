@@ -5,7 +5,7 @@ export const setActivePath = (path: string | Function, query?: object) => {
   if (typeof path === 'function') {
     path = path();
   }
-  console.log(path);
+
   return (dispatch: Dispatch) =>
     dispatch({
       type: NAVIGATION_ACTION_TYPE.SET_ACTIVE_PATH,

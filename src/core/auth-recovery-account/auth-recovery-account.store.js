@@ -1,4 +1,4 @@
-import { AUTH_RECOVERY_ACCOUNT_ACTION_TYPE } from './auth-recovery-account.type';
+import { AUTH_RECOVERY_ACCOUNT_ACTION_TYPE } from './auth-recovery-account.constant';
 import {
   initRequestState,
   setRequestPending,
@@ -7,34 +7,31 @@ import {
 } from '../../main/store/store.service';
 
 const initialState = {
-  authFormRecoveryAccount: initRequestState(),
+  form: initRequestState(),
 };
 
 export function authRecoveryAccountStore(state = initialState, action) {
   switch (action.type) {
-    case AUTH_RECOVERY_ACCOUNT_ACTION_TYPE.AUTH_FORM_RECOVERY_ACCOUNT_UPLOAD_PENDING:
+    case AUTH_RECOVERY_ACCOUNT_ACTION_TYPE.FORM_PENDING:
       return {
         ...state,
-        authFormRecoveryAccount: setRequestPending(
-          state.authFormRecoveryAccount,
-        ),
+        form: setRequestPending(state.form),
       };
 
-    case AUTH_RECOVERY_ACCOUNT_ACTION_TYPE.AUTH_FORM_RECOVERY_ACCOUNT_UPLOAD_SUCCESS:
+    case AUTH_RECOVERY_ACCOUNT_ACTION_TYPE.FORM_SUCCESS:
       return {
         ...state,
-        authFormRecoveryAccount: setRequestSuccess(
-          state.authFormRecoveryAccount,
-        ),
+        form: setRequestSuccess(state.form),
       };
 
-    case AUTH_RECOVERY_ACCOUNT_ACTION_TYPE.AUTH_FORM_RECOVERY_ACCOUNT_UPLOAD_ERROR:
+    case AUTH_RECOVERY_ACCOUNT_ACTION_TYPE.FORM_ERROR:
       return {
         ...state,
-        authFormRecoveryAccount: setRequestError(
-          state.authFormRecoveryAccount,
-          action.errorMessage,
-        ),
+        form: setRequestError(state.form, action.errorMessage),
+      };
+    case AUTH_RECOVERY_ACCOUNT_ACTION_TYPE.FORM_CLEANUP:
+      return {
+        ...initialState,
       };
 
     default:

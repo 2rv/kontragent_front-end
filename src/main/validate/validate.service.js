@@ -36,7 +36,8 @@ export const email = (value) =>
   !EMAIL_EXP.test(value) ? getError('VALIDATION.EMAIL') : null;
 
 // eslint-disable-next-line max-len
-const PASSWORD_EXP = /^\w{6,999}$/;
+const PASSWORD_EXP =
+  /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
 export const password = (value) =>
   !PASSWORD_EXP.test(value) ? getError('VALIDATION.PASSWORD') : null;
 
@@ -45,21 +46,41 @@ const LOGIN_EXP = /^[A-z0-9_]{3,16}$/;
 export const login = (value) =>
   !LOGIN_EXP.test(value) ? getError('VALIDATION.LOGIN') : null;
 
-const FULLNAME_EXP =
-  /^([А-ЯA-Z]|[А-ЯA-Z][\x27а-яa-z]{1,}|[А-ЯA-Z][\x27а-яa-z]{1,}\-([А-ЯA-Z][\x27а-яa-z]{1,}|(оглы)|(кызы)))\040[А-ЯA-Z][\x27а-яa-z]{1,}(\040[А-ЯA-Z][\x27а-яa-z]{1,})?$/;
-export const fullname = (value) =>
-  !FULLNAME_EXP.test(value) ? getError('VALIDATION.FULLNAME') : null;
-const PHONE_EXP = /^(\s*)?(\+)?([- _():=+]?\d[- _():=+]?){10,14}(\s*)?$/;
-export const phone = (value) =>
-  !PHONE_EXP.test(value) ? getError('VALIDATION.PHONE') : null;
-
 export const boolean = (value) =>
   !!value === false ? getError('VALIDATION.BOOLEAN') : null;
 
 // eslint-disable-next-line max-len
-const NAME_EXP = /^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$/;
-export const name = (value) =>
-  !NAME_EXP.test(value) ? getError('VALIDATION.NAME') : null;
+const COMPANY_NAME_EXP = /^[а-яА-Я]+(([',. -][а-яА-Я ])?[а-яА-Я]*)*$/;
+export const companyName = (value) =>
+  !COMPANY_NAME_EXP.test(value) ? getError('VALIDATION.COMPANY_NAME') : null;
+
+const COMPANY_INN_EXP = /^[\d+]{10,12}$/;
+export const companyInn = (value) =>
+  !COMPANY_INN_EXP.test(value) ? getError('VALIDATION.COMPANY_INN') : null;
+
+// eslint-disable-next-line max-len
+const FIRST_NAME_EXP = /^[а-яА-Я]+(([',. -][а-яА-Я ])?[а-яА-Я]*)*$/;
+export const firstname = (value) =>
+  !FIRST_NAME_EXP.test(value) ? getError('VALIDATION.FIRST_NAME') : null;
+
+// eslint-disable-next-line max-len
+const LAST_NAME_EXP = /^[а-яА-Я]+(([',. -][а-яА-Я ])?[а-яА-Я]*)*$/;
+export const lastname = (value) =>
+  !LAST_NAME_EXP.test(value) ? getError('VALIDATION.LAST_NAME') : null;
+
+// eslint-disable-next-line max-len
+const PHONE_EXP =
+  /\(?\+[0-9]{1,3}\)? ?-?[0-9]{1,3} ?-?[0-9]{3,5} ?-?[0-9]{4}( ?-?[0-9]{3})? ?(\w{1,10}\s?\d{1,6})?/;
+export const phone = (value) =>
+  !PHONE_EXP.test(value) ? getError('VALIDATION.PHONE') : null;
+
+export const emailPhone = (value) => {
+  if (value.indexOf('@') > 0) {
+    return !EMAIL_EXP.test(value) ? getError('VALIDATION.EMAIL') : null;
+  } else {
+    return !PHONE_EXP.test(value) ? getError('VALIDATION.PHONE') : null;
+  }
+};
 
 export const number = (value) => {
   // eslint-disable-next-line no-restricted-globals
@@ -82,10 +103,16 @@ export const numberPositive = (value) => {
 
 export const numberPositiveMin = (min) => (value) => {
   const val = parseFloat(value);
-
   if (val < min) {
     return getError('VALIDATION.NUMBER_POSITIVE_MIN', { min });
   }
+
+  return null;
+};
+
+export const year = (value) => {
+  const val = Number(value);
+  if (val <= 1999 || val >= 2022) return getError('VALIDATION.YEAR');
 
   return null;
 };
@@ -98,9 +125,9 @@ export const required = (value) => {
   return null;
 };
 
-export const requiredArray = (value = []) => {
+export const requiredArray = (value = [], validationTid) => {
   if (value.length === 0) {
-    return getError(REQUIRED_TEXT_TID);
+    return getError(validationTid ? validationTid : REQUIRED_TEXT_TID);
   }
 
   return null;

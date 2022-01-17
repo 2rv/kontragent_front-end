@@ -1,11 +1,12 @@
 import { setActivePath } from '../../lib/common/navigation/navigation.action';
-import { authRedirectPrivated } from '../../lib/common/auth';
 import {
-  SETTINGS_ROUTE_PATH,
-  SETTINGS_PRIVATE_REDIRECT,
-} from './settings.constant';
+  authRedirectPrivated,
+  authRedirectVerification,
+} from '../../lib/common/auth';
+import { SETTINGS_ROUTE_PATH } from './settings.constant';
 
-export function settingsRouter(ctx) {
+export function SettingsRouter(ctx) {
   ctx.store.dispatch(setActivePath(SETTINGS_ROUTE_PATH));
-  //   authRedirectPrivated(ctx, SETTINGS_PRIVATE_REDIRECT);
+  if (authRedirectPrivated(ctx, '/')) return;
+  if (authRedirectVerification(ctx)) return;
 }

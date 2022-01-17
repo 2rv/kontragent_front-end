@@ -1,2 +1,2 @@
-import { HomePage } from '../core/home';
-export default HomePage;
+const Index = () => null;
+export default Index;

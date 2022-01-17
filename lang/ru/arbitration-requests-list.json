@@ -1,9 +1,0 @@
-{
-  "TITLE": "Арбитраж",
-  "INPUT_PLACEHOLDER": "Найти тему",
-  "STATUS": {
-    "RESOLVED": "Решено",
-    "UNDER_CONSIDERATION": "На рассмотрении",
-    "REJECTED": "Отклонено"
-  }
-}
