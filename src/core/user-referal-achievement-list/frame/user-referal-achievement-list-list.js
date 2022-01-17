@@ -2,6 +2,7 @@ import React from 'react';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
+import Grid from '@mui/material/Grid';
 import Alert from '@mui/material/Alert';
 import Box from '@mui/material/Box';
 import Divider from '@mui/material/Divider';
@@ -21,64 +22,29 @@ export const UserReferalAchievementListListComponent = ({ list }) => {
   }
 
   return (
-    <List sx={{ px: 6, pb: 8 }} disablePadding>
+    <Grid sx={{ px: 6, pb: 8 }} container direction="column" disablePadding>
       {list.map((items, key) => (
-        <React.Fragment>
-          <ListItem>
-            <ListItem alignItems="flex-start" key={key} sx={{ py: 3, px: 3 }}>
-              <ListItemText
-                primary={
-                  <span>
-                    <>
-                      <Typography variant="listContent">
-                        {
-                          items[
-                            USER_REFERAL_ACHIEVEMENT_LIST_DATA_NAME.FIRSTNAME
-                          ]
-                        }
-                        {
-                          items[
-                            USER_REFERAL_ACHIEVEMENT_LIST_DATA_NAME.LASTNAME
-                          ]
-                        }
-                      </Typography>
-                    </>
-                  </span>
-                }
-                secondary={
-                  <span>
-                    <>
-                      <Typography
-                        sx={{
-                          color: '#252525',
-                          py: 2,
-                        }}
-                      >
-                        {items[USER_REFERAL_ACHIEVEMENT_LIST_DATA_NAME.TYPE]}
-                      </Typography>
-                    </>
-                  </span>
-                }
-              />
-            </ListItem>
-            <ListItem
-              alignItems="flex-end"
-              sx={{ py: 3, marginLeft: '1000px' }}
-            >
-              <ListItemText
-                primary={
-                  <span>
-                    {`${items[USER_REFERAL_ACHIEVEMENT_LIST_DATA_NAME.AWARD]}
-                        ${text('COMMON.CURRENCY.RUB')}
-                    `}
-                  </span>
-                }
-              />
-            </ListItem>
-          </ListItem>
+        <React.Fragment key={key}>
+          <Grid container direction="row">
+            <Grid item xs={6} sx={{ py: 3, px: 3 }}>
+              <Typography variant="listContent">
+                {items[USER_REFERAL_ACHIEVEMENT_LIST_DATA_NAME.FIRSTNAME]}{' '}
+                {items[USER_REFERAL_ACHIEVEMENT_LIST_DATA_NAME.LASTNAME]}
+              </Typography>
+              <Typography sx={{ color: '#252525', py: 2 }}>
+                {items[USER_REFERAL_ACHIEVEMENT_LIST_DATA_NAME.TYPE]}
+              </Typography>
+            </Grid>
+            <Grid item xs={6} display="flex" alignItems="flex-end" sx={{ py: 3 }}>
+              <Typography>
+                {items[USER_REFERAL_ACHIEVEMENT_LIST_DATA_NAME.AWARD]}
+                {text('COMMON.CURRENCY.RUB')}
+              </Typography>
+            </Grid>
+          </Grid>
           {key !== list.length - 1 && <Divider />}
         </React.Fragment>
       ))}
-    </List>
+    </Grid>
   );
 };

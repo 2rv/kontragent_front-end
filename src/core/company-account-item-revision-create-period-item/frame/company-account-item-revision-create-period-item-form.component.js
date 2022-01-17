@@ -104,9 +104,8 @@ export const CompanyAccountItemRevisionCreatePeriodItemFormComponent = (
               sx={{ display: 'flex', alignItems: 'left' }}
             >
               <Button
-                sx={!period.period[0] && { border: '1px solid #a8a7a8' }}
                 variant="grey"
-                color={period.period[0] ? 'black1' : 'black'}
+                color={period.period[0] ? 'black1' : 'blue'}
                 onClick={() => {
                   dispatch(
                     companyAccountItemRevisionCreateChangeYearPeriod([
@@ -131,9 +130,8 @@ export const CompanyAccountItemRevisionCreatePeriodItemFormComponent = (
               sx={{ display: 'flex', alignItems: 'left' }}
             >
               <Button
-                sx={!period.period[1] && { border: '1px solid #a8a7a8' }}
                 variant="grey"
-                color={period.period[1] ? 'black1' : 'black'}
+                color={period.period[1] ? 'black1' : 'blue'}
                 onClick={() => {
                   dispatch(
                     companyAccountItemRevisionCreateChangeYearPeriod([
@@ -158,9 +156,8 @@ export const CompanyAccountItemRevisionCreatePeriodItemFormComponent = (
               sx={{ display: 'flex', alignItems: 'left' }}
             >
               <Button
-                sx={!period.period[2] && { border: '1px solid #a8a7a8' }}
                 variant="grey"
-                color={period.period[2] ? 'black1' : 'black'}
+                color={period.period[2] ? 'black1' : 'blue'}
                 onClick={() => {
                   dispatch(
                     companyAccountItemRevisionCreateChangeYearPeriod([
@@ -185,9 +182,8 @@ export const CompanyAccountItemRevisionCreatePeriodItemFormComponent = (
               sx={{ display: 'flex', alignItems: 'left' }}
             >
               <Button
-                sx={!period.period[3] && { border: '1px solid #a8a7a8' }}
                 variant="grey"
-                color={period.period[3] ? 'black1' : 'black'}
+                color={period.period[3] ? 'black1' : 'blue'}
                 onClick={() => {
                   dispatch(
                     companyAccountItemRevisionCreateChangeYearPeriod([
@@ -208,8 +204,9 @@ export const CompanyAccountItemRevisionCreatePeriodItemFormComponent = (
         </Grid>
 
         {!last && (
-          <Grid item xs>
+          <Grid item xs={12}>
             <Button
+              sx={{ mt: '14px' }}
               onClick={() => {
                 dispatch(companyAccountItemRevisionCreateDeleteYear());
               }}

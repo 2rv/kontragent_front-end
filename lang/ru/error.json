@@ -41,4 +41,6 @@
   "USER_ERROR_CANNOT_FIND_USER": "Пользователя с таким ID не существует",
   "USER_ERROR_USER_IS_BLOKED": "Аккаунт пользователя заблокирован",
   "USER_USER_VERIFICATION_EMAIL_ALLREADY_CONFIRM": "Почта уже подтвержденна"
+  "USER_ERROR_CANNOT_FIND_USER": "Такого пользователя не существует",
+  "USER_ERROR_USER_IS_BLOKED": "Аккаунт пользователя заблокирован"
 }
