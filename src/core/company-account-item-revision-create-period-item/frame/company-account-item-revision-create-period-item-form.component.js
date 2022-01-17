@@ -1,12 +1,11 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
+import FormControl from '@mui/material/FormControl';
 
 import Grid from '@mui/material/Grid';
 import Button from '@mui/material/Button';
 
-import { TextFieldElement } from '../../../lib/element/text-field.element.js';
-
-import { COMPANY_ACCOUNT_ITEM_REVISION_CREATE_PERIOD_ITEM_FIELD_NAME } from '../company-account-item-revision-create-period-item.constant';
+import { YearSelect } from './company-account-item-revision-create-period-item-select.component'
 
 import { text } from '../../../lib/common/text';
 
@@ -32,7 +31,6 @@ export const CompanyAccountItemRevisionCreatePeriodItemFormComponent = (
     companyAccountItemRevisionCreateChangeYear,
     companyAccountItemRevisionCreateChangeYearPeriod,
   } = props;
-
   const dispatch = useDispatch();
 
   const isYearFormValid = () => {
@@ -59,31 +57,15 @@ export const CompanyAccountItemRevisionCreatePeriodItemFormComponent = (
         flexWrap="wrap"
       >
         <Grid xs={12} item>
-          <TextFieldElement
-            type="number"
-            inputProps={{ min: '1900', max: '2099' }}
-            placeholder={text(
-              'COMPANY_ACCOUNT_ITEM_REVISION_CREATE.REVISON_CREATE_PERIOD_ITEM.FORM.FIELD.LABELS.YEAR',
-            )}
-            name={
-              COMPANY_ACCOUNT_ITEM_REVISION_CREATE_PERIOD_ITEM_FIELD_NAME.YEAR
-            }
-            onChange={handleChange}
-            storeOnChange={companyAccountItemRevisionCreateChangeYear}
-            onBlur={handleBlur}
-            value={
-              values[
-                COMPANY_ACCOUNT_ITEM_REVISION_CREATE_PERIOD_ITEM_FIELD_NAME.YEAR
-              ]
-            }
-            error={isFieldError(
-              COMPANY_ACCOUNT_ITEM_REVISION_CREATE_PERIOD_ITEM_FIELD_NAME.YEAR,
-            )}
-            fullWidth
-            errorText={getFieldError(
-              COMPANY_ACCOUNT_ITEM_REVISION_CREATE_PERIOD_ITEM_FIELD_NAME.YEAR,
-            )}
-          />
+          <FormControl fullWidth>
+            <YearSelect
+              companyAccountItemRevisionCreateChangeYear={companyAccountItemRevisionCreateChangeYear}
+              handleBlur={handleBlur}
+              handleChange={handleChange}
+              values={values}
+            />
+          </FormControl>
+
         </Grid>
 
         <Grid xs={12} item>
