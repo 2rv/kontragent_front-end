@@ -6,6 +6,7 @@ import { TabContainer } from '../../lib/common/navigation-tab/navigation-tab.con
 import { COMPANY_ADMIN_ITEM_NAVIGATION } from '../company-admin-item/company-admin-item.constant';
 import { CompanyAdminItemInfoListContainer } from '../company-admin-item-info-list/company-admin-item-info-list.container';
 import { CompanyAccountItemInfoVerificateContainer } from '../company-admin-item-info-verificate';
+import { CompanyAdminItemInfoDataContainer } from '../company-admin-item-info-data';
 
 export function CompanyAdminItemInfoPage() {
   return (
@@ -20,6 +21,9 @@ export function CompanyAdminItemInfoPage() {
         <Grid item>
           <CompanyAccountItemInfoVerificateContainer />
         </Grid>
+      </Grid>
+      <Grid item>
+        <CompanyAdminItemInfoDataContainer />
       </Grid>
     </NavigationComponent>
   );
