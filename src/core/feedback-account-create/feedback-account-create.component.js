@@ -1,23 +1,16 @@
 import Paper from '@mui/material/Paper';
 import Box from '@mui/material/Box';
+import Typography from '@mui/material/Typography';
 import Divider from '@mui/material/Divider';
 import Alert from '@mui/material/Alert';
-import LinearProgress from '@mui/material/LinearProgress';
-import Typography from '@mui/material/Typography';
-import Link from '@mui/material/Link';
-
-import { useDispatch } from 'react-redux';
-import { authLogout } from '../../lib/common/auth/auth.action';
-
+import { FeedbackAccountCreateFormComponent } from './frame/feedback-account-create-form.component';
 import { Formik } from 'formik';
-
 import { text } from '../../lib/common/text';
+import Grid from '@mui/material/Grid';
+import Button from '@mui/material/Button';
+import LinearProgress from '@mui/material/LinearProgress';
 
-import { AuthVerificationEmailFormComponent } from './frame/auth-verification-email-form.component.js';
-
-
-export function AuthVerificationEmailComponent(props) {
-  const dispatch = useDispatch()
+export function FeedbackAccountCreateComponent(props) {
   const {
     initialValue,
     pageLoading,
@@ -27,20 +20,18 @@ export function AuthVerificationEmailComponent(props) {
     isError,
     isSuccess,
     errorMessage,
+    setFileList,
   } = props;
   return (
-
-    < Box >
+    <Box>
       <Paper>
         <Box>
-          <Box sx={{ pb: 4 }}>
-            <Typography variant="heading" gutterBottom component="div">
-              {text('AUTH.VERIFICATION_EMAIL.TITLE')}
-            </Typography>
-            <Typography variant="subtitle" component="div">
-              {text('AUTH.VERIFICATION_EMAIL.INFO')}
-            </Typography>
-          </Box>
+          <Typography variant="title" sx={{ pb: 4 }} component="div">
+            {text('FEEDBACK_ACCOUNT_CREATE.TITLE')}
+          </Typography>
+          <Typography variant="subTitle" sx={{ pb: 4 }} component="div">
+            {text('FEEDBACK_ACCOUNT_CREATE.INFO')}
+          </Typography>
           <Divider />
 
           <Formik
@@ -49,29 +40,17 @@ export function AuthVerificationEmailComponent(props) {
             onSubmit={onSubmitForm}
           >
             {(props) => (
-              <AuthVerificationEmailFormComponent
+              <FeedbackAccountCreateFormComponent
                 {...props}
                 isPending={isPending}
                 isError={isError}
+                isSuccess={isSuccess}
                 errorMessage={errorMessage}
                 pageLoading={pageLoading}
+                setFileList={setFileList}
               />
             )}
           </Formik>
-
-          <Divider />
-
-          <Typography variant="subtext" component="div" align='justify'>
-            <Link
-              component="button"
-              variant="body2"
-              onClick={() => {
-                dispatch(authLogout())
-              }}
-            >
-              {text('AUTH.LOGOUT.BUTTON_TEXT')}
-            </Link>
-          </Typography>
 
           {isError && (
             <Box sx={{ pt: 4 }}>
@@ -92,6 +71,6 @@ export function AuthVerificationEmailComponent(props) {
           )}
         </Box>
       </Paper>
-    </Box >
+    </Box>
   );
 }

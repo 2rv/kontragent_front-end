@@ -35,13 +35,7 @@ export const UserReferalAchievementListListComponent = ({ list }) => {
                 {items[USER_REFERAL_ACHIEVEMENT_LIST_DATA_NAME.TYPE]}
               </Typography>
             </Grid>
-            <Grid
-              item
-              xs={6}
-              display="flex"
-              alignItems="flex-end"
-              sx={{ py: 3 }}
-            >
+            <Grid item xs={6} display="flex" alignItems="flex-end" sx={{ py: 3 }}>
               <Typography>
                 {items[USER_REFERAL_ACHIEVEMENT_LIST_DATA_NAME.AWARD]}
                 {text('COMMON.CURRENCY.RUB')}

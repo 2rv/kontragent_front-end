@@ -1,23 +1,14 @@
 import Paper from '@mui/material/Paper';
 import Box from '@mui/material/Box';
+import Typography from '@mui/material/Typography';
 import Divider from '@mui/material/Divider';
 import Alert from '@mui/material/Alert';
-import LinearProgress from '@mui/material/LinearProgress';
-import Typography from '@mui/material/Typography';
-import Link from '@mui/material/Link';
-
-import { useDispatch } from 'react-redux';
-import { authLogout } from '../../lib/common/auth/auth.action';
-
+import { NotificationAdminEmailCreateFormComponent } from './frame/notification-admin-email-create-form.component';
 import { Formik } from 'formik';
-
 import { text } from '../../lib/common/text';
+import LinearProgress from '@mui/material/LinearProgress';
 
-import { AuthVerificationEmailFormComponent } from './frame/auth-verification-email-form.component.js';
-
-
-export function AuthVerificationEmailComponent(props) {
-  const dispatch = useDispatch()
+export function NotificationAdminEmailCreateComponent(props) {
   const {
     initialValue,
     pageLoading,
@@ -27,20 +18,16 @@ export function AuthVerificationEmailComponent(props) {
     isError,
     isSuccess,
     errorMessage,
+    setFileList,
   } = props;
   return (
-
-    < Box >
+    <Box>
       <Paper>
         <Box>
-          <Box sx={{ pb: 4 }}>
-            <Typography variant="heading" gutterBottom component="div">
-              {text('AUTH.VERIFICATION_EMAIL.TITLE')}
-            </Typography>
-            <Typography variant="subtitle" component="div">
-              {text('AUTH.VERIFICATION_EMAIL.INFO')}
-            </Typography>
-          </Box>
+          <Typography variant="title" sx={{ pb: 4 }} component="div">
+            {text('NOTIFICATION_ADMIN_EMAIL_CREATE.TITLE')}
+          </Typography>
+
           <Divider />
 
           <Formik
@@ -49,29 +36,17 @@ export function AuthVerificationEmailComponent(props) {
             onSubmit={onSubmitForm}
           >
             {(props) => (
-              <AuthVerificationEmailFormComponent
+              <NotificationAdminEmailCreateFormComponent
                 {...props}
                 isPending={isPending}
                 isError={isError}
+                isSuccess={isSuccess}
                 errorMessage={errorMessage}
                 pageLoading={pageLoading}
+                setFileList={setFileList}
               />
             )}
           </Formik>
-
-          <Divider />
-
-          <Typography variant="subtext" component="div" align='justify'>
-            <Link
-              component="button"
-              variant="body2"
-              onClick={() => {
-                dispatch(authLogout())
-              }}
-            >
-              {text('AUTH.LOGOUT.BUTTON_TEXT')}
-            </Link>
-          </Typography>
 
           {isError && (
             <Box sx={{ pt: 4 }}>
@@ -92,6 +67,6 @@ export function AuthVerificationEmailComponent(props) {
           )}
         </Box>
       </Paper>
-    </Box >
+    </Box>
   );
 }

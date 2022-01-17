@@ -159,6 +159,17 @@ import {
   CompanyAdminItemMemberListRouter,
 } from '../../core/company-admin-item-member-list';
 import { HOME_ROUTE_PATH, LandingRouter } from '../../core/landing';
+import {
+  NOTIFICATION_EMAIL_CREATE_ROUTE_PATH,
+  NotificationAdminEmailCreateRouter,
+} from '../../core/notification-admin-email-create';
+  FEEDBACK_ADMIN_LIST_ROUTE_PATH,
+  FeedbackAdminListRouter,
+} from '../../core/feedback-admin-list';
+import {
+  FEEDBACK_ADMIN_ITEM_ROUTE_PATH,
+  FeedbackAdminItemRouter,
+} from '../../core/feedback-admin-item';
 
 export const routes = {
   '/': IndexRouter,
@@ -211,6 +222,9 @@ export const routes = {
   [COMPANY_ADMIN_BILL_LIST_ROUTE_PATH]: CompanyAdminItemBillListRouter,
   [COMPANY_ADMIN_ITEM_MEMBER_LIST_ROUTE_PATH]: CompanyAdminItemMemberListRouter,
   [HOME_ROUTE_PATH]: LandingRouter,
+  [NOTIFICATION_EMAIL_CREATE_ROUTE_PATH]: NotificationAdminEmailCreateRouter,
+  [FEEDBACK_ADMIN_LIST_ROUTE_PATH]: FeedbackAdminListRouter,
+  [FEEDBACK_ADMIN_ITEM_ROUTE_PATH]: FeedbackAdminItemRouter,
 };
 
 export const Router = routesInit(routes);
