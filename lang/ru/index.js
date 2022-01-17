@@ -39,6 +39,7 @@ import COMPANY_ACCOUNT_BILL_ITEM from './company-account-bill-item.json';
 import COMPANY_ACCOUNT_ITEM_CREATE_BILL from './company-account-item-create-bill.json';
 import ADMIN_BILL_INFO from './admin-bill-info.json';
 import ADMIN_BILL_REVISION from './admin-bill-revision.json';
+import LANDING from './landing.json';
 import NOTIFICATION_ADMIN_EMAIL_CREATE from './notification-admin-email-create.json';
 import FEEDBACK_ACCOUNT_CREATE from './feedback-account-create.json';
 import FEEDBACK_ADMIN_ITEM from './feedback-admin-item.json';
@@ -85,6 +86,7 @@ export const RU = {
     COMPANY_ACCOUNT_ITEM_CREATE_BILL,
     ADMIN_BILL_INFO,
     ADMIN_BILL_REVISION,
+    LANDING,
     NOTIFICATION_ADMIN_EMAIL_CREATE,
     FEEDBACK_ACCOUNT_CREATE,
     FEEDBACK_ADMIN_ITEM,

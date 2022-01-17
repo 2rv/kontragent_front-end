@@ -180,4 +180,24 @@ export const typography = {
     lineHeight: 2.66,
     textTransform: 'uppercase',
   },
+  landingTitle: {
+    fontFamily:
+      '"IBM Plex Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"',
+    fontWeight: 700,
+    fontSize: 28,
+    lineHeight: '29px',
+  },
+  landingText: {
+    fontFamily:
+      '"IBM Plex Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"',
+    fontSize: 16,
+    lineHeight: '24px',
+  },
+  landingTitleHero: {
+    fontFamily:
+      '"IBM Plex Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"',
+    fontWeight: 700,
+    fontSize: 36,
+    lineHeight: '54px',
+  },
 };
