@@ -159,6 +159,9 @@ import {
   CompanyAdminItemMemberListRouter,
 } from '../../core/company-admin-item-member-list';
 import {
+  NOTIFICATION_EMAIL_CREATE_ROUTE_PATH,
+  NotificationAdminEmailCreateRouter,
+} from '../../core/notification-admin-email-create';
   FEEDBACK_ADMIN_LIST_ROUTE_PATH,
   FeedbackAdminListRouter,
 } from '../../core/feedback-admin-list';
@@ -217,6 +220,7 @@ export const routes = {
   [COMPANY_ADMIN_ITEM_INFO_ROUTE_PATH]: CompanyAdminItemInfoRouter,
   [COMPANY_ADMIN_BILL_LIST_ROUTE_PATH]: CompanyAdminItemBillListRouter,
   [COMPANY_ADMIN_ITEM_MEMBER_LIST_ROUTE_PATH]: CompanyAdminItemMemberListRouter,
+  [NOTIFICATION_EMAIL_CREATE_ROUTE_PATH]: NotificationAdminEmailCreateRouter,
   [FEEDBACK_ADMIN_LIST_ROUTE_PATH]: FeedbackAdminListRouter,
   [FEEDBACK_ADMIN_ITEM_ROUTE_PATH]: FeedbackAdminItemRouter,
 };
