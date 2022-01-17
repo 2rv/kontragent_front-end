@@ -43,9 +43,9 @@ export const authVerificated = (ctx: any, pathToRedirect: string) => {
 
 export const authRedirectPrivated = (ctx: any, pathToRedirect: string) => {
   const { res, store } = ctx;
-  
+
   const authStore = store.getState()[AUTH_STORE_NAME];
-  
+
   if (!authStore.logged) {
     if (res) {
       res.writeHead(301, {
@@ -59,6 +59,42 @@ export const authRedirectPrivated = (ctx: any, pathToRedirect: string) => {
   }
   return false;
 };
+
+export const authRedirectVerificatedEmail = (ctx: any) => {
+  const { res, store = null } = ctx;
+
+  const authStore = store.getState()[AUTH_STORE_NAME];
+
+  if (authStore.logged) {
+    if (authStore.user.confirmEmail) {
+      if (res) {
+        res.writeHead(301, {
+          Location: '/',
+        });
+        res.end();
+      }
+      return true;
+    }
+  }
+}
+
+export const authRedirectVerificatedPhone = (ctx: any) => {
+  const { res, store = null } = ctx;
+
+  const authStore = store.getState()[AUTH_STORE_NAME];
+
+  if (authStore.logged) {
+    if (authStore.user.confirmPhone) {
+      if (res) {
+        res.writeHead(301, {
+          Location: '/',
+        });
+        res.end();
+      }
+      return true;
+    }
+  }
+}
 
 export const authRedirectVerification = (ctx: any) => {
   const { res, store = null } = ctx;

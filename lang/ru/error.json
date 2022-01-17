@@ -38,6 +38,9 @@
   "REFERAL_MEMBER_ERROR_CANNOT_JOIN_AS_ADMIN": "Вы не можете присоединиться к системе будучи администратором",
   "USER_ROLE_ERROR_CANNOT_CHANGE_THE_ROLE_OF_YOURSELF": "Нельзя менять роль у самого себя",
   "INVITE_ERROR_ALLREARY_INVITED": "Приглашение уже отправленно",
+  "USER_ERROR_CANNOT_FIND_USER": "Пользователя с таким ID не существует",
+  "USER_ERROR_USER_IS_BLOKED": "Аккаунт пользователя заблокирован",
+  "USER_USER_VERIFICATION_EMAIL_ALLREADY_CONFIRM": "Почта уже подтвержденна"
   "USER_ERROR_CANNOT_FIND_USER": "Такого пользователя не существует",
   "USER_ERROR_USER_IS_BLOKED": "Аккаунт пользователя заблокирован"
 }

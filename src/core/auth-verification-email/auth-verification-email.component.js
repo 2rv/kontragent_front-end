@@ -15,6 +15,7 @@ import { text } from '../../lib/common/text';
 
 import { AuthVerificationEmailFormComponent } from './frame/auth-verification-email-form.component.js';
 
+
 export function AuthVerificationEmailComponent(props) {
   const dispatch = useDispatch()
   const {
@@ -28,7 +29,8 @@ export function AuthVerificationEmailComponent(props) {
     errorMessage,
   } = props;
   return (
-    <Box>
+
+    < Box >
       <Paper>
         <Box>
           <Box sx={{ pb: 4 }}>
@@ -90,6 +92,6 @@ export function AuthVerificationEmailComponent(props) {
           )}
         </Box>
       </Paper>
-    </Box>
+    </Box >
   );
 }
