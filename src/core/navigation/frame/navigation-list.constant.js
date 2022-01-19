@@ -12,6 +12,8 @@ import { CREATE_ARTICLE_ROUTE_PATH } from '../../article-create';
 import { ADMIN_POST_LIST_ROUTE_PATH } from '../../admin-post-list';
 import { BILL_ADMIN_LIST_ROUTE_PATH } from '../../bill-admin-list';
 import { NOTIFICATION_EMAIL_CREATE_ROUTE_PATH } from '../../notification-admin-email-create';
+import { FEEDBACK_ADMIN_LIST_ROUTE_PATH } from '../../feedback-admin-list';
+import { FEEDBACK_ACCOUNT_CREATE_ROUTE_PATH } from '../../feedback-account-create';
 
 export const USER_MENU_ITEM = [
   {
@@ -25,6 +27,10 @@ export const USER_MENU_ITEM = [
   {
     path: USER_REFERAL_SYSTEM_ROUTE_PATH,
     name: text('NAVIGATION.USER.SYSTEM'),
+  },
+  {
+    path: FEEDBACK_ACCOUNT_CREATE_ROUTE_PATH,
+    name: text('NAVIGATION.USER.FEEDBACK_CREATE'),
   },
   {
     path: CREATE_ARTICLE_ROUTE_PATH,
@@ -42,6 +48,10 @@ export const ADMIN_MENU_ITEM = [
   {
     path: REVISION_ADMIN_LIST_ROUTE_PATH,
     name: text('NAVIGATION.ADMIN.REVISION'),
+  },
+  {
+    path: FEEDBACK_ADMIN_LIST_ROUTE_PATH,
+    name: text('NAVIGATION.ADMIN.FEEDBACK'),
   },
   {
     path: USER_ADMIN_LIST_ROUTE_PATH,

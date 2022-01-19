@@ -171,6 +171,10 @@ import {
   FEEDBACK_ADMIN_ITEM_ROUTE_PATH,
   FeedbackAdminItemRouter,
 } from '../../core/feedback-admin-item';
+import {
+  FEEDBACK_ACCOUNT_CREATE_ROUTE_PATH,
+  FeedbackAccountCreatePageRouter,
+} from '../../core/feedback-account-create';
 
 export const routes = {
   '/': IndexRouter,
@@ -226,6 +230,7 @@ export const routes = {
   [NOTIFICATION_EMAIL_CREATE_ROUTE_PATH]: NotificationAdminEmailCreateRouter,
   [FEEDBACK_ADMIN_LIST_ROUTE_PATH]: FeedbackAdminListRouter,
   [FEEDBACK_ADMIN_ITEM_ROUTE_PATH]: FeedbackAdminItemRouter,
+  [FEEDBACK_ACCOUNT_CREATE_ROUTE_PATH]: FeedbackAccountCreatePageRouter,
 };
 
 export const Router = routesInit(routes);

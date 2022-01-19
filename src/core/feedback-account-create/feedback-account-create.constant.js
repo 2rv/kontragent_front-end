@@ -10,3 +10,5 @@ export const FEEDBACK_ACCOUNT_CREATE_API = {
     TYPE: 'POST',
   },
 };
+
+export const FEEDBACK_ACCOUNT_CREATE_ROUTE_PATH = '/feedback/create';
