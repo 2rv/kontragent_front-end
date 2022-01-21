@@ -45,6 +45,8 @@ export function AuthSignupContainer() {
       [AUTH_SIGNUP_DATA_NAME.FIRST_NAME]: '',
       [AUTH_SIGNUP_DATA_NAME.LAST_NAME]: '',
       [AUTH_SIGNUP_DATA_NAME.PHONE]: '',
+      [AUTH_SIGNUP_DATA_NAME.PRIVACY_POLICY]: false,
+      [AUTH_SIGNUP_DATA_NAME.TERMS_OF_USE]: false,
     };
   };
 

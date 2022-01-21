@@ -11,6 +11,7 @@ import {
   firstname,
   lastname,
   phone,
+  boolean,
 } from '../../main/validate/validate.service';
 
 const config = {
@@ -24,6 +25,8 @@ const config = {
     required,
     passwordRepeat([AUTH_SIGNUP_DATA_NAME.PASSWORD]),
   ],
+  [AUTH_SIGNUP_DATA_NAME.TERMS_OF_USE]: [boolean],
+  [AUTH_SIGNUP_DATA_NAME.PRIVACY_POLICY]: [boolean],
 };
 
 export const authSignupFormValidation = (values) => validate(values, config);

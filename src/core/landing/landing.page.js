@@ -11,6 +11,7 @@ import { LandingAdvantagesPartTwoContainer } from '../landing-advantages-part-tw
 import { LandingPrinciplesContainer } from '../landing-principles/landing-principles.container';
 import { LandingStartNowContainer } from '../landing-start-now/landing-start-now.container';
 import { LandingFooterContainer } from '../landing-footer/landing-footer.container';
+import { LandingCookieContainer } from '../landing-cookie';
 
 export function LandingPage() {
   return (
@@ -27,6 +28,7 @@ export function LandingPage() {
       <LandingPrinciplesContainer />
       <LandingStartNowContainer />
       <LandingFooterContainer />
+      <LandingCookieContainer />
     </Box>
   );
 }
