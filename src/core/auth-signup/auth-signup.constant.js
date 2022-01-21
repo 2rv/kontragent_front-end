@@ -24,4 +24,7 @@ export const AUTH_SIGNUP_DATA_NAME = {
   PHONE: 'phone',
   FIRST_NAME: 'firstname',
   LAST_NAME: 'lastname',
+  LAST_NAME: 'lastname',
+  PRIVACY_POLICY: 'privacyPolicy',
+  TERMS_OF_USE: 'termsOfUse',
 };

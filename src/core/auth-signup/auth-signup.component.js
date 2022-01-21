@@ -99,40 +99,6 @@ export function AuthSignupComponent(props) {
             </div>
           </Box>
           <Divider sx={{ mt: 2 }} />
-          <Box sx={{ pt: 2 }}>
-            <div>
-              <Typography variant="subtext" component="div">
-                {text('AUTH.SIGNUP.TERMS_OF_THE_OFFER_CONDITIONS')}
-              </Typography>
-              <Typography variant="subtext" component="div">
-                {text('AUTH.SIGNUP.TERMS_OF_THE_OFFER')}{' '}
-                <Link
-                  sx={{ fontSize: '14px', fontWeight: '600' }}
-                  component="a"
-                  variant="body2"
-                  target="_blank"
-                  href="/static/pdf/blank.pdf"
-                  underline="hover"
-                >
-                  {text('AUTH.SIGNUP.READ')}
-                </Link>
-              </Typography>
-              <Typography variant="subtext" component="div">
-                {text('AUTH.SIGNUP.USER_AGREEMENT')}{' '}
-                <Link
-                  sx={{ fontSize: '14px', fontWeight: '600' }}
-                  component="a"
-                  variant="body2"
-                  target="_blank"
-                  href="/static/pdf/blank.pdf"
-                  underline="hover"
-                >
-                  {text('AUTH.SIGNUP.READ')}
-                </Link>
-              </Typography>
-            </div>
-          </Box>
-
           {isError && (
             <Box sx={{ pt: 4 }}>
               <Alert severity="error">{text(`ERROR.${errorMessage}`)}</Alert>

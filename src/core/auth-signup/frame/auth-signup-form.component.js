@@ -1,9 +1,9 @@
-import Box from '@mui/material/Box';
-import Grid from '@mui/material/Grid';
-import Button from '@mui/material/Button';
+import { Box, Grid, Button, Link, Typography } from '@mui/material';
 import { TextFieldElement } from '../../../lib/element/text-field.element.js';
 import { text } from '../../../lib/common/text';
 import { AUTH_SIGNUP_DATA_NAME } from '../auth-signup.constant';
+import { CheckboxField } from '../../../lib/common/checkbox-field';
+import { redirect } from '../../../main/navigation/navigation.core.js';
 
 export const AuthSignupFormComponent = (props) => {
   const {
@@ -120,6 +120,61 @@ export const AuthSignupFormComponent = (props) => {
               error={isFieldError(AUTH_SIGNUP_DATA_NAME.PASSWORD_REPEAT)}
               fullWidth
               errorText={getFieldError(AUTH_SIGNUP_DATA_NAME.PASSWORD_REPEAT)}
+            />
+          </Grid>
+          <Grid item>
+            <CheckboxField
+              titleLabel={text('AUTH.SIGNUP.TERMS_OF_THE_OFFER')}
+              name={AUTH_SIGNUP_DATA_NAME.PRIVACY_POLICY}
+              onChange={handleChange}
+              onBlur={handleBlur}
+              value={values[AUTH_SIGNUP_DATA_NAME.PRIVACY_POLICY]}
+              error={isFieldError(AUTH_SIGNUP_DATA_NAME.PRIVACY_POLICY)}
+              errorText={getFieldError(AUTH_SIGNUP_DATA_NAME.PRIVACY_POLICY)}
+              label={
+                <Typography variant="subtext" component="div">
+                  {text('AUTH.SIGNUP.TERMS_OF_THE_OFFER')}{' '}
+                  <Link
+                    sx={{ fontSize: '14px', fontWeight: '600' }}
+                    component="button"
+                    variant="body2"
+                    underline="hover"
+                    onClick={() => {
+                      redirect('/static/pdf/blank.pdf');
+                    }}
+                  >
+                    {text('AUTH.SIGNUP.READ')}
+                  </Link>
+                </Typography>
+              }
+            />
+          </Grid>
+
+          <Grid item>
+            <CheckboxField
+              name={AUTH_SIGNUP_DATA_NAME.TERMS_OF_USE}
+              onChange={handleChange}
+              onBlur={handleBlur}
+              value={values[AUTH_SIGNUP_DATA_NAME.TERMS_OF_USE]}
+              error={isFieldError(AUTH_SIGNUP_DATA_NAME.TERMS_OF_USE)}
+              errorText={getFieldError(AUTH_SIGNUP_DATA_NAME.TERMS_OF_USE)}
+              titleLabel={text('AUTH.SIGNUP.USER_AGREEMENT')}
+              label={
+                <Typography variant="subtext" component="div">
+                  {text('AUTH.SIGNUP.USER_AGREEMENT')}{' '}
+                  <Link
+                    sx={{ fontSize: '14px', fontWeight: '600' }}
+                    component="button"
+                    variant="body2"
+                    underline="hover"
+                    onClick={() => {
+                      redirect('/static/pdf/blank.pdf');
+                    }}
+                  >
+                    {text('AUTH.SIGNUP.READ')}
+                  </Link>
+                </Typography>
+              }
             />
           </Grid>
           <Grid item>
