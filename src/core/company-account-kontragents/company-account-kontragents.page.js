@@ -3,6 +3,7 @@ import { TabContainer } from '../../lib/common/navigation-tab/navigation-tab.con
 import { COMPANY_ACCOUNT_ITEM_NAVIGATION } from '../company-account-item/company-account-item.constant';
 import { NavigationComponent } from '../navigation/navigation.component';
 import { CompanyAccountKontragentsContainer } from './company-account-kontragents.container';
+import { KontragentImportContainer } from '../kontragent-import';
 
 export function CompanyAccountKontragentsPage() {
   return (
@@ -13,6 +14,9 @@ export function CompanyAccountKontragentsPage() {
         </Grid>
         <Grid item>
           <CompanyAccountKontragentsContainer />
+        </Grid>
+        <Grid item>
+          <KontragentImportContainer />
         </Grid>
       </Grid>
     </NavigationComponent>

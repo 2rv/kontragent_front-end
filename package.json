@@ -52,6 +52,7 @@
     "react-editor-js": "^1.10.0",
     "react-i18next": "^11.10.0",
     "react-redux": "^7.2.4",
+    "read-excel-file": "^5.2.26",
     "redux": "^4.1.0",
     "redux-devtools-extension": "^2.13.9",
     "redux-thunk": "^2.3.0",

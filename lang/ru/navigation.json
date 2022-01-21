@@ -16,7 +16,9 @@
 		"POSTS": "Статьи",
 		"BILLS": "Запросы на пополнение счёта",
 		"NOTIFICATION": "Отправить письмо",
-		"FEEDBACK": "Жалобы"
+		"FEEDBACK": "Жалобы",
+		"COMPANY_IMPORT": "Импорт компаний",
+		"KONTRAGENT_IMPORT": "Импорт контрагентов"
 	},
 	"TABS": {
 		"COMPANY_ACCOUNT_ITEM": {
