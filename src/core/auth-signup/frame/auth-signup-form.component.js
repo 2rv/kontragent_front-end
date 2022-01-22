@@ -124,7 +124,6 @@ export const AuthSignupFormComponent = (props) => {
           </Grid>
           <Grid item>
             <CheckboxField
-              titleLabel={text('AUTH.SIGNUP.TERMS_OF_THE_OFFER')}
               name={AUTH_SIGNUP_DATA_NAME.PRIVACY_POLICY}
               onChange={handleChange}
               onBlur={handleBlur}
@@ -158,10 +157,9 @@ export const AuthSignupFormComponent = (props) => {
               value={values[AUTH_SIGNUP_DATA_NAME.TERMS_OF_USE]}
               error={isFieldError(AUTH_SIGNUP_DATA_NAME.TERMS_OF_USE)}
               errorText={getFieldError(AUTH_SIGNUP_DATA_NAME.TERMS_OF_USE)}
-              titleLabel={text('AUTH.SIGNUP.USER_AGREEMENT')}
               label={
                 <Typography variant="subtext" component="div">
-                  {text('AUTH.SIGNUP.USER_AGREEMENT')}{' '}
+                  {text('AUTH.SIGNUP.USER_AGREEMENT')}
                   <Link
                     sx={{ fontSize: '14px', fontWeight: '600' }}
                     component="button"

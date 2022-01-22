@@ -113,20 +113,24 @@ export function KontragentImportComponent(props) {
           </List>
         </Grid>
 
-        <Grid item>
-          {data.length ? (
+        {data.length ? (
+          <Grid item>
             <Button
               onClick={onSave}
               disabled={pending}
-              variant="outlined"
+              variant="contained"
               color="success"
             >
               Импортировать
             </Button>
-          ) : null}
-        </Grid>
+          </Grid>
+        ) : null}
 
-        <Grid item>{pending && <CircularProgress />}</Grid>
+        {pending && (
+          <Grid item>
+            <CircularProgress />
+          </Grid>
+        )}
 
         <Grid item>
           {success && <Alert severity="success">{text('Успешно')}</Alert>}

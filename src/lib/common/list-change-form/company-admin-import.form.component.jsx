@@ -45,11 +45,11 @@ export function ListChangeForm(props) {
           gap: 2,
         }}
       >
-        <Button onClick={handleSubmit} variant="outlined" color="success">
+        <Button onClick={handleSubmit} variant="contained" color="success">
           Сохранить
         </Button>
 
-        <Button onClick={onCancel} variant="outlined" color="error">
+        <Button onClick={onCancel} variant="contained" color="error">
           Отмена
         </Button>
       </Grid>

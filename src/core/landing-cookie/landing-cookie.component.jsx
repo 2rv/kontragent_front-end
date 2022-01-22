@@ -1,4 +1,5 @@
 import { Button, Snackbar } from '@mui/material';
+import { text } from '../../lib/common/text';
 
 export function LandingCookieComponent(props) {
   const { isOpen, handleClose } = props;
@@ -11,9 +12,13 @@ export function LandingCookieComponent(props) {
       }}
       open={isOpen}
       onClose={handleClose}
-      message="Использование файлов Cookie"
+      message={text('LANDING.COOKIE.MESSAGE')}
       action={
-        <Button variant="text" children={'Хорошо'} onClick={handleClose} />
+        <Button
+          variant="text"
+          children={text('LANDING.COOKIE.OKAY')}
+          onClick={handleClose}
+        />
       }
     />
   );
