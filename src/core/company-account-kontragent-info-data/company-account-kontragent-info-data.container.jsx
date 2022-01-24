@@ -9,26 +9,27 @@ import {
   getRequestData,
 } from '../../main/store/store.service';
 import { getQuery } from '../../main/navigation/navigation.core';
-import { CompanyAdminItemInfoDataComponent } from './company-admin-item-info-data.component';
-import { COMPANY_ADMIN_ITEM_INFO_DATA_STORE_NAME } from './company-admin-item-info-data.constant';
-import { getCompanyDataAction } from './company-admin-item-info-data.action';
+import { CompanyAccountKontragentInfoDataComponent } from './company-account-kontragent-info-data.component';
+import { COMPANY_ACCOUNT_KONTRAGENT_INFO_DATA_STORE_NAME } from './company-account-kontragent-info-data.constant';
+import { getKontragentDataAction } from './company-account-kontragent-info-data.action';
 
-export function CompanyAdminItemInfoDataContainer() {
+export function CompanyAccountKontragentInfoDataContainer() {
   const companyId = getQuery('companyId');
+  const kontragentId = getQuery('kontragentId');
 
   const dispatch = useDispatch();
 
   const { pageLoading, state } = useSelector((state) => ({
-    state: state[COMPANY_ADMIN_ITEM_INFO_DATA_STORE_NAME],
+    state: state[COMPANY_ACCOUNT_KONTRAGENT_INFO_DATA_STORE_NAME],
     pageLoading: state[NAVIGATION_STORE_NAME].pageLoading,
   }));
 
   useEffect(() => {
-    dispatch(getCompanyDataAction(companyId));
+    dispatch(getKontragentDataAction(companyId, kontragentId));
   }, []);
 
   return (
-    <CompanyAdminItemInfoDataComponent
+    <CompanyAccountKontragentInfoDataComponent
       pageLoading={pageLoading}
       isPending={isRequestPending(state.request)}
       isError={isRequestError(state.request)}

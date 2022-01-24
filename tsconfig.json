@@ -32,7 +32,6 @@
     "src/main/store/storeHandlers.js",
     "src/main/store/store.convert.js",
     "src/core/Home/Home.page.js",
-    "src/lib/common/request/pagination.service.ts",
-    "src/core/company-admin-item-info-data/company-admin-item-info-data.component.js"
+    "src/lib/common/request/pagination.service.ts"
   ]
 }

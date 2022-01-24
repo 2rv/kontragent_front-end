@@ -15,7 +15,6 @@ import { NOTIFICATION_EMAIL_CREATE_ROUTE_PATH } from '../../notification-admin-e
 import { FEEDBACK_ADMIN_LIST_ROUTE_PATH } from '../../feedback-admin-list';
 import { FEEDBACK_ACCOUNT_CREATE_ROUTE_PATH } from '../../feedback-account-create';
 import { COMPANY_ADMIN_IMPORT_ROUTE_PATH } from '../../company-admin-import';
-import { KONTRAGENT_IMPORT_ROUTE_PATH } from '../../kontragent-import';
 
 export const USER_MENU_ITEM = [
   {
@@ -37,10 +36,6 @@ export const USER_MENU_ITEM = [
   {
     path: CREATE_ARTICLE_ROUTE_PATH,
     name: text('NAVIGATION.USER.ARTICLE_CREATE'),
-  },
-  {
-    path: KONTRAGENT_IMPORT_ROUTE_PATH,
-    name: text('NAVIGATION.ADMIN.KONTRAGENT_IMPORT'),
   },
   { path: ADMIN_POST_LIST_ROUTE_PATH, name: text('NAVIGATION.ADMIN.POSTS') },
   { path: SETTINGS_ROUTE_PATH, name: text('NAVIGATION.USER.SETITNGS') },
@@ -76,10 +71,6 @@ export const ADMIN_MENU_ITEM = [
   {
     path: COMPANY_ADMIN_IMPORT_ROUTE_PATH,
     name: text('NAVIGATION.ADMIN.COMPANY_IMPORT'),
-  },
-  {
-    path: KONTRAGENT_IMPORT_ROUTE_PATH,
-    name: text('NAVIGATION.ADMIN.KONTRAGENT_IMPORT'),
   },
   {
     path: NOTIFICATION_EMAIL_CREATE_ROUTE_PATH,

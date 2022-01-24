@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { CompanyAccountKontragentItemInfoComponent } from './company-account-kontragent-info.component';
+import { CompanyAccountKontragentInfoComponent } from './company-account-kontragent-info.component';
 
 import { useSelector } from 'react-redux';
 
@@ -35,7 +35,10 @@ export function CompanyAccountKontragentItemInfoContainer() {
     try {
       const res = await httpRequest({
         method: COMPANY_ACCOUNT_KONTRAGENT_INFO_API.FETCH_KONTRAGENT.TYPE,
-        url: COMPANY_ACCOUNT_KONTRAGENT_INFO_API.FETCH_KONTRAGENT.ENDPOINT(companyId, kontragentId),
+        url: COMPANY_ACCOUNT_KONTRAGENT_INFO_API.FETCH_KONTRAGENT.ENDPOINT(
+          companyId,
+          kontragentId,
+        ),
       });
 
       const data = performCompanyAccountKontragentItemInfoData(res.data);
@@ -62,7 +65,10 @@ export function CompanyAccountKontragentItemInfoContainer() {
     try {
       await httpRequest({
         method: COMPANY_ACCOUNT_KONTRAGENT_INFO_API.REMOVE_KONTRAGENT.TYPE,
-        url: COMPANY_ACCOUNT_KONTRAGENT_INFO_API.REMOVE_KONTRAGENT.ENDPOINT(companyId, kontragentId),
+        url: COMPANY_ACCOUNT_KONTRAGENT_INFO_API.REMOVE_KONTRAGENT.ENDPOINT(
+          companyId,
+          kontragentId,
+        ),
       });
 
       await redirect(COMPANY_ACCOUNT_KONTRAGENTS_ROUTE_PATH_DYNAMIC, {
@@ -89,13 +95,16 @@ export function CompanyAccountKontragentItemInfoContainer() {
   const [isRequestSuccess, setRequestSuccess] = React.useState(null);
   const [getRequestErrorMessage, setRequestErrorMessage] = React.useState(null);
 
-  const [isRequestRemovePending, setRequestRemovePending] = React.useState(null);
+  const [isRequestRemovePending, setRequestRemovePending] =
+    React.useState(null);
   const [isRequestRemoveError, setRequestRemoveError] = React.useState(null);
-  const [isRequestRemoveSuccess, setRequestRemoveSuccess] = React.useState(null);
-  const [getRequestRemoveErrorMessage, setRequestRemoveErrorMessage] = React.useState(null);
+  const [isRequestRemoveSuccess, setRequestRemoveSuccess] =
+    React.useState(null);
+  const [getRequestRemoveErrorMessage, setRequestRemoveErrorMessage] =
+    React.useState(null);
 
   return (
-    <CompanyAccountKontragentItemInfoComponent
+    <CompanyAccountKontragentInfoComponent
       isPending={isRequestPending || (!isRequestSuccess && pageLoading)}
       isError={isRequestError}
       isSuccess={isRequestSuccess}
