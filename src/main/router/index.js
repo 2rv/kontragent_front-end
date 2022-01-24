@@ -179,10 +179,6 @@ import {
   COMPANY_ADMIN_IMPORT_ROUTE_PATH,
   CompanyAdminImportRouter,
 } from '../../core/company-admin-import';
-import {
-  KONTRAGENT_IMPORT_ROUTE_PATH,
-  KontragentImportRouter,
-} from '../../core/kontragent-import';
 
 export const routes = {
   '/': IndexRouter,
@@ -240,7 +236,6 @@ export const routes = {
   [FEEDBACK_ADMIN_ITEM_ROUTE_PATH]: FeedbackAdminItemRouter,
   [FEEDBACK_ACCOUNT_CREATE_ROUTE_PATH]: FeedbackAccountCreatePageRouter,
   [COMPANY_ADMIN_IMPORT_ROUTE_PATH]: CompanyAdminImportRouter,
-  [KONTRAGENT_IMPORT_ROUTE_PATH]: KontragentImportRouter,
 };
 
 export const Router = routesInit(routes);

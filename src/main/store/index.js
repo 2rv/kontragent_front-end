@@ -74,12 +74,18 @@ import {
 import { companyAccountItemCreateBillStore } from '../../core/company-account-item-create-bill/company-acoount-item-create-bill.store';
 import { COMPANY_ACCOUNT_ITEM_CREATE_BILL_STORE_NAME } from '../../core/company-account-item-create-bill/company-account-item-create-bill.constant';
 import {
-  companyAdminItemInfoDataStore,
-  COMPANY_ADMIN_ITEM_INFO_DATA_STORE_NAME,
-} from '../../core/company-admin-item-info-data';
+  CompanyAccountInfoDataStore,
+  COMPANY_ACCOUNT_INFO_DATA_STORE_NAME,
+} from '../../core/company-account-info-data';
+import {
+  CompanyAccountKontragentInfoDataStore,
+  COMPANY_ACCOUNT_KONTRAGENT_INFO_DATA_STORE_NAME,
+} from '../../core/company-account-kontragent-info-data';
 
 export const reducers = combineReducers({
-  [COMPANY_ADMIN_ITEM_INFO_DATA_STORE_NAME]: companyAdminItemInfoDataStore,
+  [COMPANY_ACCOUNT_KONTRAGENT_INFO_DATA_STORE_NAME]:
+    CompanyAccountKontragentInfoDataStore,
+  [COMPANY_ACCOUNT_INFO_DATA_STORE_NAME]: CompanyAccountInfoDataStore,
   [AUTH_STORE_NAME]: authStore,
   [LANG_STORE_NAME]: langStore,
   [NAVIGATION_STORE_NAME]: navigationStore,

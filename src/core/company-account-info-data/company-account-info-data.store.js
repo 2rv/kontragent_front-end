@@ -1,4 +1,4 @@
-import { COMPANY_DATA_ACTION_TYPE } from './company-admin-item-info-data.constant';
+import { COMPANY_ACCOUNT_INFO_DATA_ACTION_TYPE } from './company-account-info-data.constant';
 import {
   initRequestState,
   setRequestPending,
@@ -10,21 +10,21 @@ const initialState = {
   request: initRequestState(),
 };
 
-export function companyAdminItemInfoDataStore(state = initialState, action) {
+export function CompanyAccountInfoDataStore(state = initialState, action) {
   switch (action.type) {
-    case COMPANY_DATA_ACTION_TYPE.REQUEST_PENDING:
+    case COMPANY_ACCOUNT_INFO_DATA_ACTION_TYPE.REQUEST_PENDING:
       return {
         ...state,
         request: setRequestPending(state.request),
       };
 
-    case COMPANY_DATA_ACTION_TYPE.REQUEST_SUCCESS:
+    case COMPANY_ACCOUNT_INFO_DATA_ACTION_TYPE.REQUEST_SUCCESS:
       return {
         ...state,
         request: setRequestSuccess(state.request, action.data),
       };
 
-    case COMPANY_DATA_ACTION_TYPE.REQUEST_ERROR:
+    case COMPANY_ACCOUNT_INFO_DATA_ACTION_TYPE.REQUEST_ERROR:
       return {
         ...state,
         request: setRequestError(state.request, action.errorMessage),
