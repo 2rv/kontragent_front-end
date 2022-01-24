@@ -44,7 +44,7 @@ export function CompanyAdminImportComponent(props) {
         </Grid>
 
         <Grid item>
-          <label htmlFor="company-admin-import-file-input">
+          {/* <label htmlFor="company-admin-import-file-input">
             <Input
               hidden
               accept="image/*"
@@ -57,7 +57,19 @@ export function CompanyAdminImportComponent(props) {
               component="span"
               children={text('Импорт')}
             />
-          </label>
+          </label> */}
+
+          <Button variant="contained" component="label">
+            {text('Импорт')}
+            <input
+              onChange={(e) => {
+                onChange(e);
+                e.target.value = '';
+              }}
+              type="file"
+              hidden
+            />
+          </Button>
         </Grid>
 
         <Grid item>

@@ -43,20 +43,17 @@ export function KontragentImportComponent(props) {
         </Grid>
 
         <Grid item>
-          <label htmlFor="kontragent-import-file-input">
-            <Input
-              hidden
-              accept="image/*"
-              id="kontragent-import-file-input"
+          <Button variant="contained" component="label">
+            {text('Импорт')}
+            <input
+              onChange={(e) => {
+                onChange(e);
+                e.target.value = '';
+              }}
               type="file"
-              onChange={onChange}
+              hidden
             />
-            <Button
-              variant="contained"
-              component="span"
-              children={text('Импорт')}
-            />
-          </label>
+          </Button>
         </Grid>
 
         <Grid item>
