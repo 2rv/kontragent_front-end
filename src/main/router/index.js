@@ -123,10 +123,6 @@ import {
   CompanyAccountItemSelfRevisionCreateRouter,
 } from '../../core/company-account-item-self-revision-create';
 import {
-  COMPANY_ACCOUNT_ITEM_KONTRAGENT_ROUTE_PATH,
-  CompanyAccountItemKontragentRouter,
-} from '../../core/company-account-item-kontragent';
-import {
   BillAdminListRouter,
   BILL_ADMIN_LIST_ROUTE_PATH,
 } from '../../core/bill-admin-list';
@@ -184,6 +180,17 @@ import {
   ADMIN_DASHBOARD_ROUTE_PATH,
 } from '../../core/admin-dashboard';
 
+import {
+  COMPANY_ACCOUNT_ITEM_KONTRAGENT_ROUTE_PATH,
+  CompanyAccountItemKontragentRouter,
+} from '../../core/company-account-item-kontragent';
+
+import { COMPANY_ACCOUNT_ITEM_KONTRAGENT_ITEM_ROUTE_PATH } from '../../core/company-account-item-kontragent-item/company-account-item-kontragent-item.constant';
+import { CompanyAccountItemKontragentItemRouter } from '../../core/company-account-item-kontragent-item/company-account-item-kontragent-item.router';
+
+import { COMPANY_ACCOUNT_ITEM_KONTRAGENT_ITEM_REVIEW_LIST_ROUTE_PATH } from '../../core/company-account-item-kontragent-item-review-list/company-account-item-kontragent-item-review-list.constant';
+import { CompanyAccountItemKontragentItemReviewListRouter } from '../../core/company-account-item-kontragent-item-review-list/company-account-item-kontragent-item-review-list.router';
+
 export const routes = {
   '/': IndexRouter,
   [AUTH_LOGIN_ROUTE_PATH]: AuthLoginRouter,
@@ -207,6 +214,10 @@ export const routes = {
     CompanyAccountItemSelfRevisionCreateRouter,
   [COMPANY_ACCOUNT_ITEM_KONTRAGENT_ROUTE_PATH]:
     CompanyAccountItemKontragentRouter,
+  [COMPANY_ACCOUNT_ITEM_KONTRAGENT_ITEM_ROUTE_PATH]:
+    CompanyAccountItemKontragentItemRouter,
+  [COMPANY_ACCOUNT_ITEM_KONTRAGENT_ITEM_REVIEW_LIST_ROUTE_PATH]:
+    CompanyAccountItemKontragentItemReviewListRouter,
   [COMPANY_ACCOUNT_ITEM_INFO_ROUTE_PATH]: CompanyAccountItemInfoRouter,
   [COMPANY_ACCOUNT_ITEM_MEMBER_ROUTE_PATH]: CompanyAccountItemMemberRouter,
   [USER_ADMIN_ITEM_INFO_ROUTE_PATH]: UserAdminItemInfoRouter,

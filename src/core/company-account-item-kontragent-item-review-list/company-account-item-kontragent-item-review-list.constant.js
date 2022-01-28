@@ -1,3 +1,14 @@
+export const COMPANY_ACCOUNT_ITEM_KONTRAGENT_ITEM_REVIEW_LIST_ROUTE_PATH =
+  '/company/[companyId]/kontragent/[kontragentId]/review';
+
+export const COMPANY_ACCOUNT_ITEM_KONTRAGENT_ITEM_REVIEW_LIST_ROUTE_PATH_DYNAMIC =
+  (
+    { companyId, kontragentId } = {
+      companyId: '[companyId]',
+      kontragentId: '[kontragentId]',
+    },
+  ) => `/company/${companyId}/kontragent/${kontragentId}/review`;
+
 export const COMPANY_ACCOUNT_ITEM_KONTRAGENT_ITEM_REVIEW_LIST_DATA_NAME = {
   ID: 'id',
   COMPANY: 'company',

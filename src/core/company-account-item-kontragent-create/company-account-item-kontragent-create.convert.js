@@ -1,0 +1,8 @@
+import { COMPANY_ACCOUNT_ITEM_KONTRAGENT_CREATE_DATA_NAME } from './company-account-item-kontragent-create.constant';
+
+export const convertCompanyAccountItemKontragentCreateFormData = (data) => ({
+  [COMPANY_ACCOUNT_ITEM_KONTRAGENT_CREATE_DATA_NAME.NAME]:
+    data[COMPANY_ACCOUNT_ITEM_KONTRAGENT_CREATE_DATA_NAME.NAME],
+  [COMPANY_ACCOUNT_ITEM_KONTRAGENT_CREATE_DATA_NAME.INN]:
+    data[COMPANY_ACCOUNT_ITEM_KONTRAGENT_CREATE_DATA_NAME.INN],
+});

@@ -1,3 +1,3 @@
-import { CompanyAccountItemKontragentItemInfoPage } from '../../../../../core/company-account-item-kontragent-item-info';
+import { CompanyAccountItemKontragentItemPage } from '../../../../../core/company-account-item-kontragent-item/company-account-item-kontragent-item.page';
 
-export default CompanyAccountItemKontragentItemInfoPage;
+export default CompanyAccountItemKontragentItemPage;

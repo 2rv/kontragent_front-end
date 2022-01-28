@@ -1,12 +1,3 @@
-export const COMPANY_ACCOUNT_ITEM_KONTRAGENT_ITEM_INFO_ROUTE_PATH =
-  '/company/[companyId]/kontragent/[kontragentId]';
-export const COMPANY_ACCOUNT_ITEM_KONTRAGENT_ITEM_INFO_ROUTE_PATH_DYNAMIC = (
-  { companyId, kontragentId } = {
-    companyId: '[companyId]',
-    kontragentId: '[kontragentId]',
-  },
-) => `/company/${companyId}/kontragent/${kontragentId}`;
-
 export const COMPANY_ACCOUNT_ITEM_KONTRAGENT_ITEM_INFO_API = {
   FETCH_KONTRAGENT: {
     ENDPOINT: (companyId, kontragentId) =>
