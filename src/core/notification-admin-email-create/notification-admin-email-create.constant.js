@@ -11,4 +11,8 @@ export const NOTIFICATION_EMAIL_CREATE_API = {
     ENDPOINT: '/notification/',
     TYPE: 'POST',
   },
+  NOTIFICATION_EVERYONE_CREATE: {
+    ENDPOINT: '/notification/everyone',
+    TYPE: 'POST',
+  },
 };

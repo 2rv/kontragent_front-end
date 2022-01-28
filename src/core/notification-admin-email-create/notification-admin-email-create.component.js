@@ -19,6 +19,7 @@ export function NotificationAdminEmailCreateComponent(props) {
     isSuccess,
     errorMessage,
     setFileList,
+    createEveryone,
   } = props;
   return (
     <Box>
@@ -44,6 +45,7 @@ export function NotificationAdminEmailCreateComponent(props) {
                 errorMessage={errorMessage}
                 pageLoading={pageLoading}
                 setFileList={setFileList}
+                createEveryone={createEveryone}
               />
             )}
           </Formik>

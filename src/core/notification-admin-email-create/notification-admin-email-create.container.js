@@ -43,6 +43,35 @@ export function NotificationAdminEmailCreateContainer() {
     }
   };
 
+  const createEveryoneNotificationsAction = async (values) => {
+    const data = convertNotificationAdminEmailCreateSendData(
+      values,
+      getFileList,
+    );
+    setRequestPending(true);
+    setRequestSuccess(false);
+    setRequestError(false);
+    setRequestErrorMessage(null);
+
+    try {
+      await httpRequest({
+        method: NOTIFICATION_EMAIL_CREATE_API.NOTIFICATION_EVERYONE_CREATE.TYPE,
+        url: NOTIFICATION_EMAIL_CREATE_API.NOTIFICATION_EVERYONE_CREATE
+          .ENDPOINT,
+        data,
+      });
+
+      setRequestPending(false);
+      setRequestSuccess(true);
+    } catch (error) {
+      if (error) {
+        setRequestError(true);
+        setRequestPending(false);
+        setRequestErrorMessage(error.response.data.message);
+      }
+    }
+  };
+
   const getInitialValue = () => {
     return {
       [NOTIFICATION_EMAIL_CREATE_DATA_NAME.EMAIL]: '',
@@ -67,6 +96,7 @@ export function NotificationAdminEmailCreateContainer() {
       validation={notificationAdminEmailCreateFormValidation}
       pageLoading={pageLoading}
       errorMessage={getRequestErrorMessage}
+      createEveryone={createEveryoneNotificationsAction}
     />
   );
 }

@@ -179,7 +179,10 @@ import {
   COMPANY_ADMIN_IMPORT_ROUTE_PATH,
   CompanyAdminImportRouter,
 } from '../../core/company-admin-import';
-
+import {
+  AdminDashboardRouter,
+  ADMIN_DASHBOARD_ROUTE_PATH,
+} from '../../core/admin-dashboard';
 export const routes = {
   '/': IndexRouter,
   [AUTH_LOGIN_ROUTE_PATH]: AuthLoginRouter,
@@ -236,6 +239,7 @@ export const routes = {
   [FEEDBACK_ADMIN_ITEM_ROUTE_PATH]: FeedbackAdminItemRouter,
   [FEEDBACK_ACCOUNT_CREATE_ROUTE_PATH]: FeedbackAccountCreatePageRouter,
   [COMPANY_ADMIN_IMPORT_ROUTE_PATH]: CompanyAdminImportRouter,
+  [ADMIN_DASHBOARD_ROUTE_PATH]: AdminDashboardRouter,
 };
 
 export const Router = routesInit(routes);

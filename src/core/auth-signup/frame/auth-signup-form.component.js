@@ -139,7 +139,10 @@ export const AuthSignupFormComponent = (props) => {
                     variant="body2"
                     underline="hover"
                     onClick={() => {
-                      redirect('/static/pdf/blank.pdf');
+                      redirect(
+                        'https://xn--80aggrpdcrrf.xn--p1ai/static/pdf/blank.pdf',
+                        { newTab: true },
+                      );
                     }}
                   >
                     {text('AUTH.SIGNUP.READ')}
@@ -166,7 +169,10 @@ export const AuthSignupFormComponent = (props) => {
                     variant="body2"
                     underline="hover"
                     onClick={() => {
-                      redirect('/static/pdf/blank.pdf');
+                      redirect(
+                        'https://xn--80aggrpdcrrf.xn--p1ai/static/pdf/blank.pdf',
+                        { newTab: true },
+                      );
                     }}
                   >
                     {text('AUTH.SIGNUP.READ')}
