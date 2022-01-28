@@ -1,13 +1,13 @@
-import React from 'react';
-import { NavigationComponent } from '../navigation/navigation.component';
 import Grid from '@mui/material/Grid';
+
+import { NavigationComponent } from '../navigation/navigation.component';
+import { TabContainer } from '../../lib/common/navigation-tab/navigation-tab.container';
+
+import { COMPANY_ACCOUNT_ITEM_NAVIGATION } from '../company-account-item/company-account-item.constant';
 
 import { CompanyAccountItemPaymentLinkContainer } from '../company-account-item-payment-link/company-account-item-payment-link.container';
 import { CompanyAccountItemBalanceInfoContainer } from '../company-account-item-balance-info/company-account-item-balance-info.container';
 import { CompanyAccountItemPaymentListContainer } from '../company-account-item-payment-list/company-account-item-payment-list.container';
-import { TabContainer } from '../../lib/common/navigation-tab/navigation-tab.container';
-import { COMPANY_ACCOUNT_ITEM_NAVIGATION } from '../company-account-item/company-account-item.constant';
-import { CompanyAccountItemReviewListContainer } from '../company-account-item-review-list/company-account-item-review-list.container';
 
 export function CompanyAccountItemBalancePage() {
   return (
@@ -24,9 +24,6 @@ export function CompanyAccountItemBalancePage() {
         </Grid>
         <Grid item>
           <CompanyAccountItemPaymentListContainer />
-        </Grid>
-        <Grid item>
-          <CompanyAccountItemReviewListContainer />
         </Grid>
       </Grid>
     </NavigationComponent>

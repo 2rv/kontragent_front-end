@@ -123,9 +123,9 @@ import {
   CompanyAccountItemSelfRevisionCreateRouter,
 } from '../../core/company-account-item-self-revision-create';
 import {
-  COMPANY_ACCOUNT_KONTRAGENTS_ROUTE_PATH,
-  CompanyAccountKontragentsRouter,
-} from '../../core/company-account-kontragents';
+  COMPANY_ACCOUNT_ITEM_KONTRAGENT_ROUTE_PATH,
+  CompanyAccountItemKontragentRouter,
+} from '../../core/company-account-item-kontragent';
 import {
   BillAdminListRouter,
   BILL_ADMIN_LIST_ROUTE_PATH,
@@ -183,6 +183,7 @@ import {
   AdminDashboardRouter,
   ADMIN_DASHBOARD_ROUTE_PATH,
 } from '../../core/admin-dashboard';
+
 export const routes = {
   '/': IndexRouter,
   [AUTH_LOGIN_ROUTE_PATH]: AuthLoginRouter,
@@ -195,17 +196,21 @@ export const routes = {
   [SETTINGS_ROUTE_PATH]: SettingsRouter,
   [COMPANY_ACCOUNT_LIST_ROUTE_PATH]: CompanyAccountListRouter,
   [COMPANY_ACCOUNT_CREATE_ROUTE_PATH]: CompanyAccountCreateRouter,
+  [COMPANY_ACCOUNT_ITEM_BALANCE_ROUTE_PATH]: CompanyAccountItemBalanceRouter,
   [COMPANY_ACCOUNT_ITEM_REVISION_CREATE_ROUTE_PATH]:
     CompanyAccountItemRevisionCreateRouter,
   [COMPANY_ACCOUNT_ITEM_REVISION_ITEM_ROUTE_PATH]:
     CompanyAccountItemRevisionItemRouter,
   [COMPANY_ACCOUNT_ITEM_REVISION_LIST_ROUTE_PATH]:
     CompanyAccountItemRevisionListRouter,
-  [COMPANY_ACCOUNT_ITEM_BALANCE_ROUTE_PATH]: CompanyAccountItemBalanceRouter,
-  [USER_ADMIN_ITEM_INFO_ROUTE_PATH]: UserAdminItemInfoRouter,
-  [USER_ADMIN_ITEM_COMPANY_LIST_ROUTE_PATH]: UserAdminItemCompanyListRouter,
+  [COMPANY_ACCOUNT_ITEM_SELF_REVISION_CREATE_ROUTE_PATH]:
+    CompanyAccountItemSelfRevisionCreateRouter,
+  [COMPANY_ACCOUNT_ITEM_KONTRAGENT_ROUTE_PATH]:
+    CompanyAccountItemKontragentRouter,
   [COMPANY_ACCOUNT_ITEM_INFO_ROUTE_PATH]: CompanyAccountItemInfoRouter,
   [COMPANY_ACCOUNT_ITEM_MEMBER_ROUTE_PATH]: CompanyAccountItemMemberRouter,
+  [USER_ADMIN_ITEM_INFO_ROUTE_PATH]: UserAdminItemInfoRouter,
+  [USER_ADMIN_ITEM_COMPANY_LIST_ROUTE_PATH]: UserAdminItemCompanyListRouter,
   [USER_ADMIN_LIST_ROUTE_PATH]: UserAdminListRouter,
   [ADMIN_REVISION_REVIEW_ROUTE_PATH]: AdminRevisionReviewRouter,
   [ADMIN_REVISION_REVIEW_ITEM_ROUTE_PATH]: AdminRevisionReviewItemRouter,
@@ -223,9 +228,6 @@ export const routes = {
   [EDIT_ARTICLE_ROUTE_PATH]: editArticleRouter,
   [ARTICLE_ROUTE_PATH]: articleRouter,
   [INVITE_ROUTE_PATH]: InviteRouter,
-  [COMPANY_ACCOUNT_ITEM_SELF_REVISION_CREATE_ROUTE_PATH]:
-    CompanyAccountItemSelfRevisionCreateRouter,
-  [COMPANY_ACCOUNT_KONTRAGENTS_ROUTE_PATH]: CompanyAccountKontragentsRouter,
   [BILL_ADMIN_LIST_ROUTE_PATH]: BillAdminListRouter,
   [ADMIN_BILL_REVISION_ROUTE_PATH]: AdminBillRevisionRouter,
   [COMPANY_ADMIN_ITEM_REVISION_LIST_ROUTE_PATH]:

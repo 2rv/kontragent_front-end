@@ -78,13 +78,13 @@ import {
   COMPANY_ACCOUNT_INFO_DATA_STORE_NAME,
 } from '../../core/company-account-info-data';
 import {
-  CompanyAccountKontragentInfoDataStore,
-  COMPANY_ACCOUNT_KONTRAGENT_INFO_DATA_STORE_NAME,
-} from '../../core/company-account-kontragent-info-data';
+  CompanyAccountItemKontragentItemKonturStore,
+  COMPANY_ACCOUNT_ITEM_KONTRAGENT_ITEM_KONTUR_STORE_NAME,
+} from '../../core/company-account-item-kontragent-item-kontur';
 
 export const reducers = combineReducers({
-  [COMPANY_ACCOUNT_KONTRAGENT_INFO_DATA_STORE_NAME]:
-    CompanyAccountKontragentInfoDataStore,
+  [COMPANY_ACCOUNT_ITEM_KONTRAGENT_ITEM_KONTUR_STORE_NAME]:
+    CompanyAccountItemKontragentItemKonturStore,
   [COMPANY_ACCOUNT_INFO_DATA_STORE_NAME]: CompanyAccountInfoDataStore,
   [AUTH_STORE_NAME]: authStore,
   [LANG_STORE_NAME]: langStore,
