@@ -27,7 +27,11 @@ export function CompanyAccountItemKontragentItemReviewListContainer() {
   }));
   useEffect(() => {
     const companyId = getQuery('companyId');
-    getCompanyAccountItemKontragentItemReviewList(setState, companyId);
+    const kontragentId = getQuery('kontragentId');
+    getCompanyAccountItemKontragentItemReviewList(
+      companyId,
+      kontragentId,
+    )(setState);
   }, []);
 
   return (
