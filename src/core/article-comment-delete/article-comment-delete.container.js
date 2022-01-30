@@ -14,8 +14,6 @@ export function ArticleCommentDeleteContainer(props) {
 
   const { commentId } = props;
 
-  console.log(commentId);
-
   React.useEffect(() => {
     return function cleanup() {
       dispatch(cleanupStore());

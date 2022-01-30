@@ -85,20 +85,3 @@ export function updateListCompanyAccountItemKontragentImport(data) {
     }
   };
 }
-
-// async function importKontragentsAction(data) {
-//   setState({ type: 'PENDING' });
-//   try {
-//     await httpRequest({
-//       method: 'POST',
-//       url: '/kontragent/import/' + companyId,
-//       data: { kontragents: data },
-//     });
-//     setState({ type: 'SUCCESS' });
-//   } catch (error) {
-//     console.log(error);
-//     if (error.response) {
-//       setState({ type: 'ERROR', error: error.response.data.message });
-//     }
-//   }
-// }

@@ -1,4 +1,0 @@
-export const COMPANY_ACCOUNT_ITEM_SELF_REVISION_CREATE_PERIOD_ITEM_FIELD_NAME =
-  {
-    YEAR: 'year',
-  };

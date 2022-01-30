@@ -1,10 +1,4 @@
-import {
-  Checkbox,
-  FormControlLabel,
-  Box,
-  Grid,
-  Typography,
-} from '@mui/material';
+import { Checkbox, FormControlLabel, Grid, Typography } from '@mui/material';
 
 export function CheckboxField(props) {
   const { titleLabel, error, errorText, ...otherProps } = props;

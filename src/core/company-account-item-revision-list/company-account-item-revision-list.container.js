@@ -1,14 +1,10 @@
 import React from 'react';
 
 import { CompanyAccountItemRevisionListComponent } from './company-account-item-revision-list.component';
-
 import { useSelector } from 'react-redux';
-
 import { NAVIGATION_STORE_NAME } from '../../lib/common/navigation/navigation.constant';
-
 import { httpRequest } from '../../main/http';
 import { getQuery } from '../../main/navigation';
-
 import { performCompanyAccountItemRevisionListData } from './company-account-item-revision-list.convert';
 
 export function CompanyAccountItemRevisionListContainer() {
