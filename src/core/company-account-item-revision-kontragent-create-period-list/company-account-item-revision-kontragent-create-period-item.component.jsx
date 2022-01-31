@@ -21,18 +21,22 @@ export function CompanyAccountItemRevisionKontragentCreatePeriodItemComponent(
   } = props;
 
   const isFieldError = (name) => {
-    const result = errors[name] && touched[name] && errors[name];
-    return result;
+    return errors[name] && touched[name] && errors[name];
   };
 
   const getFieldError = (name) => {
-    const result = isFieldError(prefix + name) && errors[prefix + name];
-    return result;
+    return isFieldError(prefix + name) && errors[prefix + name];
   };
 
   return (
-    <Grid container spacing={4}>
-      <Grid item>
+    <Grid
+      container
+      direction="row"
+      justifyContent="flex-start"
+      spacing={4}
+      columns={{ xs: 1, md: 4 }}
+    >
+      <Grid item xs={1} md={4}>
         <YearSelectFieldComponent
           onChange={handleChange}
           onBlur={handleBlur}
@@ -64,6 +68,8 @@ export function CompanyAccountItemRevisionKontragentCreatePeriodItemComponent(
         spacing={4}
         direction="row"
         justifyContent="flex-start"
+        xs={1}
+        md={4}
         columns={{
           xs: 1,
           md: 2,
@@ -192,7 +198,7 @@ export function CompanyAccountItemRevisionKontragentCreatePeriodItemComponent(
       </Grid>
 
       {yearsLenght > 1 && (
-        <Grid item>
+        <Grid item xs={1} md={2}>
           <Button
             color="red"
             variant="grey"

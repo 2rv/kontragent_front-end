@@ -12,10 +12,9 @@ export const COMPANY_ACCOUNT_ITEM_REVISION_KONTRAGENT_CREATE_DATA_NAME = {
   FILE_ID_LIST: 'fileIdList',
   KONTRAGENTS: 'kontragents',
 
-  TITLE: 'title',
-  DESCRIPTION: 'description',
-  INN: 'inn',
   NAME: 'name',
+  INN: 'inn',
+  DESCRIPTION: 'description',
 
   YEAR: 'year',
   YEARS: 'years',

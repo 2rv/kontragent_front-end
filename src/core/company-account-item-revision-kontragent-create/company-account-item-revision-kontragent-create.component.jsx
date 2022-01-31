@@ -36,6 +36,11 @@ export function CompanyAccountItemRevisionKontragentCreateComponent(props) {
       onSubmit={onSubmitForm}
     >
       {(formik) => {
+        const KONTRAGENTS =
+          formik.values[
+            COMPANY_ACCOUNT_ITEM_REVISION_KONTRAGENT_CREATE_DATA_NAME
+              .KONTRAGENTS
+          ];
         return (
           <Grid
             spacing={6}
@@ -43,16 +48,6 @@ export function CompanyAccountItemRevisionKontragentCreateComponent(props) {
             component="form"
             onSubmit={formik.handleSubmit}
           >
-            <Grid item>
-              <Typography
-                variant="heading"
-                component="div"
-                children={text(
-                  'COMPANY_ACCOUNT_ITEM_REVISION_CREATE.REVISON_CREATE_COMPANY_LIST.TITLE',
-                )}
-              />
-            </Grid>
-
             <Grid item>
               <Paper>
                 <Grid container spacing={4}>
@@ -80,80 +75,78 @@ export function CompanyAccountItemRevisionKontragentCreateComponent(props) {
                     <Divider />
                   </Grid>
 
-                  <Grid item container spacing={4}>
-                    <FieldArray
-                      name={
-                        COMPANY_ACCOUNT_ITEM_REVISION_KONTRAGENT_CREATE_DATA_NAME.KONTRAGENTS
-                      }
-                    >
-                      {({ remove, push }) => (
-                        <Fragment>
-                          {formik.values[
-                            COMPANY_ACCOUNT_ITEM_REVISION_KONTRAGENT_CREATE_DATA_NAME
-                              .KONTRAGENTS
-                          ].map((value, key) => {
-                            return (
-                              <Grid item container spacing={4} key={key}>
-                                <Grid item>
-                                  <CompanyAccountItemRevisionKontragentCreateKontragentListContainer
-                                    {...formik}
-                                    prefix={`${COMPANY_ACCOUNT_ITEM_REVISION_KONTRAGENT_CREATE_DATA_NAME.KONTRAGENTS}.${key}.`}
-                                    value={value}
-                                  />
-                                </Grid>
+                  <FieldArray
+                    name={
+                      COMPANY_ACCOUNT_ITEM_REVISION_KONTRAGENT_CREATE_DATA_NAME.KONTRAGENTS
+                    }
+                  >
+                    {({ remove, push }) => (
+                      <Grid
+                        item
+                        container
+                        direction="row"
+                        justifyContent="flex-start"
+                        spacing={4}
+                        columns={{ xs: 1, md: 4 }}
+                      >
+                        {KONTRAGENTS.map((value, key) => (
+                          <Fragment>
+                            <Grid item xs={1} md={4}>
+                              <CompanyAccountItemRevisionKontragentCreateKontragentListContainer
+                                {...formik}
+                                prefix={`${COMPANY_ACCOUNT_ITEM_REVISION_KONTRAGENT_CREATE_DATA_NAME.KONTRAGENTS}.${key}.`}
+                                value={value}
+                              />
+                            </Grid>
 
-                                <Grid item>
-                                  <CompanyAccountItemRevisionKontragentCreateFormComponent
-                                    {...formik}
-                                    prefix={`${COMPANY_ACCOUNT_ITEM_REVISION_KONTRAGENT_CREATE_DATA_NAME.KONTRAGENTS}.${key}.`}
-                                    value={value}
-                                  />
-                                </Grid>
+                            <Grid item xs={1} md={4}>
+                              <CompanyAccountItemRevisionKontragentCreateFormComponent
+                                {...formik}
+                                prefix={`${COMPANY_ACCOUNT_ITEM_REVISION_KONTRAGENT_CREATE_DATA_NAME.KONTRAGENTS}.${key}.`}
+                                value={value}
+                              />
+                            </Grid>
 
-                                <Grid item>
-                                  <Divider />
-                                </Grid>
+                            <Grid item xs={1} md={4}>
+                              <CompanyAccountItemRevisionKontragentCreatePeriodListComponent
+                                {...formik}
+                                prefix={`${COMPANY_ACCOUNT_ITEM_REVISION_KONTRAGENT_CREATE_DATA_NAME.KONTRAGENTS}.${key}.`}
+                                value={value}
+                                initialYear={initialYear}
+                              />
+                            </Grid>
 
-                                <Grid item>
-                                  <CompanyAccountItemRevisionKontragentCreatePeriodListComponent
-                                    {...formik}
-                                    prefix={`${COMPANY_ACCOUNT_ITEM_REVISION_KONTRAGENT_CREATE_DATA_NAME.KONTRAGENTS}.${key}.`}
-                                    value={value}
-                                    initialYear={initialYear}
-                                  />
-                                </Grid>
-
-                                <Grid item>
-                                  <Button
-                                    variant="red"
-                                    fullWidth
-                                    onClick={() => remove(key)}
-                                    children={text(
-                                      'COMPANY_ACCOUNT_ITEM_REVISION_CREATE.REVISON_CREATE_COMPANY_ITEM.BUTTON',
-                                      // 'COMPANY_ACCOUNT_ITEM_REVISION_CREATE.REVISON_CREATE_COMPANY_LIST.BUTTON'
-                                    )}
-                                  />
-                                </Grid>
+                            {KONTRAGENTS.length > 1 && (
+                              <Grid item xs={1} md={2}>
+                                <Button
+                                  variant="red"
+                                  fullWidth
+                                  onClick={() => remove(key)}
+                                  children={text(
+                                    'COMPANY_ACCOUNT_ITEM_REVISION_CREATE.REVISON_CREATE_COMPANY_ITEM.BUTTON',
+                                  )}
+                                />
                               </Grid>
-                            );
-                          })}
-                          <Grid item>
-                            <Button
-                              variant="black"
-                              fullWidth
-                              onClick={() => push(initialKontragent)}
-                              children={text(
-                                'COMPANY_ACCOUNT_ITEM_REVISION_CREATE.REVISON_CREATE_COMPANY_LIST.BUTTON',
-                              )}
-                            />
-                          </Grid>
-                          <Grid item>
-                            <Divider />
-                          </Grid>
-                        </Fragment>
-                      )}
-                    </FieldArray>
-                  </Grid>
+                            )}
+
+                            <Grid item xs={1} md={4}>
+                              <Divider />
+                            </Grid>
+                          </Fragment>
+                        ))}
+                        <Grid item xs={1} md={2}>
+                          <Button
+                            fullWidth
+                            variant="black"
+                            onClick={() => push(initialKontragent)}
+                            children={text(
+                              'COMPANY_ACCOUNT_ITEM_REVISION_CREATE.REVISON_CREATE_COMPANY_LIST.BUTTON',
+                            )}
+                          />
+                        </Grid>
+                      </Grid>
+                    )}
+                  </FieldArray>
                 </Grid>
               </Paper>
             </Grid>
@@ -212,4 +205,16 @@ export function CompanyAccountItemRevisionKontragentCreateComponent(props) {
       }}
     </Formik>
   );
+}
+
+{
+  /* 
+              <Typography
+                variant="heading"
+                component="div"
+                children={text(
+                  'COMPANY_ACCOUNT_ITEM_REVISION_CREATE.REVISON_CREATE_COMPANY_LIST.TITLE',
+                )}
+              />
+ */
 }

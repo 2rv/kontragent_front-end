@@ -38,57 +38,51 @@ export function CompanyAccountItemRevisionKontragentCreatePeriodListComponent(
         />
       </Grid>
 
-      <Grid item container spacing={4}>
-        <FieldArray
-          name={
-            prefix +
-            COMPANY_ACCOUNT_ITEM_REVISION_KONTRAGENT_CREATE_DATA_NAME.YEARS
-          }
-        >
-          {({ remove, push }) => (
-            <Fragment>
-              {YEARS_PERIOD_LIST.map((value, key) => {
-                return (
-                  <Grid item key={key}>
-                    <CompanyAccountItemRevisionKontragentCreatePeriodItemComponent
-                      handleChange={handleChange}
-                      handleBlur={handleBlur}
-                      errors={errors}
-                      setFieldValue={setFieldValue}
-                      touched={touched}
-                      value={value}
-                      prefix={`${prefix}${COMPANY_ACCOUNT_ITEM_REVISION_KONTRAGENT_CREATE_DATA_NAME.YEARS}.${key}.`}
-                      onRemove={() => remove(key)}
-                      yearsLenght={YEARS_PERIOD_LIST.length}
-                    />
-                  </Grid>
-                );
-              })}
-
-              <Grid item>
-                <Button
-                  variant="grey"
-                  color="black"
-                  fullWidth
-                  onClick={() => push(initialYear)}
-                  children={text(
-                    'COMPANY_ACCOUNT_ITEM_REVISION_CREATE.REVISON_CREATE_PERIOD_LIST.BUTTON',
-                  )}
+      <FieldArray
+        name={
+          prefix +
+          COMPANY_ACCOUNT_ITEM_REVISION_KONTRAGENT_CREATE_DATA_NAME.YEARS
+        }
+      >
+        {({ remove, push }) => (
+          <Grid
+            item
+            container
+            direction="row"
+            justifyContent="flex-start"
+            spacing={4}
+            columns={{ xs: 1, md: 4 }}
+          >
+            {YEARS_PERIOD_LIST.map((value, key) => (
+              <Grid item key={key} xs={1} md={4}>
+                <CompanyAccountItemRevisionKontragentCreatePeriodItemComponent
+                  handleChange={handleChange}
+                  handleBlur={handleBlur}
+                  errors={errors}
+                  setFieldValue={setFieldValue}
+                  touched={touched}
+                  value={value}
+                  prefix={`${prefix}${COMPANY_ACCOUNT_ITEM_REVISION_KONTRAGENT_CREATE_DATA_NAME.YEARS}.${key}.`}
+                  onRemove={() => remove(key)}
+                  yearsLenght={YEARS_PERIOD_LIST.length}
                 />
               </Grid>
-            </Fragment>
-          )}
-        </FieldArray>
-      </Grid>
+            ))}
 
-      {/* <Grid item>
-        <Alert
-          severity="error"
-          children={text(
-            'COMPANY_ACCOUNT_ITEM_REVISION_CREATE.REVISON_CREATE_PERIOD_LIST.EMPTY',
-          )}
-        />
-      </Grid> */}
+            <Grid item xs={1} md={2}>
+              <Button
+                variant="grey"
+                color="black"
+                fullWidth
+                onClick={() => push(initialYear)}
+                children={text(
+                  'COMPANY_ACCOUNT_ITEM_REVISION_CREATE.REVISON_CREATE_PERIOD_LIST.BUTTON',
+                )}
+              />
+            </Grid>
+          </Grid>
+        )}
+      </FieldArray>
     </Grid>
   );
 }

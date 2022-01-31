@@ -28,55 +28,6 @@ export function CompanyAccountItemRevisionKontragentCreateFormComponent(props) {
       <Grid item>
         <TextFieldElement
           placeholder={text(
-            'COMPANY_ACCOUNT_ITEM_REVISION_CREATE.REVISON_CREATE_COMPANY_INFO.FORM.FIELD.LABELS.COMPANY_NAME',
-          )}
-          name={
-            prefix +
-            COMPANY_ACCOUNT_ITEM_REVISION_KONTRAGENT_CREATE_DATA_NAME.TITLE
-          }
-          onChange={handleChange}
-          onBlur={handleBlur}
-          value={
-            value[
-              COMPANY_ACCOUNT_ITEM_REVISION_KONTRAGENT_CREATE_DATA_NAME.TITLE
-            ]
-          }
-          error={isFieldError(
-            COMPANY_ACCOUNT_ITEM_REVISION_KONTRAGENT_CREATE_DATA_NAME.TITLE,
-          )}
-          errorText={getFieldError(
-            COMPANY_ACCOUNT_ITEM_REVISION_KONTRAGENT_CREATE_DATA_NAME.TITLE,
-          )}
-          fullWidth
-        />
-      </Grid>
-      <Grid item>
-        <TextFieldElement
-          placeholder={text(
-            'COMPANY_ACCOUNT_ITEM_REVISION_CREATE.REVISON_CREATE_COMPANY_INFO.FORM.FIELD.LABELS.INN',
-          )}
-          name={
-            prefix +
-            COMPANY_ACCOUNT_ITEM_REVISION_KONTRAGENT_CREATE_DATA_NAME.INN
-          }
-          onChange={handleChange}
-          onBlur={handleBlur}
-          value={
-            value[COMPANY_ACCOUNT_ITEM_REVISION_KONTRAGENT_CREATE_DATA_NAME.INN]
-          }
-          error={isFieldError(
-            COMPANY_ACCOUNT_ITEM_REVISION_KONTRAGENT_CREATE_DATA_NAME.INN,
-          )}
-          errorText={getFieldError(
-            COMPANY_ACCOUNT_ITEM_REVISION_KONTRAGENT_CREATE_DATA_NAME.INN,
-          )}
-          fullWidth
-        />
-      </Grid>
-
-      <Grid item>
-        <TextFieldElement
-          placeholder={text(
             'COMPANY_ACCOUNT_ITEM_REVISION_CREATE.REVISON_CREATE_COMPANY_INFO.FORM.FIELD.LABELS.COMPANY_INFO',
           )}
           name={
