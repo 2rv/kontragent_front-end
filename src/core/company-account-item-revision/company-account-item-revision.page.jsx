@@ -5,7 +5,7 @@ import { TabContainer } from '../../lib/common/navigation-tab/navigation-tab.con
 import { COMPANY_ACCOUNT_ITEM_NAVIGATION } from '../company-account-item/company-account-item.constant';
 import { CompanyAccountItemRevisionListContainer } from '../company-account-item-revision-list/company-account-item-revision-list.container';
 import {
-  CompanyAccountItemRevisionCreateLink,
+  CompanyAccountItemRevisionKontragentCreateLink,
   CompanyAccountItemRevisionSelfCreateLink,
 } from './company-account-item-revision.component';
 
@@ -17,11 +17,11 @@ export function CompanyAccountItemRevisionPage() {
           <TabContainer config={COMPANY_ACCOUNT_ITEM_NAVIGATION} />
         </Grid>
         <Grid item>
-          <CompanyAccountItemRevisionCreateLink />
+          <CompanyAccountItemRevisionKontragentCreateLink />
         </Grid>
-        <Grid item>
+        {/* <Grid item>
           <CompanyAccountItemRevisionSelfCreateLink />
-        </Grid>
+        </Grid> */}
         <Grid item>
           <CompanyAccountItemRevisionListContainer />
         </Grid>

@@ -1,7 +1,7 @@
 import { Checkbox, FormControlLabel, Grid, Typography } from '@mui/material';
 
 export function CheckboxField(props) {
-  const { titleLabel, error, errorText, ...otherProps } = props;
+  const { titleLabel, error, errorText, checkboxHidden, ...otherProps } = props;
 
   return (
     <Grid container spacing={2}>
@@ -19,7 +19,7 @@ export function CheckboxField(props) {
             width: '100%',
             m: 0,
           }}
-          control={<Checkbox />}
+          control={<Checkbox hidden={checkboxHidden} />}
           inputProps={{ 'aria-label': 'controlled' }}
           {...otherProps}
         />

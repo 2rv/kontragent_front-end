@@ -24,3 +24,5 @@ yarn-error.log*
 
 # vercel
 .vercel
+
+src/core/company-account-item-revision-kontragent-create-kontragent-list

@@ -1,6 +1,4 @@
 import { ListItemButton, ListItemText, ListItem, List } from '@mui/material';
-import { fontWeight } from '@mui/material/node_modules/@mui/system';
-
 import { redirect } from '../../../main/navigation/navigation.core';
 
 export function NavigationListComponent({ activePath, menuListItems }) {

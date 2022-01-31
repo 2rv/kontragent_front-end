@@ -27,6 +27,26 @@ import {
 export const COMPANY_ACCOUNT_ITEM_NAVIGATION = [
   {
     id: 0,
+    label: 'NAVIGATION.TABS.COMPANY_ACCOUNT_ITEM.REVISION_KONTRAGENT',
+    path: () => {
+      return COMPANY_ACCOUNT_ITEM_REVISION_ROUTE_PATH_DYNAMIC({
+        companyId: getQuery('companyId'),
+      });
+    },
+    pathname: COMPANY_ACCOUNT_ITEM_REVISION_ROUTE_PATH,
+  },
+  {
+    id: 1,
+    label: 'NAVIGATION.TABS.COMPANY_ACCOUNT_ITEM.REVISION_SELF',
+    path: () => {
+      return COMPANY_ACCOUNT_ITEM_REVISION_ROUTE_PATH_DYNAMIC({
+        companyId: getQuery('companyId'),
+      });
+    },
+    pathname: COMPANY_ACCOUNT_ITEM_REVISION_ROUTE_PATH,
+  },
+  {
+    id: 2,
     label: 'NAVIGATION.TABS.COMPANY_ACCOUNT_ITEM.BALANCE',
 
     path: () => {
@@ -37,7 +57,7 @@ export const COMPANY_ACCOUNT_ITEM_NAVIGATION = [
     pathname: COMPANY_ACCOUNT_ITEM_BALANCE_ROUTE_PATH,
   },
   {
-    id: 1,
+    id: 3,
     label: 'NAVIGATION.TABS.COMPANY_ACCOUNT_ITEM.INFO',
     path: () => {
       return COMPANY_ACCOUNT_ITEM_INFO_ROUTE_PATH_DYNAMIC({
@@ -47,7 +67,7 @@ export const COMPANY_ACCOUNT_ITEM_NAVIGATION = [
     pathname: COMPANY_ACCOUNT_ITEM_INFO_ROUTE_PATH,
   },
   {
-    id: 2,
+    id: 4,
     label: 'NAVIGATION.TABS.COMPANY_ACCOUNT_ITEM.MEMBERS',
     path: () => {
       return COMPANY_ACCOUNT_ITEM_MEMBER_ROUTE_PATH_DYNAMIC({
@@ -58,17 +78,7 @@ export const COMPANY_ACCOUNT_ITEM_NAVIGATION = [
   },
 
   {
-    id: 3,
-    label: 'NAVIGATION.TABS.COMPANY_ACCOUNT_ITEM.REVISION',
-    path: () => {
-      return COMPANY_ACCOUNT_ITEM_REVISION_ROUTE_PATH_DYNAMIC({
-        companyId: getQuery('companyId'),
-      });
-    },
-    pathname: COMPANY_ACCOUNT_ITEM_REVISION_ROUTE_PATH,
-  },
-  {
-    id: 4,
+    id: 5,
     label: 'NAVIGATION.TABS.COMPANY_ACCOUNT_ITEM.KONTRAGENTS',
     path: () => {
       return COMPANY_ACCOUNT_ITEM_KONTRAGENT_ROUTE_PATH_DYNAMIC({
@@ -78,7 +88,7 @@ export const COMPANY_ACCOUNT_ITEM_NAVIGATION = [
     pathname: COMPANY_ACCOUNT_ITEM_KONTRAGENT_ROUTE_PATH,
   },
   {
-    id: 5,
+    id: 6,
     label: 'NAVIGATION.TABS.COMPANY_ACCOUNT_ITEM.BILL_LIST',
     path: () => {
       return COMPANY_BILL_LIST_ROUTE_PATH_DYNAMIC({

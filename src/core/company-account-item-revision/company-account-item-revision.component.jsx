@@ -6,16 +6,20 @@ import Button from '@mui/material/Button';
 
 import { redirect, getQuery } from '../../main/navigation/navigation.core';
 import { text } from '../../lib/common/text';
-import { COMPANY_ACCOUNT_ITEM_REVISION_CREATE_ROUTE_PATH_DYNAMIC } from '../company-account-item-revision-create';
+
+import { COMPANY_ACCOUNT_ITEM_REVISION_KONTRAGENT_CREATE_ROUTE_PATH_DYNAMIC } from '../company-account-item-revision-kontragent-create/company-account-item-revision-kontragent-create.constant';
 import { COMPANY_ACCOUNT_ITEM_REVISION_SELF_CREATE_ROUTE_PATH_DYNAMIC } from '../company-account-item-revision-self-create/company-account-item-revision-self-create.constant';
 
-export function CompanyAccountItemRevisionCreateLink() {
+export function CompanyAccountItemRevisionKontragentCreateLink() {
   const handleClick = () => {
-    redirect(COMPANY_ACCOUNT_ITEM_REVISION_CREATE_ROUTE_PATH_DYNAMIC, {
-      params: {
-        companyId: getQuery('companyId'),
+    redirect(
+      COMPANY_ACCOUNT_ITEM_REVISION_KONTRAGENT_CREATE_ROUTE_PATH_DYNAMIC,
+      {
+        params: {
+          companyId: getQuery('companyId'),
+        },
       },
-    });
+    );
   };
   return (
     <Paper>
@@ -43,6 +47,7 @@ export function CompanyAccountItemRevisionCreateLink() {
     </Paper>
   );
 }
+
 export function CompanyAccountItemRevisionSelfCreateLink() {
   const handleClick = () => {
     redirect(COMPANY_ACCOUNT_ITEM_REVISION_SELF_CREATE_ROUTE_PATH_DYNAMIC, {

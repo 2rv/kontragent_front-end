@@ -11,10 +11,6 @@ import {
   COMPANY_ACCOUNT_CREATE_ROUTE_PATH,
 } from '../../core/company-account-create';
 import {
-  CompanyAccountItemRevisionCreateRouter,
-  COMPANY_ACCOUNT_ITEM_REVISION_CREATE_ROUTE_PATH,
-} from '../../core/company-account-item-revision-create';
-import {
   CompanyAccountItemRevisionItemRouter,
   COMPANY_ACCOUNT_ITEM_REVISION_ITEM_ROUTE_PATH,
 } from '../../core/company-account-item-revision-item';
@@ -189,6 +185,9 @@ import { CompanyAccountItemRevisionRouter } from '../../core/company-account-ite
 import { COMPANY_ACCOUNT_ITEM_REVISION_SELF_CREATE_ROUTE_PATH } from '../../core/company-account-item-revision-self-create/company-account-item-revision-self-create.constant';
 import { CompanyAccountItemRevisionSelfCreateRouter } from '../../core/company-account-item-revision-self-create/company-account-item-revision-self-create.router';
 
+import { CompanyAccountItemRevisionKontragentCreateRouter } from '../../core/company-account-item-revision-kontragent-create/company-account-item-revision-kontragent-create.router';
+import { COMPANY_ACCOUNT_ITEM_REVISION_KONTRAGENT_CREATE_ROUTE_PATH } from '../../core/company-account-item-revision-kontragent-create/company-account-item-revision-kontragent-create.constant';
+
 export const routes = {
   '/': IndexRouter,
   [AUTH_LOGIN_ROUTE_PATH]: AuthLoginRouter,
@@ -202,8 +201,6 @@ export const routes = {
   [COMPANY_ACCOUNT_LIST_ROUTE_PATH]: CompanyAccountListRouter,
   [COMPANY_ACCOUNT_CREATE_ROUTE_PATH]: CompanyAccountCreateRouter,
   [COMPANY_ACCOUNT_ITEM_BALANCE_ROUTE_PATH]: CompanyAccountItemBalanceRouter,
-  [COMPANY_ACCOUNT_ITEM_REVISION_CREATE_ROUTE_PATH]:
-    CompanyAccountItemRevisionCreateRouter,
   [COMPANY_ACCOUNT_ITEM_REVISION_ITEM_ROUTE_PATH]:
     CompanyAccountItemRevisionItemRouter,
   [COMPANY_ACCOUNT_ITEM_KONTRAGENT_ROUTE_PATH]:
@@ -250,6 +247,8 @@ export const routes = {
   [COMPANY_ACCOUNT_ITEM_REVISION_ROUTE_PATH]: CompanyAccountItemRevisionRouter,
   [COMPANY_ACCOUNT_ITEM_REVISION_SELF_CREATE_ROUTE_PATH]:
     CompanyAccountItemRevisionSelfCreateRouter,
+  [COMPANY_ACCOUNT_ITEM_REVISION_KONTRAGENT_CREATE_ROUTE_PATH]:
+    CompanyAccountItemRevisionKontragentCreateRouter,
 };
 
 export const Router = routesInit(routes);

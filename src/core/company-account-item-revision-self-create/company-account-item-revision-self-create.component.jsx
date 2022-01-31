@@ -1,13 +1,13 @@
 import { Formik } from 'formik';
-import {
-  Divider,
-  Grid,
-  Paper,
-  Typography,
-  Alert,
-  LinearProgress,
-} from '@mui/material';
+import Grid from '@mui/material/Grid';
+import Button from '@mui/material/Button';
+import Typography from '@mui/material/Typography';
+import Divider from '@mui/material/Divider';
+import Alert from '@mui/material/Alert';
+import Paper from '@mui/material/Paper';
+import LinearProgress from '@mui/material/LinearProgress';
 import { text } from '../../lib/common/text';
+
 import { CompanyAccountItemRevisionSelfCreateFormComponent } from './frame/company-account-item-revision-self-create-form.component';
 import { CompanyAccountItemRevisionSelfCreatePriceComponent } from './frame/company-account-item-revision-self-create-price.component';
 import { CompanyAccountItemRevisionSelfCreatePeriodListComponent } from '../company-account-item-revision-self-create-period-list/company-account-item-revision-self-create-period-list.component';
@@ -39,11 +39,13 @@ export function CompanyAccountItemRevisionSelfCreateComponent(props) {
             onSubmit={formik.handleSubmit}
           >
             <Grid item>
-              <Typography variant="heading" component="div">
-                {text(
-                  'COMPANY_ACCOUNT_ITEM_REVISION_CREATE.REVISON_CREATE_COMPANY_LIST.TITLE1',
+              <Typography
+                variant="heading"
+                component="div"
+                children={text(
+                  'COMPANY_ACCOUNT_ITEM_REVISION_CREATE.REVISON_CREATE_COMPANY_LIST.TITLE',
                 )}
-              </Typography>
+              />
             </Grid>
 
             <Grid item>

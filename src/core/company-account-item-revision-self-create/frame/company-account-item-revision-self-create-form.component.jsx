@@ -1,4 +1,3 @@
-import React from 'react';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import { text } from '../../../lib/common/text';
@@ -58,6 +57,12 @@ export function CompanyAccountItemRevisionSelfCreateFormComponent(props) {
       <Grid item>
         <FileUploadFieldContainer
           onFileAdd={(value) => {
+            setFieldValue(
+              COMPANY_ACCOUNT_ITEM_REVISION_SELF_CREATE_DATA_NAME.FILE_ID_LIST,
+              value.map((i) => i.id),
+            );
+          }}
+          onFileDelete={(value) => {
             setFieldValue(
               COMPANY_ACCOUNT_ITEM_REVISION_SELF_CREATE_DATA_NAME.FILE_ID_LIST,
               value.map((i) => i.id),

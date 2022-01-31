@@ -26,10 +26,7 @@ import {
   navigationStore,
   NAVIGATION_STORE_NAME,
 } from '../../lib/common/navigation';
-import {
-  COMPANY_ACCOUNT_ITEM_REVISION_CREATE_STORE_NAME,
-  companyAccountItemRevisionCreateStore,
-} from '../../core/company-account-item-revision-create';
+
 import {
   ACCOUNT_REFERAL_STORE_NAME,
   accountReferalStore,
@@ -92,8 +89,6 @@ export const reducers = combineReducers({
     authRecoveryAccountUpdatePasswordStore,
   [AUTH_VERIFICATION_EMAIL_STORE_NAME]: authVerificationEmailStore,
   [AUTH_VERIFICATION_PHONE_STORE_NAME]: authVerificationPhoneStore,
-  [COMPANY_ACCOUNT_ITEM_REVISION_CREATE_STORE_NAME]:
-    companyAccountItemRevisionCreateStore,
   [COMPANY_ADMIN_ITEM_INFO_VERIFICATE_STORE_NAME]:
     companyAdminItemInfoVerificateStore,
   [COMPANY_ACCOUNT_ITEM_MEMBER_DELETE_STORE_NAME]:
