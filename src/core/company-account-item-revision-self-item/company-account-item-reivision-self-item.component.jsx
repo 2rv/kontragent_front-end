@@ -8,12 +8,12 @@ import { SkeletonListComponent } from '../../lib/common/skeleton/skeleton-list.c
 import { ReviewStatusComponent } from '../../lib/common/review-status/review-status.component';
 import { text } from '../../lib/common/text';
 
-import { COMPANY_ACCOUNT_ITEM_REVISION_ITEM_KONTRAGENT_DATA_NAME as DATA_NAME } from './company-account-item-revision-kontragent-item.constant';
-import { CompanyAccountItemRevisionKontragentItemAccordionComponent } from './frames/company-account-item-revision-kontragent-item-accordion.component';
-import { CompanyAccountItemRevisionKontragentItemReviewComponent } from './frames/company-account-item-reivision-kontragent-item-review.component';
-import { CompanyAccountItemRevisionKontragentItemPaymentContainer } from '../company-account-item-revision-kontragent-item-payment/company-account-item-revision-kontragent-item-payment.container';
+import { COMPANY_ACCOUNT_ITEM_REVISION_ITEM_SELF_DATA_NAME as DATA_NAME } from './company-account-item-revision-self-item.constant';
+import { CompanyAccountItemRevisionSelfItemAccordionComponent } from './frames/company-account-item-revision-self-item-accordion.component';
+import { CompanyAccountItemRevisionSelfItemReviewComponent } from './frames/company-account-item-reivision-self-item-review.component';
+import { CompanyAccountItemRevisionSelfItemPaymentContainer } from '../company-account-item-revision-self-item-payment/company-account-item-revision-Self-item-payment.container';
 
-export function CompanyAccountItemRevisionKontragentItemComponent(props) {
+export function CompanyAccountItemRevisionSelfItemComponent(props) {
   const { data, isPending, isError, isSuccess, errorMessage } = props;
 
   return (
@@ -77,9 +77,7 @@ export function CompanyAccountItemRevisionKontragentItemComponent(props) {
 
         {isSuccess && (
           <Grid item>
-            <CompanyAccountItemRevisionKontragentItemAccordionComponent
-              data={data[DATA_NAME.REVISION_KONTRAGENT] || []}
-            />
+            <CompanyAccountItemRevisionSelfItemAccordionComponent data={[]} />
           </Grid>
         )}
 
@@ -96,14 +94,12 @@ export function CompanyAccountItemRevisionKontragentItemComponent(props) {
         )}
 
         <Grid item>
-          <CompanyAccountItemRevisionKontragentItemReviewComponent
-            data={data}
-          />
+          <CompanyAccountItemRevisionSelfItemReviewComponent data={data} />
         </Grid>
 
         {data[DATA_NAME.STATUS] === 4 && (
           <Grid item>
-            <CompanyAccountItemRevisionKontragentItemPaymentContainer
+            <CompanyAccountItemRevisionSelfItemPaymentContainer
               price={data[DATA_NAME.PRICE]}
             />
           </Grid>

@@ -8,12 +8,14 @@ import Box from '@mui/material/Box';
 import Alert from '@mui/material/Alert';
 
 import { getQuery, redirect } from '../../../main/navigation';
-
 import { text } from '../../../lib/common/text';
 
-import { COMPANY_ACCOUNT_ITEM_REVISION_LIST_DATA_NAME } from '../company-account-item-revision-list.constant';
+import { COMPANY_ACCOUNT_ITEM_REVISION_ITEM_SELF_ROUTE_PATH_DYNAMIC } from '../../company-account-item-revision-self-item/company-account-item-revision-self-item.constant';
+import { COMPANY_ACCOUNT_ITEM_REVISION_SELF_LIST_DATA_NAME as DATA_NAME } from '../company-account-item-revision-self-list.constant';
 
-export const CompanyAccountItemRevisionListViewComponent = ({ list }) => {
+export function CompanyAccountItemRevisionSelfListViewComponent(props) {
+  const { list } = props;
+
   if (!list || list.length === 0) {
     return (
       <Box sx={{ pb: 8, px: 8 }}>
@@ -33,11 +35,10 @@ export const CompanyAccountItemRevisionListViewComponent = ({ list }) => {
           <ListItem
             onClick={() => {
               return redirect(
-                // COMPANY_ACCOUNT_ITEM_REVISION_ITEM_KONTRAGENT_ROUTE_PATH_DYNAMIC,
+                COMPANY_ACCOUNT_ITEM_REVISION_ITEM_SELF_ROUTE_PATH_DYNAMIC,
                 {
                   params: {
-                    revisionId:
-                      item[COMPANY_ACCOUNT_ITEM_REVISION_LIST_DATA_NAME.ID],
+                    revisionId: item[DATA_NAME.ID],
                     companyId: getQuery('companyId'),
                   },
                 },
@@ -51,13 +52,9 @@ export const CompanyAccountItemRevisionListViewComponent = ({ list }) => {
               primary={
                 <span>
                   {`${text('COMMON.REVISION.ID')} 
-                   ${
-                     item[COMPANY_ACCOUNT_ITEM_REVISION_LIST_DATA_NAME.ID]
-                   } ${text('COMMON.REVISION.CREATE_DATE')} ${
-                    item[
-                      COMPANY_ACCOUNT_ITEM_REVISION_LIST_DATA_NAME.CREATE_DATE
-                    ]
-                  }`}
+                   ${item[DATA_NAME.ID]} ${text(
+                    'COMMON.REVISION.CREATE_DATE',
+                  )} ${item[DATA_NAME.CREATE_DATE]}`}
                 </span>
               }
               secondary={
@@ -88,7 +85,7 @@ export const CompanyAccountItemRevisionListViewComponent = ({ list }) => {
                       {text('COMMON.REVISION.STATUS_TYPE.PAID')}
                     </Typography>
                   </>,
-                ][item[COMPANY_ACCOUNT_ITEM_REVISION_LIST_DATA_NAME.STATUS]]
+                ][item[DATA_NAME.STATUS]]
               }
             />
           </ListItem>
@@ -97,4 +94,4 @@ export const CompanyAccountItemRevisionListViewComponent = ({ list }) => {
       ))}
     </List>
   );
-};
+}

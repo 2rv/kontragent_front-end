@@ -7,15 +7,10 @@ import Alert from '@mui/material/Alert';
 import { text } from '../../lib/common/text';
 import { SkeletonListComponent } from '../../lib/common/skeleton/skeleton-list.component';
 
-import { CompanyAccountItemRevisionListViewComponent } from './frame/company-account-item-revision-list-view.component';
+import { CompanyAccountItemRevisionSelfListViewComponent } from './frame/company-account-item-revision-self-list-view.component';
 
-export function CompanyAccountItemRevisionListComponent({
-  data,
-  isPending,
-  isError,
-  isSuccess,
-  errorMessage,
-}) {
+export function CompanyAccountItemRevisionSelfListComponent(props) {
+  const { data, isPending, isError, isSuccess, errorMessage } = props;
   return (
     <Paper sx={{ p: 0 }}>
       <Box>
@@ -24,7 +19,7 @@ export function CompanyAccountItemRevisionListComponent({
         </Typography>
         <Divider sx={{ mx: 8, my: 4 }} />
         {isSuccess && (
-          <CompanyAccountItemRevisionListViewComponent list={data} />
+          <CompanyAccountItemRevisionSelfListViewComponent list={data} />
         )}
         {isPending && (
           <Box sx={{ pt: 4, px: 8, pb: 8 }}>

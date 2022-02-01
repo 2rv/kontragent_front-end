@@ -5,8 +5,9 @@ import Box from '@mui/material/Box';
 import Alert from '@mui/material/Alert';
 import { text } from '../../lib/common/text';
 import { SkeletonListComponent } from '../../lib/common/skeleton/skeleton-list.component';
+import { ReviewStatusComponent } from '../../lib/common/review-status/review-status.component';
+
 import { AdminRevisionInfoItemComponent } from './frame/admin-revision-info-item.component';
-import { ReviewStatus } from '../company-account-item-revision-kontragent-item/frames/review-status.component';
 
 export function AdminRevisionInfoComponent({
   data,
@@ -27,7 +28,7 @@ export function AdminRevisionInfoComponent({
           {data.title}
         </Typography>
 
-        <ReviewStatus status={data.status} />
+        <ReviewStatusComponent status={data.status} />
 
         <Divider sx={{ mx: 8 }} />
 
