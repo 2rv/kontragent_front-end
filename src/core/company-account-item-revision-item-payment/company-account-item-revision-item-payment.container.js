@@ -30,7 +30,7 @@ export function CompanyAccountItemRevisionItemPaymentContainer(props) {
         method: 'POST',
         url: `/revision/company/${getQuery('companyId')}/revision/${getQuery(
           'revisionId',
-        )}/review/payment`,
+        )}/payment`,
       });
 
       return redirect(COMPANY_ACCOUNT_ITEM_REVISION_ROUTE_PATH_DYNAMIC, {

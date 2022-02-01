@@ -28,6 +28,6 @@ export const COMPANY_ACCOUNT_ITEM_REVISION_ITEM_DATA_NAME = {
   KVARTAL_3: 'kvartal3',
   KVARTAL_4: 'kvartal4',
 
-  REVIEW: 'REVIEW',
-  FILE_REVIEW: 'FILE_REVIEW',
+  REVIEW: 'review',
+  FILES_REVIEW: 'filesReview',
 };

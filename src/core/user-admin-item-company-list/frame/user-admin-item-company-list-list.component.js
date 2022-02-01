@@ -10,7 +10,7 @@ import Alert from '@mui/material/Alert';
 import { redirect } from '../../../main/navigation';
 
 import { text } from '../../../lib/common/text';
-import { ADMIN_REVISION_REVIEW_ITEM_DATA_NAME } from '../../admin-revision-review-item/admin-revision-review-item.constant';
+import { ADMIN_REVISION_KONTRAGENT_ITEM_DATA_NAME } from '../../admin-revision-kontragent-item/admin-revision-kontragent-item.constant';
 import { COMPANY_ADMIN_ITEM_REVISION_LIST_ROUTE_PATH_DYNAMIC } from '../../company-admin-item-revision-list';
 import { USER_ADMIN_ITEM_COMPANY_LIST_DATA_NAME } from '../user-admin-item-company-list.constant';
 
@@ -37,7 +37,7 @@ export const UserAdminItemCompanyListListComponent = ({ list }) => {
                   dynamic: true,
                   params: {
                     companyId:
-                      item[ADMIN_REVISION_REVIEW_ITEM_DATA_NAME.COMPANY_ID],
+                      item[ADMIN_REVISION_KONTRAGENT_ITEM_DATA_NAME.COMPANY_ID],
                   },
                 },
               );

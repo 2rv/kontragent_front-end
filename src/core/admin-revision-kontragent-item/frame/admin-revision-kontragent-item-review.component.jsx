@@ -4,9 +4,9 @@ import Typography from '@mui/material/Typography';
 import { FileListElement } from '../../../lib/element/file-list.element';
 import { text } from '../../../lib/common/text';
 
-import { COMPANY_ACCOUNT_ITEM_REVISION_ITEM_DATA_NAME as DATA_NAME } from '../company-account-item-revision-item.constant';
+import { ADMIN_REVISION_KONTRAGENT_ITEM_DATA_NAME as DATA_NAME } from '../admin-revision-kontragent-item.constant';
 
-export function CompanyAccountItemRevisionItemReviewComponent(props) {
+export function AdminRevisionKontragentItemReviewComponent(props) {
   const { data } = props;
   return (
     <Grid container spacing={4}>

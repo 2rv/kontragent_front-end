@@ -26,7 +26,7 @@ export function CompanyAccountItemRevisionItemComponent(props) {
           <Typography
             variant="title"
             component="div"
-            children={text('Проверка контрагентов №' + data.id)}
+            children={text('Проверка контрагентов №' + data[DATA_NAME.ID])}
           />
           <Typography
             variant="subtext"
@@ -77,6 +77,7 @@ export function CompanyAccountItemRevisionItemComponent(props) {
         <Grid item>
           <Divider />
         </Grid>
+
         {isSuccess && (
           <Grid item>
             <CompanyAccountItemRevisionItemAccordionComponent
