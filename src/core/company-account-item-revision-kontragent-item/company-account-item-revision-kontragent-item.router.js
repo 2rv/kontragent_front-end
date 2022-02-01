@@ -4,11 +4,11 @@ import {
   authRedirectAdmin,
   authRedirectVerification,
 } from '../../lib/common/auth';
-import { COMPANY_ACCOUNT_ITEM_REVISION_ITEM_ROUTE_PATH } from './company-account-item-revision-item.constant';
+import { COMPANY_ACCOUNT_ITEM_REVISION_ITEM_KONTRAGENT_ROUTE_PATH } from './company-account-item-revision-kontragent-item.constant';
 
-export function CompanyAccountItemRevisionItemRouter(ctx) {
+export function CompanyAccountItemRevisionKontragentItemRouter(ctx) {
   ctx.store.dispatch(
-    setActivePath(COMPANY_ACCOUNT_ITEM_REVISION_ITEM_ROUTE_PATH),
+    setActivePath(COMPANY_ACCOUNT_ITEM_REVISION_ITEM_KONTRAGENT_ROUTE_PATH),
   );
   if (authRedirectPrivated(ctx, '/')) return;
   if (authRedirectVerification(ctx)) return;

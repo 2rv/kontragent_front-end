@@ -1,22 +1,19 @@
-import React from 'react';
 import Paper from '@mui/material/Paper';
 import Divider from '@mui/material/Divider';
 import Typography from '@mui/material/Typography';
-import Box from '@mui/material/Box';
 import Alert from '@mui/material/Alert';
 import Grid from '@mui/material/Grid';
 
 import { SkeletonListComponent } from '../../lib/common/skeleton/skeleton-list.component';
 import { text } from '../../lib/common/text';
 
-import { CompanyAccountItemRevisionItemPaymentContainer } from '../company-account-item-revision-item-payment/company-account-item-revision-item-payment.container';
-import { COMPANY_ACCOUNT_ITEM_REVISION_ITEM_DATA_NAME as DATA_NAME } from './company-account-item-revision-item.constant';
-
+import { COMPANY_ACCOUNT_ITEM_REVISION_ITEM_KONTRAGENT_DATA_NAME as DATA_NAME } from './company-account-item-revision-kontragent-item.constant';
 import { ReviewStatus } from './frames/review-status.component';
-import { CompanyAccountItemRevisionItemAccordionComponent } from './frames/company-account-item-revision-item-accordion.component';
-import { CompanyAccountItemRevisionItemReviewComponent } from './frames/company-account-item-reivision-item-review.component';
+import { CompanyAccountItemRevisionKontragentItemAccordionComponent } from './frames/company-account-item-revision-kontragent-item-accordion.component';
+import { CompanyAccountItemRevisionKontragentItemReviewComponent } from './frames/company-account-item-reivision-kontragent-item-review.component';
+import { CompanyAccountItemRevisionKontragentItemPaymentContainer } from '../company-account-item-revision-kontragent-item-payment/company-account-item-revision-kontragent-item-payment.container';
 
-export function CompanyAccountItemRevisionItemComponent(props) {
+export function CompanyAccountItemRevisionKontragentItemComponent(props) {
   const { data, isPending, isError, isSuccess, errorMessage } = props;
 
   return (
@@ -80,7 +77,7 @@ export function CompanyAccountItemRevisionItemComponent(props) {
 
         {isSuccess && (
           <Grid item>
-            <CompanyAccountItemRevisionItemAccordionComponent
+            <CompanyAccountItemRevisionKontragentItemAccordionComponent
               data={data[DATA_NAME.REVISION_KONTRAGENT] || []}
             />
           </Grid>
@@ -99,12 +96,14 @@ export function CompanyAccountItemRevisionItemComponent(props) {
         )}
 
         <Grid item>
-          <CompanyAccountItemRevisionItemReviewComponent data={data} />
+          <CompanyAccountItemRevisionKontragentItemReviewComponent
+            data={data}
+          />
         </Grid>
 
         {data[DATA_NAME.STATUS] === 4 && (
           <Grid item>
-            <CompanyAccountItemRevisionItemPaymentContainer
+            <CompanyAccountItemRevisionKontragentItemPaymentContainer
               price={data[DATA_NAME.PRICE]}
             />
           </Grid>

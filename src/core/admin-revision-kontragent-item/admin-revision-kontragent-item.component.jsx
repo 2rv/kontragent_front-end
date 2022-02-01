@@ -6,7 +6,7 @@ import Typography from '@mui/material/Typography';
 import Alert from '@mui/material/Alert';
 
 import { SkeletonListComponent } from '../../lib/common/skeleton/skeleton-list.component';
-import { ReviewStatus } from '../company-account-item-revision-item/frames/review-status.component';
+import { ReviewStatus } from '../company-account-item-revision-kontragent-item/frames/review-status.component';
 import { text } from '../../lib/common/text';
 
 import { ADMIN_REVISION_KONTRAGENT_ITEM_DATA_NAME as DATA_NAME } from './admin-revision-kontragent-item.constant';

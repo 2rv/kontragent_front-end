@@ -1,26 +1,28 @@
 import React from 'react';
-
-import { CompanyAccountItemRevisionItemComponent } from './company-account-item-reivision-item.component';
-
 import { useSelector } from 'react-redux';
 
 import { NAVIGATION_STORE_NAME } from '../../lib/common/navigation/navigation.constant';
-
 import { httpRequest } from '../../main/http';
 import { getQuery } from '../../main/navigation/navigation.core';
 
-import { convertCompanyAccountItemRevisionItemData } from './company-account-item-revision-item.convert';
+import { convertCompanyAccountItemRevisionKontragentItemData } from './company-account-item-revision-kontragent-item.convert';
+import { CompanyAccountItemRevisionKontragentItemComponent } from './company-account-item-reivision-kontragent-item.component';
 
-export function CompanyAccountItemRevisionItemContainer() {
+export function CompanyAccountItemRevisionKontragentItemContainer() {
   const { pageLoading } = useSelector((state) => ({
     pageLoading: state[NAVIGATION_STORE_NAME].pageLoading,
   }));
 
   React.useEffect(() => {
-    getCompanyAccountItemRevisionItemInfo();
+    getCompanyAccountItemRevisionKontragentItemInfo();
   }, []);
+  const [isRequestPending, setRequestPending] = React.useState(null);
+  const [getData, setData] = React.useState({});
+  const [isRequestError, setRequestError] = React.useState(null);
+  const [isRequestSuccess, setRequestSuccess] = React.useState(null);
+  const [getRequestErrorMessage, setRequestErrorMessage] = React.useState(null);
 
-  const getCompanyAccountItemRevisionItemInfo = async (data) => {
+  const getCompanyAccountItemRevisionKontragentItemInfo = async (data) => {
     setRequestPending(true);
     setRequestSuccess(false);
     setRequestError(false);
@@ -35,7 +37,9 @@ export function CompanyAccountItemRevisionItemContainer() {
         )}`,
       });
 
-      const data = convertCompanyAccountItemRevisionItemData(res.data);
+      const data = convertCompanyAccountItemRevisionKontragentItemData(
+        res.data,
+      );
 
       setRequestPending(false);
       setData(data);
@@ -50,14 +54,8 @@ export function CompanyAccountItemRevisionItemContainer() {
     }
   };
 
-  const [isRequestPending, setRequestPending] = React.useState(null);
-  const [getData, setData] = React.useState({});
-  const [isRequestError, setRequestError] = React.useState(null);
-  const [isRequestSuccess, setRequestSuccess] = React.useState(null);
-  const [getRequestErrorMessage, setRequestErrorMessage] = React.useState(null);
-
   return (
-    <CompanyAccountItemRevisionItemComponent
+    <CompanyAccountItemRevisionKontragentItemComponent
       isPending={isRequestPending || (!isRequestSuccess && pageLoading)}
       isError={isRequestError}
       isSuccess={isRequestSuccess}

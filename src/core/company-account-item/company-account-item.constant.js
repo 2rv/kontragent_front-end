@@ -20,31 +20,31 @@ import {
   COMPANY_BILL_LIST_ROUTE_PATH,
 } from '../company-bill-list';
 import {
-  COMPANY_ACCOUNT_ITEM_REVISION_ROUTE_PATH,
-  COMPANY_ACCOUNT_ITEM_REVISION_ROUTE_PATH_DYNAMIC,
-} from '../company-account-item-revision/company-account-item-revision.constant';
+  COMPANY_ACCOUNT_ITEM_REVISION_KONTRAGENT_ROUTE_PATH,
+  COMPANY_ACCOUNT_ITEM_REVISION_KONTRAGENT_ROUTE_PATH_DYNAMIC,
+} from '../company-account-item-revision-kontragent/company-account-item-revision-kontragent.constant';
 
 export const COMPANY_ACCOUNT_ITEM_NAVIGATION = [
   {
     id: 0,
     label: 'NAVIGATION.TABS.COMPANY_ACCOUNT_ITEM.REVISION_KONTRAGENT',
     path: () => {
-      return COMPANY_ACCOUNT_ITEM_REVISION_ROUTE_PATH_DYNAMIC({
+      return COMPANY_ACCOUNT_ITEM_REVISION_KONTRAGENT_ROUTE_PATH_DYNAMIC({
         companyId: getQuery('companyId'),
       });
     },
-    pathname: COMPANY_ACCOUNT_ITEM_REVISION_ROUTE_PATH,
+    pathname: COMPANY_ACCOUNT_ITEM_REVISION_KONTRAGENT_ROUTE_PATH,
   },
-  {
-    id: 1,
-    label: 'NAVIGATION.TABS.COMPANY_ACCOUNT_ITEM.REVISION_SELF',
-    path: () => {
-      return COMPANY_ACCOUNT_ITEM_REVISION_ROUTE_PATH_DYNAMIC({
-        companyId: getQuery('companyId'),
-      });
-    },
-    pathname: COMPANY_ACCOUNT_ITEM_REVISION_ROUTE_PATH,
-  },
+  // {
+  //   id: 1,
+  //   label: 'NAVIGATION.TABS.COMPANY_ACCOUNT_ITEM.REVISION_SELF',
+  //   path: () => {
+  //     return COMPANY_ACCOUNT_ITEM_REVISION_ROUTE_PATH_DYNAMIC({
+  //       companyId: getQuery('companyId'),
+  //     });
+  //   },
+  //   pathname: COMPANY_ACCOUNT_ITEM_REVISION_ROUTE_PATH,
+  // },
   {
     id: 2,
     label: 'NAVIGATION.TABS.COMPANY_ACCOUNT_ITEM.BALANCE',

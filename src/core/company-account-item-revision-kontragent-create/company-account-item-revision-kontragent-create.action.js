@@ -1,6 +1,6 @@
 import { httpRequest } from '../../main/http';
 import { redirect } from '../../main/navigation/navigation.core';
-import { COMPANY_ACCOUNT_ITEM_REVISION_ROUTE_PATH_DYNAMIC } from '../company-account-item-revision/company-account-item-revision.constant';
+import { COMPANY_ACCOUNT_ITEM_REVISION_KONTRAGENT_ROUTE_PATH_DYNAMIC } from '../company-account-item-revision-kontragent/company-account-item-revision-kontragent.constant';
 import { convertCompanyAccountItemRevisionKontragentCreateFormData } from './company-account-item-revision-kontragent-create.convert';
 import { COMPANY_ACCOUNT_ITEM_REVISION_KONTRAGENT_CREATE_ACTION_TYPE as ACTION_TYPE } from './company-account-item-revision-kontragent-create.constant';
 
@@ -21,7 +21,7 @@ export function uploadCompanyAccountItemRevisionKontragentCreateForm(data) {
       dispatch({
         type: ACTION_TYPE.FORM_SUCCESS,
       });
-      redirect(COMPANY_ACCOUNT_ITEM_REVISION_ROUTE_PATH_DYNAMIC, {
+      redirect(COMPANY_ACCOUNT_ITEM_REVISION_KONTRAGENT_ROUTE_PATH_DYNAMIC, {
         params: {
           companyId: data.companyId,
         },

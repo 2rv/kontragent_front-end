@@ -24,3 +24,6 @@ yarn-error.log*
 
 # vercel
 .vercel
+
+src/core/company-account-item-revision-self
+src/core/company-account-item-revision-self-item-payment

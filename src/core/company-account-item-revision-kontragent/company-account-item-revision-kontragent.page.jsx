@@ -3,13 +3,11 @@ import { NavigationComponent } from '../navigation/navigation.component';
 import { TabContainer } from '../../lib/common/navigation-tab/navigation-tab.container';
 
 import { COMPANY_ACCOUNT_ITEM_NAVIGATION } from '../company-account-item/company-account-item.constant';
-import { CompanyAccountItemRevisionListContainer } from '../company-account-item-revision-list/company-account-item-revision-list.container';
-import {
-  CompanyAccountItemRevisionKontragentCreateLink,
-  CompanyAccountItemRevisionSelfCreateLink,
-} from './company-account-item-revision.component';
 
-export function CompanyAccountItemRevisionPage() {
+import { CompanyAccountItemRevisionKontragentComponent } from './company-account-item-revision-kontragent.component';
+import { CompanyAccountItemRevisionKontragentListContainer } from '../company-account-item-revision-kontragent-list/company-account-item-revision-kontragent-list.container';
+
+export function CompanyAccountItemRevisionKontragentPage() {
   return (
     <NavigationComponent>
       <Grid spacing={6} container>
@@ -17,13 +15,10 @@ export function CompanyAccountItemRevisionPage() {
           <TabContainer config={COMPANY_ACCOUNT_ITEM_NAVIGATION} />
         </Grid>
         <Grid item>
-          <CompanyAccountItemRevisionKontragentCreateLink />
+          <CompanyAccountItemRevisionKontragentComponent />
         </Grid>
-        {/* <Grid item>
-          <CompanyAccountItemRevisionSelfCreateLink />
-        </Grid> */}
         <Grid item>
-          <CompanyAccountItemRevisionListContainer />
+          <CompanyAccountItemRevisionKontragentListContainer />
         </Grid>
       </Grid>
     </NavigationComponent>

@@ -5,10 +5,12 @@ import {
   authRedirectVerification,
 } from '../../lib/common/auth';
 
-import { COMPANY_ACCOUNT_ITEM_REVISION_ROUTE_PATH } from './company-account-item-revision.constant';
+import { COMPANY_ACCOUNT_ITEM_REVISION_KONTRAGENT_ROUTE_PATH } from './company-account-item-revision-kontragent.constant';
 
-export function CompanyAccountItemRevisionRouter(ctx) {
-  ctx.store.dispatch(setActivePath(COMPANY_ACCOUNT_ITEM_REVISION_ROUTE_PATH));
+export function CompanyAccountItemRevisionKontragentRouter(ctx) {
+  ctx.store.dispatch(
+    setActivePath(COMPANY_ACCOUNT_ITEM_REVISION_KONTRAGENT_ROUTE_PATH),
+  );
   if (authRedirectPrivated(ctx, '/')) return;
   if (authRedirectVerification(ctx)) return;
   if (authRedirectAdmin(ctx, '/')) return;

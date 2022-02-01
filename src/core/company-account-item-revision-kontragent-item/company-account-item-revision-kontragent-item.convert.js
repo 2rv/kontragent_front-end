@@ -1,8 +1,7 @@
-import { COMPANY_ACCOUNT_ITEM_REVISION_ITEM_DATA_NAME as DATA_NAME } from './company-account-item-revision-item.constant';
 import { convertFormatDate } from '../../lib/common/convert/convert.core';
+import { COMPANY_ACCOUNT_ITEM_REVISION_ITEM_KONTRAGENT_DATA_NAME as DATA_NAME } from './company-account-item-revision-kontragent-item.constant';
 
-export const convertCompanyAccountItemRevisionItemData = (data) => {
-  console.log(data);
+export const convertCompanyAccountItemRevisionKontragentItemData = (data) => {
   return {
     [DATA_NAME.ID]: data[DATA_NAME.ID],
     [DATA_NAME.CREATE_DATE]: convertFormatDate(data[DATA_NAME.CREATE_DATE]),

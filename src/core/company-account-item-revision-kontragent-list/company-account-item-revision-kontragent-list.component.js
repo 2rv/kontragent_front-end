@@ -3,38 +3,27 @@ import Divider from '@mui/material/Divider';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import Alert from '@mui/material/Alert';
+
 import { text } from '../../lib/common/text';
 import { SkeletonListComponent } from '../../lib/common/skeleton/skeleton-list.component';
-import { AdminRevisionInfoItemComponent } from './frame/admin-revision-info-item.component';
-import { ReviewStatus } from '../company-account-item-revision-kontragent-item/frames/review-status.component';
 
-export function AdminRevisionInfoComponent({
-  data,
-  pageLoading,
-  isPending,
-  isError,
-  isSuccess,
-  errorMessage,
-}) {
+import { CompanyAccountItemRevisionKontragentListViewComponent } from './frame/company-account-item-revision-kontragent-list-view.component';
+
+export function CompanyAccountItemRevisionKontragentListComponent(props) {
+  const { data, isPending, isError, isSuccess, errorMessage } = props;
   return (
     <Paper sx={{ p: 0 }}>
       <Box>
-        <Typography
-          variant="title"
-          sx={{ px: 8, pt: 8, pb: 2 }}
-          component="div"
-        >
-          {data.title}
+        <Typography variant="heading" sx={{ px: 8, pt: 8 }} component="div">
+          {text('COMPANY_ACCOUNT_ITEM_REVISION.REVISION_LIST.TITLE')}
         </Typography>
-
-        <ReviewStatus status={data.status} />
-
-        <Divider sx={{ mx: 8 }} />
-
-        {isSuccess && <AdminRevisionInfoItemComponent data={data} />}
+        <Divider sx={{ mx: 8, my: 4 }} />
+        {isSuccess && (
+          <CompanyAccountItemRevisionKontragentListViewComponent list={data} />
+        )}
         {isPending && (
           <Box sx={{ pt: 4, px: 8, pb: 8 }}>
-            <SkeletonListComponent text={true} />
+            <SkeletonListComponent />
           </Box>
         )}
         {isError && (
