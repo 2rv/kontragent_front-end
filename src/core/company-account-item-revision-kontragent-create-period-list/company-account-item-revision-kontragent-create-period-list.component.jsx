@@ -6,7 +6,7 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import { text } from '../../lib/common/text';
 
-import { COMPANY_ACCOUNT_ITEM_REVISION_KONTRAGENT_CREATE_DATA_NAME } from '../company-account-item-revision-kontragent-create/company-account-item-revision-kontragent-create.constant';
+import { COMPANY_ACCOUNT_ITEM_REVISION_KONTRAGENT_CREATE_DATA_NAME as FIELD_NAME } from '../company-account-item-revision-kontragent-create/company-account-item-revision-kontragent-create.constant';
 import { CompanyAccountItemRevisionKontragentCreatePeriodItemComponent } from './company-account-item-revision-kontragent-create-period-item.component';
 
 export function CompanyAccountItemRevisionKontragentCreatePeriodListComponent(
@@ -17,14 +17,11 @@ export function CompanyAccountItemRevisionKontragentCreatePeriodListComponent(
     handleBlur,
     errors,
     touched,
-    initialYear,
     setFieldValue,
-    prefix,
     value,
+    index,
+    initialYear,
   } = props;
-
-  const YEARS_PERIOD_LIST =
-    value[COMPANY_ACCOUNT_ITEM_REVISION_KONTRAGENT_CREATE_DATA_NAME.YEARS];
 
   return (
     <Grid container spacing={4}>
@@ -39,10 +36,7 @@ export function CompanyAccountItemRevisionKontragentCreatePeriodListComponent(
       </Grid>
 
       <FieldArray
-        name={
-          prefix +
-          COMPANY_ACCOUNT_ITEM_REVISION_KONTRAGENT_CREATE_DATA_NAME.YEARS
-        }
+        name={`${FIELD_NAME.KONTRAGENTS}.${index}.${FIELD_NAME.YEARS}`}
       >
         {({ remove, push }) => (
           <Grid
@@ -53,18 +47,19 @@ export function CompanyAccountItemRevisionKontragentCreatePeriodListComponent(
             spacing={4}
             columns={{ xs: 1, md: 4 }}
           >
-            {YEARS_PERIOD_LIST.map((value, key) => (
-              <Grid item key={key} xs={1} md={4}>
+            {value[FIELD_NAME.YEARS].map((yearValue, yearIndex) => (
+              <Grid item key={index} xs={1} md={4}>
                 <CompanyAccountItemRevisionKontragentCreatePeriodItemComponent
                   handleChange={handleChange}
                   handleBlur={handleBlur}
                   errors={errors}
                   setFieldValue={setFieldValue}
                   touched={touched}
-                  value={value}
-                  prefix={`${prefix}${COMPANY_ACCOUNT_ITEM_REVISION_KONTRAGENT_CREATE_DATA_NAME.YEARS}.${key}.`}
-                  onRemove={() => remove(key)}
-                  yearsLenght={YEARS_PERIOD_LIST.length}
+                  index={index}
+                  yearsLenght={value[FIELD_NAME.YEARS].length}
+                  value={yearValue}
+                  yearIndex={yearIndex}
+                  onRemove={() => remove(yearIndex)}
                 />
               </Grid>
             ))}

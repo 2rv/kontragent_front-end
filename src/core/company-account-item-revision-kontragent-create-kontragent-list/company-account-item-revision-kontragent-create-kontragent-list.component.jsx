@@ -13,15 +13,27 @@ import { text } from '../../lib/common/text';
 import { SkeletonListComponent } from '../../lib/common/skeleton/skeleton-list.component';
 
 import { CompanyAccountItemRevisionKontragentCreateKontragentListViewComponent } from './frame/company-account-item-revision-kontragent-create-kontragent-list-view.component';
-import { COMPANY_ACCOUNT_ITEM_REVISION_KONTRAGENT_CREATE_KONTRAGENT_LIST_DATA_NAME } from './company-account-item-revision-kontragent-create-kontragent-list.constant';
-import { COMPANY_ACCOUNT_ITEM_REVISION_KONTRAGENT_CREATE_DATA_NAME } from '../company-account-item-revision-kontragent-create/company-account-item-revision-kontragent-create.constant';
+import { COMPANY_ACCOUNT_ITEM_REVISION_KONTRAGENT_CREATE_KONTRAGENT_LIST_DATA_NAME as DATA_NAME } from './company-account-item-revision-kontragent-create-kontragent-list.constant';
+import { COMPANY_ACCOUNT_ITEM_REVISION_KONTRAGENT_CREATE_DATA_NAME as FIELD_NAME } from '../company-account-item-revision-kontragent-create/company-account-item-revision-kontragent-create.constant';
 
 export function CompanyAccountItemRevisionKontragentCreateKontragentListComponent(
   props,
 ) {
-  const { pageLoading, isPending, isError, isSuccess, data, errorMessage } =
-    props;
-  const { prefix, setFieldValue, value } = props;
+  const {
+    pageLoading,
+    isPending,
+    isError,
+    isSuccess,
+    data,
+    errorMessage,
+    index,
+    setFieldValue,
+    value,
+    errors,
+    touched,
+  } = props;
+
+  const prefix = `${FIELD_NAME.KONTRAGENTS}.${index}.`;
 
   const [open, setOpen] = useState(false);
 
@@ -33,22 +45,16 @@ export function CompanyAccountItemRevisionKontragentCreateKontragentListComponen
   };
 
   const onChange = (value) => {
-    setFieldValue(
-      prefix + COMPANY_ACCOUNT_ITEM_REVISION_KONTRAGENT_CREATE_DATA_NAME.INN,
-      value[
-        COMPANY_ACCOUNT_ITEM_REVISION_KONTRAGENT_CREATE_KONTRAGENT_LIST_DATA_NAME
-          .INN
-      ],
-    );
-    setFieldValue(
-      prefix + COMPANY_ACCOUNT_ITEM_REVISION_KONTRAGENT_CREATE_DATA_NAME.NAME,
-      value[
-        COMPANY_ACCOUNT_ITEM_REVISION_KONTRAGENT_CREATE_KONTRAGENT_LIST_DATA_NAME
-          .NAME
-      ],
-    );
+    setFieldValue(prefix + FIELD_NAME.INN, value[DATA_NAME.INN]);
+    setFieldValue(prefix + FIELD_NAME.NAME, value[DATA_NAME.NAME]);
+    setFieldValue(prefix + FIELD_NAME.KONTRAGENT_ID, value[DATA_NAME.ID]);
     handleClose();
   };
+
+  const kontragentError =
+    errors[FIELD_NAME.KONTRAGENTS]?.[index]?.[FIELD_NAME.KONTRAGENT_ID] &&
+    touched[FIELD_NAME.KONTRAGENTS]?.[index]?.[FIELD_NAME.KONTRAGENT_ID] &&
+    errors[FIELD_NAME.KONTRAGENTS]?.[index]?.[FIELD_NAME.KONTRAGENT_ID];
 
   return (
     <Grid
@@ -67,6 +73,15 @@ export function CompanyAccountItemRevisionKontragentCreateKontragentListComponen
         />
       </Grid>
 
+      {kontragentError && (
+        <Grid item xs={1}>
+          <Alert
+            severity="error"
+            children={text('Необходимо выбрать контрагента')}
+          />
+        </Grid>
+      )}
+
       <Grid item xs={1}>
         <Typography
           variant="listTitle"
@@ -78,11 +93,7 @@ export function CompanyAccountItemRevisionKontragentCreateKontragentListComponen
         <Typography
           variant="listContent"
           component="div"
-          children={
-            value[
-              COMPANY_ACCOUNT_ITEM_REVISION_KONTRAGENT_CREATE_DATA_NAME.NAME
-            ] || text('Выберите контрагента')
-          }
+          children={value[FIELD_NAME.NAME] || text('Выберите контрагента')}
         />
       </Grid>
 
@@ -97,11 +108,7 @@ export function CompanyAccountItemRevisionKontragentCreateKontragentListComponen
         <Typography
           variant="listContent"
           component="div"
-          children={
-            value[
-              COMPANY_ACCOUNT_ITEM_REVISION_KONTRAGENT_CREATE_DATA_NAME.INN
-            ] || text('Выберите контрагента')
-          }
+          children={value[FIELD_NAME.INN] || text('Выберите контрагента')}
         />
       </Grid>
 

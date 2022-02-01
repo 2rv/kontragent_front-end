@@ -9,18 +9,27 @@ export const COMPANY_ACCOUNT_ITEM_REVISION_KONTRAGENT_CREATE_ROUTE_PATH_DYNAMIC 
   ) => `/company/${companyId}/revision/kontragent/create`;
 
 export const COMPANY_ACCOUNT_ITEM_REVISION_KONTRAGENT_CREATE_DATA_NAME = {
-  FILE_ID_LIST: 'fileIdList',
-  KONTRAGENTS: 'kontragents',
-
   NAME: 'name',
   INN: 'inn',
-  DESCRIPTION: 'description',
 
-  YEAR: 'year',
+  KONTRAGENTS: 'kontragents',
+  DESCRIPTION: 'description',
+  FILE_ID_LIST: 'fileIdList',
+  KONTRAGENT_ID: 'kontragentId',
+
   YEARS: 'years',
 
-  FIRST_PERIOD: 'firstPeriod',
-  SECOND_PERIOD: 'secondPeriod',
-  THIRD_PERIOD: 'thirdPeriod',
-  FOURTH_PERIOD: 'fourthPeriod',
+  YEAR: 'year',
+  FIRST_PERIOD: 'kvartal1',
+  SECOND_PERIOD: 'kvartal2',
+  THIRD_PERIOD: 'kvartal3',
+  FOURTH_PERIOD: 'kvartal4',
+};
+export const COMPANY_ACCOUNT_ITEM_REVISION_KONTRAGENT_CREATE_ACTION_TYPE = {
+  FORM_PENDING:
+    'COMPANY_ACCOUNT_ITEM_REVISION_KONTRAGENT_CREATE_ACTION_TYPE.FORM_PENDING',
+  FORM_SUCCESS:
+    'COMPANY_ACCOUNT_ITEM_REVISION_KONTRAGENT_CREATE_ACTION_TYPE.FORM_SUCCESS',
+  FORM_ERROR:
+    'COMPANY_ACCOUNT_ITEM_REVISION_KONTRAGENT_CREATE_ACTION_TYPE.FORM_ERROR',
 };

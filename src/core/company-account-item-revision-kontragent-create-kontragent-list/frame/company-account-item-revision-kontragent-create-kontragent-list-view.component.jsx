@@ -23,8 +23,8 @@ export function CompanyAccountItemRevisionKontragentCreateKontragentListViewComp
     );
   }
 
-  const handleClickItem = (kontragentId) => () => {
-    onChange(kontragentId);
+  const handleClickItem = (kontragent) => () => {
+    onChange(kontragent);
   };
 
   return (

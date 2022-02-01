@@ -14,6 +14,7 @@ import { CompanyAccountItemRevisionKontragentCreatePriceComponent } from './fram
 import { CompanyAccountItemRevisionKontragentCreatePeriodListComponent } from '../company-account-item-revision-kontragent-create-period-list/company-account-item-revision-kontragent-create-period-list.component';
 import { COMPANY_ACCOUNT_ITEM_REVISION_KONTRAGENT_CREATE_DATA_NAME } from './company-account-item-revision-kontragent-create.constant';
 import { CompanyAccountItemRevisionKontragentCreateKontragentListContainer } from '../company-account-item-revision-kontragent-create-kontragent-list/company-account-item-revision-kontragent-create-kontragent-list.container';
+import { getCompanyAccountItemRevisionKontragentPrice } from './company-account-item-revision-kontragent-create.convert';
 
 export function CompanyAccountItemRevisionKontragentCreateComponent(props) {
   const {
@@ -41,6 +42,9 @@ export function CompanyAccountItemRevisionKontragentCreateComponent(props) {
             COMPANY_ACCOUNT_ITEM_REVISION_KONTRAGENT_CREATE_DATA_NAME
               .KONTRAGENTS
           ];
+
+        const TOTAL_PRICE =
+          getCompanyAccountItemRevisionKontragentPrice(KONTRAGENTS);
         return (
           <Grid
             spacing={6}
@@ -89,12 +93,12 @@ export function CompanyAccountItemRevisionKontragentCreateComponent(props) {
                         spacing={4}
                         columns={{ xs: 1, md: 4 }}
                       >
-                        {KONTRAGENTS.map((value, key) => (
-                          <Fragment>
+                        {KONTRAGENTS.map((value, index) => (
+                          <Fragment key={index}>
                             <Grid item xs={1} md={4}>
                               <CompanyAccountItemRevisionKontragentCreateKontragentListContainer
                                 {...formik}
-                                prefix={`${COMPANY_ACCOUNT_ITEM_REVISION_KONTRAGENT_CREATE_DATA_NAME.KONTRAGENTS}.${key}.`}
+                                index={index}
                                 value={value}
                               />
                             </Grid>
@@ -102,7 +106,7 @@ export function CompanyAccountItemRevisionKontragentCreateComponent(props) {
                             <Grid item xs={1} md={4}>
                               <CompanyAccountItemRevisionKontragentCreateFormComponent
                                 {...formik}
-                                prefix={`${COMPANY_ACCOUNT_ITEM_REVISION_KONTRAGENT_CREATE_DATA_NAME.KONTRAGENTS}.${key}.`}
+                                index={index}
                                 value={value}
                               />
                             </Grid>
@@ -110,7 +114,7 @@ export function CompanyAccountItemRevisionKontragentCreateComponent(props) {
                             <Grid item xs={1} md={4}>
                               <CompanyAccountItemRevisionKontragentCreatePeriodListComponent
                                 {...formik}
-                                prefix={`${COMPANY_ACCOUNT_ITEM_REVISION_KONTRAGENT_CREATE_DATA_NAME.KONTRAGENTS}.${key}.`}
+                                index={index}
                                 value={value}
                                 initialYear={initialYear}
                               />
@@ -170,7 +174,7 @@ export function CompanyAccountItemRevisionKontragentCreateComponent(props) {
 
                   <Grid item>
                     <CompanyAccountItemRevisionKontragentCreatePriceComponent
-                      totalPrice={0}
+                      totalPrice={TOTAL_PRICE}
                     />
                   </Grid>
 
@@ -205,16 +209,4 @@ export function CompanyAccountItemRevisionKontragentCreateComponent(props) {
       }}
     </Formik>
   );
-}
-
-{
-  /* 
-              <Typography
-                variant="heading"
-                component="div"
-                children={text(
-                  'COMPANY_ACCOUNT_ITEM_REVISION_CREATE.REVISON_CREATE_COMPANY_LIST.TITLE',
-                )}
-              />
- */
 }
