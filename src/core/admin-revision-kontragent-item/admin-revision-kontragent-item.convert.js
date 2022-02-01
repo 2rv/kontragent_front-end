@@ -1,8 +1,7 @@
-import { COMPANY_ACCOUNT_ITEM_REVISION_ITEM_DATA_NAME as DATA_NAME } from './company-account-item-revision-item.constant';
+import { ADMIN_REVISION_KONTRAGENT_ITEM_DATA_NAME as DATA_NAME } from './admin-revision-kontragent-item.constant';
 import { convertFormatDate } from '../../lib/common/convert/convert.core';
 
-export const convertCompanyAccountItemRevisionItemData = (data) => {
-  console.log(data);
+export const convertAdminRevisionKontragentItem = (data) => {
   return {
     [DATA_NAME.ID]: data[DATA_NAME.ID],
     [DATA_NAME.CREATE_DATE]: convertFormatDate(data[DATA_NAME.CREATE_DATE]),
@@ -21,5 +20,16 @@ export const convertCompanyAccountItemRevisionItemData = (data) => {
         };
       },
     ),
+
+    [DATA_NAME.COMPANY_ID]: data[DATA_NAME.COMPANY][DATA_NAME.ID],
+    [DATA_NAME.COMPANY_NAME]: data[DATA_NAME.COMPANY][DATA_NAME.COMPANY_NAME],
+    [DATA_NAME.COMPANY_INN]: data[DATA_NAME.COMPANY][DATA_NAME.COMPANY_INN],
+
+    [DATA_NAME.CREATOR_ID]: data[DATA_NAME.CREATOR][DATA_NAME.ID],
+    [DATA_NAME.CREATOR_LOGIN]: data[DATA_NAME.CREATOR][DATA_NAME.CREATOR_LOGIN],
+    [DATA_NAME.CREATOR_FIRSTNAME]:
+      data[DATA_NAME.CREATOR][DATA_NAME.CREATOR_FIRSTNAME],
+    [DATA_NAME.CREATOR_LASTNAME]:
+      data[DATA_NAME.CREATOR][DATA_NAME.CREATOR_LASTNAME],
   };
 };

@@ -1,26 +1,26 @@
 import React from 'react';
-
-import { CompanyAccountItemRevisionItemComponent } from './company-account-item-reivision-item.component';
-
 import { useSelector } from 'react-redux';
-
-import { NAVIGATION_STORE_NAME } from '../../lib/common/navigation/navigation.constant';
-
 import { httpRequest } from '../../main/http';
 import { getQuery } from '../../main/navigation/navigation.core';
+import { NAVIGATION_STORE_NAME } from '../../lib/common/navigation/navigation.constant';
 
-import { convertCompanyAccountItemRevisionItemData } from './company-account-item-revision-item.convert';
+import { convertAdminRevisionKontragentItem } from './admin-revision-kontragent-item.convert';
+import { AdminRevisionKontragentItemComponent } from './admin-revision-kontragent-item.component';
 
-export function CompanyAccountItemRevisionItemContainer() {
+export function AdminRevisionKontragentItemContainer() {
   const { pageLoading } = useSelector((state) => ({
     pageLoading: state[NAVIGATION_STORE_NAME].pageLoading,
   }));
-
+  const [isRequestPending, setRequestPending] = React.useState(null);
+  const [getData, setData] = React.useState({});
+  const [isRequestError, setRequestError] = React.useState(null);
+  const [isRequestSuccess, setRequestSuccess] = React.useState(null);
+  const [getRequestErrorMessage, setRequestErrorMessage] = React.useState(null);
   React.useEffect(() => {
-    getCompanyAccountItemRevisionItemInfo();
+    getAdminRevisionKontragentItem();
   }, []);
 
-  const getCompanyAccountItemRevisionItemInfo = async (data) => {
+  const getAdminRevisionKontragentItem = async () => {
     setRequestPending(true);
     setRequestSuccess(false);
     setRequestError(false);
@@ -30,12 +30,10 @@ export function CompanyAccountItemRevisionItemContainer() {
     try {
       const res = await httpRequest({
         method: 'GET',
-        url: `/revision/company/${getQuery('companyId')}/revision/${getQuery(
-          'revisionId',
-        )}`,
+        url: `revision/admin/revision/${getQuery('revisionId')}`,
       });
 
-      const data = convertCompanyAccountItemRevisionItemData(res.data);
+      const data = convertAdminRevisionKontragentItem(res.data);
 
       setRequestPending(false);
       setData(data);
@@ -50,14 +48,8 @@ export function CompanyAccountItemRevisionItemContainer() {
     }
   };
 
-  const [isRequestPending, setRequestPending] = React.useState(null);
-  const [getData, setData] = React.useState({});
-  const [isRequestError, setRequestError] = React.useState(null);
-  const [isRequestSuccess, setRequestSuccess] = React.useState(null);
-  const [getRequestErrorMessage, setRequestErrorMessage] = React.useState(null);
-
   return (
-    <CompanyAccountItemRevisionItemComponent
+    <AdminRevisionKontragentItemComponent
       isPending={isRequestPending || (!isRequestSuccess && pageLoading)}
       isError={isRequestError}
       isSuccess={isRequestSuccess}

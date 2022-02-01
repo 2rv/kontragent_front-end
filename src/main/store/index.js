@@ -48,10 +48,6 @@ import {
 import { articleStore, ARTICLE_STORE_NAME } from '../../core/article-view';
 import { adminRevisionInfoStore } from '../../core/admin-revision-info/admin-revision-info.store';
 import { ADMIN_REVISION_INFO_STORE_NAME } from '../../core/admin-revision-info/admin-revision-info.constant';
-import {
-  adminRevisionReviewStore,
-  ADMIN_REVISION_REVIEW_STORE_NAME,
-} from '../../core/admin-revision-review';
 import { inviteStore } from '../../core/invite/invite.store';
 import { INVITE_STORE_NAME } from '../../core/invite/invite.constant';
 import { articleCommentSendStore } from '../../core/article-comment-send/article-comment-send.store';
@@ -102,7 +98,6 @@ export const reducers = combineReducers({
   [EDIT_ARTICLE_STORE_NAME]: editArticleStore,
   [ARTICLE_STORE_NAME]: articleStore,
   [ADMIN_REVISION_INFO_STORE_NAME]: adminRevisionInfoStore,
-  [ADMIN_REVISION_REVIEW_STORE_NAME]: adminRevisionReviewStore,
   [INVITE_STORE_NAME]: inviteStore,
   [ADMIN_BILL_INFO_STORE_NAME]: adminBillInfoStore,
   [ARTICLE_COMMENT_SEND_STORE_NAME]: articleCommentSendStore,

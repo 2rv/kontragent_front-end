@@ -12,7 +12,7 @@ export function uploadCompanyAccountItemRevisionKontragentCreateForm(data) {
     try {
       await httpRequest({
         method: 'POST',
-        url: `revision/kontragent/${data.companyId}`,
+        url: `revision/company/${data.companyId}`,
         data: convertCompanyAccountItemRevisionKontragentCreateFormData(
           data.values,
         ),

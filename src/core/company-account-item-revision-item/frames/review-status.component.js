@@ -1,7 +1,6 @@
-import { Grid } from '@mui/material';
+import ListItemText from '@mui/material/ListItemText';
 import Typography from '@mui/material/Typography';
 import { text } from '../../../lib/common/text';
-import { ListItemText } from '@mui/material';
 
 export const ReviewStatus = ({ status }) => {
   const reviewText = [
@@ -18,30 +17,19 @@ export const ReviewStatus = ({ status }) => {
       return (
         <ListItemText
           primary={
-            <span>
-              <>
-                <Typography
-                  sx={{ px: 8, pb: 1 }}
-                  variant="listTitle"
-                  component="div"
-                >
-                  {text('ADMIN_REVISION_REVIEW.FORM.LABELS.STATUS')}
-                </Typography>
-              </>
-            </span>
+            <Typography
+              variant="listTitle"
+              component="div"
+              children={text('ADMIN_REVISION_REVIEW.FORM.LABELS.STATUS')}
+            />
           }
           secondary={
-            <span>
-              <>
-                <Typography
-                  sx={{ px: 8, pb: 4, color: 'red' }}
-                  variant="listTitle"
-                  component="div"
-                >
-                  {reviewText}
-                </Typography>
-              </>
-            </span>
+            <Typography
+              sx={{ color: 'red' }}
+              variant="listTitle"
+              component="div"
+              children={reviewText}
+            />
           }
         />
       );
@@ -49,30 +37,19 @@ export const ReviewStatus = ({ status }) => {
       return (
         <ListItemText
           primary={
-            <span>
-              <>
-                <Typography
-                  sx={{ px: 8, pb: 1 }}
-                  variant="listTitle"
-                  component="div"
-                >
-                  {text('ADMIN_REVISION_REVIEW.FORM.LABELS.STATUS')}
-                </Typography>
-              </>
-            </span>
+            <Typography
+              variant="listTitle"
+              component="div"
+              children={text('ADMIN_REVISION_REVIEW.FORM.LABELS.STATUS')}
+            />
           }
           secondary={
-            <span>
-              <>
-                <Typography
-                  sx={{ px: 8, pb: 4, color: 'blue' }}
-                  variant="listTitle"
-                  component="div"
-                >
-                  {reviewText}
-                </Typography>
-              </>
-            </span>
+            <Typography
+              sx={{ color: 'blue' }}
+              variant="listTitle"
+              component="div"
+              children={reviewText}
+            />
           }
         />
       );
@@ -80,30 +57,19 @@ export const ReviewStatus = ({ status }) => {
       return (
         <ListItemText
           primary={
-            <span>
-              <>
-                <Typography
-                  sx={{ px: 8, pb: 1 }}
-                  variant="listTitle"
-                  component="div"
-                >
-                  {text('ADMIN_REVISION_REVIEW.FORM.LABELS.STATUS')}
-                </Typography>
-              </>
-            </span>
+            <Typography
+              variant="listTitle"
+              component="div"
+              children={text('ADMIN_REVISION_REVIEW.FORM.LABELS.STATUS')}
+            />
           }
           secondary={
-            <span>
-              <>
-                <Typography
-                  sx={{ px: 8, pb: 4, color: 'green' }}
-                  variant="listTitle"
-                  component="div"
-                >
-                  {reviewText}
-                </Typography>
-              </>
-            </span>
+            <Typography
+              sx={{ color: 'green' }}
+              variant="listTitle"
+              component="div"
+              children={reviewText}
+            />
           }
         />
       );
@@ -111,30 +77,19 @@ export const ReviewStatus = ({ status }) => {
       return (
         <ListItemText
           primary={
-            <span>
-              <>
-                <Typography
-                  sx={{ px: 8, pb: 1 }}
-                  variant="listTitle"
-                  component="div"
-                >
-                  {text('ADMIN_REVISION_REVIEW.FORM.LABELS.STATUS')}
-                </Typography>
-              </>
-            </span>
+            <Typography
+              variant="listTitle"
+              component="div"
+              children={text('ADMIN_REVISION_REVIEW.FORM.LABELS.STATUS')}
+            />
           }
           secondary={
-            <span>
-              <>
-                <Typography
-                  sx={{ px: 8, pb: 4, color: 'orange' }}
-                  variant="listTitle"
-                  component="div"
-                >
-                  {reviewText}
-                </Typography>
-              </>
-            </span>
+            <Typography
+              sx={{ color: 'orange' }}
+              variant="listTitle"
+              component="div"
+              children={reviewText}
+            />
           }
         />
       );
@@ -142,30 +97,19 @@ export const ReviewStatus = ({ status }) => {
       return (
         <ListItemText
           primary={
-            <span>
-              <>
-                <Typography
-                  sx={{ px: 8, pb: 1 }}
-                  variant="listTitle"
-                  component="div"
-                >
-                  {text('ADMIN_REVISION_REVIEW.FORM.LABELS.STATUS')}
-                </Typography>
-              </>
-            </span>
+            <Typography
+              variant="listTitle"
+              component="div"
+              children={text('ADMIN_REVISION_REVIEW.FORM.LABELS.STATUS')}
+            />
           }
           secondary={
-            <span>
-              <>
-                <Typography
-                  sx={{ px: 8, pb: 4, color: 'green' }}
-                  variant="listTitle"
-                  component="div"
-                >
-                  {reviewText}
-                </Typography>
-              </>
-            </span>
+            <Typography
+              sx={{ color: 'green' }}
+              variant="listTitle"
+              component="div"
+              children={reviewText}
+            />
           }
         />
       );

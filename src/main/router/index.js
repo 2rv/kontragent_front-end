@@ -63,11 +63,6 @@ import {
   UserReferalBalanceRouter,
   USER_REFERAL_BALANCE_ROUTE_PATH,
 } from '../../core/user-referal-balance';
-
-import {
-  RevisionAdminListRouter,
-  REVISION_ADMIN_LIST_ROUTE_PATH,
-} from '../../core/revision-admin-list';
 import {
   UserAdminListRouter,
   USER_ADMIN_LIST_ROUTE_PATH,
@@ -76,14 +71,6 @@ import {
   AccountReferalRouter,
   ACCOUNT_REFERAL_ROUTE_PATH,
 } from '../../core/account-referal';
-import {
-  AdminRevisionReviewRouter,
-  ADMIN_REVISION_REVIEW_ROUTE_PATH,
-} from '../../core/admin-revision-review';
-import {
-  AdminRevisionReviewItemRouter,
-  ADMIN_REVISION_REVIEW_ITEM_ROUTE_PATH,
-} from '../../core/admin-revision-review-item';
 import {
   UserAdminInviteRouter,
   USER_ADMIN_INVITE_ROUTE_PATH,
@@ -188,6 +175,11 @@ import { CompanyAccountItemRevisionSelfCreateRouter } from '../../core/company-a
 import { CompanyAccountItemRevisionKontragentCreateRouter } from '../../core/company-account-item-revision-kontragent-create/company-account-item-revision-kontragent-create.router';
 import { COMPANY_ACCOUNT_ITEM_REVISION_KONTRAGENT_CREATE_ROUTE_PATH } from '../../core/company-account-item-revision-kontragent-create/company-account-item-revision-kontragent-create.constant';
 
+import { ADMIN_REVISION_KONTRAGENT_LIST_ROUTE_PATH } from '../../core/admin-revision-kontragent-list/admin-revision-kontragent-list.constant';
+import { AdminRevisionKontragentListRouter } from '../../core/admin-revision-kontragent-list/admin-revision-kontragent-list.router';
+import { ADMIN_REVISION_KONTRAGENT_ITEM_ROUTE_PATH } from '../../core/admin-revision-kontragent-item/admin-revision-kontragent-item.constant';
+import { AdminRevisionKontragentItemRouter } from '../../core/admin-revision-kontragent-item/admin-revision-kontragent-item.router';
+
 export const routes = {
   '/': IndexRouter,
   [AUTH_LOGIN_ROUTE_PATH]: AuthLoginRouter,
@@ -214,12 +206,9 @@ export const routes = {
   [USER_ADMIN_ITEM_INFO_ROUTE_PATH]: UserAdminItemInfoRouter,
   [USER_ADMIN_ITEM_COMPANY_LIST_ROUTE_PATH]: UserAdminItemCompanyListRouter,
   [USER_ADMIN_LIST_ROUTE_PATH]: UserAdminListRouter,
-  [ADMIN_REVISION_REVIEW_ROUTE_PATH]: AdminRevisionReviewRouter,
-  [ADMIN_REVISION_REVIEW_ITEM_ROUTE_PATH]: AdminRevisionReviewItemRouter,
   [ADMIN_POST_LIST_ROUTE_PATH]: AdminPostListRouter,
   [COMPANY_ACCOUNT_BILL_ITEM_ROUTE_PATH]: CompanyAccountBillItemRouter,
   [COMPANY_ADMIN_LIST_ROUTE_PATH]: CompanyAdminListRouter,
-  [REVISION_ADMIN_LIST_ROUTE_PATH]: RevisionAdminListRouter,
   [AUTH_REFERAL_ROUTE_PATH]: AuthReferalRouter,
   [USER_REFERAL_SYSTEM_ROUTE_PATH]: UserReferalSystemRouter,
   [USER_REFERAL_BALANCE_ROUTE_PATH]: UserReferalBalanceRouter,
@@ -249,6 +238,10 @@ export const routes = {
     CompanyAccountItemRevisionSelfCreateRouter,
   [COMPANY_ACCOUNT_ITEM_REVISION_KONTRAGENT_CREATE_ROUTE_PATH]:
     CompanyAccountItemRevisionKontragentCreateRouter,
+  [ADMIN_REVISION_KONTRAGENT_LIST_ROUTE_PATH]:
+    AdminRevisionKontragentListRouter,
+  [ADMIN_REVISION_KONTRAGENT_ITEM_ROUTE_PATH]:
+    AdminRevisionKontragentItemRouter,
 };
 
 export const Router = routesInit(routes);

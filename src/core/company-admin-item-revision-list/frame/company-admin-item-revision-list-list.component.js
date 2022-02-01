@@ -8,7 +8,7 @@ import Box from '@mui/material/Box';
 import Alert from '@mui/material/Alert';
 import { redirect } from '../../../main/navigation';
 import { text } from '../../../lib/common/text';
-import { ADMIN_REVISION_REVIEW_ITEM_ROUTE_PATH_DYNAMIC } from '../../admin-revision-review-item';
+import { ADMIN_REVISION_KONTRAGENT_ITEM_ROUTE_PATH_DYNAMIC } from '../../admin-revision-kontragent-item/admin-revision-kontragent-item.constant';
 
 import { COMPANY_ADMIN_ITEM_REVISION_LIST_DATA_NAME } from '../company-admin-item-revision-list.constant';
 
@@ -30,13 +30,16 @@ export const CompanyAdminItemRevisionListListComponent = ({ list }) => {
           <ListItem
             key={key}
             onClick={() => {
-              return redirect(ADMIN_REVISION_REVIEW_ITEM_ROUTE_PATH_DYNAMIC, {
-                dynamic: true,
-                params: {
-                  revisionId:
-                    item[COMPANY_ADMIN_ITEM_REVISION_LIST_DATA_NAME.ID],
+              return redirect(
+                ADMIN_REVISION_KONTRAGENT_ITEM_ROUTE_PATH_DYNAMIC,
+                {
+                  dynamic: true,
+                  params: {
+                    revisionId:
+                      item[COMPANY_ADMIN_ITEM_REVISION_LIST_DATA_NAME.ID],
+                  },
                 },
-              });
+              );
             }}
             button
             sx={{ py: 3, px: 3 }}

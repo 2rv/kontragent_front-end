@@ -1,87 +1,115 @@
 import React from 'react';
-
 import Paper from '@mui/material/Paper';
 import Divider from '@mui/material/Divider';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import Alert from '@mui/material/Alert';
+import Grid from '@mui/material/Grid';
 
 import { SkeletonListComponent } from '../../lib/common/skeleton/skeleton-list.component';
-
 import { text } from '../../lib/common/text';
-import Grid from '@mui/material/Grid';
+
 import { CompanyAccountItemRevisionItemPaymentContainer } from '../company-account-item-revision-item-payment/company-account-item-revision-item-payment.container';
-import { CompanyAccountItemRevisionItemListComponent } from './frames/company-account-item-reivision-item-list.component';
-import { CompanyAccountItemRevisionItemAccordionComponent } from './frames/company-account-item-revision-item-accordion.component';
+import { COMPANY_ACCOUNT_ITEM_REVISION_ITEM_DATA_NAME as DATA_NAME } from './company-account-item-revision-item.constant';
+
 import { ReviewStatus } from './frames/review-status.component';
+import { CompanyAccountItemRevisionItemAccordionComponent } from './frames/company-account-item-revision-item-accordion.component';
+import { CompanyAccountItemRevisionItemReviewComponent } from './frames/company-account-item-reivision-item-review.component';
 
-export function CompanyAccountItemRevisionItemComponent({
-  data,
-  isPending,
-  isError,
-  isSuccess,
-  errorMessage,
-}) {
+export function CompanyAccountItemRevisionItemComponent(props) {
+  const { data, isPending, isError, isSuccess, errorMessage } = props;
+
   return (
-    <React.Fragment>
-      <Grid spacing={6} container>
+    <Paper>
+      <Grid container spacing={4}>
         <Grid item>
-          <Paper sx={{ p: 0 }}>
-            <Box>
-              <Typography
-                variant="title"
-                sx={{ px: 8, pt: 8, pb: 2 }}
-                component="div"
-              >
-                {data.title}
-              </Typography>
-
-              <ReviewStatus status={data.status} />
-
-              <Divider sx={{ mx: 8 }} />
-
-              {isSuccess && (
-                <CompanyAccountItemRevisionItemListComponent data={data} />
-              )}
-              {isPending && (
-                <Box sx={{ pt: 4, px: 8, pb: 8 }}>
-                  <SkeletonListComponent text={true} />
-                </Box>
-              )}
-              {isError && (
-                <Box sx={{ pt: 4, px: 8, pb: 8 }}>
-                  <Alert severity="error">{text(`ERROR.${errorMessage}`)}</Alert>
-                </Box>
-              )}
-            </Box>
-          </Paper>
+          <Typography
+            variant="title"
+            component="div"
+            children={text('Проверка контрагентов №' + data[DATA_NAME.ID])}
+          />
+          <Typography
+            variant="subtext"
+            component="div"
+            children={text(
+              'Информация о заказе на проверку выбранных контрагентов',
+            )}
+          />
         </Grid>
+
         <Grid item>
-          <Paper sx={{ p: 0 }}>
-            <Box>
-              {isSuccess && (
-                <CompanyAccountItemRevisionItemAccordionComponent data={data} />
-              )}
-              {isPending && (
-                <Box sx={{ pt: 4, px: 8, pb: 8 }}>
-                  <SkeletonListComponent text={true} />
-                </Box>
-              )}
-              {isError && (
-                <Box sx={{ pt: 4, px: 8, pb: 8 }}>
-                  <Alert severity="error">{text(`ERROR.${errorMessage}`)}</Alert>
-                </Box>
-              )}
-            </Box>
-          </Paper>
-
-          {data.status === 4 && (
-            <Box sx={{ mt: 4 }}>
-              <CompanyAccountItemRevisionItemPaymentContainer data={data} />
-            </Box>
-          )}
+          <Divider />
         </Grid>
+
+        <Grid item>
+          <Typography
+            variant="listTitle"
+            component="div"
+            children={text('COMPANY_ACCOUNT_ITEM_REVISION.REVISION_ITEM.SUM')}
+          />
+          <Typography
+            variant="listContent"
+            children={text(
+              'COMPANY_ACCOUNT_ITEM_REVISION.REVISION_ITEM.SUM_RUB',
+              { price: data[DATA_NAME.PRICE] },
+            )}
+          />
+        </Grid>
+
+        <Grid item>
+          <ReviewStatus status={data[DATA_NAME.STATUS]} />
+        </Grid>
+
+        <Grid item>
+          <Typography
+            variant="listTitle"
+            component="div"
+            children={text(
+              'COMPANY_ACCOUNT_ITEM_REVISION.REVISION_ITEM.CREATE_DATE',
+            )}
+          />
+          <Typography
+            variant="listContent"
+            children={data[DATA_NAME.CREATE_DATE]}
+          />
+        </Grid>
+
+        <Grid item>
+          <Divider />
+        </Grid>
+
+        {isSuccess && (
+          <Grid item>
+            <CompanyAccountItemRevisionItemAccordionComponent
+              data={data[DATA_NAME.REVISION_KONTRAGENT] || []}
+            />
+          </Grid>
+        )}
+
+        {isPending && (
+          <Grid item>
+            <SkeletonListComponent text={true} />
+          </Grid>
+        )}
+
+        {isError && (
+          <Grid item>
+            <Alert severity="error">{text(`ERROR.${errorMessage}`)}</Alert>
+          </Grid>
+        )}
+
+        <Grid item>
+          <CompanyAccountItemRevisionItemReviewComponent data={data} />
+        </Grid>
+
+        {data[DATA_NAME.STATUS] === 4 && (
+          <Grid item>
+            <CompanyAccountItemRevisionItemPaymentContainer
+              price={data[DATA_NAME.PRICE]}
+            />
+          </Grid>
+        )}
       </Grid>
-    </React.Fragment>
+    </Paper>
   );
 }

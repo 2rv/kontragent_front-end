@@ -2,7 +2,7 @@ import { text } from '../../../lib/common/text';
 
 import { SETTINGS_ROUTE_PATH } from '../../settings/settings.constant';
 import { COMPANY_ACCOUNT_LIST_ROUTE_PATH } from '../../company-account-list';
-import { REVISION_ADMIN_LIST_ROUTE_PATH } from '../../revision-admin-list';
+
 import { USER_ADMIN_LIST_ROUTE_PATH } from '../../user-admin-list';
 import { USER_REFERAL_BALANCE_ROUTE_PATH } from '../../user-referal-balance';
 import { USER_REFERAL_SYSTEM_ROUTE_PATH } from '../../user-referal-system';
@@ -16,6 +16,8 @@ import { FEEDBACK_ADMIN_LIST_ROUTE_PATH } from '../../feedback-admin-list';
 import { FEEDBACK_ACCOUNT_CREATE_ROUTE_PATH } from '../../feedback-account-create';
 import { COMPANY_ADMIN_IMPORT_ROUTE_PATH } from '../../company-admin-import';
 import { ADMIN_DASHBOARD_ROUTE_PATH } from '../../admin-dashboard';
+import { ADMIN_REVISION_KONTRAGENT_LIST_ROUTE_PATH } from '../../admin-revision-kontragent-list/admin-revision-kontragent-list.constant';
+
 export const USER_MENU_ITEM = [
   {
     path: USER_REFERAL_BALANCE_ROUTE_PATH,
@@ -47,8 +49,8 @@ export const ADMIN_MENU_ITEM = [
     name: text('NAVIGATION.ADMIN.COMPANIES'),
   },
   {
-    path: REVISION_ADMIN_LIST_ROUTE_PATH,
-    name: text('NAVIGATION.ADMIN.REVISION'),
+    path: ADMIN_REVISION_KONTRAGENT_LIST_ROUTE_PATH,
+    name: text('NAVIGATION.ADMIN.REVISION_KONTRAGENT'),
   },
   {
     path: FEEDBACK_ADMIN_LIST_ROUTE_PATH,
