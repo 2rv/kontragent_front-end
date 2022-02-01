@@ -9,7 +9,7 @@ import { NAVIGATION_STORE_NAME } from '../../lib/common/navigation/navigation.co
 import { httpRequest } from '../../main/http';
 import { getQuery } from '../../main/navigation/navigation.core';
 
-import { performCompanyAccountItemRevisionItemData } from './company-account-item-revision-item.convert';
+import { convertCompanyAccountItemRevisionItemData } from './company-account-item-revision-item.convert';
 
 export function CompanyAccountItemRevisionItemContainer() {
   const { pageLoading } = useSelector((state) => ({
@@ -35,7 +35,7 @@ export function CompanyAccountItemRevisionItemContainer() {
         )}/review`,
       });
 
-      const data = performCompanyAccountItemRevisionItemData(res.data);
+      const data = convertCompanyAccountItemRevisionItemData(res.data);
 
       setRequestPending(false);
       setData(data);

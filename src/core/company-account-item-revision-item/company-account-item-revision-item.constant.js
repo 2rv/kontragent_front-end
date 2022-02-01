@@ -8,13 +8,26 @@ export const COMPANY_ACCOUNT_ITEM_REVISION_ITEM_ROUTE_PATH_DYNAMIC = (
 ) => `/company/${companyId}/revision/${revisionId}`;
 
 export const COMPANY_ACCOUNT_ITEM_REVISION_ITEM_DATA_NAME = {
-  DESCRIPRION: 'description',
-  FILE_DESCRIPRION: 'fileDescription',
+  ID: 'id',
   CREATE_DATE: 'createDate',
-  REVIEW: 'review',
-  FILE_REVIEW: 'fileReview',
+  PRICE: 'price',
   STATUS: 'status',
-  PRICE: 'additionPrice',
+
+  REVISION_KONTRAGENT: 'revisionKontragent',
+  DESCRIPRION: 'description',
+
+  FILES: 'files',
+
+  KONTRAGENT: 'kontragent',
   NAME: 'name',
-  REVISION_COMPANIES: 'revisionCompanies',
+
+  PERIOD: 'period',
+  YEAR: 'year',
+  KVARTAL_1: 'kvartal1',
+  KVARTAL_2: 'kvartal2',
+  KVARTAL_3: 'kvartal3',
+  KVARTAL_4: 'kvartal4',
+
+  REVIEW: 'REVIEW',
+  FILE_REVIEW: 'FILE_REVIEW',
 };

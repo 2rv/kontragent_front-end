@@ -17,55 +17,51 @@ export function CompanyAccountItemRevisionItemPaymentComponent(props) {
     isError,
     isSuccess,
     errorMessage,
-    data,
+    price,
   } = props;
   return (
     <Box>
-      <Paper>
-        <Box>
-          <Box sx={{ pb: 4 }}>
-            <Typography variant="title" gutterBottom component="div">
-              {text('COMPANY_ACCOUNT_ITEM_REVISION.REVISION_PAYMENT.TITLE')}{' '}
-              {data.additionPrice}
-              {text('CURRENCY.RUB')}
-            </Typography>
-            <Typography variant="subTitle" component="div">
-              {text('COMPANY_ACCOUNT_ITEM_REVISION.REVISION_PAYMENT.INFO')}
-            </Typography>
-          </Box>
-          <Divider />
+      <Box sx={{ pb: 4 }}>
+        <Typography variant="title" gutterBottom component="div">
+          {`${text(
+            'COMPANY_ACCOUNT_ITEM_REVISION.REVISION_PAYMENT.TITLE',
+          )} ${price} ${text('CURRENCY.RUB')} `}
+        </Typography>
+        <Typography variant="subTitle" component="div">
+          {text('COMPANY_ACCOUNT_ITEM_REVISION.REVISION_PAYMENT.INFO')}
+        </Typography>
+      </Box>
+      <Divider />
 
-          <CompanyAccountItemRevisionItemPaymentFormComponent
-            {...props}
-            isPending={isPending}
-            isError={isError}
-            isSuccess={isSuccess}
-            errorMessage={errorMessage}
-            pageLoading={pageLoading}
-            onSubmitForm={onSubmitForm}
-          />
+      <CompanyAccountItemRevisionItemPaymentFormComponent
+        {...props}
+        isPending={isPending}
+        isError={isError}
+        isSuccess={isSuccess}
+        errorMessage={errorMessage}
+        pageLoading={pageLoading}
+        onSubmitForm={onSubmitForm}
+      />
 
-          {isSuccess && (
-            <Box sx={{ pt: 4 }}>
-              <Alert severity="success">
-                {text(
-                  'COMPANY_ACCOUNT_ITEM_REVISION.REVISION_PAYMENT.MONEY_DEBITED_FROM_ACCOUNT',
-                )}
-              </Alert>
-            </Box>
-          )}
-          {isPending && (
-            <Box sx={{ pt: 4, width: '100%' }}>
-              <LinearProgress />
-            </Box>
-          )}
-          {isError && (
-            <Box sx={{ pt: 4 }}>
-              <Alert severity="error">{text(`ERROR.${errorMessage}`)}</Alert>
-            </Box>
-          )}
+      {isSuccess && (
+        <Box sx={{ pt: 4 }}>
+          <Alert severity="success">
+            {text(
+              'COMPANY_ACCOUNT_ITEM_REVISION.REVISION_PAYMENT.MONEY_DEBITED_FROM_ACCOUNT',
+            )}
+          </Alert>
         </Box>
-      </Paper>
+      )}
+      {isPending && (
+        <Box sx={{ pt: 4, width: '100%' }}>
+          <LinearProgress />
+        </Box>
+      )}
+      {isError && (
+        <Box sx={{ pt: 4 }}>
+          <Alert severity="error">{text(`ERROR.${errorMessage}`)}</Alert>
+        </Box>
+      )}
     </Box>
   );
 }

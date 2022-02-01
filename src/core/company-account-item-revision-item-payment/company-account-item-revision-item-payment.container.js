@@ -13,7 +13,8 @@ import { NAVIGATION_STORE_NAME } from '../../lib/common/navigation/navigation.co
 import { httpRequest } from '../../main/http';
 import { getQuery, redirect } from '../../main/navigation/navigation.core';
 
-export function CompanyAccountItemRevisionItemPaymentContainer({ data }) {
+export function CompanyAccountItemRevisionItemPaymentContainer(props) {
+  const { price } = props;
   const { pageLoading } = useSelector((state) => ({
     pageLoading: state[NAVIGATION_STORE_NAME].pageLoading,
   }));
@@ -69,7 +70,7 @@ export function CompanyAccountItemRevisionItemPaymentContainer({ data }) {
       validation={companyAccountItemPaymentLinkFormValidation}
       onSubmitForm={loginFormSendData}
       pageLoading={pageLoading}
-      data={data}
+      price={price}
       errorMessage={getRequestErrorMessage}
     />
   );
