@@ -40,7 +40,9 @@ export function FileUploadFieldContainer(props) {
 
   const handleDelete = (e) => {
     const deleteItem = e.target.parentNode.parentNode.id;
-    setData(getData.filter((item) => item.uuid !== deleteItem));
+    const result = getData.filter((item) => item.uuid !== deleteItem);
+    setData(result);
+    props.onFileDelete && props.onFileDelete(result);
   };
 
   const onFileAdd = async (e) => {

@@ -1,2 +1,3 @@
-import { CompanyAccountItemRevisionListPage } from '../../../../core/company-account-item-revision-list';
-export default CompanyAccountItemRevisionListPage;
+import { CompanyAccountItemRevisionPage } from '../../../../core/company-account-item-revision/company-account-item-revision.page';
+
+export default CompanyAccountItemRevisionPage;

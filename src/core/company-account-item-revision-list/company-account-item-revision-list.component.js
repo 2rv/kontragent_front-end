@@ -5,10 +5,9 @@ import Box from '@mui/material/Box';
 import Alert from '@mui/material/Alert';
 
 import { text } from '../../lib/common/text';
-
 import { SkeletonListComponent } from '../../lib/common/skeleton/skeleton-list.component';
 
-import { CompanyAccountItemRevisionListListComponent } from './frame/company-account-item-revision-list-list.component';
+import { CompanyAccountItemRevisionListViewComponent } from './frame/company-account-item-revision-list-view.component';
 
 export function CompanyAccountItemRevisionListComponent({
   data,
@@ -25,7 +24,7 @@ export function CompanyAccountItemRevisionListComponent({
         </Typography>
         <Divider sx={{ mx: 8, my: 4 }} />
         {isSuccess && (
-          <CompanyAccountItemRevisionListListComponent list={data} />
+          <CompanyAccountItemRevisionListViewComponent list={data} />
         )}
         {isPending && (
           <Box sx={{ pt: 4, px: 8, pb: 8 }}>

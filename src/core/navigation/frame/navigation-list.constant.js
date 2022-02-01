@@ -15,7 +15,7 @@ import { NOTIFICATION_EMAIL_CREATE_ROUTE_PATH } from '../../notification-admin-e
 import { FEEDBACK_ADMIN_LIST_ROUTE_PATH } from '../../feedback-admin-list';
 import { FEEDBACK_ACCOUNT_CREATE_ROUTE_PATH } from '../../feedback-account-create';
 import { COMPANY_ADMIN_IMPORT_ROUTE_PATH } from '../../company-admin-import';
-
+import { ADMIN_DASHBOARD_ROUTE_PATH } from '../../admin-dashboard';
 export const USER_MENU_ITEM = [
   {
     path: USER_REFERAL_BALANCE_ROUTE_PATH,
@@ -61,6 +61,10 @@ export const ADMIN_MENU_ITEM = [
   {
     path: USER_ADMIN_INVITE_ROUTE_PATH,
     name: text('NAVIGATION.ADMIN.INVITE'),
+  },
+  {
+    path: ADMIN_DASHBOARD_ROUTE_PATH,
+    name: text('NAVIGATION.ADMIN.DASHBOARD'),
   },
   {
     path: CREATE_ARTICLE_ROUTE_PATH,

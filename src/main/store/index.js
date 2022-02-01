@@ -26,10 +26,7 @@ import {
   navigationStore,
   NAVIGATION_STORE_NAME,
 } from '../../lib/common/navigation';
-import {
-  COMPANY_ACCOUNT_ITEM_REVISION_CREATE_STORE_NAME,
-  companyAccountItemRevisionCreateStore,
-} from '../../core/company-account-item-revision-create';
+
 import {
   ACCOUNT_REFERAL_STORE_NAME,
   accountReferalStore,
@@ -57,10 +54,6 @@ import {
 } from '../../core/admin-revision-review';
 import { inviteStore } from '../../core/invite/invite.store';
 import { INVITE_STORE_NAME } from '../../core/invite/invite.constant';
-import {
-  companyAccountItemSelfRevisionCreateStore,
-  COMPANY_ACCOUNT_ITEM_SELF_REVISION_CREATE_STORE_NAME,
-} from '../../core/company-account-item-self-revision-create';
 import { articleCommentSendStore } from '../../core/article-comment-send/article-comment-send.store';
 import { ARTICLE_COMMENT_SEND_STORE_NAME } from '../../core/article-comment-send/article-comment-send.constant';
 import { articleCommentDeleteStore } from '../../core/article-comment-delete/article-comment-delete.store';
@@ -78,13 +71,13 @@ import {
   COMPANY_ACCOUNT_INFO_DATA_STORE_NAME,
 } from '../../core/company-account-info-data';
 import {
-  CompanyAccountKontragentInfoDataStore,
-  COMPANY_ACCOUNT_KONTRAGENT_INFO_DATA_STORE_NAME,
-} from '../../core/company-account-kontragent-info-data';
+  CompanyAccountItemKontragentItemKonturStore,
+  COMPANY_ACCOUNT_ITEM_KONTRAGENT_ITEM_KONTUR_STORE_NAME,
+} from '../../core/company-account-item-kontragent-item-kontur';
 
 export const reducers = combineReducers({
-  [COMPANY_ACCOUNT_KONTRAGENT_INFO_DATA_STORE_NAME]:
-    CompanyAccountKontragentInfoDataStore,
+  [COMPANY_ACCOUNT_ITEM_KONTRAGENT_ITEM_KONTUR_STORE_NAME]:
+    CompanyAccountItemKontragentItemKonturStore,
   [COMPANY_ACCOUNT_INFO_DATA_STORE_NAME]: CompanyAccountInfoDataStore,
   [AUTH_STORE_NAME]: authStore,
   [LANG_STORE_NAME]: langStore,
@@ -96,8 +89,6 @@ export const reducers = combineReducers({
     authRecoveryAccountUpdatePasswordStore,
   [AUTH_VERIFICATION_EMAIL_STORE_NAME]: authVerificationEmailStore,
   [AUTH_VERIFICATION_PHONE_STORE_NAME]: authVerificationPhoneStore,
-  [COMPANY_ACCOUNT_ITEM_REVISION_CREATE_STORE_NAME]:
-    companyAccountItemRevisionCreateStore,
   [COMPANY_ADMIN_ITEM_INFO_VERIFICATE_STORE_NAME]:
     companyAdminItemInfoVerificateStore,
   [COMPANY_ACCOUNT_ITEM_MEMBER_DELETE_STORE_NAME]:
@@ -113,8 +104,6 @@ export const reducers = combineReducers({
   [ADMIN_REVISION_INFO_STORE_NAME]: adminRevisionInfoStore,
   [ADMIN_REVISION_REVIEW_STORE_NAME]: adminRevisionReviewStore,
   [INVITE_STORE_NAME]: inviteStore,
-  [COMPANY_ACCOUNT_ITEM_SELF_REVISION_CREATE_STORE_NAME]:
-    companyAccountItemSelfRevisionCreateStore,
   [ADMIN_BILL_INFO_STORE_NAME]: adminBillInfoStore,
   [ARTICLE_COMMENT_SEND_STORE_NAME]: articleCommentSendStore,
   [ARTICLE_COMMENT_DELETE_STORE_NAME]: articleCommentDeleteStore,

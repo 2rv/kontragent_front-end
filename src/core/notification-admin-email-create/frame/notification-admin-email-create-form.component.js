@@ -20,6 +20,7 @@ export const NotificationAdminEmailCreateFormComponent = (props) => {
     errors,
     setFileList,
     touched,
+    createEveryone,
   } = props;
 
   const isSubmitDisabled = () => {
@@ -89,6 +90,17 @@ export const NotificationAdminEmailCreateFormComponent = (props) => {
             <Grid item xs={6}>
               <Button fullWidth type="sumbit" disabled={isSubmitDisabled()}>
                 {text('NOTIFICATION_ADMIN_EMAIL_CREATE.BUTTON')}
+              </Button>
+            </Grid>
+
+            <Grid item xs={6}>
+              <Button
+                onClick={() => createEveryone(values)}
+                fullWidth
+                type="button"
+                disabled={isSubmitDisabled()}
+              >
+                {text('NOTIFICATION_ADMIN_EMAIL_CREATE.EVERYONE')}
               </Button>
             </Grid>
           </Grid>

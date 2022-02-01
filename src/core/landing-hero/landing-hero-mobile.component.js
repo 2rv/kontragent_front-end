@@ -4,6 +4,8 @@ import Typography from '@mui/material/Typography';
 
 import { LandingButtonComponent } from '../../lib/common/landing';
 import { text } from '../../lib/common/text';
+import { HOME_ROUTE_PATH } from '../landing';
+import { setLinkRedirect } from '../../main/navigation';
 
 export function LandingHeroMobileComponent() {
   return (
@@ -16,13 +18,14 @@ export function LandingHeroMobileComponent() {
         gap: '16px',
       }}
     >
-      <Title variant="landingTitleHero">
-        {text('LANDING.HERO.TITLE')}
-      </Title>
+      <Title variant="landingTitleHero">{text('LANDING.HERO.TITLE')}</Title>
       <SmallText variant="landingText">
         {text('LANDING.HERO.DESCRIPTION')}
       </SmallText>
-      <LandingButtonComponent tid={text('LANDING.HERO.BUTTON_TEXT')} />
+      <LandingButtonComponent
+        onClick={setLinkRedirect(HOME_ROUTE_PATH + '#about')}
+        tid={text('LANDING.HERO.BUTTON_TEXT')}
+      />
     </Box>
   );
 }

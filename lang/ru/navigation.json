@@ -1,48 +1,54 @@
 {
-	"USER": {
-		"SETITNGS": "Настройки",
-		"MY_COMPANIES": "Мои компании",
-		"SYSTEM": "Реферальная система",
-		"BALANCE": "Баланс реферала",
-		"ARTICLE_CREATE": "Создать статью",
-		"FEEDBACK_CREATE": "Обратная связь"
-	},
-	"ADMIN": {
-		"SETITNGS": "Настройки",
-		"COMPANIES": "Компании",
-		"REVISION": "Проверки",
-		"USERS": "Пользователи",
-		"INVITE": "Приглашение",
-		"POSTS": "Статьи",
-		"BILLS": "Запросы на пополнение счёта",
-		"NOTIFICATION": "Отправить письмо",
-		"FEEDBACK": "Жалобы",
-		"COMPANY_IMPORT": "Импорт компаний",
-		"KONTRAGENT_IMPORT": "Импорт контрагентов"
-	},
-	"TABS": {
-		"COMPANY_ACCOUNT_ITEM": {
-			"REVISION": "Проверка контрагентов",
-			"BALANCE": "Баланс компании",
-			"INFO": "Информация о компании",
-			"MEMBERS": "Сотрудники компании",
-			"KONTRAGENTS": "Контрагенты",
-			"BILL_LIST": "Пополнение счета компании"
-		},
-		"COMPANY_ADMIN_ITEM": {
-			"REVISION": "Запросы на проверку",
-			"BALANCE": "Баланс компании",
-			"INFO": "Информация",
-			"MEMBERS": "Сотрудники компании",
-			"BILL_LIST": "Запросы на пополнение счета компании"
-		},
-		"USER_REFERAL": {
-			"SYSTEM": "Реферальная система",
-			"BALANCE": "Баланс реферала"
-		},
-		"USER_ADMIN_ITEM": {
-			"INFO": "Информация",
-			"COMPANY_USER": "Компании пользователя"
-		}
-	}
+  "USER": {
+    "SETITNGS": "Настройки",
+    "MY_COMPANIES": "Мои компании",
+    "SYSTEM": "Реферальная система",
+    "BALANCE": "Баланс реферала",
+    "ARTICLE_CREATE": "Создать статью",
+    "FEEDBACK_CREATE": "Обратная связь"
+  },
+  "ADMIN": {
+    "SETITNGS": "Настройки",
+    "COMPANIES": "Компании",
+    "REVISION": "Проверки",
+    "USERS": "Пользователи",
+    "INVITE": "Приглашение",
+    "POSTS": "Статьи",
+    "BILLS": "Запросы на пополнение счёта",
+    "NOTIFICATION": "Отправить письмо",
+    "FEEDBACK": "Жалобы",
+    "COMPANY_IMPORT": "Импорт компаний",
+    "KONTRAGENT_IMPORT": "Импорт контрагентов",
+    "DASHBOARD": "Панель админа"
+  },
+  "TABS": {
+    "COMPANY_ACCOUNT_ITEM": {
+      "REVISION_KONTRAGENT": "Проверка контрагентов",
+      "REVISION_SELF": "Проверка своей компании",
+      "BALANCE": "Баланс компании",
+      "INFO": "Информация о компании",
+      "MEMBERS": "Сотрудники компании",
+      "KONTRAGENTS": "Контрагенты",
+      "BILL_LIST": "Пополнение счета компании",
+      "KONTRAGENT_ITEM": {
+        "DATA": "Информация о контрагенте",
+        "REVIEW_LIST": "Проверки контрагента"
+      }
+    },
+    "COMPANY_ADMIN_ITEM": {
+      "REVISION": "Запросы на проверку",
+      "BALANCE": "Баланс компании",
+      "INFO": "Информация",
+      "MEMBERS": "Сотрудники компании",
+      "BILL_LIST": "Запросы на пополнение счета компании"
+    },
+    "USER_REFERAL": {
+      "SYSTEM": "Реферальная система",
+      "BALANCE": "Баланс реферала"
+    },
+    "USER_ADMIN_ITEM": {
+      "INFO": "Информация",
+      "COMPANY_USER": "Компании пользователя"
+    }
+  }
 }

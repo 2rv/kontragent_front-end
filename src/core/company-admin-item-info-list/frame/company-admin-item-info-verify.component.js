@@ -8,7 +8,7 @@ import { redirect, getQuery } from '../../../main/navigation/navigation.core';
 
 import { text } from '../../../lib/common/text';
 
-import { COMPANY_ACCOUNT_ITEM_REVISION_CREATE_ROUTE_PATH_DYNAMIC } from '../../company-account-item-revision-create';
+import { COMPANY_ACCOUNT_ITEM_REVISION_KONTRAGENT_CREATE_ROUTE_PATH_DYNAMIC } from '../../company-account-item-revision-kontragent-create/company-account-item-revision-kontragent-create.constant';
 
 export function CompanyAdminItemInfoVerify() {
   return (
@@ -25,9 +25,8 @@ export function CompanyAdminItemInfoVerify() {
             <Button
               onClick={() => {
                 return redirect(
-                  COMPANY_ACCOUNT_ITEM_REVISION_CREATE_ROUTE_PATH_DYNAMIC,
+                  COMPANY_ACCOUNT_ITEM_REVISION_KONTRAGENT_CREATE_ROUTE_PATH_DYNAMIC,
                   {
-                    dynamic: true,
                     params: {
                       companyId: getQuery('companyId'),
                     },

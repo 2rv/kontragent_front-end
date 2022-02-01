@@ -7,6 +7,7 @@ import {
 import { HOME_ROUTE_PATH } from '../landing';
 import { USER_ADMIN_LIST_ROUTE_PATH } from '../../core/user-admin-list';
 import { COMPANY_ACCOUNT_LIST_ROUTE_PATH } from '../../core/company-account-list';
+
 export function IndexRouter(ctx) {
   if (authRedirectPrivated(ctx, HOME_ROUTE_PATH)) return;
   if (authRedirectVerification(ctx)) return;

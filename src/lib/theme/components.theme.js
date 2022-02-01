@@ -64,7 +64,6 @@ export const components = {
       variant: 'outlined',
       fullWidth: true,
       displayEmpty: true,
-
       size: 'medium',
     },
     styleOverrides: {},

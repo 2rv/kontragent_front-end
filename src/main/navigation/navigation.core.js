@@ -10,7 +10,13 @@ export const redirect = (pathname, config = {}) => {
     params,
     scrollTop = true,
     shallow,
+    newTab,
   } = config;
+
+  if (newTab) {
+    window.open(pathname);
+    return;
+  }
 
   if (params) {
     return router
