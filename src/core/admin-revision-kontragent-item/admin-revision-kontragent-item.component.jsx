@@ -83,7 +83,9 @@ export function AdminRevisionKontragentItemComponent(props) {
         </Grid>
 
         {isError && (
-          <Alert severity="error">{text(`ERROR.${errorMessage}`)}</Alert>
+          <Grid item>
+            <Alert severity="error">{text(`ERROR.${errorMessage}`)}</Alert>
+          </Grid>
         )}
         {isPending && <SkeletonListComponent text={true} />}
 
@@ -112,6 +114,7 @@ export function AdminRevisionKontragentItemComponent(props) {
             children={text('ADMIN_REVISION_REVIEW.TITLE.INFO_USER')}
           />
         </Grid>
+
         <Grid item>
           <AdminRevisionKontragentItemCreatorComponent data={data} />
         </Grid>

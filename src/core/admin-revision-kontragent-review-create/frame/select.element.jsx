@@ -1,19 +1,11 @@
-import * as React from 'react';
 import Grid from '@mui/material/Grid';
 import Select from '@mui/material/Select';
 import Typography from '@mui/material/Typography';
 import MenuItem from '@mui/material/MenuItem';
-import { useDispatch } from 'react-redux';
 import { REVISION_STATUS } from '../admin-revision-kontragent-review-create.constant';
 import { text } from '../../../lib/common/text';
 
-export const SelectElement = ({ label, storeOnChange, ...props }) => {
-  const dispatch = useDispatch();
-  const handleChange = (e) => {
-    props.onChange(e);
-    storeOnChange && dispatch(storeOnChange(e.target.value));
-  };
-
+export const SelectElement = ({ label, ...props }) => {
   return (
     <Grid container spacing={2}>
       {label && (
@@ -22,7 +14,7 @@ export const SelectElement = ({ label, storeOnChange, ...props }) => {
         </Grid>
       )}
       <Grid item>
-        <Select {...props} onChange={(e) => handleChange(e)}>
+        <Select {...props}>
           <MenuItem sx={{ mt: -7, ml: -6, mr: -6 }} value={REVISION_STATUS.NEW}>
             {text('COMMON.REVISION.STATUS_TYPE.NEW')}
           </MenuItem>

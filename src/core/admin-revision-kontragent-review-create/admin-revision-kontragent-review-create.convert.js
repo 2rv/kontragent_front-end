@@ -8,11 +8,11 @@ export const convertAdminRevisionKontragentReviewCreateFormData = (data) => {
   if (data[FIELD_NAME.STATUS]) {
     converted[FIELD_NAME.STATUS] = data[FIELD_NAME.STATUS];
   }
-  if (data[FIELD_NAME.PRICE]) {
+  if (typeof data[FIELD_NAME.PRICE] === 'number') {
     converted[FIELD_NAME.PRICE] = Number(data[FIELD_NAME.PRICE]);
   }
-  if (!data[FIELD_NAME.FILES_REVIEW].length) {
-    converted[FIELD_NAME.FILES_REVIEW] = data[FIELD_NAME.FILES_REVIEW];
-  }
+
+  converted[FIELD_NAME.FILES_REVIEW] = data[FIELD_NAME.FILES_REVIEW];
+
   return converted;
 };
