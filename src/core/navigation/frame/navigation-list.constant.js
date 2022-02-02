@@ -17,6 +17,7 @@ import { FEEDBACK_ACCOUNT_CREATE_ROUTE_PATH } from '../../feedback-account-creat
 import { COMPANY_ADMIN_IMPORT_ROUTE_PATH } from '../../company-admin-import';
 import { ADMIN_DASHBOARD_ROUTE_PATH } from '../../admin-dashboard';
 import { ADMIN_REVISION_KONTRAGENT_LIST_ROUTE_PATH } from '../../admin-revision-kontragent-list/admin-revision-kontragent-list.constant';
+import { ADMIN_REVISION_SELF_LIST_ROUTE_PATH } from '../../admin-revision-self-list/admin-revision-self-list.constant';
 
 export const USER_MENU_ITEM = [
   {
@@ -51,6 +52,10 @@ export const ADMIN_MENU_ITEM = [
   {
     path: ADMIN_REVISION_KONTRAGENT_LIST_ROUTE_PATH,
     name: text('NAVIGATION.ADMIN.REVISION_KONTRAGENT'),
+  },
+  {
+    path: ADMIN_REVISION_SELF_LIST_ROUTE_PATH,
+    name: text('NAVIGATION.ADMIN.REVISION_SELF'),
   },
   {
     path: FEEDBACK_ADMIN_LIST_ROUTE_PATH,

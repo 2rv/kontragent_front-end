@@ -24,7 +24,7 @@ export function CompanyAccountItemRevisionSelfItemPaymentContainer(props) {
 
       await httpRequest({
         method: 'POST',
-        url: `/revision/company/${companyId}/revision/${revisionId}/payment`,
+        url: `/revision-self/company/${companyId}/revision/${revisionId}/payment`,
       });
 
       setRequestPending(false);

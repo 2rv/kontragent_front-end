@@ -186,6 +186,12 @@ import { CompanyAccountItemRevisionSelfItemRouter } from '../../core/company-acc
 import { COMPANY_ACCOUNT_ITEM_REVISION_SELF_CREATE_ROUTE_PATH } from '../../core/company-account-item-revision-self-create/company-account-item-revision-self-create.constant';
 import { CompanyAccountItemRevisionSelfCreateRouter } from '../../core/company-account-item-revision-self-create/company-account-item-revision-self-create.router';
 
+import { ADMIN_REVISION_SELF_LIST_ROUTE_PATH } from '../../core/admin-revision-self-list/admin-revision-self-list.constant';
+import { AdminRevisionSelfListRouter } from '../../core/admin-revision-self-list/admin-revision-self-list.router';
+
+import { ADMIN_REVISION_SELF_ITEM_ROUTE_PATH } from '../../core/admin-revision-self-item/admin-revision-self-item.constant';
+import { AdminRevisionSelfItemRouter } from '../../core/admin-revision-self-item/admin-revision-self-item.router';
+
 export const routes = {
   '/': IndexRouter,
   [AUTH_LOGIN_ROUTE_PATH]: AuthLoginRouter,
@@ -255,6 +261,8 @@ export const routes = {
     CompanyAccountItemRevisionSelfItemRouter,
   [COMPANY_ACCOUNT_ITEM_REVISION_SELF_CREATE_ROUTE_PATH]:
     CompanyAccountItemRevisionSelfCreateRouter,
+  [ADMIN_REVISION_SELF_LIST_ROUTE_PATH]: AdminRevisionSelfListRouter,
+  [ADMIN_REVISION_SELF_ITEM_ROUTE_PATH]: AdminRevisionSelfItemRouter,
 };
 
 export const Router = routesInit(routes);
