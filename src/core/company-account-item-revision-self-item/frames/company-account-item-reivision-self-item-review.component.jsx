@@ -14,18 +14,14 @@ export function CompanyAccountItemRevisionSelfItemReviewComponent(props) {
         <Typography
           variant="listTitle"
           component="div"
-          children={text(
-            'COMPANY_ACCOUNT_ITEM_REVISION.REVISION_ITEM.RESULT_OF_CHECKING',
-          )}
+          children={text('COMPANY_ACCOUNT_ITEM_REVISION.SELF.ITEM.REVIEW')}
         />
         {data[DATA_NAME.REVIEW] ? (
           <Typography variant="listTitle" children={data[DATA_NAME.REVIEW]} />
         ) : (
           <Typography
             variant="listContent"
-            children={text(
-              'COMPANY_ACCOUNT_ITEM_REVISION.REVISION_ITEM.WE_NOT_COMPILED_RESULT_OF_YOUR_REQUEST',
-            )}
+            children={text('COMPANY_ACCOUNT_ITEM_REVISION.SELF.ITEM.NO_REVIEW')}
           />
         )}
       </Grid>
@@ -35,7 +31,7 @@ export function CompanyAccountItemRevisionSelfItemReviewComponent(props) {
           variant="listTitle"
           component="div"
           children={text(
-            'COMPANY_ACCOUNT_ITEM_REVISION.REVISION_ITEM.FILES_FOR_DESCRIBING_RESPONSE_RESULT',
+            'COMPANY_ACCOUNT_ITEM_REVISION.SELF.ITEM.REVIEW_FILES',
           )}
         />
         {!!data[DATA_NAME.FILES_REVIEW]?.length ? (
@@ -44,7 +40,7 @@ export function CompanyAccountItemRevisionSelfItemReviewComponent(props) {
           <Typography
             variant="listContent"
             children={text(
-              'COMPANY_ACCOUNT_ITEM_REVISION.REVISION_ITEM.NO_FILES_PROVIDED',
+              'COMPANY_ACCOUNT_ITEM_REVISION.SELF.ITEM.REVIEW_NO_FILES',
             )}
           />
         )}

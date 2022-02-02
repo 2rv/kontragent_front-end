@@ -17,10 +17,8 @@ export function CompanyAccountItemRevisionSelfItemPaymentComponent(props) {
           variant="title"
           component="div"
           children={text(
-            'COMPANY_ACCOUNT_ITEM_REVISION.REVISION_PAYMENT.TITLE',
-            {
-              price,
-            },
+            'COMPANY_ACCOUNT_ITEM_REVISION.SELF.ITEM_PAYMENT.TITLE',
+            { price },
           )}
         />
       </Grid>
@@ -29,7 +27,9 @@ export function CompanyAccountItemRevisionSelfItemPaymentComponent(props) {
         <Typography
           variant="subTitle"
           component="div"
-          children={text('COMPANY_ACCOUNT_ITEM_REVISION.REVISION_PAYMENT.INFO')}
+          children={text(
+            'COMPANY_ACCOUNT_ITEM_REVISION.SELF.ITEM_PAYMENT.INFO',
+          )}
         />
       </Grid>
 
@@ -41,9 +41,7 @@ export function CompanyAccountItemRevisionSelfItemPaymentComponent(props) {
         <Button
           onClick={onSubmitForm}
           fullWidth
-          children={text(
-            'COMPANY_ACCOUNT_ITEM_REVISION.REVISION_PAYMENT.FORM.BUTTON.TITLE',
-          )}
+          children={text('COMPANY_ACCOUNT_ITEM_REVISION.SELF.ITEM_PAYMENT.PAY')}
         />
       </Grid>
 
@@ -58,7 +56,7 @@ export function CompanyAccountItemRevisionSelfItemPaymentComponent(props) {
           <Alert
             severity="success"
             children={text(
-              'COMPANY_ACCOUNT_ITEM_REVISION.REVISION_PAYMENT.MONEY_DEBITED_FROM_ACCOUNT',
+              'COMPANY_ACCOUNT_ITEM_REVISION.SELF.ITEM_PAYMENT.SUCCESS_PAY',
             )}
           />
         </Grid>

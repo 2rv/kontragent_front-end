@@ -13,18 +13,15 @@ export const COMPANY_ACCOUNT_ITEM_REVISION_ITEM_SELF_DATA_NAME = {
   PRICE: 'price',
   STATUS: 'status',
 
-  DESCRIPRION: 'description',
-
-  FILES: 'files',
-
-  NAME: 'name',
-
   PERIOD: 'period',
   YEAR: 'year',
   KVARTAL_1: 'kvartal1',
   KVARTAL_2: 'kvartal2',
   KVARTAL_3: 'kvartal3',
   KVARTAL_4: 'kvartal4',
+
+  DESCRIPRION: 'description',
+  FILES: 'files',
 
   REVIEW: 'review',
   FILES_REVIEW: 'filesReview',

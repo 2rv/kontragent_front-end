@@ -15,7 +15,7 @@ export function CompanyAccountItemRevisionSelfListComponent(props) {
     <Paper sx={{ p: 0 }}>
       <Box>
         <Typography variant="heading" sx={{ px: 8, pt: 8 }} component="div">
-          {text('COMPANY_ACCOUNT_ITEM_REVISION.REVISION_LIST.TITLE')}
+          {text('COMPANY_ACCOUNT_ITEM_REVISION.SELF.LIST.TITLE')}
         </Typography>
         <Divider sx={{ mx: 8, my: 4 }} />
         {isSuccess && (

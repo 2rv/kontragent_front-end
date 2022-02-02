@@ -30,11 +30,12 @@ export function CompanyAccountItemRevisionSelfItemContainer() {
     setData({});
 
     try {
+      const companyId = getQuery('companyId');
+      const revisionId = getQuery('revisionId');
+
       const res = await httpRequest({
         method: 'GET',
-        url: `/revision/company/${getQuery('companyId')}/revision/${getQuery(
-          'revisionId',
-        )}`,
+        url: `/revision-self/company/${companyId}/revision/${revisionId}`,
       });
 
       const data = convertCompanyAccountItemRevisionSelfItemData(res.data);

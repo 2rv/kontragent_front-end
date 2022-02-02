@@ -20,9 +20,7 @@ export function CompanyAccountItemRevisionSelfListViewComponent(props) {
     return (
       <Box sx={{ pb: 8, px: 8 }}>
         <Alert severity="info">
-          {text(
-            'COMPANY_ACCOUNT_ITEM_REVISION.REVISION_LIST.YOUR_LIST_IS_EMPTY',
-          )}
+          {text('COMPANY_ACCOUNT_ITEM_REVISION.SELF.LIST.LIST_IS_EMPTY')}
         </Alert>
       </Box>
     );

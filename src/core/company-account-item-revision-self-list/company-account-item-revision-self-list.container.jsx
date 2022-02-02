@@ -31,7 +31,7 @@ export function CompanyAccountItemRevisionSelfListContainer() {
     try {
       const res = await httpRequest({
         method: 'GET',
-        url: `/revision/company/${getQuery('companyId')}`,
+        url: `/revision-self/company/${getQuery('companyId')}`,
       });
 
       const data = performCompanyAccountItemRevisionSelfListData(res.data);

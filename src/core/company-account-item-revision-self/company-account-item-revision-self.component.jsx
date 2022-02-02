@@ -24,17 +24,13 @@ export function CompanyAccountItemRevisionSelfComponent() {
           <Typography
             variant="title"
             component="div"
-            children={text(
-              'COMPANY_ACCOUNT_ITEM_REVISION.SELF_REVISION_CREATE_INFO.TITLE',
-            )}
+            children={text('COMPANY_ACCOUNT_ITEM_REVISION.SELF.TITLE')}
             sx={{ pb: 2 }}
           />
           <Typography
             variant="subTitle"
             component="div"
-            children={text(
-              'COMPANY_ACCOUNT_ITEM_REVISION.SELF_REVISION_CREATE_INFO.INFO',
-            )}
+            children={text('COMPANY_ACCOUNT_ITEM_REVISION.SELF.DESCRIPTION')}
           />
         </Grid>
 
@@ -42,9 +38,7 @@ export function CompanyAccountItemRevisionSelfComponent() {
           <Button
             fullWidth
             onClick={handleClick}
-            children={text(
-              'COMPANY_ACCOUNT_ITEM_REVISION.SELF_REVISION_CREATE_INFO.BUTTON_TEXT',
-            )}
+            children={text('COMPANY_ACCOUNT_ITEM_REVISION.SELF.CREATE_BUTTON')}
           />
         </Grid>
       </Grid>

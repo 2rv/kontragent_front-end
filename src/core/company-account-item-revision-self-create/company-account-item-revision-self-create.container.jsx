@@ -1,43 +1,43 @@
-import { useEffect } from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { NAVIGATION_STORE_NAME } from '../../lib/common/navigation';
-import { CompanyAccountItemRevisionSelfCreateComponent } from './company-account-item-revision-self-create.component';
-import { COMPANY_ACCOUNT_ITEM_REVISION_SELF_CREATE_DATA_NAME } from './company-account-item-revision-self-create.constant';
+import { COMPANY_ACCOUNT_ITEM_REVISION_SELF_CREATE_DATA_NAME as FIELD_NAME } from './company-account-item-revision-self-create.constant';
+import { uploadCompanyAccountItemRevisionSelfCreateForm } from './company-account-item-revision-self-create.action';
+import { convertCompanyAccountItemRevisionSelfCreateFormData } from './company-account-item-revision-self-create.convert';
 import { companyAccountItemRevisionSelfCreateFormValidation } from './company-account-item-revision-self-create.validation';
+import { CompanyAccountItemRevisionSelfCreateComponent } from './company-account-item-revision-self-create.component';
+import { getQuery } from '../../main/navigation';
 
 export function CompanyAccountItemRevisionSelfCreateContainer() {
+  const dispatch = useDispatch();
   const { pageLoading } = useSelector((state) => ({
     pageLoading: state[NAVIGATION_STORE_NAME].pageLoading,
   }));
 
   const getInitialValue = () => {
     return {
-      [COMPANY_ACCOUNT_ITEM_REVISION_SELF_CREATE_DATA_NAME.DESCRIPTION]: '',
-      [COMPANY_ACCOUNT_ITEM_REVISION_SELF_CREATE_DATA_NAME.FILE_ID_LIST]: [],
-      [COMPANY_ACCOUNT_ITEM_REVISION_SELF_CREATE_DATA_NAME.YEARS]: [
-        initialYear,
-      ],
+      [FIELD_NAME.DESCRIPTION]: '',
+      [FIELD_NAME.FILE_ID_LIST]: [],
+      [FIELD_NAME.YEARS]: [initialYear],
     };
   };
   const initialYear = {
-    [COMPANY_ACCOUNT_ITEM_REVISION_SELF_CREATE_DATA_NAME.YEAR]: '',
-    [COMPANY_ACCOUNT_ITEM_REVISION_SELF_CREATE_DATA_NAME.FIRST_PERIOD]: true,
-    [COMPANY_ACCOUNT_ITEM_REVISION_SELF_CREATE_DATA_NAME.SECOND_PERIOD]: true,
-    [COMPANY_ACCOUNT_ITEM_REVISION_SELF_CREATE_DATA_NAME.THIRD_PERIOD]: true,
-    [COMPANY_ACCOUNT_ITEM_REVISION_SELF_CREATE_DATA_NAME.FOURTH_PERIOD]: true,
+    [FIELD_NAME.YEAR]: '',
+    [FIELD_NAME.FIRST_PERIOD]: true,
+    [FIELD_NAME.SECOND_PERIOD]: true,
+    [FIELD_NAME.THIRD_PERIOD]: true,
+    [FIELD_NAME.FOURTH_PERIOD]: true,
   };
 
-  useEffect(() => {
-    // dispatch(resetPromocodeAdminCreateForm());
-  }, []);
-
   const onSubmitForm = (values) => {
-    console.log(values);
-    // getQuery('companyId');
-    // const data = convertCompanyAccountItemRevisionSelfCreateFormData(
-    //   state.company,
-    // );
-    // await uploadCompanyAccountItemRevisionSelfCreateForm(data);
+    try {
+      const data = {
+        values: convertCompanyAccountItemRevisionSelfCreateFormData(values),
+        companyId: getQuery('companyId'),
+      };
+      dispatch(uploadCompanyAccountItemRevisionSelfCreateForm(data));
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (

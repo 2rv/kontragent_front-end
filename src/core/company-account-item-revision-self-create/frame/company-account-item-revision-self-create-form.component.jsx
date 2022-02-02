@@ -3,8 +3,7 @@ import Typography from '@mui/material/Typography';
 import { text } from '../../../lib/common/text';
 import { TextFieldElement } from '../../../lib/element/text-field.element';
 import { FileUploadFieldContainer } from '../../../lib/common/file-upload-field/file-upload-field.container';
-
-import { COMPANY_ACCOUNT_ITEM_REVISION_SELF_CREATE_DATA_NAME } from '../company-account-item-revision-self-create.constant';
+import { COMPANY_ACCOUNT_ITEM_REVISION_SELF_CREATE_DATA_NAME as FIELD_NAME } from '../company-account-item-revision-self-create.constant';
 
 export function CompanyAccountItemRevisionSelfCreateFormComponent(props) {
   const { handleChange, handleBlur, values, errors, touched, setFieldValue } =
@@ -33,20 +32,12 @@ export function CompanyAccountItemRevisionSelfCreateFormComponent(props) {
           placeholder={text(
             'COMPANY_ACCOUNT_ITEM_REVISION_CREATE.REVISON_CREATE_COMPANY_INFO.FORM.FIELD.LABELS.COMPANY_INFO',
           )}
-          name={COMPANY_ACCOUNT_ITEM_REVISION_SELF_CREATE_DATA_NAME.DESCRIPTION}
+          name={FIELD_NAME.DESCRIPTION}
           onChange={handleChange}
           onBlur={handleBlur}
-          value={
-            values[
-              COMPANY_ACCOUNT_ITEM_REVISION_SELF_CREATE_DATA_NAME.DESCRIPTION
-            ]
-          }
-          error={isFieldError(
-            COMPANY_ACCOUNT_ITEM_REVISION_SELF_CREATE_DATA_NAME.DESCRIPTION,
-          )}
-          errorText={getFieldError(
-            COMPANY_ACCOUNT_ITEM_REVISION_SELF_CREATE_DATA_NAME.DESCRIPTION,
-          )}
+          value={values[FIELD_NAME.DESCRIPTION]}
+          error={isFieldError(FIELD_NAME.DESCRIPTION)}
+          errorText={getFieldError(FIELD_NAME.DESCRIPTION)}
           fullWidth
           multiline
           minRows={4}
@@ -58,13 +49,13 @@ export function CompanyAccountItemRevisionSelfCreateFormComponent(props) {
         <FileUploadFieldContainer
           onFileAdd={(value) => {
             setFieldValue(
-              COMPANY_ACCOUNT_ITEM_REVISION_SELF_CREATE_DATA_NAME.FILE_ID_LIST,
+              FIELD_NAME.FILE_ID_LIST,
               value.map((i) => i.id),
             );
           }}
           onFileDelete={(value) => {
             setFieldValue(
-              COMPANY_ACCOUNT_ITEM_REVISION_SELF_CREATE_DATA_NAME.FILE_ID_LIST,
+              FIELD_NAME.FILE_ID_LIST,
               value.map((i) => i.id),
             );
           }}

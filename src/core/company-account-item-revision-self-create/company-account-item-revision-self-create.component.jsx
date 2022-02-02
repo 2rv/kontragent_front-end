@@ -1,6 +1,5 @@
 import { Formik } from 'formik';
 import Grid from '@mui/material/Grid';
-import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Divider from '@mui/material/Divider';
 import Alert from '@mui/material/Alert';
@@ -11,6 +10,8 @@ import { text } from '../../lib/common/text';
 import { CompanyAccountItemRevisionSelfCreateFormComponent } from './frame/company-account-item-revision-self-create-form.component';
 import { CompanyAccountItemRevisionSelfCreatePriceComponent } from './frame/company-account-item-revision-self-create-price.component';
 import { CompanyAccountItemRevisionSelfCreatePeriodListComponent } from '../company-account-item-revision-self-create-period-list/company-account-item-revision-self-create-period-list.component';
+import { getCompanyAccountItemRevisionSelfPrice } from './company-account-item-revision-self-create.convert';
+import { COMPANY_ACCOUNT_ITEM_REVISION_SELF_CREATE_DATA_NAME as FIELD_NAME } from './company-account-item-revision-self-create.constant';
 
 export function CompanyAccountItemRevisionSelfCreateComponent(props) {
   const {
@@ -31,6 +32,10 @@ export function CompanyAccountItemRevisionSelfCreateComponent(props) {
       onSubmit={onSubmitForm}
     >
       {(formik) => {
+        const TOTAL_PRICE = getCompanyAccountItemRevisionSelfPrice(
+          formik.values[FIELD_NAME.YEARS],
+        );
+
         return (
           <Grid
             spacing={6}
@@ -114,7 +119,7 @@ export function CompanyAccountItemRevisionSelfCreateComponent(props) {
 
                   <Grid item>
                     <CompanyAccountItemRevisionSelfCreatePriceComponent
-                      totalPrice={0}
+                      totalPrice={TOTAL_PRICE}
                     />
                   </Grid>
 
