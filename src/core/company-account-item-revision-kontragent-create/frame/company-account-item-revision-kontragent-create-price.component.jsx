@@ -33,6 +33,7 @@ export function CompanyAccountItemRevisionKontragentCreatePriceComponent(
       <Grid item xs={8} sm={4}>
         <Button
           type="submit"
+          disabled={!totalPrice}
           fullWidth
           children={text(
             'COMPANY_ACCOUNT_ITEM_REVISION_CREATE.REVISION_CREATE_COMPANY_PRICE.BUTTON',

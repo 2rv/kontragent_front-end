@@ -159,9 +159,6 @@ import {
 import { COMPANY_ACCOUNT_ITEM_KONTRAGENT_ITEM_ROUTE_PATH } from '../../core/company-account-item-kontragent-item/company-account-item-kontragent-item.constant';
 import { CompanyAccountItemKontragentItemRouter } from '../../core/company-account-item-kontragent-item/company-account-item-kontragent-item.router';
 
-import { COMPANY_ACCOUNT_ITEM_KONTRAGENT_ITEM_REVIEW_LIST_ROUTE_PATH } from '../../core/company-account-item-kontragent-item-review-list/company-account-item-kontragent-item-review-list.constant';
-import { CompanyAccountItemKontragentItemReviewListRouter } from '../../core/company-account-item-kontragent-item-review-list/company-account-item-kontragent-item-review-list.router';
-
 import { COMPANY_ACCOUNT_ITEM_REVISION_KONTRAGENT_ROUTE_PATH } from '../../core/company-account-item-revision-kontragent/company-account-item-revision-kontragent.constant';
 import { CompanyAccountItemRevisionKontragentRouter } from '../../core/company-account-item-revision-kontragent/company-account-item-revision-kontragent.router';
 
@@ -192,6 +189,9 @@ import { AdminRevisionSelfListRouter } from '../../core/admin-revision-self-list
 import { ADMIN_REVISION_SELF_ITEM_ROUTE_PATH } from '../../core/admin-revision-self-item/admin-revision-self-item.constant';
 import { AdminRevisionSelfItemRouter } from '../../core/admin-revision-self-item/admin-revision-self-item.router';
 
+import { COMPANY_ACCOUNT_ITEM_KONTRAGENT_ITEM_REVISION_LIST_ROUTE_PATH } from '../../core/company-account-item-kontragent-item-revision-list/company-account-item-kontragent-item-revision-list.constant';
+import { CompanyAccountItemKontragentItemRevisionListRouter } from '../../core/company-account-item-kontragent-item-revision-list/company-account-item-kontragent-item-revision-list.router';
+
 export const routes = {
   '/': IndexRouter,
   [AUTH_LOGIN_ROUTE_PATH]: AuthLoginRouter,
@@ -209,8 +209,6 @@ export const routes = {
     CompanyAccountItemKontragentRouter,
   [COMPANY_ACCOUNT_ITEM_KONTRAGENT_ITEM_ROUTE_PATH]:
     CompanyAccountItemKontragentItemRouter,
-  [COMPANY_ACCOUNT_ITEM_KONTRAGENT_ITEM_REVIEW_LIST_ROUTE_PATH]:
-    CompanyAccountItemKontragentItemReviewListRouter,
   [COMPANY_ACCOUNT_ITEM_INFO_ROUTE_PATH]: CompanyAccountItemInfoRouter,
   [COMPANY_ACCOUNT_ITEM_MEMBER_ROUTE_PATH]: CompanyAccountItemMemberRouter,
   [USER_ADMIN_ITEM_INFO_ROUTE_PATH]: UserAdminItemInfoRouter,
@@ -263,6 +261,9 @@ export const routes = {
     CompanyAccountItemRevisionSelfCreateRouter,
   [ADMIN_REVISION_SELF_LIST_ROUTE_PATH]: AdminRevisionSelfListRouter,
   [ADMIN_REVISION_SELF_ITEM_ROUTE_PATH]: AdminRevisionSelfItemRouter,
+
+  [COMPANY_ACCOUNT_ITEM_KONTRAGENT_ITEM_REVISION_LIST_ROUTE_PATH]:
+    CompanyAccountItemKontragentItemRevisionListRouter,
 };
 
 export const Router = routesInit(routes);

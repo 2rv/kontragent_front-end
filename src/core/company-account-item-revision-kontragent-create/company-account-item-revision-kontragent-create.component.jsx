@@ -125,7 +125,7 @@ export function CompanyAccountItemRevisionKontragentCreateComponent(props) {
                                 <Button
                                   variant="red"
                                   fullWidth
-                                  onClick={() => remove(key)}
+                                  onClick={() => remove(index)}
                                   children={text(
                                     'COMPANY_ACCOUNT_ITEM_REVISION_CREATE.REVISON_CREATE_COMPANY_ITEM.BUTTON',
                                   )}

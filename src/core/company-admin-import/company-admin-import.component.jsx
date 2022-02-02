@@ -20,6 +20,7 @@ import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
 import { SkeletonListComponent } from '../../lib/common/skeleton/skeleton-list.component';
 import { ListChangeForm } from '../../lib/common/list-change-form';
+import { CompanyAdminImportTypeSelectComponent } from './company-admin-import-type-select.component';
 
 export function CompanyAdminImportComponent(props) {
   const {
@@ -29,6 +30,8 @@ export function CompanyAdminImportComponent(props) {
     onChangeList,
     state: { pending, success, error, xslxPending, xslxError, data },
     dataFields,
+    onChangeType,
+    type,
   } = props;
 
   const [edit, setEdit] = useState({});
@@ -121,15 +124,30 @@ export function CompanyAdminImportComponent(props) {
         </Grid>
 
         {data.length ? (
-          <Grid item>
-            <Button
-              onClick={onSave}
-              disabled={pending}
-              variant="contained"
-              color="success"
-            >
-              Импортировать
-            </Button>
+          <Grid
+            item
+            container
+            spacing={2}
+            direction="row"
+            justifyContent="flex-start"
+          >
+            <Grid item xs>
+              <Button
+                onClick={onSave}
+                disabled={pending}
+                variant="contained"
+                color="success"
+                fullWidth
+                children={'Импортировать'}
+              />
+            </Grid>
+
+            <Grid item xs>
+              <CompanyAdminImportTypeSelectComponent
+                onChange={onChangeType}
+                value={type}
+              />
+            </Grid>
           </Grid>
         ) : null}
 
@@ -139,14 +157,19 @@ export function CompanyAdminImportComponent(props) {
           </Grid>
         )}
 
-        <Grid item>
-          {success && <Alert severity="success">{text('Успешно')}</Alert>}
-          {error && error.length && (
+        {success && (
+          <Grid item>
+            <Alert severity="success">{text('Успешно')}</Alert>
+          </Grid>
+        )}
+
+        {error && error.length && (
+          <Grid item>
             <Alert severity="error">
               {text('Необходимо наличие ИНН и Review')}
             </Alert>
-          )}
-        </Grid>
+          </Grid>
+        )}
       </Grid>
     </Paper>
   );

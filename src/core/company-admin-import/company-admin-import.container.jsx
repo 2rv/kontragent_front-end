@@ -1,4 +1,4 @@
-import React, { useReducer } from 'react';
+import React, { useReducer, useState } from 'react';
 import readXlsxFile from 'read-excel-file';
 import { httpRequest } from '../../main/http';
 import { CompanyAdminImportComponent } from './company-admin-import.component';
@@ -71,13 +71,13 @@ function companyAdminImportReducer(state, action) {
 export function CompanyAdminImportContainer() {
   const [state, setState] = useReducer(companyAdminImportReducer, initialState);
 
-  async function importCompaniesAction(data) {
+  async function importCompaniesAction(data, type) {
     setState({ type: 'PENDING' });
     try {
       await httpRequest({
         method: 'POST',
         url: '/company/import',
-        data: { companies: data },
+        data: { companies: data, type: type },
       });
       setState({ type: 'SUCCESS' });
     } catch (error) {
@@ -122,8 +122,17 @@ export function CompanyAdminImportContainer() {
   }
 
   function onSave() {
-    importCompaniesAction(state.data);
+    importCompaniesAction(state.data, type);
   }
+
+  const [type, setType] = useState(undefined);
+
+  const onChangeType = (e) => {
+    const value = e.target.value;
+    if (value) {
+      setType(value);
+    }
+  };
 
   return (
     <CompanyAdminImportComponent
@@ -133,6 +142,8 @@ export function CompanyAdminImportContainer() {
       onChange={onChange}
       onChangeList={onChangeList}
       dataFields={dataFields}
+      onChangeType={onChangeType}
+      type={type}
     />
   );
 }

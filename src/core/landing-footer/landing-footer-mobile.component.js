@@ -56,13 +56,14 @@ export function LandingFooterMobileComponent() {
           <Grid
             item
             sx={{ display: 'flex', flexDirection: 'column', gap: '15px' }}
+            justifyContent="flex-start"
           >
             <Typography
               variant="body2"
               sx={{ fontSize: '12px', cursor: 'pointer' }}
               onClick={() =>
                 redirect(
-                  'https://xn--80aggrpdcrrf.xn--p1ai/static/pdf/blank.pdf',
+                  'https://xn--80aggrpdcrrf.xn--p1ai/static/pdf/terms-of-the-offer.pdf',
                   { newTab: true },
                 )
               }
@@ -70,7 +71,7 @@ export function LandingFooterMobileComponent() {
               {text('LANDING.FOOTER.PRIVACY_POLICITY')}
             </Typography>
 
-            <Typography
+            {/* <Typography
               variant="body2"
               sx={{ fontSize: '12px', cursor: 'pointer' }}
               onClick={() =>
@@ -81,14 +82,14 @@ export function LandingFooterMobileComponent() {
               }
             >
               {text('LANDING.FOOTER.PRIVACY_TERMS')}
-            </Typography>
+            </Typography> */}
 
             <Typography
               variant="body2"
               sx={{ fontSize: '12px', cursor: 'pointer' }}
               onClick={() =>
                 redirect(
-                  'https://xn--80aggrpdcrrf.xn--p1ai/static/pdf/blank.pdf',
+                  'https://xn--80aggrpdcrrf.xn--p1ai/static/pdf/terms-of-the-offer.pdf',
                   { newTab: true },
                 )
               }

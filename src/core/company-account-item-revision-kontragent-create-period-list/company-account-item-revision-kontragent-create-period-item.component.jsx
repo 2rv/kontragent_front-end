@@ -48,12 +48,17 @@ export function CompanyAccountItemRevisionKontragentCreatePeriodItemComponent(
   return (
     <Grid
       container
+      spacing={4}
       direction="row"
       justifyContent="flex-start"
-      spacing={4}
-      columns={{ xs: 1, md: 4 }}
+      alignItems="flex-end"
+      columns={{
+        xs: 1,
+        lg: 5,
+        xl: 6,
+      }}
     >
-      <Grid item xs={1} md={4}>
+      <Grid item xs={1} lg={1} xl={1}>
         <YearSelectFieldComponent
           onChange={handleChange}
           onBlur={handleBlur}
@@ -68,71 +73,56 @@ export function CompanyAccountItemRevisionKontragentCreatePeriodItemComponent(
         />
       </Grid>
 
-      <Grid
-        item
-        container
-        spacing={4}
-        direction="row"
-        justifyContent="flex-start"
-        xs={1}
-        md={4}
-        columns={{
-          xs: 1,
-          md: 2,
-          lg: 4,
-        }}
-      >
-        <Grid item xs={1} md={1} lg={1}>
-          <CheckboxField
-            name={prefix + FIELD_NAME.FIRST_PERIOD}
-            onChange={handleChange}
-            onBlur={handleBlur}
-            checked={value[FIELD_NAME.FIRST_PERIOD]}
-            label={text(
-              'COMPANY_ACCOUNT_ITEM_REVISION_CREATE.REVISON_CREATE_PERIOD_ITEM.FORM.FIELD.LABELS.FIRST_QUARTER',
-            )}
-          />
-        </Grid>
+      <Grid item xs={1} lg={1} xl={1}>
+        <CheckboxField
+          name={prefix + FIELD_NAME.FIRST_PERIOD}
+          onChange={handleChange}
+          onBlur={handleBlur}
+          checked={value[FIELD_NAME.FIRST_PERIOD]}
+          label={text(
+            'COMPANY_ACCOUNT_ITEM_REVISION_CREATE.REVISON_CREATE_PERIOD_ITEM.FORM.FIELD.LABELS.FIRST_QUARTER',
+          )}
+        />
+      </Grid>
 
-        <Grid item xs={1} md={1} lg={1}>
-          <CheckboxField
-            name={prefix + FIELD_NAME.SECOND_PERIOD}
-            onChange={handleChange}
-            onBlur={handleBlur}
-            checked={value[FIELD_NAME.SECOND_PERIOD]}
-            label={text(
-              'COMPANY_ACCOUNT_ITEM_REVISION_CREATE.REVISON_CREATE_PERIOD_ITEM.FORM.FIELD.LABELS.SECOND_QUARTER',
-            )}
-          />
-        </Grid>
+      <Grid item xs={1} lg={1} xl={1}>
+        <CheckboxField
+          name={prefix + FIELD_NAME.SECOND_PERIOD}
+          onChange={handleChange}
+          onBlur={handleBlur}
+          checked={value[FIELD_NAME.SECOND_PERIOD]}
+          label={text(
+            'COMPANY_ACCOUNT_ITEM_REVISION_CREATE.REVISON_CREATE_PERIOD_ITEM.FORM.FIELD.LABELS.SECOND_QUARTER',
+          )}
+        />
+      </Grid>
 
-        <Grid item xs={1} md={1} lg={1}>
-          <CheckboxField
-            name={prefix + FIELD_NAME.THIRD_PERIOD}
-            onChange={handleChange}
-            onBlur={handleBlur}
-            checked={value[FIELD_NAME.THIRD_PERIOD]}
-            label={text(
-              'COMPANY_ACCOUNT_ITEM_REVISION_CREATE.REVISON_CREATE_PERIOD_ITEM.FORM.FIELD.LABELS.THIRD_QUARTER',
-            )}
-          />
-        </Grid>
+      <Grid item xs={1} lg={1} xl={1}>
+        <CheckboxField
+          name={prefix + FIELD_NAME.THIRD_PERIOD}
+          onChange={handleChange}
+          onBlur={handleBlur}
+          checked={value[FIELD_NAME.THIRD_PERIOD]}
+          label={text(
+            'COMPANY_ACCOUNT_ITEM_REVISION_CREATE.REVISON_CREATE_PERIOD_ITEM.FORM.FIELD.LABELS.THIRD_QUARTER',
+          )}
+        />
+      </Grid>
 
-        <Grid item xs={1} md={1} lg={1}>
-          <CheckboxField
-            name={prefix + FIELD_NAME.FOURTH_PERIOD}
-            onChange={handleChange}
-            onBlur={handleBlur}
-            checked={value[FIELD_NAME.FOURTH_PERIOD]}
-            label={text(
-              'COMPANY_ACCOUNT_ITEM_REVISION_CREATE.REVISON_CREATE_PERIOD_ITEM.FORM.FIELD.LABELS.FOURTH_QUARTER',
-            )}
-          />
-        </Grid>
+      <Grid item xs={1} lg={1} xl={1}>
+        <CheckboxField
+          name={prefix + FIELD_NAME.FOURTH_PERIOD}
+          onChange={handleChange}
+          onBlur={handleBlur}
+          checked={value[FIELD_NAME.FOURTH_PERIOD]}
+          label={text(
+            'COMPANY_ACCOUNT_ITEM_REVISION_CREATE.REVISON_CREATE_PERIOD_ITEM.FORM.FIELD.LABELS.FOURTH_QUARTER',
+          )}
+        />
       </Grid>
 
       {yearsLenght > 1 && (
-        <Grid item xs={1} md={2}>
+        <Grid item xs={1} lg={2.5} xl={1}>
           <Button
             color="red"
             variant="grey"

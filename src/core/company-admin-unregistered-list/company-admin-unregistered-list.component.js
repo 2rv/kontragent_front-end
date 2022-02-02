@@ -1,41 +1,75 @@
 import Paper from '@mui/material/Paper';
 import Divider from '@mui/material/Divider';
 import Typography from '@mui/material/Typography';
-import Box from '@mui/material/Box';
+import Grid from '@mui/material/Grid';
 import Alert from '@mui/material/Alert';
-
-import { CompanyAccountListListComponent } from './frame/company-admin-unregistered-list-list.component';
-
+import { text } from '../../lib/common/text';
 import { SkeletonListComponent } from '../../lib/common/skeleton/skeleton-list.component';
 
-import { text } from '../../lib/common/text';
+import { CompanyAccountListListComponent } from './frame/company-admin-unregistered-list-list.component';
+import { CompanyAdminUnregisteredListTypeSelectComponent } from './frame/company-admin-unregistered-list-type-select.component';
 
-export function CompanyAdminUnregisteredListComponent({
-  data,
-  isPending,
-  isError,
-  isSuccess,
-  errorMessage,
-}) {
+export function CompanyAdminUnregisteredListComponent(props) {
+  const {
+    data,
+    isPending,
+    isError,
+    isSuccess,
+    errorMessage,
+    onChangeType,
+    type,
+  } = props;
   return (
-    <Paper sx={{ p: 0 }}>
-      <Box>
-        <Typography variant="heading" sx={{ px: 8, pt: 8 }} component="div">
-          {text('COMPANY_ADMIN_LIST.UNREGISTERED_COMPANIES_LIST.TITLE')}
-        </Typography>
-        <Divider sx={{ mx: 8, my: 4 }} />
-        {isSuccess && <CompanyAccountListListComponent list={data} />}
+    <Paper>
+      <Grid container spacing={4}>
+        <Grid
+          item
+          container
+          spacing={4}
+          direction="row"
+          justifyContent="flex-start"
+          alignItems="center"
+          columns={{ xs: 1, lg: 5 }}
+        >
+          <Grid item xs={1} lg={3}>
+            <Typography
+              variant="heading"
+              component="div"
+              children={text(
+                'COMPANY_ADMIN_LIST.UNREGISTERED_COMPANIES_LIST.TITLE',
+              )}
+            />
+          </Grid>
+
+          <Grid item xs={1} lg={2}>
+            <CompanyAdminUnregisteredListTypeSelectComponent
+              onChange={onChangeType}
+              value={type}
+            />
+          </Grid>
+        </Grid>
+
+        <Grid item>
+          <Divider />
+        </Grid>
+
+        {isSuccess && (
+          <Grid item>
+            <CompanyAccountListListComponent list={data} />
+          </Grid>
+        )}
+
         {isPending && (
-          <Box sx={{ pt: 4, px: 8, pb: 8 }}>
+          <Grid item>
             <SkeletonListComponent />
-          </Box>
+          </Grid>
         )}
         {isError && (
-          <Box sx={{ pt: 4, px: 8, pb: 8 }}>
+          <Grid item>
             <Alert severity="error">{text(`ERROR.${errorMessage}`)}</Alert>
-          </Box>
+          </Grid>
         )}
-      </Box>
+      </Grid>
     </Paper>
   );
 }

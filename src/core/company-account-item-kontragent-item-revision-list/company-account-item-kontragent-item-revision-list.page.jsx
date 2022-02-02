@@ -3,9 +3,9 @@ import { TabContainer } from '../../lib/common/navigation-tab/navigation-tab.con
 import { NavigationComponent } from '../navigation/navigation.component';
 
 import { COMPANY_ACCOUNT_ITEM_KONTRAGENT_ITEM_NAVIGATION } from '../company-account-item-kontragent-item/company-account-item-kontragent-item.constant';
-import { CompanyAccountItemKontragentItemReviewListContainer } from './company-account-item-kontragent-item-review-list.container';
+import { CompanyAccountItemKontragentItemRevisionListContainer } from './company-account-item-kontragent-item-revision-list.container';
 
-export function CompanyAccountItemKontragentItemReviewListPage() {
+export function CompanyAccountItemKontragentItemRevisionListPage() {
   return (
     <NavigationComponent>
       <Grid spacing={6} container>
@@ -15,7 +15,7 @@ export function CompanyAccountItemKontragentItemReviewListPage() {
           />
         </Grid>
         <Grid item>
-          <CompanyAccountItemKontragentItemReviewListContainer />
+          <CompanyAccountItemKontragentItemRevisionListContainer />
         </Grid>
       </Grid>
     </NavigationComponent>

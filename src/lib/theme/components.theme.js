@@ -65,6 +65,7 @@ export const components = {
       fullWidth: true,
       displayEmpty: true,
       size: 'medium',
+      sx: { height: '46px' },
     },
     styleOverrides: {},
   },

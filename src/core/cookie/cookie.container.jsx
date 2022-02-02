@@ -1,10 +1,14 @@
-import { LandingCookieComponent } from './landing-cookie.component';
 import { useEffect, useState } from 'react';
+import { CookieComponent } from './cookie.component';
 
-export function LandingCookieContainer() {
+export function CookieContainer() {
   const [isOpen, setOpen] = useState(false);
 
   const handleClose = () => {
+    setOpen(false);
+  };
+
+  const handleConfirm = () => {
     localStorage.setItem('use-of-cookies', true);
     setOpen(false);
   };
@@ -14,5 +18,11 @@ export function LandingCookieContainer() {
     setOpen(!useCookie);
   }, []);
 
-  return <LandingCookieComponent isOpen={isOpen} handleClose={handleClose} />;
+  return (
+    <CookieComponent
+      isOpen={isOpen}
+      handleClose={handleClose}
+      handleConfirm={handleConfirm}
+    />
+  );
 }

@@ -10,17 +10,15 @@ import Box from '@mui/material/Box';
 import Divider from '@mui/material/Divider';
 
 import { redirect } from '../../../main/navigation';
-
-import { COMPANY_ADMIN_ITEM_REVISION_LIST_ROUTE_PATH_DYNAMIC } from '../../company-admin-item-revision-list';
-
 import { text } from '../../../lib/common/text';
 
+import { COMPANY_ADMIN_ITEM_REVISION_LIST_ROUTE_PATH_DYNAMIC } from '../../company-admin-item-revision-list';
 import { COMPANY_ADMIN_UNREGISTERED_LIST_DATA_NAME } from '../company-admin-unregistered-list.constant';
 
 export const CompanyAccountListListComponent = ({ list }) => {
   if (!list || list.length === 0) {
     return (
-      <Box sx={{ px: 8, pb: 8 }}>
+      <Box>
         <Alert severity="info">
           {text('COMPANY_ADMIN_LIST.UNREGISTERED_COMPANIES_LIST.EMPTY')}
         </Alert>
@@ -29,7 +27,7 @@ export const CompanyAccountListListComponent = ({ list }) => {
   }
 
   return (
-    <List sx={{ px: 8, pb: 8 }} disablePadding>
+    <List disablePadding>
       {list.map((item, key) => (
         <React.Fragment key={key}>
           <ListItem
@@ -37,7 +35,6 @@ export const CompanyAccountListListComponent = ({ list }) => {
               return redirect(
                 COMPANY_ADMIN_ITEM_REVISION_LIST_ROUTE_PATH_DYNAMIC,
                 {
-                  dynamic: true,
                   params: {
                     companyId:
                       item[COMPANY_ADMIN_UNREGISTERED_LIST_DATA_NAME.ID],

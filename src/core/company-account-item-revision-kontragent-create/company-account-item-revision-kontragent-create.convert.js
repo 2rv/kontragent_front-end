@@ -1,3 +1,4 @@
+import { revisionPeriodPrice } from '../../lib/common/revision-period-price';
 import { COMPANY_ACCOUNT_ITEM_REVISION_KONTRAGENT_CREATE_DATA_NAME as FIELD_NAME } from './company-account-item-revision-kontragent-create.constant';
 
 export function convertCompanyAccountItemRevisionKontragentCreateFormData(
@@ -23,20 +24,7 @@ export function convertCompanyAccountItemRevisionKontragentCreateFormData(
 
 export function getCompanyAccountItemRevisionKontragentPrice(kontragents) {
   return kontragents.reduce((acc, kontragent) => {
-    kontragent[FIELD_NAME.YEARS].forEach((period) => {
-      if (period[FIELD_NAME.FIRST_PERIOD]) {
-        acc = acc + 500;
-      }
-      if (period[FIELD_NAME.SECOND_PERIOD]) {
-        acc = acc + 500;
-      }
-      if (period[FIELD_NAME.THIRD_PERIOD]) {
-        acc = acc + 500;
-      }
-      if (period[FIELD_NAME.FOURTH_PERIOD]) {
-        acc = acc + 500;
-      }
-    });
+    acc += revisionPeriodPrice(kontragent[FIELD_NAME.YEARS]);
     return acc;
   }, 0);
 }

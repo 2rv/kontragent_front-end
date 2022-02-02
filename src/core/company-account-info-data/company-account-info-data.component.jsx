@@ -1,4 +1,4 @@
-import { Divider, Grid, Typography } from '@mui/material';
+import { Divider, Grid, Typography, Button } from '@mui/material';
 
 export function CompanyAccountInfoDataComponent(props) {
   const {
@@ -38,6 +38,9 @@ export function CompanyAccountInfoDataComponent(props) {
       capitalDate,
       registrationInfoNalog,
     },
+    isPending,
+    getEgrDetails,
+    getExpressPdf,
   } = props;
 
   return (
@@ -52,7 +55,13 @@ export function CompanyAccountInfoDataComponent(props) {
         <Divider />
       </Grid>
 
-      <Grid item container spacing={3}>
+      <Grid
+        item
+        container
+        spacing={3}
+        direction="row"
+        justifyContent="flex-start"
+      >
         {fullName && (
           <Grid item>
             <Typography children={fullName} />
@@ -338,6 +347,26 @@ export function CompanyAccountInfoDataComponent(props) {
             </Grid>
           )}
         </Grid>
+
+        {!isPending && (
+          <Grid item md={7}>
+            <Button
+              fullWidth
+              onClick={getEgrDetails}
+              children={'Получить выписку из ЕГР'}
+            />
+          </Grid>
+        )}
+
+        {!isPending && (
+          <Grid item md={7}>
+            <Button
+              fullWidth
+              onClick={getExpressPdf}
+              children={'Получить экспресс отчёт'}
+            />
+          </Grid>
+        )}
       </Grid>
     </Grid>
   );

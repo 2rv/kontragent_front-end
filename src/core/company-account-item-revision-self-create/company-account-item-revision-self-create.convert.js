@@ -1,3 +1,4 @@
+import { revisionPeriodPrice } from '../../lib/common/revision-period-price';
 import { COMPANY_ACCOUNT_ITEM_REVISION_SELF_CREATE_DATA_NAME as FIELD_NAME } from './company-account-item-revision-self-create.constant';
 
 export function convertCompanyAccountItemRevisionSelfCreateFormData(values) {
@@ -15,19 +16,5 @@ export function convertCompanyAccountItemRevisionSelfCreateFormData(values) {
 }
 
 export function getCompanyAccountItemRevisionSelfPrice(years) {
-  return years.reduce((acc, period) => {
-    if (period[FIELD_NAME.FIRST_PERIOD]) {
-      acc += 500;
-    }
-    if (period[FIELD_NAME.SECOND_PERIOD]) {
-      acc += 500;
-    }
-    if (period[FIELD_NAME.THIRD_PERIOD]) {
-      acc += 500;
-    }
-    if (period[FIELD_NAME.FOURTH_PERIOD]) {
-      acc += 500;
-    }
-    return acc;
-  }, 0);
+  return revisionPeriodPrice(years);
 }

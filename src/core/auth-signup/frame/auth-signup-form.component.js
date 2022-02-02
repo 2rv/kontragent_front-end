@@ -140,7 +140,7 @@ export const AuthSignupFormComponent = (props) => {
                     underline="hover"
                     onClick={() => {
                       redirect(
-                        'https://xn--80aggrpdcrrf.xn--p1ai/static/pdf/blank.pdf',
+                        'https://xn--80aggrpdcrrf.xn--p1ai/static/pdf/user-agreement.pdf',
                         { newTab: true },
                       );
                     }}
@@ -170,7 +170,7 @@ export const AuthSignupFormComponent = (props) => {
                     underline="hover"
                     onClick={() => {
                       redirect(
-                        'https://xn--80aggrpdcrrf.xn--p1ai/static/pdf/blank.pdf',
+                        'https://xn--80aggrpdcrrf.xn--p1ai/static/pdf/terms-of-the-offer.pdf',
                         { newTab: true },
                       );
                     }}

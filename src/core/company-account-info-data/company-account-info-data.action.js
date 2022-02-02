@@ -29,3 +29,37 @@ export function getCompanyDataAction(inn) {
     }
   };
 }
+
+export function getEgrDetailsAction(inn) {
+  return async (dispatch) => {
+    try {
+      const response = await httpRequest({
+        method: 'GET',
+        url: `/company-data/excerpt/${inn}`,
+        responseType: 'arraybuffer',
+      });
+      let blob = new Blob([response.data], { type: 'application/pdf' }),
+        url = window.URL.createObjectURL(blob);
+      window.open(url);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+}
+
+export function getExpressPdfAction(inn) {
+  return async (dispatch) => {
+    try {
+      const response = await httpRequest({
+        method: 'GET',
+        url: `/company-data/brief-report-pdf/${inn}`,
+        responseType: 'arraybuffer',
+      });
+      let blob = new Blob([response.data], { type: 'application/pdf' }),
+        url = window.URL.createObjectURL(blob);
+      window.open(url);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+}

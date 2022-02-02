@@ -23,6 +23,7 @@ import { NavigationObserver } from '../../lib/common/navigation';
 import { setCurrentAuthCookie } from '../auth';
 
 import CssBaseline from '@material-ui/core/CssBaseline';
+import { CookieContainer } from '../../core/cookie/cookie.container';
 
 class MyApp extends App {
   componentDidMount() {
@@ -66,6 +67,7 @@ class MyApp extends App {
           <NavigationObserver />
           <CssBaseline />
           <ThemeProvider theme={this.state.theme}>
+            <CookieContainer />
             <Component {...pageProps} />
           </ThemeProvider>
         </ReduxProvider>

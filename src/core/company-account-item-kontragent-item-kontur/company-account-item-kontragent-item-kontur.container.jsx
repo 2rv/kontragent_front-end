@@ -11,7 +11,11 @@ import {
 import { getQuery } from '../../main/navigation/navigation.core';
 
 import { COMPANY_ACCOUNT_ITEM_KONTRAGENT_ITEM_KONTUR_STORE_NAME } from './company-account-item-kontragent-item-kontur.constant';
-import { getKontragentDataAction } from './company-account-item-kontragent-item-kontur.action';
+import {
+  getKontragentDataAction,
+  getEgrDetailsAction,
+  getExpressPdfAction,
+} from './company-account-item-kontragent-item-kontur.action';
 import { CompanyAccountItemKontragentItemKonturComponent } from './company-account-item-kontragent-item-kontur.component';
 
 export function CompanyAccountItemKontragentItemKonturContainer() {
@@ -28,6 +32,15 @@ export function CompanyAccountItemKontragentItemKonturContainer() {
   useEffect(() => {
     dispatch(getKontragentDataAction(companyId, kontragentId));
   }, []);
+  console.log(state);
+
+  const getEgrDetails = () => {
+    dispatch(getEgrDetailsAction(companyId));
+  };
+
+  const getExpressPdf = () => {
+    dispatch(getExpressPdfAction(companyId));
+  };
 
   return (
     <CompanyAccountItemKontragentItemKonturComponent
@@ -37,6 +50,8 @@ export function CompanyAccountItemKontragentItemKonturContainer() {
       isSuccess={isRequestSuccess(state.request)}
       data={getRequestData(state.request)}
       errorMessage={getRequestErrorMessage(state.request)}
+      getEgrDetails={getEgrDetails}
+      getExpressPdf={getExpressPdf}
     />
   );
 }

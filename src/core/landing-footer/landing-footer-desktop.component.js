@@ -55,20 +55,21 @@ export function LandingFooterDesktopComponent() {
           <Grid
             item
             sx={{ display: 'flex', flexDirection: 'column', gap: '6px' }}
+            justifyContent="flex-start"
           >
             <Typography
               variant="body2"
               sx={{ cursor: 'pointer' }}
               onClick={() =>
                 redirect(
-                  'https://xn--80aggrpdcrrf.xn--p1ai/static/pdf/blank.pdf',
+                  'https://xn--80aggrpdcrrf.xn--p1ai/static/pdf/terms-of-the-offer.pdf',
                   { newTab: true },
                 )
               }
             >
               {text('LANDING.FOOTER.PRIVACY_POLICITY')}
             </Typography>
-            <Typography
+            {/* <Typography
               variant="body2"
               sx={{ cursor: 'pointer' }}
               onClick={() =>
@@ -79,13 +80,13 @@ export function LandingFooterDesktopComponent() {
               }
             >
               {text('LANDING.FOOTER.PRIVACY_TERMS')}
-            </Typography>
+            </Typography> */}
             <Typography
               variant="body2"
               sx={{ cursor: 'pointer' }}
               onClick={() =>
                 redirect(
-                  'https://xn--80aggrpdcrrf.xn--p1ai/static/pdf/blank.pdf',
+                  'https://xn--80aggrpdcrrf.xn--p1ai/static/pdf/user-agreement.pdf',
                   { newTab: true },
                 )
               }

@@ -11,7 +11,11 @@ import {
 import { getQuery } from '../../main/navigation/navigation.core';
 import { CompanyAccountInfoDataComponent } from './company-account-info-data.component';
 import { COMPANY_ACCOUNT_INFO_DATA_STORE_NAME } from './company-account-info-data.constant';
-import { getCompanyDataAction } from './company-account-info-data.action';
+import {
+  getCompanyDataAction,
+  getEgrDetailsAction,
+  getExpressPdfAction,
+} from './company-account-info-data.action';
 
 export function CompanyAccountInfoDataContainer() {
   const companyId = getQuery('companyId');
@@ -27,6 +31,13 @@ export function CompanyAccountInfoDataContainer() {
     dispatch(getCompanyDataAction(companyId));
   }, []);
 
+  const getEgrDetails = () => {
+    dispatch(getEgrDetailsAction(companyId));
+  };
+
+  const getExpressPdf = () => {
+    dispatch(getExpressPdfAction(companyId));
+  };
   return (
     <CompanyAccountInfoDataComponent
       pageLoading={pageLoading}
@@ -35,6 +46,8 @@ export function CompanyAccountInfoDataContainer() {
       isSuccess={isRequestSuccess(state.request)}
       data={getRequestData(state.request)}
       errorMessage={getRequestErrorMessage(state.request)}
+      getEgrDetails={getEgrDetails}
+      getExpressPdf={getExpressPdf}
     />
   );
 }

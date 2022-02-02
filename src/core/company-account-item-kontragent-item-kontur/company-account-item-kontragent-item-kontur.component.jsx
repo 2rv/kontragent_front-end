@@ -1,10 +1,10 @@
-import { Divider, Grid, Typography } from '@mui/material';
+import { Divider, Grid, Typography, Alert, Button } from '@mui/material';
+import { text } from '../../lib/common/text';
 
 export function CompanyAccountItemKontragentItemKonturComponent(props) {
   const {
     data: {
       // req
-
       shortName,
       inn,
       ogrn,
@@ -38,7 +38,20 @@ export function CompanyAccountItemKontragentItemKonturComponent(props) {
       capitalDate,
       registrationInfoNalog,
     },
+    isError,
+    errorMessage,
+    isPending,
+    getEgrDetails,
+    getExpressPdf,
   } = props;
+  if (isError) {
+    return (
+      <Grid container>
+        <Alert severity="error">{text(`ERROR.${errorMessage}`)}</Alert>
+      </Grid>
+    );
+  }
+
   return (
     <Grid container spacing={4}>
       <Grid item>
@@ -337,6 +350,26 @@ export function CompanyAccountItemKontragentItemKonturComponent(props) {
             </Grid>
           )}
         </Grid>
+
+        {!isPending && (
+          <Grid item md={7}>
+            <Button
+              fullWidth
+              onClick={getEgrDetails}
+              children={'Получить выписку из ЕГР'}
+            />
+          </Grid>
+        )}
+
+        {!isPending && (
+          <Grid item md={7}>
+            <Button
+              fullWidth
+              onClick={getExpressPdf}
+              children={'Получить экспресс отчёт'}
+            />
+          </Grid>
+        )}
       </Grid>
     </Grid>
   );
