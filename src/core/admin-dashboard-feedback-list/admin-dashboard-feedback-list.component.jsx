@@ -11,11 +11,12 @@ import {
 import { text } from '../../lib/common/text';
 import { setLinkRedirect } from '../../main/navigation';
 import { SkeletonListComponent } from '../../lib/common/skeleton/skeleton-list.component';
-import { FEEDBACK_ADMIN_LIST_DATA_NAME } from './admin-dashboard-feedback-list.constant';
+import { FEEDBACK_ADMIN_LIST_DATA_NAME as DATA_NAME } from './admin-dashboard-feedback-list.constant';
 import {
   FEEDBACK_ADMIN_ITEM_DATA_NAME,
   FEEDBACK_ADMIN_ITEM_DYNAMIC_ROUTE_PATH,
 } from '../feedback-admin-item';
+import { AdminDashboardFeedbackListStatusComponent } from './admin-dashboard-feedback-list-status.component';
 
 export function AdminDashboardFeedbackListComponent(props) {
   const {
@@ -50,11 +51,18 @@ export function AdminDashboardFeedbackListComponent(props) {
                   )}
                 >
                   <ListItemText
-                    primary={item[FEEDBACK_ADMIN_LIST_DATA_NAME.TITLE]}
+                    primary={item[DATA_NAME.TITLE]}
                     primaryTypographyProps={{
                       variant: 'listTitle',
                     }}
-                    secondary={item[FEEDBACK_ADMIN_LIST_DATA_NAME.CREATE_DATE]}
+                    secondary={
+                      <>
+                        {item[DATA_NAME.CREATE_DATE]}
+                        <AdminDashboardFeedbackListStatusComponent
+                          status={item[DATA_NAME.STATUS]}
+                        />
+                      </>
+                    }
                     secondaryTypographyProps={{
                       variant: 'listTitle',
                     }}

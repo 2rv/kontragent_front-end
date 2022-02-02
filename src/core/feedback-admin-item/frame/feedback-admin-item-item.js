@@ -3,7 +3,8 @@ import Typography from '@mui/material/Typography';
 
 import { text } from '../../../lib/common/text';
 import { FileListElement } from '../../../lib/element/file-list.element';
-import { FEEDBACK_ADMIN_ITEM_DATA_NAME } from '../feedback-admin-item.constant';
+import { FEEDBACK_ADMIN_ITEM_DATA_NAME as DATA_NAME } from '../feedback-admin-item.constant';
+import { FeedbackAdminItemUpdateStatusContainer } from '../../feedback-admin-item-update-status/feedback-admin-item-update-status.container';
 
 export const FeedbackAdminItemItem = ({ data }) => {
   return (
@@ -13,7 +14,7 @@ export const FeedbackAdminItemItem = ({ data }) => {
           {text('FEEDBACK_ADMIN_ITEM.ID')}
         </Typography>
         <Typography component="div" variant="body1">
-          {data[FEEDBACK_ADMIN_ITEM_DATA_NAME.ID]}
+          {data[DATA_NAME.ID]}
         </Typography>
       </Grid>
       <Grid item>
@@ -21,7 +22,7 @@ export const FeedbackAdminItemItem = ({ data }) => {
           {text('FEEDBACK_ADMIN_ITEM.NAME')}
         </Typography>
         <Typography component="div" variant="body1">
-          {data[FEEDBACK_ADMIN_ITEM_DATA_NAME.TITLE]}
+          {data[DATA_NAME.TITLE]}
         </Typography>
       </Grid>
       <Grid item>
@@ -29,7 +30,7 @@ export const FeedbackAdminItemItem = ({ data }) => {
           {text('FEEDBACK_ADMIN_ITEM.DESCRIPRTION')}
         </Typography>
         <Typography component="div" variant="body1">
-          {data[FEEDBACK_ADMIN_ITEM_DATA_NAME.DESCRIPTION]}
+          {data[DATA_NAME.DESCRIPTION]}
         </Typography>
       </Grid>
 
@@ -38,9 +39,8 @@ export const FeedbackAdminItemItem = ({ data }) => {
           {text('FEEDBACK_ADMIN_ITEM.FILE')}
         </Typography>
 
-        {data[FEEDBACK_ADMIN_ITEM_DATA_NAME.FILES] &&
-        data[FEEDBACK_ADMIN_ITEM_DATA_NAME.FILES].length > 0 ? (
-          <FileListElement list={data[FEEDBACK_ADMIN_ITEM_DATA_NAME.FILES]} />
+        {data[DATA_NAME.FILES] && data[DATA_NAME.FILES].length > 0 ? (
+          <FileListElement list={data[DATA_NAME.FILES]} />
         ) : (
           <Typography variant="body1">
             {text(
@@ -48,6 +48,12 @@ export const FeedbackAdminItemItem = ({ data }) => {
             )}
           </Typography>
         )}
+      </Grid>
+
+      <Grid item>
+        <FeedbackAdminItemUpdateStatusContainer
+          initialStatus={data[DATA_NAME.STATUS]}
+        />
       </Grid>
     </Grid>
   );

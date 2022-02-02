@@ -17,4 +17,5 @@ export const FEEDBACK_ADMIN_ITEM_DATA_NAME = {
   CREATE_DATE: 'createDate',
   FILES: 'files',
   ID: 'id',
+  STATUS: 'status',
 };

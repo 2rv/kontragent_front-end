@@ -7,6 +7,7 @@ import Alert from '@mui/material/Alert';
 
 import { SkeletonListComponent } from '../../lib/common/skeleton/skeleton-list.component';
 import { ReviewStatusComponent } from '../../lib/common/review-status/review-status.component';
+import { FileListElement } from '../../lib/element/file-list.element';
 import { text } from '../../lib/common/text';
 
 import { ADMIN_REVISION_SELF_ITEM_DATA_NAME as DATA_NAME } from './admin-revision-self-item.constant';

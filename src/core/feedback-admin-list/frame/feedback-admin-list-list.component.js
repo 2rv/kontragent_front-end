@@ -8,11 +8,12 @@ import Divider from '@mui/material/Divider';
 import Typography from '@mui/material/Typography';
 import { text } from '../../../lib/common/text';
 import { redirect } from '../../../main/navigation';
-import { FEEDBACK_ADMIN_LIST_DATA_NAME } from '../feedback-admin-list.constant';
+import { FEEDBACK_ADMIN_LIST_DATA_NAME as DATA_NAME } from '../feedback-admin-list.constant';
 import {
   FEEDBACK_ADMIN_ITEM_DATA_NAME,
   FEEDBACK_ADMIN_ITEM_DYNAMIC_ROUTE_PATH,
 } from '../../feedback-admin-item';
+import { FeedbackAdminListStatusComponent } from './feedback-admin-list-status.component';
 
 export const FeedbackAdminListListComponent = ({ list }) => {
   if (!list || list.length === 0) {
@@ -44,15 +45,18 @@ export const FeedbackAdminListListComponent = ({ list }) => {
               primary={
                 <>
                   <Typography variant="listTitle">
-                    {items[FEEDBACK_ADMIN_LIST_DATA_NAME.TITLE]}
+                    {items[DATA_NAME.TITLE]}
                   </Typography>
                 </>
               }
               secondary={
                 <>
                   <Typography variant="listTitle">
-                    {items[FEEDBACK_ADMIN_LIST_DATA_NAME.CREATE_DATE]}
+                    {items[DATA_NAME.CREATE_DATE]}
                   </Typography>
+                  <FeedbackAdminListStatusComponent
+                    status={items[DATA_NAME.STATUS]}
+                  />
                 </>
               }
             />

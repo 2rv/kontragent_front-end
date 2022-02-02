@@ -64,11 +64,11 @@ export function CompanyAccountItemRevisionKontragentCreatePeriodListComponent(
               </Grid>
             ))}
 
-            <Grid item xs={1} md={2}>
+            <Grid item>
               <Button
                 variant="grey"
                 color="black"
-                fullWidth
+                sx={{ width: 200 }}
                 onClick={() => push(initialYear)}
                 children={text(
                   'COMPANY_ACCOUNT_ITEM_REVISION_CREATE.REVISON_CREATE_PERIOD_LIST.BUTTON',

@@ -3,6 +3,7 @@ export const FEEDBACK_ADMIN_LIST_DATA_NAME = {
   ID: 'id',
   TITLE: 'title',
   CREATE_DATE: 'createDate',
+  STATUS: 'status',
 };
 
 export const FEEDBACK_ADMIN_LIST_API = {
