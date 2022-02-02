@@ -6,7 +6,7 @@ import Typography from '@mui/material/Typography';
 import Alert from '@mui/material/Alert';
 
 import { SkeletonListComponent } from '../../lib/common/skeleton/skeleton-list.component';
-import { ReviewStatus } from '../company-account-item-revision-kontragent-item/frames/review-status.component';
+import { ReviewStatusComponent } from '../../lib/common/review-status/review-status.component';
 import { text } from '../../lib/common/text';
 
 import { ADMIN_REVISION_KONTRAGENT_ITEM_DATA_NAME as DATA_NAME } from './admin-revision-kontragent-item.constant';
@@ -59,7 +59,7 @@ export function AdminRevisionKontragentItemComponent(props) {
         </Grid>
 
         <Grid item>
-          <ReviewStatus status={data[DATA_NAME.STATUS]} />
+          <ReviewStatusComponent status={data[DATA_NAME.STATUS]} />
         </Grid>
 
         <Grid item>

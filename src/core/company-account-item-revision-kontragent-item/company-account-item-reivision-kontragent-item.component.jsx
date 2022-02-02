@@ -5,10 +5,10 @@ import Alert from '@mui/material/Alert';
 import Grid from '@mui/material/Grid';
 
 import { SkeletonListComponent } from '../../lib/common/skeleton/skeleton-list.component';
+import { ReviewStatusComponent } from '../../lib/common/review-status/review-status.component';
 import { text } from '../../lib/common/text';
 
 import { COMPANY_ACCOUNT_ITEM_REVISION_ITEM_KONTRAGENT_DATA_NAME as DATA_NAME } from './company-account-item-revision-kontragent-item.constant';
-import { ReviewStatus } from './frames/review-status.component';
 import { CompanyAccountItemRevisionKontragentItemAccordionComponent } from './frames/company-account-item-revision-kontragent-item-accordion.component';
 import { CompanyAccountItemRevisionKontragentItemReviewComponent } from './frames/company-account-item-reivision-kontragent-item-review.component';
 import { CompanyAccountItemRevisionKontragentItemPaymentContainer } from '../company-account-item-revision-kontragent-item-payment/company-account-item-revision-kontragent-item-payment.container';
@@ -54,7 +54,7 @@ export function CompanyAccountItemRevisionKontragentItemComponent(props) {
         </Grid>
 
         <Grid item>
-          <ReviewStatus status={data[DATA_NAME.STATUS]} />
+          <ReviewStatusComponent status={data[DATA_NAME.STATUS]} />
         </Grid>
 
         <Grid item>

@@ -1,8 +1,9 @@
 import ListItemText from '@mui/material/ListItemText';
 import Typography from '@mui/material/Typography';
-import { text } from '../../../lib/common/text';
+import { text } from '../text';
 
-export const ReviewStatus = ({ status }) => {
+export function ReviewStatusComponent(props) {
+  const { status } = props;
   const reviewText = [
     '',
     text('COMMON.REVISION.STATUS_TYPE.NEW'),
@@ -116,4 +117,4 @@ export const ReviewStatus = ({ status }) => {
     default:
       return null;
   }
-};
+}

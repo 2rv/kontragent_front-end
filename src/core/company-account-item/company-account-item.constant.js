@@ -23,6 +23,10 @@ import {
   COMPANY_ACCOUNT_ITEM_REVISION_KONTRAGENT_ROUTE_PATH,
   COMPANY_ACCOUNT_ITEM_REVISION_KONTRAGENT_ROUTE_PATH_DYNAMIC,
 } from '../company-account-item-revision-kontragent/company-account-item-revision-kontragent.constant';
+import {
+  COMPANY_ACCOUNT_ITEM_REVISION_SELF_ROUTE_PATH,
+  COMPANY_ACCOUNT_ITEM_REVISION_SELF_ROUTE_PATH_DYNAMIC,
+} from '../company-account-item-revision-self/company-account-item-revision-self.constant';
 
 export const COMPANY_ACCOUNT_ITEM_NAVIGATION = [
   {
@@ -35,16 +39,16 @@ export const COMPANY_ACCOUNT_ITEM_NAVIGATION = [
     },
     pathname: COMPANY_ACCOUNT_ITEM_REVISION_KONTRAGENT_ROUTE_PATH,
   },
-  // {
-  //   id: 1,
-  //   label: 'NAVIGATION.TABS.COMPANY_ACCOUNT_ITEM.REVISION_SELF',
-  //   path: () => {
-  //     return COMPANY_ACCOUNT_ITEM_REVISION_ROUTE_PATH_DYNAMIC({
-  //       companyId: getQuery('companyId'),
-  //     });
-  //   },
-  //   pathname: COMPANY_ACCOUNT_ITEM_REVISION_ROUTE_PATH,
-  // },
+  {
+    id: 1,
+    label: 'NAVIGATION.TABS.COMPANY_ACCOUNT_ITEM.REVISION_SELF',
+    path: () => {
+      return COMPANY_ACCOUNT_ITEM_REVISION_SELF_ROUTE_PATH_DYNAMIC({
+        companyId: getQuery('companyId'),
+      });
+    },
+    pathname: COMPANY_ACCOUNT_ITEM_REVISION_SELF_ROUTE_PATH,
+  },
   {
     id: 2,
     label: 'NAVIGATION.TABS.COMPANY_ACCOUNT_ITEM.BALANCE',

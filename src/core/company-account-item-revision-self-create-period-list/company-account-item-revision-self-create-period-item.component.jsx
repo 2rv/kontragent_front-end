@@ -4,7 +4,7 @@ import { Typography } from '@material-ui/core';
 import { text } from '../../lib/common/text';
 import { CheckboxField } from '../../lib/common/checkbox-field';
 import { YearSelectFieldComponent } from '../../lib/common/date-picker-field/year-select-field.component';
-import { COMPANY_ACCOUNT_ITEM_REVISION_SELF_CREATE_DATA_NAME } from '../company-account-item-revision-self-create/company-account-item-revision-self-create.constant';
+import { COMPANY_ACCOUNT_ITEM_REVISION_SELF_CREATE_DATA_NAME as FIELD_NAME } from '../company-account-item-revision-self-create/company-account-item-revision-self-create.constant';
 
 export const CompanyAccountItemRevisionSelfCreatePeriodItemComponent = (
   props,
@@ -12,42 +12,46 @@ export const CompanyAccountItemRevisionSelfCreatePeriodItemComponent = (
   const {
     handleChange,
     handleBlur,
-    prefix,
     value,
     errors,
     touched,
     onRemove,
     yearsLenght,
+    yearIndex,
   } = props;
 
+  const prefix = `${FIELD_NAME.YEARS}.${yearIndex}.`;
+
   const isFieldError = (name) => {
-    return errors[name] && touched[name] && errors[name];
+    return (
+      errors[FIELD_NAME.YEARS]?.[yearIndex]?.[name] &&
+      touched[FIELD_NAME.YEARS]?.[yearIndex]?.[name] &&
+      errors[FIELD_NAME.YEARS]?.[yearIndex]?.[name]
+    );
   };
 
   const getFieldError = (name) =>
-    isFieldError(prefix + name) && errors[prefix + name];
+    isFieldError(name) && errors[FIELD_NAME.YEARS]?.[yearIndex]?.[name];
 
   return (
-    <Grid container spacing={4}>
-      <Grid item>
+    <Grid
+      container
+      direction="row"
+      justifyContent="flex-start"
+      spacing={4}
+      columns={{ xs: 1, md: 4 }}
+    >
+      <Grid item xs={1} md={4}>
         <YearSelectFieldComponent
           onChange={handleChange}
           onBlur={handleBlur}
           fromYear={1999}
-          value={
-            value[COMPANY_ACCOUNT_ITEM_REVISION_SELF_CREATE_DATA_NAME.YEAR]
-          }
-          name={
-            prefix + COMPANY_ACCOUNT_ITEM_REVISION_SELF_CREATE_DATA_NAME.YEAR
-          }
-          error={isFieldError(
-            COMPANY_ACCOUNT_ITEM_REVISION_SELF_CREATE_DATA_NAME.YEAR,
-          )}
-          errorText={getFieldError(
-            COMPANY_ACCOUNT_ITEM_REVISION_SELF_CREATE_DATA_NAME.YEAR,
-          )}
+          value={value[FIELD_NAME.YEAR]}
+          name={prefix + FIELD_NAME.YEAR}
+          error={isFieldError(FIELD_NAME.YEAR)}
+          errorText={getFieldError(FIELD_NAME.YEAR)}
           label={text(
-            'COMPANY_ACCOUNT_ITEM_REVISION_CREATE.REVISON_CREATE_PERIOD_ITEM.FORM.FIELD.LABELS.YEAR',
+            'COMPANY_ACCOUNT_ITEM_REVISION.SELF.CREATE_PERIOD_LIST.YEAR',
           )}
         />
       </Grid>
@@ -56,122 +60,82 @@ export const CompanyAccountItemRevisionSelfCreatePeriodItemComponent = (
         item
         container
         spacing={4}
-        xs={4}
         direction="row"
-        alignItems="center"
+        justifyContent="flex-start"
+        xs={1}
+        md={4}
+        columns={{
+          xs: 1,
+          md: 2,
+          lg: 4,
+        }}
       >
-        <Grid item xs>
+        <Grid item xs={1} md={1} lg={1}>
           <CheckboxField
-            name={
-              prefix +
-              COMPANY_ACCOUNT_ITEM_REVISION_SELF_CREATE_DATA_NAME.FIRST_PERIOD
-            }
+            name={prefix + FIELD_NAME.FIRST_PERIOD}
             onChange={handleChange}
             onBlur={handleBlur}
-            checked={
-              value[
-                COMPANY_ACCOUNT_ITEM_REVISION_SELF_CREATE_DATA_NAME.FIRST_PERIOD
-              ]
-            }
-            error={isFieldError(
-              COMPANY_ACCOUNT_ITEM_REVISION_SELF_CREATE_DATA_NAME.FIRST_PERIOD,
-            )}
-            errorText={getFieldError(
-              COMPANY_ACCOUNT_ITEM_REVISION_SELF_CREATE_DATA_NAME.FIRST_PERIOD,
-            )}
+            checked={value[FIELD_NAME.FIRST_PERIOD]}
+            error={isFieldError(FIELD_NAME.FIRST_PERIOD)}
+            errorText={getFieldError(FIELD_NAME.FIRST_PERIOD)}
             label={
               <Typography
                 children={text(
-                  'COMPANY_ACCOUNT_ITEM_REVISION_CREATE.REVISON_CREATE_PERIOD_ITEM.FORM.FIELD.LABELS.FIRST_QUARTER',
+                  'COMPANY_ACCOUNT_ITEM_REVISION.SELF.CREATE_PERIOD_LIST.QUARTER_1',
                 )}
               />
             }
           />
         </Grid>
 
-        <Grid item xs>
+        <Grid item xs={1} md={1} lg={1}>
           <CheckboxField
-            name={
-              prefix +
-              COMPANY_ACCOUNT_ITEM_REVISION_SELF_CREATE_DATA_NAME.SECOND_PERIOD
-            }
+            name={prefix + FIELD_NAME.SECOND_PERIOD}
             onChange={handleChange}
             onBlur={handleBlur}
-            checked={
-              value[
-                COMPANY_ACCOUNT_ITEM_REVISION_SELF_CREATE_DATA_NAME
-                  .SECOND_PERIOD
-              ]
-            }
-            error={isFieldError(
-              COMPANY_ACCOUNT_ITEM_REVISION_SELF_CREATE_DATA_NAME.SECOND_PERIOD,
-            )}
-            errorText={getFieldError(
-              COMPANY_ACCOUNT_ITEM_REVISION_SELF_CREATE_DATA_NAME.SECOND_PERIOD,
-            )}
+            checked={value[FIELD_NAME.SECOND_PERIOD]}
+            error={isFieldError(FIELD_NAME.SECOND_PERIOD)}
+            errorText={getFieldError(FIELD_NAME.SECOND_PERIOD)}
             label={
               <Typography
                 children={text(
-                  'COMPANY_ACCOUNT_ITEM_REVISION_CREATE.REVISON_CREATE_PERIOD_ITEM.FORM.FIELD.LABELS.SECOND_QUARTER',
+                  'COMPANY_ACCOUNT_ITEM_REVISION.SELF.CREATE_PERIOD_LIST.QUARTER_2',
                 )}
               />
             }
           />
         </Grid>
 
-        <Grid item xs>
+        <Grid item xs={1} md={1} lg={1}>
           <CheckboxField
-            name={
-              prefix +
-              COMPANY_ACCOUNT_ITEM_REVISION_SELF_CREATE_DATA_NAME.THIRD_PERIOD
-            }
+            name={prefix + FIELD_NAME.THIRD_PERIOD}
             onChange={handleChange}
             onBlur={handleBlur}
-            checked={
-              value[
-                COMPANY_ACCOUNT_ITEM_REVISION_SELF_CREATE_DATA_NAME.THIRD_PERIOD
-              ]
-            }
-            error={isFieldError(
-              COMPANY_ACCOUNT_ITEM_REVISION_SELF_CREATE_DATA_NAME.THIRD_PERIOD,
-            )}
-            errorText={getFieldError(
-              COMPANY_ACCOUNT_ITEM_REVISION_SELF_CREATE_DATA_NAME.THIRD_PERIOD,
-            )}
+            checked={value[FIELD_NAME.THIRD_PERIOD]}
+            error={isFieldError(FIELD_NAME.THIRD_PERIOD)}
+            errorText={getFieldError(FIELD_NAME.THIRD_PERIOD)}
             label={
               <Typography
                 children={text(
-                  'COMPANY_ACCOUNT_ITEM_REVISION_CREATE.REVISON_CREATE_PERIOD_ITEM.FORM.FIELD.LABELS.THIRD_QUARTER',
+                  'COMPANY_ACCOUNT_ITEM_REVISION.SELF.CREATE_PERIOD_LIST.QUARTER_3',
                 )}
               />
             }
           />
         </Grid>
 
-        <Grid item xs>
+        <Grid item xs={1} md={1} lg={1}>
           <CheckboxField
-            name={
-              prefix +
-              COMPANY_ACCOUNT_ITEM_REVISION_SELF_CREATE_DATA_NAME.FOURTH_PERIOD
-            }
+            name={prefix + FIELD_NAME.FOURTH_PERIOD}
             onChange={handleChange}
             onBlur={handleBlur}
-            checked={
-              value[
-                COMPANY_ACCOUNT_ITEM_REVISION_SELF_CREATE_DATA_NAME
-                  .FOURTH_PERIOD
-              ]
-            }
-            error={isFieldError(
-              COMPANY_ACCOUNT_ITEM_REVISION_SELF_CREATE_DATA_NAME.FOURTH_PERIOD,
-            )}
-            errorText={getFieldError(
-              COMPANY_ACCOUNT_ITEM_REVISION_SELF_CREATE_DATA_NAME.FOURTH_PERIOD,
-            )}
+            checked={value[FIELD_NAME.FOURTH_PERIOD]}
+            error={isFieldError(FIELD_NAME.FOURTH_PERIOD)}
+            errorText={getFieldError(FIELD_NAME.FOURTH_PERIOD)}
             label={
               <Typography
                 children={text(
-                  'COMPANY_ACCOUNT_ITEM_REVISION_CREATE.REVISON_CREATE_PERIOD_ITEM.FORM.FIELD.LABELS.FOURTH_QUARTER',
+                  'COMPANY_ACCOUNT_ITEM_REVISION.SELF.CREATE_PERIOD_LIST.QUARTER_4',
                 )}
               />
             }
@@ -180,14 +144,14 @@ export const CompanyAccountItemRevisionSelfCreatePeriodItemComponent = (
       </Grid>
 
       {yearsLenght > 1 && (
-        <Grid item>
+        <Grid item xs={1} md={2}>
           <Button
             color="red"
             variant="grey"
             fullWidth
             onClick={onRemove}
             children={text(
-              'COMPANY_ACCOUNT_ITEM_REVISION_CREATE.REVISON_CREATE_PERIOD_ITEM.FORM.DELETE_YEAR',
+              'COMPANY_ACCOUNT_ITEM_REVISION.SELF.CREATE_PERIOD_LIST.DELETE_PERIOD',
             )}
           />
         </Grid>

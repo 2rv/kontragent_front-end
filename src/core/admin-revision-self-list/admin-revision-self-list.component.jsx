@@ -3,29 +3,21 @@ import Divider from '@mui/material/Divider';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import Alert from '@mui/material/Alert';
-
-import { text } from '../../lib/common/text';
 import { SkeletonListComponent } from '../../lib/common/skeleton/skeleton-list.component';
+import { text } from '../../lib/common/text';
 
-import { CompanyAccountItemRevisionListViewComponent } from './frame/company-account-item-revision-list-view.component';
+import { AdminRevisionSelfListViewComponent } from './frame/admin-revision-self-list-view.component';
 
-export function CompanyAccountItemRevisionListComponent({
-  data,
-  isPending,
-  isError,
-  isSuccess,
-  errorMessage,
-}) {
+export function AdminRevisionSelfListComponent(props) {
+  const { data, isPending, isError, isSuccess, errorMessage } = props;
   return (
     <Paper sx={{ p: 0 }}>
       <Box>
         <Typography variant="heading" sx={{ px: 8, pt: 8 }} component="div">
-          {text('COMPANY_ACCOUNT_ITEM_REVISION.REVISION_LIST.TITLE')}
+          {text('REVISION_ADMIN_LIST.TITLE')}
         </Typography>
         <Divider sx={{ mx: 8, my: 4 }} />
-        {isSuccess && (
-          <CompanyAccountItemRevisionListViewComponent list={data} />
-        )}
+        {isSuccess && <AdminRevisionSelfListViewComponent list={data} />}
         {isPending && (
           <Box sx={{ pt: 4, px: 8, pb: 8 }}>
             <SkeletonListComponent />
