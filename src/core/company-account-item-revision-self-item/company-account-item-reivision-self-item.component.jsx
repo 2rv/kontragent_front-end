@@ -10,7 +10,7 @@ import { text } from '../../lib/common/text';
 
 import { COMPANY_ACCOUNT_ITEM_REVISION_ITEM_SELF_DATA_NAME as DATA_NAME } from './company-account-item-revision-self-item.constant';
 import { CompanyAccountItemRevisionSelfItemReviewComponent } from './frames/company-account-item-reivision-self-item-review.component';
-import { CompanyAccountItemRevisionSelfItemPaymentContainer } from '../company-account-item-revision-self-item-payment/company-account-item-revision-Self-item-payment.container';
+import { CompanyAccountItemRevisionSelfItemPaymentContainer } from '../company-account-item-revision-self-item-payment/company-account-item-revision-self-item-payment.container';
 import { FileListElement } from '../../lib/element/file-list.element';
 
 export function CompanyAccountItemRevisionSelfItemComponent(props) {
