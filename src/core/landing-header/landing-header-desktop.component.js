@@ -1,16 +1,16 @@
 import { useRouter } from 'next/router';
 import styled from 'styled-components';
-import Box from '@mui/material/Box';
+import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import Toolbar from '@mui/material/Toolbar';
 import AppBar from '@mui/material/AppBar';
 
+import { LandingButtonComponent } from '../../lib/common/landing';
+import { redirect } from '../../main/navigation';
+import { text } from '../../lib/common/text';
+
 import { AUTH_LOGIN_ROUTE_PATH } from '../auth-login';
 import { AUTH_SIGNUP_ROUTE_PATH } from '../auth-signup';
-import { redirect } from '../../main/navigation';
-
-import { LandingButtonComponent } from '../../lib/common/landing';
-import { text } from '../../lib/common/text';
 
 export function LandingHeaderDesktopComponent({ headerLinks }) {
   const router = useRouter();
@@ -21,59 +21,73 @@ export function LandingHeaderDesktopComponent({ headerLinks }) {
 
   return (
     <AppBar position="static" sx={{ p: 0, backgroundColor: '#F3F3F3' }}>
-      <ToolbarCase disableGutters sx={{ px: 8 }}>
-        <img height="24px" src="/static/img/logo.svg" />
-        <LinkItems>
-          {headerLinks.map((item, index) => (
-            <Typography
-              key={index}
-              onClick={() => scrollWithAnchor(item.path)}
-              sx={
-                router.asPath === item.path
-                  ? {
-                      fontWeight: '600',
-                      color: '#000',
-                    }
-                  : { color: '#707070', cursor: 'pointer' }
-              }
-            >
-              {text(item.name)}
-            </Typography>
-          ))}
-        </LinkItems>
-        <Box sx={{ display: 'flex', alignItems: 'center', gap: 4 }}>
-          <Typography
-            sx={{ fontWeight: '600', color: '#000', cursor: 'pointer' }}
-            onClick={() => redirect(AUTH_LOGIN_ROUTE_PATH)}
+      <Toolbar>
+        <Grid
+          container
+          spacing={8}
+          direction="row"
+          justifyContent="space-between"
+          alignItems="center"
+        >
+          <Grid item xs="auto">
+            <img height="24px" src="/static/img/logo.svg" />
+          </Grid>
+
+          <Grid
+            item
+            container
+            spacing={6}
+            direction="row"
+            justifyContent="start"
+            alignItems="center"
+            xs="auto"
           >
-            {text('LANDING.COMMON.SIGNIN')}
-          </Typography>
-          <LandingButtonComponent
-            tid={text('LANDING.COMMON.SIGNUP')}
-            onClick={() => redirect(AUTH_SIGNUP_ROUTE_PATH)}
-            height="46px"
-            boxShadow="inherit"
-          />
-        </Box>
-      </ToolbarCase>
+            {headerLinks.map((item, index) => (
+              <Grid item key={index}>
+                <Typography
+                  onClick={() => scrollWithAnchor(item.path)}
+                  sx={
+                    router.asPath === item.path
+                      ? {
+                          fontWeight: '600',
+                          color: '#000',
+                        }
+                      : { color: '#707070', cursor: 'pointer' }
+                  }
+                  children={text(item.name)}
+                />
+              </Grid>
+            ))}
+          </Grid>
+
+          <Grid
+            item
+            container
+            spacing={6}
+            direction="row"
+            justifyContent="start"
+            alignItems="center"
+            xs="auto"
+          >
+            <Grid item xs="auto">
+              <Typography
+                sx={{ fontWeight: '600', color: '#000', cursor: 'pointer' }}
+                onClick={() => redirect(AUTH_LOGIN_ROUTE_PATH)}
+                children={text('LANDING.COMMON.SIGNIN')}
+              />
+            </Grid>
+
+            <Grid item xs="auto">
+              <LandingButtonComponent
+                tid={text('LANDING.COMMON.SIGNUP')}
+                onClick={() => redirect(AUTH_SIGNUP_ROUTE_PATH)}
+                height="46px"
+                boxShadow="inherit"
+              />
+            </Grid>
+          </Grid>
+        </Grid>
+      </Toolbar>
     </AppBar>
   );
 }
-
-const ToolbarCase = styled(Toolbar)`
-  display: grid;
-  grid-template-columns: 0.7fr 2fr 0.4fr;
-  @media (min-width: 1601px) {
-    display: flex;
-    justify-content: space-between;
-  }
-`;
-
-const LinkItems = styled(Box)`
-  display: flex;
-  gap: 20px;
-  @media (min-width: 1601px) {
-    width: 100%;
-    max-width: 1030px;
-  }
-`;

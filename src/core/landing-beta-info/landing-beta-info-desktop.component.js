@@ -1,39 +1,51 @@
 import styled from 'styled-components';
-import Box from '@mui/material/Box';
+import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 
 import { text } from '../../lib/common/text';
 
 export function LandingBetaInfoDesktopComponent({ graphicData }) {
   return (
-    <>
+    <Grid container spacing={6} minHeight="440px">
       <PolygonSvg src="/static/img/landing/polygon.svg" />
-      <Box
-        sx={{
-          display: 'flex',
-          justifyContent: 'center',
-          flexDirection: 'column',
-          gap: '24px',
-          minHeight: '440px',
-          position: 'relative',
-        }}
+
+      <Grid item>
+        <Typography variant="landingTitle">
+          {text('LANDING.BETA_INFO.TITLE')}
+        </Typography>
+      </Grid>
+      <Grid item>
+        <Typography variant="landingText">
+          {text('LANDING.BETA_INFO.DESCRIPTION')}
+        </Typography>
+      </Grid>
+      <Grid
+        item
+        container
+        direction="row"
+        columns={4}
+        justifyContent="flex-start"
       >
-        <Box sx={{ gap: '24px', display: 'grid' }}>
-          <Typography variant="landingTitle">
-            {text('LANDING.BETA_INFO.TITLE')}
-          </Typography>
-          <Typography variant="landingText" sx={{ maxWidth: '550px' }}>
-            {text('LANDING.BETA_INFO.DESCRIPTION')}
-          </Typography>
-        </Box>
-        <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
-          {graphicData.map((graphic, index) => (
-            <Box key={index} sx={{ display: 'flex', flexDirection: 'column', gap: '16px', width: '100%' }}>
+        {graphicData.map((graphic, index) => (
+          <Grid
+            item
+            xs
+            container
+            key={index}
+            spacing={4}
+            // sx={{
+            //   display: 'flex',
+            //   flexDirection: 'column',
+            //   gap: '16px',
+            //   width: '100%',
+            // }}
+          >
+            <Grid item>
               <GraphicContainer>
                 <GraphicCricle>
                   <GraphicPoint />
                 </GraphicCricle>
-                {(graphicData.length - 1 !== index) && (
+                {graphicData.length - 1 !== index && (
                   <GraphicLineContainer>
                     <GraphicLine />
                     <GraphicPoint />
@@ -41,17 +53,23 @@ export function LandingBetaInfoDesktopComponent({ graphicData }) {
                   </GraphicLineContainer>
                 )}
               </GraphicContainer>
+            </Grid>
+            <Grid item>
               <Typography variant="title">{graphic.date}</Typography>
+            </Grid>
+            <Grid item>
               <ul style={{ listStyle: 'inherit', marginLeft: '16px' }}>
                 {graphic.tasks.map((task, index) => (
-                  <li key={index}><Typography variant="landingText">{task}</Typography></li>
+                  <li key={index}>
+                    <Typography variant="landingText">{task}</Typography>
+                  </li>
                 ))}
               </ul>
-            </Box>
-          ))}
-        </Box>
-      </Box>
-    </>
+            </Grid>
+          </Grid>
+        ))}
+      </Grid>
+    </Grid>
   );
 }
 
@@ -69,35 +87,30 @@ const PolygonSvg = styled.img`
     left: -23%;
   }
 `;
-
 const GraphicContainer = styled.div`
   display: flex;
   width: 100%;
 `;
-
 const GraphicLineContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
   width: 100%;
 `;
-
 const GraphicCricle = styled.div`
-  border: 3px solid #3AB8FF;
+  border: 3px solid #3ab8ff;
   padding: 15px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
 `;
-
 const GraphicPoint = styled.div`
-  background-color: #3AB8FF;
+  background-color: #3ab8ff;
   padding: 4.5px;
   border-radius: 50%;
 `;
-
 const GraphicLine = styled.div`
-  border-bottom: 1px solid #B5B5B5;
+  border-bottom: 1px solid #b5b5b5;
   width: 100%;
 `;
