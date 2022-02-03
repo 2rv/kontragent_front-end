@@ -22,7 +22,7 @@ export function LandingGetNotificationDesktopComponent() {
         justifyContent="flex-start"
         minHeight={{ xs: '300px', lg: '400px' }}
       >
-        <Grid item xs={6} container spacing={6}>
+        <Grid item lg={6} container spacing={6}>
           <Grid item>
             <Typography
               variant="landingTitle"
@@ -61,7 +61,7 @@ export function LandingGetNotificationDesktopComponent() {
           </Grid>
         </Grid>
 
-        <Grid item xs={6} sx={{ display: { xs: 'none', lg: 'block' } }}>
+        <Grid item lg={6} sx={{ display: { xs: 'none', lg: 'block' } }}>
           <img
             src={`/static/img/landing/landing-get-notification/info-image.svg`}
           />

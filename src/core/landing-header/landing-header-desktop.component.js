@@ -1,5 +1,4 @@
 import { useRouter } from 'next/router';
-import styled from 'styled-components';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import Toolbar from '@mui/material/Toolbar';
@@ -20,11 +19,11 @@ export function LandingHeaderDesktopComponent({ headerLinks }) {
   };
 
   return (
-    <AppBar position="static" sx={{ p: 0, backgroundColor: '#F3F3F3' }}>
+    <AppBar position="static" sx={{ px: 8, py: 0, backgroundColor: '#F3F3F3' }}>
       <Toolbar>
         <Grid
           container
-          spacing={8}
+          spacing={6}
           direction="row"
           justifyContent="space-between"
           alignItems="center"
@@ -36,7 +35,7 @@ export function LandingHeaderDesktopComponent({ headerLinks }) {
           <Grid
             item
             container
-            spacing={6}
+            spacing={4}
             direction="row"
             justifyContent="start"
             alignItems="center"
@@ -63,7 +62,7 @@ export function LandingHeaderDesktopComponent({ headerLinks }) {
           <Grid
             item
             container
-            spacing={6}
+            spacing={4}
             direction="row"
             justifyContent="start"
             alignItems="center"

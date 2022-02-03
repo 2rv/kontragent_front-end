@@ -6,25 +6,55 @@ import { text } from '../../lib/common/text';
 
 export function LandingBetaInfoDesktopComponent({ graphicData }) {
   return (
-    <Grid container spacing={6} minHeight="440px">
+    <Grid
+      container
+      spacing={6}
+      sx={{
+        minHeight: {
+          md: '440px',
+          sm: '600px',
+          xs: '460px',
+        },
+      }}
+    >
       <PolygonSvg src="/static/img/landing/polygon.svg" />
 
       <Grid item>
-        <Typography variant="landingTitle">
+        <Typography
+          variant="landingTitle"
+          sx={{
+            fontSize: {
+              sm: 'landingTitle.fontSize',
+              xs: '16px',
+            },
+          }}
+        >
           {text('LANDING.BETA_INFO.TITLE')}
         </Typography>
       </Grid>
+
       <Grid item>
-        <Typography variant="landingText">
+        <Typography
+          variant="landingText"
+          sx={{
+            fontSize: {
+              sm: 'landingText.fontSize',
+              xs: '12px',
+            },
+          }}
+        >
           {text('LANDING.BETA_INFO.DESCRIPTION')}
         </Typography>
       </Grid>
+
       <Grid
         item
         container
         direction="row"
         columns={4}
         justifyContent="flex-start"
+        columns={{ xs: 8, lg: 12 }}
+        rowSpacing={4}
       >
         {graphicData.map((graphic, index) => (
           <Grid
@@ -34,6 +64,8 @@ export function LandingBetaInfoDesktopComponent({ graphicData }) {
             key={index}
             spacing={4}
             justifyContent="flex-start"
+            xs={4}
+            lg={3}
           >
             <Grid item>
               <GraphicContainer>
@@ -49,14 +81,34 @@ export function LandingBetaInfoDesktopComponent({ graphicData }) {
                 )}
               </GraphicContainer>
             </Grid>
+
             <Grid item>
-              <Typography variant="title">{graphic.date}</Typography>
+              <Typography
+                variant="title"
+                sx={{
+                  fontSize: {
+                    sm: 'title.fontSize',
+                    xs: '12px',
+                  },
+                }}
+                children={graphic.date}
+              />
             </Grid>
+
             <Grid item>
               <ul style={{ listStyle: 'inherit', marginLeft: '16px' }}>
                 {graphic.tasks.map((task, index) => (
                   <li key={index}>
-                    <Typography variant="landingText">{task}</Typography>
+                    <Typography
+                      variant="landingText"
+                      sx={{
+                        fontSize: {
+                          sm: 'landingText.fontSize',
+                          xs: '10px',
+                        },
+                      }}
+                      children={task}
+                    />
                   </li>
                 ))}
               </ul>
@@ -99,6 +151,10 @@ const GraphicCricle = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+
+  @media (max-width: 600px) {
+    padding: 10px;
+  }
 `;
 const GraphicPoint = styled.div`
   background-color: #3ab8ff;

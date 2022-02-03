@@ -19,7 +19,7 @@ export function LandingReviewDesktopComponent() {
         spacing={{ xs: 3, lg: 6 }}
         justifyContent="center"
         minHeight={{ xs: '300px', lg: '400px' }}
-        xs={6}
+        lg={6}
       >
         <Grid item>
           <Typography

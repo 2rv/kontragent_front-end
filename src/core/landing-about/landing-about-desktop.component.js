@@ -2,13 +2,14 @@ import styled from 'styled-components';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 
-import { AUTH_SIGNUP_ROUTE_PATH } from '../auth-signup';
+import { redirect } from '../../main/navigation';
+import { text } from '../../lib/common/text';
 import {
   LandingLayout,
   LandingButtonComponent,
 } from '../../lib/common/landing';
-import { redirect } from '../../main/navigation';
-import { text } from '../../lib/common/text';
+
+import { AUTH_SIGNUP_ROUTE_PATH } from '../auth-signup';
 
 export function LandingAboutDesktopComponent() {
   return (
@@ -16,7 +17,7 @@ export function LandingAboutDesktopComponent() {
       <Grid
         container
         spacing={6}
-        minHeight={{ xs: '300px', lg: '350px' }}
+        minHeight={{ lg: '350px', xs: '300px' }}
         maxWidth="700px"
       >
         <Grid item>

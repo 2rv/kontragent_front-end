@@ -5,20 +5,34 @@ import { LandingHeaderDesktopComponent } from './landing-header-desktop.componen
 import { LandingHeaderMobileComponent } from './landing-header.mobile.component';
 
 export function LandingHeaderContainer() {
-  const desktopBreakpoint = useMediaQuery(theme => theme.breakpoints.up('md'));
-  const mobileBreakpoint = useMediaQuery(theme => theme.breakpoints.between('xs', 'md'));
+  const desktopBreakpoint = useMediaQuery((theme) =>
+    theme.breakpoints.up('lg'),
+  );
+  const mobileBreakpoint = useMediaQuery((theme) =>
+    theme.breakpoints.between('xs', 'lg'),
+  );
 
   const headerLinks = [
-    { name: 'LANDING.HEADER.HOME',       path: HOME_ROUTE_PATH },
-    { name: 'LANDING.HEADER.ABOUT',      path: HOME_ROUTE_PATH + '#about' },
-    { name: 'LANDING.HEADER.ADVANTAGES', path: HOME_ROUTE_PATH + '#advantages' },
-    { name: 'LANDING.HEADER.PRINCIPLES', path: HOME_ROUTE_PATH + '#principles' },
+    { name: 'LANDING.HEADER.HOME', path: HOME_ROUTE_PATH },
+    { name: 'LANDING.HEADER.ABOUT', path: HOME_ROUTE_PATH + '#about' },
+    {
+      name: 'LANDING.HEADER.ADVANTAGES',
+      path: HOME_ROUTE_PATH + '#advantages',
+    },
+    {
+      name: 'LANDING.HEADER.PRINCIPLES',
+      path: HOME_ROUTE_PATH + '#principles',
+    },
   ];
 
   return (
     <>
-      {Boolean(desktopBreakpoint) && <LandingHeaderDesktopComponent headerLinks={headerLinks} />}
-      {Boolean(mobileBreakpoint) && <LandingHeaderMobileComponent headerLinks={headerLinks} />}
+      {Boolean(desktopBreakpoint) && (
+        <LandingHeaderDesktopComponent headerLinks={headerLinks} />
+      )}
+      {Boolean(mobileBreakpoint) && (
+        <LandingHeaderMobileComponent headerLinks={headerLinks} />
+      )}
     </>
   );
 }

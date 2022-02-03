@@ -8,17 +8,44 @@ import { HOME_ROUTE_PATH } from '../landing';
 
 export function LandingHeroDesktopComponent() {
   return (
-    <Grid container spacing={8} maxWidth="610px" minHeight="95vh">
+    <Grid
+      container
+      spacing={{ lg: 8, xs: 6 }}
+      maxWidth="610px"
+      sx={{
+        minHeight: {
+          lg: '95vh',
+          xs: '400px',
+        },
+      }}
+    >
       <Grid item>
-        <Typography variant="landingTitleHero">
-          {text('LANDING.HERO.TITLE')}
-        </Typography>
+        <Typography
+          variant="landingTitleHero"
+          sx={{
+            fontSize: {
+              sm: 'landingTitleHero.fontSize',
+              xs: '16px',
+            },
+          }}
+          children={text('LANDING.HERO.TITLE')}
+        />
       </Grid>
+
       <Grid item>
-        <Typography variant="landingText" sx={{ fontSize: '20px' }}>
+        <Typography
+          variant="landingText"
+          sx={{
+            fontSize: {
+              sm: '20px',
+              xs: '14px',
+            },
+          }}
+        >
           {text('LANDING.HERO.DESCRIPTION')}
         </Typography>
       </Grid>
+
       <Grid item>
         <LandingButtonComponent
           onClick={setLinkRedirect(HOME_ROUTE_PATH + '#about')}
