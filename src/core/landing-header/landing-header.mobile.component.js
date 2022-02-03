@@ -64,6 +64,7 @@ export function LandingHeaderMobileComponent({ headerLinks }) {
             direction="row"
             justifyContent="space-between"
             alignItems="center"
+            paddingBottom={2}
           >
             <Grid item sx={{ cursor: 'pointer' }} onClick={handleToggle}>
               <img src="/static/img/landing/close.svg" />
