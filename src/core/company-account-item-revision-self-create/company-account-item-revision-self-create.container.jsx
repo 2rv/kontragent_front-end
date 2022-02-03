@@ -1,17 +1,26 @@
-import { useDispatch, useSelector } from 'react-redux';
+import { useReducer } from 'react';
+import { useSelector } from 'react-redux';
+import { getQuery } from '../../main/navigation';
 import { NAVIGATION_STORE_NAME } from '../../lib/common/navigation';
+
 import { COMPANY_ACCOUNT_ITEM_REVISION_SELF_CREATE_DATA_NAME as FIELD_NAME } from './company-account-item-revision-self-create.constant';
 import { uploadCompanyAccountItemRevisionSelfCreateForm } from './company-account-item-revision-self-create.action';
 import { convertCompanyAccountItemRevisionSelfCreateFormData } from './company-account-item-revision-self-create.convert';
 import { companyAccountItemRevisionSelfCreateFormValidation } from './company-account-item-revision-self-create.validation';
 import { CompanyAccountItemRevisionSelfCreateComponent } from './company-account-item-revision-self-create.component';
-import { getQuery } from '../../main/navigation';
+import {
+  initialState,
+  companyAccountItemRevisionSelfCreateReducer,
+} from './company-account-item-revision-self-create.reducer';
 
 export function CompanyAccountItemRevisionSelfCreateContainer() {
-  const dispatch = useDispatch();
   const { pageLoading } = useSelector((state) => ({
     pageLoading: state[NAVIGATION_STORE_NAME].pageLoading,
   }));
+  const [state, setState] = useReducer(
+    companyAccountItemRevisionSelfCreateReducer,
+    initialState,
+  );
 
   const getInitialValue = () => {
     return {
@@ -29,24 +38,20 @@ export function CompanyAccountItemRevisionSelfCreateContainer() {
   };
 
   const onSubmitForm = (values) => {
-    try {
-      const data = {
-        values: convertCompanyAccountItemRevisionSelfCreateFormData(values),
-        companyId: getQuery('companyId'),
-      };
-      dispatch(uploadCompanyAccountItemRevisionSelfCreateForm(data));
-    } catch (error) {
-      console.log(error);
-    }
+    const data = {
+      values: convertCompanyAccountItemRevisionSelfCreateFormData(values),
+      companyId: getQuery('companyId'),
+    };
+    uploadCompanyAccountItemRevisionSelfCreateForm(data)(setState);
   };
 
   return (
     <CompanyAccountItemRevisionSelfCreateComponent
       pageLoading={pageLoading}
-      // isPending={isRequestPending(state.form)}
-      // isSuccess={isRequestSuccess(state.form)}
-      // isError={isRequestError(state.form)}
-      // errorMessage={getRequestErrorMessage(state.form)}
+      isPending={isRequestPending(state.form)}
+      isSuccess={isRequestSuccess(state.form)}
+      isError={isRequestError(state.form)}
+      errorMessage={getRequestErrorMessage(state.form)}
       initialValue={getInitialValue()}
       validation={companyAccountItemRevisionSelfCreateFormValidation}
       onSubmitForm={onSubmitForm}

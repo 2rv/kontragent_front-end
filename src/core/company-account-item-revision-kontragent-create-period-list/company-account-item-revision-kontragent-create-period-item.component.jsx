@@ -62,7 +62,8 @@ export function CompanyAccountItemRevisionKontragentCreatePeriodItemComponent(
         <YearSelectFieldComponent
           onChange={handleChange}
           onBlur={handleBlur}
-          fromYear={1999}
+          fromYear={2018}
+          toYear={2021}
           value={value[FIELD_NAME.YEAR]}
           name={prefix + FIELD_NAME.YEAR}
           error={isFieldError(FIELD_NAME.YEAR)}

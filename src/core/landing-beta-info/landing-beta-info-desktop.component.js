@@ -33,12 +33,7 @@ export function LandingBetaInfoDesktopComponent({ graphicData }) {
             container
             key={index}
             spacing={4}
-            // sx={{
-            //   display: 'flex',
-            //   flexDirection: 'column',
-            //   gap: '16px',
-            //   width: '100%',
-            // }}
+            justifyContent="flex-start"
           >
             <Grid item>
               <GraphicContainer>
