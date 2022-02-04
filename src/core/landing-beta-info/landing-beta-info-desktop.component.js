@@ -26,11 +26,13 @@ export function LandingBetaInfoDesktopComponent({ graphicData }) {
       <Grid item>
         <Typography
           variant="landingText"
+          component="div"
           sx={{
             fontSize: {
               sm: 'landingText.fontSize',
               xs: '12px',
             },
+            maxWidth: 520,
           }}
         >
           {text('LANDING.BETA_INFO.DESCRIPTION')}
@@ -90,9 +92,9 @@ export function LandingBetaInfoDesktopComponent({ graphicData }) {
             </Grid>
 
             <Grid item>
-              <ul style={{ listStyle: 'inherit', marginLeft: '16px' }}>
+              <ul style={{ listStyle: 'inherit' }}>
                 {graphic.tasks.map((task, index) => (
-                  <li key={index}>
+                  <li key={index} style={{ marginRight: '10px' }}>
                     <Typography
                       variant="landingText"
                       sx={{

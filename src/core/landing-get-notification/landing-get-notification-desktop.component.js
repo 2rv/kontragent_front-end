@@ -9,7 +9,7 @@ import { AUTH_SIGNUP_ROUTE_PATH } from '../auth-signup';
 export function LandingGetNotificationDesktopComponent() {
   return (
     <Grid container spacing={8} direction="row" justifyContent="flex-start">
-      <Grid item lg={6} container spacing={{ xs: 4, sm: 6 }}>
+      <Grid item lg={5.5} container spacing={5}>
         <Grid item>
           <Typography
             variant="landingTitle"

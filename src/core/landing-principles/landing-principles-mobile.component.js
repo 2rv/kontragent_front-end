@@ -42,6 +42,8 @@ export function LandingPrinciplesMobileComponent() {
         <Grid item>
           <Typography
             variant="landingText"
+            component="div"
+            marginTop="-7px"
             fontSize={{ xs: '10px', sm: 'landingText.fontSize' }}
           >
             Мы приносим пользу и ценность предпринимателям
@@ -65,6 +67,8 @@ export function LandingPrinciplesMobileComponent() {
         <Grid item>
           <Typography
             variant="landingText"
+            component="div"
+            marginTop="-7px"
             fontSize={{ xs: '10px', sm: 'landingText.fontSize' }}
           >
             Мы ценим наших клиентов и дорожим их доверием
@@ -87,6 +91,8 @@ export function LandingPrinciplesMobileComponent() {
         <Grid item>
           <Typography
             variant="landingText"
+            component="div"
+            marginTop="-7px"
             fontSize={{ xs: '10px', sm: 'landingText.fontSize' }}
           >
             Мы гарантируем качество и ответственность результата

@@ -30,7 +30,8 @@ export function LandingAdvantagesPartTwoDesktopComponent() {
         <Grid item>
           <Typography
             variant="landingTitle"
-            sx={{ fontSize: '24px', lineHeight: 1.5 }}
+            component="div"
+            sx={{ fontSize: '24px', lineHeight: 1.5, maxWidth: 504 }}
           >
             {text('LANDING.ADVANTAGES_PART_TWO.BLOCK_1.TITLE')}
           </Typography>
@@ -60,7 +61,8 @@ export function LandingAdvantagesPartTwoDesktopComponent() {
         <Grid item>
           <Typography
             variant="landingTitle"
-            sx={{ fontSize: '24px', lineHeight: 1.5 }}
+            component="div"
+            sx={{ fontSize: '24px', lineHeight: 1.5, maxWidth: 350 }}
           >
             {text('LANDING.ADVANTAGES_PART_TWO.BLOCK_2.TITLE')}
           </Typography>
@@ -96,7 +98,11 @@ export function LandingAdvantagesPartTwoDesktopComponent() {
         </Grid>
 
         <Grid item>
-          <Typography variant="landingText">
+          <Typography
+            variant="landingText"
+            component="div"
+            sx={{ maxWidth: 500 }}
+          >
             Платформа уникальна и не имеет аналогов.
             <br />
             <br />

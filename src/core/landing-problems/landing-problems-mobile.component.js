@@ -42,6 +42,8 @@ export function LandingProblemsMobileComponent() {
         <Grid item>
           <Typography
             variant="landingText"
+            component="div"
+            marginTop="-7px"
             fontSize={{ xs: '10px', sm: 'landingText.fontSize' }}
           >
             Побуждение откорректировать декларацию и заплатить бюджет?
@@ -64,6 +66,8 @@ export function LandingProblemsMobileComponent() {
 
         <Grid item>
           <Typography
+            component="div"
+            marginTop="-7px"
             variant="landingText"
             fontSize={{ xs: '10px', sm: 'landingText.fontSize' }}
           >
@@ -87,6 +91,8 @@ export function LandingProblemsMobileComponent() {
 
         <Grid item>
           <Typography
+            component="div"
+            marginTop="-7px"
             variant="landingText"
             fontSize={{ xs: '10px', sm: 'landingText.fontSize' }}
           >
