@@ -7,37 +7,26 @@ import { AUTH_LOGIN_ROUTE_PATH } from '../auth-login';
 
 export function LandingFooterMobileComponent() {
   return (
-    <Grid
-      container
-      direction="row"
-      sx={{
-        display: 'flex',
-        justifyContent: 'space-between',
-        gap: '36px',
-        paddingTop: '20px',
-        paddingBottom: '20px',
-      }}
-    >
-      <Grid item>
-        <Grid
-          container
-          direction="row"
-          sx={{
-            display: 'grid',
-            gridTemplateColumns: '1fr 1fr',
-            gap: '6px',
-          }}
-        >
-          <Grid
-            item
-            sx={{ display: 'flex', flexDirection: 'column', gap: '15px' }}
-          >
+    <Grid container spacing={8}>
+      <Grid
+        item
+        container
+        spacing={8}
+        direction="row"
+        justifyContent="flex-start"
+        alignItems="flex-start"
+      >
+        <Grid item container spacing={3} xs="auto">
+          <Grid item>
             <Typography
               variant="body2"
-              sx={{ fontSize: '12px', fontWeight: '600', color: '#000' }}
+              sx={{ fontSize: '12px', fontWeight: 600, color: '#252525' }}
             >
               {text('LANDING.FOOTER.HOME')}
             </Typography>
+          </Grid>
+
+          <Grid item>
             <Typography
               variant="body2"
               sx={{ fontSize: '12px', cursor: 'pointer' }}
@@ -45,6 +34,9 @@ export function LandingFooterMobileComponent() {
             >
               {text('LANDING.FOOTER.SIGNUP')}
             </Typography>
+          </Grid>
+
+          <Grid item>
             <Typography
               variant="body2"
               sx={{ fontSize: '12px', cursor: 'pointer' }}
@@ -53,11 +45,10 @@ export function LandingFooterMobileComponent() {
               {text('LANDING.FOOTER.AUTHORIZATION')}
             </Typography>
           </Grid>
-          <Grid
-            item
-            sx={{ display: 'flex', flexDirection: 'column', gap: '15px' }}
-            justifyContent="flex-start"
-          >
+        </Grid>
+
+        <Grid item container spacing={3} xs="auto">
+          <Grid item>
             <Typography
               variant="body2"
               sx={{ fontSize: '12px', cursor: 'pointer' }}
@@ -70,20 +61,9 @@ export function LandingFooterMobileComponent() {
             >
               {text('LANDING.FOOTER.PRIVACY_POLICITY')}
             </Typography>
+          </Grid>
 
-            {/* <Typography
-              variant="body2"
-              sx={{ fontSize: '12px', cursor: 'pointer' }}
-              onClick={() =>
-                redirect(
-                  'https://xn--80aggrpdcrrf.xn--p1ai/static/pdf/blank.pdf',
-                  { newTab: true },
-                )
-              }
-            >
-              {text('LANDING.FOOTER.PRIVACY_TERMS')}
-            </Typography> */}
-
+          <Grid item>
             <Typography
               variant="body2"
               sx={{ fontSize: '12px', cursor: 'pointer' }}
@@ -99,20 +79,17 @@ export function LandingFooterMobileComponent() {
           </Grid>
         </Grid>
       </Grid>
-      <Grid
-        item
-        sx={{
-          display: 'flex',
-          flexDirection: 'column',
-          justifyContent: 'flex-start',
-          alignItems: 'flex-start',
-          gap: '10px',
-        }}
-      >
-        <img height="20px" src="/static/img/logo.svg" />
-        <Typography variant="body1" sx={{ fontSize: '12px' }}>
-          © 2021 Контрагент. All rights reserved.
-        </Typography>
+
+      <Grid item container spacing={2}>
+        <Grid item>
+          <img height="20px" src="/static/img/logo.svg" />
+        </Grid>
+
+        <Grid item>
+          <Typography variant="body1" sx={{ fontSize: '12px' }}>
+            © 2021 Контрагент. All rights reserved.
+          </Typography>
+        </Grid>
       </Grid>
     </Grid>
   );

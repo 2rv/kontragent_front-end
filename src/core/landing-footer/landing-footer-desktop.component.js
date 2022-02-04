@@ -81,7 +81,7 @@ export function LandingFooterDesktopComponent() {
         </Grid>
       </Grid>
 
-      <Grid item container spacing={2} xs="auto">
+      <Grid item container spacing={2} xs="auto" alignItems="flex-end">
         <Grid item>
           <img height="22px" src="/static/img/logo.svg" />
         </Grid>

@@ -4,7 +4,7 @@ import { text } from '../../lib/common/text';
 
 export function LandingProblemsMobileComponent() {
   return (
-    <Grid container spacing={6} minHeight="300px">
+    <Grid container spacing={6}>
       <Grid item container spacing={2}>
         <Grid item>
           <Typography
@@ -30,8 +30,10 @@ export function LandingProblemsMobileComponent() {
         item
         container
         direction="row"
-        spacing={1}
+        spacing={4}
         justifyContent="flex-start"
+        alignItems="flex-start"
+        wrap="nowrap"
       >
         <Grid item>
           <img src="/static/img/landing/landing-problems/icon-1-mobile.svg" />
@@ -40,7 +42,7 @@ export function LandingProblemsMobileComponent() {
         <Grid item>
           <Typography
             variant="landingText"
-            fontSize={{ xs: '12px', sm: 'landingText.fontSize' }}
+            fontSize={{ xs: '10px', sm: 'landingText.fontSize' }}
           >
             Побуждение откорректировать декларацию и заплатить бюджет?
           </Typography>
@@ -51,8 +53,10 @@ export function LandingProblemsMobileComponent() {
         item
         container
         direction="row"
-        spacing={1}
+        spacing={4}
         justifyContent="flex-start"
+        alignItems="flex-start"
+        wrap="nowrap"
       >
         <Grid item>
           <img src="/static/img/landing/landing-problems/icon-2-mobile.svg" />
@@ -61,7 +65,7 @@ export function LandingProblemsMobileComponent() {
         <Grid item>
           <Typography
             variant="landingText"
-            fontSize={{ xs: '12px', sm: 'landingText.fontSize' }}
+            fontSize={{ xs: '10px', sm: 'landingText.fontSize' }}
           >
             Регулярные вызовы на комиссию КАО ИФНС?
           </Typography>
@@ -72,8 +76,10 @@ export function LandingProblemsMobileComponent() {
         item
         container
         direction="row"
-        spacing={1}
+        spacing={4}
         justifyContent="flex-start"
+        alignItems="flex-start"
+        wrap="nowrap"
       >
         <Grid item>
           <img src="/static/img/landing/landing-problems/icon-3-mobile.svg" />
@@ -82,7 +88,7 @@ export function LandingProblemsMobileComponent() {
         <Grid item>
           <Typography
             variant="landingText"
-            fontSize={{ xs: '12px', sm: 'landingText.fontSize' }}
+            fontSize={{ xs: '10px', sm: 'landingText.fontSize' }}
           >
             Частые запросы со стороны ИФНС вне рамок налоговых проверок?
           </Typography>

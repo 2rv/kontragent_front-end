@@ -185,7 +185,7 @@ export const typography = {
       '"IBM Plex Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"',
     fontWeight: 700,
     fontSize: 28,
-    lineHeight: '29px',
+    lineHeight: 0.8,
   },
   landingText: {
     fontFamily:

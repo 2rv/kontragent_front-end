@@ -20,13 +20,15 @@ export function LandingHeaderDesktopComponent({ headerLinks }) {
 
   return (
     <AppBar position="static" sx={{ px: 8, py: 0, backgroundColor: '#F3F3F3' }}>
-      <Toolbar>
+      <Toolbar disableGutters>
         <Grid
           container
-          spacing={6}
+          spacing={4}
           direction="row"
           justifyContent="space-between"
           alignItems="center"
+          sx={{ height: 80 }}
+          wrap="nowrap"
         >
           <Grid item xs="auto">
             <img height="24px" src="/static/img/logo.svg" />
@@ -35,7 +37,7 @@ export function LandingHeaderDesktopComponent({ headerLinks }) {
           <Grid
             item
             container
-            spacing={4}
+            spacing={6}
             direction="row"
             justifyContent="start"
             alignItems="center"
@@ -44,15 +46,13 @@ export function LandingHeaderDesktopComponent({ headerLinks }) {
             {headerLinks.map((item, index) => (
               <Grid item key={index}>
                 <Typography
+                  variant="title"
                   onClick={() => scrollWithAnchor(item.path)}
-                  sx={
-                    router.asPath === item.path
-                      ? {
-                          fontWeight: '600',
-                          color: '#000',
-                        }
-                      : { color: '#707070', cursor: 'pointer' }
-                  }
+                  sx={{
+                    fontWeight: router.asPath === item.path ? 600 : 400,
+                    color: router.asPath === item.path ? '#000' : '#707070',
+                    cursor: 'pointer',
+                  }}
                   children={text(item.name)}
                 />
               </Grid>

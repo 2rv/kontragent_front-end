@@ -22,8 +22,8 @@ export function LandingAdvantagesMobileComponent() {
 
         <Grid item>
           <Typography
-            variant="body1"
-            fontSize={{ xs: '12px', sm: 'body1.fontSize' }}
+            variant="landingText"
+            fontSize={{ xs: '10px', sm: 'landingText.fontSize' }}
           >
             Информационную услугу, а простым языком диагностику книги покупок на
             предмет наличия расхождений или разрывов по декларации НДС. Клиент
@@ -51,8 +51,8 @@ export function LandingAdvantagesMobileComponent() {
 
         <Grid item>
           <Typography
-            variant="body1"
-            fontSize={{ xs: '12px', sm: 'body1.fontSize' }}
+            variant="landingText"
+            fontSize={{ xs: '10px', sm: 'landingText.fontSize' }}
           >
             {text('LANDING.ADVANTAGES.BLOCK_2.DESCRIPTION_1')}
             {text('LANDING.ADVANTAGES.BLOCK_2.DESCRIPTION_2')}
@@ -82,32 +82,32 @@ export function LandingAdvantagesMobileComponent() {
           <ul style={{ listStyle: 'inherit', marginLeft: '15px' }}>
             <li>
               <Typography
-                variant="body1"
-                fontSize={{ xs: '12px', sm: 'body1.fontSize' }}
+                variant="landingText"
+                fontSize={{ xs: '10px', sm: 'landingText.fontSize' }}
               >
                 {text('LANDING.ADVANTAGES.BLOCK_3.LIST.ITEM_1')}
               </Typography>
             </li>
             <li>
               <Typography
-                variant="body1"
-                fontSize={{ xs: '12px', sm: 'body1.fontSize' }}
+                variant="landingText"
+                fontSize={{ xs: '10px', sm: 'landingText.fontSize' }}
               >
                 {text('LANDING.ADVANTAGES.BLOCK_3.LIST.ITEM_2')}
               </Typography>
             </li>
             <li>
               <Typography
-                variant="body1"
-                fontSize={{ xs: '12px', sm: 'body1.fontSize' }}
+                variant="landingText"
+                fontSize={{ xs: '10px', sm: 'landingText.fontSize' }}
               >
                 {text('LANDING.ADVANTAGES.BLOCK_3.LIST.ITEM_3')}
               </Typography>
             </li>
             <li>
               <Typography
-                variant="body1"
-                fontSize={{ xs: '12px', sm: 'body1.fontSize' }}
+                variant="landingText"
+                fontSize={{ xs: '10px', sm: 'landingText.fontSize' }}
               >
                 {text('LANDING.ADVANTAGES.BLOCK_3.LIST.ITEM_4')}
               </Typography>

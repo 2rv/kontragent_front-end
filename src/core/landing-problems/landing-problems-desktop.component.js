@@ -5,7 +5,7 @@ import { text } from '../../lib/common/text';
 
 export function LandingProblemsDesktopComponent() {
   return (
-    <Grid container spacing={4} minHeight="400px" alignItems="center">
+    <Grid container spacing={6} alignItems="center">
       <BubbleSvg src="/static/img/landing/2-bubble.svg" />
 
       <Grid item>
@@ -15,18 +15,26 @@ export function LandingProblemsDesktopComponent() {
       </Grid>
 
       <Grid item>
-        <Typography variant="landingText" sx={{ color: '#707070' }}>
+        <Typography
+          variant="landingText"
+          sx={{ color: '#707070', fontSize: 18, lineHeight: 0.8 }}
+        >
           {text('LANDING.PROBLEMS.DESCRIPTION')}
         </Typography>
       </Grid>
 
-      <Grid item container direction="row">
+      <Grid mt={2} item container direction="row">
         <Grid item container spacing={4} alignItems="center" xs>
           <Grid item>
             <Icon src="/static/img/landing/landing-problems/icon-1.svg" />
           </Grid>
           <Grid item>
-            <Typography variant="landingText">
+            <Typography
+              variant="landingText"
+              component="div"
+              fontWeight={500}
+              align="center"
+            >
               Побуждение откорректировать
               <br /> декларацию и заплатить бюджет?
             </Typography>
@@ -38,7 +46,12 @@ export function LandingProblemsDesktopComponent() {
             <Icon src="/static/img/landing/landing-problems/icon-2.svg" />
           </Grid>
           <Grid item>
-            <Typography variant="landingText">
+            <Typography
+              variant="landingText"
+              component="div"
+              fontWeight={500}
+              align="center"
+            >
               Регулярные вызовы
               <br /> на комиссию КАО ИФНС?
             </Typography>
@@ -50,7 +63,12 @@ export function LandingProblemsDesktopComponent() {
             <Icon src="/static/img/landing/landing-problems/icon-3.svg" />
           </Grid>
           <Grid item>
-            <Typography variant="landingText">
+            <Typography
+              variant="landingText"
+              component="div"
+              fontWeight={500}
+              align="center"
+            >
               Частые запросы со стороны ИФНС
               <br /> вне рамок налоговых проверок?
             </Typography>

@@ -27,7 +27,11 @@ export function LandingHeaderMobileComponent({ headerLinks }) {
       direction="row"
       justifyContent="space-between"
       alignItems="center"
-      p={8}
+      py={5}
+      px={{
+        sm: 8,
+        xs: 6,
+      }}
     >
       <Grid item sx={{ cursor: 'pointer' }} onClick={handleToggle}>
         <img src="/static/img/landing/mobile-menu.svg" />
@@ -53,11 +57,12 @@ export function LandingHeaderMobileComponent({ headerLinks }) {
             background: '#F3F3F3',
             boxSizing: 'border-box',
             height: '100%',
-            p: 8,
+            py: 5,
+            px: 6,
           },
         }}
       >
-        <Grid container spacing={4}>
+        <Grid container spacing={7}>
           <Grid
             item
             container
@@ -65,6 +70,7 @@ export function LandingHeaderMobileComponent({ headerLinks }) {
             justifyContent="space-between"
             alignItems="center"
             paddingBottom={2}
+            zIndex={0}
           >
             <Grid item sx={{ cursor: 'pointer' }} onClick={handleToggle}>
               <img src="/static/img/landing/close.svg" />
@@ -77,7 +83,7 @@ export function LandingHeaderMobileComponent({ headerLinks }) {
             <div />
           </Grid>
 
-          <Grid item container spacing={2}>
+          <Grid item container spacing={5}>
             {headerLinks.map((item, index) => (
               <Grid item>
                 <Typography
@@ -89,11 +95,13 @@ export function LandingHeaderMobileComponent({ headerLinks }) {
                           fontSize: '16px',
                           fontWeight: '600',
                           color: '#000',
+                          lineHeight: 1,
                         }
                       : {
                           fontSize: '16px',
                           color: '#707070',
                           cursor: 'pointer',
+                          lineHeight: 1,
                         }
                   }
                   children={text(item.name)}
@@ -102,21 +110,25 @@ export function LandingHeaderMobileComponent({ headerLinks }) {
             ))}
           </Grid>
 
-          <Grid item>
-            <Button
-              variant="black"
-              onClick={() => redirect(AUTH_LOGIN_ROUTE_PATH)}
-              sx={{ width: '50%', height: '36px' }}
-              children={text('LANDING.COMMON.SIGNIN')}
-            />
-          </Grid>
+          <Grid item container spacing={2}>
+            <Grid item>
+              <Button
+                fullWidth
+                variant="black"
+                onClick={() => redirect(AUTH_LOGIN_ROUTE_PATH)}
+                sx={{ height: '36px', fontSize: '12px' }}
+                children={text('LANDING.COMMON.SIGNIN')}
+              />
+            </Grid>
 
-          <Grid item>
-            <Button
-              onClick={() => redirect(AUTH_SIGNUP_ROUTE_PATH)}
-              sx={{ width: '50%', height: '36px' }}
-              children={text('LANDING.COMMON.SIGNUP')}
-            />
+            <Grid item>
+              <Button
+                fullWidth
+                onClick={() => redirect(AUTH_SIGNUP_ROUTE_PATH)}
+                sx={{ height: '36px', fontSize: '12px' }}
+                children={text('LANDING.COMMON.SIGNUP')}
+              />
+            </Grid>
           </Grid>
         </Grid>
       </Drawer>

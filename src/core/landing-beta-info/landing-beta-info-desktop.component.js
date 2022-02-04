@@ -6,17 +6,7 @@ import { text } from '../../lib/common/text';
 
 export function LandingBetaInfoDesktopComponent({ graphicData }) {
   return (
-    <Grid
-      container
-      spacing={6}
-      sx={{
-        minHeight: {
-          md: '440px',
-          sm: '600px',
-          xs: '460px',
-        },
-      }}
-    >
+    <Grid container spacing={{ sm: 6, xs: 4 }}>
       <PolygonSvg src="/static/img/landing/polygon.svg" />
 
       <Grid item>
@@ -51,18 +41,16 @@ export function LandingBetaInfoDesktopComponent({ graphicData }) {
         item
         container
         direction="row"
-        columns={4}
         justifyContent="flex-start"
         columns={{ xs: 8, lg: 12 }}
-        rowSpacing={4}
+        rowSpacing={2}
       >
         {graphicData.map((graphic, index) => (
           <Grid
             item
-            xs
             container
             key={index}
-            spacing={4}
+            spacing={3}
             justifyContent="flex-start"
             xs={4}
             lg={3}
@@ -72,12 +60,18 @@ export function LandingBetaInfoDesktopComponent({ graphicData }) {
                 <GraphicCricle>
                   <GraphicPoint />
                 </GraphicCricle>
-                {graphicData.length - 1 !== index && (
+                {graphicData.length - 1 !== index ? (
                   <GraphicLineContainer>
                     <GraphicLine />
                     <GraphicPoint />
                     <GraphicLine />
                   </GraphicLineContainer>
+                ) : (
+                  <GraphicLineContainerMobile>
+                    <GraphicLine />
+                    <GraphicPoint />
+                    <GraphicLine />
+                  </GraphicLineContainerMobile>
                 )}
               </GraphicContainer>
             </Grid>
@@ -164,4 +158,13 @@ const GraphicPoint = styled.div`
 const GraphicLine = styled.div`
   border-bottom: 1px solid #b5b5b5;
   width: 100%;
+`;
+const GraphicLineContainerMobile = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  @media (min-width: 1000px) {
+    display: none;
+  }
 `;

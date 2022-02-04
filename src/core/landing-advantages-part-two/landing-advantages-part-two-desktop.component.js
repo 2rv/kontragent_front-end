@@ -28,13 +28,16 @@ export function LandingAdvantagesPartTwoDesktopComponent() {
 
       <Grid item xs={6} container spacing={6}>
         <Grid item>
-          <Typography variant="landingTitle" sx={{ fontSize: '24px' }}>
+          <Typography
+            variant="landingTitle"
+            sx={{ fontSize: '24px', lineHeight: 1.5 }}
+          >
             {text('LANDING.ADVANTAGES_PART_TWO.BLOCK_1.TITLE')}
           </Typography>
         </Grid>
 
         <Grid item>
-          <Typography variant="body1">
+          <Typography variant="landingText">
             Сегодня «письма счастья» или предпроверочные мероприятия невозможно
             заблаговременно спрогнозировать, а тем более угадать финансовые
             потери от потенциально планируемых претензий.
@@ -55,13 +58,16 @@ export function LandingAdvantagesPartTwoDesktopComponent() {
 
       <Grid item xs={6} container spacing={6}>
         <Grid item>
-          <Typography variant="landingTitle" sx={{ fontSize: '24px' }}>
+          <Typography
+            variant="landingTitle"
+            sx={{ fontSize: '24px', lineHeight: 1.5 }}
+          >
             {text('LANDING.ADVANTAGES_PART_TWO.BLOCK_2.TITLE')}
           </Typography>
         </Grid>
 
         <Grid item>
-          <Typography variant="body1">
+          <Typography variant="landingText">
             {text('LANDING.ADVANTAGES_PART_TWO.BLOCK_2.DESCRIPTION')}
           </Typography>
         </Grid>
@@ -81,13 +87,16 @@ export function LandingAdvantagesPartTwoDesktopComponent() {
 
       <Grid item xs={6} container spacing={6}>
         <Grid item>
-          <Typography variant="landingTitle" sx={{ fontSize: '24px' }}>
+          <Typography
+            variant="landingTitle"
+            sx={{ fontSize: '24px', lineHeight: 1.5 }}
+          >
             {text('LANDING.ADVANTAGES_PART_TWO.BLOCK_3.TITLE')}
           </Typography>
         </Grid>
 
         <Grid item>
-          <Typography variant="body1">
+          <Typography variant="landingText">
             Платформа уникальна и не имеет аналогов.
             <br />
             <br />

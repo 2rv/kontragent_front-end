@@ -1,4 +1,4 @@
-import React from 'react';
+import { useState } from 'react';
 import styled from 'styled-components';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
@@ -7,7 +7,7 @@ import { PopoverComponent } from './frame/popover.component';
 import { text } from '../../lib/common/text';
 
 export function LandingAdvantagesPartTwoMobileComponent() {
-  const [anchorEl, setAnchorEl] = React.useState(null);
+  const [anchorEl, setAnchorEl] = useState(null);
   const isOpen = Boolean(anchorEl);
 
   const onOpenPopover = (event) => {
@@ -25,6 +25,7 @@ export function LandingAdvantagesPartTwoMobileComponent() {
           src={`/static/img/landing/landing-advantages-part-two/image-1-mobile.svg`}
         />
       </Grid>
+
       <Grid item container spacing={3}>
         <Grid item>
           <Typography
@@ -37,8 +38,8 @@ export function LandingAdvantagesPartTwoMobileComponent() {
 
         <Grid item>
           <Typography
-            variant="body1"
-            fontSize={{ xs: '12px', sm: 'body1.fontSize' }}
+            variant="landingText"
+            fontSize={{ xs: '10px', sm: 'landingText.fontSize' }}
           >
             Сегодня «письма счастья» или предпроверочные мероприятия невозможно
             заблаговременно спрогнозировать, а тем более угадать финансовые
@@ -76,8 +77,8 @@ export function LandingAdvantagesPartTwoMobileComponent() {
 
         <Grid item>
           <Typography
-            variant="body1"
-            fontSize={{ xs: '12px', sm: 'body1.fontSize' }}
+            variant="landingText"
+            fontSize={{ xs: '10px', sm: 'landingText.fontSize' }}
           >
             {text('LANDING.ADVANTAGES_PART_TWO.BLOCK_2.DESCRIPTION')}
           </Typography>
@@ -102,8 +103,8 @@ export function LandingAdvantagesPartTwoMobileComponent() {
 
         <Grid item>
           <Typography
-            variant="body1"
-            fontSize={{ xs: '12px', sm: 'body1.fontSize' }}
+            variant="landingText"
+            fontSize={{ xs: '10px', sm: 'landingText.fontSize' }}
           >
             Платформа уникальна и не имеет аналогов.
             <br />

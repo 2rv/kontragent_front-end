@@ -11,13 +11,16 @@ export function LandingAdvantagesDesktopComponent() {
 
       <Grid item xs={6} container spacing={6}>
         <Grid item>
-          <Typography variant="landingTitle" sx={{ fontSize: '24px' }}>
+          <Typography
+            variant="landingTitle"
+            sx={{ fontSize: '24px', lineHeight: 1.5 }}
+          >
             {text('LANDING.ADVANTAGES.BLOCK_1.TITLE')}
           </Typography>
         </Grid>
 
         <Grid item>
-          <Typography variant="body1">
+          <Typography variant="landingText">
             Информационную услугу, а простым языком диагностику книги покупок на
             предмет наличия расхождений или разрывов
             <br />
@@ -30,13 +33,16 @@ export function LandingAdvantagesDesktopComponent() {
 
       <Grid item xs={6} container spacing={6}>
         <Grid item>
-          <Typography variant="landingTitle" sx={{ fontSize: '24px' }}>
+          <Typography
+            variant="landingTitle"
+            sx={{ fontSize: '24px', lineHeight: 1.5 }}
+          >
             {text('LANDING.ADVANTAGES.BLOCK_2.TITLE')}
           </Typography>
         </Grid>
 
         <Grid item>
-          <Typography variant="body1" sx={{ maxWidth: '480px' }}>
+          <Typography variant="landingText" sx={{ maxWidth: '480px' }}>
             {text('LANDING.ADVANTAGES.BLOCK_2.DESCRIPTION_1')}
             <br />
             {text('LANDING.ADVANTAGES.BLOCK_2.DESCRIPTION_2')}
@@ -57,7 +63,10 @@ export function LandingAdvantagesDesktopComponent() {
 
       <Grid item xs={6} container spacing={6}>
         <Grid item>
-          <Typography variant="landingTitle" sx={{ fontSize: '24px' }}>
+          <Typography
+            variant="landingTitle"
+            sx={{ fontSize: '24px', lineHeight: 1.5 }}
+          >
             {text('LANDING.ADVANTAGES.BLOCK_3.TITLE')}
           </Typography>
         </Grid>
@@ -65,22 +74,22 @@ export function LandingAdvantagesDesktopComponent() {
         <Grid item>
           <ul style={{ listStyle: 'inherit', marginLeft: '15px' }}>
             <li>
-              <Typography variant="body1">
+              <Typography variant="landingText">
                 {text('LANDING.ADVANTAGES.BLOCK_3.LIST.ITEM_1')}
               </Typography>
             </li>
             <li>
-              <Typography variant="body1">
+              <Typography variant="landingText">
                 {text('LANDING.ADVANTAGES.BLOCK_3.LIST.ITEM_2')}
               </Typography>
             </li>
             <li>
-              <Typography variant="body1" sx={{ maxWidth: '490px' }}>
+              <Typography variant="landingText" sx={{ maxWidth: '490px' }}>
                 {text('LANDING.ADVANTAGES.BLOCK_3.LIST.ITEM_3')}
               </Typography>
             </li>
             <li>
-              <Typography variant="body1">
+              <Typography variant="landingText">
                 {text('LANDING.ADVANTAGES.BLOCK_3.LIST.ITEM_4')}
               </Typography>
             </li>

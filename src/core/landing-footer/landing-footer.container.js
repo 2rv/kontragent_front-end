@@ -7,8 +7,12 @@ import { LandingFooterDesktopComponent } from './landing-footer-desktop.componen
 import { LandingFooterMobileComponent } from './landing-footer-mobile.component';
 
 export function LandingFooterContainer() {
-  const desktopBreakpoint = useMediaQuery(theme => theme.breakpoints.up('sm'));
-  const mobileBreakpoint = useMediaQuery(theme => theme.breakpoints.between('xs', 'sm'));
+  const desktopBreakpoint = useMediaQuery((theme) =>
+    theme.breakpoints.up('sm'),
+  );
+  const mobileBreakpoint = useMediaQuery((theme) =>
+    theme.breakpoints.between('xs', 'sm'),
+  );
 
   return (
     <Box>
@@ -21,5 +25,11 @@ export function LandingFooterContainer() {
 }
 
 const Layout = styled(LandingLayout)`
-  background-color: #F3F3F3;
+  background-color: #f3f3f3;
+  & > div {
+    padding: 50px 32px;
+    @media (min-width: 0px) and (max-width: 599px) {
+      padding: 50px 24px;
+    }
+  }
 `;

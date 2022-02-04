@@ -10,7 +10,7 @@ export function LandingHeroDesktopComponent() {
   return (
     <Grid
       container
-      spacing={{ lg: 8, xs: 6 }}
+      spacing={{ lg: 8, sm: 6, xs: 4 }}
       maxWidth="610px"
       sx={{
         minHeight: {
@@ -25,7 +25,7 @@ export function LandingHeroDesktopComponent() {
           sx={{
             fontSize: {
               sm: 'landingTitleHero.fontSize',
-              xs: '16px',
+              xs: '17px',
             },
           }}
           children={text('LANDING.HERO.TITLE')}
@@ -39,6 +39,10 @@ export function LandingHeroDesktopComponent() {
             fontSize: {
               sm: '20px',
               xs: '14px',
+            },
+            lineHeight: {
+              sm: 1.5,
+              xs: 1,
             },
           }}
         >

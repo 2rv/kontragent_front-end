@@ -6,8 +6,13 @@ import { LandingLayout } from '../../lib/common/landing';
 import { LandingAdvantagesMobileComponent } from './landing-advantages-mobile.component';
 
 export function LandingAdvantagesContainer() {
-  const desktopBreakpoint = useMediaQuery(theme => theme.breakpoints.up('lg'));
-  const mobileBreakpoint = useMediaQuery(theme => theme.breakpoints.between('xs', 'lg'));1
+  const desktopBreakpoint = useMediaQuery((theme) =>
+    theme.breakpoints.up('lg'),
+  );
+  const mobileBreakpoint = useMediaQuery((theme) =>
+    theme.breakpoints.between('xs', 'lg'),
+  );
+  1;
 
   return (
     <Layout id="advantages">
@@ -19,5 +24,4 @@ export function LandingAdvantagesContainer() {
 
 const Layout = styled(LandingLayout)`
   background-color: #fff;
-  padding: 32px 0;
 `;
