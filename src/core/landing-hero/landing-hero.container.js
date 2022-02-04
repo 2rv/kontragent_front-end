@@ -13,7 +13,7 @@ export function LandingHeroContainer() {
 const Layout = styled(LandingLayout)`
   background-color: #fff;
   max-height: 120vh;
-  @media (min-width: 0px) and (max-width: 600px) {
+  @media (min-width: 0px) and (max-width: 999px) {
     background-image: url('/static/img/landing/landing-hero/background-mobile.svg');
     background-repeat: no-repeat;
     background-position: 50% 50%;

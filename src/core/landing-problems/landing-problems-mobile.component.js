@@ -32,7 +32,7 @@ export function LandingProblemsMobileComponent() {
         direction="row"
         spacing={4}
         justifyContent="flex-start"
-        alignItems="flex-start"
+        alignItems="center"
         wrap="nowrap"
       >
         <Grid item>
@@ -43,8 +43,10 @@ export function LandingProblemsMobileComponent() {
           <Typography
             variant="landingText"
             component="div"
-            marginTop="-7px"
-            fontSize={{ xs: '10px', sm: 'landingText.fontSize' }}
+            sx={{
+              fontSize: { xs: '10px', sm: 'landingText.fontSize' },
+              lineHeight: { xs: 1.5, sm: 1 },
+            }}
           >
             Побуждение откорректировать декларацию и заплатить бюджет?
           </Typography>
@@ -57,7 +59,7 @@ export function LandingProblemsMobileComponent() {
         direction="row"
         spacing={4}
         justifyContent="flex-start"
-        alignItems="flex-start"
+        alignItems="center"
         wrap="nowrap"
       >
         <Grid item>
@@ -67,9 +69,11 @@ export function LandingProblemsMobileComponent() {
         <Grid item>
           <Typography
             component="div"
-            marginTop="-7px"
             variant="landingText"
-            fontSize={{ xs: '10px', sm: 'landingText.fontSize' }}
+            sx={{
+              fontSize: { xs: '10px', sm: 'landingText.fontSize' },
+              lineHeight: { xs: 1.5, sm: 1 },
+            }}
           >
             Регулярные вызовы на комиссию КАО ИФНС?
           </Typography>
@@ -82,7 +86,7 @@ export function LandingProblemsMobileComponent() {
         direction="row"
         spacing={4}
         justifyContent="flex-start"
-        alignItems="flex-start"
+        alignItems="center"
         wrap="nowrap"
       >
         <Grid item>
@@ -92,9 +96,11 @@ export function LandingProblemsMobileComponent() {
         <Grid item>
           <Typography
             component="div"
-            marginTop="-7px"
             variant="landingText"
-            fontSize={{ xs: '10px', sm: 'landingText.fontSize' }}
+            sx={{
+              fontSize: { xs: '10px', sm: 'landingText.fontSize' },
+              lineHeight: { xs: 1.5, sm: 1 },
+            }}
           >
             Частые запросы со стороны ИФНС вне рамок налоговых проверок?
           </Typography>

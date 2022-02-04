@@ -88,7 +88,7 @@ export function LandingFooterDesktopComponent() {
 
         <Grid item>
           <Typography variant="body1">
-            © 2021 Контрагент. All rights reserved.
+            © 2021 Контрагент. Все права защищены.
           </Typography>
         </Grid>
       </Grid>

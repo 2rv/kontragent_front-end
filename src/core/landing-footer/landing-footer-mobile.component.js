@@ -11,7 +11,7 @@ export function LandingFooterMobileComponent() {
       <Grid
         item
         container
-        spacing={8}
+        spacing={3}
         direction="row"
         justifyContent="flex-start"
         alignItems="flex-start"
@@ -87,7 +87,7 @@ export function LandingFooterMobileComponent() {
 
         <Grid item>
           <Typography variant="body1" sx={{ fontSize: '12px' }}>
-            © 2021 Контрагент. All rights reserved.
+            © 2021 Контрагент. Все права защищены.
           </Typography>
         </Grid>
       </Grid>

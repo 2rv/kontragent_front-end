@@ -79,8 +79,8 @@ export function LandingAdvantagesMobileComponent() {
         </Grid>
 
         <Grid item>
-          <ul style={{ listStyle: 'inherit', marginLeft: '15px' }}>
-            <li>
+          <ul style={{ listStyle: 'inherit' }}>
+            <li style={{ marginLeft: '17px' }}>
               <Typography
                 variant="landingText"
                 fontSize={{ xs: '10px', sm: 'landingText.fontSize' }}
@@ -88,7 +88,7 @@ export function LandingAdvantagesMobileComponent() {
                 {text('LANDING.ADVANTAGES.BLOCK_3.LIST.ITEM_1')}
               </Typography>
             </li>
-            <li>
+            <li style={{ marginLeft: '17px' }}>
               <Typography
                 variant="landingText"
                 fontSize={{ xs: '10px', sm: 'landingText.fontSize' }}
@@ -96,7 +96,7 @@ export function LandingAdvantagesMobileComponent() {
                 {text('LANDING.ADVANTAGES.BLOCK_3.LIST.ITEM_2')}
               </Typography>
             </li>
-            <li>
+            <li style={{ marginLeft: '17px' }}>
               <Typography
                 variant="landingText"
                 fontSize={{ xs: '10px', sm: 'landingText.fontSize' }}
@@ -104,7 +104,7 @@ export function LandingAdvantagesMobileComponent() {
                 {text('LANDING.ADVANTAGES.BLOCK_3.LIST.ITEM_3')}
               </Typography>
             </li>
-            <li>
+            <li style={{ marginLeft: '17px' }}>
               <Typography
                 variant="landingText"
                 fontSize={{ xs: '10px', sm: 'landingText.fontSize' }}

@@ -32,7 +32,7 @@ export function LandingPrinciplesMobileComponent() {
         direction="row"
         spacing={4}
         justifyContent="flex-start"
-        alignItems="flex-start"
+        alignItems="center"
         wrap="nowrap"
       >
         <Grid item>
@@ -43,8 +43,10 @@ export function LandingPrinciplesMobileComponent() {
           <Typography
             variant="landingText"
             component="div"
-            marginTop="-7px"
-            fontSize={{ xs: '10px', sm: 'landingText.fontSize' }}
+            sx={{
+              fontSize: { xs: '10px', sm: 'landingText.fontSize' },
+              lineHeight: { xs: 1.5, sm: 1 },
+            }}
           >
             Мы приносим пользу и ценность предпринимателям
           </Typography>
@@ -57,7 +59,7 @@ export function LandingPrinciplesMobileComponent() {
         direction="row"
         spacing={4}
         justifyContent="flex-start"
-        alignItems="flex-start"
+        alignItems="center"
         wrap="nowrap"
       >
         <Grid item>
@@ -68,8 +70,10 @@ export function LandingPrinciplesMobileComponent() {
           <Typography
             variant="landingText"
             component="div"
-            marginTop="-7px"
-            fontSize={{ xs: '10px', sm: 'landingText.fontSize' }}
+            sx={{
+              fontSize: { xs: '10px', sm: 'landingText.fontSize' },
+              lineHeight: { xs: 1.5, sm: 1 },
+            }}
           >
             Мы ценим наших клиентов и дорожим их доверием
           </Typography>
@@ -82,7 +86,7 @@ export function LandingPrinciplesMobileComponent() {
         direction="row"
         spacing={4}
         justifyContent="flex-start"
-        alignItems="flex-start"
+        alignItems="center"
         wrap="nowrap"
       >
         <Grid item>
@@ -92,8 +96,10 @@ export function LandingPrinciplesMobileComponent() {
           <Typography
             variant="landingText"
             component="div"
-            marginTop="-7px"
-            fontSize={{ xs: '10px', sm: 'landingText.fontSize' }}
+            sx={{
+              fontSize: { xs: '10px', sm: 'landingText.fontSize' },
+              lineHeight: { xs: 1.5, sm: 1 },
+            }}
           >
             Мы гарантируем качество и ответственность результата
           </Typography>

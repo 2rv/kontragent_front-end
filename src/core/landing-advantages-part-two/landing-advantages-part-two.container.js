@@ -7,10 +7,10 @@ import { LandingAdvantagesPartTwoMobileComponent } from './landing-advantages-pa
 
 export function LandingAdvantagesPartTwoContainer() {
   const desktopBreakpoint = useMediaQuery((theme) =>
-    theme.breakpoints.up('lg'),
+    theme.breakpoints.up('md'),
   );
   const mobileBreakpoint = useMediaQuery((theme) =>
-    theme.breakpoints.between('xs', 'lg'),
+    theme.breakpoints.between('xs', 'md'),
   );
 
   return (

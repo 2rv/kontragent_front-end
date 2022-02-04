@@ -86,6 +86,7 @@ export function LandingBetaInfoDesktopComponent({ graphicData }) {
                     sm: 'title.fontSize',
                     xs: '12px',
                   },
+                  fontWeight: 700,
                 }}
                 children={graphic.date}
               />
@@ -94,7 +95,10 @@ export function LandingBetaInfoDesktopComponent({ graphicData }) {
             <Grid item>
               <ul style={{ listStyle: 'inherit' }}>
                 {graphic.tasks.map((task, index) => (
-                  <li key={index} style={{ marginRight: '10px' }}>
+                  <li
+                    key={index}
+                    style={{ marginLeft: '17px', paddingRight: '5px' }}
+                  >
                     <Typography
                       variant="landingText"
                       sx={{
