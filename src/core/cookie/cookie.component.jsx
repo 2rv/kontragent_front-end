@@ -10,6 +10,7 @@ export function CookieComponent(props) {
         vertical: 'bottom',
         horizontal: 'center',
       }}
+      sx={{ zIndex: 9999 }}
       open={isOpen}
       onClose={handleClose}
       message={text('LANDING.COOKIE.MESSAGE')}
