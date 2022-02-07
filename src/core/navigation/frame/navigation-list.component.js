@@ -2,6 +2,8 @@ import { ListItemButton, ListItemText, ListItem, List } from '@mui/material';
 import { redirect } from '../../../main/navigation/navigation.core';
 
 export function NavigationListComponent({ activePath, menuListItems }) {
+  console.log(menuListItems);
+  console.log(activePath);
   return (
     <List disablePadding>
       {menuListItems.map((item, i) => {

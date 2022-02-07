@@ -136,6 +136,7 @@ export const AuthSignupFormComponent = (props) => {
                   <Link
                     sx={{ fontSize: '14px', fontWeight: '600' }}
                     component="button"
+                    type="button"
                     variant="body2"
                     underline="hover"
                     onClick={() => {
@@ -167,6 +168,7 @@ export const AuthSignupFormComponent = (props) => {
                     sx={{ fontSize: '14px', fontWeight: '600' }}
                     component="button"
                     variant="body2"
+                    type="button"
                     underline="hover"
                     onClick={() => {
                       redirect(
