@@ -1,7 +1,6 @@
 import { setActivePath } from '../../lib/common/navigation/navigation.action';
 import {
   authRedirectPrivated,
-  authRedirectAdmin,
   authRedirectVerification,
 } from '../../lib/common/auth';
 import { COMPANY_ACCOUNT_ITEM_REVISION_SELF_CREATE_ROUTE_PATH } from './company-account-item-revision-self-create.constant';
@@ -12,5 +11,4 @@ export function CompanyAccountItemRevisionSelfCreateRouter(ctx) {
   );
   if (authRedirectPrivated(ctx, '/')) return;
   if (authRedirectVerification(ctx)) return;
-  if (authRedirectAdmin(ctx, '/')) return;
 }

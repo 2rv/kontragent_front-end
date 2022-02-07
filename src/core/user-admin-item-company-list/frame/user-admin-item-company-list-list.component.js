@@ -24,7 +24,6 @@ export const UserAdminItemCompanyListListComponent = ({ list }) => {
       </Box>
     );
   }
-
   return (
     <List sx={{ px: 8, pb: 8 }} disablePadding>
       {list.map((item, key) => (
@@ -37,7 +36,7 @@ export const UserAdminItemCompanyListListComponent = ({ list }) => {
                   dynamic: true,
                   params: {
                     companyId:
-                      item[ADMIN_REVISION_KONTRAGENT_ITEM_DATA_NAME.COMPANY_ID],
+                      item[ADMIN_REVISION_KONTRAGENT_ITEM_DATA_NAME.ID],
                   },
                 },
               );

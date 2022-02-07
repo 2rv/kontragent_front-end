@@ -1,7 +1,6 @@
 import { setActivePath } from '../../lib/common/navigation/navigation.action';
 import {
   authRedirectPrivated,
-  authRedirectAdmin,
   authRedirectVerification,
 } from '../../lib/common/auth';
 
@@ -13,5 +12,4 @@ export function CompanyAccountItemRevisionKontragentCreateRouter(ctx) {
   );
   if (authRedirectPrivated(ctx, '/')) return;
   if (authRedirectVerification(ctx)) return;
-  if (authRedirectAdmin(ctx, '/')) return;
 }
