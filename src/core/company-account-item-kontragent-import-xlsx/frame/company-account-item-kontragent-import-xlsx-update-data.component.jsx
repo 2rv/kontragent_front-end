@@ -3,9 +3,11 @@ import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
 import { TextFieldElement } from '../../../lib/element/text-field.element';
 import { text } from '../../../lib/common/text';
-import { COMPANY_ADMIN_DATA_NAME as FIELD_NAME } from '../company-admin-import.constant';
+import { COMPANY_ACCOUNT_ITEM_KONTRAGENT_IMPORT_XLSX_DATA_NAME as FIELD_NAME } from '../company-account-item-kontragent-import-xlsx.constant';
 
-export function CompanyAdminImportUpdateDataComponent(props) {
+export function CompanyAccountItemKontragentImportXlsxUpdateDataComponent(
+  props,
+) {
   const { data, handleSave, handleChange, onCancel } = props;
 
   const isDisabled = !data[FIELD_NAME.INN];
@@ -37,19 +39,6 @@ export function CompanyAdminImportUpdateDataComponent(props) {
           onChange={handleChange}
           error={!data[FIELD_NAME.NAME]}
           errorText="Не обязательно но будет проигнорировано"
-        />
-      </Grid>
-
-      <Grid item xs={12}>
-        <TextFieldElement
-          defaultValue={data[FIELD_NAME.REVIEW]}
-          name="review"
-          label={text('Рецензия')}
-          variant="outlined"
-          onChange={handleChange}
-          error={!data[FIELD_NAME.REVIEW]}
-          errorText="Не обязательно но будет проигнорировано"
-          multiline
         />
       </Grid>
 

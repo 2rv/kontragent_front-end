@@ -50,6 +50,10 @@
     "USER_ADMIN_ITEM": {
       "INFO": "Информация",
       "COMPANY_USER": "Компании пользователя"
+    },
+    "COMPANY_ADMIN_IMPORT": {
+      "IMPORT_XLSX": "Импорт из таблицы exel",
+      "IMPORT_FORM": "Импорт вручную"
     }
   }
 }

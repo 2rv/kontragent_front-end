@@ -192,6 +192,9 @@ import { AdminRevisionSelfItemRouter } from '../../core/admin-revision-self-item
 import { COMPANY_ACCOUNT_ITEM_KONTRAGENT_ITEM_REVISION_LIST_ROUTE_PATH } from '../../core/company-account-item-kontragent-item-revision-list/company-account-item-kontragent-item-revision-list.constant';
 import { CompanyAccountItemKontragentItemRevisionListRouter } from '../../core/company-account-item-kontragent-item-revision-list/company-account-item-kontragent-item-revision-list.router';
 
+import { COMPANY_ADMIN_IMPORT_FORM_ROUTE_PATH } from '../../core/company-admin-import-form/company-admin-import-form.constant';
+import { CompanyAdminImportFormRouter } from '../../core/company-admin-import-form/company-admin-import-form.router';
+
 export const routes = {
   '/': IndexRouter,
   [AUTH_LOGIN_ROUTE_PATH]: AuthLoginRouter,
@@ -264,6 +267,7 @@ export const routes = {
 
   [COMPANY_ACCOUNT_ITEM_KONTRAGENT_ITEM_REVISION_LIST_ROUTE_PATH]:
     CompanyAccountItemKontragentItemRevisionListRouter,
+  [COMPANY_ADMIN_IMPORT_FORM_ROUTE_PATH]: CompanyAdminImportFormRouter,
 };
 
 export const Router = routesInit(routes);

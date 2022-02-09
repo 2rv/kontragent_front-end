@@ -1,3 +1,5 @@
+import { COMPANY_ADMIN_IMPORT_FORM_ROUTE_PATH } from '../company-admin-import-form/company-admin-import-form.constant';
+
 export const COMPANY_ADMIN_IMPORT_ROUTE_PATH = '/admin/company/import';
 
 export const COMPANY_ADMIN_DATA_NAME = {
@@ -16,6 +18,49 @@ export const COMPANY_TYPE = {
   'Компании статус Т': 6,
   Выгодоприобретатели: 7,
 };
+
+export const COMPANY_TYPE_OPTIONS = [
+  {
+    key: 0,
+    value: 0,
+    text: 'Отсутствует',
+  },
+  {
+    key: 1,
+    value: 1,
+    text: 'Список 115-ФЗ',
+  },
+  {
+    key: 2,
+    value: 2,
+    text: 'Список ПОС',
+  },
+  {
+    key: 3,
+    value: 3,
+    text: 'Список ЦБ светофор',
+  },
+  {
+    key: 4,
+    value: 4,
+    text: 'Список отказных материалов',
+  },
+  {
+    key: 5,
+    value: 5,
+    text: 'Компании однодневки',
+  },
+  {
+    key: 6,
+    value: 6,
+    text: 'Компании статус Т',
+  },
+  {
+    key: 7,
+    value: 7,
+    text: 'Выгодоприобретатели',
+  },
+];
 
 export const CONVERT_SCHEMA = {
   ИНН: {
@@ -50,3 +95,18 @@ export const COMPANY_ADMIN_IMPORT_ACTION_TYPE = {
   XSLX_ERROR: 'COMPANY_ADMIN_IMPORT_ACTION_TYPE.XSLX_ERROR',
   XSLX_UPDATE: 'COMPANY_ADMIN_IMPORT_ACTION_TYPE.XSLX_UPDATE',
 };
+
+export const COMPANY_ADMIN_IMPORT_NAVIGATION = [
+  {
+    id: 0,
+    label: 'NAVIGATION.TABS.COMPANY_ADMIN_IMPORT.IMPORT_XLSX',
+    path: () => COMPANY_ADMIN_IMPORT_ROUTE_PATH,
+    pathname: COMPANY_ADMIN_IMPORT_ROUTE_PATH,
+  },
+  {
+    id: 0,
+    label: 'NAVIGATION.TABS.COMPANY_ADMIN_IMPORT.IMPORT_FORM',
+    path: () => COMPANY_ADMIN_IMPORT_FORM_ROUTE_PATH,
+    pathname: COMPANY_ADMIN_IMPORT_FORM_ROUTE_PATH,
+  },
+];

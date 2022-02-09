@@ -41,7 +41,7 @@ export function CompanyAdminImportComponent(props) {
       alignItems="flex-start"
       justifyContent="flex-start"
     >
-      <Grid item xs={12}>
+      <Grid item xs={6}>
         <Typography variant="title" children={text('Импорт компаний')} />
       </Grid>
 
@@ -113,7 +113,7 @@ export function CompanyAdminImportComponent(props) {
       )}
 
       {!!data?.length && (
-        <Grid item sx={{ flexGrow: 1 }}>
+        <Grid item sx={{ flexGrow: 1 }} xs={12}>
           <CompanyAdminImportListComponent
             onDelete={onDelete}
             list={data}
