@@ -2,6 +2,8 @@ import { FieldArray } from 'formik';
 import Grid from '@mui/material/Grid';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
+import Tooltip from '@mui/material/Tooltip';
+import HelpOutlineOutlinedIcon from '@mui/icons-material/HelpOutlineOutlined';
 import { text } from '../../lib/common/text';
 
 import { COMPANY_ACCOUNT_ITEM_REVISION_SELF_CREATE_DATA_NAME } from '../company-account-item-revision-self-create/company-account-item-revision-self-create.constant';
@@ -23,13 +25,37 @@ export function CompanyAccountItemRevisionSelfCreatePeriodListComponent(props) {
 
   return (
     <Grid container spacing={4}>
-      <Grid item>
+      <Grid
+        item
+        display="flex"
+        direction="row"
+        justifyContent="flex-start"
+        alignItems="flex-end"
+        zIndex={0}
+      >
         <Typography
-          variant="subtitle1"
-          component="div"
+          variant="title"
           children={text(
             'COMPANY_ACCOUNT_ITEM_REVISION.SELF.CREATE_PERIOD_LIST.TITLE',
           )}
+        />
+
+        <Tooltip
+          arrow
+          componentsProps={{
+            tooltip: { sx: { backgroundColor: '#3AB8FF' } },
+            arrow: { sx: { color: '#3AB8FF' } },
+          }}
+          title={
+            <Typography
+              variant="body1"
+              color="white"
+              children={text(
+                'Здесь вам необходимо указать год и период проверки - периодов может быть несколько',
+              )}
+            />
+          }
+          children={<HelpOutlineOutlinedIcon sx={{ ml: 1 }} fontSize="small" />}
         />
       </Grid>
 

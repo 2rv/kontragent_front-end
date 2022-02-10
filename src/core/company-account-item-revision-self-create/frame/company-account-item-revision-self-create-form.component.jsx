@@ -1,5 +1,7 @@
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
+import Tooltip from '@mui/material/Tooltip';
+import HelpOutlineOutlinedIcon from '@mui/icons-material/HelpOutlineOutlined';
 import { text } from '../../../lib/common/text';
 import { TextFieldElement } from '../../../lib/element/text-field.element';
 import { FileUploadFieldContainer } from '../../../lib/common/file-upload-field/file-upload-field.container';
@@ -17,13 +19,37 @@ export function CompanyAccountItemRevisionSelfCreateFormComponent(props) {
 
   return (
     <Grid container spacing={4}>
-      <Grid item>
+      <Grid
+        item
+        display="flex"
+        direction="row"
+        justifyContent="flex-start"
+        alignItems="flex-end"
+        zIndex={0}
+      >
         <Typography
           variant="title"
-          component="div"
           children={text(
             'COMPANY_ACCOUNT_ITEM_REVISION_CREATE.REVISON_CREATE_COMPANY_INFO.FORM.TITLE',
           )}
+        />
+
+        <Tooltip
+          arrow
+          componentsProps={{
+            tooltip: { sx: { backgroundColor: '#3AB8FF' } },
+            arrow: { sx: { color: '#3AB8FF' } },
+          }}
+          title={
+            <Typography
+              variant="body1"
+              color="white"
+              children={text(
+                'Здесь вы можете указать сведения для проведения проверки, а так же прикрепить файлы которые в этом помогут',
+              )}
+            />
+          }
+          children={<HelpOutlineOutlinedIcon sx={{ ml: 1 }} fontSize="small" />}
         />
       </Grid>
 
