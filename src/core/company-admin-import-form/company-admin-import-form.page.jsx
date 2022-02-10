@@ -3,10 +3,10 @@ import Paper from '@mui/material/Paper';
 import { NavigationComponent } from '../navigation/navigation.component';
 import { TabContainer } from '../../lib/common/navigation-tab/navigation-tab.container';
 
-import { COMPANY_ADMIN_IMPORT_NAVIGATION } from './company-admin-import.constant';
-import { CompanyAdminImportContainer } from './company-admin-import.container';
+import { COMPANY_ADMIN_IMPORT_NAVIGATION } from '../company-admin-import/company-admin-import.constant';
+import { CompanyAdminImportFormContainer } from './company-admin-import-form.container';
 
-export function CompanyAdminImportPage() {
+export function CompanyAdminImportFormPage() {
   return (
     <NavigationComponent>
       <Grid spacing={6} container>
@@ -15,7 +15,7 @@ export function CompanyAdminImportPage() {
         </Grid>
         <Grid item>
           <Paper>
-            <CompanyAdminImportContainer />
+            <CompanyAdminImportFormContainer />
           </Paper>
         </Grid>
       </Grid>

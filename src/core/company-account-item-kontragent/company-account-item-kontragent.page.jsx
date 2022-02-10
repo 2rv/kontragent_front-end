@@ -6,7 +6,8 @@ import { NavigationComponent } from '../navigation/navigation.component';
 import { COMPANY_ACCOUNT_ITEM_NAVIGATION } from '../company-account-item/company-account-item.constant';
 import { CompanyAccountItemKontragentCreateContainer } from '../company-account-item-kontragent-create/company-account-item-kontragent-create.container';
 import { CompanyAccountItemKontragentListContainer } from '../company-account-item-kontragent-list/company-account-item-kontragent-list.container';
-import { CompanyAccountItemKontragentImportContainer } from '../company-account-item-kontragent-import/company-account-item-kontragent-import.container';
+import { CompanyAccountItemKontragentImportXlsxContainer } from '../company-account-item-kontragent-import-xlsx/company-account-item-kontragent-import-xlsx.container';
+
 export const CompanyAccountItemKontragentContext = createContext();
 
 const CompanyAccountItemKontragentProvider = ({ children }) => {
@@ -36,7 +37,7 @@ export function CompanyAccountItemKontragentPage() {
             <CompanyAccountItemKontragentListContainer />
           </Grid>
           <Grid item>
-            <CompanyAccountItemKontragentImportContainer />
+            <CompanyAccountItemKontragentImportXlsxContainer />
           </Grid>
         </CompanyAccountItemKontragentProvider>
       </Grid>
