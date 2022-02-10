@@ -19,7 +19,16 @@ export function LandingHeaderDesktopComponent({ headerLinks }) {
   };
 
   return (
-    <AppBar position="static" sx={{ px: 8, py: 0, backgroundColor: '#F3F3F3' }}>
+    <AppBar
+      elevation={0}
+      positionFixed
+      sx={{
+        px: 8,
+        py: 0,
+        backgroundColor: 'white',
+        boxShadow: 'rgb(0 0 0 / 10%) 0px 0px 10px',
+      }}
+    >
       <Toolbar disableGutters>
         <Grid
           container
