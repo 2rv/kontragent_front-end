@@ -1,6 +1,8 @@
 import Paper from '@mui/material/Paper';
 import Typography from '@mui/material/Typography';
-import Box from '@mui/material/Box';
+import Tooltip from '@mui/material/Tooltip';
+import HelpOutlineOutlinedIcon from '@mui/icons-material/HelpOutlineOutlined';
+import Grid from '@mui/material/Grid';
 import Alert from '@mui/material/Alert';
 import Divider from '@mui/material/Divider';
 import { Formik } from 'formik';
@@ -21,43 +23,82 @@ export function CompanyAccountItemKontragentCreateComponent(props) {
   } = props;
   return (
     <Paper>
-      <Box>
-        <Box sx={{ pb: 4 }}>
-          <Typography variant="title" sx={{ pb: 2 }} component="div">
-            {text('COMPANY_ACCOUNT_KONTRAGENTS.FORM.TITLE')}
-          </Typography>
-          <Typography variant="subTitle" component="div">
-            {text('COMPANY_ACCOUNT_KONTRAGENTS.FORM.SUBTITLE')}
-          </Typography>
-        </Box>
-        <Divider />
-        <Formik
-          enableReinitialize
-          initialValues={initialValue}
-          validate={validation}
-          onSubmit={onSubmitForm}
+      <Grid container spacing={4}>
+        <Grid
+          item
+          display="flex"
+          direction="row"
+          justifyContent="flex-start"
+          alignItems="flex-end"
+          zIndex={0}
         >
-          {(props) => (
-            <CompanyAccountItemKontragentCreateFormComponent
-              {...props}
-              pageLoading={pageLoading}
-            />
-          )}
-        </Formik>
+          <Typography
+            variant="title"
+            children={text('COMPANY_ACCOUNT_KONTRAGENTS.FORM.TITLE')}
+          />
+
+          <Tooltip
+            arrow
+            componentsProps={{
+              tooltip: { sx: { backgroundColor: '#3AB8FF' } },
+              arrow: { sx: { color: '#3AB8FF' } },
+            }}
+            title={
+              <Typography
+                variant="body1"
+                color="white"
+                children={text(
+                  'Введите желаемое название компании вашего контрагента - это название будет видно только вам!',
+                )}
+              />
+            }
+            children={
+              <HelpOutlineOutlinedIcon sx={{ ml: 1 }} fontSize="small" />
+            }
+          />
+        </Grid>
+
+        <Grid item>
+          <Typography
+            variant="subTitle"
+            children={text('COMPANY_ACCOUNT_KONTRAGENTS.FORM.SUBTITLE')}
+          />
+        </Grid>
+
+        <Grid item>
+          <Divider />
+        </Grid>
+
+        <Grid item>
+          <Formik
+            enableReinitialize
+            initialValues={initialValue}
+            validate={validation}
+            onSubmit={onSubmitForm}
+          >
+            {(props) => (
+              <CompanyAccountItemKontragentCreateFormComponent
+                {...props}
+                pageLoading={pageLoading}
+              />
+            )}
+          </Formik>
+        </Grid>
 
         {isError && (
-          <Box sx={{ pt: 4 }}>
+          <Grid item>
             <Alert severity="error">{text(`ERROR.${errorMessage}`)}</Alert>
-          </Box>
+          </Grid>
         )}
+
         {isSuccess && (
-          <Box sx={{ pt: 4 }}>
+          <Grid item>
             <Alert severity="success">
               {text('COMPANY_ACCOUNT_KONTRAGENTS.FORM.SUCCESS')}
             </Alert>
-          </Box>
+          </Grid>
         )}
-      </Box>
+      </Grid>
     </Paper>
   );
 }

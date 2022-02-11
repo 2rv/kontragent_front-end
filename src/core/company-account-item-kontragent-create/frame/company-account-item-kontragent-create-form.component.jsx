@@ -1,4 +1,3 @@
-import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import Button from '@mui/material/Button';
 import { text } from '../../../lib/common/text';
@@ -32,64 +31,60 @@ export function CompanyAccountItemKontragentCreateFormComponent(props) {
 
   return (
     <form onSubmit={handleSubmit}>
-      <Box sx={{ py: 4 }}>
-        <Grid
-          container
-          spacing={3}
-          direction="row"
-          justifyContent="flex-start"
-          alignItems="flex-start"
-          flexWrap="wrap"
-        >
-          <Grid item xs={12} lg={6}>
-            <TextFieldElement
-              label={text(
-                'COMPANY_ACCOUNT_KONTRAGENTS.FORM.FIELD.LABELS.COMPANY_NAME',
-              )}
-              name={COMPANY_ACCOUNT_ITEM_KONTRAGENT_CREATE_DATA_NAME.NAME}
-              onChange={handleChange}
-              onBlur={handleBlur}
-              value={
-                values[COMPANY_ACCOUNT_ITEM_KONTRAGENT_CREATE_DATA_NAME.NAME]
-              }
-              error={isFieldError(
-                COMPANY_ACCOUNT_ITEM_KONTRAGENT_CREATE_DATA_NAME.NAME,
-              )}
-              fullWidth
-              errorText={getFieldError(
-                COMPANY_ACCOUNT_ITEM_KONTRAGENT_CREATE_DATA_NAME.NAME,
-              )}
-            />
-          </Grid>
-
-          <Grid xs={12} lg={6} item>
-            <TextFieldElement
-              label={text(
-                'COMPANY_ACCOUNT_KONTRAGENTS.FORM.FIELD.LABELS.COMPANY_INN',
-              )}
-              name={COMPANY_ACCOUNT_ITEM_KONTRAGENT_CREATE_DATA_NAME.INN}
-              onChange={handleChange}
-              onBlur={handleBlur}
-              value={
-                values[COMPANY_ACCOUNT_ITEM_KONTRAGENT_CREATE_DATA_NAME.INN]
-              }
-              error={isFieldError(
-                COMPANY_ACCOUNT_ITEM_KONTRAGENT_CREATE_DATA_NAME.INN,
-              )}
-              fullWidth
-              errorText={getFieldError(
-                COMPANY_ACCOUNT_ITEM_KONTRAGENT_CREATE_DATA_NAME.INN,
-              )}
-            />
-          </Grid>
-
-          <Grid xs={12} lg={6} item>
-            <Button fullWidth type="sumbit" disabled={isSubmitDisabled()}>
-              {text('COMPANY_ACCOUNT_KONTRAGENTS.FORM.BUTTON.TITLE')}
-            </Button>
-          </Grid>
+      <Grid
+        container
+        spacing={3}
+        direction="row"
+        justifyContent="flex-start"
+        alignItems="flex-start"
+        flexWrap="wrap"
+      >
+        <Grid item xs={12} lg={6}>
+          <TextFieldElement
+            label={text(
+              'COMPANY_ACCOUNT_KONTRAGENTS.FORM.FIELD.LABELS.COMPANY_NAME',
+            )}
+            name={COMPANY_ACCOUNT_ITEM_KONTRAGENT_CREATE_DATA_NAME.NAME}
+            onChange={handleChange}
+            onBlur={handleBlur}
+            value={
+              values[COMPANY_ACCOUNT_ITEM_KONTRAGENT_CREATE_DATA_NAME.NAME]
+            }
+            error={isFieldError(
+              COMPANY_ACCOUNT_ITEM_KONTRAGENT_CREATE_DATA_NAME.NAME,
+            )}
+            fullWidth
+            errorText={getFieldError(
+              COMPANY_ACCOUNT_ITEM_KONTRAGENT_CREATE_DATA_NAME.NAME,
+            )}
+          />
         </Grid>
-      </Box>
+
+        <Grid xs={12} lg={6} item>
+          <TextFieldElement
+            label={text(
+              'COMPANY_ACCOUNT_KONTRAGENTS.FORM.FIELD.LABELS.COMPANY_INN',
+            )}
+            name={COMPANY_ACCOUNT_ITEM_KONTRAGENT_CREATE_DATA_NAME.INN}
+            onChange={handleChange}
+            onBlur={handleBlur}
+            value={values[COMPANY_ACCOUNT_ITEM_KONTRAGENT_CREATE_DATA_NAME.INN]}
+            error={isFieldError(
+              COMPANY_ACCOUNT_ITEM_KONTRAGENT_CREATE_DATA_NAME.INN,
+            )}
+            fullWidth
+            errorText={getFieldError(
+              COMPANY_ACCOUNT_ITEM_KONTRAGENT_CREATE_DATA_NAME.INN,
+            )}
+          />
+        </Grid>
+
+        <Grid xs={12} lg={6} item>
+          <Button fullWidth type="sumbit" disabled={isSubmitDisabled()}>
+            {text('COMPANY_ACCOUNT_KONTRAGENTS.FORM.BUTTON.TITLE')}
+          </Button>
+        </Grid>
+      </Grid>
     </form>
   );
 }

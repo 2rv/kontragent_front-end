@@ -41,7 +41,7 @@ export function CompanyAdminImportFormItemComponent(props) {
         <TextFieldElement
           name={prefix + FIELD_NAME.REVIEW}
           value={value[FIELD_NAME.REVIEW]}
-          label={text('Рецензия')}
+          label={text('Review')}
           onChange={handleChange}
           onBlur={handleBlur}
           multiline

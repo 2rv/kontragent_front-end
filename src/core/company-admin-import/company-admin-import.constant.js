@@ -68,12 +68,12 @@ export const CONVERT_SCHEMA = {
     type: String,
     required: true,
   },
-  Название: {
+  'Название компании': {
     prop: COMPANY_ADMIN_DATA_NAME.NAME,
     type: String,
     required: true,
   },
-  Рецензия: {
+  Review: {
     prop: COMPANY_ADMIN_DATA_NAME.REVIEW,
     type: String,
   },

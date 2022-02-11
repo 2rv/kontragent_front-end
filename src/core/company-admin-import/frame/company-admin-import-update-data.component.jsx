@@ -44,7 +44,7 @@ export function CompanyAdminImportUpdateDataComponent(props) {
         <TextFieldElement
           defaultValue={data[FIELD_NAME.REVIEW]}
           name="review"
-          label={text('Рецензия')}
+          label={text('Review')}
           variant="outlined"
           onChange={handleChange}
           error={!data[FIELD_NAME.REVIEW]}
