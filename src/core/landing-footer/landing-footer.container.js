@@ -1,26 +1,35 @@
+import { useReducer, useEffect } from 'react';
 import styled from 'styled-components';
-import Box from '@mui/material/Box';
-import useMediaQuery from '@mui/material/useMediaQuery';
-
+import {
+  getRequestData,
+  getRequestErrorMessage,
+  isRequestError,
+  isRequestPending,
+  isRequestSuccess,
+} from '../../main/store/store.service';
 import { LandingLayout } from '../../lib/common/landing';
-import { LandingFooterDesktopComponent } from './landing-footer-desktop.component';
-import { LandingFooterMobileComponent } from './landing-footer-mobile.component';
+
+import { initialState, LandingFooterReducer } from './landing-footer.reducer';
+import { getAnalyticsAction } from './landing-footer.action';
+import { LandingFooterComponent } from './landing-footer.component';
 
 export function LandingFooterContainer() {
-  const desktopBreakpoint = useMediaQuery((theme) =>
-    theme.breakpoints.up('sm'),
-  );
-  const mobileBreakpoint = useMediaQuery((theme) =>
-    theme.breakpoints.between('xs', 'sm'),
-  );
+  const [state, setState] = useReducer(LandingFooterReducer, initialState);
+
+  useEffect(() => {
+    getAnalyticsAction()(setState);
+  }, []);
 
   return (
-    <Box>
-      <Layout>
-        {Boolean(desktopBreakpoint) && <LandingFooterDesktopComponent />}
-        {Boolean(mobileBreakpoint) && <LandingFooterMobileComponent />}
-      </Layout>
-    </Box>
+    <Layout>
+      <LandingFooterComponent
+        isPending={isRequestPending(state.request)}
+        isSuccess={isRequestSuccess(state.request)}
+        isError={isRequestError(state.request)}
+        errorMessage={getRequestErrorMessage(state.request)}
+        data={getRequestData(state.request)}
+      />
+    </Layout>
   );
 }
 
