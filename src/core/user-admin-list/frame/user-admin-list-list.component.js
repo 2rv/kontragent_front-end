@@ -51,7 +51,7 @@ export const UserAdminListListComponent = ({ list }) => {
         ${text('COMMON.USER.LAST_NAME')} ${
                   items[USER_ADMIN_LIST_DATA_NAME.LASTNAME]
                 }
-
+               
            `}</span>
               }
               secondary={
@@ -138,6 +138,11 @@ export const UserAdminListListComponent = ({ list }) => {
                         {text('COMMON.USER.NOT_VERIFIED')}
                       </Typography>
                     )}
+                  </>
+                  <>
+                    {' '}
+                    {text('Дата регистрации')}{' '}
+                    {items[USER_ADMIN_LIST_DATA_NAME.CRATE_DATE]}
                   </>
                 </span>
               }

@@ -121,6 +121,15 @@ export const UserAdminItemInfoListComponent = ({ data }) => {
             text('USER_ADMIN_ITEM_INFO.USER_ROLE.ADMIN')}
         </Typography>
       </Grid>
+
+      <Grid item>
+        <Typography component="div" sx={{ mr: 1 }} variant="listTitle">
+          {text('Дата создания')}
+        </Typography>
+        <Typography component="div" variant="body1">
+          {data[USER_ADMIN_ITEM_INFO_DATA_NAME.CRATE_DATE]}
+        </Typography>
+      </Grid>
     </Grid>
   );
 };

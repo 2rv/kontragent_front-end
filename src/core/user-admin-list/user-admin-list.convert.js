@@ -1,3 +1,4 @@
+import { convertFormatDate } from '../../lib/common/convert/convert.core';
 import { USER_ADMIN_LIST_DATA_NAME } from './user-admin-list.constant';
 
 export const performUserAdminListRowData = (row) => {
@@ -15,5 +16,8 @@ export const performUserAdminListRowData = (row) => {
     [USER_ADMIN_LIST_DATA_NAME.CONFIRM_PHONE]:
       user[USER_ADMIN_LIST_DATA_NAME.CONFIRM_PHONE],
     [USER_ADMIN_LIST_DATA_NAME.EMAIL]: user[USER_ADMIN_LIST_DATA_NAME.EMAIL],
+    [USER_ADMIN_LIST_DATA_NAME.CRATE_DATE]: convertFormatDate(
+      user[USER_ADMIN_LIST_DATA_NAME.CRATE_DATE],
+    ),
   }));
 };

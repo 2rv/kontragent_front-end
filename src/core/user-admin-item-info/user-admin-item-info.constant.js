@@ -7,6 +7,7 @@ export const USER_ADMIN_ITEM_INFO_DATA_NAME = {
   EMAIL: 'email',
   CONFIRM_EMAIL: 'confirmEmail',
   CONFIRM_PHONE: 'confirmPhone',
+  CRATE_DATE: 'createDate',
   ROLE: 'role',
 };
 

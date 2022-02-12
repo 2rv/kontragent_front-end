@@ -11,6 +11,7 @@ export const USER_ADMIN_LIST_DATA_NAME = {
   ROLE: 'role',
   CONFIRM_EMAIL: 'confirmEmail',
   CONFIRM_PHONE: 'confirmPhone',
+  CRATE_DATE: 'createDate',
 };
 
 export const USER_ADMIN_LIST_API = {

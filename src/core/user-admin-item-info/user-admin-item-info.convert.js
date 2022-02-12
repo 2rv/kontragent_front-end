@@ -1,3 +1,4 @@
+import { convertFormatDate } from '../../lib/common/convert/convert.core';
 import { USER_ADMIN_ITEM_INFO_DATA_NAME } from './user-admin-item-info.constant';
 
 export const performUserAdminItemInfoData = (row) => ({
@@ -18,4 +19,7 @@ export const performUserAdminItemInfoData = (row) => ({
     row[USER_ADMIN_ITEM_INFO_DATA_NAME.CONFIRM_PHONE],
   [USER_ADMIN_ITEM_INFO_DATA_NAME.ROLE]:
     row[USER_ADMIN_ITEM_INFO_DATA_NAME.ROLE],
+  [USER_ADMIN_ITEM_INFO_DATA_NAME.CRATE_DATE]: convertFormatDate(
+    row[USER_ADMIN_ITEM_INFO_DATA_NAME.CRATE_DATE],
+  ),
 });
