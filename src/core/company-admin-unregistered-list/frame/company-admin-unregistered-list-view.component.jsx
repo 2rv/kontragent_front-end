@@ -15,7 +15,9 @@ import { text } from '../../../lib/common/text';
 import { COMPANY_ADMIN_ITEM_REVISION_LIST_ROUTE_PATH_DYNAMIC } from '../../company-admin-item-revision-list';
 import { COMPANY_ADMIN_UNREGISTERED_LIST_DATA_NAME } from '../company-admin-unregistered-list.constant';
 
-export const CompanyAccountListListComponent = ({ list }) => {
+export function CompanyAdminUnregisteredListViewComponent(props) {
+  const { list } = props;
+
   if (!list || list.length === 0) {
     return (
       <Box>
@@ -86,4 +88,4 @@ export const CompanyAccountListListComponent = ({ list }) => {
       ))}
     </List>
   );
-};
+}

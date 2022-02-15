@@ -6,19 +6,20 @@ import Alert from '@mui/material/Alert';
 import { text } from '../../lib/common/text';
 import { SkeletonListComponent } from '../../lib/common/skeleton/skeleton-list.component';
 
-import { CompanyAccountListListComponent } from './frame/company-admin-unregistered-list-list.component';
-import { CompanyAdminUnregisteredListTypeSelectComponent } from './frame/company-admin-unregistered-list-type-select.component';
+import { CompanyAdminUnregisteredListViewComponent } from './frame/company-admin-unregistered-list-view.component';
+import { CompanyAdminUnregisteredListFilterComponent } from './frame/company-admin-unregistered-list-filter.component';
 
 export function CompanyAdminUnregisteredListComponent(props) {
   const {
-    data,
     isPending,
-    isError,
     isSuccess,
+    isError,
     errorMessage,
-    onChangeType,
-    type,
+    list,
+    onChangeFilter,
+    filterData,
   } = props;
+
   return (
     <Paper>
       <Grid container spacing={4}>
@@ -42,9 +43,9 @@ export function CompanyAdminUnregisteredListComponent(props) {
           </Grid>
 
           <Grid item xs={1} lg={2}>
-            <CompanyAdminUnregisteredListTypeSelectComponent
-              onChange={onChangeType}
-              value={type}
+            <CompanyAdminUnregisteredListFilterComponent
+              onChangeFilter={onChangeFilter}
+              filterData={filterData}
             />
           </Grid>
         </Grid>
@@ -55,7 +56,7 @@ export function CompanyAdminUnregisteredListComponent(props) {
 
         {isSuccess && (
           <Grid item>
-            <CompanyAccountListListComponent list={data} />
+            <CompanyAdminUnregisteredListViewComponent list={list} />
           </Grid>
         )}
 
@@ -64,9 +65,10 @@ export function CompanyAdminUnregisteredListComponent(props) {
             <SkeletonListComponent />
           </Grid>
         )}
+
         {isError && (
           <Grid item>
-            <Alert severity="error">{text(`ERROR.${errorMessage}`)}</Alert>
+            <Alert severity="error" children={text(`ERROR.${errorMessage}`)} />
           </Grid>
         )}
       </Grid>

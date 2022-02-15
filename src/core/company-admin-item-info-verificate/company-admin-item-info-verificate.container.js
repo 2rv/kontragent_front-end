@@ -72,7 +72,7 @@ export function CompanyAccountItemInfoVerificateContainer() {
     try {
       const res = await httpRequest({
         method: 'GET',
-        url: `/company/get/${getQuery('companyId')}/`,
+        url: `/company/${getQuery('companyId')}/`,
       });
 
       const status = performCompanyAdminItemInfoVerificateData(res.data);
