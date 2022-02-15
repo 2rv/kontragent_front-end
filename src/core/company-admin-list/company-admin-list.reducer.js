@@ -5,16 +5,13 @@ import {
   setRequestError,
 } from '../../main/store/store.service';
 
-import { COMPANY_ADMIN_UNREGISTERED_LIST_ACTION_TYPE as ACTION_TYPE } from './company-admin-unregistered-list.constant';
+import { COMPANY_ADMIN_LIST_ACTION_TYPE as ACTION_TYPE } from './company-admin-list.constant';
 
 export const initialState = {
   request: initRequestState({ list: [], type: 0 }),
 };
 
-export function CompanyAdminUnregisteredListReducer(
-  state = initialState,
-  action,
-) {
+export function CompanyAdminListReducer(state = initialState, action) {
   switch (action.type) {
     case ACTION_TYPE.REQUEST_PENDING:
       return {

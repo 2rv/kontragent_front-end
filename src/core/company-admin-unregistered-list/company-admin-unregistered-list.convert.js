@@ -14,5 +14,6 @@ export const convertCompanyAdminUnregisteredList = (d) => {
     [DATA_NAME.SKIP]: d[[DATA_NAME.SKIP]],
     [DATA_NAME.TAKE]: d[[DATA_NAME.TAKE]],
     [DATA_NAME.COUNT]: d[[DATA_NAME.COUNT]],
+    [DATA_NAME.TYPE]: d[DATA_NAME.TYPE],
   };
 };

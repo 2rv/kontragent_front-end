@@ -2,9 +2,9 @@ import Grid from '@mui/material/Grid';
 import Pagination from '@mui/material/Pagination';
 import { COMPANY_TYPE_OPTIONS } from '../../../lib/common/company/company.type';
 import { FieldSelectComponent } from '../../../lib/common/field-select/field-select.component';
-import { COMPANY_ADMIN_UNREGISTERED_LIST_DATA_NAME as DATA_NAME } from '../company-admin-unregistered-list.constant';
+import { COMPANY_ADMIN_LIST_DATA_NAME as DATA_NAME } from '../company-admin-list.constant';
 
-export function CompanyAdminUnregisteredListFilterComponent(props) {
+export function CompanyAdminListFilterComponent(props) {
   const { onChangeFilter, filterData } = props;
 
   const paginationCount = Math.ceil(filterData.count / filterData.take);

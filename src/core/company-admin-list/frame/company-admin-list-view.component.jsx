@@ -10,16 +10,16 @@ import { redirect } from '../../../main/navigation';
 import { text } from '../../../lib/common/text';
 
 import { COMPANY_ADMIN_ITEM_REVISION_LIST_ROUTE_PATH_DYNAMIC } from '../../company-admin-item-revision-list';
-import { COMPANY_ADMIN_UNREGISTERED_LIST_DATA_NAME as DATA_NAME } from '../company-admin-unregistered-list.constant';
+import { COMPANY_ADMIN_LIST_DATA_NAME as DATA_NAME } from '../company-admin-list.constant';
 
-export function CompanyAdminUnregisteredListViewComponent(props) {
+export function CompanyAdminListViewComponent(props) {
   const { list } = props;
 
   if (!list || list.length === 0) {
     return (
       <Alert
         severity="info"
-        children={text('COMPANY_ADMIN_LIST.UNREGISTERED_COMPANIES_LIST.EMPTY')}
+        children={text('COMPANY_ADMIN_LIST.COMPANY_LIST.EMPTY')}
       />
     );
   }

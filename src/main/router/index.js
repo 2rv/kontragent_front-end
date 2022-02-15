@@ -32,10 +32,6 @@ import {
   AUTH_VERIFICATION_PHONE_ROUTE_PATH,
 } from '../../core/auth-verification-phone';
 import {
-  CompanyAdminListRouter,
-  COMPANY_ADMIN_LIST_ROUTE_PATH,
-} from '../../core/company-admin-list';
-import {
   AuthReferalRouter,
   AUTH_REFERAL_ROUTE_PATH,
 } from '../../core/auth-referal';
@@ -194,6 +190,9 @@ import { CompanyAccountItemKontragentItemRevisionListRouter } from '../../core/c
 
 import { COMPANY_ADMIN_IMPORT_FORM_ROUTE_PATH } from '../../core/company-admin-import-form/company-admin-import-form.constant';
 import { CompanyAdminImportFormRouter } from '../../core/company-admin-import-form/company-admin-import-form.router';
+
+import { COMPANY_ADMIN_LIST_ROUTE_PATH } from '../../core/company-admin-list/company-admin-list.constant';
+import { CompanyAdminListRouter } from '../../core/company-admin-list/company-admin-list.router';
 
 export const routes = {
   '/': IndexRouter,

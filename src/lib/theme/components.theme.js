@@ -247,4 +247,17 @@ export const components = {
       },
     },
   },
+  MuiPagination: {
+    defaultProps: {
+      sx: { minHeight: '46px' },
+      variant: 'outlined',
+      shape: 'rounded',
+      size: 'large',
+    },
+  },
+  MuiPaginationItem: {
+    defaultProps: {
+      sx: { minHeight: '46px', minWidth: '46px' },
+    },
+  },
 };

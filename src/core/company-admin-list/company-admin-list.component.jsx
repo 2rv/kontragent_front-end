@@ -1,14 +1,14 @@
 import Divider from '@mui/material/Divider';
 import Typography from '@mui/material/Typography';
-import Grid from '@mui/material/Grid';
 import Alert from '@mui/material/Alert';
+import Grid from '@mui/material/Grid';
 import { text } from '../../lib/common/text';
 import { SkeletonListComponent } from '../../lib/common/skeleton/skeleton-list.component';
 
-import { CompanyAdminUnregisteredListViewComponent } from './frame/company-admin-unregistered-list-view.component';
-import { CompanyAdminUnregisteredListFilterComponent } from './frame/company-admin-unregistered-list-filter.component';
+import { CompanyAdminListViewComponent } from './frame/company-admin-list-view.component';
+import { CompanyAdminListFilterComponent } from './frame/company-admin-list-filter.component';
 
-export function CompanyAdminUnregisteredListComponent(props) {
+export function CompanyAdminListComponent(props) {
   const {
     isPending,
     isSuccess,
@@ -25,9 +25,7 @@ export function CompanyAdminUnregisteredListComponent(props) {
         <Typography
           variant="heading"
           component="div"
-          children={text(
-            'COMPANY_ADMIN_LIST.UNREGISTERED_COMPANIES_LIST.TITLE',
-          )}
+          children={text('COMPANY_ADMIN_LIST.TITLE')}
         />
       </Grid>
 
@@ -36,7 +34,7 @@ export function CompanyAdminUnregisteredListComponent(props) {
       </Grid>
 
       <Grid item>
-        <CompanyAdminUnregisteredListFilterComponent
+        <CompanyAdminListFilterComponent
           onChangeFilter={onChangeFilter}
           filterData={filterData}
         />
@@ -44,7 +42,7 @@ export function CompanyAdminUnregisteredListComponent(props) {
 
       {isSuccess && (
         <Grid item>
-          <CompanyAdminUnregisteredListViewComponent list={list} />
+          <CompanyAdminListViewComponent list={list} />
         </Grid>
       )}
 
