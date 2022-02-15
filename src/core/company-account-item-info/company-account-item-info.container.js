@@ -30,7 +30,7 @@ export function CompanyAccountItemInfoContainer() {
     try {
       const res = await httpRequest({
         method: 'GET',
-        url: `/company/get/${getQuery('companyId')}/`,
+        url: `/company/${getQuery('companyId')}/`,
       });
 
       const data = performCompanyAccountItemInfoData(res.data);

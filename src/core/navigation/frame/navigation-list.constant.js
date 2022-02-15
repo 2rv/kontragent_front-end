@@ -6,7 +6,7 @@ import { COMPANY_ACCOUNT_LIST_ROUTE_PATH } from '../../company-account-list';
 import { USER_ADMIN_LIST_ROUTE_PATH } from '../../user-admin-list';
 import { USER_REFERAL_BALANCE_ROUTE_PATH } from '../../user-referal-balance';
 import { USER_REFERAL_SYSTEM_ROUTE_PATH } from '../../user-referal-system';
-import { COMPANY_ADMIN_LIST_ROUTE_PATH } from '../../company-admin-list';
+import { COMPANY_ADMIN_LIST_ROUTE_PATH } from '../../company-admin-list/company-admin-list.constant';
 import { USER_ADMIN_INVITE_ROUTE_PATH } from '../../user-admin-invite';
 import { CREATE_ARTICLE_ROUTE_PATH } from '../../article-create';
 import { ADMIN_POST_LIST_ROUTE_PATH } from '../../admin-post-list';

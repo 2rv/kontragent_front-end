@@ -30,7 +30,7 @@ export function UserAdminItemCompanyListContainer() {
     try {
       const res = await httpRequest({
         method: 'GET',
-        url: `/company/admin/${getQuery('userId')}`,
+        url: `/company/admin/user/${getQuery('userId')}`,
       });
 
       const data = performUserAdminItemCompanyListData(res.data);
