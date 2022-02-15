@@ -195,6 +195,9 @@ import { CompanyAccountItemKontragentItemRevisionListRouter } from '../../core/c
 import { COMPANY_ADMIN_IMPORT_FORM_ROUTE_PATH } from '../../core/company-admin-import-form/company-admin-import-form.constant';
 import { CompanyAdminImportFormRouter } from '../../core/company-admin-import-form/company-admin-import-form.router';
 
+import { COMPANY_ACCOUNT_ITEM_KONTRAGENT_ITEM_UPDATE_DATA_ROUTE_PATH } from '../../core/company-account-item-kontragent-item-update-data/company-account-item-kontragent-item-update-data.constant';
+import { CompanyAccountItemKontragentItemUpdateDataRouter } from '../../core/company-account-item-kontragent-item-update-data/company-account-item-kontragent-item-update-data.router';
+
 export const routes = {
   '/': IndexRouter,
   [AUTH_LOGIN_ROUTE_PATH]: AuthLoginRouter,
@@ -268,6 +271,9 @@ export const routes = {
   [COMPANY_ACCOUNT_ITEM_KONTRAGENT_ITEM_REVISION_LIST_ROUTE_PATH]:
     CompanyAccountItemKontragentItemRevisionListRouter,
   [COMPANY_ADMIN_IMPORT_FORM_ROUTE_PATH]: CompanyAdminImportFormRouter,
+
+  [COMPANY_ACCOUNT_ITEM_KONTRAGENT_ITEM_UPDATE_DATA_ROUTE_PATH]:
+    CompanyAccountItemKontragentItemUpdateDataRouter,
 };
 
 export const Router = routesInit(routes);
