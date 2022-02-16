@@ -19,13 +19,10 @@ export function getCompanyDataAction(inn) {
         data: performCompanyData(res.data),
       });
     } catch (error) {
-      console.log(error);
-      if (error.response) {
-        dispatch({
-          type: COMPANY_ACCOUNT_INFO_DATA_ACTION_TYPE.REQUEST_ERROR,
-          errorMessage: error.response.data.message,
-        });
-      }
+      dispatch({
+        type: COMPANY_ACCOUNT_INFO_DATA_ACTION_TYPE.REQUEST_ERROR,
+        errorMessage: 'Неудалось получить дополнительную информацию о компании',
+      });
     }
   };
 }
