@@ -12,11 +12,10 @@ import Button from '@mui/material/Button';
 import { text } from '../../lib/common/text';
 
 import { CompanyAccountItemRevisionKontragentCreateFormComponent } from './frame/company-account-item-revision-kontragent-create-form.component';
-import { CompanyAccountItemRevisionKontragentCreatePriceComponent } from './frame/company-account-item-revision-kontragent-create-price.component';
+import { CompanyAccountItemRevisionKontragentCreatePriceContainer } from '../company-account-item-revision-kontragent-create-price/company-account-item-revision-kontragent-create-price.container';
 import { CompanyAccountItemRevisionKontragentCreatePeriodListComponent } from '../company-account-item-revision-kontragent-create-period-list/company-account-item-revision-kontragent-create-period-list.component';
-import { COMPANY_ACCOUNT_ITEM_REVISION_KONTRAGENT_CREATE_DATA_NAME } from './company-account-item-revision-kontragent-create.constant';
+import { COMPANY_ACCOUNT_ITEM_REVISION_KONTRAGENT_CREATE_DATA_NAME as FIELD_NAME } from './company-account-item-revision-kontragent-create.constant';
 import { CompanyAccountItemRevisionKontragentCreateKontragentListContainer } from '../company-account-item-revision-kontragent-create-kontragent-list/company-account-item-revision-kontragent-create-kontragent-list.container';
-import { getCompanyAccountItemRevisionKontragentPrice } from './company-account-item-revision-kontragent-create.convert';
 
 export function CompanyAccountItemRevisionKontragentCreateComponent(props) {
   const {
@@ -39,14 +38,7 @@ export function CompanyAccountItemRevisionKontragentCreateComponent(props) {
       onSubmit={onSubmitForm}
     >
       {(formik) => {
-        const KONTRAGENTS =
-          formik.values[
-            COMPANY_ACCOUNT_ITEM_REVISION_KONTRAGENT_CREATE_DATA_NAME
-              .KONTRAGENTS
-          ];
-
-        const TOTAL_PRICE =
-          getCompanyAccountItemRevisionKontragentPrice(KONTRAGENTS);
+        const KONTRAGENTS = formik.values[FIELD_NAME.KONTRAGENTS];
         return (
           <Grid
             spacing={6}
@@ -110,11 +102,7 @@ export function CompanyAccountItemRevisionKontragentCreateComponent(props) {
                     <Divider />
                   </Grid>
 
-                  <FieldArray
-                    name={
-                      COMPANY_ACCOUNT_ITEM_REVISION_KONTRAGENT_CREATE_DATA_NAME.KONTRAGENTS
-                    }
-                  >
+                  <FieldArray name={FIELD_NAME.KONTRAGENTS}>
                     {({ remove, push }) => (
                       <Grid
                         item
@@ -190,22 +178,11 @@ export function CompanyAccountItemRevisionKontragentCreateComponent(props) {
               <Paper>
                 <Grid container spacing={4}>
                   <Grid item>
-                    <Typography
-                      variant="subtitle1"
-                      component="div"
-                      children={text(
-                        'COMPANY_ACCOUNT_ITEM_REVISION_CREATE.REVISION_CREATE_COMPANY_PRICE.TITLE',
-                      )}
-                    />
-                  </Grid>
-
-                  <Grid item>
-                    <Divider />
-                  </Grid>
-
-                  <Grid item>
-                    <CompanyAccountItemRevisionKontragentCreatePriceComponent
-                      totalPrice={TOTAL_PRICE}
+                    <CompanyAccountItemRevisionKontragentCreatePriceContainer
+                      kontragents={KONTRAGENTS}
+                      handleChange={formik.handleChange}
+                      handleBlur={formik.handleBlur}
+                      value={formik.values[FIELD_NAME.USE_REF_BALANCE]}
                     />
                   </Grid>
 

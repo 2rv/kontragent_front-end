@@ -9,6 +9,8 @@ export const COMPANY_ACCOUNT_ITEM_REVISION_KONTRAGENT_CREATE_ROUTE_PATH_DYNAMIC 
   ) => `/company/${companyId}/revision/kontragent/create`;
 
 export const COMPANY_ACCOUNT_ITEM_REVISION_KONTRAGENT_CREATE_DATA_NAME = {
+  USE_REF_BALANCE: 'isUseReferalBalance',
+
   NAME: 'name',
   INN: 'inn',
 
