@@ -33,6 +33,7 @@ export function CompanyAccountItemRevisionSelfCreateContainer() {
       [FIELD_NAME.DESCRIPTION]: '',
       [FIELD_NAME.FILE_ID_LIST]: [],
       [FIELD_NAME.YEARS]: [initialYear],
+      [FIELD_NAME.USE_REF_BALANCE]: false,
     };
   };
   const initialYear = {

@@ -8,9 +8,8 @@ import LinearProgress from '@mui/material/LinearProgress';
 import { text } from '../../lib/common/text';
 
 import { CompanyAccountItemRevisionSelfCreateFormComponent } from './frame/company-account-item-revision-self-create-form.component';
-import { CompanyAccountItemRevisionSelfCreatePriceComponent } from './frame/company-account-item-revision-self-create-price.component';
+import { CompanyAccountItemRevisionSelfCreatePriceContainer } from '../company-account-item-revision-self-create-price/company-account-item-revision-self-create-price.container';
 import { CompanyAccountItemRevisionSelfCreatePeriodListComponent } from '../company-account-item-revision-self-create-period-list/company-account-item-revision-self-create-period-list.component';
-import { getCompanyAccountItemRevisionSelfPrice } from './company-account-item-revision-self-create.convert';
 import { COMPANY_ACCOUNT_ITEM_REVISION_SELF_CREATE_DATA_NAME as FIELD_NAME } from './company-account-item-revision-self-create.constant';
 
 export function CompanyAccountItemRevisionSelfCreateComponent(props) {
@@ -25,6 +24,7 @@ export function CompanyAccountItemRevisionSelfCreateComponent(props) {
     onSubmitForm,
     initialYear,
   } = props;
+
   return (
     <Formik
       initialValues={initialValue}
@@ -32,10 +32,6 @@ export function CompanyAccountItemRevisionSelfCreateComponent(props) {
       onSubmit={onSubmitForm}
     >
       {(formik) => {
-        const TOTAL_PRICE = getCompanyAccountItemRevisionSelfPrice(
-          formik.values[FIELD_NAME.YEARS],
-        );
-
         return (
           <Grid
             spacing={6}
@@ -104,22 +100,11 @@ export function CompanyAccountItemRevisionSelfCreateComponent(props) {
               <Paper>
                 <Grid container spacing={4}>
                   <Grid item>
-                    <Typography
-                      variant="subtitle1"
-                      component="div"
-                      children={text(
-                        'COMPANY_ACCOUNT_ITEM_REVISION_CREATE.REVISION_CREATE_COMPANY_PRICE.TITLE',
-                      )}
-                    />
-                  </Grid>
-
-                  <Grid item>
-                    <Divider />
-                  </Grid>
-
-                  <Grid item>
-                    <CompanyAccountItemRevisionSelfCreatePriceComponent
-                      totalPrice={TOTAL_PRICE}
+                    <CompanyAccountItemRevisionSelfCreatePriceContainer
+                      years={formik.values[FIELD_NAME.YEARS]}
+                      handleChange={formik.handleChange}
+                      handleBlur={formik.handleBlur}
+                      value={formik.values[FIELD_NAME.USE_REF_BALANCE]}
                     />
                   </Grid>
 

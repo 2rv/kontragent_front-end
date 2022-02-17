@@ -5,12 +5,10 @@ import Divider from '@mui/material/Divider';
 import Alert from '@mui/material/Alert';
 import { text } from '../../lib/common/text';
 import { CheckboxField } from '../../lib/common/checkbox-field/checkbox.component';
-import { COMPANY_ACCOUNT_ITEM_REVISION_KONTRAGENT_CREATE_DATA_NAME as FIELD_NAME } from '../company-account-item-revision-kontragent-create/company-account-item-revision-kontragent-create.constant';
-import { COMPANY_ACCOUNT_ITEM_REVISION_KONTRAGENT_CREATE_PRICE_DATA_NAME as DATA_NAME } from './company-account-item-revision-kontragent-create-price.constant';
+import { COMPANY_ACCOUNT_ITEM_REVISION_SELF_CREATE_DATA_NAME as FIELD_NAME } from '../company-account-item-revision-self-create/company-account-item-revision-self-create.constant';
+import { COMPANY_ACCOUNT_ITEM_REVISION_SELF_CREATE_PRICE_DATA_NAME as DATA_NAME } from './company-account-item-revision-self-create-price.constant';
 
-export function CompanyAccountItemRevisionKontragentCreatePriceComponent(
-  props,
-) {
+export function CompanyAccountItemRevisionSelfCreatePriceComponent(props) {
   const { totalPrice, handleChange, handleBlur, value, data } = props;
 
   const isInsufficientBalance = () => {
