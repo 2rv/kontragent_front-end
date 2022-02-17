@@ -1,17 +1,17 @@
-import { ListItemButton, ListItemText, ListItem, List } from '@mui/material';
+import ListItemButton from '@mui/material/ListItemButton';
+import ListItemText from '@mui/material/ListItemText';
+import ListItem from '@mui/material/ListItem';
+import List from '@mui/material/List';
 import { redirect } from '../../../main/navigation/navigation.core';
 
 export function NavigationListComponent({ activePath, menuListItems }) {
   return (
     <List disablePadding component="nav">
       {menuListItems.map((item, i) => (
-        <ListItem key={i} disablePadding>
+        <ListItem disableGutters disablePadding key={i}>
           <ListItemButton
             selected={activePath === item.path}
-            onClick={() => {
-              redirect(item.path);
-            }}
-            sx={{ pr: 0 }}
+            onClick={() => redirect(item.path)}
           >
             <ListItemText
               primary={item.name}
