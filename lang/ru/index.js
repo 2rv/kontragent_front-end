@@ -43,6 +43,7 @@ import LANDING from './landing.json';
 import NOTIFICATION_ADMIN_EMAIL_CREATE from './notification-admin-email-create.json';
 import FEEDBACK_ACCOUNT_CREATE from './feedback-account-create.json';
 import FEEDBACK_ADMIN_ITEM from './feedback-admin-item.json';
+import FOOTER from './footer.json';
 
 export const RU = {
   translation: {
@@ -90,5 +91,6 @@ export const RU = {
     NOTIFICATION_ADMIN_EMAIL_CREATE,
     FEEDBACK_ACCOUNT_CREATE,
     FEEDBACK_ADMIN_ITEM,
+    FOOTER,
   },
 };
