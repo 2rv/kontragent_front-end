@@ -100,7 +100,7 @@ export function CompanyAccountItemRevisionSelfCreatePriceComponent(props) {
         <Typography
           variant="listContent"
           children={text(
-            `${data[DATA_NAME.COMPANY_BALANCE]}$t(COMMON.CURRENCY.RUB)`,
+            `${data[DATA_NAME.COMPANY_BALANCE] || 0}$t(COMMON.CURRENCY.RUB)`,
           )}
         />
       </Grid>
@@ -113,7 +113,7 @@ export function CompanyAccountItemRevisionSelfCreatePriceComponent(props) {
         <Typography
           variant="listContent"
           children={text(
-            `${data[DATA_NAME.REFERAL_BALANCE]}$t(COMMON.CURRENCY.RUB)`,
+            `${data[DATA_NAME.REFERAL_BALANCE] || 0}$t(COMMON.CURRENCY.RUB)`,
           )}
         />
       </Grid>

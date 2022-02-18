@@ -76,7 +76,7 @@ export const authRedirectVerificatedEmail = (ctx: any) => {
       return true;
     }
   }
-}
+};
 
 export const authRedirectVerificatedPhone = (ctx: any) => {
   const { res, store = null } = ctx;
@@ -94,7 +94,7 @@ export const authRedirectVerificatedPhone = (ctx: any) => {
       return true;
     }
   }
-}
+};
 
 export const authRedirectVerification = (ctx: any) => {
   const { res, store = null } = ctx;
@@ -135,7 +135,7 @@ export const authRedirectNotAdmin = (ctx: any, pathToRedirect: string) => {
   const authStore = store.getState()[AUTH_STORE_NAME];
 
   if (authStore.logged) {
-    if (authStore.user.role !== USER_ROLE.ADMIN) {
+    if (authStore.user?.role !== USER_ROLE.ADMIN) {
       if (res) {
         res.writeHead(301, {
           Location: pathToRedirect,
@@ -155,7 +155,7 @@ export const authRedirectAdmin = (ctx: any, pathToRedirect: string) => {
 
   const authStore = store.getState()[AUTH_STORE_NAME];
   if (authStore.logged) {
-    if (authStore.user.role === USER_ROLE.ADMIN) {
+    if (authStore.user?.role === USER_ROLE.ADMIN) {
       if (res) {
         res.writeHead(301, {
           Location: pathToRedirect,
