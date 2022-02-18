@@ -17,6 +17,7 @@ export function AdminRevisionKontragentReviewCreateComponent(props) {
     errorMessage,
     initialValue,
     onSubmitForm,
+    data,
   } = props;
 
   return (
@@ -39,7 +40,10 @@ export function AdminRevisionKontragentReviewCreateComponent(props) {
           enableReinitialize
         >
           {(props) => (
-            <AdminRevisionKontragentReviewCreateFormComponent {...props} />
+            <AdminRevisionKontragentReviewCreateFormComponent
+              data={data}
+              {...props}
+            />
           )}
         </Formik>
       </Grid>

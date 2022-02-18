@@ -17,6 +17,7 @@ import { AdminRevisionKontragentItemCompanyComponent } from './frame/admin-revis
 import { AdminRevisionKontragentItemCreatorComponent } from './frame/admin-revision-kontragent-item-creator.component';
 
 import { AdminRevisionKontragentReviewCreateContainer } from '../admin-revision-kontragent-review-create/admin-revision-kontragent-review-create.container';
+import { AdminRevisionKontragentReviewShareContainer } from '../admin-revision-kontragent-review-share/admin-revision-kontragent-review-share.container';
 
 export function AdminRevisionKontragentItemComponent(props) {
   const { data, isPending, isError, isSuccess, errorMessage } = props;
@@ -126,28 +127,3 @@ export function AdminRevisionKontragentItemComponent(props) {
     </Paper>
   );
 }
-
-//  <Button
-//             fullWidth
-//             type="button"
-//             onClick={() => {
-//               redirect(ADMIN_REVISION_REVIEW_ROUTE_PATH_DYNAMIC, {
-//                 params: {
-//                   revisionId: getQuery('revisionId'),
-//                 },
-//               });
-//             }}
-//             children={text('ADMIN_REVISION_REVIEW.FORM.BUTTON.REDIRECT')}
-// />
-//     {data[DATA_NAME.STATUS] === 4 && (
-//       <>
-//         <Typography gutterBottom variant="listTitle" component="div">
-//           {text('COMPANY_ACCOUNT_ITEM_REVISION.REVISION_ITEM.PRICE')}
-//         </Typography>
-
-//         <Typography variant="body1">
-//           {data[DATA_NAME.PRICE]}
-//           {text('CURRENCY.RUB')}
-//         </Typography>
-//       </>
-//     )}

@@ -6,6 +6,7 @@ import { FileUploadFieldContainer } from '../../../lib/common/file-upload-field/
 import { text } from '../../../lib/common/text';
 
 import { ADMIN_REVISION_KONTRAGENT_ITEM_DATA_NAME as FIELD_NAME } from '../../admin-revision-kontragent-item/admin-revision-kontragent-item.constant';
+import { AdminRevisionKontragentReviewShareContainer } from '../../admin-revision-kontragent-review-share/admin-revision-kontragent-review-share.container';
 import { SelectElement } from './select.element';
 
 export const AdminRevisionKontragentReviewCreateFormComponent = (props) => {
@@ -17,6 +18,7 @@ export const AdminRevisionKontragentReviewCreateFormComponent = (props) => {
     erorrs,
     touched,
     setFieldValue,
+    data,
   } = props;
 
   return (
@@ -26,7 +28,7 @@ export const AdminRevisionKontragentReviewCreateFormComponent = (props) => {
       container
       direction="row"
       justifyContent="flex-start"
-      spacing={2}
+      spacing={4}
       columns={{ xs: 1, md: 4 }}
     >
       <Grid item xs={1}>
@@ -89,6 +91,8 @@ export const AdminRevisionKontragentReviewCreateFormComponent = (props) => {
           children={text('ADMIN_REVISION_REVIEW.FORM.BUTTON.TITLE')}
         />
       </Grid>
+
+      <AdminRevisionKontragentReviewShareContainer data={data} />
     </Grid>
   );
 };
