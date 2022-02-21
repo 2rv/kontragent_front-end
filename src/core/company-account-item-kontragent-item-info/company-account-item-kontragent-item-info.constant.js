@@ -4,16 +4,14 @@ export const COMPANY_ACCOUNT_ITEM_KONTRAGENT_ITEM_INFO_API = {
       `/kontragent/getone/company/${companyId}/${kontragentId}`,
     TYPE: 'GET',
   },
-  REMOVE_KONTRAGENT: {
-    ENDPOINT: (companyId, kontragentId) =>
-      `/kontragent/delete/company/${companyId}/${kontragentId}`,
-    TYPE: 'DELETE',
-  },
 };
 
 export const COMPANY_ACCOUNT_ITEM_KONTRAGENT_ITEM_INFO_DATA_NAME = {
   ID: 'id',
   NAME: 'name',
+  EMAIL: 'email',
+  RATING: 'rating',
+  COMMENT: 'comment',
   INN: 'inn',
   COMPANY_ID: 'companyId',
   COMPANY_NAME: 'companyName',
@@ -21,4 +19,13 @@ export const COMPANY_ACCOUNT_ITEM_KONTRAGENT_ITEM_INFO_DATA_NAME = {
   COMPANY_REGISTERED: 'registered',
   CONTRACTOR: 'contractor',
   CONSUMER: 'consumer',
+};
+
+export const COMPANY_ACCOUNT_ITEM_KONTRAGENT_ITEM_INFO_ACTION_TYPE = {
+  REQUEST_PENDING:
+    'COMPANY_ACCOUNT_ITEM_KONTRAGENT_ITEM_INFO_ACTION_TYPE.REQUEST_PENDING',
+  REQUEST_SUCCESS:
+    'COMPANY_ACCOUNT_ITEM_KONTRAGENT_ITEM_INFO_ACTION_TYPE.REQUEST_SUCCESS',
+  REQUEST_ERROR:
+    'COMPANY_ACCOUNT_ITEM_KONTRAGENT_ITEM_INFO_ACTION_TYPE.REQUEST_ERROR',
 };
