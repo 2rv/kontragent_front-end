@@ -17,6 +17,7 @@ export function AdminRevisionSelfReviewCreateComponent(props) {
     errorMessage,
     initialValue,
     onSubmitForm,
+    data,
   } = props;
 
   return (
@@ -38,7 +39,12 @@ export function AdminRevisionSelfReviewCreateComponent(props) {
           onSubmit={onSubmitForm}
           enableReinitialize
         >
-          {(props) => <AdminRevisionSelfReviewCreateFormComponent {...props} />}
+          {(props) => (
+            <AdminRevisionSelfReviewCreateFormComponent
+              data={data}
+              {...props}
+            />
+          )}
         </Formik>
       </Grid>
 

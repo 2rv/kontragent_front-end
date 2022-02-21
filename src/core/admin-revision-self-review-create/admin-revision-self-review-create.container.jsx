@@ -51,6 +51,7 @@ export function AdminRevisionSelfReviewCreateContainer(props) {
       errorMessage={getRequestErrorMessage(state.form)}
       initialValue={getInitialValue()}
       onSubmitForm={onSubmitForm}
+      data={data}
     />
   );
 }

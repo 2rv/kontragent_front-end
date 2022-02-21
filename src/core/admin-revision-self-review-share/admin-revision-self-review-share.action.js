@@ -1,7 +1,7 @@
 import { httpRequest } from '../../main/http';
-import { ADMIN_REVISION_KONTRAGENT_REVIEW_SHARE_ACTION_TYPE as ACTION_TYPE } from './admin-revision-kontragent-review-share.constant';
+import { ADMIN_REVISION_SELF_REVIEW_SHARE_ACTION_TYPE as ACTION_TYPE } from './admin-revision-self-review-share.constant';
 
-export function uploadAdminRevisionKontragentReviewShareFormData(data) {
+export function uploadAdminRevisionSelfReviewShareFormData(data) {
   return async (dispatch) => {
     dispatch({
       type: ACTION_TYPE.FORM_PENDING,
@@ -10,7 +10,7 @@ export function uploadAdminRevisionKontragentReviewShareFormData(data) {
     try {
       await httpRequest({
         method: 'POST',
-        url: 'revision-share/kontragent',
+        url: 'revision-share/self',
         data: data,
       });
 

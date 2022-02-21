@@ -6,6 +6,7 @@ import { FileUploadFieldContainer } from '../../../lib/common/file-upload-field/
 import { text } from '../../../lib/common/text';
 
 import { ADMIN_REVISION_SELF_ITEM_DATA_NAME as FIELD_NAME } from '../../admin-revision-self-item/admin-revision-self-item.constant';
+import { AdminRevisionSelfReviewShareContainer } from '../../admin-revision-self-review-share/admin-revision-self-review-share.container';
 import { SelectElement } from './select.element';
 
 export const AdminRevisionSelfReviewCreateFormComponent = (props) => {
@@ -17,6 +18,7 @@ export const AdminRevisionSelfReviewCreateFormComponent = (props) => {
     erorrs,
     touched,
     setFieldValue,
+    data,
   } = props;
 
   return (
@@ -89,6 +91,7 @@ export const AdminRevisionSelfReviewCreateFormComponent = (props) => {
           children={text('ADMIN_REVISION_REVIEW.FORM.BUTTON.TITLE')}
         />
       </Grid>
+      <AdminRevisionSelfReviewShareContainer data={data} />
     </Grid>
   );
 };
