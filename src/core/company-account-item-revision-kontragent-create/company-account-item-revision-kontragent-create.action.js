@@ -21,11 +21,15 @@ export function uploadCompanyAccountItemRevisionKontragentCreateForm(data) {
       dispatch({
         type: ACTION_TYPE.FORM_SUCCESS,
       });
-      redirect(COMPANY_ACCOUNT_ITEM_REVISION_KONTRAGENT_ROUTE_PATH_DYNAMIC, {
-        params: {
-          companyId: data.companyId,
+
+      await redirect(
+        COMPANY_ACCOUNT_ITEM_REVISION_KONTRAGENT_ROUTE_PATH_DYNAMIC,
+        {
+          params: {
+            companyId: data.companyId,
+          },
         },
-      });
+      );
     } catch (error) {
       if (error) {
         console.log(error);

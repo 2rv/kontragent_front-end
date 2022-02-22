@@ -13,4 +13,5 @@ export const COMPANY_ADMIN_IMPORT_FORM_DATA_NAME = {
   INN: 'inn',
   NAME: 'name',
   REVIEW: 'review',
+  CREATE_DATE: 'createDate',
 };

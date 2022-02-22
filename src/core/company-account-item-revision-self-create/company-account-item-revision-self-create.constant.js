@@ -8,6 +8,7 @@ export const COMPANY_ACCOUNT_ITEM_REVISION_SELF_CREATE_ROUTE_PATH_DYNAMIC = (
 ) => `/company/${companyId}/revision/self/create`;
 
 export const COMPANY_ACCOUNT_ITEM_REVISION_SELF_CREATE_DATA_NAME = {
+  USE_REF_BALANCE: 'isUseReferalBalance',
   DESCRIPTION: 'description',
   FILE_ID_LIST: 'files',
   YEARS: 'period',

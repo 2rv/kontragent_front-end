@@ -23,7 +23,7 @@ export function NavigationComponent(props) {
     <Box sx={{ display: 'flex', minHeight: '100vh' }}>
       <NavigationDesktopMenuComponent
         activePath={activePath}
-        isAdmin={user.role === USER_ROLE.ADMIN}
+        isAdmin={user?.role === USER_ROLE.ADMIN}
       />
 
       <Grid container>
@@ -31,7 +31,7 @@ export function NavigationComponent(props) {
           <NavigationMobileMenuComponent
             container={container}
             activePath={activePath}
-            isAdmin={user.role === USER_ROLE.ADMIN}
+            isAdmin={user?.role === USER_ROLE.ADMIN}
           />
         </Grid>
 

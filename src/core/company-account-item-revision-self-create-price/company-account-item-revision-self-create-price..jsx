@@ -1,7 +1,7 @@
 import Grid from '@mui/material/Grid';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
-import { text } from '../../../lib/common/text';
+import { text } from '../../lib/common/text';
 
 export function CompanyAccountItemRevisionSelfCreatePriceComponent(props) {
   const { totalPrice } = props;

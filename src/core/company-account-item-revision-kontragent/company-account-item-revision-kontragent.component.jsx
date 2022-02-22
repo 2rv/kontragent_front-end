@@ -21,8 +21,8 @@ export function CompanyAccountItemRevisionKontragentComponent() {
   };
   return (
     <Paper>
-      <Grid container spacing={4}>
-        <Grid item>
+      <Grid container spacing={4} direction="row" justifyContent="flex-start">
+        <Grid item xs={12}>
           <Typography
             variant="title"
             component="div"
@@ -40,7 +40,7 @@ export function CompanyAccountItemRevisionKontragentComponent() {
           />
         </Grid>
 
-        <Grid item>
+        <Grid item xs={12} lg={4}>
           <Button
             fullWidth
             onClick={handleClick}

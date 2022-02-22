@@ -14,7 +14,7 @@ export function ArticleCommentListContainer() {
     state: state[ARTICLE_COMMENT_SEND_STORE_NAME],
     stateDelete: state[ARTICLE_COMMENT_DELETE_STORE_NAME],
     pageLoading: state[NAVIGATION_STORE_NAME].pageLoading,
-    role: state[AUTH_STORE_NAME].user.role,
+    role: state[AUTH_STORE_NAME].user?.role,
   }));
 
   React.useEffect(() => {

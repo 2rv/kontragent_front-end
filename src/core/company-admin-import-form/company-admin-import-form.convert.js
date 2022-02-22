@@ -7,6 +7,7 @@ export function convertCompanyAdminImportForm(values) {
       [FIELD_NAME.INN]: value[FIELD_NAME.INN] || undefined,
       [FIELD_NAME.NAME]: value[FIELD_NAME.NAME] || undefined,
       [FIELD_NAME.REVIEW]: value[FIELD_NAME.REVIEW] || undefined,
+      [FIELD_NAME.CREATE_DATE]: value[FIELD_NAME.CREATE_DATE] || undefined,
     })),
   };
 }

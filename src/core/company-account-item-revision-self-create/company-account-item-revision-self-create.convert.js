@@ -3,6 +3,7 @@ import { COMPANY_ACCOUNT_ITEM_REVISION_SELF_CREATE_DATA_NAME as FIELD_NAME } fro
 
 export function convertCompanyAccountItemRevisionSelfCreateFormData(values) {
   return {
+    [FIELD_NAME.USE_REF_BALANCE]: values[FIELD_NAME.USE_REF_BALANCE],
     [FIELD_NAME.DESCRIPTION]: values[FIELD_NAME.DESCRIPTION],
     [FIELD_NAME.FILE_ID_LIST]: values[FIELD_NAME.FILE_ID_LIST],
     [FIELD_NAME.YEARS]: values[FIELD_NAME.YEARS].map((year) => ({

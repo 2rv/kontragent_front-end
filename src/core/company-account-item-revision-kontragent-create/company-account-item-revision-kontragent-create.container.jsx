@@ -30,6 +30,7 @@ export function CompanyAccountItemRevisionKontragentCreateContainer() {
   const getInitialValue = () => {
     return {
       [FIELD_NAME.KONTRAGENTS]: [initialKontragent],
+      [FIELD_NAME.USE_REF_BALANCE]: false,
     };
   };
   const initialYear = {

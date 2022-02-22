@@ -23,16 +23,18 @@ export function ArticleViewContainer() {
     dispatch(articleLoadData(articleId));
   }, []);
 
-  const { pageLoading, articleState, role, userId, creatorId } = useSelector((state) => ({
-    pageLoading: state[NAVIGATION_STORE_NAME].pageLoading,
-    articleState: state[ARTICLE_STORE_NAME].article,
-    role: state[AUTH_STORE_NAME].user.role,
-    userId: state[AUTH_STORE_NAME].user.id,
-    creatorId: state[ARTICLE_STORE_NAME].article.data?.id
-  }));
+  const { pageLoading, articleState, role, userId, creatorId } = useSelector(
+    (state) => ({
+      pageLoading: state[NAVIGATION_STORE_NAME].pageLoading,
+      articleState: state[ARTICLE_STORE_NAME].article,
+      role: state[AUTH_STORE_NAME].user?.role,
+      userId: state[AUTH_STORE_NAME].user.id,
+      creatorId: state[ARTICLE_STORE_NAME].article.data?.id,
+    }),
+  );
 
-  const isadmin = role === USER_ROLE.ADMIN
-  const iscreator = creatorId === userId
+  const isadmin = role === USER_ROLE.ADMIN;
+  const iscreator = creatorId === userId;
 
   return (
     <ArticleViewComponent
