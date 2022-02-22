@@ -6,9 +6,7 @@ import { redirect } from '../../main/navigation';
 import { AUTH_SIGNUP_ROUTE_PATH } from '../auth-signup';
 import { AUTH_LOGIN_ROUTE_PATH } from '../auth-login';
 
-export function LandingFooterComponent(props) {
-  const { isPending, isSuccess, isError, errorMessage, data } = props;
-
+export function LandingFooterComponent() {
   return (
     <Grid
       container
@@ -17,59 +15,6 @@ export function LandingFooterComponent(props) {
       alignItems="flex-start"
       spacing={8}
     >
-      {isSuccess && (
-        <Grid
-          item
-          container
-          direction="column"
-          justifyContent="flex-start"
-          alignItems="flex-start"
-          xs={12}
-          spacing={3}
-        >
-          <Grid item>
-            <Typography
-              variant="title"
-              sx={{
-                fontSize: {
-                  xs: '16px',
-                  sm: 'title.fontSize',
-                },
-              }}
-              children={text('Компаний - {{count}}', { count: data.company })}
-            />
-          </Grid>
-
-          <Grid item>
-            <Typography
-              variant="title"
-              sx={{
-                fontSize: {
-                  xs: '16px',
-                  sm: 'title.fontSize',
-                },
-              }}
-              children={text('Контрагентов - {{count}}', {
-                count: data.kontragent,
-              })}
-            />
-          </Grid>
-
-          <Grid item>
-            <Typography
-              variant="title"
-              sx={{
-                fontSize: {
-                  xs: '16px',
-                  sm: 'title.fontSize',
-                },
-              }}
-              children={text('Проверок - {{count}}', { count: data.revision })}
-            />
-          </Grid>
-        </Grid>
-      )}
-
       <Grid item>
         <Grid
           container

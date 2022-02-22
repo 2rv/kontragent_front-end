@@ -48,6 +48,16 @@ export function CompanyAdminImportFormItemComponent(props) {
         />
       </Grid>
 
+      <Grid item xs={12}>
+        <TextFieldElement
+          name={prefix + FIELD_NAME.CREATE_DATE}
+          value={value[FIELD_NAME.CREATE_DATE]}
+          label={text('Дата создания')}
+          onChange={handleChange}
+          onBlur={handleBlur}
+        />
+      </Grid>
+
       <Grid item xs={6}>
         <Button
           fullWidth
