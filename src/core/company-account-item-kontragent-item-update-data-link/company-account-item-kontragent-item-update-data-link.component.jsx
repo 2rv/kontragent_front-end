@@ -1,14 +1,14 @@
-import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
-import Tooltip from '@mui/material/Tooltip';
-import ErrorOutlineIcon from '@mui/icons-material/ErrorOutline';
-
+import Grid from '@mui/material/Grid';
+import Button from '@mui/material/Button';
+import Skeleton from '@mui/material/Skeleton';
 import { getQuery, redirect } from '../../main/navigation/navigation.core';
 import { text } from '../../lib/common/text';
+
 import { COMPANY_ACCOUNT_ITEM_KONTRAGENT_ITEM_UPDATE_DATA_ROUTE_PATH_DYNAMIC } from '../company-account-item-kontragent-item-update-data/company-account-item-kontragent-item-update-data.constant';
 
 export function CompanyAccountItemKontragentItemUpdateDataLinkComponent(props) {
-  const { kontragentId } = props;
+  const { kontragentId, isPending } = props;
   const id = kontragentId || getQuery('kontragentId');
 
   const handleClick = () => {
@@ -26,28 +26,32 @@ export function CompanyAccountItemKontragentItemUpdateDataLinkComponent(props) {
   if (!id) {
     return null;
   }
+
+  if (isPending) {
+    return <Skeleton variant="rectangular" sx={{ height: '60px' }} />;
+  }
+
   return (
-    <Tooltip
-      arrow
-      componentsProps={{
-        tooltip: { sx: { backgroundColor: '#3AB8FF' } },
-        arrow: { sx: { color: '#3AB8FF' } },
-      }}
-      title={
+    <Grid container spacing={4} direction="row" justifyContent="flex-start">
+      <Grid item xs={12}>
         <Typography
-          variant="body1"
-          color="white"
+          variant="title"
+          component="div"
+          children={text('Дополнить информацию по контрагенту')}
+          sx={{ pb: 2 }}
+        />
+        <Typography
+          variant="subTitle"
+          component="div"
           children={text(
-            'Дополните информацию по контрагенту и получите до 5000 рублей на реферальный баланс - для того что бы дополнить информацию просто нажмите',
+            'За заполнение данных вы получите бонус 5000₽ на реферальный баланс ',
           )}
         />
-      }
-      children={
-        <Button fullWidth onClick={handleClick}>
-          <ErrorOutlineIcon sx={{ mr: 1 }} />
-          {text('Дополнить информацию')}
-        </Button>
-      }
-    />
+      </Grid>
+
+      <Grid item xs={12} lg={4}>
+        <Button fullWidth onClick={handleClick} children={text('Дополнить')} />
+      </Grid>
+    </Grid>
   );
 }

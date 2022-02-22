@@ -1,6 +1,5 @@
 import Paper from '@mui/material/Paper';
 import Typography from '@mui/material/Typography';
-import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import Button from '@mui/material/Button';
 
@@ -19,8 +18,8 @@ export function CompanyAccountItemRevisionSelfComponent() {
   };
   return (
     <Paper>
-      <Grid container spacing={4}>
-        <Grid item>
+      <Grid container spacing={4} direction="row" justifyContent="flex-start">
+        <Grid item xs={12}>
           <Typography
             variant="title"
             component="div"
@@ -34,7 +33,7 @@ export function CompanyAccountItemRevisionSelfComponent() {
           />
         </Grid>
 
-        <Grid item>
+        <Grid item xs={12} lg={4}>
           <Button
             fullWidth
             onClick={handleClick}

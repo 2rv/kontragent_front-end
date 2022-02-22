@@ -2,16 +2,35 @@ import Typography from '@mui/material/Typography';
 import Alert from '@mui/material/Alert';
 import Grid from '@mui/material/Grid';
 import Divider from '@mui/material/Divider';
+import Rating from '@mui/material/Rating';
 
 import { text } from '../../lib/common/text';
 import { SkeletonListComponent } from '../../lib/common/skeleton/skeleton-list.component';
 
 import { COMPANY_ACCOUNT_ITEM_KONTRAGENT_ITEM_INFO_DATA_NAME as DATA_NAME } from './company-account-item-kontragent-item-info.constant';
-import { FieldRatingComponent } from '../../lib/common/field-rating/field-rating.component';
 
 export function CompanyAccountItemKontragentItemInfoComponent(props) {
   const { pageLoading, isPending, isSuccess, isError, errorMessage, data } =
     props;
+
+  if (isPending) {
+    return (
+      <Grid container spacing={4}>
+        <Grid item>
+          <SkeletonListComponent text={true} />
+        </Grid>
+        <Grid item>
+          <SkeletonListComponent text={true} />
+        </Grid>
+        <Grid item>
+          <SkeletonListComponent text={true} />
+        </Grid>
+        <Grid item>
+          <SkeletonListComponent text={true} />
+        </Grid>
+      </Grid>
+    );
+  }
 
   return (
     <Grid container spacing={6}>
@@ -58,7 +77,8 @@ export function CompanyAccountItemKontragentItemInfoComponent(props) {
         {!!data[DATA_NAME.RATING] && (
           <Grid item>
             <Typography variant="listTitle" children={text('Рейтинг')} />
-            <FieldRatingComponent
+            <Rating
+              sx={{ width: '100%' }}
               readOnly
               defaultValue={data[DATA_NAME.RATING]}
             />
@@ -67,10 +87,31 @@ export function CompanyAccountItemKontragentItemInfoComponent(props) {
 
         {!!data[DATA_NAME.COMMENT] && (
           <Grid item>
-            <Typography variant="listTitle" children={text('Описание')} />
+            <Typography variant="listTitle" children={text('Отзыв')} />
             <Typography variant="body1" children={data[DATA_NAME.COMMENT]} />
           </Grid>
         )}
+
+        {!!data[DATA_NAME.CONTACT_INFO] && (
+          <Grid item>
+            <Typography
+              variant="listTitle"
+              children={text('Контактная информация')}
+            />
+            <Typography
+              variant="body1"
+              children={data[DATA_NAME.CONTACT_INFO]}
+            />
+          </Grid>
+        )}
+
+        <Grid item>
+          <Typography variant="listTitle" children={text('Бонус получен')} />
+          <Typography
+            variant="body1"
+            children={data[DATA_NAME.INFO_ADDED] ? 'Да' : 'Нет'}
+          />
+        </Grid>
       </Grid>
 
       <Grid item container spacing={4}>
@@ -129,12 +170,6 @@ export function CompanyAccountItemKontragentItemInfoComponent(props) {
           />
         </Grid>
       </Grid>
-
-      {isPending && (
-        <Grid item>
-          <SkeletonListComponent text={true} />
-        </Grid>
-      )}
 
       {isError && (
         <Grid item>

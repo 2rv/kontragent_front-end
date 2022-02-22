@@ -5,5 +5,6 @@ export function covertCompanyAccountItemKontragentItemUpdateDataData(data) {
     [FIELD_NAME.EMAIL]: data[FIELD_NAME.EMAIL],
     [FIELD_NAME.COMMENT]: data[FIELD_NAME.COMMENT],
     [FIELD_NAME.RATING]: +data[FIELD_NAME.RATING],
+    [FIELD_NAME.CONTACT_INFO]: +data[FIELD_NAME.CONTACT_INFO],
   };
 }

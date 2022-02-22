@@ -349,7 +349,7 @@ export function CompanyAccountInfoDataComponent(props) {
         </Grid>
 
         {!isPending && (
-          <Grid item md={7}>
+          <Grid item xs={12} lg={4}>
             <Button
               fullWidth
               onClick={getEgrDetails}
@@ -359,7 +359,7 @@ export function CompanyAccountInfoDataComponent(props) {
         )}
 
         {!isPending && (
-          <Grid item md={7}>
+          <Grid item xs={12} lg={4}>
             <Button
               fullWidth
               onClick={getExpressPdf}

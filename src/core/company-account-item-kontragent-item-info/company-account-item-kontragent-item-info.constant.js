@@ -12,6 +12,8 @@ export const COMPANY_ACCOUNT_ITEM_KONTRAGENT_ITEM_INFO_DATA_NAME = {
   EMAIL: 'email',
   RATING: 'rating',
   COMMENT: 'comment',
+  CONTACT_INFO: 'contactInfo',
+  INFO_ADDED: 'infoAdded',
   INN: 'inn',
   COMPANY_ID: 'companyId',
   COMPANY_NAME: 'companyName',

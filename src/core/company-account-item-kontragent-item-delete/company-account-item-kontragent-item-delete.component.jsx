@@ -7,8 +7,8 @@ export function CompanyAccountItemKontragentItemDeleteComponent(props) {
   const { isPending, isError, isSuccess, errorMessage, onRemove } = props;
 
   return (
-    <Grid container spacing={6}>
-      <Grid item sx={{ pt: 4 }}>
+    <Grid container spacing={4} direction="row" justifyContent="flex-start">
+      <Grid item xs={12} lg={4}>
         <Button
           fullWidth
           onClick={onRemove}
@@ -18,13 +18,13 @@ export function CompanyAccountItemKontragentItemDeleteComponent(props) {
       </Grid>
 
       {isSuccess && (
-        <Grid item>
+        <Grid item xs={12}>
           <Alert severity="success" children={text('Успешно')} />
         </Grid>
       )}
 
       {isError && (
-        <Grid item>
+        <Grid item xs={12}>
           <Alert severity="error" children={text(`ERROR.${errorMessage}`)} />
         </Grid>
       )}

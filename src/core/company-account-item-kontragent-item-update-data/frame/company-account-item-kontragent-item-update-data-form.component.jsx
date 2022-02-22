@@ -83,13 +83,31 @@ export function CompanyAccountItemKontragentItemUpdateDataFormComponent(props) {
             fullWidth
             multiline
             type="text"
-            label={'Описание'}
+            label={'Отзыв'}
             onChange={handleChange}
             onBlur={handleBlur}
             name={FIELD_NAME.COMMENT}
             value={values[FIELD_NAME.COMMENT]}
             error={isFieldError(FIELD_NAME.COMMENT)}
             errorText={getFieldError(FIELD_NAME.COMMENT)}
+          />
+        </Grid>
+
+        <Grid item xs={12}>
+          <FieldTextComponent
+            fullWidth
+            multiline
+            type="text"
+            label={'Контактные данные'}
+            placeholder={
+              'Можно указать такие данные как  номер телефона, ФИО руководителя и других контактных лиц'
+            }
+            onChange={handleChange}
+            onBlur={handleBlur}
+            name={FIELD_NAME.CONTACT_INFO}
+            value={values[FIELD_NAME.CONTACT_INFO]}
+            error={isFieldError(FIELD_NAME.CONTACT_INFO)}
+            errorText={getFieldError(FIELD_NAME.CONTACT_INFO)}
           />
         </Grid>
 

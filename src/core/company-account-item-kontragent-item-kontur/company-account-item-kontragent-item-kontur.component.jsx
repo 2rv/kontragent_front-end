@@ -1,5 +1,10 @@
-import { Divider, Grid, Typography, Alert, Button } from '@mui/material';
+import Divider from '@mui/material/Divider';
+import Grid from '@mui/material/Grid';
+import Typography from '@mui/material/Typography';
+import Alert from '@mui/material/Alert';
+import Button from '@mui/material/Button';
 import { text } from '../../lib/common/text';
+import { SkeletonListComponent } from '../../lib/common/skeleton/skeleton-list.component';
 
 export function CompanyAccountItemKontragentItemKonturComponent(props) {
   const {
@@ -44,10 +49,32 @@ export function CompanyAccountItemKontragentItemKonturComponent(props) {
     getEgrDetails,
     getExpressPdf,
   } = props;
+
   if (isError) {
     return (
       <Grid container>
-        <Alert severity="error">{text(`ERROR.${errorMessage}`)}</Alert>
+        <Grid item>
+          <Alert severity="error">{text(`ERROR.${errorMessage}`)}</Alert>
+        </Grid>
+      </Grid>
+    );
+  }
+
+  if (isPending) {
+    return (
+      <Grid container spacing={4}>
+        <Grid item>
+          <SkeletonListComponent text={true} />
+        </Grid>
+        <Grid item>
+          <SkeletonListComponent text={true} />
+        </Grid>
+        <Grid item>
+          <SkeletonListComponent text={true} />
+        </Grid>
+        <Grid item>
+          <SkeletonListComponent text={true} />
+        </Grid>
       </Grid>
     );
   }
@@ -56,7 +83,6 @@ export function CompanyAccountItemKontragentItemKonturComponent(props) {
     <Grid container spacing={4}>
       <Grid item>
         {shortName && <Typography variant="title" children={shortName} />}
-
         {fio && <Typography variant="title" children={'ИП ' + fio} />}
       </Grid>
 
@@ -351,25 +377,21 @@ export function CompanyAccountItemKontragentItemKonturComponent(props) {
           )}
         </Grid>
 
-        {!isPending && (
-          <Grid item md={7}>
-            <Button
-              fullWidth
-              onClick={getEgrDetails}
-              children={'Получить выписку из ЕГР'}
-            />
-          </Grid>
-        )}
+        <Grid item md={7}>
+          <Button
+            fullWidth
+            onClick={getEgrDetails}
+            children={'Получить выписку из ЕГР'}
+          />
+        </Grid>
 
-        {!isPending && (
-          <Grid item md={7}>
-            <Button
-              fullWidth
-              onClick={getExpressPdf}
-              children={'Получить экспресс отчёт'}
-            />
-          </Grid>
-        )}
+        <Grid item md={7}>
+          <Button
+            fullWidth
+            onClick={getExpressPdf}
+            children={'Получить экспресс отчёт'}
+          />
+        </Grid>
       </Grid>
     </Grid>
   );

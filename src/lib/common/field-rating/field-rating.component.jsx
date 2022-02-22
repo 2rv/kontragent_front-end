@@ -14,8 +14,20 @@ export function FieldRatingComponent(props) {
         </Grid>
       )}
 
-      <Grid item>
-        <Rating error={error} {...fieldProps} />
+      <Grid item sx={{ minHeight: 46 }}>
+        <Rating
+          sx={{
+            backgroundColor: '#F3F3F3',
+            width: '100%',
+            minHeight: 46,
+            alignItems: 'center',
+            pl: 2,
+            borderColor: '#E5E8EC',
+            borderRadius: '10px',
+          }}
+          error={error}
+          {...fieldProps}
+        />
       </Grid>
 
       {error && errorText && (

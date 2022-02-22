@@ -13,26 +13,16 @@ export function getKontragentDataAction(companyId, kontragentId) {
         method: 'GET',
         url: `/company-data/kontragent/info/${companyId}/${kontragentId}`,
       });
-
       dispatch({
         type: COMPANY_ACCOUNT_ITEM_KONTRAGENT_ITEM_KONTUR_ACTION_TYPE.REQUEST_SUCCESS,
         data: covertCompanyAccountItemKontragentItemKonturData(res.data),
       });
     } catch (error) {
-      if (error && !error.response) {
-        console.log(error);
-        dispatch({
-          type: COMPANY_ACCOUNT_ITEM_KONTRAGENT_ITEM_KONTUR_ACTION_TYPE.REQUEST_ERROR,
-          errorMessage:
-            'Неудалось получить дополнительную информацию по контрагенту',
-        });
-      }
-      if (error.response) {
-        dispatch({
-          type: COMPANY_ACCOUNT_ITEM_KONTRAGENT_ITEM_KONTUR_ACTION_TYPE.REQUEST_ERROR,
-          errorMessage: error.response.data.message,
-        });
-      }
+      dispatch({
+        type: COMPANY_ACCOUNT_ITEM_KONTRAGENT_ITEM_KONTUR_ACTION_TYPE.REQUEST_ERROR,
+        errorMessage:
+          'Не удалось получить дополнительную информацию по контрагенту',
+      });
     }
   };
 }
