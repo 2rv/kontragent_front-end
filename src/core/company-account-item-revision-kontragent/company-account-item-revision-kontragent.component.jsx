@@ -22,7 +22,7 @@ export function CompanyAccountItemRevisionKontragentComponent() {
   return (
     <Paper>
       <Grid container spacing={4} direction="row" justifyContent="flex-start">
-        <Grid item>
+        <Grid item xs={12}>
           <Typography
             variant="title"
             component="div"

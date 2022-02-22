@@ -31,6 +31,11 @@ export function CompanyAccountItemRevisionSelfCreatePriceComponent(props) {
       resultPrice = totalPrice - data[DATA_NAME.REFERAL_BALANCE];
     }
   }
+  const residualCompanyBalance = data[DATA_NAME.COMPANY_BALANCE] - resultPrice;
+  const residualReferalBalance =
+    data[DATA_NAME.REFERAL_BALANCE] - resultPrice > 0
+      ? data[DATA_NAME.REFERAL_BALANCE] - resultPrice
+      : 0;
 
   return (
     <Grid
@@ -95,27 +100,43 @@ export function CompanyAccountItemRevisionSelfCreatePriceComponent(props) {
         <Divider />
       </Grid>
 
-      <Grid item xs="auto">
+      <Grid item xs={12}>
         <Typography variant="listTitle" children={text('Баланс компании ')} />
         <Typography
           variant="listContent"
+          children={text(`${residualCompanyBalance}$t(COMMON.CURRENCY.RUB) `)}
+        />
+        <Typography
+          variant="listContent"
+          sx={{ textDecoration: 'line-through', color: '#707070' }}
           children={text(
             `${data[DATA_NAME.COMPANY_BALANCE] || 0}$t(COMMON.CURRENCY.RUB)`,
           )}
         />
       </Grid>
 
-      <Grid item xs="auto">
+      <Grid item xs={12}>
         <Typography
           variant="listTitle"
           children={text('Реферальный баланс ')}
         />
         <Typography
           variant="listContent"
-          children={text(
-            `${data[DATA_NAME.REFERAL_BALANCE] || 0}$t(COMMON.CURRENCY.RUB)`,
-          )}
+          children={text('{{price}}$t(COMMON.CURRENCY.RUB) ', {
+            price: value
+              ? residualReferalBalance
+              : data[DATA_NAME.REFERAL_BALANCE],
+          })}
         />
+        {value && (
+          <Typography
+            variant="listContent"
+            sx={{ textDecoration: 'line-through', color: '#707070' }}
+            children={text(
+              `${data[DATA_NAME.REFERAL_BALANCE] || 0}$t(COMMON.CURRENCY.RUB)`,
+            )}
+          />
+        )}
       </Grid>
 
       <Grid item xs={12}>
@@ -129,7 +150,7 @@ export function CompanyAccountItemRevisionSelfCreatePriceComponent(props) {
           fullWidth
           children={text(
             '$t(COMPANY_ACCOUNT_ITEM_REVISION_CREATE.REVISION_CREATE_COMPANY_PRICE.BUTTON) {{price}}$t(COMMON.CURRENCY.RUB)',
-            { price: totalPrice },
+            { price: resultPrice },
           )}
         />
       </Grid>
