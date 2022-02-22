@@ -10,7 +10,7 @@ export function uploadAdminRevisionKontragentReviewShareFormData(data) {
     try {
       await httpRequest({
         method: 'POST',
-        url: 'revision-share/kontragent',
+        url: `revision-share/kontragent/${data.revisionId}`,
         data: data,
       });
 

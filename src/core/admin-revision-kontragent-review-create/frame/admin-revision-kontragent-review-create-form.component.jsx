@@ -18,7 +18,6 @@ export const AdminRevisionKontragentReviewCreateFormComponent = (props) => {
     erorrs,
     touched,
     setFieldValue,
-    data,
   } = props;
 
   return (
@@ -92,7 +91,7 @@ export const AdminRevisionKontragentReviewCreateFormComponent = (props) => {
         />
       </Grid>
 
-      <AdminRevisionKontragentReviewShareContainer data={data} />
+      <AdminRevisionKontragentReviewShareContainer />
     </Grid>
   );
 };

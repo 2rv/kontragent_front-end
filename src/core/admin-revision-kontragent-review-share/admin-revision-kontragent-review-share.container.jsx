@@ -13,12 +13,10 @@ import {
 
 import { ADMIN_REVISION_KONTRAGENT_REVIEW_SHARE_DATA_NAME as FIELD_NAME } from './admin-revision-kontragent-review-share.constant';
 import { uploadAdminRevisionKontragentReviewShareFormData } from './admin-revision-kontragent-review-share.action';
-import { convertAdminRevisionKontragentReviewShareFormData } from './admin-revision-kontragent-review-share.convert';
 import { AdminRevisionKontragentReviewShareComponent } from './admin-revision-kontragent-review-share.component';
+import { getQuery } from '../../main/navigation/navigation.core';
 
-export function AdminRevisionKontragentReviewShareContainer(props) {
-  const { data } = props;
-
+export function AdminRevisionKontragentReviewShareContainer() {
   const [state, setState] = useReducer(
     adminRevisionKontragentReviewShareReducer,
     initialState,
@@ -26,9 +24,11 @@ export function AdminRevisionKontragentReviewShareContainer(props) {
   const [email, setEmail] = useState('');
 
   const onSubmit = () => {
-    const result = convertAdminRevisionKontragentReviewShareFormData(data);
-    result.email = email;
-    uploadAdminRevisionKontragentReviewShareFormData(result)(setState);
+    const data = {
+      revisionId: getQuery('revisionId'),
+      email: email,
+    };
+    uploadAdminRevisionKontragentReviewShareFormData(data)(setState);
   };
 
   const getInitialValue = () => {

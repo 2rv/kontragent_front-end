@@ -58,14 +58,8 @@ export function CompanyAccountItemRevisionKontragentCreateKontragentListComponen
     errors[FIELD_NAME.KONTRAGENTS]?.[index]?.[FIELD_NAME.KONTRAGENT_ID];
 
   return (
-    <Grid
-      container
-      direction="row"
-      justifyContent="flex-start"
-      spacing={4}
-      columns={{ xs: 1, md: 4 }}
-    >
-      <Grid item xs={1} md={2}>
+    <Grid container direction="row" justifyContent="flex-start" spacing={4}>
+      <Grid item xs={12} lg={4}>
         <Button
           fullWidth
           variant="black"
@@ -75,7 +69,7 @@ export function CompanyAccountItemRevisionKontragentCreateKontragentListComponen
       </Grid>
 
       {typeof value[FIELD_NAME.KONTRAGENT_ID] === 'number' && (
-        <Grid item xs={1} md={2}>
+        <Grid item>
           <CompanyAccountItemKontragentItemUpdateDataLinkComponent
             kontragentId={value[FIELD_NAME.KONTRAGENT_ID]}
           />
@@ -83,7 +77,7 @@ export function CompanyAccountItemRevisionKontragentCreateKontragentListComponen
       )}
 
       {kontragentError && (
-        <Grid item xs={1}>
+        <Grid item xs={12}>
           <Alert
             severity="error"
             children={text('Необходимо выбрать контрагента')}
@@ -91,7 +85,7 @@ export function CompanyAccountItemRevisionKontragentCreateKontragentListComponen
         </Grid>
       )}
 
-      <Grid item xs={1}>
+      <Grid item xs={12}>
         <Typography
           variant="listTitle"
           component="div"
@@ -106,7 +100,7 @@ export function CompanyAccountItemRevisionKontragentCreateKontragentListComponen
         />
       </Grid>
 
-      <Grid item xs={1}>
+      <Grid item xs={12}>
         <Typography
           variant="listTitle"
           component="div"
@@ -122,7 +116,7 @@ export function CompanyAccountItemRevisionKontragentCreateKontragentListComponen
       </Grid>
 
       {isError && (
-        <Grid item xs={1}>
+        <Grid item xs={12}>
           <Alert severity="error">{text(`ERROR.${errorMessage}`)}</Alert>
         </Grid>
       )}
@@ -134,7 +128,11 @@ export function CompanyAccountItemRevisionKontragentCreateKontragentListComponen
       >
         <AppBar sx={{ p: 0, position: 'relative' }}>
           <Toolbar>
-            <Typography sx={{ flex: 1 }} component="div" children={'Тайтл'} />
+            <Typography
+              sx={{ flex: 1 }}
+              component="div"
+              children={'Контрагенты'}
+            />
             <IconButton onClick={handleClose}>
               <CloseIcon />
             </IconButton>
