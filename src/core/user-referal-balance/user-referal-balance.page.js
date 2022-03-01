@@ -3,7 +3,7 @@ import Grid from '@mui/material/Grid';
 import { TabContainer } from '../../lib/common/navigation-tab/navigation-tab.container';
 import { USER_REFERAL_NAVIGATION } from '../user-referal/user-referal.constant';
 import { UserReferalInfoContainer } from '../user-referal-info/user-referal-info.container';
-import { UserReferalAchievementListContainer } from '../user-referal-achievement-list/user-referal-achievement-list.container';
+import { UserReferalPaymentListContainer } from '../user-referal-payment-list/user-referal-payment-list.container';
 
 export function UserReferalBalancePage() {
   return (
@@ -16,7 +16,7 @@ export function UserReferalBalancePage() {
           <UserReferalInfoContainer />
         </Grid>
         <Grid item>
-          <UserReferalAchievementListContainer />
+          <UserReferalPaymentListContainer />
         </Grid>
       </Grid>
     </NavigationComponent>

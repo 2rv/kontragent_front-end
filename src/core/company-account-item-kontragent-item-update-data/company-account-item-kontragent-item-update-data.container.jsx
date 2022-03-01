@@ -1,4 +1,4 @@
-import { useReducer } from 'react';
+import { useReducer, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import {
   getRequestErrorMessage,
@@ -13,7 +13,10 @@ import {
   initialState,
   companyAccountItemKontragentItemUpdateDataReducer,
 } from './company-account-item-kontragent-item-update-data.reducer';
-import { uploadCompanyAccountItemKontragentItemUpdateData } from './company-account-item-kontragent-item-update-data.action';
+import {
+  uploadCompanyAccountItemKontragentItemUpdateData,
+  resetCompanyAccountItemKontragentItemUpdateDataFormState,
+} from './company-account-item-kontragent-item-update-data.action';
 import { covertCompanyAccountItemKontragentItemUpdateDataData } from './company-account-item-kontragent-item-update-data.convert';
 import { companyAccountItemKontragentItemUpdateDataValidation } from './company-account-item-kontragent-item-update-data.validation';
 import { COMPANY_ACCOUNT_ITEM_KONTRAGENT_ITEM_UPDATE_DATA_FIELD_NAME as FIELD_NAME } from './company-account-item-kontragent-item-update-data.constant';
@@ -28,6 +31,10 @@ export function CompanyAccountItemKontragentItemUpdateDataContainer() {
     companyAccountItemKontragentItemUpdateDataReducer,
     initialState,
   );
+
+  useEffect(() => {
+    resetCompanyAccountItemKontragentItemUpdateDataFormState()(setState);
+  }, []);
 
   const onSubmit = (values) => {
     const data = {

@@ -6,6 +6,7 @@ export const convertAdminRevisionKontragentItem = (data) => {
     [DATA_NAME.ID]: data[DATA_NAME.ID],
     [DATA_NAME.CREATE_DATE]: convertFormatDate(data[DATA_NAME.CREATE_DATE]),
     [DATA_NAME.PRICE]: data[DATA_NAME.PRICE],
+    [DATA_NAME.PAYMENT_PRICE]: data[DATA_NAME.PAYMENT_PRICE],
     [DATA_NAME.STATUS]: data[DATA_NAME.STATUS],
     [DATA_NAME.REVIEW]: data[DATA_NAME.REVIEW],
     [DATA_NAME.FILES_REVIEW]: data[DATA_NAME.FILES_REVIEW],

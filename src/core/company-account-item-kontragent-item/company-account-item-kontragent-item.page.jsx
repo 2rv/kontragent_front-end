@@ -19,11 +19,7 @@ export function CompanyAccountItemKontragentItemPage() {
           />
         </Grid>
 
-        <Grid item>
-          <Paper>
-            <CompanyAccountItemKontragentItemUpdateDataLinkComponent />
-          </Paper>
-        </Grid>
+        <CompanyAccountItemKontragentItemUpdateDataLinkComponent />
 
         <Grid item>
           <Paper>

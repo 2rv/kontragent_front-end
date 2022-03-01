@@ -90,7 +90,13 @@ export function CompanyAccountItemKontragentItemKonturComponent(props) {
         <Divider />
       </Grid>
 
-      <Grid item container spacing={3}>
+      <Grid
+        item
+        container
+        spacing={3}
+        direction="row"
+        justifyContent="flex-start"
+      >
         {fullName && (
           <Grid item>
             <Typography children={fullName} />
@@ -377,7 +383,7 @@ export function CompanyAccountItemKontragentItemKonturComponent(props) {
           )}
         </Grid>
 
-        <Grid item md={7}>
+        <Grid item xs={12} lg={6}>
           <Button
             fullWidth
             onClick={getEgrDetails}
@@ -385,7 +391,7 @@ export function CompanyAccountItemKontragentItemKonturComponent(props) {
           />
         </Grid>
 
-        <Grid item md={7}>
+        <Grid item xs={12} lg={6}>
           <Button
             fullWidth
             onClick={getExpressPdf}

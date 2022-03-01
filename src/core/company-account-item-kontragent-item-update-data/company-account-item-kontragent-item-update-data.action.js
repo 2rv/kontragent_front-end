@@ -23,7 +23,7 @@ export function uploadCompanyAccountItemKontragentItemUpdateData(data) {
         type: ACTION_TYPE.FORM_SUCCESS,
       });
 
-      await redirect(COMPANY_ACCOUNT_ITEM_KONTRAGENT_ITEM_ROUTE_PATH_DYNAMIC, {
+      redirect(COMPANY_ACCOUNT_ITEM_KONTRAGENT_ITEM_ROUTE_PATH_DYNAMIC, {
         params: {
           companyId: data.companyId,
           kontragentId: data.kontragentId,
@@ -40,5 +40,13 @@ export function uploadCompanyAccountItemKontragentItemUpdateData(data) {
         });
       }
     }
+  };
+}
+
+export function resetCompanyAccountItemKontragentItemUpdateDataFormState() {
+  return async (dispatch) => {
+    dispatch({
+      type: ACTION_TYPE.FORM_RESET,
+    });
   };
 }

@@ -11,7 +11,7 @@ export const initialState = {
   request: initRequestState(),
 };
 
-export function companyAccountItemKontragentItemInfoReducer(
+export function companyAccountItemKontragentItemInfoStore(
   state = initialState,
   action,
 ) {

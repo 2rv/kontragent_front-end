@@ -10,7 +10,7 @@ export function uploadAdminRevisionSelfReviewShareFormData(data) {
     try {
       await httpRequest({
         method: 'POST',
-        url: 'revision-share/self',
+        url: `revision-share/self/${data.revisionId}`,
         data: data,
       });
 

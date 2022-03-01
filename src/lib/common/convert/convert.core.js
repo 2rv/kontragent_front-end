@@ -1,7 +1,7 @@
 import { text } from '../text';
 import {
   revisionStatusType,
-  referalAchieventStatusType,
+  referalPaymentStatusType,
   paymentType,
   companyMemberType,
 } from './convert.status';
@@ -18,10 +18,10 @@ export function convertCompanyMemberRole(role) {
   return { role: role, text: text(companyMemberType[role]) };
 }
 
-export function convertReferalAchievementStatus(status) {
+export function convertReferalPaymentStatus(status) {
   return {
     status: status,
-    text: text(referalAchieventStatusType[status]),
+    text: text(referalPaymentStatusType[status]),
   };
 }
 

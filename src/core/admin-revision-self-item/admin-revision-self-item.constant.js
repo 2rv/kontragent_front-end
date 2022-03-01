@@ -10,6 +10,7 @@ export const ADMIN_REVISION_SELF_ITEM_ROUTE_PATH_DYNAMIC = (
 export const ADMIN_REVISION_SELF_ITEM_DATA_NAME = {
   ID: 'id',
   CREATE_DATE: 'createDate',
+  PAYMENT_PRICE: 'paymentPrice',
   PRICE: 'price',
   STATUS: 'status',
 
