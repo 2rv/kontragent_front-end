@@ -53,6 +53,21 @@ export function AdminRevisionSelfItemComponent(props) {
             variant="listContent"
             children={text(
               'COMPANY_ACCOUNT_ITEM_REVISION.REVISION_ITEM.SUM_RUB',
+              { price: data[DATA_NAME.PAYMENT_PRICE] },
+            )}
+          />
+        </Grid>
+
+        <Grid item>
+          <Typography
+            variant="listTitle"
+            component="div"
+            children={text('Сумма доплаты')}
+          />
+          <Typography
+            variant="listContent"
+            children={text(
+              'COMPANY_ACCOUNT_ITEM_REVISION.REVISION_ITEM.SUM_RUB',
               { price: data[DATA_NAME.PRICE] },
             )}
           />

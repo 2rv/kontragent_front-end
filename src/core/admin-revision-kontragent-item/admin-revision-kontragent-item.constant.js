@@ -11,6 +11,7 @@ export const ADMIN_REVISION_KONTRAGENT_ITEM_DATA_NAME = {
   ID: 'id',
   CREATE_DATE: 'createDate',
   PRICE: 'price',
+  PAYMENT_PRICE: 'paymentPrice',
   STATUS: 'status',
 
   REVISION_KONTRAGENT: 'revisionKontragent',

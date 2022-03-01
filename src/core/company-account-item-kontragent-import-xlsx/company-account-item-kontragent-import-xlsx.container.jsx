@@ -1,4 +1,4 @@
-import { useReducer } from 'react';
+import { useReducer, useContext } from 'react';
 import {
   getRequestData,
   getRequestErrorMessage,
@@ -19,13 +19,14 @@ import {
   deleteListCompanyAccountItemKontragentImportXlsx,
 } from './company-account-item-kontragent-import-xlsx.action';
 import { CompanyAccountItemKontragentImportXlsxComponent } from './company-account-item-kontragent-import-xlsx.component';
+import { CompanyAccountItemKontragentContext } from '../company-account-item-kontragent/company-account-item-kontragent.page';
 
 export function CompanyAccountItemKontragentImportXlsxContainer() {
   const [state, setState] = useReducer(
     companyAccountItemKontragentImportXlsxReducer,
     initialState,
   );
-
+  const { value } = useContext(CompanyAccountItemKontragentContext);
   const { list } = getRequestData(state.xlsx);
 
   const onChange = (e) => {
@@ -43,10 +44,10 @@ export function CompanyAccountItemKontragentImportXlsxContainer() {
 
   function onSave() {
     const companyId = getQuery('companyId');
-    uploadCompanyAccountItemKontragentImportXlsxCreateForm(
-      companyId,
-      list,
-    )(setState);
+    uploadCompanyAccountItemKontragentImportXlsxCreateForm(companyId, list)(
+      setState,
+      value.reloadList,
+    );
   }
 
   return (

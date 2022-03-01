@@ -71,6 +71,9 @@ import {
   COMPANY_ACCOUNT_ITEM_KONTRAGENT_ITEM_KONTUR_STORE_NAME,
 } from '../../core/company-account-item-kontragent-item-kontur';
 
+import { COMPANY_ACCOUNT_ITEM_KONTRAGENT_ITEM_INFO_STORE_NAME } from '../../core/company-account-item-kontragent-item-info/company-account-item-kontragent-item-info.constant';
+import { companyAccountItemKontragentItemInfoStore } from '../../core/company-account-item-kontragent-item-info/company-account-item-kontragent-item-info.store';
+
 export const reducers = combineReducers({
   [COMPANY_ACCOUNT_ITEM_KONTRAGENT_ITEM_KONTUR_STORE_NAME]:
     CompanyAccountItemKontragentItemKonturStore,
@@ -105,6 +108,8 @@ export const reducers = combineReducers({
   [ADMIN_BILL_REVISION_STORE_NAME]: adminBillRevisionStore,
   [COMPANY_ACCOUNT_ITEM_CREATE_BILL_STORE_NAME]:
     companyAccountItemCreateBillStore,
+  [COMPANY_ACCOUNT_ITEM_KONTRAGENT_ITEM_INFO_STORE_NAME]:
+    companyAccountItemKontragentItemInfoStore,
 });
 
 export { initStore } from './store.core';

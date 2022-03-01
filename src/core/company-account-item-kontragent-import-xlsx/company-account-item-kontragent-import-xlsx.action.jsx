@@ -85,7 +85,7 @@ export function uploadCompanyAccountItemKontragentImportXlsxCreateForm(
   companyId,
   data,
 ) {
-  return async (dispatch) => {
+  return async (dispatch, reloadList) => {
     dispatch({
       type: ACTION_TYPE.FORM_PENDING,
     });
@@ -99,6 +99,9 @@ export function uploadCompanyAccountItemKontragentImportXlsxCreateForm(
       dispatch({
         type: ACTION_TYPE.FORM_SUCCESS,
       });
+      if (reloadList) {
+        await reloadList();
+      }
     } catch (error) {
       if (error) {
         console.log(error);

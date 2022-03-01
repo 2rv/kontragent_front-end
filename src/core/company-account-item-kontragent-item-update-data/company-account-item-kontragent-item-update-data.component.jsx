@@ -81,7 +81,10 @@ export function CompanyAccountItemKontragentItemUpdateDataComponent(props) {
 
       {isSuccess && (
         <Grid item>
-          <Alert severity="success" children={text('Успешно')} />
+          <Alert
+            severity="success"
+            children={text('Информация успешно дополнена')}
+          />
         </Grid>
       )}
 

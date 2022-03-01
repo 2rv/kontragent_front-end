@@ -7,7 +7,7 @@ export const USER_REFERAL_LIST_DATA_NAME = {
 
 export const USER_REFERAL_LIST_API = {
   GET_USER_REFERAL_LIST: {
-    ENDPOINT: '/referal-member/',
+    ENDPOINT: '/referal-member',
     TYPE: 'GET',
   },
 };

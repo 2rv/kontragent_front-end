@@ -13,12 +13,10 @@ import {
 
 import { ADMIN_REVISION_SELF_REVIEW_SHARE_DATA_NAME as FIELD_NAME } from './admin-revision-self-review-share.constant';
 import { uploadAdminRevisionSelfReviewShareFormData } from './admin-revision-self-review-share.action';
-import { convertAdminRevisionSelfReviewShareFormData } from './admin-revision-self-review-share.convert';
 import { AdminRevisionSelfReviewShareComponent } from './admin-revision-self-review-share.component';
+import { getQuery } from '../../main/navigation/navigation.core';
 
-export function AdminRevisionSelfReviewShareContainer(props) {
-  const { data } = props;
-
+export function AdminRevisionSelfReviewShareContainer() {
   const [state, setState] = useReducer(
     adminRevisionSelfReviewShareReducer,
     initialState,
@@ -26,9 +24,11 @@ export function AdminRevisionSelfReviewShareContainer(props) {
   const [email, setEmail] = useState('');
 
   const onSubmit = () => {
-    const result = convertAdminRevisionSelfReviewShareFormData(data);
-    result.email = email;
-    uploadAdminRevisionSelfReviewShareFormData(result)(setState);
+    const data = {
+      revisionId: getQuery('revisionId'),
+      email: email,
+    };
+    uploadAdminRevisionSelfReviewShareFormData(data)(setState);
   };
 
   const getInitialValue = () => {

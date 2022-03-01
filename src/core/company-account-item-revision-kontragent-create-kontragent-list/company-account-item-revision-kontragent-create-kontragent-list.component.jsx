@@ -15,7 +15,6 @@ import { SkeletonListComponent } from '../../lib/common/skeleton/skeleton-list.c
 import { CompanyAccountItemRevisionKontragentCreateKontragentListViewComponent } from './frame/company-account-item-revision-kontragent-create-kontragent-list-view.component';
 import { COMPANY_ACCOUNT_ITEM_REVISION_KONTRAGENT_CREATE_KONTRAGENT_LIST_DATA_NAME as DATA_NAME } from './company-account-item-revision-kontragent-create-kontragent-list.constant';
 import { COMPANY_ACCOUNT_ITEM_REVISION_KONTRAGENT_CREATE_DATA_NAME as FIELD_NAME } from '../company-account-item-revision-kontragent-create/company-account-item-revision-kontragent-create.constant';
-import { CompanyAccountItemKontragentItemUpdateDataLinkComponent } from '../company-account-item-kontragent-item-update-data-link/company-account-item-kontragent-item-update-data-link.component';
 
 export function CompanyAccountItemRevisionKontragentCreateKontragentListComponent(
   props,
@@ -67,14 +66,6 @@ export function CompanyAccountItemRevisionKontragentCreateKontragentListComponen
           children={'Выбрать контрагента'}
         />
       </Grid>
-
-      {typeof value[FIELD_NAME.KONTRAGENT_ID] === 'number' && (
-        <Grid item>
-          <CompanyAccountItemKontragentItemUpdateDataLinkComponent
-            kontragentId={value[FIELD_NAME.KONTRAGENT_ID]}
-          />
-        </Grid>
-      )}
 
       {kontragentError && (
         <Grid item xs={12}>

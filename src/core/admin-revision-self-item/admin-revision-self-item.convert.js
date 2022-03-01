@@ -2,11 +2,11 @@ import { ADMIN_REVISION_SELF_ITEM_DATA_NAME as DATA_NAME } from './admin-revisio
 import { convertFormatDate } from '../../lib/common/convert/convert.core';
 
 export const convertAdminRevisionSelfItem = (data) => {
-  console.log(data);
   return {
     [DATA_NAME.ID]: data[DATA_NAME.ID],
     [DATA_NAME.CREATE_DATE]: convertFormatDate(data[DATA_NAME.CREATE_DATE]),
     [DATA_NAME.PRICE]: data[DATA_NAME.PRICE],
+    [DATA_NAME.PAYMENT_PRICE]: data[DATA_NAME.PAYMENT_PRICE],
     [DATA_NAME.STATUS]: data[DATA_NAME.STATUS],
 
     [DATA_NAME.PERIOD]: data[DATA_NAME.PERIOD],
