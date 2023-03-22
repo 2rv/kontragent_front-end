@@ -1,89 +1,35 @@
 {
-  "NOTIFICATION": {
-    "FIELD": {
-      "EMAIL": {
-        "TITLE": "Email",
-        "PLACEHOLDER": "Contragent@mail.com"
+  "TITLE": "Настройки",
+  "CHANGE_EMAIL": {
+    "TITLE": "Смена почты",
+    "SUCCESS": "Адрес электронной почты успешно изменен",
+    "FORM": {
+      "FIELD": {
+        "LABELS": {
+          "EMAIL": "Ваша почта",
+          "NEW_EMAIL": "Новая почта",
+          "PASSWORD": "Текущий пароль"
+        }
+      },
+      "BUTTON": {
+        "TITLE": "Сменить почту"
       }
-    },
-    "SUBTITLE": "Вы можете подписаться на рассылку важных уведомленийи неовостей от компании",
-    "TITLE": "Важные уведомления",
-    "BUTTON": "Подписаться",
-    "SUCCESS_MESSAGE": "SUCCESS_MESSAGE"
-  },
-  "ADVERT": {
-    "SUBTITLE": "Рекламу по желанию можно отключить преобретая подписку за деньги с вашего счёта",
-    "TITLE": "Реклама",
-    "BUTTON": {
-      "FIRST": "Убрать рекламу в диалогах",
-      "SECOND": "Убрать рекламные баннеры"
     }
   },
-  "AVATAR": {
-    "TITLE": "Аватар профиля",
-    "BUTTON": {
-      "FIRST": "Сменить аватар",
-      "SECOND": "Удалить аватар"
-    }
-  },
-  "2FA": {
-    "FIELD": {
-      "PHONE_NUMBER": {
-        "TITLE": "Номер телефона",
-        "PLACEHOLDER": "+7 000 000 00 00"
-      }
-    },
-    "TITLE": "Двухэтапная аутентификация",
-    "BUTTON": "Включить аутентефикацию",
-    "SUCCESS_MESSAGE": "SUCCESS_MESSAGE"
-  },
-  "PASSWORD": {
-    "FIELD": {
-      "NEW_PASSWORD": {
-        "TITLE": "Новый пароль",
-        "PLACEHOLDER": "Password"
-      },
-      "REPEAT_NEW_PASSWORD": {
-        "TITLE": "Повторите новый пароль",
-        "PLACEHOLDER": "Password"
-      },
-      "OLD_PASSWORD": {
-        "TITLE": "Старый пароль",
-        "PLACEHOLDER": "Password"
-      }
-    },
+  "CHANGE_PASSWORD": {
     "TITLE": "Смена пароля",
-    "BUTTON": "Сменить пароль",
-    "SUCCESS_MESSAGE": "SUCCESS_MESSAGE"
-  },
-  "EMAIL": {
-    "FIELD": {
-      "EMAIL": {
-        "TITLE": "Email",
-        "PLACEHOLDER": "contragent@mail.com"
+    "SUCCESS": "Пароль успешно изменён",
+    "FORM": {
+      "FIELD": {
+        "LABELS": {
+          "PASSWORD": "Текущий пароль",
+          "NEW_PASSWORD": "Новый пароль",
+          "REPEAT_NEW_PASSWORD": "Повтор нового пароля"
+        }
       },
-      "PASSWORD": {
-        "TITLE": "Пароль",
-        "PLACEHOLDER": "Password"
+      "BUTTON": {
+        "TITLE": "Сменить пароль"
       }
-    },
-    "TITLE": "Сменить Email",
-    "BUTTON": "Сменить Email",
-    "SUCCESS_MESSAGE": "SUCCESS_MESSAGE"
-  },
-  "PHONE": {
-    "FIELD": {
-      "PHONE_NUMBER": {
-        "TITLE": "Номер телефона",
-        "PLACEHOLDER": "+380 63 792 17 30"
-      },
-      "PASSWORD": {
-        "TITLE": "Пароль",
-        "PLACEHOLDER": "Password"
-      }
-    },
-    "TITLE": "Смена номера телефона",
-    "BUTTON": "Сменить номер телефона",
-    "SUCCESS_MESSAGE": "SUCCESS_MESSAGE"
+    }
   }
 }

@@ -1,11 +1,12 @@
-import { AUTH_RECOVERY_ACCOUNT_FIELD_NAME } from './auth-recovery-account.type';
-
 import { validate } from '../../main/validate';
 
-import { required, email } from '../../main/validate/validate.service';
+import { AUTH_RECOVERY_ACCOUNT_DATA_NAME } from './auth-recovery-account.constant';
+
+import { required } from '../../main/validate/validate.service';
 
 const config = {
-  [AUTH_RECOVERY_ACCOUNT_FIELD_NAME.EMAIL]: [required, email],
+  [AUTH_RECOVERY_ACCOUNT_DATA_NAME.EMAIL]: [required],
 };
 
-export const authFormRecoveryValidation = (values) => validate(values, config);
+export const authRecoveryAccountFormValidation = (values) =>
+  validate(values, config);

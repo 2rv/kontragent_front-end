@@ -1,8 +1,0 @@
-export const SIDEBAR_NAV_MENU_LINK_LIST = [
-  {
-    tid: 'SIDEBAR.NAV_MENU.NEWS_AND_NOTIFICATIONS',
-  },
-  {
-    tid: 'SIDEBAR.NAV_MENU.NEWS_AND_NOTIFICATIONS',
-  },
-];

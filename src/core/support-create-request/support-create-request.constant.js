@@ -1,5 +1,0 @@
-export const SUPPORT_CREATE_REQUEST_PROBLEM_CATEGORY = [
-  { id: 0, tid: 'DATA.PROBLEM_CATEGORY.1' },
-  { id: 1, tid: 'DATA.PROBLEM_CATEGORY.2' },
-  { id: 2, tid: 'DATA.PROBLEM_CATEGORY.3' },
-];

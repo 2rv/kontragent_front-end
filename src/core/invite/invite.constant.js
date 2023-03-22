@@ -1,0 +1,22 @@
+export const INVITE_ROUTE_PATH = '/invite';
+
+export const INVITE_STORE_NAME = 'INVITE';
+
+export const INVITE_API = {
+  INVITE: {
+    ENDPOINT: '/invite',
+    TYPE: 'POST',
+  },
+};
+
+export const INVITE_ACTION_TYPE = {
+  FORM_PENDING: 'INVITE_ACTION_TYPE.FORM_PENDING',
+  FORM_SUCCESS: 'INVITE_ACTION_TYPE.FORM_SUCCESS',
+  FORM_ERROR: 'INVITE_ACTION_TYPE.FORM_ERROR',
+  FORM_CLEANUP: 'INVITE_ACTION_TYPE.FORM_CLEANUP',
+};
+
+export const INVITE_DATA_NAME = {
+  EMAIL: 'email',
+
+};

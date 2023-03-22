@@ -1,0 +1,77 @@
+{
+  "REQUEST_SENT_SUCCESSFULLY": "Запрос успешно отправлен",
+  "SUMM": "Сумма",
+  "COMPANY_MEMBER_ROLE": {
+    "OWNER": "Владелец",
+    "EMPLOYEE": "Сотрудник"
+  },
+  "USER": {
+    "EMAIL": "Почта ",
+    "PHONE": "Телефон ",
+    "ID": "ID ",
+    "LOGIN": "Логин ",
+    "FISRT_NAME": "Имя ",
+    "LAST_NAME": "Фамилия ",
+    "CONFIRM_EMAIL": "Верификация почты ",
+    "CONFIRM_PHONE": "Верификация номера телефона ",
+    "VERIFIED": "Верифицировано",
+    "NOT_VERIFIED": "Не верифицировано",
+    "ROLE": "Роль ",
+    "USER_ROLE": {
+      "OWNER": "Пользователь",
+      "BLOCKED": "Заблокирован ",
+      "ADMIN": "Администратор "
+    }
+  },
+  "REVISION": {
+    "PRICE": "Стоимость ",
+    "ID": "ID ",
+    "CREATE_DATE": "Дата создания ",
+    "TITLE": "Название ",
+    "STATUS": "Состояние ",
+    "STATUS_TYPE": {
+      "NEW": "Новый запрос",
+      "PROGRESS": "В работе",
+      "DONE": "Запрос обработан",
+      "PAY": "Не оплачен",
+      "PAID": "Оплачен"
+    }
+  },
+  "COMPANY": {
+    "COMPANY_NAME": "Название: {{name}}",
+    "ID": "ID: {{id}}",
+    "INN": "ИНН: {{inn}}",
+    "BALANCE_VERIFICATION": "Баланс: {{balanceStatus}}",
+    "DATA_VERIFICATION": "Данные: {{dataStatus}}",
+    "BALANCE": "Средства: {{balance}}",
+    "VERIFIED": "Вериф.",
+    "NOT_VERIFIED": "Не вериф.",
+    "ROLE": "Роль: "
+  },
+  "REFERAL": {
+    "STATUS": {
+      "NEW_REFERAL": "Бонус за регистрацию реферала",
+      "ADDED_KONTRAGENT_INFO": "Бонус за дополнение информации по контрагенту",
+      "USER_TO_REVISION_KONTRAGENT_PAY": "Оплата за проверку контрагента",
+      "USER_TO_REVISION_SELF_PAY": "Оплата за проверку компании"
+    }
+  },
+  "CURRENCY": {
+    "RUB": "₽"
+  },
+  "ERROR": {
+    "TITLE": "Ошибка",
+    "DESRIPTION": " Нам не удалось выполнить ваш запрос из-за ошибки сервера.",
+    "BUTTON": "На главную"
+  },
+  "PAYMENT": {
+    "STATUS": {
+      "IN": "Пополнение",
+      "OUT": "Списание",
+      "BILL_IN": "Запрос на пополнение",
+      "PAY_IN": "Пополнение без запроса",
+      "REVISION_KONTRAGENT": "Списание. Проверка контрагента",
+      "REVISION_SELF": "Списание. Проверка компании"
+    }
+  }
+}

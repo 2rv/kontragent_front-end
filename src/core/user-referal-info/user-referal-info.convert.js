@@ -1,0 +1,8 @@
+import { USER_REFERAL_INFO_DATA_NAME } from './user-referal-info.constant';
+
+export const performUserReferalInfoData = (row) => ({
+  [USER_REFERAL_INFO_DATA_NAME.BALANCE]:
+    row[USER_REFERAL_INFO_DATA_NAME.BALANCE],
+  [USER_REFERAL_INFO_DATA_NAME.REFERAL_MEMBER_COUNT]:
+    row[USER_REFERAL_INFO_DATA_NAME.REFERAL_MEMBER_COUNT],
+});

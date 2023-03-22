@@ -1,0 +1,43 @@
+{
+  "CREATE": {
+    "TITLE": "Создание статьи",
+    "FORM": {
+      "FIELD": {
+        "LABELS": {
+          "TITLE": "Заголовок",
+          "DESCRIPTION": "Описание",
+          "BODY": "Редактирование статьи"
+        },
+        "PLACEHOLDERS": {
+          "TITLE": "Введите заголовок",
+          "DESCRIPTION": "Введите описание"
+        }
+      },
+      "BUTTON": {
+        "TITLE": "Создать"
+      },
+      "SUCCESS": "Статья успешно создана"
+    }
+  },
+  "EDIT": {
+    "TITLE": "Редактирование статьи",
+    "FORM": {
+      "FIELD": {
+        "LABELS": {
+          "TITLE": "Заголовок",
+          "DESCRIPTION": "Описание"
+        },
+        "PLACEHOLDERS": {
+          "TITLE": "Введите заголовок",
+          "DESCRIPTION": "Введите описание"
+        }
+      },
+      "BUTTON": {
+        "EDIT": "Сохранить",
+        "DELETE": "Удалить"
+      },
+      "SUCCESS": "Изменения внесены"
+    }
+  },
+  "BUTTON_EDIT": "Редактировать"
+}

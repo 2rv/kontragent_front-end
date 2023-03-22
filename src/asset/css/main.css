@@ -195,6 +195,7 @@ html {
   font-size: 100%;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
+  scroll-behavior: smooth;
 }
 a:focus {
   outline: thin dotted;
@@ -505,7 +506,7 @@ html {
 .default.text,
 input::placeholder,
 textarea::placeholder {
-  color: rgba(0, 0, 0, 0.4) !important;
+  color: rgba(0, 0, 0, 0.9) !important;
   opacity: 1;
 }
 a:hover {
@@ -516,14 +517,9 @@ input:-webkit-autofill {
   -webkit-box-shadow: none !important;
   box-shadow: none !important;
 }
-:root,
-body,
-html {
-  background-color: #fafafa;
-}
 
 html {
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 html,
 body {
@@ -536,6 +532,10 @@ body,
 
 img {
   max-width: 100%;
+}
+
+body {
+  background: #f3f3f3 !important;
 }
 
 .MuiPaper-elevation8 {
@@ -552,4 +552,8 @@ select:-webkit-autofill:hover,
 textarea:-webkit-autofill,
 textarea:-webkit-autofill:hover textarea:-webkit-autofill:focus {
   -webkit-text-fill-color: inherit;
+}
+
+.wrap_fb3d {
+  z-index: 998 !important;
 }
